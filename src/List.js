@@ -5,6 +5,7 @@ import Scroll from './ListFold/Scroll';
 import React from "react";
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App from './App';
 
 
 let card={width: 160, height:100, backgroundColor:"#fff",
@@ -89,6 +90,9 @@ const   List = () => {
         <Route path="/List/Scroll">
                <Scroll />
         </Route> 
+        <Route path="/">
+       <App />
+</Route> 
   </Switch>
 </Router>
 

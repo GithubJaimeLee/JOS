@@ -4,6 +4,7 @@ import backIcon from "./Icon/back.png";
 import { Link } from 'react-router-dom';
 import Feed from './ClickFold/Feed';
 import React from "react";
+import App from './App';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 let card={width: 160, height:100, backgroundColor:"#fff",
@@ -54,7 +55,7 @@ const  Click = () => {
    >
   OOS点击反馈动效
   </motion.h1>
-  <Link to="/">
+  <Link to="/" >
   <img src={backIcon} style={{
       width: 30, 
       position: 'absolute' , 
@@ -85,7 +86,9 @@ zIndex: '-1'}}></div>
 <Route path="/Click/Feed">
        <Feed />
 </Route> 
-
+<Route path="/">
+       <App />
+</Route> 
 </Switch>
 </Router>
 
