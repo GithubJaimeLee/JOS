@@ -25,18 +25,20 @@ const  Click = () => {
     return ( 
 
 <div>
-          <motion.h1  style={{
-              padding:30,  
-              color: "#333",
-              marginLeft: 60,  
-              y: 0
+    <motion.h1  
+    style={{
+        padding:30,  
+        color: "#333",
+        marginLeft: 30,  
+        y: 0
+    }}
 
-          }}
-
-
-  transition={{ type:"spring", velocity: 120 }}  
+  transition={{ 
+     type:"spring", 
+     velocity: 120 
+     }}   
    >
-  OOS列表动效
+  OOS点击反馈动效
   </motion.h1>
   <Link to="/">
   <img src={backIcon} style={{
@@ -50,13 +52,13 @@ const  Click = () => {
   </Link>
 
 <div className="Click">
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动对位</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动对位</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>子标题 </p></motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表反馈</p></motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>图标反馈</p></motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>按钮反馈</p></motion.div>
 </div>
    <div style={{marginLeft: 180, marginTop:-348}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>子页签</p> </motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动及回弹 </p></motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>数字键盘反馈</p> </motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>卡片反馈</p></motion.div>
         </div>
         <div style={{ backgroundImage: `url(${background})` ,width: 375, height:812, position: 'absolute' , top: 0, 
    opacity: 1, 

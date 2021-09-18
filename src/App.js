@@ -1,3 +1,4 @@
+// color: "#415FFF"
 import homeCard from './OOS';
 //页面
 import List from './List';
@@ -25,7 +26,16 @@ let card={width: 160, height:100, backgroundColor:"#fff",
  opacity: 0.8,
  color: "#666",
 }
-// color: "#415FFF"
+
+
+let card2={width: 160, height:100, backgroundColor:"#fff",
+ margin:16, 
+ borderRadius:12, 
+ textAlign:'center', 
+ boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
+ opacity: 0.4,
+ color: "#999"
+}
 
 const cardHover={
   scale: 1.1,
@@ -67,30 +77,30 @@ animate={{
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表</p></motion.div>
    </Link>
    <Link to="/Window"  style={{ textDecoration: 'none'}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>弹窗 </p></motion.div>
+   <motion.div whileHover={cardHover} style={card2} ><p style={{paddingTop:40}}>弹窗 </p></motion.div>
    </Link>
    <Link to="/Jump"  style={{ textDecoration: 'none'}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>界面跳转 </p></motion.div>
+   <motion.div whileHover={cardHover} style={card2} ><p style={{paddingTop:40}}>界面跳转 </p></motion.div>
    </Link>
    <Link to="/Choose"  style={{ textDecoration: 'none'}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>选择类</p></motion.div>
+   <motion.div whileHover={cardHover} style={card2} ><p style={{paddingTop:40}}>选择类</p></motion.div>
    </Link>
    <Link to="/Other"  style={{ textDecoration: 'none'}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>其他类 </p></motion.div>
+   <motion.div whileHover={cardHover} style={card2} ><p style={{paddingTop:40}}>其他类 </p></motion.div>
    </Link>
    </div>
    <div style={{marginLeft: 180, marginTop:-580}}>
    <Link to="/Click"  style={{ textDecoration: 'none'}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>点击反馈</p> </motion.div>
+   <motion.div whileHover={cardHover} style={card2} ><p style={{paddingTop:40}}>点击反馈</p> </motion.div>
    </Link>
    <Link to="/Improve"  style={{ textDecoration: 'none'}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>提升类 </p></motion.div>
+   <motion.div whileHover={cardHover} style={card2} ><p style={{paddingTop:40}}>提升类 </p></motion.div>
    </Link>
    <Link to="/Delete"  style={{ textDecoration: 'none'}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>删除类 </p></motion.div>
+   <motion.div whileHover={cardHover} style={card2} ><p style={{paddingTop:40}}>删除类 </p></motion.div>
    </Link>
    <Link to="/Fold"  style={{ textDecoration: 'none'}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>展开折叠类</p></motion.div>
+   <motion.div whileHover={cardHover} style={card2} ><p style={{paddingTop:40}}>展开折叠类</p></motion.div>
    </Link>
    </div>
    <div style={{ backgroundImage: `url(${background})` ,width: 375, height:812, position: 'absolute' , top: 0, 

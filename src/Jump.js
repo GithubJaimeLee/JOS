@@ -30,13 +30,13 @@ return (
    style={{
    padding:30,  
    color: "#333",
-   marginLeft: 60,  
+   marginLeft: 30,  
    y: 0
  }}
 
   transition={{ type:"spring", velocity: 120 }}  
    >
-  OOS列表提升类
+  OOS界面跳转动效
   </motion.h1>
   <Link to="/">
   <img src={backIcon} style={{
@@ -50,13 +50,12 @@ return (
   </Link>
 
 <div className="Jump">
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动对位</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动对位</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>子标题 </p></motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>二级界面跳转</p></motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>新建</p></motion.div>
 </div>
-   <div style={{marginLeft: 180, marginTop:-348}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>子页签</p> </motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动及回弹 </p></motion.div>
+   <div style={{marginLeft: 180, marginTop:-232}}>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>搜索</p> </motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>应用间跳转</p></motion.div>
         </div>
         <div style={{ 
           backgroundImage: `url(${background})` ,

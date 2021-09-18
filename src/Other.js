@@ -13,7 +13,6 @@ let card={width: 160, height:100, backgroundColor:"#fff",
  color: "#666"
 }
 
-
 const cardHover={
   scale: 1.1,
   boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)",
@@ -36,7 +35,7 @@ return (
 
   transition={{ type:"spring", velocity: 120 }}  
    >
-  OOS列表提升类
+  OOS其他动效
   </motion.h1>
   <Link to="/">
   <img src={backIcon} style={{
@@ -50,13 +49,12 @@ return (
   </Link>
 
 <div className="Other">
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动对位</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动对位</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>子标题 </p></motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>状态、标题栏置顶</p></motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>下拉刷新</p></motion.div>
+
 </div>
-   <div style={{marginLeft: 180, marginTop:-348}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>子页签</p> </motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动及回弹 </p></motion.div>
+   <div style={{marginLeft: 180, marginTop:-232}}>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>开屏界面</p> </motion.div>
         </div>
         <div style={{ 
           backgroundImage: `url(${background})` ,
