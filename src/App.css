@@ -36,8 +36,7 @@
     transform: rotate(360deg);
   }
 }
-/* 
+
 div.Scroll div.BlurBackground{
-  filter: blur(1000px);
+    filter: blur(50px);
 }
- */

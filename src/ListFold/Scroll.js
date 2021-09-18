@@ -3,12 +3,10 @@ import { motion } from 'framer-motion';
 import background from "../bg2.png";
 import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-/* import '../index.css'; */
-
+import '../App.css';
 const Scroll = () => {
   return (
     <div>    
-
 
 
       <motion.h1
@@ -65,18 +63,29 @@ const Scroll = () => {
           }}
         >
         </div>
+        <div className="mask"
+         style={{
+          overflow:'hidden',
+          top:0,
+          width: 375,
+          height: 812,
+          position: 'absolute',
+       
+        }}
+        
+        
+        >
         <div className="BlurBackground"
         style={{
-    
           backgroundImage: `url(${background})`,
           width: 375,
           height: 812,
           position: 'absolute',
           top: 0,
-          
           opacity: 1,
           zIndex: '-1'
         }} >
+        </div>
         </div>
       </div>
     </div>
