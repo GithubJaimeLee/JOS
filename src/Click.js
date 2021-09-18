@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import background from "./bg2.png";
 import backIcon from "./Icon/back.png";
 import { Link } from 'react-router-dom';
+import Feed from './ClickFold/Feed';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 let card={width: 160, height:100, backgroundColor:"#fff",
  margin:16, 
@@ -31,8 +34,11 @@ const cardHover={
  // color: "#415FFF",
 const  Click = () => {
     return ( 
-
+<Router> 
+    <Switch>
+        <Route exact path="/Click">
 <div>
+
     <motion.h1  
     style={{
         padding:30,  
@@ -60,7 +66,9 @@ const  Click = () => {
   </Link>
 
 <div className="Click">
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表反馈</p></motion.div>
+   <Link to="/Click/Feed"  style={{ textDecoration: 'none'}}>
+       <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表反馈</p></motion.div>
+   </Link>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>图标反馈</p></motion.div>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>按钮反馈</p></motion.div>
 </div>
@@ -72,6 +80,15 @@ const  Click = () => {
    opacity: 1, 
 zIndex: '-1'}}></div>
         </div>
+
+</Route>
+<Route path="/Click/Feed">
+       <Feed />
+</Route> 
+
+</Switch>
+</Router>
+
      );
 }
  
