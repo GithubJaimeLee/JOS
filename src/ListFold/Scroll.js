@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import background from "./bg2.png";
-import backIcon from "./Icon/back.png";
+import background from "../bg2.png";
+import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 // color: "#415FFF"
 
@@ -31,7 +31,7 @@ const cardHover={
 }
 
 
-const  Improve = () => {
+const  Scroll = () => {
 return ( 
 <div>
   <motion.h1 
@@ -44,9 +44,9 @@ return (
 
   transition={{ type:"spring", velocity: 120 }}  
    >
-  OOS提升动效
+  OOS选择动效
   </motion.h1>
-  <Link to="/">
+  <Link to="/List">
   <img src={backIcon} style={{
       width: 30, 
       position: 'absolute' , 
@@ -57,14 +57,8 @@ return (
   </img>
   </Link>
 
-<div className="Improve">
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>新时间标记</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>loading</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>toast</p></motion.div>
-</div>
-   <div style={{marginLeft: 180, marginTop:-348}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>页码指示</p> </motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>进度指示器</p></motion.div>
+<div className="Scroll">
+ 
         </div>
         <div style={{ 
           backgroundImage: `url(${background})` ,
@@ -79,4 +73,4 @@ return (
      );
 }
  
-export default Improve;
+export default Scroll;
