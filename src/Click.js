@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import background from "./bg.png";
+import background from "./bg2.png";
 import backIcon from "./Icon/back.png";
 import { Link } from 'react-router-dom';
 
