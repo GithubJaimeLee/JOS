@@ -21,7 +21,7 @@ const cardHover={
   opacity: 1
 }
  // color: "#415FFF",
-const  List = () => {
+const   List = () => {
     return ( 
 
 <div>

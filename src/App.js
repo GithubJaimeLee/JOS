@@ -1,5 +1,16 @@
 import homeCard from './OOS';
+//页面
 import List from './List';
+import Click from './Click';
+import Delete from './Delete';
+import Other from './Other';
+import Fold from './Fold';
+import Improve from './Improve';
+import Window from './Window';
+import Jump from './Jump';
+import Choose from './Choose';
+
+//导入库
 import { motion } from 'framer-motion';
 import background from "./bg.png";
 import React from "react";
@@ -51,27 +62,70 @@ animate={{
    >
   OOS动效平台
   </motion.h1>
-   <div><Link to="/List"  style={{ textDecoration: 'none'}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表</p></motion.div></Link>
+   <div>
+  <Link to="/List"  style={{ textDecoration: 'none'}}>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表</p></motion.div>
+   </Link>
+   <Link to="/Window"  style={{ textDecoration: 'none'}}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>弹窗 </p></motion.div>
+   </Link>
+   <Link to="/Jump"  style={{ textDecoration: 'none'}}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>界面跳转 </p></motion.div>
+   </Link>
+   <Link to="/Choose"  style={{ textDecoration: 'none'}}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>选择类</p></motion.div>
+   </Link>
+   <Link to="/Other"  style={{ textDecoration: 'none'}}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>其他类 </p></motion.div>
+   </Link>
    </div>
    <div style={{marginLeft: 180, marginTop:-580}}>
+   <Link to="/Click"  style={{ textDecoration: 'none'}}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>点击反馈</p> </motion.div>
+   </Link>
+   <Link to="/Improve"  style={{ textDecoration: 'none'}}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>提升类 </p></motion.div>
+   </Link>
+   <Link to="/Delete"  style={{ textDecoration: 'none'}}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>删除类 </p></motion.div>
+   </Link>
+   <Link to="/Fold"  style={{ textDecoration: 'none'}}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>展开折叠类</p></motion.div>
+   </Link>
    </div>
    <div style={{ backgroundImage: `url(${background})` ,width: 375, height:812, position: 'absolute' , top: 0, 
    opacity: 1, 
 zIndex: '-1'}}></div>
    </motion.div>
-
    </Route>
+
+//链接地址
    <Route path="/List">
      <List />
+   </Route>
+   <Route path="/Click">
+     <Click />
+   </Route>
+   <Route path="/Fold">
+     <Fold />
+   </Route>
+   <Route path="/Delete">
+     <Delete />
+   </Route>
+   <Route path="/Improve">
+     <Improve />
+   </Route>
+   <Route path="/Other">
+     <Other />
+   </Route>
+   <Route path="/Jump">
+     <Jump />
+   </Route>
+   <Route path="/Window">
+     <Window />
+   </Route>
+   <Route path="/Choose">
+     <Choose />
    </Route>
 </Switch>
    </Router>
