@@ -36,4 +36,8 @@
     transform: rotate(360deg);
   }
 }
-
+/* 
+div.Scroll div.BlurBackground{
+  filter: blur(1000px);
+}
+ */

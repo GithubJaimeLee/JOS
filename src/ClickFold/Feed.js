@@ -4,31 +4,7 @@ import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 // color: "#415FFF"
 
-let card={width: 160, height:100, backgroundColor:"#fff",
- margin:16, 
- borderRadius:12, 
- textAlign:'center', 
- boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
- opacity: 0.8,
- color: "#666"
-}
 
-let card2={width: 160, height:100, backgroundColor:"#fff",
- margin:16, 
- borderRadius:12, 
- textAlign:'center', 
- boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
- opacity: 0.4,
- color: "#999"
-}
-
-const cardHover={
-  scale: 1.1,
-  boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)",
-  fontWeight: 'bold',
-  color: "#415fff",
-  opacity: 1
-}
 
 
 const  Feed = () => {
@@ -47,7 +23,7 @@ return (
   OOS选择动效
   </motion.h1>
   <Link to="/Click">
-  <img src={backIcon} style={{
+  <img src={backIcon} alt=" " style={{
       width: 30, 
       position: 'absolute' , 
       top: 20, 

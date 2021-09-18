@@ -17,14 +17,14 @@ let card={width: 160, height:100, backgroundColor:"#fff",
  color: "#666"
 }
 
-let card2={width: 160, height:100, backgroundColor:"#fff",
+/* let card2={width: 160, height:100, backgroundColor:"#fff",
  margin:16, 
  borderRadius:12, 
  textAlign:'center', 
  boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
  opacity: 0.4,
  color: "#999"
-}
+} */
 
 
 const cardHover={
@@ -55,7 +55,7 @@ const   List = () => {
                           OOS列表动效
                      </motion.h1>
                     <Link to="/">
-                            <img src={backIcon} style={{
+                            <img src={backIcon} alt=" " style={{
                                 width: 30, 
                                 position: 'absolute' , 
                                 top: 20, 
@@ -66,7 +66,7 @@ const   List = () => {
                      </Link>
                     <div className="List">
                          <Link to="/List/Scroll"  style={{ textDecoration: 'none'}}>
-                         <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动对位</p></motion.div>
+                         <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动及回弹</p></motion.div>
                          </Link>
                          <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动对位</p></motion.div>
                          <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>子标题 </p></motion.div>
