@@ -55,7 +55,7 @@ const Scroll = () => {
             dragElastic={0}
             style={{
               backgroundColor: "#fff",
-              left: 40,  
+              left: 300,  
               width: 305,
               height: 600,
               position: 'absolute',
