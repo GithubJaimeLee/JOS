@@ -38,7 +38,12 @@
 }
 
 div.Scroll div.BlurBackground{
-    filter: blur(4px);
-  
- 
+    filter: blur(4px); 
 }
+
+#root{
+  overflow:hidden!important;
+  width: 375px!important;
+  height: 812px!important;
+  position: absolute;
+} 

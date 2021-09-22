@@ -1,5 +1,5 @@
 // color: "#415FFF"
-import homeCard from './OOS';
+
 //页面
 import List from './List';
 import Click from './Click';
@@ -44,7 +44,7 @@ const cardHover = {
   boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)",
   fontWeight: 'bold',
   color: "#415fff",
-  opacity: 1,
+  opacity: 1
 }
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
 
 
           <motion.div>
-            <homeCard />
+
             <motion.h1 style={{ padding: 30 }}
               initial={{
                 marginLeft: 30,
