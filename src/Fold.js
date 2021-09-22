@@ -31,7 +31,7 @@ const cardHover={
 }
 
 
-const  Delete = () => {
+const  Fold = () => {
 return ( 
 <div>
   <motion.h1 
@@ -57,7 +57,7 @@ return (
   </img>
   </Link>
 
-<div className="Delete">
+<div className="Fold">
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>内容展开折叠</p></motion.div>
 </div>
    <div style={{marginLeft: 180, marginTop:-116}}>
@@ -76,4 +76,4 @@ return (
      );
 }
  
-export default Delete;
+export default Fold;
