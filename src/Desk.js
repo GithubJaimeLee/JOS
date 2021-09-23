@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './ListFold/App.jsx';
+import App from './ListFold/deskApp.jsx';
 const boxHome = {
   width: 65,
   height: 65,
@@ -43,7 +43,10 @@ const Desk = () => {
         display: Grid
       }}
       >
-        <Container>
+{/*         <Container>
+
+
+
 
 
           <Row>
@@ -141,6 +144,8 @@ const Desk = () => {
 
 
         </Container>
+     
+      */}
       </div>
 
       <div style={{ marginLeft: 180, marginTop: -116 }}>

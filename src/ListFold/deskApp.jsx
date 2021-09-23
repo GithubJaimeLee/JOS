@@ -50,6 +50,7 @@ const UploadGallery = () => {
               gridAutoColumns: "auto",
               gridAutoRows: "auto",
               height: "100%"
+   
             }}
           >
             <Photo url={activeId} />

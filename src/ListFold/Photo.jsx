@@ -18,10 +18,11 @@ export const Photo = forwardRef(
       // height: index === 0 ? 410 : 200,
       gridRowStart: `span ${rowSpan[url] || 1}`,
       gridColumnStart: `span ${colSpan[url] || 1}`,
-      backgroundImage: `url("${url}")`,
+ 
       backgroundSize: "cover",
       backgroundPosition: "center",
-      backgroundColor: "grey",
+      backgroundColor: "#fff",
+      borderRadius: 12,
       ...style
     };
 
