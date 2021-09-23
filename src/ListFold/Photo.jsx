@@ -49,27 +49,17 @@ export const Photo = forwardRef(
     return <div ref={ref} style={inlineStyles} {...props} />;
   }
 );
-/* 
+/* //首位放大放大代码
 import React, { forwardRef } from "react";
-import photos from "./photos.json";
-
-const colSpan = {
-  [photos[2]]: 2,
-  [photos[4]]: 2
-};
-const rowSpan = {
-  [photos[3]]: 2,
-  [photos[4]]: 2
-};
 
 export const Photo = forwardRef(
   ({ url, index, faded, style, ...props }, ref) => {
     const inlineStyles = {
       opacity: faded ? "0.2" : "1",
       transformOrigin: "0 0",
-      // height: index === 0 ? 410 : 200,
-      gridRowStart: `span ${rowSpan[url] || 1}`,
-      gridColumnStart: `span ${colSpan[url] || 1}`,
+      height: index === 0 ? 400 : 200,
+      gridRowStart: index === 0 ? "span 2" : null,
+      gridColumnStart: index === 0 ? "span 2" : null,
       backgroundImage: `url("${url}")`,
       backgroundSize: "cover",
       backgroundPosition: "center",
@@ -80,4 +70,5 @@ export const Photo = forwardRef(
     return <div ref={ref} style={inlineStyles} {...props} />;
   }
 );
+
  */
