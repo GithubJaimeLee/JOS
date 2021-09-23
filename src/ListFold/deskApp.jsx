@@ -35,7 +35,7 @@ const UploadGallery = () => {
       onDragCancel={handleDragCancel}
     >
       <SortableContext items={items} strategy={() => {}}>
-        <Grid columns={4}>
+        <Grid columns={4} >
           {items.map((url, index) => (
             <SortablePhoto key={url} url={url} index={index} />
           ))}
@@ -53,7 +53,9 @@ const UploadGallery = () => {
    
             }}
           >
-            <Photo url={activeId} />
+            <Photo 
+          //  url={activeId}
+             />
           </div>
         ) : null}
       </DragOverlay>
