@@ -7,6 +7,25 @@ import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 
+let cardActive = {
+    width: 160, height: 100, backgroundColor: "#fff",
+    margin: 16,
+    borderRadius: 12,
+    textAlign: 'center',
+    boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
+    opacity: 0.8,
+    color: "#666",
+  }
+  
+  let cardInactive = {
+    width: 160, height: 100, backgroundColor: "#fff",
+    margin: 16,
+    borderRadius: 12,
+    textAlign: 'center',
+    boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
+    opacity: 0.4,
+    color: "#999"
+  }
 
 let card={width: 160, height:100, backgroundColor:"#fff",
  margin:16, 
@@ -44,7 +63,7 @@ const   List = () => {
                     <motion.h1  style={{
                                       padding:30,  
                                       color: "#333",
-                                      marginLeft: 60,  
+                                      marginLeft: 40,  
                                       y: 0          
                                   }}                     
                                  transition={{ 
@@ -66,14 +85,14 @@ const   List = () => {
                      </Link>
                     <div className="List">
                          <Link to="/List/Scroll"  style={{ textDecoration: 'none'}}>
-                         <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动及回弹</p></motion.div>
+                         <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>滑动及回弹</p></motion.div>
                          </Link>
-                         <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动对位</p></motion.div>
-                         <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>子标题 </p></motion.div>
+                         <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>滑动对位</p></motion.div>
+                         <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>子标题 </p></motion.div>
                    </div>
                     <div style={{marginLeft: 180, marginTop:-348}}>
-                          <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>子页签</p> </motion.div>
-                          <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>滑动及回弹 </p></motion.div>
+                          <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>子页签</p> </motion.div>
+                          <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>滑动及回弹 </p></motion.div>
                     </div>
                     <div style={{ 
                            backgroundImage: `url(${background})`,

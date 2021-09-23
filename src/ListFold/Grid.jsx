@@ -7,8 +7,9 @@ export function Grid({ children, columns }) {
         display: "grid",
         gridTemplateColumns: `repeat(${columns}, 1fr)`,
         gridAutoRows: `200px`,
-        gridGap: 10,
-        padding: 10,
+        gridGap: 12,
+        padding: 12,
+        paddingTop:60,
         gridAutoFlow: "row dense"
       }}
     >
