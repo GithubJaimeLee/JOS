@@ -68,7 +68,7 @@ function App() {
                 fontSize: 60,
                 color: "#333",
                 // color: "#415FFF",
-                marginLeft: 40,
+                marginLeft: 62,
                 y: 0
               }}
               transition={{ type: "spring", velocity: 120 }}

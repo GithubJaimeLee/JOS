@@ -63,7 +63,7 @@ const   Desk = () => {
                     <motion.h1  style={{
                                       padding:30,  
                                       color: "#333",
-                                      marginLeft: 40,  
+                                      marginLeft: 66,  
                                       y: 0          
                                   }}                     
                                  transition={{ 
@@ -85,7 +85,7 @@ const   Desk = () => {
                      </Link>
                     <div className="Desk">
                          <Link to="/Desk/deskMove"  style={{ textDecoration: 'none'}}>
-                         <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标移动</p></motion.div>
+                         <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标移动自动补位</p></motion.div>
                          </Link>
                          <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标无空间变形</p></motion.div>
                          <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形（缩小）</p></motion.div>
