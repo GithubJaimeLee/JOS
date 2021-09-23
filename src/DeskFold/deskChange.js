@@ -1,25 +1,29 @@
 // color: "#415FFF"
+import { animate, motion, useCycle } from 'framer-motion';
 import * as React from "react";
 /* import background from "../bg2.png"; */
 import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
-  import { Container, Row, Col } from 'react-bootstrap'; 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+
 /* import Desk from "../Desk"; */
-  const boxHome = {
-  width: 70,
-  height: 70,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)", 
-  fontWeight: 'bold',
-  color: "#415fff",
-  opacity: 1,
-  background: '#fff',
-  borderRadius: 12,
-  padding:0,
-  margin:20
-}  
+const boxHome = {
+    width: 70,
+    height: 70,
+    boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+    fontWeight: 'bold',
+    color: "#415fff",
+    opacity: 1,
+    background: '#fff',
+    borderRadius: 12,
+    position:'absolute',
+    left:20,
+    top:60
+}
 
 /* gridRowStart: `span ${rowSpan[url] || 1}`,
 gridColumnStart: `span ${colSpan[url] || 1}`,
@@ -30,33 +34,89 @@ backgroundColor: "#fff",
 borderRadius: 12,
 ...style */
 
-const DChange= () => {
+const boxAnimation = {
+    animationOne: {
+        width: 70,
+        height: 70
+    },
+    animationTwo: {
+        width: 140,
+        height: 70
+    },
+    animationThree: {
+        width: 70,
+        height: 140
+    },
+    animationFour: {
+        width: 140,
+        height: 140
+    }
+}
 
-  return (
-    <div>
-  
 
-      <Link to="/Desk">
-        <img src={backIcon} alt=" " style={{
-          width: 30,
-          position: 'absolute',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '100'
-        }}>
-        </img>
-      </Link>
+const DChange = () => {
+    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree","animationFour");
+    return (
+        <div>
 
 
-      <div className='boxAll' style={{
-        display: Grid,
-        marginTop:60
-      }}
-      >
- <div style={boxHome}>
-            </div>
-    {/*     <Container>
+            <Link to="/Desk">
+                <img src={backIcon} alt=" " style={{
+                    width: 30,
+                    position: 'absolute',
+                    top: 20,
+                    left: 20,
+                    opacity: 1,
+                    zIndex: '100'
+                }}>
+                </img>
+            </Link>
+
+
+            <div className='boxAll' style={{
+                display: Grid,
+                marginTop: 60
+            }}
+            >
+                <motion.div
+                    style={boxHome}
+                    variants={boxAnimation}
+                    animate={animationBox}
+                >
+                    <div onClick={() => cycleAnimation()}
+              /*      style={{
+                         
+                       position: 'absolute' 
+                        }}
+                        
+                        */
+                     >
+             
+                        <div style={{
+                          position: 'absolute',
+                           right:-20,
+                            
+                            width: 40,
+                            height: 40,
+                            backgroundColor: "#fff",
+                            borderRadius: 20,
+                            textAlign: 'center',
+                            boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
+                        }}>
+                            <img src={backIcon} alt=" " style={{
+                                width: 20,
+                                
+                                position: 'absolute',
+                                bottom: 12,
+                                right: 10,
+                                opacity: 1,
+                                zIndex: '100'
+                            }}></img>
+                        </div>
+                        </div>
+                  
+                </motion.div>
+                {/*     <Container>
 
 
 
@@ -72,7 +132,7 @@ const DChange= () => {
             <Col style={boxHome}>
             </Col> 
           </Row>*/}
-{/* 
+                {/* 
 
           <Row>
             <Col style={boxHome}>
@@ -136,28 +196,28 @@ const DChange= () => {
 
         </Container> */}
 
-     
-     
-      </div>
-
-      <div style={{ marginLeft: 180, marginTop: -116 }}>
-
-      </div>
-      <div style={{
-        background:'#E6ECF4',
-     /*   backgroundImage: `url(${background})`, */
-        width: 375,
-        height: 812,
-        position: 'absolute',
-        top: 0,
-        opacity: 1,
-        zIndex: '-1'
-      }}>
-      </div>
-    </div>
 
 
-  );
+            </div>
+
+            <div style={{ marginLeft: 180, marginTop: -116 }}>
+
+            </div>
+            <div style={{
+                background: '#E6ECF4',
+                /*   backgroundImage: `url(${background})`, */
+                width: 375,
+                height: 812,
+                position: 'absolute',
+                top: 0,
+                opacity: 1,
+                zIndex: '-1'
+            }}>
+            </div>
+        </div>
+
+
+    );
 }
 
 export default DChange;
