@@ -38,7 +38,7 @@ return (
    style={{
    padding:30,  
    color: "#333",
-   marginLeft: 30,  
+   marginLeft: 40,  
    y: 0
  }}
 

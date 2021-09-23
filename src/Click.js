@@ -44,7 +44,7 @@ const  Click = () => {
     style={{
         padding:30,  
         color: "#333",
-        marginLeft: 30,  
+        marginLeft: 60,  
         y: 0
     }}
 

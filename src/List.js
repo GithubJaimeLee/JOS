@@ -27,14 +27,14 @@ let cardActive = {
     color: "#999"
   }
 
-let card={width: 160, height:100, backgroundColor:"#fff",
+/* let card={width: 160, height:100, backgroundColor:"#fff",
  margin:16, 
  borderRadius:12, 
  textAlign:'center', 
  boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
  opacity: 0.8,
  color: "#666"
-}
+} */
 
 /* let card2={width: 160, height:100, backgroundColor:"#fff",
  margin:16, 
@@ -63,7 +63,7 @@ const   List = () => {
                     <motion.h1  style={{
                                       padding:30,  
                                       color: "#333",
-                                      marginLeft: 60,  
+                                      marginLeft: 70,  
                                       y: 0          
                                   }}                     
                                  transition={{ 

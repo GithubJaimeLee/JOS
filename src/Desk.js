@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import background from "./bg2.png";
 import backIcon from "./Icon/back.png";
 import DApp  from './DeskFold/deskMove';
+import DChange  from './DeskFold/deskChange';
 import React from "react";
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -27,7 +28,7 @@ let cardActive = {
     color: "#999"
   }
 
-let card={width: 160, height:100, backgroundColor:"#fff",
+/* let card={width: 160, height:100, backgroundColor:"#fff",
  margin:16, 
  borderRadius:12, 
  textAlign:'center', 
@@ -35,7 +36,7 @@ let card={width: 160, height:100, backgroundColor:"#fff",
  opacity: 0.8,
  color: "#666"
 }
-
+ */
 /* let card2={width: 160, height:100, backgroundColor:"#fff",
  margin:16, 
  borderRadius:12, 
@@ -63,7 +64,7 @@ const   Desk = () => {
                     <motion.h1  style={{
                                       padding:30,  
                                       color: "#333",
-                                      marginLeft: 66,  
+                                      marginLeft: 70,  
                                       y: 0          
                                   }}                     
                                  transition={{ 
@@ -87,13 +88,15 @@ const   Desk = () => {
                          <Link to="/Desk/deskMove"  style={{ textDecoration: 'none'}}>
                          <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标移动自动补位</p></motion.div>
                          </Link>
-                         <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标无空间变形</p></motion.div>
-                         <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形（缩小）</p></motion.div>
+                         <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>图标无空间变形</p></motion.div>
+                         <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>图标变形（缩小）</p></motion.div>
                    </div>
                     <div style={{marginLeft: 180, marginTop:-348}}>
+                    <Link to="/Desk/deskChange"  style={{ textDecoration: 'none'}}>
                           <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形</p> </motion.div>
-                          <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形（方向） </p></motion.div>
-                          <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标创建文件夹 </p></motion.div>
+                          </Link>  
+                          <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>图标变形（方向） </p></motion.div>
+                          <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>图标创建文件夹 </p></motion.div>
                     </div>
                     <div style={{ 
                            backgroundImage: `url(${background})`,
@@ -110,9 +113,12 @@ const   Desk = () => {
         <Route path="/Desk/deskMove">
                <DApp />
         </Route> 
+        <Route path="/Desk/deskChange">
+               <DChange />
+        </Route> 
         <Route path="/">
        <App />
-</Route> 
+       </Route> 
   </Switch>
 </Router>
 

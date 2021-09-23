@@ -4,30 +4,38 @@ import * as React from "react";
 import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
-/* import { Container, Row, Col } from 'react-bootstrap'; */
+  import { Container, Row, Col } from 'react-bootstrap'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from '../ListFold/deskApp.jsx';
+
 /* import Desk from "../Desk"; */
-/* const boxHome = {
-  width: 65,
-  height: 65,
-  boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)", 
+  const boxHome = {
+  width: 70,
+  height: 70,
+  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)", 
   fontWeight: 'bold',
   color: "#415fff",
   opacity: 1,
   background: '#fff',
   borderRadius: 12,
   padding:0,
-  margin:14
-} */
+  margin:20
+}  
 
+/* gridRowStart: `span ${rowSpan[url] || 1}`,
+gridColumnStart: `span ${colSpan[url] || 1}`,
+boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)", 
+backgroundSize: "cover",
+backgroundPosition: "center",
+backgroundColor: "#fff",
+borderRadius: 12,
+...style */
 
-const DApp= () => {
+const DChange= () => {
 
   return (
     <div>
   
-<App />
+
       <Link to="/Desk">
         <img src={backIcon} alt=" " style={{
           width: 30,
@@ -42,72 +50,29 @@ const DApp= () => {
 
 
       <div className='boxAll' style={{
-        display: Grid
+        display: Grid,
+        marginTop:60
       }}
       >
-{/*         <Container>
+ <div style={boxHome}>
+            </div>
+    {/*     <Container>
 
 
 
 
 
-          <Row>
+           <Row>
             <Col style={boxHome}>
+            </Col>
+         <Col style={boxHome}>
             </Col>
             <Col style={boxHome}>
             </Col>
             <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
+            </Col> 
+          </Row>*/}
+{/* 
 
           <Row>
             <Col style={boxHome}>
@@ -143,11 +108,36 @@ const DApp= () => {
             <Col style={boxHome}>
             </Col>
           </Row>
+          <Row>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
 
 
-        </Container>
+          <Row>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+
      
-      */}
+
+
+        </Container> */}
+
+     
+     
       </div>
 
       <div style={{ marginLeft: 180, marginTop: -116 }}>
@@ -170,4 +160,4 @@ const DApp= () => {
   );
 }
 
-export default DApp;
+export default DChange;
