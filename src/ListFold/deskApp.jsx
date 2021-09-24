@@ -10,7 +10,6 @@ import {
   LayoutMeasuringStrategy
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
-
 import { Grid } from "../ListFold/Grid";
 import { SortablePhoto } from "../ListFold/SortablePhoto";
 import { Photo } from "../ListFold/Photo";

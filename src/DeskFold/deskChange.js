@@ -136,7 +136,7 @@ const DChange = () => {
                     variants={boxAnimation}
                     animate={animationBox}
    //                 {...longPressEvents(check)}
-
+                
                 >
 
                     <p
@@ -158,9 +158,10 @@ const DChange = () => {
                             opacity: 1,
                             zIndex: '100'
                         }}></img>
-                        <div className="boxPress"
+                        <motion.div className="boxPress"
                 //         variants={btnAnimation}
                 //          animate={animationBtn}
+             
                             style={
                                 {
                                     display: 'block',
@@ -175,7 +176,7 @@ const DChange = () => {
                                     boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
                                 }
                             }>
-                        </div>
+                        </motion.div>
                     </div>
                 </motion.div>
             </div>
