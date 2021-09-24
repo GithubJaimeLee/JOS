@@ -85,7 +85,7 @@ const DChange = () => {
                     style={boxHome}
                     variants={boxAnimation}
                     animate={animationBox}
-                  onClick={toggleOpen}
+                    onClick={toggleOpen}
                 >
 
                     <p
