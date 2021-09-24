@@ -41,7 +41,7 @@ const UploadGallery = () => {
           ))}
         </Grid>
       </SortableContext>
-
+{/* 调整运动后的比例 */}
       <DragOverlay adjustScale={false}>
         {activeId ? (
           <div

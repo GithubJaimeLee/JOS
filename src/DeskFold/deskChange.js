@@ -7,10 +7,13 @@ import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from "react";
+import $ from "jquery";
+//press功能
 
 
+//变形完整交互
 
-/* import Desk from "../Desk"; */
 const boxHome = {
     width: 70,
     height: 70,
@@ -20,9 +23,9 @@ const boxHome = {
     opacity: 1,
     background: '#fff',
     borderRadius: 12,
-    position:'absolute',
-    left:20,
-    top:60
+    position: 'absolute',
+    left: 20,
+    top: 60
 }
 
 /* gridRowStart: `span ${rowSpan[url] || 1}`,
@@ -53,12 +56,63 @@ const boxAnimation = {
     }
 }
 
+/* 
+const btnAnimation = {
+    animationOneBtn: {
+        width: 70,
+        height: 70
+    },
+    animationTwoBtn: {
+        width: 140,
+        height: 70
+    },animationThreeBtn: {
+        width: 140,
+        height: 70
+    }
+} */
+//--------------------------------新增开始--------------------------------------------
+/* const longPressEvents = (callback, ms = 500) => {
 
+    let timeout = null;
+
+    const start = () => (timeout = setTimeout(callback, ms));
+    const stop = () => timeout && window.clearTimeout(timeout);
+
+    return callback
+        ? {
+            onMouseDown: start,
+            onMouseUp: stop,
+            onMouseLeave: stop,
+            onTouchStart: start,
+            onTouchMove: stop,
+            onTouchEnd: stop
+        }
+        : {};
+};
+ */
+/*--------------------------------新增结束--------------------------------------------*/
+/* $(function() { $("div.pressBtn").on("Click",function(){
+    $(this).style({"display":"none"});
+        }); */
 const DChange = () => {
-    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree","animationFour");
-    return (
-        <div>
+    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
+   /*  const [animationBtn, cycleAnimation] = useCycle("animationOneBtn", "animationTwoBtn","animationThreeBtn"); */
+    //--------------------------------新增开始--------------------------------------------
+   /*  const [style, setStyle] = useState("block");
+    const check = () => setStyle("none"); */
+    //--------------------------------新增结束--------------------------------------------
+ 
 
+ 
+    return (
+
+        <div>
+            { /*--------------------------------新增开始-------------------------------------------
+               <div className="App">
+
+                    <h2>{style}</h2>
+                </div>
+           --------------------------------新增结束--------------------------------------------*/}
 
             <Link to="/Desk">
                 <img src={backIcon} alt=" " style={{
@@ -71,140 +125,69 @@ const DChange = () => {
                 }}>
                 </img>
             </Link>
-
-
             <div className='boxAll' style={{
                 display: Grid,
                 marginTop: 60
             }}
+            
             >
-                <motion.div
+                <motion.div className='boxChange'
                     style={boxHome}
                     variants={boxAnimation}
                     animate={animationBox}
+   //                 {...longPressEvents(check)}
+
                 >
-                    <div onClick={() => cycleAnimation()}
-              /*      style={{
-                         
-                       position: 'absolute' 
+
+                    <p
+                        style={{
+
+                            color: "#666",
+                            position: 'absolute',
+                            top: 10,
+                            left: 10,
+                            fontSize: 14
                         }}
-                        
-                        */
-                     >
-               <img src={zoomIcon} alt=" " style={{
-                                width: 16,
-                                position: 'absolute',
-                                bottom: 2,
-                                right: 2,
-                                opacity: 1,
-                                zIndex: '100'
-                            }}></img>
-                        <div style={{
-                          position: 'absolute',
-                           right:-10,
-                            bottom:-10,
-                            width: 40,
-                            height: 40,
-                            backgroundColor: "#fff",
-                            borderRadius: 20,
-                            textAlign: 'center',
-                            boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
-                        }}>
-                          
+                    >Press me</p>
+                    <div onClick={() => cycleAnimation()} >
+                        <img src={zoomIcon} alt=" " style={{
+                            width: 16,
+                            position: 'absolute',
+                            bottom: 2,
+                            right: 2,
+                            opacity: 1,
+                            zIndex: '100'
+                        }}></img>
+                        <div className="boxPress"
+                //         variants={btnAnimation}
+                //          animate={animationBtn}
+                            style={
+                                {
+                                    display: 'block',
+                                    position: 'absolute',
+                                    right: -10,
+                                    bottom: -10,
+                                    width: 40,
+                                    height: 40,
+                                    backgroundColor: "#fff",
+                                    borderRadius: 20,
+                                    textAlign: 'center',
+                                    boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
+                                }
+                            }>
                         </div>
-                        </div>
-                  
+                    </div>
                 </motion.div>
-                {/*     <Container>
-
-
-
-
-
-           <Row>
-            <Col style={boxHome}>
-            </Col>
-         <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col> 
-          </Row>*/}
-                {/* 
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-     
-
-
-        </Container> */}
-
-
-
             </div>
-
+           
+           
+           
+           
+           
             <div style={{ marginLeft: 180, marginTop: -116 }}>
-
             </div>
             <div style={{
                 background: '#E6ECF4',
-                /*   backgroundImage: `url(${background})`, */
                 width: 375,
                 height: 812,
                 position: 'absolute',
@@ -214,8 +197,6 @@ const DChange = () => {
             }}>
             </div>
         </div>
-
-
     );
 }
 
