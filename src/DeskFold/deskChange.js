@@ -2,10 +2,10 @@
 import { animate, motion, useCycle } from 'framer-motion';
 import * as React from "react";
 /* import background from "../bg2.png"; */
-import backIcon from "../Icon/back.png";
+import zoomIcon from "../Icon/zoomIcon.png";
 import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
-
+import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -91,11 +91,18 @@ const DChange = () => {
                         
                         */
                      >
-             
+               <img src={zoomIcon} alt=" " style={{
+                                width: 16,
+                                position: 'absolute',
+                                bottom: 2,
+                                right: 2,
+                                opacity: 1,
+                                zIndex: '100'
+                            }}></img>
                         <div style={{
                           position: 'absolute',
-                           right:-20,
-                            
+                           right:-10,
+                            bottom:-10,
                             width: 40,
                             height: 40,
                             backgroundColor: "#fff",
@@ -103,15 +110,7 @@ const DChange = () => {
                             textAlign: 'center',
                             boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
                         }}>
-                            <img src={backIcon} alt=" " style={{
-                                width: 20,
-                                
-                                position: 'absolute',
-                                bottom: 12,
-                                right: 10,
-                                opacity: 1,
-                                zIndex: '100'
-                            }}></img>
+                          
                         </div>
                         </div>
                   
