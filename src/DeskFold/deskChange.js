@@ -55,7 +55,10 @@ const boxAnimation = {
 const DChange = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
     const [isOpen, setIsOpen] = useState(false);
-    const toggleOpen = () => setIsOpen(!isOpen);
+   // const toggleOpen = () => setIsOpen(!isOpen);
+    const toggleOpen = () => setIsOpen(true);
+    
+
 
 
     return (
