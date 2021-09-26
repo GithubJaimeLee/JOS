@@ -6,20 +6,8 @@ import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
 /* import { Container, Row, Col } from 'react-bootstrap'; */
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from '../ListFold/deskApp.jsx';
-/* import Desk from "../Desk"; */
-/* const boxHome = {
-  width: 65,
-  height: 65,
-  boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)", 
-  fontWeight: 'bold',
-  color: "#415fff",
-  opacity: 1,
-  background: '#fff',
-  borderRadius: 12,
-  padding:0,
-  margin:14
-} */
+import App from '../ListFold/deskAppZoom.jsx';
+
 
 
 const DZoom= () => {
@@ -43,111 +31,8 @@ const DZoom= () => {
 
       <div className='boxAll' style={{
         display: Grid
-      }}
-      >
-{/*         <Container>
+      }}  >
 
-
-
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-        </Container>
-     
-      */}
       </div>
 
       <div style={{ marginLeft: 180, marginTop: -116 }}>
