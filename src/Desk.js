@@ -1,12 +1,18 @@
-import { motion } from 'framer-motion';
+//图片
 import background from "./bg2.png";
 import backIcon from "./Icon/back.png";
+//页码
+import App from './App';
 import DApp  from './DeskFold/deskMove';
 import DChange  from './DeskFold/deskChange';
+import DZoom  from './DeskFold/deskZoom';
+import DDirection  from './DeskFold/deskDirection';
+//库
+import { motion } from 'framer-motion';
 import React from "react";
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App from './App';
+
 
 let cardActive = {
     width: 160, height: 100, backgroundColor: "#fff",
@@ -88,14 +94,18 @@ const   Desk = () => {
                          <Link to="/Desk/deskMove"  style={{ textDecoration: 'none'}}>
                          <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标移动自动补位</p></motion.div>
                          </Link>
-                         <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>图标无空间变形</p></motion.div>
-                         <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>图标变形（缩小）</p></motion.div>
+                         <Link to="/Desk/deskDirection"  style={{ textDecoration: 'none'}}>
+                         <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形（方向）</p></motion.div>
+                         </Link>
+                         <Link to="/Desk/deskZoom"  style={{ textDecoration: 'none'}}>
+                         <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形（缩小）</p></motion.div>
+                         </Link>
                    </div>
                     <div style={{marginLeft: 180, marginTop:-348}}>
                     <Link to="/Desk/deskChange"  style={{ textDecoration: 'none'}}>
                           <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形</p> </motion.div>
                           </Link>  
-                          <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>图标变形（方向） </p></motion.div>
+        
                           <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>图标创建文件夹 </p></motion.div>
                     </div>
                     <div style={{ 
@@ -115,6 +125,12 @@ const   Desk = () => {
         </Route> 
         <Route path="/Desk/deskChange">
                <DChange />
+        </Route> 
+        <Route path="/Desk/deskZoom">
+               <DZoom />
+        </Route> 
+        <Route path="/Desk/deskDirection">
+               <DDirection />
         </Route> 
         <Route path="/">
        <App />
