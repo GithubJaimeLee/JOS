@@ -1,19 +1,20 @@
 import React from "react";
 
-export function Grid({ children, columns }) {
+export function GridZ({ children, columns }) {
   return (
-    <div
+    <div  
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(${columns}, 1fr)`,
         gridAutoRows: `70px`,
         gridGap: 18,
         padding: 20,
-        paddingTop:60,
-        gridAutoFlow: "row dense"
+        paddingTop:324,
+        gridAutoFlow: "row dense",
+        
       }}
     >
-      {children}
+   {children} 
     </div>
   );
 }

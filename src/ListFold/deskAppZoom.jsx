@@ -10,10 +10,10 @@ import {
   LayoutMeasuringStrategy
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
-import { Grid } from "../ListFold/GridZoom";
-import { SortablePhoto } from "../ListFold/SortablePhoto";
-import { PhotoZoom } from "../ListFold/PhotoZoom";
-import photos from "../ListFold/photos.json";
+import { GridZ } from "../ListFold/GridZoom";
+import { SortablePhotoZ } from "../ListFold/SortablePhotoZoom";
+import { PhotoZ} from "../ListFold/PhotoZoom";
+import photos from "../ListFold/photosZoom.json";
 
 const UploadGallery = () => {
   const [items, setItems] = useState(photos);
@@ -34,26 +34,26 @@ const UploadGallery = () => {
       onDragCancel={handleDragCancel}
     >
       <SortableContext items={items} strategy={() => {}}>
-        <Grid columns={4} >
+        <GridZ columns={2} >
           {items.map((url, index) => (
-            <SortablePhoto key={url} url={url} index={index} />
+            <SortablePhotoZ key={url} url={url} index={index} />
           ))}
-        </Grid>
+        </GridZ>
       </SortableContext>
 {/* 调整运动后的比例 */}
       <DragOverlay adjustScale={false}>
         {activeId ? (
-          <div
+          <div 
             style={{
               display: "grid",
-              gridAutoColumns: "auto",
-             gridAutoRows: "auto",
-          //    gridAutoRows: "158",
+              gridAutoColumns: "100%",
+           gridAutoRows: "auto",
+        //   gridAutoRows: "18",
               height: "100%"
    
             }}
           >
-            <PhotoZoom
+            <PhotoZ
           //  url={activeId}
              />
           </div>

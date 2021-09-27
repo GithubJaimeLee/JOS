@@ -97,16 +97,16 @@ const   Desk = () => {
                          <Link to="/Desk/deskDirection"  style={{ textDecoration: 'none'}}>
                          <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形（方向）</p></motion.div>
                          </Link>
-                         <Link to="/Desk/deskZoom"  style={{ textDecoration: 'none'}}>
-                         <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形（缩小）</p></motion.div>
-                         </Link>
+                         <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>图标创建文件夹 </p></motion.div>
                    </div>
                     <div style={{marginLeft: 180, marginTop:-348}}>
                     <Link to="/Desk/deskChange"  style={{ textDecoration: 'none'}}>
                           <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形</p> </motion.div>
                           </Link>  
-        
-                          <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>图标创建文件夹 </p></motion.div>
+                          <Link to="/Desk/deskZoom"  style={{ textDecoration: 'none'}}>
+                         <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形（缩放）</p></motion.div>
+                         </Link>
+   
                     </div>
                     <div style={{ 
                            backgroundImage: `url(${background})`,
@@ -127,10 +127,10 @@ const   Desk = () => {
                <DChange />
         </Route> 
         <Route path="/Desk/deskZoom">
-               <DZoom />
+              <DDirection />
         </Route> 
         <Route path="/Desk/deskDirection">
-               <DDirection />
+                 <DZoom />
         </Route> 
         <Route path="/">
        <App />

@@ -16,14 +16,14 @@ const colSpan = {
 
   [photosD[1]]: 1,
   //保留
-  [photosD[2]]: 1,
-  [photosD[3]]: 1
+
+
 };
 //高度
 const rowSpan = {
   [photosD[1]]: 1,
-  [photosD[2]]: 1,
-  [photosD[3]]: 1
+ 
+
 };
 
 
@@ -39,12 +39,13 @@ export const PhotoD = forwardRef(
       boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)", 
       backgroundSize: "cover",
       backgroundPosition: "center",
-      backgroundColor: "#fff",
+      backgroundColor: "#5EDD7B",
+      
       borderRadius:index === 0 ? 6 : 12,
       ...style
     };
 
-    return <div ref={ref} style={inlineStyles} {...props} />;
+    return <div  ref={ref} style={inlineStyles} {...props} />;
   }
 );
 
