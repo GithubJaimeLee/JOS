@@ -11,6 +11,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.1.1",
+    "fabric": "^4.6.0",
     "framer-motion": "^4.1.17",
     "jquery": "^3.6.0",
     "react": "^17.0.2",

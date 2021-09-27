@@ -7,6 +7,8 @@ import DApp  from './DeskFold/deskMove';
 import DChange  from './DeskFold/deskChange';
 import DZoom  from './DeskFold/deskZoom';
 import DDirection  from './DeskFold/deskDirection';
+//import {DraggableStory ,Grid }  from './DeskFold/deskGrid';
+import DGrid   from './DeskFold/deskGrid';
 //库
 import { motion } from 'framer-motion';
 import React from "react";
@@ -107,6 +109,10 @@ const   Desk = () => {
                          <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标变形（缩放）</p></motion.div>
                          </Link>
    
+                         <Link to="/Desk/deskGrid"  style={{ textDecoration: 'none'}}>
+                         <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标Grid</p></motion.div>
+                         </Link>
+   
                     </div>
                     <div style={{ 
                            backgroundImage: `url(${background})`,
@@ -131,6 +137,9 @@ const   Desk = () => {
         </Route> 
         <Route path="/Desk/deskDirection">
                  <DZoom />
+        </Route> 
+        <Route path="/Desk/deskGrid">
+                 <DGrid/>
         </Route> 
         <Route path="/">
        <App />

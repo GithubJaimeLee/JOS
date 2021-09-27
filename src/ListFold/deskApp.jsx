@@ -29,15 +29,18 @@ const UploadGallery = () => {
       layoutMeasuring={layoutMeasuring}
       collisionDetection={closestCorners}
       onDragStart={handleDragStart}
-      onDragOver={handleDragOver}
-      onDragEnd={handleDragEnd}
+  // 下面两项是重点
+     onDragOver={handleDragOver}
+     onDragEnd={handleDragEnd}
+ // 上面两项是重点
       onDragCancel={handleDragCancel}
     >
       <SortableContext items={items} strategy={() => {}}>
         <Grid columns={4} >
-          {items.map((url, index) => (
+       {items.map((url, index) => (
             <SortablePhoto key={url} url={url} index={index} />
           ))}
+ 
         </Grid>
       </SortableContext>
 {/* 调整运动后的比例 */}
@@ -48,8 +51,8 @@ const UploadGallery = () => {
               display: "grid",
               gridAutoColumns: "auto",
               gridAutoRows: "auto",
-              height: "100%"
-   
+              height: "100%",
+            //  backgroundColor:'#000'
             }}
           >
             <Photo 
@@ -65,6 +68,12 @@ const UploadGallery = () => {
     setActiveId(event.active.id);
   }
 
+
+
+
+
+
+
   function handleDragOver(event) {
     const { active, over } = event;
 
@@ -72,12 +81,13 @@ const UploadGallery = () => {
       setItems((items) => {
         const oldIndex = items.indexOf(active.id);
         const newIndex = items.indexOf(over.id);
+  return arrayMove(items, oldIndex, newIndex);
 
-        return arrayMove(items, oldIndex, newIndex);
+  // return arrayMove(items, oldIndex, newIndex);
       });
     }
   }
-
+ 
   function handleDragEnd(event) {
     setActiveId(null);
   }
@@ -86,5 +96,12 @@ const UploadGallery = () => {
     setActiveId(null);
   }
 };
+
+
+
+
+
+
+
 
 export default UploadGallery;
