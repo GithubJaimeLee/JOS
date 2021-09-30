@@ -7,7 +7,7 @@ import { Grid } from "antd-mobile";
  import { Container, Row, Col } from 'react-bootstrap'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../ListFold/deskAppDirect.jsx';
-import { position } from "dom-helpers";
+//import { position } from "dom-helpers";
 
  const boxHome = {
   width: 70,

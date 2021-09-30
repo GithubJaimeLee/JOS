@@ -2,7 +2,7 @@ import * as React from "react";
 import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
- import { Container, Row, Col } from 'react-bootstrap'; 
+import { Container, Row, Col } from 'react-bootstrap'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../ListFold/deskAppZoom.jsx';
 //import { position } from "dom-helpers";

@@ -20,7 +20,6 @@ const boxHome = {
     width: 70,
     height: 70,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-    fontWeight: 'bold',
     color: "#415fff",
     opacity: 1,
     background: '#fff',
@@ -114,6 +113,7 @@ const DChange = () => {
                     <p
                         style={{
                             color: "#666",
+                            fontWeight: 'bold',
                             position: 'absolute',
                             top: 10,
                             left: 10,
