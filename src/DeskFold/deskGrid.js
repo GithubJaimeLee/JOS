@@ -78,7 +78,7 @@ export default function App() {
                     // Snap calculated target to nearest 50 pixels
                     modifyTarget: target => Math.round(target / 88) * 88
                 }}
-                dragConstraints={{ left: 0, right: 275, top: 0, bottom: 712 }}
+                dragConstraints={{ left: 0, right: 275, top: 0, bottom: 530 }}
                 dragMomentum={true}
             // x={X}
             //background={"null"}
