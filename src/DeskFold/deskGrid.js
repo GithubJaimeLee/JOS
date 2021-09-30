@@ -95,16 +95,16 @@ export default function App() {
                     }}
                 >Move me</p>
             </motion.div>
-            <div style={{
-                background: '#E6ECF4',
-                width: 375,
-                height: 812,
-                position: 'absolute',
-                top: 0,
-                opacity: 1,
-                zIndex: '-10'
-            }}>
-            </div>
+<div style={{
+    background: '#E6ECF4',
+    width: 375,
+    height: 812,
+    position: 'absolute',
+    top: 0,
+    opacity: 1,
+    zIndex: '-10'
+}}>
+</div>
             <Container style={cssContainer}>
 
                 <Row style={cssRow}>
