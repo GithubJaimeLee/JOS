@@ -30,7 +30,7 @@ const ScrollJump = () => {
           dragConstraints={{ top: -40, bottom: 0 }}
             dragElastic={0}
             style={{    
-              backgroundColor: '#415FFF',
+              backgroundColor: '#bbb',
               top:0, 
               width: 375,
               height: 100,
@@ -44,10 +44,11 @@ const ScrollJump = () => {
 
           <motion.div className="MoveCard"
           drag="y"
-          dragConstraints={{ top: -560, bottom: 300 }}
+          dragConstraints={{ top: -560, bottom: 60 }}
             dragElastic={0}
+            dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
             style={{    
-              backgroundColor: '#f7f7f7',
+              backgroundColor: '#ddd',
               top:70, 
               width: 375,
               height: 800,
