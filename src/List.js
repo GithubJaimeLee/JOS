@@ -3,6 +3,7 @@ import background from "./bg2.png";
 import Bback from "./Icon/back.png";
 import Scroll from './ListFold/Scroll';
 import ScrollJump from './ListFold/ScrollJump';
+import ScrollTitle from './ListFold/ScrollTitle';
 import React from "react";
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -92,7 +93,9 @@ const List = () => {
               <Link to="/List/Scroll" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>横滑定位</p></motion.div>
               </Link>
-              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>子标题 </p></motion.div>
+              <Link to="/List/ScrollTitle" style={{ textDecoration: 'none' }}>
+              <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>标题篮 </p></motion.div>
+              </Link>
             </div>
             <div style={{ marginLeft: 180, marginTop: -348 }}>
               <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>子页签</p> </motion.div>
@@ -115,6 +118,9 @@ const List = () => {
         </Route>
         <Route path="/List/Scroll">
           <Scroll />
+        </Route>
+        <Route path="/List/ScrollTitle">
+          <ScrollTitle />
         </Route>
         <Route path="/">
           <App />

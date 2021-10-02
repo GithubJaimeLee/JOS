@@ -71,17 +71,17 @@ const DChange = () => {
     return (
 
         <div>
-            <Link to="/Desk">
-                <img src={backIcon} alt=" " style={{
-                    width: 30,
-                    position: 'absolute',
-                    top: 20,
-                    left: 20,
-                    opacity: 1,
-                    zIndex: '100'
-                }}>
-                </img>
-            </Link>
+<Link to="/Desk">
+    <img src={backIcon} alt=" " style={{
+        width: 30,
+        position: 'absolute',
+        top: 20,
+        left: 20,
+        opacity: 1,
+        zIndex: '100'
+    }}>
+    </img>
+</Link>
             {/*   grid 开始          <div className='boxAll' style={{
                 display: Grid,
                 marginTop: 60
@@ -161,3 +161,4 @@ const DChange = () => {
 }
 
 export default DChange;
+
