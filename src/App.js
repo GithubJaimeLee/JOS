@@ -6,11 +6,12 @@ import Click from './Click';
 import Delete from './Delete';
 import Other from './Other';
 import Fold from './Fold';
-import Improve from './Improve';
+import Alert from './Alert';
 import Window from './Window';
 import Jump from './Jump';
 import Choose from './Choose';
 import Desk from './Desk';
+import Edit from './Edit';
 
 //导入库
 import { motion } from 'framer-motion';
@@ -81,7 +82,7 @@ function App() {
               </Link>
 
               <Link to="/Window" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>弹窗 </p></motion.div>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>弹窗 </p></motion.div>
               </Link>
               <Link to="/Jump" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>界面跳转 </p></motion.div>
@@ -89,25 +90,28 @@ function App() {
               <Link to="/Choose" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>选择类</p></motion.div>
               </Link>
+              <Link to="/Edit" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>编辑类</p></motion.div>
+              </Link>
               <Link to="/Other" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>其他类 </p></motion.div>
               </Link>
             </div>
-            <div style={{ marginLeft: 180, marginTop: -580 }}>
+            <div style={{ marginLeft: 180, marginTop: -696 }}>
               <Link to="/List" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>列表</p></motion.div>
               </Link>
               <Link to="/Click" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>点击反馈</p> </motion.div>
               </Link>
-              <Link to="/Improve" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>提升类 </p></motion.div>
+              <Link to="/Alert" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>提示类</p></motion.div>
               </Link>
               <Link to="/Delete" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>删除类 </p></motion.div>
+                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>删除类</p></motion.div>
               </Link>
               <Link to="/Fold" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>展开折叠类</p></motion.div>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>展开折叠类</p></motion.div>
               </Link>
 
             </div>
@@ -135,8 +139,8 @@ function App() {
         <Route path="/Delete">
           <Delete />
         </Route>
-        <Route path="/Improve">
-          <Improve />
+        <Route path="/Alert">
+          <Alert />
         </Route>
         <Route path="/Other">
           <Other />
@@ -149,6 +153,9 @@ function App() {
         </Route>
         <Route path="/Choose">
           <Choose />
+        </Route>
+        <Route path="/Edit">
+          <Edit />
         </Route>
       </Switch>
     </Router>

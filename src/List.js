@@ -4,6 +4,8 @@ import Bback from "./Icon/back.png";
 import Scroll from './ListFold/Scroll';
 import ScrollJump from './ListFold/ScrollJump';
 import ScrollTitle from './ListFold/ScrollTitle';
+import ScrollTap from './ListFold/ScrollTap';
+import ScrollTitleList from './ListFold/ScrollTitleList';
 import React from "react";
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -98,8 +100,12 @@ const List = () => {
               </Link>
             </div>
             <div style={{ marginLeft: 180, marginTop: -348 }}>
-              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>子页签</p> </motion.div>
-              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>滑动及回弹 </p></motion.div>
+            <Link to="/List/ScrollTap" style={{ textDecoration: 'none' }}>
+              <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>子页签(Tap)</p> </motion.div>
+              </Link>
+              <Link to="/List/ScrollTitleList" style={{ textDecoration: 'none' }}>
+              <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>标题列表</p></motion.div>
+              </Link>
             </div>
             <div style={{
               backgroundImage: `url(${background})`,
@@ -121,6 +127,12 @@ const List = () => {
         </Route>
         <Route path="/List/ScrollTitle">
           <ScrollTitle />
+        </Route>
+        <Route path="/List/ScrollTap">
+          <ScrollTap />
+        </Route>
+        <Route path="/List/ScrollTitleList">
+          <ScrollTitleList />
         </Route>
         <Route path="/">
           <App />

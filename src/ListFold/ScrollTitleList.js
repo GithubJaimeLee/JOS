@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 
 
-const ScrollJump = () => {
+const ScrollTitleList = () => {
   return (
     <div>
 
@@ -25,12 +25,15 @@ const ScrollJump = () => {
           zIndex: '100'
         }} />
       </Link>
+
+       
+
           <motion.div className="HeadCard"
           drag="y"
           dragConstraints={{ top: -40, bottom: 0 }}
             dragElastic={0}
             style={{    
-              backgroundColor: '#415FFF',
+              backgroundColor: '#ccc',
               top:0, 
               width: 375,
               height: 100,
@@ -73,4 +76,4 @@ const ScrollJump = () => {
   );
 }
 
-export default ScrollJump;
+export default ScrollTitleList;

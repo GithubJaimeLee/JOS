@@ -2,11 +2,6 @@ import { motion } from 'framer-motion';
 import background from "./bg2.png";
 import backIcon from "./Icon/back.png";
 import { Link } from 'react-router-dom';
-import FoldContext from './FoldFold/FoldContext';
-import FoldCard from './FoldFold/FoldCard';
-import App from './App';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 // color: "#415FFF"
 
 let card={width: 160, height:100, backgroundColor:"#fff",
@@ -36,23 +31,20 @@ const cardHover={
 }
 
 
-const  Fold = () => {
+const  Alert = () => {
 return ( 
-  <Router>
-  <Switch>
-    <Route exact path="/Fold">
 <div>
   <motion.h1 
    style={{
    padding:30,  
    color: "#333",
-   marginLeft: 40,  
+   marginLeft: 60,  
    y: 0
  }}
 
   transition={{ type:"spring", velocity: 120 }}  
    >
-  OOS展开折叠动效
+  OOS提示动效
   </motion.h1>
   <Link to="/">
   <img src={backIcon} alt=" " style={{
@@ -65,15 +57,14 @@ return (
   </img>
   </Link>
 
-<div className="Fold">
-<Link to="/Fold/FoldContext" style={{ textDecoration: 'none' }}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>内容展开折叠</p></motion.div>
-   </Link>
+<div className="Alert">
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>新事件标记</p></motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>loading</p></motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>toast</p></motion.div>
 </div>
-   <div style={{marginLeft: 180, marginTop:-116}}>
-   <Link to="/Fold/FoldCard" style={{ textDecoration: 'none' }}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>卡片展开折叠</p> </motion.div>
-   </Link>
+   <div style={{marginLeft: 180, marginTop:-348}}>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>页码指示</p> </motion.div>
+   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>进度指示器</p></motion.div>
         </div>
         <div style={{ 
           backgroundImage: `url(${background})` ,
@@ -85,19 +76,7 @@ return (
           zIndex: '-1'}}>
           </div>
         </div>
-             </Route>
-             <Route path="/Fold/FoldContext">
-             <FoldContext />
-             </Route>
-             <Route path="/Fold/FoldCard">
-             <FoldCard />
-             </Route>
-             <Route path="/">
-          <App />
-        </Route>
-           </Switch>
-         </Router>
      );
 }
  
-export default Fold;
+export default Alert;

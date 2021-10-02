@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 
 
-const ScrollJump = () => {
+const ScrollTap = () => {
   return (
     <div>
 
@@ -25,29 +25,45 @@ const ScrollJump = () => {
           zIndex: '100'
         }} />
       </Link>
+
+       
+
           <motion.div className="HeadCard"
           drag="y"
           dragConstraints={{ top: -40, bottom: 0 }}
             dragElastic={0}
             style={{    
-              backgroundColor: '#415FFF',
+              backgroundColor: '#ccc',
               top:0, 
               width: 375,
               height: 100,
               position: 'absolute',
-          
               opacity: 1,
               zIndex: 1
             }}>
+            <p
+            style={{
+            top:60,
+            left:80,
+            position:'absolute',
+            fontSize:20,
+            fontWeight:600
+            }}
+            >Tap1</p>
+                      <p
+            style={{
+            top:60,
+            left:240,
+            position:'absolute',
+            fontSize:20,
+            fontWeight:600
+            }}
+            >Tap2</p>
           </motion.div>
 
-
           <motion.div className="MoveCard"
-          drag="y"
-          dragConstraints={{ top: -560, bottom: 300 }}
-            dragElastic={0}
             style={{    
-              backgroundColor: '#f7f7f7',
+              backgroundColor: '#E6ECF4',
               top:70, 
               width: 375,
               height: 800,
@@ -57,20 +73,10 @@ const ScrollJump = () => {
             }}>
           </motion.div>
           
-                      <div className="Background"
-              style={{
-                backgroundColor: '#E6ECF4',
-                width: 375,
-                height: 812,
-                position: 'absolute',
-                top: 0,
-                left:0,
-                opacity: 1,
-                zIndex: -1
-              }} ></div>
+    
           </div>
 
   );
 }
 
-export default ScrollJump;
+export default ScrollTap;
