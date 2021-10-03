@@ -47,3 +47,6 @@ div.Scroll div.BlurBackground{
   height: 812px!important;
   position: absolute;
 } 
+div.ListCard{
+  border:1px solid #000;
+} 

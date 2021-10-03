@@ -25,33 +25,16 @@ const   ClickNum = () => {
           zIndex: '100'
         }} />
       </Link>
-          <motion.div className="HeadCard"
-          drag="y"
-          dragConstraints={{ top: -40, bottom: 0 }}
-            dragElastic={0}
-            style={{    
-              backgroundColor: '#bbb',
-              top:0, 
-              width: 375,
-              height: 100,
-              position: 'absolute',
-          
-              opacity: 1,
-              zIndex: 1
-            }}>
-          </motion.div>
+
 
 
           <motion.div className="MoveCard"
-          drag="y"
-          dragConstraints={{ top: -560, bottom: 60 }}
-            dragElastic={0}
-            dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
+     
             style={{    
-              backgroundColor: '#ddd',
-              top:70, 
+              backgroundColor: '#fff',
+              top:500, 
               width: 375,
-              height: 800,
+              height: 320,
               position: 'absolute',
               opacity: 1,
               zIndex: 0
