@@ -21,33 +21,7 @@ let cardActive = {
   color: "#666",
 }
 
-let cardInactive = {
-  width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
-  borderRadius: 12,
-  textAlign: 'center',
-  boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
-  opacity: 0.4,
-  color: "#999"
-}
 
-/* let card={width: 160, height:100, backgroundColor:"#fff",
- margin:16, 
- borderRadius:12, 
- textAlign:'center', 
- boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
- opacity: 0.8,
- color: "#666"
-} */
-
-/* let card2={width: 160, height:100, backgroundColor:"#fff",
- margin:16, 
- borderRadius:12, 
- textAlign:'center', 
- boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
- opacity: 0.4,
- color: "#999"
-} */
 
 
 const cardHover = {

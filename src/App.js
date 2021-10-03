@@ -16,9 +16,10 @@ import Edit from './Edit';
 //导入库
 import { motion } from 'framer-motion';
 import background from "./bg.png";
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+//import React, { useState } from "react";
 //import { animated, useSpring, config } from "react-spring";
 
 let cardActive = {
@@ -232,7 +233,7 @@ function App() {
   <ProgressBar/></div>   </motion.div>
               </Link>
               <Link to="/Click" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>点击反馈0%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>点击反馈0%</p>
                   
                     <div>
     <div 

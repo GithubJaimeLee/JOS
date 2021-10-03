@@ -1,95 +1,119 @@
 import { motion } from 'framer-motion';
 import background from "./bg2.png";
-import backIcon from "./Icon/back.png";
-import { Link } from 'react-router-dom';
+import Bback from "./Icon/back.png";
+import ClickList from './ClickFold/ClickList';
+import ClickBtn from './ClickFold/ClickBtn';
+import ClickImage from './ClickFold/ClickImage';
+import ClickCard from './ClickFold/ClickCard';
+import ClickNum from './ClickFold/ClickNum';
 import React from "react";
-import App from './App';
+import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App from './App';
 
-let card={width: 160, height:100, backgroundColor:"#fff",
- margin:16, 
- borderRadius:12, 
- textAlign:'center', 
- boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
- opacity: 0.8,
- color: "#666"
+let cardActive = {
+  width: 160, height: 100, backgroundColor: "#fff",
+  margin: 16,
+  borderRadius: 12,
+  textAlign: 'center',
+  boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
+  opacity: 0.8,
+  color: "#666",
 }
 
-/* let card2={width: 160, height:100, backgroundColor:"#fff",
- margin:16, 
- borderRadius:12, 
- textAlign:'center', 
- boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
- opacity: 0.4,
- color: "#999"
-} */
 
-const cardHover={
+
+
+const cardHover = {
   scale: 1.1,
   boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)",
   fontWeight: 'bold',
   color: "#415fff",
   opacity: 1
 }
- // color: "#415FFF",
-const  Click = () => {
-    return ( 
-<Router> 
-    <Switch>
+// color: "#415FFF",
+const List = () => {
+  return (
+    <Router>
+      <Switch>
         <Route exact path="/Click">
-<div>
-
-    <motion.h1  
-    style={{
-        padding:30,  
-        color: "#333",
-        marginLeft: 60,  
-        y: 0
-    }}
-
-  transition={{ 
-     type:"spring", 
-     velocity: 120 
-     }}   
-   >
-  OOS点击反馈动效
-  </motion.h1>
-  <Link to="/" >
-  <img src={backIcon} alt=" " style={{
-      width: 30, 
-      position: 'absolute' , 
-      top: 20, 
-      left:20,
-      opacity: 1,
-      zIndex: '100'}}>
-  </img>
-  </Link>
-
-<div className="Click">
- 
-       <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表反馈</p></motion.div>
- 
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>图标反馈</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>按钮反馈</p></motion.div>
+          <div>
+            <motion.h1 style={{
+              padding: 30,
+              color: "#333",
+              marginLeft: 70,
+              y: 0
+            }}
+              transition={{
+                type: "spring",
+                velocity: 120
+              }}
+            >
+              OOS点击动效
+            </motion.h1>
+            <Link to="/">
+              <img src={Bback} alt=" " style={{
+                width: 30,
+                position: 'absolute',
+                top: 20,
+                left: 20,
+                opacity: 1,
+                zIndex: '100'
+              }}>
+              </img>
+            </Link>
+            <div className="List">
+            <Link to="/Click/ClickList" style={{ textDecoration: 'none' }}>
+   <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>列表反馈</p></motion.div>
+   </Link>
+   <Link to="/Click/ClickImage" style={{ textDecoration: 'none' }}>
+   <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标反馈</p></motion.div>
+   </Link>
+   <Link to="/Click/ClickBtn" style={{ textDecoration: 'none' }}>
+   <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>按钮反馈</p></motion.div>
+   </Link>
 </div>
    <div style={{marginLeft: 180, marginTop:-348}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>数字键盘反馈</p> </motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>卡片反馈</p></motion.div>
-        </div>
-        <div style={{ backgroundImage: `url(${background})` ,width: 375, height:812, position: 'absolute' , top: 0, 
-   opacity: 1, 
-zIndex: '-1'}}></div>
-        </div>
-
-</Route>
-
-<Route path="/">
-       <App />
-</Route> 
-</Switch>
-</Router>
-
-     );
+   <Link to="/Click/ClickNum" style={{ textDecoration: 'none' }}>
+   <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>数字键盘反馈</p> </motion.div>
+   </Link>
+   <Link to="/Click/ClickCard" style={{ textDecoration: 'none' }}>
+   <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>卡片反馈</p></motion.div>
+   </Link>
+            </div>
+            <div style={{
+              backgroundImage: `url(${background})`,
+              width: 375,
+              height: 812,
+              position: 'absolute',
+              top: 0,
+              opacity: 1,
+              zIndex: '-1'
+            }}>
+            </div>
+          </div>
+        </Route>
+        <Route path="/Click/ClickList">
+          <ClickList />
+        </Route>
+        <Route path="/Click/ClickImage">
+          <ClickImage />
+        </Route>
+        <Route path="/Click/ClickBtn">
+          <ClickBtn />
+        </Route>
+        <Route path="/Click/ClickNum">
+          <ClickNum />
+        </Route>
+        <Route path="/Click/ClickCard">
+          <ClickCard />
+        </Route>
+        <Route path="/">
+          <App />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
- 
-export default Click;
+
+export default List;
