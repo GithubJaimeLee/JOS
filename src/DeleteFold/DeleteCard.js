@@ -1,4 +1,4 @@
-// color: "#415FFF"
+
 import * as React from "react";
 //import { useRef } from "react";
 import { motion} from 'framer-motion';
@@ -7,14 +7,13 @@ import { motion} from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import { Stack } from 'react-bootstrap';
-import { Container, Row, Col } from 'react-bootstrap';
 import '../App.css';
 
 const StyleCard ={    
     backgroundColor: '#fff',
     top:120, 
     width: 375,
-    height: 70,
+    height: 200,
  
     opacity: 1,
     zIndex: 0,
@@ -40,10 +39,10 @@ const   DeleteCard = () => {
           dragConstraints={{ top: -40, bottom: 0 }}
             dragElastic={0}
             style={{    
-              backgroundColor: '#fff',
+              backgroundColor: '#bbb',
               top:0, 
               width: 375,
-              height: 70,
+              height: 100,
               position: 'absolute',
           
               opacity: 1,
@@ -57,63 +56,10 @@ const   DeleteCard = () => {
     top:120,
     position:'absolute'
     }}>
-<Container >
-  <Row>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-  </Row>
-  <Row>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-  </Row>
-  <Row>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-  </Row>
-
-</Container>
+    <Stack gap={1}>
+  <div className="ListCard" style={StyleCard}></div>
+  <div className="ListCard" style={StyleCard}></div>
+ </Stack>
     </div>     
 
 

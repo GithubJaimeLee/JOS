@@ -1,7 +1,7 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
 /* import background from "../bg2.png"; */
-import zoomIcon from "../Icon/zoomIcon.png";
+//import zoomIcon from "../Icon/zoomIcon.png";
 import { Link } from 'react-router-dom';
 //import { Grid } from "antd-mobile";
 import backIcon from "../Icon/back.png";

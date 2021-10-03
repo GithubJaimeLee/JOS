@@ -2,7 +2,12 @@ import { motion } from 'framer-motion';
 import background from "./bg2.png";
 import backIcon from "./Icon/back.png";
 import { Link } from 'react-router-dom';
-// color: "#415FFF"
+import OtherBackToTop from './OtherFold/OtherBackToTop';
+import OtherPull from './OtherFold/OtherPull';
+import OtherOpen from './OtherFold/OtherOpen';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App from './App';
+
 
 let card={width: 160, height:100, backgroundColor:"#fff",
  margin:16, 
@@ -33,12 +38,15 @@ const cardHover={
 
 const  Other = () => {
 return ( 
+  <Router>
+  <Switch>
+    <Route exact path="/Other">
 <div>
   <motion.h1 
    style={{
    padding:30,  
    color: "#333",
-   marginLeft: 60,  
+   marginLeft: 66,  
    y: 0
  }}
 
@@ -58,12 +66,21 @@ return (
   </Link>
 
 <div className="Other">
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>状态、标题栏置顶</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>下拉刷新</p></motion.div>
+   
+     <Link to="/Other/OtherBackToTop" style={{ textDecoration: 'none' }}>
+     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>状态、标题栏置顶</p></motion.div>
+            </Link>
+   
+     <Link to="/Other/OtherPull" style={{ textDecoration: 'none' }}>
+     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>下拉刷新</p></motion.div>
+            </Link>
 
 </div>
    <div style={{marginLeft: 180, marginTop:-232}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>开屏界面</p> </motion.div>
+  
+    <Link to="/Other/OtherOpen" style={{ textDecoration: 'none' }}>
+     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>开屏界面</p> </motion.div>
+            </Link>
         </div>
         <div style={{ 
           backgroundImage: `url(${background})` ,
@@ -75,6 +92,22 @@ return (
           zIndex: '-1'}}>
           </div>
         </div>
+         </Route>
+         <Route path="/Other/OtherBackToTop">
+           <OtherBackToTop />
+         </Route>
+         <Route path="/Other/OtherOpen">
+           <OtherOpen />
+         </Route>
+      
+         <Route path="/Other/OtherPull">
+           <OtherPull />
+         </Route>
+         <Route path="/">
+           <App />
+         </Route>
+       </Switch>
+     </Router>
      );
 }
  

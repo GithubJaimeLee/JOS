@@ -6,18 +6,11 @@ import { motion} from 'framer-motion';
 /* import backIcon from "../Icon/back.png"; */
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-import { Stack } from 'react-bootstrap';
+//import { Stack } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import '../App.css';
 
-const StyleCard ={    
-    backgroundColor: '#fff',
-    top:120, 
-    width: 375,
-    height: 70,
- 
-    opacity: 1,
-    zIndex: 0,
-  }
+
 const   DeleteImage = () => {
   return (
     <div>
@@ -39,10 +32,10 @@ const   DeleteImage = () => {
           dragConstraints={{ top: -40, bottom: 0 }}
             dragElastic={0}
             style={{    
-              backgroundColor: '#bbb',
+              backgroundColor: '#fff',
               top:0, 
               width: 375,
-              height: 100,
+              height: 70,
               position: 'absolute',
           
               opacity: 1,
@@ -56,16 +49,63 @@ const   DeleteImage = () => {
     top:120,
     position:'absolute'
     }}>
-    <Stack gap={1}>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
- </Stack>
+<Container >
+  <Row>
+    <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+    <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+        <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+        <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+  </Row>
+  <Row>
+    <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+    <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+        <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+        <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+  </Row>
+  <Row>
+    <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+    <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+        <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+        <Col style={{
+    backgroundColor: '#FFFFFF',
+    margin:10
+    }}>1 of 2</Col>
+  </Row>
+
+</Container>
     </div>     
 
 
@@ -88,3 +128,4 @@ const   DeleteImage = () => {
 }
 
 export default   DeleteImage;
+
