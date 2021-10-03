@@ -64,7 +64,7 @@ const cardHover = {
       left:10,
       width:140,
       height: 10,
-    backgroundColor: '#EEEEEE',
+      backgroundColor: '#EEEEEE',
       borderRadius:5,
       zIndex:-1
     }}>
@@ -233,7 +233,7 @@ function App() {
   <ProgressBar/></div>   </motion.div>
               </Link>
               <Link to="/Click" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>点击反馈0%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>点击反馈5%</p>
                   
                     <div>
     <div 
@@ -241,7 +241,7 @@ function App() {
       position:'relative',
       top:0,
       left:10,
-      width: 140*0.0,
+      width: 140*0.05,
       height: 10,
       backgroundColor: '#415FFF',
       zIndex:1,
@@ -269,7 +269,7 @@ function App() {
   <ProgressBar/></div>   </motion.div>
               </Link>
               <Link to="/Delete" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>删除类0%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>删除类5%</p>
                   
     <div>
     <div 
@@ -277,7 +277,7 @@ function App() {
       position:'relative',
       top:0,
       left:10,
-      width: 140*0.0,
+      width: 140*0.05,
       height: 10,
       backgroundColor: '#415FFF',
       zIndex:1,

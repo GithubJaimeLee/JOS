@@ -14,15 +14,16 @@ import { useState } from "react";
 //变形完整交互
 
 const boxHome = {
-    width: 300,
-    height: 60,
+    width: 70,
+    height: 70,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+    color: "#415fff",
     opacity: 1,
-    background: '#415fff',
+    background: '#fff',
     borderRadius: 12,
     position: 'absolute',
-    left: 40,
-    top: 700,
+    left: 20,
+    top: 60,
     zIndex: 20
 }
 
@@ -30,8 +31,8 @@ const boxHome = {
 
 const boxAnimation = {
     animationOne: {
-        width: 300,
-        height: 60
+        width: 70,
+        height: 70
     },
     animationTwo: {
         width: 140,
@@ -50,7 +51,7 @@ const boxAnimation = {
 
 
 
-const ClickCard = () => {
+const ClickIcon = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
     const [isOpen, setIsOpen] = useState(false);
     // const toggleOpen = () => setIsOpen(!isOpen);
@@ -90,7 +91,7 @@ const ClickCard = () => {
                 {/*--------------------------------     背景元素  开始   ---------------------------*/}
                 <div className='Background'
                     style={{
-                     backgroundColor: '#fff',
+                        backgroundColor: '#E6ECF4',
                         position: 'absolute',
                         width: 375,
                         height: 812,
@@ -108,7 +109,7 @@ const ClickCard = () => {
                 >
                     <p
                         style={{
-                            color: "#fff",
+                            color: "#666",
                             fontWeight: 'bold',
                             position: 'absolute',
                             top: 10,
@@ -149,5 +150,5 @@ const ClickCard = () => {
     );
 }
 
-export default ClickCard;
+export default ClickIcon;
 

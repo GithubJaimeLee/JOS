@@ -2,7 +2,11 @@ import { motion } from 'framer-motion';
 import background from "./bg2.png";
 import backIcon from "./Icon/back.png";
 import { Link } from 'react-router-dom';
-// color: "#415FFF"
+import DeleteCard from './DeleteFold/DeleteCard';
+import DeleteImage from './DeleteFold/DeleteImage';
+import DeleteList from './DeleteFold/DeleteList';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App from './App';
 
 let card={width: 160, height:100, backgroundColor:"#fff",
  margin:16, 
@@ -33,7 +37,11 @@ const cardHover={
 
 const  Delete = () => {
 return ( 
+  <Router>
+  <Switch>
+    <Route exact path="/Delete">
 <div>
+
   <motion.h1 
    style={{
    padding:30,  
@@ -58,11 +66,17 @@ return (
   </Link>
 
 <div className="Delete">
+  <Link to="/Delete/DeleteList" style={{ textDecoration: 'none' }}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表删除</p></motion.div>
+     </Link>
+  <Link to="/Delete/DeleteImage" style={{ textDecoration: 'none' }}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>图片删除</p></motion.div>
+     </Link>
 </div>
    <div style={{marginLeft: 180, marginTop:-232}}>
+  <Link to="/Delete/DeleteCard" style={{ textDecoration: 'none' }}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>卡片删除</p> </motion.div>
+     </Link>
    </div>
      <div style={{ 
         backgroundImage: `url(${background})` ,
@@ -74,6 +88,22 @@ return (
        zIndex: '-1'}}>
     </div>
   </div>
+  </Route>
+    
+        <Route path="/Delete/DeleteCard">
+          <DeleteCard />
+        </Route>
+        <Route path="/Delete/DeleteImage">
+          <DeleteImage />
+        </Route>
+        <Route path="/Delete/DeleteList">
+          <DeleteList />
+        </Route>
+        <Route path="/">
+          <App />
+        </Route>
+      </Switch>
+    </Router>
      );
 }
  

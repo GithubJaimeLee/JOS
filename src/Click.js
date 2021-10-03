@@ -3,7 +3,7 @@ import background from "./bg2.png";
 import Bback from "./Icon/back.png";
 import ClickList from './ClickFold/ClickList';
 import ClickBtn from './ClickFold/ClickBtn';
-import ClickImage from './ClickFold/ClickImage';
+import ClickIcon from './ClickFold/ClickIcon';
 import ClickCard from './ClickFold/ClickCard';
 import ClickNum from './ClickFold/ClickNum';
 import React from "react";
@@ -66,7 +66,7 @@ const List = () => {
             <Link to="/Click/ClickList" style={{ textDecoration: 'none' }}>
    <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>列表反馈</p></motion.div>
    </Link>
-   <Link to="/Click/ClickImage" style={{ textDecoration: 'none' }}>
+   <Link to="/Click/ClickIcon" style={{ textDecoration: 'none' }}>
    <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>图标反馈</p></motion.div>
    </Link>
    <Link to="/Click/ClickBtn" style={{ textDecoration: 'none' }}>
@@ -96,8 +96,8 @@ const List = () => {
         <Route path="/Click/ClickList">
           <ClickList />
         </Route>
-        <Route path="/Click/ClickImage">
-          <ClickImage />
+        <Route path="/Click/ClickIcon">
+          <ClickIcon />
         </Route>
         <Route path="/Click/ClickBtn">
           <ClickBtn />
