@@ -42,22 +42,7 @@ const  ClickBtn = () => {
           </motion.div>
 
 
-          <motion.div className="MoveCard"
-          drag="y"
-          dragConstraints={{ top: -560, bottom: 60 }}
-            dragElastic={0}
-            dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
-            style={{    
-              backgroundColor: '#ddd',
-              top:70, 
-              width: 375,
-              height: 800,
-              position: 'absolute',
-              opacity: 1,
-              zIndex: 0
-            }}>
-          </motion.div>
-          
+
                       <div className="Background"
               style={{
                 backgroundColor: '#E6ECF4',
