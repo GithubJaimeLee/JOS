@@ -1,4 +1,3 @@
-// color: "#415FFF"
 import * as React from "react";
 //import { useRef } from "react";
 import { motion} from 'framer-motion';
@@ -7,6 +6,8 @@ import { motion} from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import '../App.css';
+import WSetHeader from "../Img/WSetHeader.png";
+import SetBody from "../Img/SetBody.png";
 
 
 const ScrollTitle = () => {
@@ -25,42 +26,43 @@ const ScrollTitle = () => {
           zIndex: '100'
         }} />
       </Link>
-
-       
-
           <motion.div className="HeadCard"
           drag="y"
           dragConstraints={{ top: -40, bottom: 0 }}
             dragElastic={0}
             style={{    
-              backgroundColor: '#ccc',
+              backgroundColor: '#bbb',
+              backgroundImage: `url(${WSetHeader})`, 
               top:0, 
               width: 375,
-              height: 100,
+              height: 148,
               position: 'absolute',
+          
               opacity: 1,
               zIndex: 1
-            }}>
-            <p
+            }}>   <p
             style={{
-            top:60,
+            top:50,
             left:20,
             position:'absolute',
-            fontSize:20,
+            fontSize:26,
             fontWeight:600
             }}
             >设置</p>
           </motion.div>
 
+
           <motion.div className="MoveCard"
           drag="y"
-          dragConstraints={{ top: -560, bottom: 300 }}
+          dragConstraints={{ top: -900, bottom: 60 }}
             dragElastic={0}
+            dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
             style={{    
-              backgroundColor: '#000',
-              top:70, 
+              backgroundColor: '#ddd',
+              backgroundImage: `url(${SetBody})`, 
+              top:88, 
               width: 375,
-              height: 800,
+              height: 1590,
               position: 'absolute',
               opacity: 1,
               zIndex: 0
@@ -69,7 +71,7 @@ const ScrollTitle = () => {
           
                       <div className="Background"
               style={{
-                backgroundColor: '#E6ECF4',
+                backgroundColor: '#f7f7f7',
                 width: 375,
                 height: 812,
                 position: 'absolute',
