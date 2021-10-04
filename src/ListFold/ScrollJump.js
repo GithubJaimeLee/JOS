@@ -7,6 +7,8 @@ import { motion} from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import '../App.css';
+import SetHeader from "../Img/SetHeader.png";
+import SetBody from "../Img/SetBody.png";
 
 
 const ScrollJump = () => {
@@ -31,9 +33,10 @@ const ScrollJump = () => {
             dragElastic={0}
             style={{    
               backgroundColor: '#bbb',
+              backgroundImage: `url(${SetHeader})`, 
               top:0, 
               width: 375,
-              height: 100,
+              height: 148,
               position: 'absolute',
           
               opacity: 1,
@@ -44,14 +47,15 @@ const ScrollJump = () => {
 
           <motion.div className="MoveCard"
           drag="y"
-          dragConstraints={{ top: -560, bottom: 60 }}
+          dragConstraints={{ top: -900, bottom: 60 }}
             dragElastic={0}
             dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
             style={{    
               backgroundColor: '#ddd',
-              top:70, 
+              backgroundImage: `url(${SetBody})`, 
+              top:88, 
               width: 375,
-              height: 800,
+              height: 1590,
               position: 'absolute',
               opacity: 1,
               zIndex: 0
@@ -60,7 +64,7 @@ const ScrollJump = () => {
           
                       <div className="Background"
               style={{
-                backgroundColor: '#E6ECF4',
+                backgroundColor: '#f7f7f7',
                 width: 375,
                 height: 812,
                 position: 'absolute',
