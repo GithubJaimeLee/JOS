@@ -83,5 +83,3 @@ const Choose = () => {
     </div>
   );
 }
-
-export default Choose;
