@@ -27,7 +27,7 @@ const scale = useTransform(scrollYProgress, [0, 1], [0, 1]); */
 const cardy = useTransform(y, value => value /-1)
 const bgy = useTransform(y, value => value /2) */
   return (
-    <div>
+    <div >
         <Link to="/List">
         <img  src={Bback} alt=" " style={{
           width: 30,
@@ -45,13 +45,26 @@ const bgy = useTransform(y, value => value /2) */
           scale
         }}
       >
-        <motion.div
+      
+      <p >hello</p> 
+      {/*   <motion.div
           className="item"
           style={{
             scaleY: scrollYProgress
           }}
-        />
+        > </motion.div> */}
       </motion.div>
+      <div className="SBackground"
+              style={{
+                backgroundColor: '#eee',
+                width: 375,
+                height: 812,
+                position: 'absolute',
+                top: 0,
+                left:0,
+                opacity: 1,
+                zIndex: -1000
+              }} ></div> 
     </div>
   {/*  <Scroll 
       style={{
