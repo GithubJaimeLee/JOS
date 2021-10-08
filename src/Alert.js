@@ -33,7 +33,7 @@ const cardHover={
 
 const  Alert = () => {
 return ( 
-<div>
+<div >
   <motion.h1 
    style={{
    padding:30,  

@@ -67,18 +67,18 @@ const ClickIcon = () => {
 
     return (
 
-        <div>
-<Link to="/Click">
-    <img src={backIcon} alt=" " style={{
-        width: 30,
-        position: 'absolute',
-        top: 20,
-        left: 20,
-        opacity: 1,
-        zIndex: '100'
-    }}>
-    </img>
-</Link>
+        <div >
+            <Link to="/Click">
+                <img src={backIcon} alt=" " style={{
+                    width: 30,
+                    position: 'absolute',
+                    top: 20,
+                    left: 20,
+                    opacity: 1,
+                    zIndex: '100'
+                }}>
+                </img>
+            </Link>
             {/*   grid 开始          <div className='boxAll' style={{
                 display: Grid,
                 marginTop: 60
@@ -121,7 +121,7 @@ const ClickIcon = () => {
                     {/*--------------------------------     整个按钮元素  开始   ---------------------------*/}
                     {isOpen &&
                         <div className='Allbtn' onClick={() => cycleAnimation()} >
-                         
+
                             <div className="boxPress"
                                 //exit={{ opacity: 0 }}
                                 style={

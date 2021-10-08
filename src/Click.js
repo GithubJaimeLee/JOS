@@ -37,7 +37,7 @@ const List = () => {
     <Router>
       <Switch>
         <Route exact path="/Click">
-          <div>
+          <div >
             <motion.h1 style={{
               padding: 30,
               color: "#333",

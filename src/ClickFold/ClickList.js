@@ -20,7 +20,7 @@ const StyleCard ={
   }
 const   ClickList = () => {
   return (
-    <div>
+    <div >
 
 
 

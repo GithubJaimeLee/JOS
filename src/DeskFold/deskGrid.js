@@ -35,7 +35,7 @@ export default function App() {
  
     return (
 
-        <div>
+        <div >
             <Link to="/Desk">
                 <img src={backIcon} alt=" " style={{
                     width: 30,

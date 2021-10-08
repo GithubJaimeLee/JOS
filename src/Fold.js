@@ -41,7 +41,7 @@ return (
   <Router>
   <Switch>
     <Route exact path="/Fold">
-<div>
+<div >
   <motion.h1 
    style={{
    padding:30,  

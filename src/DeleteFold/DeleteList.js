@@ -20,7 +20,7 @@ const StyleCard ={
   }
 const   DeleteList = () => {
   return (
-    <div>
+    <div >
 
 
 

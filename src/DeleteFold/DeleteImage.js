@@ -13,7 +13,7 @@ import '../App.css';
 
 const   DeleteImage = () => {
   return (
-    <div>
+    <div >
 
 
 

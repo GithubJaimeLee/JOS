@@ -83,9 +83,10 @@ function App() {
 
 
 
-          <motion.div>
+          <motion.div  >
 
-            <motion.h1 style={{ padding: 30 }}
+            <motion.h1 style={{ padding: 30 
+            }}
               initial={{
                 marginLeft: 30,
                 y: -20

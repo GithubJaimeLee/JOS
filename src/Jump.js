@@ -33,7 +33,7 @@ const cardHover={
 
 const  Jump = () => {
 return ( 
-<div>
+<div >
   <motion.h1 
    style={{
    padding:30,  

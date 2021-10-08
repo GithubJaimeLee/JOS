@@ -42,11 +42,13 @@ div.Scroll div.BlurBackground{
 }
 
 #root{
-/*  overflow:hidden!important; */
+ 
   width: 375px!important;
   height: 812px!important;
-  position: absolute;
+ 
+  
 } 
 div.ListCard{
   border:1px solid #000;
 } 
+

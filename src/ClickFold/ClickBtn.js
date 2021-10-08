@@ -66,7 +66,7 @@ const ClickCard = () => {
 
     return (
 
-        <div>
+        <div >
 <Link to="/Click">
     <img src={backIcon} alt=" " style={{
         width: 30,

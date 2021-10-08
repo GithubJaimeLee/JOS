@@ -35,7 +35,7 @@ const cardHover = {
 
 const Choose = () => {
   return (
-    <div>
+    <div >
       <motion.h1
         style={{
           padding: 30,

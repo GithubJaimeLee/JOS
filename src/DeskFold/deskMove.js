@@ -25,7 +25,8 @@ import App from '../ListFold/deskApp.jsx';
 const DApp= () => {
 
   return (
-    <div>
+    
+    <div >
   
 <App />
       <Link to="/Desk">
@@ -45,109 +46,7 @@ const DApp= () => {
         display: Grid
       }}
       >
-{/*         <Container>
 
-
-
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-          <Row>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-            <Col style={boxHome}>
-            </Col>
-          </Row>
-
-
-        </Container>
-     
-      */}
       </div>
 
       <div style={{ marginLeft: 180, marginTop: -116 }}>

@@ -20,7 +20,7 @@ const StyleCard ={
   }
 const   DeleteCard = () => {
   return (
-    <div>
+    <div >
 
 
 

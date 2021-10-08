@@ -40,7 +40,7 @@ return (
   <Router>
   <Switch>
     <Route exact path="/Delete">
-<div>
+<div >
 
   <motion.h1 
    style={{
