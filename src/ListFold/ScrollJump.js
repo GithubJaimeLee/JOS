@@ -13,7 +13,10 @@ import SetBody from "../Img/SetBody.png";
 
 const ScrollJump = () => {
   return (
-    <div>
+    <div style={{
+    overflow:'scroll',
+    height:812
+    }}>
 
 {/* <p 
 style={{
@@ -65,7 +68,7 @@ zIndex:1000
               top:88, 
               width: 375,
               height: 1590,
-              position: 'absolute',
+              position: 'relative',
               opacity: 1,
               zIndex: 0
             }}>
