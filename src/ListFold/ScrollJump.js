@@ -65,10 +65,10 @@ zIndex:1000
             style={{    
               backgroundColor: '#ddd',
               backgroundImage: `url(${SetBody})`, 
-              top:88, 
+              top:148, 
               width: 375,
               height: 1590,
-              position: 'relative',
+              position:'relative',
               opacity: 1,
               zIndex: 0
             }}>

@@ -79,7 +79,7 @@ const List = () => {
               <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>子页签(Tap)</p> </motion.div>
               </Link>
               <Link to="/List/ScrollTitleList" style={{ textDecoration: 'none' }}>
-              <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>标题列表</p></motion.div>
+              <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>子标题交替悬停</p></motion.div>
               </Link>
             </div>
             <div style={{

@@ -16,7 +16,7 @@ const ScrollTitle = () => {
   const { scrollYProgress } = useElementScroll(ref)
   const y = useMotionValue(0);
 
-  const scale = useTransform( scrollYProgress, [0, 1],["26px", "0px"]);
+  const scale = useTransform( scrollYProgress, [0, 0.3, 1],["26px", "14px", "14px"]);
 
 /*   const yInput = [0, -960];
   const fontSize = useTransform(y, yInput, ["26px", "0px"]); */

@@ -1,9 +1,7 @@
-// color: "#415FFF"
 import * as React from "react";
 import { useRef } from "react";
 import { motion} from 'framer-motion';
 import background from "../bg2.png";
-/* import backIcon from "../Icon/back.png"; */
 import Wback from "../Icon/Wback.png";
 import { Link } from 'react-router-dom';
 import '../App.css';
