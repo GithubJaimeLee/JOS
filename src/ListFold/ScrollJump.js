@@ -15,8 +15,16 @@ const ScrollJump = () => {
   return (
     <div>
 
-
-
+{/* <p 
+style={{
+position:'absolute',
+top:50,
+left: 20,
+fontWeight: 'bold',
+fontSize:26,
+zIndex:1000
+}}>设置</p> 
+ */}
       <Link to="/List">
         <img  src={Bback} alt=" " style={{
           width: 30,
@@ -35,6 +43,7 @@ const ScrollJump = () => {
               backgroundColor: '#bbb',
               backgroundImage: `url(${SetHeader})`, 
               top:0, 
+              left:0,
               width: 375,
               height: 148,
               position: 'absolute',
