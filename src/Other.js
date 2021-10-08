@@ -46,7 +46,8 @@ return (
    style={{
    padding:30,  
    color: "#333",
-   marginLeft: 66,  
+   marginLeft: 66, 
+   fontSize:28, 
    y: 0
  }}
 

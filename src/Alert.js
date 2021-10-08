@@ -39,6 +39,7 @@ return (
    padding:30,  
    color: "#333",
    marginLeft: 60,  
+   fontSize:28,
    y: 0
  }}
 

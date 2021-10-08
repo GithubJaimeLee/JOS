@@ -89,6 +89,7 @@ function App() {
             }}
               initial={{
                 marginLeft: 30,
+                fontSize:28,
                 y: -20
               }}
               animate={{
@@ -96,7 +97,9 @@ function App() {
                 color: "#333",
                 // color: "#415FFF",
                 marginLeft: 66,
+                fontSize:28,
                 y: 0
+                
               }}
               transition={{ type: "spring", velocity: 120 }}
             >OOS动效平台

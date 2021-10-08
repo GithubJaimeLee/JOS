@@ -41,6 +41,7 @@ const List = () => {
             <motion.h1 style={{
               padding: 30,
               color: "#333",
+              fontSize:28,
               marginLeft: 70,
               y: 0
             }}

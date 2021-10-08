@@ -73,6 +73,7 @@ const   Desk = () => {
                                       padding:30,  
                                       color: "#333",
                                       marginLeft: 70,  
+                                      fontSize:28,
                                       y: 0          
                                   }}                     
                                  transition={{ 

@@ -45,6 +45,7 @@ return (
   <motion.h1 
    style={{
    padding:30,  
+   fontSize:28,
    color: "#333",
    marginLeft: 40,  
    y: 0
