@@ -10,7 +10,13 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../App.css';
 
-
+const VImgGrid = {
+width:90,
+height: 90,
+margin:2,
+backgroundColor:'#ccc',
+zIndex:10
+}
 const   DeleteImage = () => {
   return (
     <div >
@@ -46,63 +52,39 @@ const   DeleteImage = () => {
 
 
     <div style={{
-    top:120,
+    top:70,
     position:'absolute'
     }}>
 <Container >
   <Row>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
+    <Col style={VImgGrid
+    }>1 of 2</Col>
+    <Col  style={VImgGrid
+    }>1 of 2</Col>
+        <Col style={VImgGrid
+    }>1 of 2</Col>
+        <Col style={VImgGrid
+    }>1 of 2</Col>
   </Row>
   <Row>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
+    <Col style={VImgGrid
+    }>1 of 2</Col>
+    <Col style={VImgGrid
+    }>1 of 2</Col>
+        <Col style={VImgGrid
+    }>1 of 2</Col>
+        <Col style={VImgGrid
+    }>1 of 2</Col>
   </Row>
   <Row>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-    <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
-        <Col style={{
-    backgroundColor: '#FFFFFF',
-    margin:10
-    }}>1 of 2</Col>
+    <Col style={VImgGrid
+    }>1 of 2</Col>
+    <Col style={VImgGrid
+    }>1 of 2</Col>
+        <Col style={VImgGrid
+    }>1 of 2</Col>
+        <Col style={VImgGrid
+    }>1 of 2</Col>
   </Row>
 
 </Container>

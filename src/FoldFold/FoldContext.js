@@ -25,7 +25,7 @@ const boxHome = {
     background: '#fff',
     borderRadius: 12,
     position: 'absolute',
-    left: 40,
+    margin:10,
     top: 60,
     zIndex: 20
 }
@@ -34,8 +34,8 @@ const boxHome = {
 
 const boxAnimation = {
     animationOne: {
-        width: 300,
-        height: 70
+        width: 355,
+        height: 300
     },
     animationTwo: {
         width: 140,

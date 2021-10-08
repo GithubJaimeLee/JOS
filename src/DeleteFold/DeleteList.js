@@ -13,8 +13,7 @@ const StyleCard ={
     backgroundColor: '#fff',
     top:120, 
     width: 375,
-    height: 70,
- 
+    height: 90,
     opacity: 1,
     zIndex: 0,
   }
@@ -39,7 +38,7 @@ const   DeleteList = () => {
           dragConstraints={{ top: -40, bottom: 0 }}
             dragElastic={0}
             style={{    
-              backgroundColor: '#bbb',
+              backgroundColor: '#fff',
               top:0, 
               width: 375,
               height: 100,
@@ -53,12 +52,10 @@ const   DeleteList = () => {
 
 
     <div style={{
-    top:120,
+    top:100,
     position:'absolute'
     }}>
     <Stack gap={1}>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
   <div className="ListCard" style={StyleCard}></div>
   <div className="ListCard" style={StyleCard}></div>
   <div className="ListCard" style={StyleCard}></div>

@@ -12,10 +12,11 @@ import '../App.css';
 const StyleCard ={    
     backgroundColor: '#fff',
     top:120, 
-    width: 375,
+    width: 355,
     height: 200,
- 
+    borderRadius:12,
     opacity: 1,
+    margin:10,
     zIndex: 0,
   }
 const   DeleteCard = () => {
@@ -39,12 +40,12 @@ const   DeleteCard = () => {
           dragConstraints={{ top: -40, bottom: 0 }}
             dragElastic={0}
             style={{    
-              backgroundColor: '#bbb',
+              backgroundColor: '#fff',
               top:0, 
               width: 375,
               height: 100,
               position: 'absolute',
-          
+
               opacity: 1,
               zIndex: 1
             }}>
@@ -53,12 +54,12 @@ const   DeleteCard = () => {
 
 
     <div style={{
-    top:120,
+    top:100,
     position:'absolute'
     }}>
     <Stack gap={1}>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
+  <div className="ListBigCard" style={StyleCard}></div>
+  <div className="ListBigCard" style={StyleCard}></div>
  </Stack>
     </div>     
 
