@@ -30,8 +30,6 @@ const boxHome = {
     zIndex: 20
 }
 
-
-
 const boxAnimation = {
     animationOne: {
         width: 70,
