@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useRef } from "react";
-import { motion, useMotionValue, useTransform, useViewportScroll, useElementScroll } from "framer-motion";
+import { motion, useMotionValue, useTransform, useElementScroll } from "framer-motion";
 import { Link } from 'react-router-dom';
 
 import '../App.css';
