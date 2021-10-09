@@ -75,11 +75,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-
-
-
           <motion.div  >
-
             <motion.h1 style={{
               padding: 30
             }}
@@ -94,7 +90,6 @@ function App() {
                 marginLeft: 66,
                 fontSize: 28,
                 y: 0
-
               }}
               transition={{ type: "spring", velocity: 120 }}
             >OOS动效平台
@@ -102,7 +97,6 @@ function App() {
             <div>
               <Link to="/Desk" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} >   <p style={{ paddingTop: 40 }}>OOS桌面85%</p>
-
                   <div>
                     <div
                       style={{
@@ -118,12 +112,9 @@ function App() {
                     </div>
                     <ProgressBar /></div>
                 </motion.div>
-
               </Link>
-
               <Link to="/Window" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>弹窗15%</p>
-
                   <div>
                     <div
                       style={{
@@ -141,7 +132,6 @@ function App() {
               </Link>
               <Link to="/Jump" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>界面跳转0%</p>
-
                   <div>
                     <div
                       style={{
@@ -159,7 +149,6 @@ function App() {
               </Link>
               <Link to="/Choose" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>选择类0%</p>
-
                   <div>
                     <div
                       style={{
@@ -177,7 +166,6 @@ function App() {
               </Link>
               <Link to="/Edit" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>编辑类0%</p>
-
                   <div>
                     <div
                       style={{
@@ -195,7 +183,6 @@ function App() {
               </Link>
               <Link to="/Other" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>其他类5%</p>
-
                   <div>
                     <div
                       style={{
@@ -287,7 +274,6 @@ function App() {
               </Link>
               <Link to="/Fold" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>展开折叠类10%</p>
-
                   <div>
                     <div
                       style={{
@@ -303,7 +289,6 @@ function App() {
                     </div>
                     <ProgressBar /></div>   </motion.div>
               </Link>
-
             </div>
             <div style={{
               backgroundImage: `url(${background})`,

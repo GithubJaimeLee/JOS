@@ -2,6 +2,13 @@ import { motion } from 'framer-motion';
 import background from "./bg2.png";
 import backIcon from "./Icon/back.png";
 import { Link } from 'react-router-dom';
+import EditCard from './EditFold/EditCard';
+import EditEnter from './EditFold/EditEnter';
+import EditGrid from './EditFold/EditGrid';
+import EditList from './EditFold/EditList';
+import EditOrder from './EditFold/EditOrder';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App from './App';
 
 let card={width: 160, height:100, backgroundColor:"#fff",
  margin:16, 
@@ -21,8 +28,11 @@ const cardHover={
 }
 
 
-const  Delete = () => {
+const  Edit = () => {
 return ( 
+  <Router>
+  <Switch>
+    <Route exact path="/Edit">
 <div > 
   <motion.h1 
    style={{
@@ -48,14 +58,24 @@ return (
   </img>
   </Link>
 
-<div className="Delete">
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表编辑排序</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>卡片编辑排序</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>进入编辑</p></motion.div>
+<div className="Edit">
+     <Link to="/Edit/EditList" style={{ textDecoration: 'none' }}>
+     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表编辑排序</p></motion.div>
+        </Link>
+     <Link to="/Edit/EditCard" style={{ textDecoration: 'none' }}>
+     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>卡片编辑排序</p></motion.div>
+        </Link>
+     <Link to="/Edit/EditEnter" style={{ textDecoration: 'none' }}>
+     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>进入编辑</p></motion.div>
+        </Link>
 </div>
    <div style={{marginLeft: 180, marginTop:-348}}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>服务编辑列表</p></motion.div>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>服务编辑宫格</p></motion.div>
+     <Link to="/Edit/EditList" style={{ textDecoration: 'none' }}>
+     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>服务编辑列表</p></motion.div>
+        </Link>
+     <Link to="/Edit/EditGrid" style={{ textDecoration: 'none' }}>
+     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>服务编辑宫格</p></motion.div>
+        </Link>
    </div>
      <div style={{ 
         backgroundImage: `url(${background})` ,
@@ -67,7 +87,30 @@ return (
        zIndex: '-1'}}>
     </div>
   </div>
+
+       
+        </Route>
+        <Route path="/Edit/EditCard">
+          <EditCard />
+        </Route>
+        <Route path="/Edit/EditEnter">
+          <EditEnter />
+        </Route>
+        <Route path="/Edit/EditGrid">
+          <EditGrid />
+        </Route>
+        <Route path="/Edit/EditList">
+          <EditList />
+        </Route>
+        <Route path="/Edit/EditOrder">
+          <EditOrder />
+        </Route>
+        <Route path="/">
+          <App />
+        </Route>
+      </Switch>
+    </Router>
      );
 }
  
-export default Delete;
+export default Edit;

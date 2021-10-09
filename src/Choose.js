@@ -2,6 +2,14 @@ import { motion } from 'framer-motion';
 import background from "./bg2.png";
 import backIcon from "./Icon/back.png";
 import { Link } from 'react-router-dom';
+import ChooseDate from './ChooseFold/ChooseDate';
+import ChooseLoadingSwitch from './ChooseFold/ChooseLoadingSwitch';
+import ChooseMultipleChoice from './ChooseFold/ChooseMultipleChoice';
+import ChooseSingleChoice from './ChooseFold/ChooseSingleChoice';
+import ChooseSlider from './ChooseFold/ChooseSlider';
+import ChooseSwitch from './ChooseFold/ChooseSwitch';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App from './App';
 
 let card = {
   width: 160, height: 100, backgroundColor: "#fff",
@@ -24,6 +32,9 @@ const cardHover = {
 
 const Choose = () => {
   return (
+    <Router>
+    <Switch>
+      <Route exact path="/Choose">
     <div >
       <motion.h1
         style={{
@@ -51,14 +62,26 @@ const Choose = () => {
       </Link>
 
       <div className="Choose">
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>日期滑动选择器</p></motion.div>
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>开关</p></motion.div>
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>滑动条</p></motion.div>
+         <Link to="/Choose/ChooseDate" style={{ textDecoration: 'none' }}>
+         <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>日期滑动选择器</p></motion.div>
+         </Link>
+         <Link to="/Choose/ChooseSwitch" style={{ textDecoration: 'none' }}>
+         <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>开关</p></motion.div>
+         </Link>
+         <Link to="/Choose/ChooseSlider" style={{ textDecoration: 'none' }}>
+         <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>滑动条</p></motion.div>
+      </Link>
       </div>
       <div style={{ marginLeft: 180, marginTop: -348 }}>
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>加载类开关</p> </motion.div>
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>单选框</p></motion.div>
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>复选框</p></motion.div>
+         <Link to="/Choose/ChooseLoadingSwitch" style={{ textDecoration: 'none' }}>
+         <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>加载类开关</p> </motion.div>
+         </Link>
+         <Link to="/Choose/ChooseSingleChoice" style={{ textDecoration: 'none' }}>
+         <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>单选框</p></motion.div>
+         </Link>
+         <Link to="/Choose/ChooseMultipleChoice" style={{ textDecoration: 'none' }}>
+         <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>复选框</p></motion.div>
+      </Link>
       </div>
       <div style={{
         backgroundImage: `url(${background})`,
@@ -71,6 +94,31 @@ const Choose = () => {
       }}>
       </div>
     </div>
+
+        </Route>
+        <Route path="/Choose/ChooseDate">
+          <ChooseDate />
+        </Route>
+        <Route path="/Choose/ChooseLoadingSwitch">
+          <ChooseLoadingSwitch/>
+        </Route>
+        <Route path="/Choose/ChooseMultipleChoice">
+          <ChooseMultipleChoice />
+        </Route>
+        <Route path="/Choose/ChooseSwitch">
+          <ChooseSwitch />
+        </Route>
+        <Route path="/Choose/ChooseSingleChoice">
+          <ChooseSingleChoice />
+        </Route>
+        <Route path="/Choose/ChooseSlider">
+          <ChooseSlider />
+        </Route>
+        <Route path="/">
+          <App />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 export default Choose;

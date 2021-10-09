@@ -2,10 +2,10 @@ import  React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 
-const ChooseSwitch = () => {
+const JumpApp = () => {
   return (
     <div >
-      <Link to="/Choose">
+      <Link to="/Jump">
         <img src={backIcon} alt=" " style={{
           width: 30,
           position: 'absolute',
@@ -20,4 +20,4 @@ const ChooseSwitch = () => {
   );
 }
 
-export default ChooseSwitch;
+export default JumpApp;

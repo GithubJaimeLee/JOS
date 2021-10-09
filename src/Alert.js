@@ -2,6 +2,13 @@ import { motion } from 'framer-motion';
 import background from "./bg2.png";
 import backIcon from "./Icon/back.png";
 import { Link } from 'react-router-dom';
+import AlertLoading from './AlertFold/AlertLoading';
+import AlertNew from './AlertFold/AlertNew';
+import AlertPage from './AlertFold/AlertPage';
+import AlertPercent from './AlertFold/AlertPercent';
+import AlertToast from './AlertFold/AlertToast';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App from './App';
 
 let card = {
   width: 160, height: 100, backgroundColor: "#fff",
@@ -23,6 +30,9 @@ const cardHover = {
 
 const Alert = () => {
   return (
+    <Router>
+    <Switch>
+      <Route exact path="/Alert">
     <div >
       <motion.h1
         style={{
@@ -50,13 +60,23 @@ const Alert = () => {
       </Link>
 
       <div className="Alert">
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>新事件标记</p></motion.div>
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>loading</p></motion.div>
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>toast</p></motion.div>
+             <Link to="/Alert/AlertNew" style={{ textDecoration: 'none' }}>
+             <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>新事件标记</p></motion.div>
+               </Link>
+             <Link to="/Alert/AlertLoading" style={{ textDecoration: 'none' }}>
+             <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>loading</p></motion.div>
+               </Link>
+             <Link to="/Alert/AlertToast" style={{ textDecoration: 'none' }}>
+             <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>toast</p></motion.div>
+               </Link>
       </div>
       <div style={{ marginLeft: 180, marginTop: -348 }}>
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>页码指示</p> </motion.div>
-        <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>进度指示器</p></motion.div>
+             <Link to="/Alert/AlertPage" style={{ textDecoration: 'none' }}>
+             <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>页码指示</p> </motion.div>
+               </Link>
+             <Link to="/Alert/AlertPercent" style={{ textDecoration: 'none' }}>
+             <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>进度指示器</p></motion.div>
+               </Link>
       </div>
       <div style={{
         backgroundImage: `url(${background})`,
@@ -68,7 +88,28 @@ const Alert = () => {
         zIndex: '-1'
       }}>
       </div>
-    </div>
+    </div>  
+    </Route>
+        <Route path="/Alert/AlertNew">
+          <AlertNew />
+        </Route>
+        <Route path="/Alert/AlertLoading">
+          <AlertLoading />
+        </Route>
+        <Route path="/Alert/AlertPage">
+          <AlertPage />
+        </Route>
+        <Route path="/Alert/AlertToast">
+          <AlertToast />
+        </Route>
+        <Route path="/Alert/AlertPercent">
+          <AlertPercent />
+        </Route>
+        <Route path="/">
+          <App />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
