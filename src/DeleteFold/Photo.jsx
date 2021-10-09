@@ -26,10 +26,24 @@ export const Delete = forwardRef(
       backgroundPosition: "center",
 /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓这里是卡片本身的颜色↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
       backgroundColor: "#ccc",
+      opacity: 0.8,
       borderRadius: 0,
       ...style
     };
 
-    return <div ref={ref} style={inlineStyles} {...props} />;
+    return <div ref={ref} style={inlineStyles} {...props} >
+    <div
+    style={{
+    width:16,
+    height:16,
+    backgroundColor: '#FFFFFF',
+   top:4,
+   left: 66,
+   position:'relative',
+   borderRadius:2 
+    }}>
+    
+    </div>
+    </div>;
   }
 );
