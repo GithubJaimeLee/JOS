@@ -40,22 +40,19 @@ const UploadGallery = () => {
           ))}
         </GridZ>
       </SortableContext>
-{/* 调整运动后的比例 */}
+      {/* 调整运动后的比例 */}
       <DragOverlay adjustScale={false}>
         {activeId ? (
           <div 
             style={{
               display: "grid",
               gridAutoColumns: "100%",
-           gridAutoRows: "auto",
-        //   gridAutoRows: "18",
+              gridAutoRows: "auto",
+              //gridAutoRows: "18",
               height: "100%"
-   
             }}
           >
-            <PhotoZ
-          //  url={activeId}
-             />
+            <PhotoZ/>
           </div>
         ) : null}
       </DragOverlay>

@@ -32,8 +32,8 @@ const UploadGallery = () => {
       onDragCancel={handleDragCancel}
     >
       <SortableContext items={items} strategy={rectSortingStrategy}>
- 
-   <GridD  columns={1}>
+
+        <GridD columns={1}>
           {items.map((url, index) => (
             <SortablePhotoD key={url} url={url} index={index} />
           ))}

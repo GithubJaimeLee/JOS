@@ -1,16 +1,11 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
-/* import background from "../bg2.png"; */
-//import zoomIcon from "../Icon/zoomIcon.png";
 import { Link } from 'react-router-dom';
-//import { Grid } from "antd-mobile";
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
 
 //press功能
-
-
 //变形完整交互
 
 const boxHome = {
@@ -26,8 +21,6 @@ const boxHome = {
     top: 60,
     zIndex: 20
 }
-
-
 
 const boxAnimation = {
     animationOne: {
@@ -54,16 +47,16 @@ const boxAnimation = {
 const ClickIcon = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
     const [isOpen, setIsOpen] = useState(false);
-    // const toggleOpen = () => setIsOpen(!isOpen);
+    //const toggleOpen = () => setIsOpen(!isOpen);
     const toggleOpen = () => setIsOpen(true);
-    //  const toggleClose = () => setIsOpen(!isOpen); 
-    // const [isClose, setIsClose] = useState(true);
-    // const toggleOpen = () => setIsOpen(!isOpen);
+    //const toggleClose = () => setIsOpen(!isOpen); 
+    //const [isClose, setIsClose] = useState(true);
+    //const toggleOpen = () => setIsOpen(!isOpen);
     const toggleClose = () => setIsOpen(false);
-    // const [isClose, setIsClose] = useState(false);
-    // const toggleClose = () => setIsOpen(!isOpen); 
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    //   const toggleOpen = () => setIsOpen(true);
+    //const [isClose, setIsClose] = useState(false);
+    //const toggleClose = () => setIsOpen(!isOpen); 
+    //const toggleOpen = () => setIsOpen(!isOpen);
+    //const toggleOpen = () => setIsOpen(true);
 
     return (
 
@@ -79,11 +72,6 @@ const ClickIcon = () => {
                 }}>
                 </img>
             </Link>
-            {/*   grid 开始          <div className='boxAll' style={{
-                display: Grid,
-                marginTop: 60
-            }}
-   > </div>*/}
 
             <AnimatePresence>
                 {/*--------------------------------      卡片元素包括按钮  开始   ---------------------------*/}

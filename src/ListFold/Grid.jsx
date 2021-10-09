@@ -10,8 +10,7 @@ export function Grid({ children, columns }) {
         gridGap: 18,
         padding: 20,
         paddingTop:60,
-        gridAutoFlow: "row dense",
-     //   background:"#000"
+        gridAutoFlow: "row dense"
       }}
     >
     {children}

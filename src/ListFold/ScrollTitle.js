@@ -15,18 +15,14 @@ const ScrollTitle = () => {
   const ref = useRef()
   const { scrollYProgress } = useElementScroll(ref)
   const y = useMotionValue(0);
-
   const scale = useTransform( scrollYProgress, [0, 0.3, 1],["26px", "14px", "14px"]);
 
-/*   const yInput = [0, -960];
-  const fontSize = useTransform(y, yInput, ["26px", "0px"]); */
   return (
     <div className="allImportant" 
-     ref={ref}
+    ref={ref}
     style={{
-height:812,
-overflow: 'scroll'
-
+    height:812,
+    overflow: 'scroll'
     }} >
       <motion.p className="SetP"
             style={{
@@ -40,11 +36,10 @@ overflow: 'scroll'
             }}> 设置
       </motion.p>
       <motion.div className="MoveBackground"
-         
           drag="y"
           dragConstraints={{ top: -960, bottom: 0 }}
-      //    dragElastic={0}
-     //     dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
+          //dragElastic={0}
+          //dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
           style={{
             y,
             backgroundColor: '#ddd',

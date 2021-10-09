@@ -51,12 +51,10 @@ const UploadGallery = () => {
               display: "grid",
               gridAutoColumns: "auto",
               gridAutoRows: "auto",
-              height: "100%",
-            //  backgroundColor:'#000'
+              height: "100%"
             }}
           >
             <Photo 
-          //  url={activeId}
              />
           </div>
         ) : null}
@@ -68,12 +66,6 @@ const UploadGallery = () => {
     setActiveId(event.active.id);
   }
 
-
-
-
-
-
-
   function handleDragOver(event) {
     const { active, over } = event;
 
@@ -83,7 +75,6 @@ const UploadGallery = () => {
         const newIndex = items.indexOf(over.id);
   return arrayMove(items, oldIndex, newIndex);
 
-  // return arrayMove(items, oldIndex, newIndex);
       });
     }
   }
@@ -96,12 +87,5 @@ const UploadGallery = () => {
     setActiveId(null);
   }
 };
-
-
-
-
-
-
-
 
 export default UploadGallery;

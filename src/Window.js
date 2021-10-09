@@ -28,7 +28,7 @@ let cardInactive = {
   color: "#999"
 }
 
-const cardHover={
+const cardHover = {
   scale: 1.1,
   boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)",
   fontWeight: 'bold',
@@ -37,83 +37,85 @@ const cardHover={
 }
 
 
-const  Window = () => {
-return ( 
+const Window = () => {
+  return (
 
-  <Router>
-  <Switch>
-    <Route exact path="/Window">
-<div >
-  <motion.h1 
-   style={{
-   padding:30,  
-   color: "#333",
-   marginLeft: 60,  
-   fontSize:28,
-   y: 0
- }}
+    <Router>
+      <Switch>
+        <Route exact path="/Window">
+          <div >
+            <motion.h1
+              style={{
+                padding: 30,
+                color: "#333",
+                marginLeft: 60,
+                fontSize: 28,
+                y: 0
+              }}
 
-  transition={{ type:"spring", velocity: 120 }}  
-   >
-  OOS弹窗动效
-  </motion.h1>
-  <Link to="/">
-  <img src={backIcon} alt=" " style={{
-      width: 30, 
-      position: 'absolute' , 
-      top: 20, 
-      left:20,
-      opacity: 1,
-      zIndex: '100'}}>
-  </img>
-  </Link>
+              transition={{ type: "spring", velocity: 120 }}
+            >
+              OOS弹窗动效
+            </motion.h1>
+            <Link to="/">
+              <img src={backIcon} alt=" " style={{
+                width: 30,
+                position: 'absolute',
+                top: 20,
+                left: 20,
+                opacity: 1,
+                zIndex: '100'
+              }}>
+              </img>
+            </Link>
 
-<div className="Window">
-   <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>底部弹窗</p></motion.div>
-   <Link to="/List/WindowPull" style={{ textDecoration: 'none' }}>
-   <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>下拉弹窗</p></motion.div>
-   </Link>
-   <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>悬浮通知</p></motion.div>
-   <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>输入式弹窗</p></motion.div>
-   <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>侧边音量</p></motion.div>
-</div>
-   <div style={{marginLeft: 180, marginTop:-580}}>
-   <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>侧边音量</p> </motion.div>
-   <Link to="/List/WindowBubble" style={{ textDecoration: 'none' }}>
-   <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>气泡</p></motion.div>
-   </Link>
-   <Link to="/List/WindowJump" style={{ textDecoration: 'none' }}>
-   <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>菜单弹窗</p> </motion.div>
-   </Link>
-   <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>中心弹窗</p></motion.div>
-        </div>
-        <div style={{ 
-          backgroundImage: `url(${background})` ,
-          width: 375, 
-          height:812, 
-          position: 'absolute', 
-          top: 0, 
-          opacity: 1, 
-          zIndex: '-1'}}>
+            <div className="Window">
+              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>底部弹窗</p></motion.div>
+              <Link to="/List/WindowPull" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>下拉弹窗</p></motion.div>
+              </Link>
+              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>悬浮通知</p></motion.div>
+              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>输入式弹窗</p></motion.div>
+              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>侧边音量</p></motion.div>
+            </div>
+            <div style={{ marginLeft: 180, marginTop: -580 }}>
+              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>侧边音量</p> </motion.div>
+              <Link to="/List/WindowBubble" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>气泡</p></motion.div>
+              </Link>
+              <Link to="/List/WindowJump" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>菜单弹窗</p> </motion.div>
+              </Link>
+              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>中心弹窗</p></motion.div>
+            </div>
+            <div style={{
+              backgroundImage: `url(${background})`,
+              width: 375,
+              height: 812,
+              position: 'absolute',
+              top: 0,
+              opacity: 1,
+              zIndex: '-1'
+            }}>
+            </div>
           </div>
-        </div>
         </Route>
         <Route path="/List/WindowJump">
-        <WindowJump />
+          <WindowJump />
         </Route>
         <Route path="/List/WindowPull">
-        <WindowPull />
+          <WindowPull />
         </Route>
         <Route path="/List/WindowBubble">
-        <WindowBubble />
+          <WindowBubble />
         </Route>
         <Route path="/">
           <App />
         </Route>
       </Switch>
     </Router>
-        
-     );
+
+  );
 }
- 
+
 export default Window;

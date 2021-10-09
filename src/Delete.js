@@ -16,8 +16,6 @@ let card={width: 160, height:100, backgroundColor:"#fff",
  opacity: 0.8,
  color: "#666"
 }
-
-
 let cardInactive = {
   width: 160, height: 100, backgroundColor: "#fff",
   margin: 16,
@@ -35,9 +33,8 @@ const cardHover={
   color: "#415fff",
   opacity: 1
 }
-
-
 const  Delete = () => {
+
 return ( 
   <Router>
   <Switch>

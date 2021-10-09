@@ -8,26 +8,17 @@ import OtherOpen from './OtherFold/OtherOpen';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 
-
-let card={width: 160, height:100, backgroundColor:"#fff",
- margin:16, 
- borderRadius:12, 
- textAlign:'center', 
- boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
- opacity: 0.8,
- color: "#666"
+let card = {
+  width: 160, height: 100, backgroundColor: "#fff",
+  margin: 16,
+  borderRadius: 12,
+  textAlign: 'center',
+  boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
+  opacity: 0.8,
+  color: "#666"
 }
 
-/* let card2={width: 160, height:100, backgroundColor:"#fff",
- margin:16, 
- borderRadius:12, 
- textAlign:'center', 
- boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
- opacity: 0.4,
- color: "#999"
-} */
-
-const cardHover={
+const cardHover = {
   scale: 1.1,
   boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)",
   fontWeight: 'bold',
@@ -36,80 +27,79 @@ const cardHover={
 }
 
 
-const  Other = () => {
-return ( 
-  <Router>
-  <Switch>
-    <Route exact path="/Other">
-<div >
-  <motion.h1 
-   style={{
-   padding:30,  
-   color: "#333",
-   marginLeft: 66, 
-   fontSize:28, 
-   y: 0
- }}
+const Other = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/Other">
+          <div >
+            <motion.h1
+              style={{
+                padding: 30,
+                color: "#333",
+                marginLeft: 66,
+                fontSize: 28,
+                y: 0
+              }}
 
-  transition={{ type:"spring", velocity: 120 }}  
-   >
-  OOS其他动效
-  </motion.h1>
-  <Link to="/">
-  <img src={backIcon} alt=" " style={{
-      width: 30, 
-      position: 'absolute' , 
-      top: 20, 
-      left:20,
-      opacity: 1,
-      zIndex: '100'}}>
-  </img>
-  </Link>
-
-<div className="Other">
-   
-     <Link to="/Other/OtherBackToTop" style={{ textDecoration: 'none' }}>
-     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>状态、标题栏置顶</p></motion.div>
-            </Link>
-   
-     <Link to="/Other/OtherPull" style={{ textDecoration: 'none' }}>
-     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>下拉刷新</p></motion.div>
+              transition={{ type: "spring", velocity: 120 }}
+            >
+              OOS其他动效
+            </motion.h1>
+            <Link to="/">
+              <img src={backIcon} alt=" " style={{
+                width: 30,
+                position: 'absolute',
+                top: 20,
+                left: 20,
+                opacity: 1,
+                zIndex: '100'
+              }}>
+              </img>
             </Link>
 
-</div>
-   <div style={{marginLeft: 180, marginTop:-232}}>
-  
-    <Link to="/Other/OtherOpen" style={{ textDecoration: 'none' }}>
-     <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>开屏界面</p> </motion.div>
-            </Link>
-        </div>
-        <div style={{ 
-          backgroundImage: `url(${background})` ,
-          width: 375, 
-          height:812, 
-          position: 'absolute', 
-          top: 0, 
-          opacity: 1, 
-          zIndex: '-1'}}>
+            <div className="Other">
+              <Link to="/Other/OtherBackToTop" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>状态、标题栏置顶</p></motion.div>
+              </Link>
+
+              <Link to="/Other/OtherPull" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>下拉刷新</p></motion.div>
+              </Link>
+            </div>
+            <div style={{ marginLeft: 180, marginTop: -232 }}>
+              <Link to="/Other/OtherOpen" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>开屏界面</p> </motion.div>
+              </Link>
+            </div>
+            <div style={{
+              backgroundImage: `url(${background})`,
+              width: 375,
+              height: 812,
+              position: 'absolute',
+              top: 0,
+              opacity: 1,
+              zIndex: '-1'
+            }}>
+            </div>
           </div>
-        </div>
-         </Route>
-         <Route path="/Other/OtherBackToTop">
-           <OtherBackToTop />
-         </Route>
-         <Route path="/Other/OtherOpen">
-           <OtherOpen />
-         </Route>
-      
-         <Route path="/Other/OtherPull">
-           <OtherPull />
-         </Route>
-         <Route path="/">
-           <App />
-         </Route>
-       </Switch>
-     </Router>
-     );
+        </Route>
+        <Route path="/Other/OtherBackToTop">
+          <OtherBackToTop />
+        </Route>
+        <Route path="/Other/OtherOpen">
+          <OtherOpen />
+        </Route>
+
+        <Route path="/Other/OtherPull">
+          <OtherPull />
+        </Route>
+        <Route path="/">
+          <App />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
- 
+
 export default Other;

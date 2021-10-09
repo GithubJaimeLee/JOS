@@ -21,9 +21,6 @@ let cardActive = {
   color: "#666",
 }
 
-
-
-
 const cardHover = {
   scale: 1.1,
   boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)",
@@ -31,7 +28,6 @@ const cardHover = {
   color: "#415fff",
   opacity: 1
 }
-// color: "#415FFF",
 const List = () => {
   return (
     <Router>

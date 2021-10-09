@@ -1,6 +1,3 @@
-// color: "#415FFF"
-
-//页面
 import List from './List';
 import Click from './Click';
 import Delete from './Delete';
@@ -19,8 +16,6 @@ import background from "./bg.png";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-//import React, { useState } from "react";
-//import { animated, useSpring, config } from "react-spring";
 
 let cardActive = {
   width: 160, height: 100, backgroundColor: "#fff",
@@ -321,7 +316,6 @@ function App() {
             }}></div>
           </motion.div>
         </Route>
-
 
         <Route path="/List">
           <List />

@@ -1,9 +1,5 @@
-// color: "#415FFF"
 import * as React from "react";
-//import { useRef } from "react";
 import { motion} from 'framer-motion';
-//import background from "../bg2.png";
-/* import backIcon from "../Icon/back.png"; */
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import { Stack } from 'react-bootstrap';
@@ -14,16 +10,12 @@ const StyleCard ={
     top:120, 
     width: 375,
     height: 70,
- 
     opacity: 1,
     zIndex: 0,
   }
 const   ClickList = () => {
   return (
     <div >
-
-
-
       <Link to="/Click">
         <img  src={Bback} alt=" " style={{
           width: 30,
@@ -44,34 +36,27 @@ const   ClickList = () => {
               width: 375,
               height: 100,
               position: 'absolute',
-          
               opacity: 1,
               zIndex: 1
             }}>
           </motion.div>
-
-
 
     <div style={{
     top:120,
     position:'absolute'
     }}>
     <Stack gap={1}>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
- </Stack>
+          <div className="ListCard" style={StyleCard}></div>
+          <div className="ListCard" style={StyleCard}></div>
+          <div className="ListCard" style={StyleCard}></div>
+          <div className="ListCard" style={StyleCard}></div>
+          <div className="ListCard" style={StyleCard}></div>
+          <div className="ListCard" style={StyleCard}></div>
+          <div className="ListCard" style={StyleCard}></div>
+          <div className="ListCard" style={StyleCard}></div>
+    </Stack>
     </div>     
-
-
-
-
-        <div className="Background" 
+            <div className="Background" 
               style={{
                 backgroundColor: '#E6ECF4',
                 width: 375,
@@ -82,7 +67,7 @@ const   ClickList = () => {
                 opacity: 1,
                 zIndex: -1
               }} ></div>
-          </div>
+    </div>
 
   );
 }

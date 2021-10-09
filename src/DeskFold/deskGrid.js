@@ -1,6 +1,4 @@
 import React from "react";
-//import Frame from 'react-frame-component';
-//import { motion, dragTransition, dragMomentum, dragElastic } from "framer-motion";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
@@ -29,12 +27,9 @@ const cssRow = {
     marginLeft: 10
 }
 
-
-
 export default function App() {
- 
-    return (
 
+    return (
         <div >
             <Link to="/Desk">
                 <img src={backIcon} alt=" " style={{
@@ -59,18 +54,17 @@ export default function App() {
                 zIndex: '10'
             }}
                 drag
-
                 dragElastic={0.2}
-                //上方拖拽弹性
-                /*      dragTransition={{
-                     //    bounceStiffness:175,
-                   //      bounceDamping:28,
-                      //   timeConstant:200,
-                 /*       min:2,
-             //            modifyTarget: (target) => {let a = Math.round/(target/290)*290
-               // return a 
+                // 上方拖拽弹性
+                /* dragTransition={{
+                // bounceStiffness:175,
+                // bounceDamping:28,
+                // timeConstant:200,
+                /* min:2,
+                // modifyTarget: (target) => {let a = Math.round/(target/290)*290
+                // return a 
                 }}*/
-                //  transition={{ type: 'spring', velocity: 100 }}
+                // transition={{ type: 'spring', velocity: 100 }}
 
                 dragTransition={{
                     timeConstant: 80,
@@ -95,16 +89,16 @@ export default function App() {
                     }}
                 >Move me</p>
             </motion.div>
-<div style={{
-    background: '#E6ECF4',
-    width: 375,
-    height: 812,
-    position: 'absolute',
-    top: 0,
-    opacity: 1,
-    zIndex: '-10'
-}}>
-</div>
+            <div style={{
+                background: '#E6ECF4',
+                width: 375,
+                height: 812,
+                position: 'absolute',
+                top: 0,
+                opacity: 1,
+                zIndex: '-10'
+            }}>
+            </div>
             <Container style={cssContainer}>
 
                 <Row style={cssRow}>
@@ -117,32 +111,6 @@ export default function App() {
                     <Col style={boxHome}>
                     </Col>
                 </Row>
-
-
-                <Row style={cssRow}>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                </Row>
-
-
-                <Row style={cssRow}>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                </Row>
-
-
                 <Row style={cssRow}>
                     <Col style={boxHome}>
                     </Col>
@@ -163,8 +131,6 @@ export default function App() {
                     <Col style={boxHome}>
                     </Col>
                 </Row>
-
-
                 <Row style={cssRow}>
                     <Col style={boxHome}>
                     </Col>
@@ -175,8 +141,6 @@ export default function App() {
                     <Col style={boxHome}>
                     </Col>
                 </Row>
-
-
                 <Row style={cssRow}>
                     <Col style={boxHome}>
                     </Col>
@@ -187,7 +151,26 @@ export default function App() {
                     <Col style={boxHome}>
                     </Col>
                 </Row>
-
+                <Row style={cssRow}>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                </Row>
+                <Row style={cssRow}>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                </Row>
             </Container>
 
         </div>

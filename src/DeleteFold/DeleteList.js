@@ -17,9 +17,6 @@ const StyleCard ={
 const   DeleteList = () => {
   return (
     <div >
-
-
-
       <Link to="/Delete">
         <img  src={Bback} alt=" " style={{
           width: 30,
@@ -45,26 +42,19 @@ const   DeleteList = () => {
               zIndex: 1
             }}>
           </motion.div>
-
-
-
     <div style={{
     top:100,
     position:'absolute'
     }}>
     <Stack gap={1}>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
-  <div className="ListCard" style={StyleCard}></div>
- </Stack>
+        <div className="ListCard" style={StyleCard}></div>
+        <div className="ListCard" style={StyleCard}></div>
+        <div className="ListCard" style={StyleCard}></div>
+        <div className="ListCard" style={StyleCard}></div>
+        <div className="ListCard" style={StyleCard}></div>
+        <div className="ListCard" style={StyleCard}></div>
+    </Stack>
     </div>     
-
-
-
-
     <div className='Bg'
     style={{
               backgroundImage: `url(${MessageBg})`,
