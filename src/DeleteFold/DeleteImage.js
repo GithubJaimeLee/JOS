@@ -56,7 +56,6 @@ const DeleteImage = () => {
           width: 375,
           height: 90,
           position: 'absolute',
-
           opacity: 1,
           zIndex: 1
         }}>
@@ -100,8 +99,8 @@ const DeleteImage = () => {
       </div> 
       <div className='Bg'
         style={{
-         // backgroundImage: `url(${PhotoBg})`,
-          backgroundColor: '#000',
+          backgroundImage: `url(${PhotoBg})`,
+          backgroundColor: '#fff',
           width: 375,
           height: 812,
           position: 'absolute',

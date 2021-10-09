@@ -24,7 +24,8 @@ export const Delete = forwardRef(
       boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)", 
       backgroundSize: "cover",
       backgroundPosition: "center",
-      backgroundColor: "#fff",
+/*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓这里是卡片本身的颜色↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
+      backgroundColor: "#ccc",
       borderRadius: 0,
       ...style
     };

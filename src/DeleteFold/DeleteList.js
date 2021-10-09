@@ -37,7 +37,6 @@ const   DeleteList = () => {
               width: 375,
               height: 100,
               position: 'absolute',
-          
               opacity: 1,
               zIndex: 1
             }}>

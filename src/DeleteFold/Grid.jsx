@@ -12,7 +12,7 @@ export function DeleteGrid({ children, columns }) {
         gridGap: 6,
         padding: 4,
         paddingTop:100,
-        gridAutoFlow: "row dense"
+        gridAutoFlow: "row dense",
       }}
     >
     {children}
