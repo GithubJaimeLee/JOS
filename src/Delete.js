@@ -17,14 +17,16 @@ let card={width: 160, height:100, backgroundColor:"#fff",
  color: "#666"
 }
 
-/* let card2={width: 160, height:100, backgroundColor:"#fff",
- margin:16, 
- borderRadius:12, 
- textAlign:'center', 
- boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
- opacity: 0.4,
- color: "#999"
-} */
+
+let cardInactive = {
+  width: 160, height: 100, backgroundColor: "#fff",
+  margin: 16,
+  borderRadius: 12,
+  textAlign: 'center',
+  boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
+  opacity: 0.4,
+  color: "#999"
+}
 
 const cardHover={
   scale: 1.1,
@@ -76,7 +78,7 @@ return (
 </div>
    <div style={{marginLeft: 180, marginTop:-232}}>
   <Link to="/Delete/DeleteCard" style={{ textDecoration: 'none' }}>
-   <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>卡片删除</p> </motion.div>
+   <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>卡片删除(新版本无)</p> </motion.div>
      </Link>
    </div>
      <div style={{ 

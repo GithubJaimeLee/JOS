@@ -311,7 +311,11 @@ function App() {
 
             </div>
             <div style={{
-              backgroundImage: `url(${background})`, width: 375, height: 812, position: 'absolute', top: 0,
+              backgroundImage: `url(${background})`,
+              width: 375,
+              height: 812, 
+              position: 'absolute', 
+              top: 0,
               opacity: 1,
               zIndex: '-2'
             }}></div>

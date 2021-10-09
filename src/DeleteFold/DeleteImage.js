@@ -1,19 +1,17 @@
 // color: "#415FFF"
 import * as React from "react";
-//import { useRef } from "react";
 import { motion} from 'framer-motion';
-//import background from "../bg2.png";
-/* import backIcon from "../Icon/back.png"; */
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-//import { Stack } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
+import PhotoBg from "../Img/OldPhoto.png";
 import '../App.css';
 
 const VImgGrid = {
 width:90,
 height: 90,
-margin:2,
+margin:4,
+opacity: 0.5,
 backgroundColor:'#ccc',
 zIndex:10
 }
@@ -52,7 +50,7 @@ const   DeleteImage = () => {
 
 
     <div style={{
-    top:70,
+    top:96,
     position:'absolute'
     }}>
 <Container >
@@ -90,20 +88,16 @@ const   DeleteImage = () => {
 </Container>
     </div>     
 
-
-
-
-        <div className="Background" 
-              style={{
-                backgroundColor: '#E6ECF4',
-                width: 375,
-                height: 812,
-                position: 'absolute',
-                top: 0,
-                left:0,
-                opacity: 1,
-                zIndex: -1
-              }} ></div>
+    <div className='Bg'
+    style={{
+              backgroundImage: `url(${PhotoBg})`,
+              width: 375,
+              height: 812, 
+              position: 'absolute', 
+              top: 0,
+              opacity: 0.5,
+              zIndex: '1'
+            }}></div>
           </div>
 
   );

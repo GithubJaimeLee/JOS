@@ -1,9 +1,6 @@
-// color: "#415FFF"
 import * as React from "react";
-//import { useRef } from "react";
 import { motion} from 'framer-motion';
-//import background from "../bg2.png";
-/* import backIcon from "../Icon/back.png"; */
+import MessageBg from "../Img/NewMessage.png";
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import { Stack } from 'react-bootstrap';
@@ -68,17 +65,16 @@ const   DeleteList = () => {
 
 
 
-        <div className="Background" 
-              style={{
-                backgroundColor: '#E6ECF4',
-                width: 375,
-                height: 812,
-                position: 'absolute',
-                top: 0,
-                left:0,
-                opacity: 1,
-                zIndex: -1
-              }} ></div>
+    <div className='Bg'
+    style={{
+              backgroundImage: `url(${MessageBg})`,
+              width: 375,
+              height: 812, 
+              position: 'absolute', 
+              top: 0,
+              opacity: 0.5,
+              zIndex: '1'
+            }}></div>
           </div>
 
   );
