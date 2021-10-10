@@ -68,7 +68,6 @@ function ProgressBar() {
   );
 }
 
-
 function App() {
 
   return (
