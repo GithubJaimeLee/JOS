@@ -14,13 +14,13 @@ const boxHome = {
     height: 54,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     color: "#415fff",
-    opacity: 0.5,
+    opacity: 1,
     background: '#fff',
     borderRadius: 12,
     position: 'absolute',
     left: 118,
     top: 732,
-    zIndex: 20
+    zIndex: 100
 }
 
 const boxAnimation = {
@@ -39,8 +39,8 @@ const boxAnimation = {
 
 
 const DeskOpen = () => {
-    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
-    const [isOpen, setIsOpen] = useState(false);
+    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
+    const [isOpen, setIsOpen] = useState(true);
     // const toggleOpen = () => setIsOpen(!isOpen);
     const toggleOpen = () => setIsOpen(true);
     //  const toggleClose = () => setIsOpen(!isOpen); 
@@ -81,38 +81,15 @@ const DeskOpen = () => {
               zIndex: '-2'
             }}></div>
                 {/*--------------------------------      背景  结束    --------------------------*/}
-                <motion.div className='boxChange'
+                {isOpen &&   <motion.div className='boxChange' 
                     style={boxHome}
                     variants={boxAnimation}
                     animate={animationBox}
                     onClick={toggleOpen}
+                    onClick={() => cycleAnimation()}        
                 >
 
-                    {/*--------------------------------     整个按钮元素  开始   ---------------------------*/}
-                    {isOpen &&
-                        <div className='Allbtn' onClick={() => cycleAnimation()} >
-
-                            <div className="boxPress"
-                                //exit={{ opacity: 0 }}
-                                style={
-                                    {
-                                        display: 'block',
-                                        position: 'absolute',
-                                        right: -10,
-                                        bottom: -10,
-                                        width: 40,
-                                        height: 40,
-                                        backgroundColor: "#fff",
-                                        borderRadius: 20,
-                                        textAlign: 'center',
-                                        boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
-                                    }
-                                }>
-                            </div>
-                        </div>
-                    }
-                    {/*--------------------------------     整个按钮元素 结束   ---------------------------*/}
-                </motion.div>
+                </motion.div> }
                 {/*--------------------------------      卡片元素包括按钮  结束    ---------------------------*/}
             </AnimatePresence>
           
