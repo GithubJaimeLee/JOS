@@ -10,8 +10,8 @@ export function GridD({ children, columns }) {
         gridGap: 108,
         marginLeft: 20,
         marginRight: 20,
-        height: 860,
-        width: 350,
+        height: 812,
+        width: 375,
         top: 60,
         position: 'absolute'
 

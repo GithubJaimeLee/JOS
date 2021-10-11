@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../ListFold/deskAppZoom.jsx';
 //import { position } from "dom-helpers";
 
+
 const boxHome = {
   width: 70,
   height: 70,
@@ -153,7 +154,6 @@ const DZoom = () => {
         top: 9,
         width: 375,
         height: 812
-
       }} >
         <App />
       </div>
