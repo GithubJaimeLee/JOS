@@ -11,7 +11,7 @@ import '../App.css';
 const ScrollTap = () => {
   return (
     <div>
-      <Link to="/Other">
+      <Link to="/List">
         <img src={Bback} alt=" " style={{
           width: 30,
           position: 'fixed',
@@ -32,10 +32,12 @@ const ScrollTap = () => {
           height: 92,
           position: 'fixed',
           opacity: 1,
-          zIndex: 1
+          zIndex: 2
         }}>
+
       </motion.div>
-      <div className="MusicHeaderTap"
+     
+      <motion.div className="MusicHeaderTap"
       style={{
         backgroundImage: `url(${MusicHeaderTap})`,
       top:92,
@@ -44,8 +46,41 @@ const ScrollTap = () => {
       height: 38,
       zIndex:1
       }}>
-    
-      </div>
+        <div
+        style={{
+        width:66,
+        height:38,
+        backgroundColor: "blue",
+        position:'absolute',
+        zIndex:2,
+        bottom:0,
+        left: 80,
+        opacity:0.5
+        }}/>
+           
+           <div
+        style={{
+        width:66,
+        height:38,
+        backgroundColor: "blue",
+        position:'absolute',
+        zIndex:2,
+        bottom:0,
+        left: 154,
+        opacity:0.5
+        }}/>
+              <div
+        style={{
+        width:66,
+        height:38,
+        backgroundColor: "blue",
+        position:'absolute',
+        zIndex:2,
+        bottom:0,
+        left: 230,
+        opacity:0.5
+        }}/>
+      </motion.div>
       <motion.div className="MusicBodyRecommed"
         drag="y"
         dragConstraints={{ top: -578, bottom: 0 }}
