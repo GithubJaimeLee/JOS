@@ -5,6 +5,7 @@ import { Grid } from "antd-mobile";
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../ListFold/deskAppZoom.jsx';
+//import { position } from "dom-helpers";
 
 const boxHome = {
   width: 70,
@@ -37,7 +38,9 @@ const cssRow = {
   marginRight: 10,
   marginLeft: 10
 }
+
 const DZoom = () => {
+
   return (
     <div>
       <Link to="/Desk">
@@ -61,8 +64,10 @@ const DZoom = () => {
           zIndex: -1
         }}
       >
+
       </div>
       <Container style={cssContainer}>
+
         <Row style={cssRow}>
           <Col style={boxHome}>
           </Col>
@@ -73,6 +78,8 @@ const DZoom = () => {
           <Col style={boxHome}>
           </Col>
         </Row>
+
+
         <Row style={cssRow}>
           <Col style={boxHome}>
           </Col>
@@ -83,6 +90,8 @@ const DZoom = () => {
           <Col style={boxHome}>
           </Col>
         </Row>
+
+
         <Row style={cssRow}>
           <Col style={boxHome}>
           </Col>
@@ -152,6 +161,7 @@ const DZoom = () => {
       </div>
       <div style={{
         background: '#E6ECF4',
+        //  backgroundImage: `url(${background})`, 
         width: 375,
         height: 812,
         position: 'absolute',
@@ -161,6 +171,8 @@ const DZoom = () => {
       }}>
       </div>
     </div>
+
+
   );
 }
 

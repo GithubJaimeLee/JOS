@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import photos from "./photosZoom.json";
+import { motion } from "framer-motion";
 //宽度
 const colSpan = {
   [photos[0]]: 1,
@@ -24,6 +25,7 @@ export const PhotoZ = forwardRef(
       // width: index === 0 ? 158 :(index === 1  ? 158  : (index === 2 ? 70 : 158 )) ,
       height: index === 1 ? 70 : (index === 2 ? 158 : (index === 0 ? 158 : 70)),
       width: index === 1 ? 158 : (index === 2 ? 70 : (index === 0 ? 158 : 70)),
+     
       //  height: index === 1 ? 70  :  158  ,
       //width: index === 1 ?    158  :  70  ,
       //1号为第三项高
@@ -39,12 +41,13 @@ export const PhotoZ = forwardRef(
       boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
       backgroundSize: "cover",
       backgroundPosition: "center",
-      // backgroundColor: "#fff",
+     // backgroundColor: "#fff",
       backgroundColor: "#5EDD7B",
       borderRadius: 12,
       ...style
     };
 
-    return <div ref={ref} style={inlineStyles} {...props} />;
+    return <div ref={ref} style={inlineStyles} {...props} >
+    </div>;
   }
 );

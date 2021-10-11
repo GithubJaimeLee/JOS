@@ -13,6 +13,11 @@ export const SortablePhotoZ = (props) => {
     transition,
   } = useSortable({id: props.url});
 
+ /*  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  }; */
+
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,

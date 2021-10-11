@@ -10,9 +10,13 @@ import {
   LayoutMeasuringStrategy
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
+
+
 import { GridZ } from "../ListFold/GridZoom";
 import { SortablePhotoZ } from "../ListFold/SortablePhotoZoom";
 import { PhotoZ} from "../ListFold/PhotoZoom";
+
+
 import photos from "../ListFold/photosZoom.json";
 
 const UploadGallery = () => {
@@ -24,23 +28,25 @@ const UploadGallery = () => {
   };
 
   return (
+    
     <DndContext
       sensors={sensors}
-      layoutMeasuring={layoutMeasuring}
+     layoutMeasuring={layoutMeasuring}
       collisionDetection={closestCorners}
-      onDragStart={handleDragStart}
-      onDragOver={handleDragOver}
-      onDragEnd={handleDragEnd}
+    onDragStart={handleDragStart}
+     onDragOver={handleDragOver}
+     onDragEnd={handleDragEnd}
       onDragCancel={handleDragCancel}
     >
-      <SortableContext items={items} strategy={() => {}}>
+
+      <SortableContext   items={items} strategy={() => {}}>
         <GridZ columns={2} >
           {items.map((url, index) => (
             <SortablePhotoZ key={url} url={url} index={index} />
           ))}
         </GridZ>
       </SortableContext>
-      {/* 调整运动后的比例 */}
+      {/* 调整运动种的比例 */}
       <DragOverlay adjustScale={false}>
         {activeId ? (
           <div 
@@ -50,6 +56,7 @@ const UploadGallery = () => {
               gridAutoRows: "auto",
               //gridAutoRows: "18",
               height: "100%"
+              
             }}
           >
             <PhotoZ/>
