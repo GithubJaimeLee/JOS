@@ -113,14 +113,14 @@ function App() {
                 </motion.div>
               </Link>
               <Link to="/Window" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>弹窗15%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>弹窗20%</p>
                   <div>
                     <div
                       style={{
                         position: 'relative',
                         top: 0,
                         left: 10,
-                        width: 140 * 0.15,
+                        width: 140 * 0.2,
                         height: 10,
                         backgroundColor: '#415FFF',
                         zIndex: 1,
@@ -181,14 +181,14 @@ function App() {
                     <ProgressBar /></div>   </motion.div>
               </Link>
               <Link to="/Other" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>其他类5%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>其他类45%</p>
                   <div>
                     <div
                       style={{
                         position: 'relative',
                         top: 0,
                         left: 10,
-                        width: 140 * 0.05,
+                        width: 140 * 0.45,
                         height: 10,
                         backgroundColor: '#415FFF',
                         zIndex: 1,
@@ -200,7 +200,7 @@ function App() {
             </div>
             <div style={{ marginLeft: 180, marginTop: -696 }}>
               <Link to="/List" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>列表15%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>列表55%</p>
 
                   <div>
                     <div
@@ -208,7 +208,7 @@ function App() {
                         position: 'relative',
                         top: 0,
                         left: 10,
-                        width: 140 * 0.15,
+                        width: 140 * 0.55,
                         height: 10,
                         backgroundColor: '#415FFF',
                         zIndex: 1,
@@ -218,7 +218,7 @@ function App() {
                     <ProgressBar /></div>   </motion.div>
               </Link>
               <Link to="/Click" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>点击反馈5%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>点击反馈45%</p>
 
                   <div>
                     <div
@@ -226,7 +226,7 @@ function App() {
                         position: 'relative',
                         top: 0,
                         left: 10,
-                        width: 140 * 0.05,
+                        width: 140 * 0.45,
                         height: 10,
                         backgroundColor: '#415FFF',
                         zIndex: 1,
@@ -254,7 +254,7 @@ function App() {
                     <ProgressBar /></div>   </motion.div>
               </Link>
               <Link to="/Delete" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>删除类10%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>删除类15%</p>
 
                   <div>
                     <div
@@ -262,7 +262,7 @@ function App() {
                         position: 'relative',
                         top: 0,
                         left: 10,
-                        width: 140 * 0.1,
+                        width: 140 * 0.15,
                         height: 10,
                         backgroundColor: '#415FFF',
                         zIndex: 1,
@@ -272,14 +272,14 @@ function App() {
                     <ProgressBar /></div>   </motion.div>
               </Link>
               <Link to="/Fold" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>展开折叠类10%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>展开折叠类30%</p>
                   <div>
                     <div
                       style={{
                         position: 'relative',
                         top: 0,
                         left: 10,
-                        width: 140 * 0.1,
+                        width: 140 * 0.3,
                         height: 10,
                         backgroundColor: '#415FFF',
                         zIndex: 1,
