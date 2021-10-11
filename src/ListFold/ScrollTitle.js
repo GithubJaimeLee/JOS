@@ -24,36 +24,7 @@ const ScrollTitle = () => {
     height:812,
     overflow: 'scroll'
     }} >
-      <motion.p className="SetP"
-            style={{
-              fontSize: scale,
-              position: 'fixed',
-              top: 56,
-              left:20,
-              margin: 0,
-              //fontWeight: 'bold',
-              zIndex:10
-            }}> 设置
-      </motion.p>
-      <motion.div className="MoveBackground"
-          drag="y"
-          dragConstraints={{ top: -960, bottom: 0 }}
-          //dragElastic={0}
-          //dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
-          style={{
-            y,
-            backgroundColor: '#ddd',
-            backgroundImage: `url(${SetBody})`,
-            top:148,
-            width: 375,
-            height: 1590,
-            position:'relative',
-            opacity: 1,
-            zIndex: -10,
-  
-          }}>
-        </motion.div>
-      <Link className="BackIcon" to="/List">
+          <Link className="BackIcon" to="/List">
         <img src={Bback} alt=" " style={{
           width: 30,
           position: 'fixed',
@@ -76,6 +47,49 @@ const ScrollTitle = () => {
           zIndex: 1
         }}>
       </div>
+      <motion.p className="SetP"
+            style={{
+              fontSize: scale,
+              position: 'fixed',
+              top: 52,
+              left:20,
+              margin: 0,
+              fontWeight: 'bold',
+              zIndex:10
+            }}> 设置
+      </motion.p>
+
+      <motion.div className="MoveBackground"
+          drag="y"
+       //   draggable="false"
+          dragConstraints={{ top: -960, bottom: 0 }}
+          dragElastic={1}
+          dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
+          style={{
+            y,
+            backgroundColor: '#ddd',
+            backgroundImage: `url(${SetBody})`,
+            top:148,
+            width: 375,
+            height: 1590,
+            position:'relative',
+            opacity: 1,
+            zIndex: 0,
+  
+          }}>
+        </motion.div>
+
+      <div className="Background"
+        style={{
+          backgroundColor: '#f7f7f7',
+          width: 375,
+          height: 812,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          opacity: 1,
+          zIndex: -1
+        }} ></div>
     </div>
   );
 }

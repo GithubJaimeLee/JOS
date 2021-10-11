@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion } from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
+import ClickN from "../Img/ClickN.png";
 import '../App.css';
 
 const ClickNum = () => {
@@ -17,20 +18,10 @@ const ClickNum = () => {
           zIndex: '100'
         }} />
       </Link>
-      <motion.div className="MoveCard"
-        style={{
-          backgroundColor: '#fff',
-          top: 500,
-          width: 375,
-          height: 320,
-          position: 'absolute',
-          opacity: 1,
-          zIndex: 0
-        }}>
-      </motion.div>
+
       <div className="Background"
         style={{
-          backgroundColor: '#E6ECF4',
+          backgroundImage: `url(${ClickN})`,
           width: 375,
           height: 812,
           position: 'absolute',

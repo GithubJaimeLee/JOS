@@ -1,8 +1,9 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
 import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
+import backIcon from "../Icon/Wback.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DeskOOS from "../Img/DeskOOS.png";
 import { useState } from "react";
 
 //press功能
@@ -74,9 +75,9 @@ const ClickCard = () => {
                 {/*--------------------------------      卡片元素包括按钮  开始   ---------------------------*/}
 
                 {/*--------------------------------     背景元素  开始   ---------------------------*/}
-                <div className='Background'
+                {/*                 <div className='Background'
                     style={{
-                        backgroundColor: '#E6ECF4',
+                        backgroundImage: `url(${DeskOOS})`,
                         position: 'absolute',
                         width: 375,
                         height: 812,
@@ -84,6 +85,28 @@ const ClickCard = () => {
                     }}
                     onClick={toggleClose} >
 
+                </div> */}
+                <div className="blackMask"
+                    style={{
+                        backgroundColor: "#000000",
+                        width: 375,
+                        height: 812,
+                        position: 'absolute',
+                        top: 0,
+                        opacity: 0.4,
+                        zIndex: '2'
+                    }}
+                ></div>
+                <div className="BlurBackground"
+                    style={{
+                        backgroundImage: `url(${DeskOOS})`,
+                        width: 375,
+                        height: 812,
+                        position: 'absolute',
+                        top: 0,
+                        opacity: 1,
+                        zIndex: '-1'
+                    }} >
                 </div>
                 {/*--------------------------------      背景  结束    --------------------------*/}
                 <motion.div className='boxChange'

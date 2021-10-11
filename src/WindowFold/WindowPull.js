@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
-
+import Calendar from "../Img/Calendar.png";
 //press功能
 
 
@@ -22,11 +22,11 @@ const boxHome = {
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     color: "#415fff",
     opacity: 1,
-    background: '#fff',
+    background: '#000',
     borderRadius: 12,
     position: 'absolute',
-    left: 20,
-    top: 60,
+    left: 280,
+    top: 90,
     zIndex: 20
 }
 
@@ -94,7 +94,7 @@ const WindowPull = () => {
                 {/*--------------------------------     背景元素  开始   ---------------------------*/}
                 <div className='Background'
                     style={{
-                        backgroundColor: '#E6ECF4',
+                       backgroundImage: `url(${Calendar})`,
                         position: 'absolute',
                         width: 375,
                         height: 812,

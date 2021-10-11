@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useRef } from "react";
 import { motion } from 'framer-motion';
-import background from "../Img/bg2.png";
+import background from "../Img/DeskOOS.png";
 import Wback from "../Icon/Wback.png";
 import { Link } from 'react-router-dom';
 import '../App.css';
@@ -67,19 +67,7 @@ const Scroll = () => {
             zIndex: '2'
           }}
         ></div>
-        <div className="mask"
-          style={{
-            overflow: 'hidden',
-            top: 0,
-            color: "#000",
-
-            width: 375,
-            height: 812,
-            position: 'absolute',
-
-          }}
-        >
-          <div className="BlurBackground"
+           <div className="BlurBackground"
             style={{
               backgroundImage: `url(${background})`,
               width: 375,
@@ -89,7 +77,6 @@ const Scroll = () => {
               opacity: 1,
               zIndex: '-1'
             }} >
-          </div>
         </div>
       </div>
     </div>

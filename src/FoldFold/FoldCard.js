@@ -5,28 +5,31 @@ import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
+import FoldScreen from "../Img/FoldScreen.png";
+import FoldScreenAll from "../Img/FoldScreenAll.png";
 
 //press功能
 //变形完整交互
 
 const boxHome = {
-    width: 300,
-    height: 100,
+    width: 340,
+    height: 136,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     color: "#415fff",
-    opacity: 1,
+    opacity: 0.5,
     background: '#fff',
     borderRadius: 12,
     position: 'absolute',
     margin: 10,
-    top: 60,
+    top: 282,
+    left:8,
     zIndex: 20
 }
 
 const boxAnimation = {
     animationOne: {
-        width: 350,
-        height: 120
+        width: 340,
+        height: 136
     },
     animationTwo: {
         width: 140,
@@ -76,7 +79,7 @@ const FoldCard = () => {
                 {/*--------------------------------     背景元素  开始   ---------------------------*/}
                 <div className='Background'
                     style={{
-                        backgroundColor: '#E6ECF4',
+                     backgroundImage: `url(${FoldScreen})`,
                         position: 'absolute',
 
                         width: 375,

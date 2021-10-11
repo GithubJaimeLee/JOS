@@ -3,39 +3,32 @@ import * as React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ClickB from "../Img/ClickB.png";
 import { useState } from "react";
 
 //press功能
 //变形完整交互
 const boxHome = {
-    width: 300,
-    height: 60,
+    width: 292,
+    height: 42,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-    opacity: 1,
+    opacity: 0.8,
     background: '#415fff',
     borderRadius: 12,
     position: 'absolute',
-    left: 40,
+    left: 42,
     top: 700,
     zIndex: 20
 }
 
 const boxAnimation = {
     animationOne: {
-        width: 300,
-        height: 60
+        width: 292,
+        height: 42
     },
     animationTwo: {
-        width: 140,
-        height: 70
-    },
-    animationThree: {
-        width: 70,
-        height: 140
-    },
-    animationFour: {
-        width: 140,
-        height: 140
+        width: 282,
+        height: 32
     }
 }
 
@@ -74,7 +67,7 @@ const ClickCard = () => {
                 {/*--------------------------------     背景元素  开始   ---------------------------*/}
                 <div className='Background'
                     style={{
-                        backgroundColor: '#fff',
+                       backgroundImage: `url(${ClickB})`,
                         position: 'absolute',
                         width: 375,
                         height: 812,

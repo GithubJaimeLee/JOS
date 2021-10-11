@@ -37,7 +37,7 @@
   }
 }
 
-div.Scroll div.BlurBackground{
+div.BlurBackground{
     filter: blur(4px); 
 }
 

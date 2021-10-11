@@ -9,6 +9,9 @@ import { Link } from 'react-router-dom';
 //import { Grid } from "antd-mobile";
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ContactBody from "../Img/ContactBody.png";
+import ContactFooter from "../Img/ContactFooter.png";
+import ContactHeader from "../Img/ContactHeader.png";
 import { useState } from "react";
 
 //press功能
@@ -24,9 +27,9 @@ const boxHome = {
     opacity: 1,
     background: '#415fff',
     borderRadius: 12,
-    position: 'absolute',
-    left: 40,
-    top: 600,
+    position: 'fixed',
+    left: 100,
+    bottom: 60,
     zIndex: 20
 }
 
@@ -74,7 +77,7 @@ const WindowBubble = () => {
 <Link to="/Window">
     <img src={backIcon} alt=" " style={{
         width: 30,
-        position: 'absolute',
+        position: 'fixed',
         top: 20,
         left: 20,
         opacity: 1,
@@ -92,16 +95,39 @@ const WindowBubble = () => {
                 {/*--------------------------------      卡片元素包括按钮  开始   ---------------------------*/}
 
                 {/*--------------------------------     背景元素  开始   ---------------------------*/}
+             <div className='ContactHeader'
+             style={{
+                 backgroundImage: `url(${ContactHeader})`,
+             width:375,
+              height: 159,
+              position: 'fixed',
+              zIndex:2,
+              top:0
+             }}>
+             
+             </div>
                 <div className='Background'
                     style={{
-                        backgroundColor: '#E6ECF4',
+                        backgroundImage: `url(${ContactBody})`,
                         position: 'absolute',
+                        top:159,
                         width: 375,
-                        height: 812,
-                        zIndex: 10,
+                        height: 1169,
+                        zIndex: 1,
                     }}
                     onClick={toggleClose} >
 
+                </div>
+                <div className='ContactFooter'
+                style={{
+                    backgroundImage: `url(${ContactFooter})`,
+                        position: 'fixed',
+                         bottom:0,
+                        width: 375,
+                        height: 65,
+                        zIndex: 1,
+                }}>
+                
                 </div>
                 {/*--------------------------------      背景  结束    --------------------------*/}
                 <motion.div className='boxChange'

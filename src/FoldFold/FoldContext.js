@@ -2,8 +2,10 @@ import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
 import zoomIcon from "../Icon/zoomIcon.png";
 import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
+import backIcon from "../Icon/Wback.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FoldInfo from "../Img/FoldInfo.png";
+import FoldInfoAll from "../Img/FoldInfoAll.png";
 import { useState } from "react";
 
 //press功能
@@ -14,12 +16,12 @@ const boxHome = {
     height: 70,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     color: "#415fff",
-    opacity: 1,
+    opacity: 0.5,
     background: '#fff',
     borderRadius: 12,
     position: 'absolute',
     margin: 10,
-    top: 60,
+    top: 152,
     zIndex: 20
 }
 
@@ -77,7 +79,7 @@ const FoldContext = () => {
                 {/*--------------------------------     背景元素  开始   ---------------------------*/}
                 <div className='Background'
                     style={{
-                        backgroundColor: '#E6ECF4',
+                      backgroundImage: `url(${FoldInfo})`,
                         position: 'absolute',
 
                         width: 375,

@@ -3,6 +3,7 @@ import * as React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DeskOOS from "../Img/DeskOOS.png";
 import { useState } from "react";
 
 //press功能
@@ -13,12 +14,12 @@ const boxHome = {
     height: 70,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     color: "#415fff",
-    opacity: 1,
+    opacity: 0.8,
     background: '#fff',
-    borderRadius: 12,
+    borderRadius: 16,
     position: 'absolute',
-    left: 20,
-    top: 60,
+    left: 194,
+    top: 72,
     zIndex: 20
 }
 
@@ -30,14 +31,6 @@ const boxAnimation = {
     animationTwo: {
         width: 140,
         height: 70
-    },
-    animationThree: {
-        width: 70,
-        height: 140
-    },
-    animationFour: {
-        width: 140,
-        height: 140
     }
 }
 
@@ -79,7 +72,7 @@ const ClickIcon = () => {
                 {/*--------------------------------     背景元素  开始   ---------------------------*/}
                 <div className='Background'
                     style={{
-                        backgroundColor: '#E6ECF4',
+                        backgroundImage: `url(${DeskOOS})`,
                         position: 'absolute',
                         width: 375,
                         height: 812,
