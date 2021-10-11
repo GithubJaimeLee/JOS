@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useRef } from "react";
 import { motion } from 'framer-motion';
-import background from "../bg2.png";
+import background from "../Img/bg2.png";
 import Wback from "../Icon/Wback.png";
 import { Link } from 'react-router-dom';
 import '../App.css';
@@ -32,7 +32,7 @@ const Scroll = () => {
             overflow: "hidden",
             width: 900,
             height: 600.1,
-            position: 'absolute',
+            position: 'relative',
             top: 100,
             left: -260,
             opacity: 1,

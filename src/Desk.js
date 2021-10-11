@@ -1,5 +1,5 @@
 //图片
-import background from "./bg2.png";
+import background from "./Img/bg2.png";
 import backIcon from "./Icon/back.png";
 //页码
 import App from './App';

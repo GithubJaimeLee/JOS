@@ -12,7 +12,7 @@ import Edit from './Edit';
 
 //导入库
 import { motion } from 'framer-motion';
-import background from "./bg.png";
+import background from "./Img/bg.png";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';

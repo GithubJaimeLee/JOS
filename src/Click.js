@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import background from "./bg2.png";
+import background from "./Img/bg2.png";
 import Bback from "./Icon/back.png";
 import ClickList from './ClickFold/ClickList';
 import ClickBtn from './ClickFold/ClickBtn';
