@@ -95,14 +95,14 @@ function App() {
             </motion.h1>
             <div>
               <Link to="/Desk" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} >   <p style={{ paddingTop: 40 }}>OOS桌面85%</p>
+                <motion.div whileHover={cardHover} style={cardActive} >   <p style={{ paddingTop: 40 }}>OOS桌面75%</p>
                   <div>
                     <div
                       style={{
                         position: 'relative',
                         top: 0,
                         left: 10,
-                        width: 140 * 0.85,
+                        width: 140 * 0.75,
                         height: 10,
                         backgroundColor: '#415FFF',
                         zIndex: 1,

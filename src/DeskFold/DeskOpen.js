@@ -1,7 +1,7 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
 import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
+import backIcon from "../Icon/Wback.png";
 import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
@@ -38,7 +38,7 @@ const boxAnimation = {
 }
 
 
-const OtherOpen = () => {
+const DeskOpen = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
     const [isOpen, setIsOpen] = useState(false);
     // const toggleOpen = () => setIsOpen(!isOpen);
@@ -55,7 +55,7 @@ const OtherOpen = () => {
     return (
 
         <div>
-            <Link to="/Other">
+            <Link to="/Desk">
                 <img src={backIcon} alt=" " style={{
                     width: 30,
                     position: 'absolute',
@@ -120,5 +120,5 @@ const OtherOpen = () => {
     );
 }
 
-export default OtherOpen;
+export default DeskOpen;
 

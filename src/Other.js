@@ -63,14 +63,13 @@ const Other = () => {
                 <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>状态、标题栏置顶</p></motion.div>
               </Link>
 
-              <Link to="/Other/OtherPull" style={{ textDecoration: 'none' }}>
+   
+            </div>
+            <div style={{ marginLeft: 180, marginTop: -116 }}>
+            <Link to="/Other/OtherPull" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>下拉刷新</p></motion.div>
               </Link>
-            </div>
-            <div style={{ marginLeft: 180, marginTop: -232 }}>
-              <Link to="/Other/OtherOpen" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>开屏界面</p> </motion.div>
-              </Link>
+             
             </div>
             <div style={{
               backgroundImage: `url(${background})`,

@@ -7,6 +7,7 @@ import DApp from './DeskFold/deskMove';
 import DChange from './DeskFold/deskChange';
 import DZoom from './DeskFold/deskZoom';
 import DDirection from './DeskFold/deskDirection';
+import DeskOpen from './DeskFold/DeskOpen';
 //import {DraggableStory ,Grid }  from './DeskFold/deskGrid';
 import DGrid from './DeskFold/deskGrid';
 //库
@@ -83,9 +84,12 @@ const Desk = () => {
               <Link to="/Desk/deskDirection" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>图标变形（方向）</p></motion.div>
               </Link>
+              <Link to="/Desk/DeskOpen" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>开屏界面</p> </motion.div>
+              </Link>
               <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>图标创建文件夹 </p></motion.div>
             </div>
-            <div style={{ marginLeft: 180, marginTop: -348 }}>
+            <div style={{ marginLeft: 180, marginTop: -464 }}>
               <Link to="/Desk/deskChange" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>图标变形</p> </motion.div>
               </Link>
@@ -96,7 +100,7 @@ const Desk = () => {
               <Link to="/Desk/deskGrid" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>图标Grid</p></motion.div>
               </Link>
-
+              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>多选拖动</p></motion.div>
             </div>
             <div style={{
               backgroundImage: `url(${background})`,
@@ -124,6 +128,9 @@ const Desk = () => {
         </Route>
         <Route path="/Desk/deskGrid">
           <DGrid />
+        </Route>
+        <Route path="/Desk/DeskOpen">
+          <DeskOpen />
         </Route>
         <Route path="/">
           <App />

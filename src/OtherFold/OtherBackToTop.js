@@ -47,17 +47,7 @@ const OtherBackToTop = () => {
           zIndex: 0
         }}>
       </motion.div>
-      <div className="Background"
-        style={{
-          backgroundColor: '#E6ECF4',
-          width: 375,
-          height: 812,
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          opacity: 1,
-          zIndex: -1
-        }} ></div>
+
     </div>
 
   );
