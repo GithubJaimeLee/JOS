@@ -59,14 +59,16 @@ const boxAnimation = {
 
 const SetAnimation = {
     SanimationOne: { 
-          
-        top:-26,
-        left:-26,
+        bottom:26,
+        right:26,
+      /*   top:-26,
+        left:-26, */
         position: 'relative',
         zIndex:-1,
         opacity: 1
     },
     SanimationTwo: {
+         
         scale: 1,
         bottom:10,
         right:-36,
@@ -75,6 +77,7 @@ const SetAnimation = {
         opacity: 1
     },
     SanimationThree: {
+         
         scale: 0.85,
         bottom:-10,
         right:0,
@@ -83,6 +86,7 @@ const SetAnimation = {
         opacity: 1
     },
     SanimationFour: {
+         
         scale: 1.36,
         bottom:-30,
         right:-35,
@@ -93,18 +97,22 @@ const SetAnimation = {
 }
 const MaskAnimation = {
     ManimationOne: {
+         
         width: 70,
         height: 70
     },
     ManimationTwo: {
+         
         width: 140,
         height: 70
     },
     ManimationThree: {
+         
         width: 70,
         height: 140
     },
     ManimationFour: {
+         
         width: 140,
         height: 140
     }
@@ -161,6 +169,7 @@ const DChange = () => {
                     variants={boxAnimation}
                     animate={animationBox}
                     onClick={toggleOpen}
+                    transition={{type: "tween"}}
                 >
                     <p
                         style={{
@@ -178,6 +187,7 @@ const DChange = () => {
                         width:70,
                         height: 70
                      }}
+                     transition={{type: "tween"}}
                      variants={MaskAnimation}
                     animate={animationMask}
 
@@ -185,6 +195,7 @@ const DChange = () => {
                    <motion.div className="SetCenter"
                     variants={SetAnimation}
                     animate={animationSet}
+                    transition={{type: "tween"}}
                    style={SetCenterStyle}/>
                     </motion.div>
                     {isOpen &&
