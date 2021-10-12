@@ -39,9 +39,26 @@ const Scroll = () => {
             zIndex: '21'
           }}>
           <motion.div className="AlertCard"
-            drag dragConstraints={constraintsRef}
-            /*dragConstraints={{ left: -300, top: 0, right: 260, bottom: 0 }} */
-            dragElastic={0}
+            drag="x"
+           //  dragConstraints={constraintsRef}
+            dragConstraints={{ left: -300,  right: 300}}
+            dragElastic={2}
+            
+            dragTransition={{
+                    timeConstant: 100,
+                    power: 0,
+                    // Snap calculated target to nearest 50 pixels
+                    modifyTarget: target => Math.round(target / 300) * 300
+                }}
+               // dragConstraints={{ left: 0, right: 275, top: 0, bottom: 530 }}
+           dragMomentum={true}
+
+
+
+
+
+
+
             style={{
               backgroundColor: "#fff",
               left: 300,
