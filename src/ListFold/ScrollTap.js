@@ -8,6 +8,8 @@ import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
 import '../App.css';
 
+
+
 const ScrollTap = () => {
   return (
     <div>
@@ -39,14 +41,15 @@ const ScrollTap = () => {
      
       <motion.div className="MusicHeaderTap"
       style={{
-        backgroundImage: `url(${MusicHeaderTap})`,
+      backgroundImage: `url(${MusicHeaderTap})`,
       top:92,
       position:'fixed',
       width: 375,
       height: 38,
       zIndex:1
       }}>
-        <div
+  
+             <div
         style={{
         width:66,
         height:38,
@@ -56,8 +59,7 @@ const ScrollTap = () => {
         bottom:0,
         left: 80,
         opacity:0.5
-        }}/>
-           
+        }}/>  
            <div
         style={{
         width:66,
@@ -79,8 +81,39 @@ const ScrollTap = () => {
         bottom:0,
         left: 230,
         opacity:0.5
+        
         }}/>
       </motion.div>
+      <div className="TapPage"
+      style={{
+      width:375,
+      left:375,
+      height: 812,
+      opacity: 0.5,
+      backgroundColor: "blue",
+      position:'absolute',
+      zIndex:0
+      }}/>
+            <div className="TapPage"
+      style={{
+      width:375,
+      left:750,
+      height: 812,
+      opacity: 0.5,
+      backgroundColor: "red",
+      position:'absolute',
+      zIndex:0
+      }}/>
+            <div className="TapPage"
+      style={{
+      width:375,
+      left:1125,
+      height: 812,
+      opacity: 0.5,
+      backgroundColor: "green",
+      position:'absolute',
+      zIndex:0
+      }}/>
       <motion.div className="MusicBodyRecommed"
         drag="y"
         dragConstraints={{ top: -578, bottom: 0 }}
@@ -94,7 +127,7 @@ const ScrollTap = () => {
           height:1205,
           position: 'absolute',
           opacity: 1,
-          zIndex: 0
+          zIndex: -1
         }}>
       </motion.div>
       <div className="MusicFooter"

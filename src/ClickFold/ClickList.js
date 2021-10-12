@@ -52,9 +52,7 @@ const   ClickList = () => {
               position: 'fixed',
               opacity: 1,
               zIndex: 2
-            }}/>
-     
-      
+            }}/> 
     <ListBtn/>
     <ListBtn/>
     <ListBtn/>
