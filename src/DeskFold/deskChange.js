@@ -61,8 +61,6 @@ const SetAnimation = {
     SanimationOne: { 
         bottom:26,
         right:26,
-      /*   top:-26,
-        left:-26, */
         position: 'relative',
         zIndex:-1,
         opacity: 1

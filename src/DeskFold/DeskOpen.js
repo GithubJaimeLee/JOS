@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import backIcon from "../Icon/Wback.png";
 import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from "react";
 
 const boxHome = {
     width: 54,
@@ -22,24 +23,41 @@ const boxHome = {
 const boxAnimation = {
     animationOne: {
         width: 54,
-        height: 54
+        height: 54,
+        left: 118,
+        bottom:60
     },
     animationTwo: {
+      
         width: 300,
         height: 500,
         left: 40,
-        top: 132,
+   top:100,
         opacity: 1
     }
 }
 
+/* const boxDrag = {
+    DragOne: {
+   false:false
+    },
+    DragTwo: {
+        ture:ture
+    }
+} */
+
 
 const DeskOpen = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
-
+    const [DragBox, cycleDrag] = useCycle(false, true);
+    const [isDrag, setIsDrag] = useState(false);
+    const toggleDragging = () => setIsDrag(!isDrag);
     return (
 
-        <div>
+        <div 
+        style={{
+        position: 'absolute'
+        }}>
             <Link to="/Desk">
                 <img src={backIcon} alt=" " style={{
                     width: 30,
@@ -65,8 +83,11 @@ const DeskOpen = () => {
                     style={boxHome}
                     variants={boxAnimation}
                     animate={animationBox}
+                    drag={DragBox}
+                    dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}}
+                    dragElastic={1}
                    // onClick={toggleOpen}
-                    onClick={() => cycleAnimation()}        
+                    onClick={() => cycleAnimation()&cycleDrag()}        
                     />  
             </AnimatePresence>
         </div>
