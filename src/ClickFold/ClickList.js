@@ -2,13 +2,31 @@ import * as React from "react";
 import { motion} from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-//import { Stack } from 'react-bootstrap';
 import SetBody from "../Img/SetBody.png";
 import SetHeader from "../Img/SetHeader.png";
 import '../App.css';
 
+const  ListBtn= () => {
+  return ( 
+  <motion.div
+    whileTap={{ scaleY:0.8 }}
+    style={{
+      width:375,
+      height: 90,
+      opacity: 0.3,
+      backgroundColor:'red',
+      top: 148,
+      left: 0,
+      zIndex:1, 
+      position:'relative',
+      marginBottom:2
+     }}
+  />
+ );
+};
 
 const   ClickList = () => {
+
   return (
     <div >
       <Link to="/Click">
@@ -18,7 +36,7 @@ const   ClickList = () => {
           top: 20,
           left: 20,
           opacity: 1,
-          zIndex: '100'
+          zIndex: 3
         }} />
       </Link>
           <motion.div className="HeadCard"
@@ -33,33 +51,36 @@ const   ClickList = () => {
               height: 148,
               position: 'fixed',
               opacity: 1,
-              zIndex: 1
-            }}>
-          </motion.div>
-
+              zIndex: 2
+            }}/>
+     
+      
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
+    <ListBtn/>
     <div style={{
     top:148,
     position:'absolute',
-
     backgroundImage: `url(${SetBody})`,
     width: 375,
     height:1596
+    }}/>
 
-    }}>
-
-    </div>   
-
-    {/*     <Stack gap={1}>
-          <div className="ListCard" style={StyleCard}></div>
-          <div className="ListCard" style={StyleCard}></div>
-          <div className="ListCard" style={StyleCard}></div>
-          <div className="ListCard" style={StyleCard}></div>
-          <div className="ListCard" style={StyleCard}></div>
-          <div className="ListCard" style={StyleCard}></div>
-          <div className="ListCard" style={StyleCard}></div>
-          <div className="ListCard" style={StyleCard}></div>
-    </Stack> */}  
-            <div className="Background" 
+     <div className="Background" 
               style={{
                 backgroundColor: '#E6ECF4',
                 width: 375,
@@ -69,7 +90,7 @@ const   ClickList = () => {
                 left:0,
                 opacity: 1,
                 zIndex: -1
-              }} ></div>
+              }} />
     </div>
 
   );

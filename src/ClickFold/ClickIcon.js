@@ -4,52 +4,8 @@ import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DeskOOS from "../Img/DeskOOS.png";
-import { useState } from "react";
-
-//press功能
-//变形完整交互
-
-const boxHome = {
-    width: 70,
-    height: 70,
-    boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-    color: "#415fff",
-    opacity: 0.8,
-    background: '#fff',
-    borderRadius: 16,
-    position: 'absolute',
-    left: 194,
-    top: 72,
-    zIndex: 20
-}
-
-const boxAnimation = {
-    animationOne: {
-        width: 70,
-        height: 70
-    },
-    animationTwo: {
-        width: 140,
-        height: 70
-    }
-}
-
-
-
 
 const ClickIcon = () => {
-    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
-    const [isOpen, setIsOpen] = useState(false);
-    //const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleOpen = () => setIsOpen(true);
-    //const toggleClose = () => setIsOpen(!isOpen); 
-    //const [isClose, setIsClose] = useState(true);
-    //const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleClose = () => setIsOpen(false);
-    //const [isClose, setIsClose] = useState(false);
-    //const toggleClose = () => setIsOpen(!isOpen); 
-    //const toggleOpen = () => setIsOpen(!isOpen);
-    //const toggleOpen = () => setIsOpen(true);
 
     return (
 
@@ -65,11 +21,26 @@ const ClickIcon = () => {
                 }}>
                 </img>
             </Link>
-
-            <AnimatePresence>
-                {/*--------------------------------      卡片元素包括按钮  开始   ---------------------------*/}
-
-                {/*--------------------------------     背景元素  开始   ---------------------------*/}
+            <motion.div className='boxChange'
+                    style={
+                        {
+                        width:70,
+                        height: 70,
+                        opacity: 0.8,
+                        backgroundColor:'red',
+                        position: 'absolute',
+                        zIndex:11,
+                        borderRadius:12,
+                        top: 480,
+                        left: 120
+                        }
+                        }
+                    
+          
+                    
+                    whileTap={{ scale: 0.8 }}
+               />
+         
                 <div className='Background'
                     style={{
                         backgroundImage: `url(${DeskOOS})`,
@@ -78,55 +49,10 @@ const ClickIcon = () => {
                         height: 812,
                         zIndex: 10,
                     }}
-                    onClick={toggleClose} >
+                >
 
                 </div>
-                {/*--------------------------------      背景  结束    --------------------------*/}
-                <motion.div className='boxChange'
-                    style={boxHome}
-                    variants={boxAnimation}
-                    animate={animationBox}
-                    onClick={toggleOpen}
-                >
-                    <p
-                        style={{
-                            color: "#666",
-                            fontWeight: 'bold',
-                            position: 'absolute',
-                            top: 10,
-                            left: 10,
-                            fontSize: 14
-                        }}
-                    >Press me</p>
-
-                    {/*--------------------------------     整个按钮元素  开始   ---------------------------*/}
-                    {isOpen &&
-                        <div className='Allbtn' onClick={() => cycleAnimation()} >
-
-                            <div className="boxPress"
-                                //exit={{ opacity: 0 }}
-                                style={
-                                    {
-                                        display: 'block',
-                                        position: 'absolute',
-                                        right: -10,
-                                        bottom: -10,
-                                        width: 40,
-                                        height: 40,
-                                        backgroundColor: "#fff",
-                                        borderRadius: 20,
-                                        textAlign: 'center',
-                                        boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
-                                    }
-                                }>
-                            </div>
-                        </div>
-                    }
-                    {/*--------------------------------     整个按钮元素 结束   ---------------------------*/}
-                </motion.div>
-                {/*--------------------------------      卡片元素包括按钮  结束    ---------------------------*/}
-            </AnimatePresence>
-
+             
         </div>
     );
 }

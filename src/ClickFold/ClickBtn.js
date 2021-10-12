@@ -62,9 +62,6 @@ const ClickCard = () => {
             </Link>
            
             <AnimatePresence>
-                {/*--------------------------------      卡片元素包括按钮  开始   ---------------------------*/}
-
-                {/*--------------------------------     背景元素  开始   ---------------------------*/}
                 <div className='Background'
                     style={{
                        backgroundImage: `url(${ClickB})`,
@@ -73,15 +70,15 @@ const ClickCard = () => {
                         height: 812,
                         zIndex: 10,
                     }}
-                    onClick={toggleClose} >
+              >
 
                 </div>
-                {/*--------------------------------      背景  结束    --------------------------*/}
+
                 <motion.div className='boxChange'
                     style={boxHome}
                     variants={boxAnimation}
                     animate={animationBox}
-                    onClick={toggleOpen}
+                    whileTap={{ scale: 0.9 }}
                 >
                     <p
                         style={{
@@ -93,33 +90,7 @@ const ClickCard = () => {
                             fontSize: 14
                         }}
                     >Press me</p>
-
-                    {/*--------------------------------     整个按钮元素  开始   ---------------------------*/}
-                    {isOpen &&
-                        <div className='Allbtn' onClick={() => cycleAnimation()} >
-
-                            <div className="boxPress"
-                                //exit={{ opacity: 0 }}
-                                style={
-                                    {
-                                        display: 'block',
-                                        position: 'absolute',
-                                        right: -10,
-                                        bottom: -10,
-                                        width: 40,
-                                        height: 40,
-                                        backgroundColor: "#fff",
-                                        borderRadius: 20,
-                                        textAlign: 'center',
-                                        boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
-                                    }
-                                }>
-                            </div>
-                        </div>
-                    }
-                    {/*--------------------------------     整个按钮元素 结束   ---------------------------*/}
                 </motion.div>
-                {/*--------------------------------      卡片元素包括按钮  结束    ---------------------------*/}
             </AnimatePresence>
 
         </div>
