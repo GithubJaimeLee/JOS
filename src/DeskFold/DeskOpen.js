@@ -5,10 +5,6 @@ import backIcon from "../Icon/Wback.png";
 import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-//press功能
-//变形完整交互
-
 const boxHome = {
     width: 54,
     height: 54,
@@ -40,11 +36,6 @@ const boxAnimation = {
 
 const DeskOpen = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
-   // const [isOpen, setIsOpen] = useState(true);
-   // const toggleOpen = () => setIsOpen(!isOpen);
-   // const toggleOpen = () => setIsOpen(true);
-   // const toggleClose = () => setIsOpen(false);
-
 
     return (
 

@@ -4,25 +4,34 @@ import zoomIcon from "../Icon/zoomIcon.png";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SetBg from "../Img/SetBg.png";
+import SetCenter from "../Img/SetCenter.png";
 import { useState } from "react";
 
 //press功能
 //变形完整交互
 
-const boxHome = {
+const boxChange = {
     width: 70,
     height: 70,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     color: "#415fff",
     opacity: 1,
     background: '#fff',
+    backgroundImage: `url(${SetBg})`,
     borderRadius: 12,
     position: 'absolute',
     left: 20,
     top: 60,
-    zIndex: 20
+    zIndex: 20,
+  // overflow: 'hidden'
 }
-
+const SetCenterStyle = {
+    width:122,
+    height: 122,
+    opacity: 1,
+    backgroundImage: `url(${SetCenter})`
+}
 const boxAnimation = {
     animationOne: {
         width: 70,
@@ -42,8 +51,60 @@ const boxAnimation = {
     }
 }
 
+const SetAnimation = {
+    SanimationOne: {
+        scale: 0.45,
+        top:-26,
+        left:-26,
+        position: 'relative',
+        zIndex:-1
+    },
+    SanimationTwo: {
+        scale: 1,
+        bottom:10,
+        right:-36,
+        position: 'relative',
+        zIndex:-1
+    },
+    SanimationThree: {
+        scale: 0.85,
+        bottom:-10,
+        right:0,
+        position: 'relative',
+        zIndex:-1
+    },
+    SanimationFour: {
+        scale: 1.36,
+        bottom:-30,
+        right:-35,
+        position: 'relative',
+        zIndex:-1
+    }
+}
+const MaskAnimation = {
+    ManimationOne: {
+        width: 70,
+        height: 70
+    },
+    ManimationTwo: {
+        width: 140,
+        height: 70
+    },
+    ManimationThree: {
+        width: 70,
+        height: 140
+    },
+    ManimationFour: {
+        width: 140,
+        height: 140
+    }
+}
+
+
 const DChange = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
+    const [animationSet, ScycleAnimation] = useCycle("SanimationOne", "SanimationTwo", "SanimationThree", "SanimationFour");
+    const [animationMask, McycleAnimation] = useCycle("ManimationOne", "ManimationTwo", "ManimationThree", "ManimationFour");
     const [isOpen, setIsOpen] = useState(false);
     // const toggleOpen = () => setIsOpen(!isOpen);
     const toggleOpen = () => setIsOpen(true);
@@ -72,8 +133,7 @@ const DChange = () => {
             </Link>
 
             <AnimatePresence>
-                {/*--------------------------------      卡片元素包括按钮  开始   ---------------------------*/}
-                {/*--------------------------------     背景元素  开始   ---------------------------*/}
+
                 <div className='Background'
                     style={{
                         backgroundColor: '#E6ECF4',
@@ -85,9 +145,9 @@ const DChange = () => {
                     onClick={toggleClose} >
 
                 </div>
-                {/*--------------------------------      背景  结束    --------------------------*/}
+               
                 <motion.div className='boxChange'
-                    style={boxHome}
+                    style={boxChange}
                     variants={boxAnimation}
                     animate={animationBox}
                     onClick={toggleOpen}
@@ -102,10 +162,23 @@ const DChange = () => {
                             fontSize: 14
                         }}
                     >Press me</p>
+                    <motion.div 
+                    style={{
+                        overflow: 'hidden',
+                        width:70,
+                        height: 70
+                     }}
+                     variants={MaskAnimation}
+                    animate={animationMask}
 
-                    {/*--------------------------------     整个按钮元素  开始   ---------------------------*/}
+                    className="Mask">
+                   <motion.div className="SetCenter"
+                    variants={SetAnimation}
+                    animate={animationSet}
+                   style={SetCenterStyle}/>
+                    </motion.div>
                     {isOpen &&
-                        <div className='Allbtn' onClick={() => cycleAnimation()} >
+                        <div className='AllbtnTwo' onClick={() => cycleAnimation()&ScycleAnimation()&McycleAnimation()} >
                             <img src={zoomIcon} alt=" " style={{
                                 width: 16,
                                 position: 'absolute',
@@ -132,10 +205,9 @@ const DChange = () => {
                                 }>
                             </div>
                         </div>
-                    }
-                    {/*--------------------------------     整个按钮元素 结束   ---------------------------*/}
+                       
+                    }     
                 </motion.div>
-                {/*--------------------------------      卡片元素包括按钮  结束    ---------------------------*/}
             </AnimatePresence>
         </div>
     );

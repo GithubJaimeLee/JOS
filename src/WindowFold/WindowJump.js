@@ -1,182 +1,121 @@
-// color: "#415FFF"
-//import { motion, useCycle, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
-
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
-/* import background from "../bg2.png"; */
-import zoomIcon from "../Icon/zoomIcon.png";
 import { Link } from 'react-router-dom';
-//import { Grid } from "antd-mobile";
 import backIcon from "../Icon/back.png";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";
 import ContactHeader from "../Img/ContactHeader.png";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from "react";
+import ContactWindow from "../Img/ContactWindow.png";
 
-//press功能
-
-
-//变形完整交互
-
-const boxHome = {
-    width: 70,
-    height: 70,
-    boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+const ContactWindowStyle = {
+    width: 0,
+    height: 0,
+    boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.1)",
     opacity: 1,
-    background: '#ccc',
+    backgroundImage: `url(${ContactWindow})`,
     borderRadius: 12,
     position: 'fixed',
-    left: 280,
-    top: 100,
-    zIndex: 20
+    right: 20,
+    top: 80,
+    zIndex: 2
+}
+const boxPress = {
+    display: 'block',
+    position: 'absolute',
+    right: 14,
+    top: 46,
+    width: 40,
+    opacity: 0.5,
+    height: 40,
+    borderRadius: 20,
+    textAlign: 'center',
+    zIndex: 2, 
 }
 
 const boxAnimation = {
     animationOne: {
-        width: 70,
-        height: 70
+        scale:0,
+        width: 0,
+        height: 0
     },
     animationTwo: {
-        width: 140,
-        height: 70
-    },
-    animationThree: {
-        width: 70,
-        height: 140
-    },
-    animationFour: {
-        width: 140,
-        height: 140
+        width: 131,
+        height: 118
     }
 }
-
-
+const BackIconStyle ={
+    width: 30,
+    position: 'fixed',
+    top: 20,
+    left: 20,
+    opacity: 1,
+    zIndex: '100'
+ }
+const ContactHeaderStyle ={
+   backgroundImage: `url(${ContactHeader})`,
+        width: 375,
+        height: 159,
+        position: 'fixed',
+        zIndex: 2,
+        top: 0  
+}
+const ContactBodyStyle ={
+    backgroundImage: `url(${ContactBody})`,
+    position: 'absolute',
+    top: 159,
+    width: 375,
+    height: 1169,
+    zIndex: 1,
+ }
+ const ContactFooterStyle ={
+    backgroundImage: `url(${ContactFooter})`,
+    position: 'fixed',
+    top: 747,
+    width: 375,
+    height: 65,
+    zIndex: 1,
+ }
 
 
 const WindowJump = () => {
-    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
-    const [isOpen, setIsOpen] = useState(false);
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleOpen = () => setIsOpen(true);
-    //  const toggleClose = () => setIsOpen(!isOpen); 
-    // const [isClose, setIsClose] = useState(true);
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleClose = () => setIsOpen(false);
-    // const [isClose, setIsClose] = useState(false);
-    // const toggleClose = () => setIsOpen(!isOpen); 
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    //   const toggleOpen = () => setIsOpen(true);
+    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
 
     return (
-
-        <div>
-<Link to="/Window">
-    <img src={backIcon} alt=" " style={{
-        width: 30,
-        position: 'fixed',
-        top: 20,
-        left: 20,
-        opacity: 1,
-        zIndex: '100'
-    }}>
-    </img>
-</Link>
-            {/*   grid 开始          <div className='boxAll' style={{
-                display: Grid,
-                marginTop: 60
-            }}
-   > </div>*/}
-
-            <AnimatePresence>
-                {/*--------------------------------      卡片元素包括按钮  开始   ---------------------------*/}
-
-                {/*--------------------------------     背景元素  开始   ---------------------------*/}
+        <div className="All"
+        style={{
+        width:375,
+        height: 812,
+        overflow: 'scroll',
+        position: 'absolute'
+        }}>
+            <Link to="/Window">
+                <img src={backIcon} 
+                alt=" " 
+                style={BackIconStyle}
+                />         
+            </Link>
                 <div className='ContactHeader'
-             style={{
-                 backgroundImage: `url(${ContactHeader})`,
-             width:375,
-              height: 159,
-              position: 'fixed',
-              zIndex:2,
-              top:0
-             }}>
-             
-             </div>
-                <div className='Background'
-                    style={{
-                        backgroundImage: `url(${ContactBody})`,
-                        position: 'absolute',
-                        top:159,
-                        width: 375,
-                        height: 1169,
-                        zIndex: 1,
-                    }}
-                    onClick={toggleClose} >
-
-                </div>
+                    style={ContactHeaderStyle}
+                    />
+                <div className='ContactBody'
+                    style={ContactBodyStyle}
+                />
                 <div className='ContactFooter'
-                style={{
-                    backgroundImage: `url(${ContactFooter})`,
-                        position: 'fixed',
-                         bottom:0,
-                        width: 375,
-                        height: 65,
-                        zIndex: 1,
-                }}></div>
-                {/*--------------------------------      背景  结束    --------------------------*/}
+                    style={ContactFooterStyle}>
+
+                    </div>
+                    <AnimatePresence>
                 <motion.div className='boxChange'
-                    style={boxHome}
+                    style={ContactWindowStyle}
                     variants={boxAnimation}
                     animate={animationBox}
-                    onClick={toggleOpen}
-                >
-                    <p
-                        style={{
-                            color: "#666",
-                            fontWeight: 'bold',
-                            position: 'absolute',
-                            top: 10,
-                            left: 10,
-                            fontSize: 12
-                        }}
-                    >菜单弹窗</p>
-
-                    {/*--------------------------------     整个按钮元素  开始   ---------------------------*/}
-                    {isOpen &&
-                        <div className='Allbtn' onClick={() => cycleAnimation()} >
-                            <img src={zoomIcon} alt=" " style={{
-                                width: 16,
-                                position: 'absolute',
-                                bottom: 2,
-                                right: 2,
-                                opacity: 1,
-                                zIndex: '100'
-                            }}></img>
-                            <div className="boxPress"
-                                //exit={{ opacity: 0 }}
-                                style={
-                                    {
-                                        display: 'block',
-                                        position: 'absolute',
-                                        right: -10,
-                                        bottom: -10,
-                                        width: 40,
-                                        height: 40,
-                                        backgroundColor: "#fff",
-                                        borderRadius: 20,
-                                        textAlign: 'center',
-                                        boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
-                                    }
-                                }>
-                            </div>
-                        </div>
-                    }
-                    {/*--------------------------------     整个按钮元素 结束   ---------------------------*/}
-                </motion.div>
-                {/*--------------------------------      卡片元素包括按钮  结束    ---------------------------*/}
+                />
+                <div 
+                    className="boxPress"
+                    onClick={() => cycleAnimation()}
+                    style={boxPress} />
             </AnimatePresence>
-
         </div>
     );
 }

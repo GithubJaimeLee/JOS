@@ -1,12 +1,8 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
-
-
 import { Link } from 'react-router-dom';
-
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Calendar from "../Img/Calendar.png";
 import CalendarWindow from "../Img/CalendarWindow.png";
 //press功能
@@ -15,8 +11,8 @@ import CalendarWindow from "../Img/CalendarWindow.png";
 //变形完整交互
 
 const boxHome = {
-    width: 131,
-    height: 163,
+    width: 0,
+    height: 0,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.1)",
     opacity: 1,
     backgroundImage: `url(${CalendarWindow})`,
@@ -60,16 +56,17 @@ const WindowPull = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
     const boxAnimation = {
         animationOne: {
-        //   width: 131,
-        scale:1,
-           height: 163,
-           opacity: 1
+        //    width: 0,
+        scale:0,
+        height: 0,
+        opacity: 0
         },
         animationTwo: {
-       //    width: 0,
-       scale:0,
-           height: 0,
-           opacity: 0.1
+        //   width: 131,
+        scale:1,
+        height: 163,
+        opacity: 1,
+        width: 131
         }
     }
 
@@ -87,9 +84,6 @@ const WindowPull = () => {
                      style={BackIcon}/>
             </Link>
             <AnimatePresence>
-                <div className='Background'
-                    style={Background}
-                />
                 <motion.div className='boxChange'
                     style={boxHome}
                     variants={boxAnimation}
@@ -100,6 +94,9 @@ const WindowPull = () => {
                     onClick={() => cycleAnimation()}
                     style={boxPress} />
             </AnimatePresence>
+            <div className='Background'
+                    style={Background}
+            />
         </div>
     );
 }
