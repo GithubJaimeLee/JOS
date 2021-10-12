@@ -84,6 +84,13 @@ const ScrollTap = () => {
         
         }}/>
       </motion.div>
+{/*       <div
+     className="HScroll"
+     style={{
+     width:375,
+     height: 812,
+     overflow: 'hidden'
+     }}> 
       <div className="TapPage"
       style={{
       width:375,
@@ -94,7 +101,7 @@ const ScrollTap = () => {
       position:'absolute',
       zIndex:0
       }}/>
-            <div className="TapPage"
+       <div className="TapPage"
       style={{
       width:375,
       left:750,
@@ -104,7 +111,7 @@ const ScrollTap = () => {
       position:'absolute',
       zIndex:0
       }}/>
-            <div className="TapPage"
+      <div className="TapPage"
       style={{
       width:375,
       left:1125,
@@ -113,7 +120,7 @@ const ScrollTap = () => {
       backgroundColor: "green",
       position:'absolute',
       zIndex:0
-      }}/>
+      }}/> */}
       <motion.div className="MusicBodyRecommed"
         drag="y"
         dragConstraints={{ top: -578, bottom: 0 }}
@@ -133,15 +140,14 @@ const ScrollTap = () => {
       <div className="MusicFooter"
         style={{
           backgroundImage: `url(${MusicFooter})`,
-          bottom: 0,
+          top: 812-54,
           width: 375,
           height: 54,
           zIndex: 10,
           position: 'fixed'
-        }}
-      >
-      </div>
-    </div>
+        }}></div>
+   {/*   </div> */}
+   </div>
   );
 }
 
