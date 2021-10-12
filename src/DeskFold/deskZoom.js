@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from '../ListFold/deskAppZoom.jsx';
-//import { position } from "dom-helpers";
+import App from '../ListFold/deskAppDirect.jsx';
 
 
 const boxHome = {
@@ -26,6 +25,7 @@ const EboxHome = {
   fontWeight: 'bold',
   backgroundColor: "0px 0px 0px 0px rgba(0, 0, 0, 0)",
   opacity: 1,
+
   borderRadius: 12,
   margin: 9
 }
@@ -43,7 +43,7 @@ const cssRow = {
 const DZoom = () => {
 
   return (
-    <div>
+    <div >
       <Link to="/Desk">
         <img src={backIcon} alt=" " style={{
           width: 30,
@@ -65,64 +65,8 @@ const DZoom = () => {
           zIndex: -1
         }}
       >
-
       </div>
       <Container style={cssContainer}>
-
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-
-
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-
-
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={EboxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
         <Row style={cssRow}>
           <Col style={EboxHome}>
           </Col>
@@ -134,9 +78,59 @@ const DZoom = () => {
           </Col>
         </Row>
         <Row style={cssRow}>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+        </Row>
+        <Row style={cssRow}>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+        </Row>
+        <Row style={cssRow}>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+        </Row>
+        <Row style={cssRow}>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+        </Row>
+        <Row style={cssRow}>
+          <Col style={EboxHome}>
+          </Col>
           <Col style={EboxHome}>
           </Col>
           <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+        </Row>
+        <Row style={cssRow}>
+          <Col style={EboxHome}>
+          </Col>
+          <Col style={EboxHome}>
           </Col>
           <Col style={boxHome}>
           </Col>
@@ -144,8 +138,6 @@ const DZoom = () => {
           </Col>
         </Row>
       </Container>
-
-
       {/* ------------------------------自动补位状态----------------------------------------- */}
       <div className='boxAll' style={{
         display: Grid,
@@ -161,7 +153,6 @@ const DZoom = () => {
       </div>
       <div style={{
         background: '#E6ECF4',
-        //  backgroundImage: `url(${background})`, 
         width: 375,
         height: 812,
         position: 'absolute',
@@ -171,11 +162,7 @@ const DZoom = () => {
       }}>
       </div>
     </div>
-
-
   );
 }
 
-
-//</div> )};
 export default DZoom;

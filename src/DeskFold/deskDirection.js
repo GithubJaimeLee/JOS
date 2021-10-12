@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from '../ListFold/deskAppDirect.jsx';
+import App from '../ListFold/deskAppZoom.jsx';
+//import { position } from "dom-helpers";
 
 
 const boxHome = {
@@ -25,7 +26,6 @@ const EboxHome = {
   fontWeight: 'bold',
   backgroundColor: "0px 0px 0px 0px rgba(0, 0, 0, 0)",
   opacity: 1,
-
   borderRadius: 12,
   margin: 9
 }
@@ -43,7 +43,7 @@ const cssRow = {
 const DDirection = () => {
 
   return (
-    <div >
+    <div>
       <Link to="/Desk">
         <img src={backIcon} alt=" " style={{
           width: 30,
@@ -65,18 +65,10 @@ const DDirection = () => {
           zIndex: -1
         }}
       >
+
       </div>
       <Container style={cssContainer}>
-        <Row style={cssRow}>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
+
         <Row style={cssRow}>
           <Col style={boxHome}>
           </Col>
@@ -87,6 +79,8 @@ const DDirection = () => {
           <Col style={boxHome}>
           </Col>
         </Row>
+
+
         <Row style={cssRow}>
           <Col style={boxHome}>
           </Col>
@@ -97,16 +91,8 @@ const DDirection = () => {
           <Col style={boxHome}>
           </Col>
         </Row>
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
+
+
         <Row style={cssRow}>
           <Col style={boxHome}>
           </Col>
@@ -122,6 +108,16 @@ const DDirection = () => {
           </Col>
           <Col style={EboxHome}>
           </Col>
+          <Col style={EboxHome}>
+          </Col>
+          <Col style={EboxHome}>
+          </Col>
+        </Row>
+        <Row style={cssRow}>
+          <Col style={EboxHome}>
+          </Col>
+          <Col style={EboxHome}>
+          </Col>
           <Col style={boxHome}>
           </Col>
           <Col style={boxHome}>
@@ -130,7 +126,17 @@ const DDirection = () => {
         <Row style={cssRow}>
           <Col style={EboxHome}>
           </Col>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+          <Col style={boxHome}>
+          </Col>
+        </Row>
+        <Row style={cssRow}>
           <Col style={EboxHome}>
+          </Col>
+          <Col style={boxHome}>
           </Col>
           <Col style={boxHome}>
           </Col>
@@ -138,6 +144,8 @@ const DDirection = () => {
           </Col>
         </Row>
       </Container>
+
+
       {/* ------------------------------自动补位状态----------------------------------------- */}
       <div className='boxAll' style={{
         display: Grid,
@@ -153,6 +161,7 @@ const DDirection = () => {
       </div>
       <div style={{
         background: '#E6ECF4',
+        //  backgroundImage: `url(${background})`, 
         width: 375,
         height: 812,
         position: 'absolute',
@@ -162,7 +171,11 @@ const DDirection = () => {
       }}>
       </div>
     </div>
+
+
   );
 }
 
+
+//</div> )};
 export default DDirection;

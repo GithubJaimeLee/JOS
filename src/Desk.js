@@ -121,10 +121,10 @@ const Desk = () => {
           <DChange />
         </Route>
         <Route path="/Desk/deskZoom">
-          <DDirection />
+          <DZoom />
         </Route>
         <Route path="/Desk/deskDirection">
-          <DZoom />
+        <DDirection /> 
         </Route>
         <Route path="/Desk/deskGrid">
           <DGrid />
