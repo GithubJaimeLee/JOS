@@ -46,7 +46,7 @@ const OtherOpen = () => {
     //  const toggleClose = () => setIsOpen(!isOpen); 
     // const [isClose, setIsClose] = useState(true);
     // const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleClose = () => setIsOpen(false);
+   // const toggleClose = () => setIsOpen(false);
     // const [isClose, setIsClose] = useState(false);
     // const toggleClose = () => setIsOpen(!isOpen); 
     // const toggleOpen = () => setIsOpen(!isOpen);

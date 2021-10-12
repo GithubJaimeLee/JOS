@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import backIcon from "../Icon/Wback.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FoldInfo from "../Img/FoldInfo.png";
-import FoldInfoAll from "../Img/FoldInfoAll.png";
 import { useState } from "react";
 
 //press功能

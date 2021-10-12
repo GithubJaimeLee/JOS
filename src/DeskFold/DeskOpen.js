@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import backIcon from "../Icon/Wback.png";
 import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from "react";
+
 
 //press功能
 //变形完整交互
@@ -40,17 +40,11 @@ const boxAnimation = {
 
 const DeskOpen = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
-    const [isOpen, setIsOpen] = useState(true);
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleOpen = () => setIsOpen(true);
-    //  const toggleClose = () => setIsOpen(!isOpen); 
-    // const [isClose, setIsClose] = useState(true);
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleClose = () => setIsOpen(false);
-    // const [isClose, setIsClose] = useState(false);
-    // const toggleClose = () => setIsOpen(!isOpen); 
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    //   const toggleOpen = () => setIsOpen(true);
+   // const [isOpen, setIsOpen] = useState(true);
+   // const toggleOpen = () => setIsOpen(!isOpen);
+   // const toggleOpen = () => setIsOpen(true);
+   // const toggleClose = () => setIsOpen(false);
+
 
     return (
 
@@ -63,14 +57,10 @@ const DeskOpen = () => {
                     left: 20,
                     opacity: 1,
                     zIndex: '100'
-                }}>
-                </img>
-            </Link>
+                }}/>
+                 </Link>
 
-            <AnimatePresence>
-                {/*--------------------------------      卡片元素包括按钮  开始   ---------------------------*/}
-
-                {/*--------------------------------     背景元素  开始   ---------------------------*/}
+            <AnimatePresence>  
                 <div style={{
               backgroundImage: `url(${background})`,
               width: 375,
@@ -79,20 +69,15 @@ const DeskOpen = () => {
               top: 0,
               opacity: 1,
               zIndex: '-2'
-            }}></div>
-                {/*--------------------------------      背景  结束    --------------------------*/}
-                {isOpen &&   <motion.div className='boxChange' 
+            }}/>
+           <motion.div className='boxChange' 
                     style={boxHome}
                     variants={boxAnimation}
                     animate={animationBox}
-                    onClick={toggleOpen}
+                   // onClick={toggleOpen}
                     onClick={() => cycleAnimation()}        
-                >
-
-                </motion.div> }
-                {/*--------------------------------      卡片元素包括按钮  结束    ---------------------------*/}
+                    />  
             </AnimatePresence>
-          
         </div>
     );
 }

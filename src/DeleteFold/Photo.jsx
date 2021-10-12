@@ -26,7 +26,6 @@ export const Delete = forwardRef(
       backgroundPosition: "center",
 /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓这里是卡片本身的颜色↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
       backgroundColor: "#ccc",
-      opacity: 0.8,
       borderRadius: 0,
       ...style
     };

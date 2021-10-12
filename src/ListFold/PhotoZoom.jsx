@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 import photos from "./photosZoom.json";
-import { motion } from "framer-motion";
 //宽度
 const colSpan = {
   [photos[0]]: 1,

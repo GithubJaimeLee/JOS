@@ -6,7 +6,6 @@ import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
 import FoldScreen from "../Img/FoldScreen.png";
-import FoldScreenAll from "../Img/FoldScreenAll.png";
 
 //press功能
 //变形完整交互

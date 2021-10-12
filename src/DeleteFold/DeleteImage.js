@@ -1,8 +1,6 @@
 import * as React from "react";
-import { motion } from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
 import PhotoBg from "../Img/NewPhoto.png";
 import '../App.css';
 
@@ -10,21 +8,11 @@ import '../App.css';
 
 /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓grid输入/↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
 
-import { Grid } from "antd-mobile";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../DeleteFold/DeleteImgApp.jsx';
 
 
-{/*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑gird输入/↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/}
 
-const VImgGrid = {
-  width: 90,
-  height: 90,
-  margin: 4,
-  opacity: 0.5,
-  backgroundColor: '#ccc',
-  zIndex: 10
-}
 const DeleteImage = () => {
   return (
     <div >

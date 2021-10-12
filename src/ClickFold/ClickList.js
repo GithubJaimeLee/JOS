@@ -2,19 +2,12 @@ import * as React from "react";
 import { motion} from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-import { Stack } from 'react-bootstrap';
+//import { Stack } from 'react-bootstrap';
 import SetBody from "../Img/SetBody.png";
 import SetHeader from "../Img/SetHeader.png";
 import '../App.css';
 
-const StyleCard ={    
-    backgroundColor: '#fff',
-    top:120, 
-    width: 375,
-    height: 70,
-    opacity: 1,
-    zIndex: 0,
-  }
+
 const   ClickList = () => {
   return (
     <div >
