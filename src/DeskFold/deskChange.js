@@ -12,11 +12,12 @@ import { useState } from "react";
 //变形完整交互
 
 const boxChange = {
+  
     width: 70,
     height: 70,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     color: "#415fff",
-    opacity: 1,
+    opacity: 0,
     background: '#fff',
     backgroundImage: `url(${SetBg})`,
     borderRadius: 12,
@@ -29,56 +30,65 @@ const boxChange = {
 const SetCenterStyle = {
     width:122,
     height: 122,
-    opacity: 1,
+    scale: 0.45,
+    opacity: 0,
     backgroundImage: `url(${SetCenter})`
 }
 const boxAnimation = {
     animationOne: {
+        opacity: 1,
         width: 70,
-        height: 70
+        height: 70,
     },
     animationTwo: {
+        opacity: 1,
         width: 140,
         height: 70
     },
     animationThree: {
+        opacity: 1,
         width: 70,
         height: 140
     },
     animationFour: {
+        opacity: 1,
         width: 140,
         height: 140
     }
 }
 
 const SetAnimation = {
-    SanimationOne: {
-        scale: 0.45,
+    SanimationOne: { 
+          
         top:-26,
         left:-26,
         position: 'relative',
-        zIndex:-1
+        zIndex:-1,
+        opacity: 1
     },
     SanimationTwo: {
         scale: 1,
         bottom:10,
         right:-36,
         position: 'relative',
-        zIndex:-1
+        zIndex:-1,
+        opacity: 1
     },
     SanimationThree: {
         scale: 0.85,
         bottom:-10,
         right:0,
         position: 'relative',
-        zIndex:-1
+        zIndex:-1,
+        opacity: 1
     },
     SanimationFour: {
         scale: 1.36,
         bottom:-30,
         right:-35,
         position: 'relative',
-        zIndex:-1
+        zIndex:-1,
+        opacity: 1
     }
 }
 const MaskAnimation = {
