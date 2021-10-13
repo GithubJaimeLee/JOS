@@ -1,14 +1,28 @@
 import * as React from "react";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import MusicHead from "../Img/MusicHead.png";
 import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
+import { useState } from "react";
 import '../App.css';
 
+const BackAnimation = {
+  BackOne: {
+  
+  },
+ BackTwo: {
+    
+      y:0
+  }
+}
 const OtherBackToTop = () => {
+  //const [animationBox, cycleAnimation] = useBacl("animationOne", "animationTwo");
+  //const [isback, cycleBack] = BackCycle(("BackOne", "BackOne");
+  const [isback, setIsBack] = useState("BackOne", "BackOne");
+ // const BackToTapFunction = () => setIsBack(true);
   return (
     <div>
       <Link to="/Other">
@@ -21,6 +35,7 @@ const OtherBackToTop = () => {
           zIndex: '100'
         }} />
       </Link>
+      <AnimatePresence>  
       <motion.div className="MusicHead"
         //    drag="y"
         // dragConstraints={{ top: -40, bottom: 0 }}
@@ -45,8 +60,9 @@ const OtherBackToTop = () => {
           zIndex: 1
         }}>
 
-      </div>
-      <div ClassName="BackToTopBtn"
+      </div> 
+      <motion.div ClassName="BackToTopBtn"
+         onClick={setIsBack}
         style={{
           width: 46,
           height: 46,
@@ -60,7 +76,12 @@ const OtherBackToTop = () => {
       />
 
 
-      <motion.div className="MusicBodyRecommed"
+
+      <motion.div className="MusicBody" 
+      
+              variants={BackAnimation}
+                   animate={isback}
+                   
         drag="y"
         dragConstraints={{ top: -578, bottom: 0 }}
         dragElastic={1}
@@ -91,6 +112,7 @@ const OtherBackToTop = () => {
         }}
       >
       </div>
+      </AnimatePresence>  
     </div>
   );
 }

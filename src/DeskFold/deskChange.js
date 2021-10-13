@@ -149,7 +149,6 @@ const DChange = () => {
             </Link>
 
             <AnimatePresence>
-
                 <div className='Background'
                     style={{
                         backgroundColor: '#E6ECF4',
