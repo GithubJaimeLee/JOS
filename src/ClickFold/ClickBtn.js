@@ -1,19 +1,17 @@
-import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ClickB from "../Img/ClickB.png";
-import { useState } from "react";
+import ClickBtn from "../Img/ClickBtn.png";
+import { motion } from 'framer-motion';
+import OneFingerClick from "../Img/OneFingerClick.png";
 
-//press功能
-//变形完整交互
-const boxHome = {
-    width: 292,
+const ClickBtnStyle = {
+    width: 291,
     height: 42,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-    opacity: 0.8,
-    background: '#415fff',
+    backgroundImage: `url(${ClickBtn})`,
     borderRadius: 12,
     position: 'absolute',
     left: 42,
@@ -21,33 +19,11 @@ const boxHome = {
     zIndex: 20
 }
 
-const boxAnimation = {
-    animationOne: {
-        width: 292,
-        height: 42
-    },
-    animationTwo: {
-        width: 282,
-        height: 32
-    }
-}
+
 
 const ClickCard = () => {
-    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
-    const [isOpen, setIsOpen] = useState(false);
-    //const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleOpen = () => setIsOpen(true);
-    //const toggleClose = () => setIsOpen(!isOpen); 
-    //const [isClose, setIsClose] = useState(true);
-    //const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleClose = () => setIsOpen(false);
-    //const [isClose, setIsClose] = useState(false);
-    //const toggleClose = () => setIsOpen(!isOpen); 
-    //const toggleOpen = () => setIsOpen(!isOpen);
-    //const toggleOpen = () => setIsOpen(true);
 
     return (
-
         <div >
             <Link to="/Click">
                 <img src={backIcon} alt=" " style={{
@@ -60,38 +36,48 @@ const ClickCard = () => {
                 }}>
                 </img>
             </Link>
-           
-            <AnimatePresence>
-                <div className='Background'
+            <div className="OneFingerClick"
+                style={{
+                    width: 32,
+                    height: 60,
+                    backgroundImage: `url(${OneFingerClick})`,
+                    position: 'absolute',
+                    top: 745,
+                    left: 260,
+                    zIndex: 11
+                }}
+            />
+
+            <div className='Background'
+                style={{
+                    backgroundImage: `url(${ClickB})`,
+                    position: 'absolute',
+                    width: 375,
+                    height: 812,
+                    zIndex: 10,
+                }}
+            >
+            </div>
+
+            <motion.div className='boxChange'
+                style={ClickBtnStyle}
+                whileTap={{ scale: 0.95 }}
+            >
+                <motion.div className='BtnMask'
                     style={{
-                       backgroundImage: `url(${ClickB})`,
-                        position: 'absolute',
-                        width: 375,
-                        height: 812,
-                        zIndex: 10,
+                        width: 291,
+                        height: 42,
+                        borderRadius: 12,
+                        backgroundColor: '#000000',
+                        opacity: 0
                     }}
-              >
+                    whileTap={{
+                        opacity: 0.2
+                    }}
+                ></motion.div>
 
-                </div>
+            </motion.div>
 
-                <motion.div className='boxChange'
-                    style={boxHome}
-                    variants={boxAnimation}
-                    animate={animationBox}
-                    whileTap={{ scale: 0.9 }}
-                >
-                    <p
-                        style={{
-                            color: "#fff",
-                            fontWeight: 'bold',
-                            position: 'absolute',
-                            top: 10,
-                            left: 10,
-                            fontSize: 14
-                        }}
-                    >Press me</p>
-                </motion.div>
-            </AnimatePresence>
 
         </div>
     );

@@ -1,13 +1,11 @@
-import { motion, useCycle, AnimatePresence } from 'framer-motion';
+import { motion, useCycle } from 'framer-motion';
 import * as React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/Wback.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DeskOOS from "../Img/DeskOOS.png";
 import { useState } from "react";
-
-//press功能
-//变形完整交互
+import OneFingerClick from "../Img/OneFingerClick.png";
 
 const boxHome = {
     width: 300,
@@ -23,38 +21,8 @@ const boxHome = {
     zIndex: 20
 }
 
-const boxAnimation = {
-    animationOne: {
-        width: 300,
-        height: 500
-    },
-    animationTwo: {
-        width: 140,
-        height: 70
-    },
-    animationThree: {
-        width: 70,
-        height: 140
-    },
-    animationFour: {
-        width: 140,
-        height: 140
-    }
-}
 
 const ClickCard = () => {
-    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
-    const [isOpen, setIsOpen] = useState(false);
-    //const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleOpen = () => setIsOpen(true);
-    //const toggleClose = () => setIsOpen(!isOpen); 
-    //const [isClose, setIsClose] = useState(true);
-    //const toggleOpen = () => setIsOpen(!isOpen);
-   // const toggleClose = () => setIsOpen(false);
-    //const [isClose, setIsClose] = useState(false);
-    //const toggleClose = () => setIsOpen(!isOpen); 
-    //const toggleOpen = () => setIsOpen(!isOpen);
-    //const toggleOpen = () => setIsOpen(true);
 
     return (
 
@@ -70,53 +38,56 @@ const ClickCard = () => {
                 }}>
                 </img>
             </Link>
+            <div className="OneFingerClick"
+                style={{
+                    width: 32,
+                    height: 60,
+                    backgroundImage: `url(${OneFingerClick})`,
+                    position: 'absolute',
+                    top: 560,
+                    left: 260,
+                    zIndex:21
+                }}
+            />
 
-            <AnimatePresence>
-            
-                <div className="blackMask"
+            <div className="blackMask"
+                style={{
+                    backgroundColor: "#000000",
+                    width: 375,
+                    height: 812,
+                    position: 'absolute',
+                    top: 0,
+                    opacity: 0.4,
+                    zIndex: '2'
+                }}
+            ></div>
+            <div className="BlurBackground"
+                style={{
+                    backgroundImage: `url(${DeskOOS})`,
+                    width: 375,
+                    height: 812,
+                    position: 'absolute',
+                    top: 0,
+                    opacity: 1,
+                    zIndex: '-1'
+                }} >
+            </div>
+
+            <motion.div className='boxChange'
+                style={boxHome}
+                whileTap={{ scale: 0.95 }}
+            >
+                <p
                     style={{
-                        backgroundColor: "#000000",
-                        width: 375,
-                        height: 812,
+                        color: "#666",
+                        fontWeight: 'bold',
                         position: 'absolute',
-                        top: 0,
-                        opacity: 0.4,
-                        zIndex: '2'
+                        top: 10,
+                        left: 10,
+                        fontSize: 14
                     }}
-                ></div>
-                <div className="BlurBackground"
-                    style={{
-                        backgroundImage: `url(${DeskOOS})`,
-                        width: 375,
-                        height: 812,
-                        position: 'absolute',
-                        top: 0,
-                        opacity: 1,
-                        zIndex: '-1'
-                    }} >
-                </div>
-          
-                <motion.div className='boxChange'
-                    style={boxHome}
-                    variants={boxAnimation}
-                    animate={animationBox}
-                    whileTap={{ scale: 0.9 }}
-                >
-                    <p
-                        style={{
-                            color: "#666",
-                            fontWeight: 'bold',
-                            position: 'absolute',
-                            top: 10,
-                            left: 10,
-                            fontSize: 14
-                        }}
-                    >Press me</p>
-
-                </motion.div>
-              
-            </AnimatePresence>
-
+                >Press me</p>
+            </motion.div>
         </div>
     );
 }

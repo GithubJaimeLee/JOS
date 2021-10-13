@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import ClickN from "../Img/ClickN.png";
+import FingerClick from "../Img/OneFingerClick.png";
 import '../App.css';
 
 const GridBox = {
@@ -46,6 +47,17 @@ const ClickNum = () => {
           zIndex: '100'
         }} />
       </Link>
+      <div className="OneFingerClick"
+    style={{
+        width: 32,
+        height: 60,
+        backgroundImage: `url(${FingerClick})`,
+        position: 'absolute',
+        top:720,
+        left: 66,
+        zIndex: 11
+    }}
+/>
       <div className="R" style={GridBox}>
 
         <div className="C" style={RowGridBox}>
