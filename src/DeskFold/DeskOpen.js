@@ -50,7 +50,7 @@ const boxAnimation = {
 const DeskOpen = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
     const [DragBox, cycleDrag] = useCycle(false, true);
-    const [isDrag, setIsDrag] = useState(false);
+    //const [isDrag, setIsDrag] = useState(false);
   //  const toggleDragging = () => setIsDrag(!isDrag);
     return (
 

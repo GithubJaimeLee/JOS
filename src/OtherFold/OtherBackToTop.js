@@ -1,5 +1,5 @@
 import * as React from "react";
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import MusicHead from "../Img/MusicHead.png";
@@ -9,20 +9,18 @@ import MusicHeaderTap from "../Img/MusicHeaderTap.png";
 import { useState } from "react";
 import '../App.css';
 
-const BackAnimation = {
-  BackOne: {
-  
+const BoxAnimation = {
+  animationOne: {
+ 
   },
- BackTwo: {
-    
-      y:0
+  animationTwo: {
+    y:0
+
   }
 }
 const OtherBackToTop = () => {
-  //const [animationBox, cycleAnimation] = useBacl("animationOne", "animationTwo");
-  //const [isback, cycleBack] = BackCycle(("BackOne", "BackOne");
-  const [isback, setIsBack] = useState("BackOne", "BackOne");
- // const BackToTapFunction = () => setIsBack(true);
+
+  const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
   return (
     <div>
       <Link to="/Other">
@@ -62,7 +60,7 @@ const OtherBackToTop = () => {
 
       </div> 
       <motion.div ClassName="BackToTopBtn"
-         onClick={setIsBack}
+            onClick={() => cycleAnimation()} 
         style={{
           width: 46,
           height: 46,
@@ -79,9 +77,8 @@ const OtherBackToTop = () => {
 
       <motion.div className="MusicBody" 
       
-              variants={BackAnimation}
-                   animate={isback}
-                   
+      variants={BoxAnimation}
+                    animate={animationBox}
         drag="y"
         dragConstraints={{ top: -578, bottom: 0 }}
         dragElastic={1}
