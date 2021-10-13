@@ -36,29 +36,30 @@ const OtherBackToTop = () => {
         }}>
       </motion.div>
       <div className="MusicHeaderTap"
-      style={{
-        backgroundImage: `url(${MusicHeaderTap})`,
-      top:92,
-      position:'fixed',
-      width: 375,
-      height: 38,
-      zIndex:1
-      }}>
-    
+        style={{
+          backgroundImage: `url(${MusicHeaderTap})`,
+          top: 92,
+          position: 'fixed',
+          width: 375,
+          height: 38,
+          zIndex: 1
+        }}>
+
       </div>
       <div ClassName="BackToTopBtn"
-      style={{
-        width:46,
-        height: 46,
-        position: 'fixed',
-        bottom:2,
-        left:24,
-        backgroundColor: "blue",
-        zIndex:11,
-        opacity: 0.5
-      }}>
-      
-      </div>
+        style={{
+          width: 46,
+          height: 46,
+          position: 'fixed',
+          bottom: 2,
+          left: 24,
+          backgroundColor: "blue",
+          zIndex: 11,
+          opacity: 0.5
+        }}
+      />
+
+
       <motion.div className="MusicBodyRecommed"
         drag="y"
         dragConstraints={{ top: -578, bottom: 0 }}
@@ -69,12 +70,16 @@ const OtherBackToTop = () => {
           backgroundColor: '#ddd',
           top: 130,
           width: 375,
-          height:1205,
+          height: 1205,
           position: 'absolute',
           opacity: 1,
           zIndex: 0
-        }}>
-      </motion.div>
+        }}
+        whileTap={{
+          y: 0
+        }}
+      />
+
       <div className="MusicFooter"
         style={{
           backgroundImage: `url(${MusicFooter})`,
