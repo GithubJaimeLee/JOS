@@ -29,13 +29,13 @@ export const Delete = forwardRef(
       borderRadius: 0,
       ...style
     };
-
+/*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓勾选器颜色↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
     return <div ref={ref} style={inlineStyles} {...props} >
     <div
     style={{
     width:16,
     height:16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#aaa',
    top:4,
    left: 66,
    position:'relative',

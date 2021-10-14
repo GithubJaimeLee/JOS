@@ -3,9 +3,6 @@ import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import PhotoBg from "../Img/NewPhoto.png";
 import '../App.css';
-
-
-
 /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓grid输入/↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -39,38 +36,7 @@ const DeleteImage = () => {
         top: 96,
         position: 'absolute'
       }}>
-      {/*   <Container >
-          <Row>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-          </Row>
-          <Row>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-          </Row>
-          <Row>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-            <Col style={VImgGrid
-            }>1 of 2</Col>
-          </Row>
-        </Container> */}
+     
       </div> 
       <div className='Bg'
         style={{
