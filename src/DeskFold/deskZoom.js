@@ -143,7 +143,7 @@ const DZoom = () => {
         display: Grid,
         position: 'absolute',
         left: 0,
-        top: 9,
+        top: 0,
         width: 375,
         height: 812
       }} >
