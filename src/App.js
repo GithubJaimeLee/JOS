@@ -76,7 +76,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-              <Link to="/Desk">
+              <Link to="/">
                 <img src={MenuIcon} alt=" " style={{
                     width: 30,
                     position: 'absolute',
