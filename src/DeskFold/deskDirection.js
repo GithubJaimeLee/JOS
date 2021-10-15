@@ -59,8 +59,8 @@ const DDirection = () => {
         style={{
           backgroundColor: '#E6ECF4',
           position: 'absolute',
-          width: 375,
-          height: 812,
+          width: '100%',
+          height:'100%',
           top: 0,
           zIndex: -1
         }}
@@ -152,24 +152,14 @@ const DDirection = () => {
         position: 'absolute',
         left: 0,
         top: 9,
-        width: 375,
-        height: 812
+        width:'100%',
+        height: '100%'
       }} >
         <App />
       </div>
       <div style={{ marginLeft: 180, marginTop: -116 }}>
       </div>
-      <div style={{
-        background: '#E6ECF4',
-        //  backgroundImage: `url(${background})`, 
-        width: 375,
-        height: 812,
-        position: 'absolute',
-        top: 0,
-        opacity: 1,
-        zIndex: '-1'
-      }}>
-      </div>
+   
     </div>
 
 

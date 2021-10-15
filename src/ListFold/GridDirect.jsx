@@ -7,10 +7,10 @@ export function GridD({ children, columns }) {
       style={{
         display: 'grid',
         gridTemplateColumns: `repeat(${columns}, 1fr)`,
-        gridGap: 270,
+        gridGap: 370,
         marginLeft: 20,
         paddingTop:10,
-        height: 712,
+        height: 0,
         width: 355,
         top: 60,
         position: 'absolute'

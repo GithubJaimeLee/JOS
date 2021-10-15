@@ -41,11 +41,11 @@ div.BlurBackground{
     filter: blur(4px); 
 }
 
-#root{
+/* #root{
  position: absolute;
   width: 375px!important;
   height: 812px!important; 
-} 
+}  */
 div.ListCard{
   border:1px solid #000;
 } 

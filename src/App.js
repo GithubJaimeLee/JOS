@@ -16,6 +16,7 @@ import background from "./Img/bg.png";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { fill } from '@tensorflow/tfjs-core';
 
 let cardActive = {
   width: 160, height: 100, backgroundColor: "#fff",
@@ -85,7 +86,6 @@ function App() {
               }}
               animate={{           
                 color: "#333",
-                // color: "#415FFF",
                 marginLeft: 66,
                 fontSize: 28,
                 y: 0
@@ -289,12 +289,14 @@ function App() {
                     <ProgressBar /></div>   </motion.div>
               </Link>
             </div>
-            <div style={{
+            <div style={{  
               backgroundImage: `url(${background})`,
-              width: 375,
-              height: 812, 
+            top: 0,
+            left: 0,
+              width: '100%', 
+              height:'100%', 
               position: 'absolute', 
-              top: 0,
+        
               opacity: 1,
               zIndex: '-2'
             }}></div>

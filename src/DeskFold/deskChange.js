@@ -153,8 +153,8 @@ const DChange = () => {
                     style={{
                         backgroundColor: '#E6ECF4',
                         position: 'absolute',
-                        width: 375,
-                        height: 812,
+                        width: '100%', 
+                        height: '100%', 
                         zIndex: 10,
                     }}
                     onClick={toggleClose} >
