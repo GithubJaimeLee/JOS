@@ -9,10 +9,18 @@ const DApp = () => {
   return (
     <div 
     style={{
-    
+  
     }}
     >
-      <App />
+    <div 
+    className="Gird"
+    style={{
+    display: 'Grid',
+    justifyContent: 'center'
+    }}
+    >
+    <App/>
+    </div>  
       <Link to="/Desk">
         <img src={backIcon} alt=" " style={{
           width: 30,
@@ -36,7 +44,7 @@ const DApp = () => {
         background: '#E6ECF4',
         /*   backgroundImage: `url(${background})`, */
         width: '100%',
-        height: '100%',
+        height: '100vh',
         position: 'absolute',
         top: 0,
         opacity: 1,

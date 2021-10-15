@@ -35,23 +35,28 @@ const UploadGallery = () => {
  // 上面两项是重点
       onDragCancel={handleDragCancel}
     >
-      <SortableContext items={items} strategy={() => {}}>
-        <Grid columns={4} >
+      <SortableContext
+    
+      
+       items={items} strategy={() => {}}>
+        <Grid  columns={4} >
+    
        {items.map((url, index) => (
-            <SortablePhoto key={url} url={url} index={index} />
+       <SortablePhoto key={url} url={url} index={index} />  
           ))}
- 
+        
         </Grid>
       </SortableContext>
 {/* 调整运动后的比例 */}
       <DragOverlay adjustScale={false}>
         {activeId ? (
-          <div
+          <div c
             style={{
               display: "grid",
               gridAutoColumns: "auto",
               gridAutoRows: "auto",
               height: "100%"
+            
             }}
           >
             <Photo 

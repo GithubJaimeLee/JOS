@@ -18,13 +18,14 @@ const boxHome = {
 
 const cssContainer = {
     marginTop: 60,
+    width:335,
     padding: 0,
     zIndex: '-1'
 
 }
 const cssRow = {
-    marginRight: 10,
-    marginLeft: 10
+   top:-80,
+   position: 'relative'
 }
 
 export default function App() {
@@ -42,12 +43,16 @@ export default function App() {
                 }}>
                 </img>
             </Link>
+     
+  
+         
+            <Container style={cssContainer}>
             <motion.div style={{
                 width: 70,
                 height: 70,
-                top: 70,
-                left: 20,
-                position: 'absolute',
+                top: 0,
+                left: 0,
+                position: 'relative',
                 backgroundColor: "#fff",
                 boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.2)",
                 borderRadius: 12,
@@ -74,6 +79,79 @@ export default function App() {
                     }}
                 >Move me</p>
             </motion.div>
+            <div>
+                <Row style={cssRow}>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                </Row>
+                <Row style={cssRow}>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                </Row>
+                <Row style={cssRow}>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                </Row>
+                <Row style={cssRow}>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                </Row>
+                <Row style={cssRow}>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                </Row>
+                <Row style={cssRow}>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                </Row>
+                <Row style={cssRow}>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                    <Col style={boxHome}>
+                    </Col>
+                </Row>
+                </div>
+            </Container>
             <div style={{
                 background: '#E6ECF4',
                 width: '100%',
@@ -82,81 +160,7 @@ export default function App() {
                 top: 0,
                 opacity: 1,
                 zIndex: '-10'
-            }}>
-            </div>
-            <Container style={cssContainer}>
-                <Row style={cssRow}>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                </Row>
-                <Row style={cssRow}>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                </Row>
-                <Row style={cssRow}>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                </Row>
-                <Row style={cssRow}>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                </Row>
-                <Row style={cssRow}>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                </Row>
-                <Row style={cssRow}>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                </Row>
-                <Row style={cssRow}>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                    <Col style={boxHome}>
-                    </Col>
-                </Row>
-            </Container>
-
+            }}/>
         </div>
 
     );

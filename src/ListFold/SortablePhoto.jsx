@@ -19,6 +19,7 @@ export const SortablePhoto = (props) => {
   };
 
   return (
+  
     <Photo
       ref={setNodeRef}
       style={style}
@@ -27,6 +28,7 @@ export const SortablePhoto = (props) => {
       {...attributes}
       {...listeners}
     />
+   
   );
 };
 

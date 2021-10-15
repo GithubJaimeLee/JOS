@@ -10,6 +10,7 @@ export function Grid({ children, columns }) {
         gridGap: 18,
         padding: 20,
         paddingTop:60,
+        width:355,
         gridAutoFlow: "row dense"
       }}
     >
