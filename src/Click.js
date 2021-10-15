@@ -13,7 +13,7 @@ import App from './App';
 
 let cardActive = {
   width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
+  margin: 8,
   borderRadius: 12,
   textAlign: 'center',
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -34,11 +34,10 @@ const List = () => {
       <Switch>
         <Route exact path="/Click">
           <div >
-            <motion.h1 style={{
-              padding: 30,
+            <motion.h1 className="text-center" style={{
+              padding: 18,
               color: "#333",
-              fontSize:28,
-              marginLeft: 70,
+              fontSize:28,   
               y: 0
             }}
               transition={{
@@ -59,7 +58,13 @@ const List = () => {
               }}>
               </img>
             </Link>
-            <div className="List">
+            <div className="Grid" 
+              style={{
+            display: "flex",
+            justifyContent: 'center',
+            }}
+            >
+            <div className="Row1">
             <Link to="/Click/ClickList" style={{ textDecoration: 'none' }}>
    <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>列表反馈</p></motion.div>
    </Link>
@@ -70,7 +75,7 @@ const List = () => {
    <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>按钮反馈</p></motion.div>
    </Link>
 </div>
-   <div style={{marginLeft: 180, marginTop:-348}}>
+   <div className="Row2">
    <Link to="/Click/ClickNum" style={{ textDecoration: 'none' }}>
    <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>数字键盘反馈</p> </motion.div>
    </Link>
@@ -78,10 +83,12 @@ const List = () => {
    <motion.div whileHover={cardHover} style={cardActive} ><p style={{paddingTop:40}}>卡片反馈</p></motion.div>
    </Link>
             </div>
+            </div>
             <div style={{
               backgroundImage: `url(${background})`,
-              width: 375,
-              height: 812,
+        backgroundSize:'cover',
+        width: '100%', 
+       height:'100vh', 
               position: 'absolute',
               top: 0,
               opacity: 1,

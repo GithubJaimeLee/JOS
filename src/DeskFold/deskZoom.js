@@ -55,17 +55,7 @@ const DZoom = () => {
         }}>
         </img>
       </Link>
-      <div
-        style={{
-          backgroundColor: '#E6ECF4',
-          position: 'absolute',
-          width: 375,
-          height: 812,
-          top: 0,
-          zIndex: -1
-        }}
-      >
-      </div>
+
       <Container style={cssContainer}>
         <Row style={cssRow}>
           <Col style={EboxHome}>
@@ -143,9 +133,9 @@ const DZoom = () => {
         display: Grid,
         position: 'absolute',
         left: 0,
-        top: 9,
-        width: 375,
-        height: 812
+        top: 0,
+        width: '100%',
+        height:'100%'
       }} >
         <App />
       </div>
@@ -153,8 +143,8 @@ const DZoom = () => {
       </div>
       <div style={{
         background: '#E6ECF4',
-        width: 375,
-        height: 812,
+        width: '100%',
+        height:'100%',
         position: 'absolute',
         top: 0,
         opacity: 1,

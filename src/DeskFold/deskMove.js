@@ -7,7 +7,11 @@ import App from '../ListFold/deskApp.jsx';
 
 const DApp = () => {
   return (
-    <div >
+    <div 
+    style={{
+    
+    }}
+    >
       <App />
       <Link to="/Desk">
         <img src={backIcon} alt=" " style={{
@@ -31,8 +35,8 @@ const DApp = () => {
       <div style={{
         background: '#E6ECF4',
         /*   backgroundImage: `url(${background})`, */
-        width: 375,
-        height: 812,
+        width: '100%',
+        height: '100%',
         position: 'absolute',
         top: 0,
         opacity: 1,

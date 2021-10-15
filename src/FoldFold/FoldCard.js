@@ -15,7 +15,6 @@ const boxHome = {
     height: 136,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     color: "#415fff",
-    opacity: 0.5,
     background: '#fff',
     borderRadius: 12,
     position: 'absolute',
@@ -31,32 +30,16 @@ const boxAnimation = {
         height: 136
     },
     animationTwo: {
-        width: 140,
+        width: 340,
         height: 70
-    },
-    animationThree: {
-        width: 70,
-        height: 140
-    },
-    animationFour: {
-        width: 140,
-        height: 140
     }
 }
 
 const FoldCard = () => {
-    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
-    const [isOpen, setIsOpen] = useState(false);
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleOpen = () => setIsOpen(true);
-    //  const toggleClose = () => setIsOpen(!isOpen); 
-    // const [isClose, setIsClose] = useState(true);
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    const toggleClose = () => setIsOpen(false);
-    // const [isClose, setIsClose] = useState(false);
-    // const toggleClose = () => setIsOpen(!isOpen); 
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    //   const toggleOpen = () => setIsOpen(true);
+    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
+    const [isOpen, setIsOpen] = useState(true);
+  
+   
 
     return (
 
@@ -86,7 +69,7 @@ const FoldCard = () => {
                         zIndex: 10,
 
                     }}
-                    onClick={toggleClose} >
+                     >
 
                 </div>
                 {/*--------------------------------      背景  结束    --------------------------*/}
@@ -94,42 +77,24 @@ const FoldCard = () => {
                     style={boxHome}
                     variants={boxAnimation}
                     animate={animationBox}
-                    onClick={toggleOpen}
+                  
                 >
-                    <p
-                        style={{
-                            color: "#666",
-                            fontWeight: 'bold',
-                            position: 'absolute',
-                            top: 10,
-                            left: 10,
-                            fontSize: 12
-                        }}
-                    >卡片折叠</p>
+               
 
                     {/*--------------------------------     整个按钮元素  开始   ---------------------------*/}
                     {isOpen &&
                         <div className='Allbtn' onClick={() => cycleAnimation()} >
-                            <img src={zoomIcon} alt=" " style={{
-                                width: 16,
-                                position: 'absolute',
-                                bottom: 2,
-                                right: 2,
-                                opacity: 1,
-                                zIndex: '100'
-                            }}></img>
                             <div className="boxPress"
-                                //exit={{ opacity: 0 }}
                                 style={
                                     {
                                         display: 'block',
                                         position: 'absolute',
-                                        right: -10,
-                                        bottom: -10,
+                                        right: 0,
+                                        top: 0,
                                         width: 40,
                                         height: 40,
                                         backgroundColor: "#fff",
-                                        borderRadius: 20,
+                                        borderRadius: 0,
                                         textAlign: 'center',
                                         boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
                                     }

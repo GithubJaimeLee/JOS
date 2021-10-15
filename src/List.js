@@ -13,7 +13,7 @@ import App from './App';
 
 let cardActive = {
   width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
+  margin: 8,
   borderRadius: 12,
   textAlign: 'center',
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -34,10 +34,11 @@ const List = () => {
       <Switch>
         <Route exact path="/List">
           <div >
-            <motion.h1 style={{
-              padding: 30,
+            <motion.h1
+             className="text-center" 
+             style={{
+              padding: 18,
               color: "#333",
-              marginLeft: 70,
               fontSize:28,
               y: 0
             }}
@@ -59,7 +60,15 @@ const List = () => {
               }}>
               </img>
             </Link>
-            <div className="List">
+            <div
+            className="Gird"
+            style={{
+            display: "flex",
+            justifyContent: 'center',
+            }}
+            >
+            <div 
+            className="Row1">
             <Link to="/List/ScrollJump" style={{ textDecoration: 'none' }}>
               <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>列表滑动及回弹</p></motion.div>
               </Link>
@@ -70,7 +79,9 @@ const List = () => {
               <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>标题栏</p></motion.div>
               </Link>
             </div>
-            <div style={{ marginLeft: 180, marginTop: -348 }}>
+            <div 
+            className="Row2" 
+            >
             <Link to="/List/ScrollTap" style={{ textDecoration: 'none' }}>
               <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>子页签(Tap)</p> </motion.div>
               </Link>
@@ -78,10 +89,14 @@ const List = () => {
               <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>子标题交替悬停</p></motion.div>
               </Link>
             </div>
-            <div style={{
+           </div>
+            <div 
+            className="Bg"
+            style={{
               backgroundImage: `url(${background})`,
-              width: 375,
-              height: 812,
+              backgroundSize:'cover',
+              width: '100%', 
+    height:'100vh', 
               position: 'absolute',
               top: 0,
               opacity: 1,

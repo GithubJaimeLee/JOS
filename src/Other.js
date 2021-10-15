@@ -10,7 +10,7 @@ import App from './App';
 
 let card = {
   width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
+  margin: 8,
   borderRadius: 12,
   textAlign: 'center',
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -33,11 +33,11 @@ const Other = () => {
       <Switch>
         <Route exact path="/Other">
           <div >
-            <motion.h1
+            <motion.h1 
+             className="text-center" 
               style={{
-                padding: 30,
+                padding: 18,
                 color: "#333",
-                marginLeft: 66,
                 fontSize: 28,
                 y: 0
               }}
@@ -57,24 +57,32 @@ const Other = () => {
               }}>
               </img>
             </Link>
-
-            <div className="Other">
+            <div 
+      className="Grid"
+      style={{
+            display: "flex",
+            justifyContent: 'center',
+            }}
+            >
+      <div className="Row1">
               <Link to="/Other/OtherBackToTop" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>状态、标题栏置顶</p></motion.div>
               </Link>
 
    
             </div>
-            <div style={{ marginLeft: 180, marginTop: -116 }}>
+            <div className="Row2">
             <Link to="/Other/OtherPull" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>下拉刷新</p></motion.div>
               </Link>
              
             </div>
+            </div>
             <div style={{
               backgroundImage: `url(${background})`,
-              width: 375,
-              height: 812,
+              backgroundSize:'cover',
+              width: '100%', 
+              height:'100vh', 
               position: 'absolute',
               top: 0,
               opacity: 1,

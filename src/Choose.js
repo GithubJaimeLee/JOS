@@ -13,7 +13,7 @@ import App from './App';
 
 let card = {
   width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
+  margin: 8,
   borderRadius: 12,
   textAlign: 'center',
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -37,10 +37,10 @@ const Choose = () => {
       <Route exact path="/Choose">
     <div >
       <motion.h1
+             className="text-center" 
         style={{
-          padding: 30,
+          padding: 18,
           color: "#333",
-          marginLeft: 60,
           fontSize: 28,
           y: 0
         }}
@@ -61,7 +61,14 @@ const Choose = () => {
         </img>
       </Link>
 
-      <div className="Choose">
+      <div
+              className="Gird"
+              style={{
+            display: "flex",
+            justifyContent: 'center',
+            }}
+             >
+            <div className="Row1">
          <Link to="/Choose/ChooseDate" style={{ textDecoration: 'none' }}>
          <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>日期滑动选择器</p></motion.div>
          </Link>
@@ -72,7 +79,7 @@ const Choose = () => {
          <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>滑动条</p></motion.div>
       </Link>
       </div>
-      <div style={{ marginLeft: 180, marginTop: -348 }}>
+      <div className="Row2">
          <Link to="/Choose/ChooseLoadingSwitch" style={{ textDecoration: 'none' }}>
          <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>加载类开关</p> </motion.div>
          </Link>
@@ -83,10 +90,12 @@ const Choose = () => {
          <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>复选框</p></motion.div>
       </Link>
       </div>
+      </div>
       <div style={{
         backgroundImage: `url(${background})`,
-        width: 375,
-        height: 812,
+        backgroundSize:'cover',  
+        width: '100%', 
+    height:'100vh', 
         position: 'absolute',
         top: 0,
         opacity: 1,

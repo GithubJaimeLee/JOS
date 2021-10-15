@@ -68,7 +68,7 @@ const ContactBodyStyle ={
  const ContactFooterStyle ={
     backgroundImage: `url(${ContactFooter})`,
     position: 'fixed',
-    top: 747,
+    bottom: 0,
     width: 375,
     height: 65,
     zIndex: 1,

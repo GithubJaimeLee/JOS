@@ -55,27 +55,13 @@ export default function App() {
             }}
                 drag
                 dragElastic={0.2}
-                // 上方拖拽弹性
-                /* dragTransition={{
-                // bounceStiffness:175,
-                // bounceDamping:28,
-                // timeConstant:200,
-                /* min:2,
-                // modifyTarget: (target) => {let a = Math.round/(target/290)*290
-                // return a 
-                }}*/
-                // transition={{ type: 'spring', velocity: 100 }}
-
                 dragTransition={{
                     timeConstant: 80,
                     power: 0,
-                    // Snap calculated target to nearest 50 pixels
                     modifyTarget: target => Math.round(target / 88) * 88
                 }}
                 dragConstraints={{ left: 0, right: 275, top: 0, bottom: 530 }}
                 dragMomentum={true}
-            // x={X}
-            //background={"null"}
             >
                 <p
                     style={{
@@ -85,14 +71,13 @@ export default function App() {
                         left: 10,
                         fontSize: 14,
                         fontWeight: 'bold',
-
                     }}
                 >Move me</p>
             </motion.div>
             <div style={{
                 background: '#E6ECF4',
-                width: 375,
-                height: 812,
+                width: '100%',
+                height: '100%',
                 position: 'absolute',
                 top: 0,
                 opacity: 1,
@@ -100,7 +85,6 @@ export default function App() {
             }}>
             </div>
             <Container style={cssContainer}>
-
                 <Row style={cssRow}>
                     <Col style={boxHome}>
                     </Col>

@@ -26,53 +26,31 @@ const Scroll = () => {
           width: 375,
           height: 812
         }}>
-        <div className="scrollBox"
-          ref={constraintsRef}
-          style={{
-            overflow: "hidden",
-            width: 900,
-            height: 600.1,
-            position: 'relative',
-            top: 100,
-            left: -260,
-            opacity: 1,
-            zIndex: '21'
-          }}>
           <motion.div className="AlertCard"
             drag="x"
-           //  dragConstraints={constraintsRef}
-            dragConstraints={{ left: -300,  right: 300}}
-            dragElastic={2}
-            
-            dragTransition={{
-                    timeConstant: 100,
-                    power: 0,
-                    // Snap calculated target to nearest 50 pixels
-                    modifyTarget: target => Math.round(target / 300) * 300
+                 dragElastic={4}
+                dragTransition={{
+                    timeConstant: 80,
+                    power: 1,
+                    modifyTarget: target => Math.round(target / 240) * 240
                 }}
-               // dragConstraints={{ left: 0, right: 275, top: 0, bottom: 530 }}
-           dragMomentum={true}
-
-
-
-
-
-
+                dragConstraints={{ left: -220, top:0, bottom:0, right: 220}}
+                dragMomentum={true}
 
             style={{
               backgroundColor: "#fff",
-              left: 300,
-              width: 305,
-              height: 600,
+              left:'20%',
+              top:'15%',
+              width: '60%',
+              height: '60%',
               position: 'absolute',
               borderRadius: 20,
               opacity: 1,
               zIndex: '20'
-
             }}
           >
           </motion.div>
-        </div>
+      
         <div className="blackMask"
           style={{
             backgroundColor: "#000000",

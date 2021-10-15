@@ -153,8 +153,8 @@ const DChange = () => {
                     style={{
                         backgroundColor: '#E6ECF4',
                         position: 'absolute',
-                        width: 375,
-                        height: 812,
+                        width: '100%', 
+                        height: '100%', 
                         zIndex: 10,
                     }}
                     onClick={toggleClose} >
@@ -165,7 +165,9 @@ const DChange = () => {
                     style={boxChange}
                     variants={boxAnimation}
                     animate={animationBox}
-                    onClick={toggleOpen}
+                    onPanStart={toggleOpen}
+                    whileTap={{scale:0.8}}
+                   // onClick={toggleOpen}
                     transition={{type: "tween"}}
                 >
                     <p
@@ -177,7 +179,7 @@ const DChange = () => {
                             left: 10,
                             fontSize: 14
                         }}
-                    >Press me</p>
+                    >长 按</p> 
                     <motion.div 
                     style={{
                         overflow: 'hidden',

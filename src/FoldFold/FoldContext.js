@@ -6,16 +6,16 @@ import backIcon from "../Icon/Wback.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FoldInfo from "../Img/FoldInfo.png";
 import { useState } from "react";
-
+import { Container, Row, Col } from 'react-bootstrap';
 //press功能
 //变形完整交互
 
 const boxHome = {
-    width: 300,
-    height: 70,
+    width: 355,
+    height: 300,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     color: "#415fff",
-    opacity: 0.5,
+
     background: '#fff',
     borderRadius: 12,
     position: 'absolute',
@@ -30,35 +30,17 @@ const boxAnimation = {
         height: 300
     },
     animationTwo: {
-        width: 140,
-        height: 70
-    },
-    animationThree: {
-        width: 70,
-        height: 140
-    },
-    animationFour: {
-        width: 140,
-        height: 140
+        width: 355,
+        height: 100
     }
 }
 
 const FoldContext = () => {
-    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
-    const [isOpen, setIsOpen] = useState(false);
-    // const toggleOpen = () => setIsOpen(!isOpen);
+    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
+    const [isOpen, setIsOpen] = useState(true);
     const toggleOpen = () => setIsOpen(true);
-    //  const toggleClose = () => setIsOpen(!isOpen); 
-    // const [isClose, setIsClose] = useState(true);
-    // const toggleOpen = () => setIsOpen(!isOpen);
     const toggleClose = () => setIsOpen(false);
-    // const [isClose, setIsClose] = useState(false);
-    // const toggleClose = () => setIsOpen(!isOpen); 
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    //   const toggleOpen = () => setIsOpen(true);
-
     return (
-
         <div>
             <Link to="/Fold">
                 <img src={backIcon} alt=" " style={{
@@ -71,75 +53,41 @@ const FoldContext = () => {
                 }}>
                 </img>
             </Link>
-
             <AnimatePresence>
-                {/*--------------------------------      卡片元素包括按钮  开始   ---------------------------*/}
-
-                {/*--------------------------------     背景元素  开始   ---------------------------*/}
                 <div className='Background'
                     style={{
-                      backgroundImage: `url(${FoldInfo})`,
+                        backgroundImage: `url(${FoldInfo})`,
                         position: 'absolute',
-
                         width: 375,
                         height: 812,
                         zIndex: 10,
-
                     }}
-                    onClick={toggleClose} >
-
+                >
                 </div>
-                {/*--------------------------------      背景  结束    --------------------------*/}
                 <motion.div className='boxChange'
                     style={boxHome}
                     variants={boxAnimation}
                     animate={animationBox}
-                    onClick={toggleOpen}
                 >
-                    <p
-                        style={{
-                            color: "#666",
-                            fontWeight: 'bold',
-                            position: 'absolute',
-                            top: 10,
-                            left: 10,
-                            fontSize: 12
-                        }}
-                    >内容折叠</p>
-
-                    {/*--------------------------------     整个按钮元素  开始   ---------------------------*/}
-                    {isOpen &&
                         <div className='Allbtn' onClick={() => cycleAnimation()} >
-                            <img src={zoomIcon} alt=" " style={{
-                                width: 16,
-                                position: 'absolute',
-                                bottom: 2,
-                                right: 2,
-                                opacity: 1,
-                                zIndex: '100'
-                            }}></img>
                             <div className="boxPress"
-                                //exit={{ opacity: 0 }}
                                 style={
                                     {
                                         display: 'block',
                                         position: 'absolute',
-                                        right: -10,
-                                        bottom: -10,
+                                        right: 0,
+                                        top: 0,
                                         width: 40,
                                         height: 40,
                                         backgroundColor: "#fff",
-                                        borderRadius: 20,
+                                        borderRadius: 0,
                                         textAlign: 'center',
                                         boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
                                     }
                                 }>
                             </div>
-                        </div>
-                    }
-                    {/*--------------------------------     整个按钮元素 结束   ---------------------------*/}
+                        </div>           
                 </motion.div>
-                {/*--------------------------------      卡片元素包括按钮  结束    ---------------------------*/}
             </AnimatePresence>
 
         </div>

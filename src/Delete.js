@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 
 let card={width: 160, height:100, backgroundColor:"#fff",
- margin:16, 
+ margin:8, 
  borderRadius:12, 
  textAlign:'center', 
  boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -18,7 +18,7 @@ let card={width: 160, height:100, backgroundColor:"#fff",
 }
 let cardInactive = {
   width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
+  margin: 8,
   borderRadius: 12,
   textAlign: 'center',
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -41,11 +41,11 @@ return (
     <Route exact path="/Delete">
 <div >
 
-  <motion.h1 
+  <motion.h1
+   className="text-center" 
    style={{
    padding:30,  
    color: "#333",
-   marginLeft: 60,  
    fontSize:28,
    y: 0
  }}
@@ -65,7 +65,14 @@ return (
   </img>
   </Link>
 
-<div className="Delete">
+  <div
+              className="Gird"
+              style={{
+            display: "flex",
+            justifyContent: 'center',
+            }}
+             >
+            <div className="Row1">
   <Link to="/Delete/DeleteList" style={{ textDecoration: 'none' }}>
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>列表删除</p></motion.div>
      </Link>
@@ -73,15 +80,17 @@ return (
    <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>图片删除</p></motion.div>
      </Link>
 </div>
-   <div style={{marginLeft: 180, marginTop:-232}}>
+       <div className="Row2">
   <Link to="/Delete/DeleteCard" style={{ textDecoration: 'none' }}>
    <motion.div whileHover={cardHover} style={cardInactive} ><p style={{paddingTop:40}}>卡片删除(新版本无)</p> </motion.div>
      </Link>
    </div>
+   </div>
      <div style={{ 
-        backgroundImage: `url(${background})` ,
-        width: 375, 
-        height:812, 
+        backgroundImage: `url(${background})`,
+        backgroundSize:'cover',
+        width: '100%', 
+    height:'100vh', 
         position: 'absolute', 
         top: 0, 
         opacity: 1, 
