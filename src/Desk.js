@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 let cardActive = {
   width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
+  margin: 8,
   borderRadius: 12,
   textAlign: 'center',
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -29,7 +29,7 @@ let cardActive = {
 
 let cardInactive = {
   width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
+  margin: 8,
   borderRadius: 12,
   textAlign: 'center',
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -52,10 +52,11 @@ const Desk = () => {
       <Switch>
         <Route exact path="/Desk">
           <div >
-            <motion.h1 style={{
-              padding: 30,
+            <motion.h1
+            className="text-center" 
+             style={{
+              padding: 18,
               color: "#333",
-              marginLeft: 70,
               fontSize: 28,
               y: 0
             }}
@@ -77,7 +78,13 @@ const Desk = () => {
               }}>
               </img>
             </Link>
-            <div className="Desk">
+            <div className="Grid"
+               style={{
+                  display: "flex",
+                  justifyContent: 'center',
+               }}
+            >
+            <div className="Row1">
               <Link to="/Desk/deskMove" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>图标移动自动补位</p></motion.div>
               </Link>
@@ -89,7 +96,7 @@ const Desk = () => {
               </Link>
               <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>图标创建文件夹 </p></motion.div>
             </div>
-            <div style={{ marginLeft: 180, marginTop: -464 }}>
+            <div sclassName="Row2">
               <Link to="/Desk/deskChange" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>图标变形</p> </motion.div>
               </Link>
@@ -102,10 +109,12 @@ const Desk = () => {
               </Link>
               <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>多选拖动</p></motion.div>
             </div>
+            </div>
             <div style={{
               backgroundImage: `url(${background})`,
-              width: '100%',
-              height: '100%',
+              backgroundSize:'cover',
+              width: '100%', 
+    height:'100vh', 
               position: 'absolute',
               top: 0,
               opacity: 1,

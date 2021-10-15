@@ -140,7 +140,7 @@ const ScrollTap = () => {
       <div className="MusicFooter"
         style={{
           backgroundImage: `url(${MusicFooter})`,
-          top: 812-54,
+          bottom:0,
           width: 375,
           height: 54,
           zIndex: 10,

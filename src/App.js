@@ -9,6 +9,7 @@ import Jump from './Jump';
 import Choose from './Choose';
 import Desk from './Desk';
 import Edit from './Edit';
+import MenuIcon from "./Icon/Menu.png";
 
 //导入库
 import { motion } from 'framer-motion';
@@ -16,11 +17,11 @@ import background from "./Img/bg.png";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { fill } from '@tensorflow/tfjs-core';
+
 
 let cardActive = {
   width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
+  margin: 8,
   borderRadius: 12,
   textAlign: 'center',
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -31,7 +32,7 @@ let cardActive = {
 
 let cardInactive = {
   width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
+  margin: 8,
   borderRadius: 12,
   textAlign: 'center',
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -75,25 +76,43 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
+              <Link to="/Desk">
+                <img src={MenuIcon} alt=" " style={{
+                    width: 30,
+                    position: 'absolute',
+                    top: 20,
+                    left: 20,
+                    opacity: 0.2,
+                    zIndex: '0'
+                }}>
+                </img>
+            </Link>
           <motion.div  >
-            <motion.h1 style={{
-              padding: 30
+            <motion.h1 className="text-center" style={{
+              padding: 18
             }}
               initial={{
-                marginLeft: 30,
+              
                 fontSize: 28,
                 y: -20
               }}
               animate={{           
                 color: "#333",
-                marginLeft: 66,
+                
                 fontSize: 28,
                 y: 0
               }}
               transition={{ type: "spring", velocity: 120 }}
             >OOS动效平台
             </motion.h1>
-            <div>
+            <div 
+            className="Grid"
+            style={{
+            display: "flex",
+            justifyContent: 'center',
+            }}
+            >
+            <div className="Row1">
               <Link to="/Desk" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} >   <p style={{ paddingTop: 40 }}>OOS桌面75%</p>
                   <div>
@@ -127,11 +146,12 @@ function App() {
                         borderRadius: 5
                       }}>
                     </div>
-                    <ProgressBar /></div>   </motion.div>
+                    <ProgressBar /></div>  
+                     </motion.div>
               </Link>
               <Link to="/Jump" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>界面跳转0%</p>
-                  <div>
+                  <div >
                     <div
                       style={{
                         position: 'relative',
@@ -198,7 +218,7 @@ function App() {
                     <ProgressBar /></div>   </motion.div>
               </Link>
             </div>
-            <div style={{ marginLeft: 180, marginTop: -696 }}>
+            <div className="Row2">
               <Link to="/List" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>列表55%</p>
 
@@ -289,14 +309,16 @@ function App() {
                     <ProgressBar /></div>   </motion.div>
               </Link>
             </div>
-            <div style={{  
+            </div>
+            <div className="Mbg"
+               style={{  
               backgroundImage: `url(${background})`,
-            top: 0,
-            left: 0,
+              backgroundSize:'cover',
+              top: 0,
+              left: 0,
               width: '100%', 
-              height:'100%', 
+              height:'100vh', 
               position: 'absolute', 
-        
               opacity: 1,
               zIndex: '-2'
             }}></div>

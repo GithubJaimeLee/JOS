@@ -26,16 +26,6 @@ const Scroll = () => {
           width: 375,
           height: 812
         }}>
-
-
-
-           
-              
-          
-
-          
-        
-    
           <motion.div className="AlertCard"
             drag="x"
                  dragElastic={4}
@@ -49,10 +39,10 @@ const Scroll = () => {
 
             style={{
               backgroundColor: "#fff",
-              left:70,
-              top:160,
-              width: 240,
-              height: 500,
+              left:'20%',
+              top:'15%',
+              width: '60%',
+              height: '60%',
               position: 'absolute',
               borderRadius: 20,
               opacity: 1,

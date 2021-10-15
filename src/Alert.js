@@ -12,7 +12,7 @@ import App from './App';
 
 let card = {
   width: 160, height: 100, backgroundColor: "#fff",
-  margin: 16,
+  margin: 8,
   borderRadius: 12,
   textAlign: 'center',
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
@@ -35,10 +35,10 @@ const Alert = () => {
       <Route exact path="/Alert">
     <div >
       <motion.h1
+        className="text-center"
         style={{
-          padding: 30,
+          padding: 18,
           color: "#333",
-          marginLeft: 60,
           fontSize: 28,
           y: 0
         }}
@@ -58,8 +58,14 @@ const Alert = () => {
         }}>
         </img>
       </Link>
-
-      <div className="Alert">
+      <div 
+      className="Grid"
+      style={{
+            display: "flex",
+            justifyContent: 'center',
+            }}
+            >
+      <div className="Row1">
              <Link to="/Alert/AlertNew" style={{ textDecoration: 'none' }}>
              <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>新事件标记</p></motion.div>
                </Link>
@@ -70,7 +76,7 @@ const Alert = () => {
              <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>toast</p></motion.div>
                </Link>
       </div>
-      <div style={{ marginLeft: 180, marginTop: -348 }}>
+      <div className="Row2">
              <Link to="/Alert/AlertPage" style={{ textDecoration: 'none' }}>
              <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>页码指示</p> </motion.div>
                </Link>
@@ -78,10 +84,12 @@ const Alert = () => {
              <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>进度指示器</p></motion.div>
                </Link>
       </div>
+      </div>
       <div style={{
-        backgroundImage: `url(${background})`,
-        width: 375,
-        height: 812,
+         backgroundImage: `url(${background})`,
+              backgroundSize:'cover',
+        width: '100%', 
+        height:'100vh', 
         position: 'absolute',
         top: 0,
         opacity: 1,

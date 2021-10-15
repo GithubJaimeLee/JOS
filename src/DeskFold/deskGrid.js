@@ -62,8 +62,6 @@ export default function App() {
                 }}
                 dragConstraints={{ left: 0, right: 275, top: 0, bottom: 530 }}
                 dragMomentum={true}
-            // x={X}
-            //background={"null"}
             >
                 <p
                     style={{
@@ -73,7 +71,6 @@ export default function App() {
                         left: 10,
                         fontSize: 14,
                         fontWeight: 'bold',
-
                     }}
                 >Move me</p>
             </motion.div>
@@ -88,7 +85,6 @@ export default function App() {
             }}>
             </div>
             <Container style={cssContainer}>
-
                 <Row style={cssRow}>
                     <Col style={boxHome}>
                     </Col>
