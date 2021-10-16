@@ -10,7 +10,8 @@ import Choose from './Choose';
 import Desk from './Desk';
 import Edit from './Edit';
 import MenuIcon from "./Icon/Menu.png";
-
+//导自定义组件
+import NavBar from './Component/NavBar';
 //导入库
 import { motion } from 'framer-motion';
 import background from "./Img/bg.png";
@@ -87,8 +88,9 @@ function App() {
                 }}>
                 </img>
             </Link>
+            <NavBar/>
           <motion.div  >
-            <motion.h1 className="text-center" style={{
+{/*             <motion.h1 className="text-center" style={{
               padding: 18
             }}
               initial={{
@@ -104,12 +106,14 @@ function App() {
               }}
               transition={{ type: "spring", velocity: 120 }}
             >OOS动效平台
-            </motion.h1>
+            </motion.h1> */}
             <div 
             className="Grid"
             style={{
             display: "flex",
             justifyContent: 'center',
+            marginTop:14,
+           
             }}
             >
             <div className="Row1">
@@ -201,7 +205,7 @@ function App() {
                     <ProgressBar /></div>   </motion.div>
               </Link>
               <Link to="/Other" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>其他类45%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>其他45%</p>
                   <div>
                     <div
                       style={{
