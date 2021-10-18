@@ -6,6 +6,7 @@ import EditCard from './EditFold/EditCard';
 import EditEnter from './EditFold/EditEnter';
 import EditGrid from './EditFold/EditGrid';
 import EditList from './EditFold/EditList';
+import EditServiceList from './EditFold/EditServiceList';
 import EditOrder from './EditFold/EditOrder';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
@@ -76,7 +77,7 @@ return (
         </Link>
 </div>
        <div className="Row2">
-     <Link to="/Edit/EditList" style={{ textDecoration: 'none' }}>
+     <Link to="/Edit/EditServiceList" style={{ textDecoration: 'none' }}>
      <motion.div whileHover={cardHover} style={card} ><p style={{paddingTop:40}}>服务编辑列表</p></motion.div>
         </Link>
      <Link to="/Edit/EditGrid" style={{ textDecoration: 'none' }}>
@@ -109,6 +110,9 @@ return (
         </Route>
         <Route path="/Edit/EditList">
           <EditList />
+        </Route>
+        <Route path="/Edit/EditServiceList">
+          <EditServiceList />
         </Route>
         <Route path="/Edit/EditOrder">
           <EditOrder />

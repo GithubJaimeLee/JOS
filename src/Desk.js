@@ -110,11 +110,12 @@ const Desk = () => {
               <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>多选拖动</p></motion.div>
             </div>
             </div>
-            <div style={{
+            <div 
+            style={{
               backgroundImage: `url(${background})`,
               backgroundSize:'cover',
               width: '100%', 
-    height:'100vh', 
+              height:'100vh', 
               position: 'absolute',
               top: 0,
               opacity: 1,
@@ -139,6 +140,12 @@ const Desk = () => {
           <DGrid />
         </Route>
         <Route path="/Desk/DeskOpen">
+          <DeskOpen />
+        </Route>
+        <Route path="/Desk/Folder">
+          <DeskOpen />
+        </Route>
+        <Route path="/Desk/MultiDrag">
           <DeskOpen />
         </Route>
         <Route path="/">
