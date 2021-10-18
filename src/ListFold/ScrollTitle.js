@@ -36,7 +36,7 @@ const ScrollTitle = () => {
       </Link>
       <div className="HeadCard"
         style={{
-          backgroundColor: '#bbb',
+        
           backgroundImage: `url(${SetHeader})`,
           top: 0,
           left: 0,
@@ -67,7 +67,7 @@ const ScrollTitle = () => {
           dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
           style={{
             y,
-            backgroundColor: '#ddd',
+            
             backgroundImage: `url(${SetBody})`,
             top:148,
             width: 375,

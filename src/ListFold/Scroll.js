@@ -9,11 +9,16 @@ import '../App.css';
 const Scroll = () => {
   const constraintsRef = useRef(null);
   return (
-    <div>
+    <div className="All"
+    style={{
+    display: 'grid',
+    justifyContent: 'center'
+    }}
+    >
       <Link to="/List">
         <img src={Wback} alt=" " style={{
           width: 30,
-          position: 'absolute',
+          position: 'relative',
           top: 20,
           left: 20,
           opacity: 1,

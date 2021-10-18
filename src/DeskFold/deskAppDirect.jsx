@@ -13,10 +13,10 @@ import {
   SortableContext,
   rectSortingStrategy
 } from "@dnd-kit/sortable";
-import { GridD } from "../ListFold/GridDirect";
+import { GridD } from "../DeskFold/GridDirect";
 import { SortablePhotoD } from "./SortablePhotoDirect";
-import { PhotoD } from "../ListFold/PhotoDirect.jsx";
-import photos from "../ListFold/photosDirect.json";
+import { PhotoD } from "../DeskFold/PhotoDirect.jsx";
+import photos from "../DeskFold/photosDirect.json";
 
 const UploadGallery = () => {
   const [items, setItems] = useState(photos);

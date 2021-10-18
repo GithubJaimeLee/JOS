@@ -1,9 +1,9 @@
 import React from 'react';
 import {useSortable} from '@dnd-kit/sortable';
 import {CSS} from '@dnd-kit/utilities';
-import {PhotoZ} from '../ListFold/PhotoZoom';
+import {Photo} from '../DeskFold/Photo';
 
-export const SortablePhotoZ = (props) => {
+export const SortablePhoto = (props) => {
   const {
     attributes,
     isDragging,
@@ -13,18 +13,14 @@ export const SortablePhotoZ = (props) => {
     transition,
   } = useSortable({id: props.url});
 
- /*  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-  }; */
-
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
   };
 
   return (
-    <PhotoZ
+  
+    <Photo
       ref={setNodeRef}
       style={style}
       faded={isDragging}
@@ -32,5 +28,7 @@ export const SortablePhotoZ = (props) => {
       {...attributes}
       {...listeners}
     />
+   
   );
 };
+

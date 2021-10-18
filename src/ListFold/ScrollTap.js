@@ -31,7 +31,7 @@ const ScrollTap = () => {
           backgroundImage: `url(${MusicHead})`,
           top: 0,
           width: 375,
-          height: 92,
+          height: 90,
           position: 'fixed',
           opacity: 1,
           zIndex: 2
@@ -42,7 +42,7 @@ const ScrollTap = () => {
       <motion.div className="MusicHeaderTap"
       style={{
       backgroundImage: `url(${MusicHeaderTap})`,
-      top:92,
+      top:90,
       position:'fixed',
       width: 375,
       height: 38,

@@ -3,7 +3,7 @@ import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from '../ListFold/deskApp.jsx';
+import App from '../DeskFold/deskApp.jsx';
 
 const DApp = () => {
   return (

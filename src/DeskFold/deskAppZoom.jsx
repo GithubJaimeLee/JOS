@@ -12,12 +12,12 @@ import {
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 
 
-import { GridZ } from "../ListFold/GridZoom";
-import { SortablePhotoZ } from "../ListFold/SortablePhotoZoom";
-import { PhotoZ} from "../ListFold/PhotoZoom";
+import { GridZ } from "../DeskFold/GridZoom";
+import { SortablePhotoZ } from "../DeskFold/SortablePhotoZoom";
+import { PhotoZ} from "../DeskFold/PhotoZoom";
 
 
-import photos from "../ListFold/photosZoom.json";
+import photos from "../DeskFold/photosZoom.json";
 
 const UploadGallery = () => {
   const [items, setItems] = useState(photos);

@@ -6,7 +6,7 @@ import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
 
-const boxHome = {
+const BoxBtn = {
     width: 54,
     height: 54,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
@@ -14,7 +14,7 @@ const boxHome = {
     opacity: 1,
     background: '#fff',
     borderRadius: 12,
-    position: 'absolute',
+    position: 'relative',
     left: 118,
     top: 732,
     zIndex: 100
@@ -54,10 +54,7 @@ const DeskOpen = () => {
     //  const toggleDragging = () => setIsDrag(!isDrag);
     return (
 
-        <div
-            style={{
-                position: 'absolute'
-            }}>
+        <div >
             <Link to="/Desk">
                 <img src={backIcon} alt=" " style={{
                     width: 30,
@@ -69,19 +66,27 @@ const DeskOpen = () => {
                 }} />
             </Link>
 
-            <div className="Screen">
+            <div 
+            className="Screen"
+            style={{
+                display: 'grid',
+                width:'100%',
+                height:'100%',
+                position: 'absolute',
+                justifyContent: 'center'
+            }}
+            >
                 <AnimatePresence >
                     <div style={{
                         backgroundImage: `url(${background})`,
                         width: 375,
                         height: 812,
-                        position: 'absolute',
                         top: 0,
                         opacity: 1,
                         zIndex: '0'
-                    }} />
+                    }} >
                     <motion.div className='boxChange'
-                        style={boxHome}
+                        style={BoxBtn}
                         variants={boxAnimation}
                         animate={animationBox}
                         drag={DragBox}
@@ -89,7 +94,7 @@ const DeskOpen = () => {
                         dragElastic={1}
                         // onClick={toggleOpen}
                         onClick={() => cycleAnimation() & cycleDrag()}
-                    />
+                    /></div>
                 </AnimatePresence>
             </div>
             <div className='bg'

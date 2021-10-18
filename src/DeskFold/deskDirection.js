@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from '../ListFold/deskAppZoom.jsx';
+import App from '../DeskFold/deskAppZoom.jsx';
 //import { position } from "dom-helpers";
 
 
@@ -59,12 +59,13 @@ const DDirection = () => {
         </img>
       </Link>
       <div className='boxAll' style={{
-        display: 'flex',
+       
         position: 'absolute',
         left: 0,
         top: 9,
         width:'100%',
         height: '100%',
+        display: 'flex',
         justifyContent: 'center'
       }} >
      

@@ -9,12 +9,13 @@ import '../App.css';
 const GridBox = {
   width: 315,
   height: 256,
-  //backgroundColor: "blue",
-  position: "absolute",
-  bottom: 72,
+ // backgroundColor: "blue",
+  position: "relative",
+  bottom: -482,
   left: 30,
   paddingRight: 0,
-  display: "flex"
+  display: "flex",
+ // opacity:0.5
 }
 const RowGridBox = {
   width: 100,

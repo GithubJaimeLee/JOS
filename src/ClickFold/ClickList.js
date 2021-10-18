@@ -45,7 +45,6 @@ const   ClickList = () => {
             dragElastic={0}
             style={{    
               backgroundImage: `url(${SetHeader})`,
-              backgroundColor: '#bbb',
               top:0, 
               width: 375,
               height: 148,

@@ -1,9 +1,10 @@
 import React from 'react';
 import {useSortable} from '@dnd-kit/sortable';
 import {CSS} from '@dnd-kit/utilities';
-import {Photo} from '../ListFold/Photo';
 
-export const SortablePhoto = (props) => {
+import {PhotoD} from '../DeskFold/PhotoDirect';
+
+export const SortablePhotoD = (props) => {
   const {
     attributes,
     isDragging,
@@ -19,8 +20,7 @@ export const SortablePhoto = (props) => {
   };
 
   return (
-  
-    <Photo
+    <PhotoD
       ref={setNodeRef}
       style={style}
       faded={isDragging}
@@ -28,7 +28,5 @@ export const SortablePhoto = (props) => {
       {...attributes}
       {...listeners}
     />
-   
   );
 };
-
