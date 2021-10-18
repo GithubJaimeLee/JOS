@@ -21,7 +21,10 @@ const   MyTab = () => {
           position: 'absolute',
           opacity: 1,
           zIndex: -1
-        }}>
+        }}
+   
+        whileTap={{x:-200}} 
+        >
       </motion.div>
   </Tab>
   <Tab eventKey="MV" title="MV">
