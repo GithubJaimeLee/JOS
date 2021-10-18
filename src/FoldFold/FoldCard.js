@@ -35,8 +35,19 @@ const boxAnimation = {
     }
 }
 
+const ArrowAnimation = {
+    AAnimationOne: {
+    rotate:0,
+    },
+    AAnimationTwo: {
+        rotate:180,
+    }
+}
+
+
 const FoldCard = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
+    const [animationArrow, AcycleAnimation] = useCycle("AAnimationOne", "AAnimationTwo");
     const [isOpen, setIsOpen] = useState(true);
   
    
@@ -83,8 +94,8 @@ const FoldCard = () => {
 
                     {/*--------------------------------     整个按钮元素  开始   ---------------------------*/}
                     {isOpen &&
-                        <div className='Allbtn' onClick={() => cycleAnimation()} >
-                            <div className="boxPress"
+                        <div className='Allbtn' onClick={() => cycleAnimation()&AcycleAnimation()}   >
+                            <motion.div className="boxPress"
                                 style={
                                     {
                                         display: 'block',
@@ -98,8 +109,11 @@ const FoldCard = () => {
                                         textAlign: 'center',
                                         boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
                                     }
-                                }>
-                            </div>
+                                }
+                                variants={ArrowAnimation}
+                                animate={animationArrow}
+                                    >上
+                            </motion.div>
                         </div>
                     }
                     {/*--------------------------------     整个按钮元素 结束   ---------------------------*/}

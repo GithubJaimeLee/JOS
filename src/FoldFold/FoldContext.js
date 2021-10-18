@@ -1,69 +1,80 @@
-import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
-import zoomIcon from "../Icon/zoomIcon.png";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/Wback.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FoldInfo from "../Img/FoldInfo.png";
-import { useState } from "react";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Accordion } from 'react-bootstrap';
+import '../Component/Component.css';
+
+import OffCanvasExample from '../Component/Offcanvas';
 //press功能
 //变形完整交互
 
-const boxHome = {
-    width: 355,
-    height: 300,
-    boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-    color: "#415fff",
-
-    background: '#fff',
-    borderRadius: 12,
-    position: 'absolute',
-    margin: 10,
-    top: 152,
-    zIndex: 20
-}
-
-const boxAnimation = {
-    animationOne: {
-        width: 355,
-        height: 300
-    },
-    animationTwo: {
-        width: 355,
-        height: 100
-    }
-}
 
 const FoldContext = () => {
-    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
-    const [isOpen, setIsOpen] = useState(true);
-    const toggleOpen = () => setIsOpen(true);
-    const toggleClose = () => setIsOpen(false);
+  
     return (
-        <div>
-            <Link to="/Fold">
+        <div
+            style={{
+                display: 'grid',
+                justifyContent: 'center'
+            }}
+        >
+        
+            <div className='Background'
+                style={{
+                    backgroundImage: `url(${FoldInfo})`,
+                    top: 0,
+                    width: 375,
+                    height: 812,
+                    zIndex: 10,
+                    
+                }}
+            >
+              
+             <Link to="/Fold">
                 <img src={backIcon} alt=" " style={{
                     width: 30,
-                    position: 'absolute',
+                    position: 'relative',
                     top: 20,
                     left: 20,
                     opacity: 1,
-                    zIndex: '100'
+                    zIndex: '10'
                 }}>
                 </img>
+               
             </Link>
-            <AnimatePresence>
-                <div className='Background'
-                    style={{
-                        backgroundImage: `url(${FoldInfo})`,
-                        position: 'absolute',
-                        width: 375,
-                        height: 812,
-                        zIndex: 10,
-                    }}
-                >
-                </div>
+            <OffCanvasExample  placement={'end'}  
+          //  name={'X'}
+              contextTitle={'我在测试'} context={'我在测试'} />
+            <Accordion
+                style={{
+                    width: 340,    
+                   top:150,
+                   left:17.5,
+                   position: 'relative'
+                }}
+            //defaultActiveKey="1"
+            //flush
+            >
+
+                <Accordion.Item eventKey="1">
+                    <Accordion.Header 
+                    ></Accordion.Header>
+                    <Accordion.Body
+                        style={{
+                            height: 210       
+                        }}
+                    >
+                    </Accordion.Body>
+
+                </Accordion.Item>
+           
+            </Accordion>
+       
+            </div>
+            {/*      <AnimatePresence>
+               
                 <motion.div className='boxChange'
                     style={boxHome}
                     variants={boxAnimation}
@@ -89,7 +100,7 @@ const FoldContext = () => {
                         </div>           
                 </motion.div>
             </AnimatePresence>
-
+ */}
         </div>
     );
 }

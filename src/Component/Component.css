@@ -2,3 +2,25 @@
     color:#ccc;
    box-shadow:0 0 0 0.1rem
 }
+
+.accordion-button:focus{
+    border-color: #fff !important;
+    box-shadow: 0 0 0 .0rem !important;
+    background-color:#fff !important;
+
+}
+.accordion-button:not(.collapsed){
+    color:#fff !important;
+    background-color:#fff !important;
+    box-shadow: 0 0 0 .0rem !important;
+}
+.accordion-button::after
+.accordion-button:not(.collapsed)::after{
+    background-image:auto !important;
+}
+button.accordion-button{
+border-radius: 50px !important;
+}
+div.accordion{
+    border-radius: 50px !important;
+    }
