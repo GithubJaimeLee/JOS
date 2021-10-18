@@ -9,73 +9,79 @@ import ContactHeader from "../Img/ContactHeader.png";
 import ContactWindow from "../Img/ContactWindow.png";
 
 const ContactWindowStyle = {
-    width: 0,
-    height: 0,
+    width: 131,
+    height: 118,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.1)",
     opacity: 1,
     backgroundImage: `url(${ContactWindow})`,
     borderRadius: 12,
-    position: 'fixed',
-    right: 20,
-    top: 80,
-    zIndex: 2
+    position: 'absolute',
+    right: 0,
+    top: 40,
+    zIndex: 200
 }
 const boxPress = {
-    display: 'block',
-    position: 'absolute',
-    right: 14,
-    top: 46,
+    
+    position: 'relative',
+    right: -310,
+    top: 50,
     width: 50,
-    opacity: 0.5,
+    opacity: 1,
     height: 50,
     borderRadius: 20,
     textAlign: 'center',
-    zIndex: 2, 
+    zIndex: 2,
+    //backgroundColor: "blue",
 }
 
 const boxAnimation = {
     animationOne: {
-        scale:0,
-        width: 0,
-        height: 0
+        scale: 0,
+        height: 0,
+        right: 0,
+        opacity: 0,
+       
     },
     animationTwo: {
+        scale: 1,
         width: 131,
-        height: 118
+        height: 118,
+        opacity: 1,
+        right: 0
     }
 }
-const BackIconStyle ={
+const BackIconStyle = {
     width: 30,
     position: 'fixed',
     top: 20,
     left: 20,
     opacity: 1,
     zIndex: '100'
- }
-const ContactHeaderStyle ={
-   backgroundImage: `url(${ContactHeader})`,
-        width: 375,
-        height: 159,
-        position: 'fixed',
-        zIndex: 2,
-        top: 0  
 }
-const ContactBodyStyle ={
+const ContactHeaderStyle = {
+    backgroundImage: `url(${ContactHeader})`,
+    width: 375,
+    height: 159,
+    position: 'fixed',
+    zIndex: 2,
+    top: 0
+}
+const ContactBodyStyle = {
     backgroundImage: `url(${ContactBody})`,
     position: 'absolute',
     top: 159,
     width: 375,
     height: 1169,
     zIndex: 1,
- }
- const ContactFooterStyle ={
+}
+const ContactFooterStyle = {
     backgroundImage: `url(${ContactFooter})`,
     position: 'fixed',
     bottom: 0,
     width: 375,
     height: 65,
     zIndex: 1,
- }
+}
 
 
 const WindowJump = () => {
@@ -83,39 +89,44 @@ const WindowJump = () => {
 
     return (
         <div className="All"
-        style={{
-        width:375,
-        height: 812,
-        overflow: 'scroll',
-        position: 'absolute'
-        }}>
+            style={{
+                width: '100%',
+                height: 812,
+                overflow: 'scroll',
+                position: 'absolute',
+                display: 'flex',
+                justifyContent: 'center'
+            }}>
             <Link to="/Window">
-                <img src={backIcon} 
-                alt=" " 
-                style={BackIconStyle}
-                />         
+                <img src={backIcon}
+                    alt=" "
+                    style={BackIconStyle}
+                />
             </Link>
-                <div className='ContactHeader'
-                    style={ContactHeaderStyle}
-                    />
-                <div className='ContactBody'
-                    style={ContactBodyStyle}
-                />
-                <div className='ContactFooter'
-                    style={ContactFooterStyle}>
-
-                    </div>
-                    <AnimatePresence>
-                <motion.div className='boxChange'
-                    style={ContactWindowStyle}
-                    variants={boxAnimation}
-                    animate={animationBox}
-                />
-                <div 
+            <div className='ContactHeader'
+                style={ContactHeaderStyle}
+            >
+          
+                <AnimatePresence>
+                <div
                     className="boxPress"
                     onClick={() => cycleAnimation()}
-                    style={boxPress} />
-            </AnimatePresence>
+                    style={boxPress} >
+                    <motion.div className='boxChange'
+                        style={ContactWindowStyle}
+                        variants={boxAnimation}
+                        animate={animationBox}
+                    /></div>
+                </AnimatePresence>
+            </div>
+            <div className='ContactBody'
+                style={ContactBodyStyle}
+            />
+            <div className='ContactFooter'
+                style={ContactFooterStyle}>
+
+            </div>
+
         </div>
     );
 }

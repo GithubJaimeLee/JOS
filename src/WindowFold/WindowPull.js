@@ -10,27 +10,27 @@ import CalendarWindow from "../Img/CalendarWindow.png";
 
 //变形完整交互
 
-const boxHome = {
+const boxChange = {
     width: 0,
     height: 0,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.1)",
     opacity: 1,
     backgroundImage: `url(${CalendarWindow})`,
     borderRadius: 12,
-    position: 'absolute',
-    right: 20,
-    top: 80,
+    position: 'relative',
+    right: 100,
+    top: 40,
     zIndex: 2
 }
 const boxPress = {
     display: 'block',
-    position: 'absolute',
-    right: 14,
+    position: 'relative',
+    right: -154,
     top: 46,
     width: 40,
-    opacity: 0.5,
+   // opacity: 1,
     height: 40,
-   // backgroundColor: "#ccc",
+    //backgroundColor: "#ccc",
     borderRadius: 20,
     textAlign: 'center',
     zIndex: 2,
@@ -73,10 +73,12 @@ const WindowPull = () => {
     return (
         <div 
         style={{
-        width:375,
+        width:'100%',
         height: 812,
         opacity: 1,
-        position: 'absolute'
+        position: 'absolute',
+        display: 'flex',
+        justifyContent: 'center'
         }}>
             <Link to="/Window">
                 <img src={backIcon} 
@@ -84,15 +86,16 @@ const WindowPull = () => {
                      style={BackIcon}/>
             </Link>
             <AnimatePresence>
+            <div 
+                    className="boxPress"
+                    onClick={() => cycleAnimation()}
+                    style={boxPress} >
                 <motion.div className='boxChange'
-                    style={boxHome}
+                    style={boxChange}
                     variants={boxAnimation}
                     animate={animationBox}
                 />
-                <div 
-                    className="boxPress"
-                    onClick={() => cycleAnimation()}
-                    style={boxPress} />
+             </div>
             </AnimatePresence>
             <div className='Background'
                     style={Background}
