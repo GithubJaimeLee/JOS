@@ -6,6 +6,7 @@ import MusicHead from "../Img/MusicHead.png";
 import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
+import MyTab from '../Component/Tab';
 import '../App.css';
 
 
@@ -23,6 +24,7 @@ const ScrollTap = () => {
           zIndex: '100'
         }} />
       </Link>
+    
       <motion.div className="MusicHead"
         //    drag="y"
         // dragConstraints={{ top: -40, bottom: 0 }}
@@ -41,15 +43,23 @@ const ScrollTap = () => {
      
       <motion.div className="MusicHeaderTap"
       style={{
-      backgroundImage: `url(${MusicHeaderTap})`,
+        
+  //    backgroundImage: `url(${MusicHeaderTap})`,
       top:90,
       position:'fixed',
       width: 375,
       height: 38,
       zIndex:1
-      }}>
+      }}>    <MyTab  className="MyTab"
+      style={{
+      width:'100%',
+      height: 70,
+      zindex:'1000',
+      position:'absolute'
+      }}
+        />  
   
-             <div
+     {/*         <div
         style={{
         width:66,
         height:38,
@@ -82,8 +92,10 @@ const ScrollTap = () => {
         left: 230,
         opacity:0.5
         
-        }}/>
+        }}/> */}
       </motion.div>
+
+
 {/*       <div
      className="HScroll"
      style={{
@@ -121,7 +133,7 @@ const ScrollTap = () => {
       position:'absolute',
       zIndex:0
       }}/> */}
-      <motion.div className="MusicBodyRecommed"
+{/*       <motion.div className="MusicBodyRecommed"
         drag="y"
         dragConstraints={{ top: -578, bottom: 0 }}
         dragElastic={1}
@@ -136,7 +148,7 @@ const ScrollTap = () => {
           opacity: 1,
           zIndex: -1
         }}>
-      </motion.div>
+      </motion.div> */}
       <div className="MusicFooter"
         style={{
           backgroundImage: `url(${MusicFooter})`,
