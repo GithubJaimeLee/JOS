@@ -5,7 +5,7 @@ import backIcon from "../Icon/back.png";
 const WindowSide = () => {
   return (
     <div >
-      <Link to="/Jump">
+      <Link to="/Window">
         <img src={backIcon} alt=" " style={{
           width: 30,
           position: 'absolute',

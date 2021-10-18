@@ -8,6 +8,8 @@ import DChange from './DeskFold/deskChange';
 import DZoom from './DeskFold/deskZoom';
 import DDirection from './DeskFold/deskDirection';
 import DeskOpen from './DeskFold/DeskOpen';
+import DeskFolder from './DeskFold/DeskFolder';
+import DeskMultiDrag from './DeskFold/DeskMultiDrag';
 //import {DraggableStory ,Grid }  from './DeskFold/deskGrid';
 import DGrid from './DeskFold/deskGrid';
 //库
@@ -94,7 +96,9 @@ const Desk = () => {
               <Link to="/Desk/DeskOpen" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>开屏界面</p> </motion.div>
               </Link>
-              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>图标创建文件夹 </p></motion.div>
+               <Link to="/Desk/DeskFolder" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>图标创建文件夹 </p></motion.div>
+                </Link>
             </div>
             <div sclassName="Row2">
               <Link to="/Desk/deskChange" style={{ textDecoration: 'none' }}>
@@ -107,7 +111,9 @@ const Desk = () => {
               <Link to="/Desk/deskGrid" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>图标Grid</p></motion.div>
               </Link>
-              <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>多选拖动</p></motion.div>
+               <Link to="/Desk/DeskMultiDrag" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>多选拖动</p></motion.div> 
+               </Link>
             </div>
             </div>
             <div 
@@ -142,11 +148,11 @@ const Desk = () => {
         <Route path="/Desk/DeskOpen">
           <DeskOpen />
         </Route>
-        <Route path="/Desk/Folder">
-          <DeskOpen />
+        <Route path="/Desk/DeskFolder">
+          <DeskFolder />
         </Route>
-        <Route path="/Desk/MultiDrag">
-          <DeskOpen />
+        <Route path="/Desk/DeskMultiDrag">
+          <DeskMultiDrag />
         </Route>
         <Route path="/">
           <App />
