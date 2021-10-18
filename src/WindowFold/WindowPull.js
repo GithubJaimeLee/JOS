@@ -17,7 +17,7 @@ const boxChange = {
     opacity: 1,
     backgroundImage: `url(${CalendarWindow})`,
     borderRadius: 12,
-    position: 'relative',
+    position: 'absolute',
     right: 100,
     top: 40,
     zIndex: 2
@@ -28,9 +28,9 @@ const boxPress = {
     right: -154,
     top: 46,
     width: 40,
-   // opacity: 1,
+ //  opacity: 1,
     height: 40,
-    //backgroundColor: "#ccc",
+ //   backgroundColor: "#ccc",
     borderRadius: 20,
     textAlign: 'center',
     zIndex: 2,
@@ -59,17 +59,20 @@ const WindowPull = () => {
         //    width: 0,
         scale:0,
         height: 0,
-        opacity: 0
+        opacity: 0,
+        right: 0
         },
         animationTwo: {
         //   width: 131,
         scale:1,
         height: 163,
         opacity: 1,
-        width: 131
+        width: 131,
+        right: 0
         }
     }
-
+   
+       
     return (
         <div 
         style={{
@@ -94,6 +97,7 @@ const WindowPull = () => {
                     style={boxChange}
                     variants={boxAnimation}
                     animate={animationBox}
+                    transition={{type: "tween"}}
                 />
              </div>
             </AnimatePresence>

@@ -9,10 +9,10 @@ import ContactHeader from "../Img/ContactHeader.png";
 import ContactWindow from "../Img/ContactWindow.png";
 
 const ContactWindowStyle = {
-    width: 131,
-    height: 118,
+    width: 0,
+    height: 0,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.1)",
-    opacity: 1,
+    //opacity: 1,
     backgroundImage: `url(${ContactWindow})`,
     borderRadius: 12,
     position: 'absolute',
@@ -30,7 +30,7 @@ const boxPress = {
     height: 50,
     borderRadius: 20,
     textAlign: 'center',
-    zIndex: 2,
+    zIndex: 2
     //backgroundColor: "blue",
 }
 
@@ -116,6 +116,7 @@ const WindowJump = () => {
                         style={ContactWindowStyle}
                         variants={boxAnimation}
                         animate={animationBox}
+                        transition={{type: "tween"}}
                     /></div>
                 </AnimatePresence>
             </div>
