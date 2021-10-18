@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FoldInfo from "../Img/FoldInfo.png";
 import { Accordion } from 'react-bootstrap';
 import '../Component/Component.css';
-
+import ArrowToggle from '../Component/ArrowToggle';
 import OffCanvasExample from '../Component/Offcanvas';
 //press功能
 //变形完整交互
@@ -20,7 +20,6 @@ const FoldContext = () => {
                 justifyContent: 'center'
             }}
         >
-        
             <div className='Background'
                 style={{
                     backgroundImage: `url(${FoldInfo})`,
@@ -30,7 +29,9 @@ const FoldContext = () => {
                     zIndex: 10,
                     
                 }}
-            >
+            > 
+
+          
               
              <Link to="/Fold">
                 <img src={backIcon} alt=" " style={{
@@ -42,65 +43,18 @@ const FoldContext = () => {
                     zIndex: '10'
                 }}>
                 </img>
-               
             </Link>
-            <OffCanvasExample  placement={'end'}  
-          //  name={'X'}
-              contextTitle={'我在测试'} context={'我在测试'} />
-            <Accordion
-                style={{
-                    width: 340,    
-                   top:150,
-                   left:17.5,
-                   position: 'relative'
-                }}
-            //defaultActiveKey="1"
-            //flush
-            >
 
-                <Accordion.Item eventKey="1">
-                    <Accordion.Header 
-                    ></Accordion.Header>
-                    <Accordion.Body
-                        style={{
-                            height: 210       
-                        }}
-                    >
-                    </Accordion.Body>
-
-                </Accordion.Item>
-           
-            </Accordion>
-       
+            
+            <OffCanvasExample  
+            placement={'end'}  
+              contextTitle={'我在测试'} 
+              context={'我在测试'}
+               />
+            
+             <ArrowToggle/>
             </div>
-            {/*      <AnimatePresence>
-               
-                <motion.div className='boxChange'
-                    style={boxHome}
-                    variants={boxAnimation}
-                    animate={animationBox}
-                >
-                        <div className='Allbtn' onClick={() => cycleAnimation()} >
-                            <div className="boxPress"
-                                style={
-                                    {
-                                        display: 'block',
-                                        position: 'absolute',
-                                        right: 0,
-                                        top: 0,
-                                        width: 40,
-                                        height: 40,
-                                        backgroundColor: "#fff",
-                                        borderRadius: 0,
-                                        textAlign: 'center',
-                                        boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
-                                    }
-                                }>
-                            </div>
-                        </div>           
-                </motion.div>
-            </AnimatePresence>
- */}
+    
         </div>
     );
 }
