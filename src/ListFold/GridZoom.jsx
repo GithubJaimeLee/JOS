@@ -9,7 +9,7 @@ export function GridZ({ children, columns }) {
         gridAutoRows: `70px`,
         gridGap: 18,
         padding: 20,
-        paddingTop:324,
+        paddingTop:334,
         gridAutoFlow: "row dense"  
       }}
     >

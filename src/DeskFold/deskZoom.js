@@ -32,7 +32,8 @@ const EboxHome = {
 
 const cssContainer = {
   marginTop: 60,
-  padding: 0
+  padding: 0,
+  width:375
 
 }
 const cssRow = {
@@ -55,7 +56,16 @@ const DZoom = () => {
         }}>
         </img>
       </Link>
-
+  
+      <div className='boxAll'
+       style={{
+        display: Grid,
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: '355',
+        height:'100%'
+      }} >
       <Container style={cssContainer}>
         <Row style={cssRow}>
           <Col style={EboxHome}>
@@ -129,18 +139,12 @@ const DZoom = () => {
         </Row>
       </Container>
       {/* ------------------------------自动补位状态----------------------------------------- */}
-      <div className='boxAll' style={{
-        display: Grid,
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        width: '100%',
-        height:'100%'
-      }} >
+   
         <App />
       </div>
-      <div style={{ marginLeft: 180, marginTop: -116 }}>
-      </div>
+
+ 
+   
       <div style={{
         background: '#E6ECF4',
         width: '100%',

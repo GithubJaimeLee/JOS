@@ -32,7 +32,9 @@ const EboxHome = {
 
 const cssContainer = {
   marginTop: 60,
-  padding: 0
+  padding: 0,
+    width:375,
+    position: 'absolute'
 
 }
 const cssRow = {
@@ -55,18 +57,14 @@ const DDirection = () => {
         }}>
         </img>
       </Link>
-      <div
-        style={{
-          backgroundColor: '#E6ECF4',
-          position: 'absolute',
-          width: '100%',
-          height:'100%',
-          top: 0,
-          zIndex: -1
-        }}
-      >
-
-      </div>
+      <div className='boxAll' style={{
+        display: Grid,
+        position: 'absolute',
+        left: 0,
+        top: 9,
+        width:'355',
+        height: '100%'
+      }} >
       <Container style={cssContainer}>
 
         <Row style={cssRow}>
@@ -147,19 +145,22 @@ const DDirection = () => {
 
 
       {/* ------------------------------自动补位状态----------------------------------------- */}
-      <div className='boxAll' style={{
-        display: Grid,
-        position: 'absolute',
-        left: 0,
-        top: 9,
-        width:'100%',
-        height: '100%'
-      }} >
+
         <App />
       </div>
       <div style={{ marginLeft: 180, marginTop: -116 }}>
       </div>
-   
+      <div
+        style={{
+          backgroundColor: '#E6ECF4',
+          position: 'absolute',
+          width: '100%',
+          height:'100%',
+          top: 0,
+          zIndex: -1
+        }}
+      >
+      </div>
     </div>
 
 
