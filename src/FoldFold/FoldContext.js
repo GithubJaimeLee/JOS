@@ -6,9 +6,7 @@ import FoldInfo from "../Img/FoldInfo.png";
 import { Accordion } from 'react-bootstrap';
 import '../Component/Component.css';
 import ArrowToggle from '../Component/ArrowToggle';
-import OffCanvasExample from '../Component/Offcanvas';
-//press功能
-//变形完整交互
+import WOffCanvas from '../Component/WOffcanvas';
 
 
 const FoldContext = () => {
@@ -29,11 +27,8 @@ const FoldContext = () => {
                     zIndex: 10,
                     
                 }}
-            > 
-
-          
-              
-             <Link to="/Fold">
+            >    
+            <Link to="/Fold">
                 <img src={backIcon} alt=" " style={{
                     width: 30,
                     position: 'relative',
@@ -44,17 +39,13 @@ const FoldContext = () => {
                 }}>
                 </img>
             </Link>
-
-            
-            <OffCanvasExample  
-            placement={'end'}  
-              contextTitle={'我在测试'} 
-              context={'我在测试'}
-               />
-            
-             <ArrowToggle/>
+            <WOffCanvas  
+                placement={'end'}  
+                contextTitle={'我在测试'} 
+                context={'我在测试'}
+            />
+            <ArrowToggle/>
             </div>
-    
         </div>
     );
 }

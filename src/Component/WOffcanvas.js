@@ -1,8 +1,9 @@
 import React ,{ useState}  from 'react'
 import { Button, Offcanvas} from 'react-bootstrap'
-import Help from "../Icon/Help.png";
+import WHelp from "../Icon/WHelp.png";
 
-function OffCanvas({ name,context,contextTitle, ...props }) {
+
+  function WOffCanvas({ name,context,contextTitle, ...props }) {
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
@@ -11,7 +12,7 @@ function OffCanvas({ name,context,contextTitle, ...props }) {
     return (
       <>
             <div  alt=" " style={{
-                    backgroundImage: `url(${Help})`,
+                    backgroundImage: `url(${WHelp})`,
                     position: 'relative',
                     top: -6,
                     left: 320,
@@ -38,16 +39,7 @@ function OffCanvas({ name,context,contextTitle, ...props }) {
     );
   }
   
-/*   function Example() {
- 
-    return (
-      <>
-     
-       
-          <OffCanvasExample  placement={'end'} /></OffCanvasExample>
-       
-      </>
+  export default WOffCanvas;
+  
 
-    )} */
-export default OffCanvas;
-  //render(<Example />);
+  
