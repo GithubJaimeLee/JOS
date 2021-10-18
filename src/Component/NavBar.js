@@ -10,7 +10,7 @@ export default class NavBar extends Component {
             <div>
                 <Navbar bg="light" expand="lg">
                     <Container>
-                        <Navbar.Brand href="#home">  <img
+                        <Navbar.Brand href="/">  <img
           alt=""
           src={Logo}
           width="30"
@@ -22,7 +22,8 @@ export default class NavBar extends Component {
                             <Nav className="me-auto">
                            
 
-                                <NavDropdown  className="Desk" title="OOS桌面" id="basic-nav-dropdown">
+                                <NavDropdown  className="Desk"  title="OOS桌面" id="basic-nav-dropdown">
+                                    <NavDropdown.Item href="/Desk">≡ OOS桌面</NavDropdown.Item>
                                     <NavDropdown.Item href="/Desk/deskMove">图标移动自动补位</NavDropdown.Item>
                                     <NavDropdown.Item href="/Desk/deskChange">图标变形</NavDropdown.Item>
                                     <NavDropdown.Item href="/Desk/deskDirection">图标变形(方向)</NavDropdown.Item>
@@ -35,6 +36,7 @@ export default class NavBar extends Component {
                                 </NavDropdown>
 
                                 <NavDropdown className="List" title="列表" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/List">≡ 列表</NavDropdown.Item>
                                      <NavDropdown.Item href="/List/ScrollJump">列表滑动及回弹</NavDropdown.Item>
                                     <NavDropdown.Item href="/List/ScrollTap">子页签(Tap)</NavDropdown.Item>
                                     <NavDropdown.Item href="/List/Scroll">横滑定位</NavDropdown.Item>
@@ -43,6 +45,7 @@ export default class NavBar extends Component {
                                 </NavDropdown>
                                 
                                 <NavDropdown className="Window" title="弹窗" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/Window">≡ 弹窗</NavDropdown.Item>
                                      <NavDropdown.Item href="/Window/WindowPull">底部弹窗</NavDropdown.Item>
                                     <NavDropdown.Item href="/Window/WindowPull">侧边音量</NavDropdown.Item>
                                     <NavDropdown.Item href="/Window/WindowPull">下拉弹窗</NavDropdown.Item>
@@ -54,6 +57,7 @@ export default class NavBar extends Component {
                                     <NavDropdown.Item href="/Window/WindowJump">侧边音量</NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown className="Click" title="点击反馈" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/Click">≡ 点击反馈</NavDropdown.Item>
                                      <NavDropdown.Item href="/Click/ClickList">列表反馈</NavDropdown.Item>
                                     <NavDropdown.Item href="/Click/ClickNum">数字键盘反馈</NavDropdown.Item>
                                     <NavDropdown.Item href="/Click/ClickIcon">图标反馈</NavDropdown.Item>
@@ -61,12 +65,14 @@ export default class NavBar extends Component {
                                     <NavDropdown.Item href="/Click/ClickBtn">按钮反馈</NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown className="Jump" title="界面跳转" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/Jump">≡ 界面跳转</NavDropdown.Item>
                                      <NavDropdown.Item href="/Jump/JumpSecond">二级界面跳转</NavDropdown.Item>
                                     <NavDropdown.Item href="/Jump/JumpSearch">搜索</NavDropdown.Item>
                                     <NavDropdown.Item href="/Jump/JumpNew">新建</NavDropdown.Item>
                                     <NavDropdown.Item href="/Jump/JumpApp">应用间跳转</NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown className="Alert" title="提示类" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/Alert">≡ 提示类</NavDropdown.Item>
                                      <NavDropdown.Item href="/Alert/AlertNew">新事件标记</NavDropdown.Item>
                                     <NavDropdown.Item href="/Alert/AlertPage">页码指示</NavDropdown.Item>
                                     <NavDropdown.Item href="/Alert/AlertLoading">loading</NavDropdown.Item>
@@ -74,6 +80,7 @@ export default class NavBar extends Component {
                                     <NavDropdown.Item href="/Alert/AlertToast">toast</NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown className="Choose" title="选择类" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/Choose">≡ 选择类</NavDropdown.Item>
                                      <NavDropdown.Item href="/Choose/ChooseDate">日期滑动选择器</NavDropdown.Item>
                                     <NavDropdown.Item href="/Choose/ChooseLoadingSwitch">加载类开关</NavDropdown.Item>
                                     <NavDropdown.Item href="/Choose/ChooseSwitch">开关</NavDropdown.Item>
@@ -82,11 +89,13 @@ export default class NavBar extends Component {
                                     <NavDropdown.Item href="/Choose/ChooseMultipleChoice">复选框</NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown className="Delete" title="删除类" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/Delete">≡ 删除类</NavDropdown.Item>
                                      <NavDropdown.Item href="/Delete/DeleteList">列表删除</NavDropdown.Item>
                                     <NavDropdown.Item href="/Delete/DeleteCard">卡片删除(新版本无)</NavDropdown.Item>
                                     <NavDropdown.Item href="/Delete/DeleteImage">图片删除</NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown className="Edit" title="编辑类" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/Edit">≡ 编辑类</NavDropdown.Item>
                                      <NavDropdown.Item href="/Edit/EditList">列表编辑排序</NavDropdown.Item>
                                     <NavDropdown.Item href="/Edit/EditServiceList">服务编辑列表</NavDropdown.Item>
                                     <NavDropdown.Item href="/Edit/EditCard">卡片编辑排序</NavDropdown.Item>
@@ -94,10 +103,12 @@ export default class NavBar extends Component {
                                     <NavDropdown.Item href="/Edit/EditEnter">进入编辑</NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown className="Fold" title="展开折叠" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/Fold">≡ 展开折叠</NavDropdown.Item>
                                      <NavDropdown.Item href="/Fold/FoldContext">内容展开折叠</NavDropdown.Item>
                                     <NavDropdown.Item href="/Fold/FoldCard">卡片展开折叠</NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown className="Other" title="其他" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/Other">≡ 其他</NavDropdown.Item>
                                      <NavDropdown.Item href="/Other/OtherBackToTop">状态、标题栏置顶</NavDropdown.Item>
                                     <NavDropdown.Item href="/Other/OtherPull">下拉刷新</NavDropdown.Item>
                                 </NavDropdown>

@@ -59,12 +59,14 @@ const DZoom = () => {
   
       <div className='boxAll'
        style={{
-        display: Grid,
+        
         position: 'absolute',
         left: 0,
         top: 0,
-        width: '355',
-        height:'100%'
+        width:'100%',
+        height:'100%',
+        display: 'flex',
+        justifyContent: 'center'
       }} >
       <Container style={cssContainer}>
         <Row style={cssRow}>

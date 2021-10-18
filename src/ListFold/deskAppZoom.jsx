@@ -56,7 +56,6 @@ const UploadGallery = () => {
               gridAutoRows: "auto",
               //gridAutoRows: "18",
               height: "100%"
-              
             }}
           >
             <PhotoZ/>

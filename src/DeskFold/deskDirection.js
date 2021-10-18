@@ -34,7 +34,8 @@ const cssContainer = {
   marginTop: 60,
   padding: 0,
     width:375,
-    position: 'absolute'
+    position: 'absolute',
+    zIndex:-1
 
 }
 const cssRow = {
@@ -58,13 +59,15 @@ const DDirection = () => {
         </img>
       </Link>
       <div className='boxAll' style={{
-        display: Grid,
+        display: 'flex',
         position: 'absolute',
         left: 0,
         top: 9,
-        width:'355',
-        height: '100%'
+        width:'100%',
+        height: '100%',
+        justifyContent: 'center'
       }} >
+     
       <Container style={cssContainer}>
 
         <Row style={cssRow}>
@@ -142,14 +145,12 @@ const DDirection = () => {
           </Col>
         </Row>
       </Container>
-
+      <App />
 
       {/* ------------------------------自动补位状态----------------------------------------- */}
 
-        <App />
       </div>
-      <div style={{ marginLeft: 180, marginTop: -116 }}>
-      </div>
+ 
       <div
         style={{
           backgroundColor: '#E6ECF4',
@@ -157,7 +158,7 @@ const DDirection = () => {
           width: '100%',
           height:'100%',
           top: 0,
-          zIndex: -1
+          zIndex: -10
         }}
       >
       </div>

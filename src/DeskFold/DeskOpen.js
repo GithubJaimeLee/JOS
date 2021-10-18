@@ -25,14 +25,14 @@ const boxAnimation = {
         width: 54,
         height: 54,
         left: 118,
-        bottom:60
+        bottom: 60
     },
     animationTwo: {
-      
+
         width: 300,
         height: 500,
         left: 40,
-   top:100,
+        top: 100,
         opacity: 1
     }
 }
@@ -51,13 +51,13 @@ const DeskOpen = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
     const [DragBox, cycleDrag] = useCycle(false, true);
     //const [isDrag, setIsDrag] = useState(false);
-  //  const toggleDragging = () => setIsDrag(!isDrag);
+    //  const toggleDragging = () => setIsDrag(!isDrag);
     return (
 
-        <div 
-        style={{
-        position: 'absolute'
-        }}>
+        <div
+            style={{
+                position: 'absolute'
+            }}>
             <Link to="/Desk">
                 <img src={backIcon} alt=" " style={{
                     width: 30,
@@ -66,30 +66,40 @@ const DeskOpen = () => {
                     left: 20,
                     opacity: 1,
                     zIndex: '100'
-                }}/>
-                 </Link>
+                }} />
+            </Link>
 
-            <AnimatePresence>  
-                <div style={{
-              backgroundImage: `url(${background})`,
-              width: 375,
-              height: 812, 
-              position: 'absolute', 
-              top: 0,
-              opacity: 1,
-              zIndex: '-2'
-            }}/>
-           <motion.div className='boxChange' 
-                    style={boxHome}
-                    variants={boxAnimation}
-                    animate={animationBox}
-                    drag={DragBox}
-                    dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}}
-                    dragElastic={1}
-                   // onClick={toggleOpen}
-                    onClick={() => cycleAnimation()&cycleDrag()}        
-                    />  
-            </AnimatePresence>
+            <div className="Screen">
+                <AnimatePresence >
+                    <div style={{
+                        backgroundImage: `url(${background})`,
+                        width: 375,
+                        height: 812,
+                        position: 'absolute',
+                        top: 0,
+                        opacity: 1,
+                        zIndex: '0'
+                    }} />
+                    <motion.div className='boxChange'
+                        style={boxHome}
+                        variants={boxAnimation}
+                        animate={animationBox}
+                        drag={DragBox}
+                        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+                        dragElastic={1}
+                        // onClick={toggleOpen}
+                        onClick={() => cycleAnimation() & cycleDrag()}
+                    />
+                </AnimatePresence>
+            </div>
+            <div className='bg'
+                style={{
+                    width: '100vw',
+                    height: '100vh',
+                    backgroundColor: '#000000',
+                    zIndex: '-10000'
+                }}
+            />
         </div>
     );
 }

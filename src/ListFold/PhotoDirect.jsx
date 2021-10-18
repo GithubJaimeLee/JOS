@@ -25,7 +25,6 @@ export const PhotoD = forwardRef(
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundColor: "#5EDD7B",
-
       borderRadius: index === 0 ? 6 : 12,
       ...style
     };
