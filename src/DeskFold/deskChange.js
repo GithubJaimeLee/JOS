@@ -191,11 +191,11 @@ const DChange = () => {
                     animate={animationMask}
 
                     className="Mask">
-                   <motion.div className="SetCenter"
-                    variants={SetAnimation}
-                    animate={animationSet}
-                    transition={{type: "tween"}}
-                   style={SetCenterStyle}/>
+                    <motion.div className="SetCenter"
+        variants={SetAnimation}
+        animate={animationSet}
+        transition={{type: "tween"}}
+        style={SetCenterStyle}/>
                     </motion.div>
                     {isOpen &&
                         <div className='AllbtnTwo' onClick={() => cycleAnimation()&ScycleAnimation()&McycleAnimation()} >

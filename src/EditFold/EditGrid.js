@@ -1,15 +1,27 @@
-import  React from "react";
-import { Link } from 'react-router-dom';
+import * as React from "react";
 import backIcon from "../Icon/back.png";
+import { Link } from 'react-router-dom';
+import { Grid } from "antd-mobile";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import App from '../EditFold/EditGridApp.jsx';
 
 const EditGrid = () => {
   return (
-    <div className="All"
+    <div 
     style={{
-    display: 'flex',
+  
+    }}
+    >
+    <div 
+    className="Gird"
+    style={{
+    display: 'Grid',
     justifyContent: 'center'
-    }}>
-      <Link to="/Edit">
+    }}
+    >
+    <App/>
+    </div>  
+      <Link to="/Desk">
         <img src={backIcon} alt=" " style={{
           width: 30,
           position: 'absolute',
@@ -20,6 +32,27 @@ const EditGrid = () => {
         }}>
         </img>
       </Link>
+      <div className='boxAll' style={{
+        display: Grid
+      }}
+      >
+      </div>
+      <div style={{ marginLeft: 180, marginTop: -116 }}>
+
+      </div>
+     
+      <div style={{
+        //background: '#E6ECF4',
+        /*   backgroundImage: `url(${background})`, */
+        width: '100%',
+        height: '100vh',
+        position: 'absolute',
+        top: 0,
+        opacity: 1,
+        zIndex: '-2',
+        display:'flex',
+        justifyContent: 'center'
+      }}> 
       <div className="bg"
           style={{
             backgroundColor: "#eee",
@@ -28,9 +61,10 @@ const EditGrid = () => {
             position: 'absolute',
             top: 0,
             opacity: 1,
-            zIndex: '2'
+            zIndex: '-1'
           }}
         ></div>
+      </div>
     </div>
   );
 }
