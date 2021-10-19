@@ -7,7 +7,7 @@ import EditEnter from './EditFold/EditEnter';
 import EditGrid from './EditFold/EditGrid';
 import EditList from './EditFold/EditList';
 import EditServiceList from './EditFold/EditServiceList';
-import EditOrder from './EditFold/EditOrder';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 
@@ -113,9 +113,6 @@ return (
         </Route>
         <Route path="/Edit/EditServiceList">
           <EditServiceList />
-        </Route>
-        <Route path="/Edit/EditOrder">
-          <EditOrder />
         </Route>
         <Route path="/">
           <App />
