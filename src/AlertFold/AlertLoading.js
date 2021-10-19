@@ -1,6 +1,7 @@
 import  React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
+import Loading from "../Img/Loading.gif";
 
 const AlertLoading = () => {
   return (
@@ -31,6 +32,14 @@ const AlertLoading = () => {
             zIndex: '2'
           }}
         ></div>
+            <img src={Loading} alt=" " style={{
+          width: 60,
+          position: 'relative',
+          top: 300,
+          opacity: 1,
+          zIndex: '100'
+        }}>
+        </img>
     </div>
   );
 }

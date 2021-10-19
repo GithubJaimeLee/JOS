@@ -1,6 +1,7 @@
 import  React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
+import {Form} from 'react-bootstrap'
 
 const ChooseLoadingSwitch = () => {
   return (
@@ -31,6 +32,24 @@ const ChooseLoadingSwitch = () => {
             zIndex: '2'
           }}
         ></div>
+        <Form
+         style={{
+          position: 'relative',
+            width: 375,
+            height: 812,
+            top: 300,
+          left: 100,
+            zIndex: '2'
+          }}
+        
+        >
+  <Form.Check 
+    type="switch"
+    id="custom-switch"
+    label="开关"
+  />
+
+</Form>
     </div>
   );
 }

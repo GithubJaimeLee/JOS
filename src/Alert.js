@@ -73,7 +73,7 @@ const Alert = () => {
              <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>loading</p></motion.div>
                </Link>
              <Link to="/Alert/AlertToast" style={{ textDecoration: 'none' }}>
-             <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>toast</p></motion.div>
+             <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>Toast</p></motion.div>
                </Link>
       </div>
       <div className="Row2">
