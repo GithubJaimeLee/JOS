@@ -21,7 +21,7 @@ const EditGrid = () => {
     >
     <App/>
     </div>  
-      <Link to="/Desk">
+      <Link to="/Edit">
         <img src={backIcon} alt=" " style={{
           width: 30,
           position: 'absolute',
