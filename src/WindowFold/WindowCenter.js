@@ -4,7 +4,11 @@ import backIcon from "../Icon/back.png";
 
 const WindowCenter = () => {
   return (
-    <div >
+    <div className="All"
+    style={{
+    display: 'flex',
+    justifyContent: 'center'
+    }}>
       <Link to="/Window">
         <img src={backIcon} alt=" " style={{
           width: 30,
@@ -16,6 +20,17 @@ const WindowCenter = () => {
         }}>
         </img>
       </Link>
+      <div className="bg"
+          style={{
+            backgroundColor: "#eee",
+            width: 375,
+            height: 812,
+            position: 'absolute',
+            top: 0,
+            opacity: 1,
+            zIndex: '2'
+          }}
+        ></div>
     </div>
   );
 }

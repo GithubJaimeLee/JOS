@@ -81,10 +81,13 @@ const WindowBubble = () => {
     return (
         <div className="All"
         style={{
-        width:375,
+            width: '100%',
+       display: 'flex',
+       justifyContent: 'center',
         height: 812,
         overflow: 'scroll',
         position: 'absolute'
+      
         }}>
             <Link to="/Window">
                 <img src={backIcon} 
@@ -92,14 +95,16 @@ const WindowBubble = () => {
                 style={BackIconStyle}
                 />         
             </Link>
-            <AnimatePresence>
-            
-                <div className='ContactHeader'
+
+            <div className='ContactHeader'
                     style={ContactHeaderStyle}
                     />
                 <div className='ContactBody'
                     style={ContactBodyStyle}
                 />
+            <AnimatePresence>
+            
+             
                 <div className='ContactFooter'
                     style={ContactFooterStyle}>
                        <motion.div className='boxChange'

@@ -14,12 +14,14 @@ const ScrollJump = () => {
   const scale = useTransform(scrollYProgress, [0, 0.3, 1], ["26px", "14px", "14px"]);
 
   return (
-    <div className="allImportant"
+    <div className="All"
       ref={ref}
       style={{
+        width:'100%',
         height: 812,
         overflow: 'scroll'
-      }} >
+      }} 
+      >
       <Link className="BackIcon" to="/List">
         <img src={Bback} alt=" " style={{
           width: 30,
@@ -30,7 +32,10 @@ const ScrollJump = () => {
           zIndex: '10000'
         }} />
       </Link>
-      <div className="GridCenter">
+      <div className="GridCenter"
+      
+      
+      >
         <div className="HeadCard"
           style={{
             backgroundImage: `url(${SetHeader})`,
@@ -40,7 +45,8 @@ const ScrollJump = () => {
             height: 148,
             position: 'fixed',
             opacity: 1,
-            zIndex: 1
+            zIndex: 1,
+         
           }}>
         </div>
         <motion.p className="SetP"

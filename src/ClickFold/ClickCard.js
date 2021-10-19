@@ -1,13 +1,13 @@
 import { motion, useCycle } from 'framer-motion';
 import * as React from "react";
 import { Link } from 'react-router-dom';
-import backIcon from "../Icon/Wback.png";
+import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DeskOOS from "../Img/DeskOOS.png";
 import { useState } from "react";
 import OneFingerClick from "../Img/OneFingerClick.png";
 
-const boxHome = {
+const boxChange = {
     width: 300,
     height: 500,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
@@ -15,8 +15,8 @@ const boxHome = {
     opacity: 1,
     background: '#fff',
     borderRadius: 12,
-    position: 'absolute',
-    left: 40,
+    position: 'relative',
+    left: -15,
     top: 100,
     zIndex: 20
 }
@@ -26,7 +26,14 @@ const ClickCard = () => {
 
     return (
 
-        <div >
+        <div className="All"
+       style={{
+       width: '100%',
+       height: 812,
+       display: 'flex',
+       justifyContent: 'center',
+       }}
+        >
             <Link to="/Click">
                 <img src={backIcon} alt=" " style={{
                     width: 30,
@@ -43,7 +50,7 @@ const ClickCard = () => {
                     width: 32,
                     height: 60,
                     backgroundImage: `url(${OneFingerClick})`,
-                    position: 'absolute',
+                    position: 'relative',
                     top: 560,
                     left: 260,
                     zIndex:21
@@ -74,7 +81,7 @@ const ClickCard = () => {
             </div>
 
             <motion.div className='boxChange'
-                style={boxHome}
+                style={boxChange}
                 whileTap={{ scale: 0.95 }}
             >
                 <p

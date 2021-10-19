@@ -46,9 +46,9 @@ const Scroll = () => {
               backgroundColor: "#fff",
               left:'20%',
               top:'15%',
-              width: '60%',
+              width: 225,
               height: '60%',
-              position: 'absolute',
+              position: 'relative',
               borderRadius: 20,
               opacity: 1,
               zIndex: '20'

@@ -94,7 +94,7 @@ const Desk = () => {
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>图标变形（方向）</p></motion.div>
               </Link>
               <Link to="/Desk/DeskOpen" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>开屏界面</p> </motion.div>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>打开应用</p> </motion.div>
               </Link>
                <Link to="/Desk/DeskFolder" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>图标创建文件夹 </p></motion.div>
