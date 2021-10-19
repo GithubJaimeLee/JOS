@@ -10,10 +10,10 @@ const ContactBtnStyle =  {
     bottom: -750,
     width: 60,
     height: 60,
-    backgroundColor: "#aaa",
+    backgroundColor: "#666",
     borderRadius: 20,
     textAlign: 'center',
-    zIndex:1,opacity:0.5,
+    zIndex:1,
     display:'flex',
     justifyContent: 'center',
 }
@@ -22,7 +22,7 @@ const ContactBubbleStyle = {
         height: 300,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     opacity: 1,
-    background: '#666',
+    background: '#aaa',
     borderRadius: 12,
     position: 'absolute',
   
@@ -87,12 +87,12 @@ const WindowBottom = () => {
                     onClick={() => cycleAnimation()} 
                     style={ContactBtnStyle}
                  >
-                       <motion.div className='boxChange'
+                    </div>
+                    <motion.div className='boxChange'
                     style={ContactBubbleStyle}
                     variants={BoxAnimation}
                     animate={animationBox}
-                /></div>
-                    
+                />
              
             </AnimatePresence>
         </div>

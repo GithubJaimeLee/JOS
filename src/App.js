@@ -136,14 +136,14 @@ function App() {
                 </motion.div>
               </Link>
               <Link to="/Window" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>弹窗20%</p>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>弹窗30%</p>
                   <div>
                     <div
                       style={{
                         position: 'relative',
                         top: 0,
                         left: 10,
-                        width: 140 * 0.2,
+                        width: 140 * 0.3,
                         height: 10,
                         backgroundColor: '#415FFF',
                         zIndex: 1,

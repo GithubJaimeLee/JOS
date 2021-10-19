@@ -24,7 +24,7 @@ const ContactBubbleStyle = {
     background: '#666',
     borderRadius: 12,
     position: 'absolute',
-  
+    x:100,
     bottom: 100,
     zIndex: 20
 }
