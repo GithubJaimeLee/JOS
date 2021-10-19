@@ -13,12 +13,15 @@ display: none !important;
 border:none !important;
 background:#f7f7f7 !important;
 }
-.nav-link{
+/* .nav-link{
 color:red!important;
-}
+} */
 .nav-link.active{
     color:black!important;
    font-weight:bold!important;
    font-size: 17px!important;
 }
-    
+
+.navbar-toggler:focus{
+    box-shadow:none !important;
+}
