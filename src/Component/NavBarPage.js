@@ -53,7 +53,7 @@ function NavBarPage({ name, context, contextTitle, ...props }) {
                             <Offcanvas.Title> {contextTitle}</Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body >
-                        {context} 
+                        {context}
                         </Offcanvas.Body>
                     </Offcanvas>
 
