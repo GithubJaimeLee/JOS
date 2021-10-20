@@ -52,8 +52,8 @@ function NavBarPage({ name, context, contextTitle, ...props }) {
                         <Offcanvas.Header closeButton>
                             <Offcanvas.Title> {contextTitle}</Offcanvas.Title>
                         </Offcanvas.Header>
-                        <Offcanvas.Body  >
-                        <p className="text-wrap">  {context}</p>  
+                        <Offcanvas.Body >
+                         {context} 
                         </Offcanvas.Body>
                     </Offcanvas>
 
