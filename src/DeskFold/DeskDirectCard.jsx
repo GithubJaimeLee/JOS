@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import photosD from "./photosDirect.json";
+import photosD from "./DeskDirect.json";
 
 const colSpan = {
 

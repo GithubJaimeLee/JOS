@@ -3,7 +3,7 @@ import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from '../DeskFold/deskAppZoom.jsx';
+import App from '../DeskFold/DeskZoomApp.jsx';
 import NavBarPage from '../Component/NavBarPage';
 
 

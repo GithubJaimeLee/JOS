@@ -1,17 +1,19 @@
 import * as React from "react";
-import backIcon from "../Icon/back.png";
-import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from '../DeskFold/deskApp.jsx';
+import App from '../DeskFold/DeskMoveApp.jsx';
+import NavBarPage from '../Component/NavBarPage';
 
 const DeskMultiDrag = () => {
-  return (
-    <div
-      style={{
+  const Info = <p>Hello,<br/> world!</p>;
 
-      }}
-    >
+  return (
+    <div className="All"  >
+      <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+        />
       <div
         className="Gird"
         style={{
@@ -19,19 +21,10 @@ const DeskMultiDrag = () => {
           justifyContent: 'center'
         }}
       >
+     
         <App />
       </div>
-      <Link to="/Desk">
-        <img src={backIcon} alt=" " style={{
-          width: 30,
-          position: 'absolute',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '100'
-        }}>
-        </img>
-      </Link>
+     
       <div className='boxAll' style={{
         display: Grid
       }}
