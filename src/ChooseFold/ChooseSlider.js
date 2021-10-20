@@ -5,8 +5,6 @@ import {ProgressBar} from 'react-bootstrap'
 
 const now = 60;
 
-
-
 const ChooseSlider = () => {
   return (
     <div className="All"
