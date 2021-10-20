@@ -1,8 +1,6 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
 import zoomIcon from "../Icon/zoomIcon.png";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SetBg from "../Img/SetBg.png";
 import SetCenter from "../Img/SetCenter.png";
@@ -22,7 +20,7 @@ const boxChange = {
     borderRadius: 12,
     position: 'absolute',
     left: 20,
-    top: 60,
+    top: 66,
     zIndex: 20,
     // overflow: 'hidden'
 }

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../DeskFold/deskAppZoom.jsx';
+import NavBarPage from '../Component/NavBarPage';
 
 
 const boxHome = {
@@ -43,19 +44,14 @@ const cssRow = {
 
 const DDirection = () => {
 
+  const Info = <p>Hello,<br/> world!</p>;
   return (
     <div>
-      <Link to="/Desk">
-        <img src={backIcon} alt=" " style={{
-          width: 30,
-          position: 'absolute',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '100'
-        }}>
-        </img>
-      </Link>
+       <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+        />
       <div className='boxAll' style={{
 
         position: 'absolute',

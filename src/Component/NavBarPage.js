@@ -3,19 +3,20 @@ import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
 import '../Component/Component.css';
 import Logo from "../Img/logo.png";
 import backIcon from "../Icon/back.png";
+import WbackIcon from "../Icon/Wback.png";
 import { Button, Offcanvas } from 'react-bootstrap'
 import Help from "../Icon/Help.png";
 
-function NavBarPage({ name, context, contextTitle, ...props }) {
+function NavBarPage({ name, context, contextTitle,...props }) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const options = [
+/*     const options = [
         {
           context: '标题',
           scroll: false,
           backdrop: true,
-        }];
+        }]; */
     return (
         <div>
 {/*  <Navbar bg="light" expand="lg"> */}

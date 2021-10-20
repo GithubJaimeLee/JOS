@@ -5,7 +5,7 @@ import { Grid } from "antd-mobile";
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../DeskFold/deskAppDirect.jsx';
-
+import NavBarPage from '../Component/NavBarPage';
 
 const boxHome = {
   width: 70,
@@ -42,20 +42,14 @@ const cssRow = {
 }
 
 const DZoom = () => {
-
+  const Info = <p>Hello,<br/> world!</p>;
   return (
     <div >
-      <Link to="/Desk">
-        <img src={backIcon} alt=" " style={{
-          width: 30,
-          position: 'absolute',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '100'
-        }}>
-        </img>
-      </Link>
+    <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+        />
 
       <div className='boxAll'
         style={{

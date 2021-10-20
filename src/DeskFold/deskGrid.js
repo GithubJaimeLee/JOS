@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import { Container, Row, Col } from 'react-bootstrap';
+import NavBarPage from '../Component/NavBarPage';
 
 const boxHome = {
     width: 70,
@@ -17,7 +18,7 @@ const boxHome = {
 }
 
 const cssContainer = {
-    marginTop: 60,
+    marginTop: 16,
     width: 335,
     padding: 0,
     zIndex: '-1'
@@ -29,20 +30,15 @@ const cssRow = {
 }
 
 export default function App() {
-
+    const Info = <p>Hello,<br/> world!</p>;
     return (
         <div >
-            <Link to="/Desk">
-                <img src={backIcon} alt=" " style={{
-                    width: 30,
-                    position: 'absolute',
-                    top: 20,
-                    left: 20,
-                    opacity: 1,
-                    zIndex: '0'
-                }}>
-                </img>
-            </Link>
+                  <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+        />
+      
 
 
 
