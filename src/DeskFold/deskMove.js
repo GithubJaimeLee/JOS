@@ -10,7 +10,7 @@ const DApp = () => {
       <NavBarPage
         placement={'end'}
         contextTitle={'说明'}
-        context={'1.关键参数一'}
+        context={ "虚拟示例：弹窗：\nposition：悬浮位置+比例值\ntime：250ms\nbezier curve ：(0.37, 0.75, 0.46 ,1)\nposition：悬浮位置+比例值~悬浮位置\ntime：200ms\nbezier curve ：(0.3, 0, 0.5 ,1)\n\n背景压黑：\nalpha：0～0.4\ntime：300ms\nbezier curve ：(0.33, 0.1, 0.67 ,1)\n\n\n\n\n"}
       />
 
       <div
