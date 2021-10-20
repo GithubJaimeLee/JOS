@@ -1,7 +1,5 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/Wback.png";
 import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WNavBarPage from '../Component/WNavBarPage';

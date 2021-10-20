@@ -1,4 +1,4 @@
-import { motion, useCycle, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import * as React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";

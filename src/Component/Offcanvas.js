@@ -1,5 +1,5 @@
 import React ,{ useState}  from 'react'
-import { Button, Offcanvas} from 'react-bootstrap'
+import { Offcanvas} from 'react-bootstrap'
 import Help from "../Icon/Help.png";
 
 function OffCanvas({ name,context,contextTitle, ...props }) {

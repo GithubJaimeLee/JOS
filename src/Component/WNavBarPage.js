@@ -1,10 +1,8 @@
-import React, { Component, useState } from 'react'
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Navbar, Container } from 'react-bootstrap'
 import '../Component/Component.css';
-import Logo from "../Img/logo.png";
-import backIcon from "../Icon/back.png";
 import WbackIcon from "../Icon/Wback.png";
-import { Button, Offcanvas } from 'react-bootstrap'
+import { Offcanvas } from 'react-bootstrap'
 import Help from "../Icon/WHelp.png";
 
 function WNavBarPage({ name, context, contextTitle,...props }) {
