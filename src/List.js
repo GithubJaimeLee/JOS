@@ -53,7 +53,7 @@ const List = () => {
               <img src={Bback} alt=" " style={{
                 width: 30,
                 position: 'absolute',
-                top: 20,
+                top: 16,
                 left: 20,
                 opacity: 1,
                 zIndex: '100'

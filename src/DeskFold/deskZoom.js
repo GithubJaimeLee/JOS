@@ -33,7 +33,7 @@ const EboxHome = {
 const cssContainer = {
   marginTop: 60,
   padding: 0,
-  width:375
+  width: 375
 
 }
 const cssRow = {
@@ -56,101 +56,101 @@ const DZoom = () => {
         }}>
         </img>
       </Link>
-  
+
       <div className='boxAll'
-       style={{
-        
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        width:'100%',
-        height:'100%',
-        display: 'flex',
-        justifyContent: 'center'
-      }} >
-      <Container style={cssContainer}>
-        <Row style={cssRow}>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-      </Container>
-      {/* ------------------------------自动补位状态----------------------------------------- */}
-   
+        style={{
+
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center'
+        }} >
+        <Container style={cssContainer}>
+          <Row style={cssRow}>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+        </Container>
+        {/* ------------------------------自动补位状态----------------------------------------- */}
+
         <App />
       </div>
 
- 
-   
+
+
       <div style={{
         background: '#E6ECF4',
         width: '100%',
-        height:'100%',
+        height: '100%',
         position: 'absolute',
         top: 0,
         opacity: 1,

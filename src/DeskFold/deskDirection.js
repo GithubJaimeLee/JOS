@@ -1,11 +1,9 @@
 import * as React from "react";
 import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-import { Grid } from "antd-mobile";
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../DeskFold/deskAppZoom.jsx';
-//import { position } from "dom-helpers";
 
 
 const boxHome = {
@@ -33,9 +31,9 @@ const EboxHome = {
 const cssContainer = {
   marginTop: 60,
   padding: 0,
-    width:375,
-    position: 'absolute',
-    zIndex:-1
+  width: 375,
+  position: 'absolute',
+  zIndex: -1
 
 }
 const cssRow = {
@@ -59,105 +57,105 @@ const DDirection = () => {
         </img>
       </Link>
       <div className='boxAll' style={{
-       
+
         position: 'absolute',
         left: 0,
         top: 9,
-        width:'100%',
+        width: '100%',
         height: '100%',
         display: 'flex',
         justifyContent: 'center'
       }} >
-     
-      <Container style={cssContainer}>
 
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
+        <Container style={cssContainer}>
 
-
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
 
 
-        <Row style={cssRow}>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={EboxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-        <Row style={cssRow}>
-          <Col style={EboxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-          <Col style={boxHome}>
-          </Col>
-        </Row>
-      </Container>
-      <App />
+          <Row style={cssRow}>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
 
-      {/* ------------------------------自动补位状态----------------------------------------- */}
+
+          <Row style={cssRow}>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={EboxHome}>
+            </Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={EboxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+            <Col style={boxHome}>
+            </Col>
+          </Row>
+        </Container>
+        <App />
+
+        {/* ------------------------------自动补位状态----------------------------------------- */}
 
       </div>
- 
+
       <div
         style={{
           backgroundColor: '#E6ECF4',
           position: 'absolute',
           width: '100%',
-          height:'100%',
+          height: '100%',
           top: 0,
           zIndex: -10
         }}

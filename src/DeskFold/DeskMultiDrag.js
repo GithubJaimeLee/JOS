@@ -7,20 +7,20 @@ import App from '../DeskFold/deskApp.jsx';
 
 const DeskMultiDrag = () => {
   return (
-    <div 
-    style={{
-  
-    }}
+    <div
+      style={{
+
+      }}
     >
-    <div 
-    className="Gird"
-    style={{
-    display: 'Grid',
-    justifyContent: 'center'
-    }}
-    >
-    <App/>
-    </div>  
+      <div
+        className="Gird"
+        style={{
+          display: 'Grid',
+          justifyContent: 'center'
+        }}
+      >
+        <App />
+      </div>
       <Link to="/Desk">
         <img src={backIcon} alt=" " style={{
           width: 30,

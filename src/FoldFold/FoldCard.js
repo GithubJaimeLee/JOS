@@ -1,12 +1,8 @@
-import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
-import zoomIcon from "../Icon/zoomIcon.png";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from "react";
 import FoldScreen from "../Img/FoldScreen.png";
-import ArrowSmall from "../Icon/ArrowSmall.png";
 import OffCanvas from '../Component/Offcanvas';
 import ArrowToggle from '../Component/ArrowToggle';
 

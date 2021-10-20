@@ -4,7 +4,6 @@ import Help from "../Icon/Help.png";
 
 function OffCanvas({ name,context,contextTitle, ...props }) {
     const [show, setShow] = useState(false);
-  
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
@@ -12,20 +11,17 @@ function OffCanvas({ name,context,contextTitle, ...props }) {
       <>
             <div  alt=" " style={{
                     backgroundImage: `url(${Help})`,
-                    position: 'relative',
-                    top: -6,
-                    left: 320,
+                  position: 'relative',
+                   top: -6,
+                   left: 320,
                     opacity: 1,
                     zIndex: '10',
                     width:30,
                     height: 30,
-                 //   backgroundColor: '#FFFFFF'
                 }}
                 onClick={handleShow} 
                 />
-           {/*    {name}   </div> */}
      
-        
         <Offcanvas show={show} onHide={handleClose} {...props}>
           <Offcanvas.Header closeButton>
             <Offcanvas.Title> {contextTitle}</Offcanvas.Title>
@@ -38,16 +34,5 @@ function OffCanvas({ name,context,contextTitle, ...props }) {
     );
   }
   
-/*   function Example() {
- 
-    return (
-      <>
-     
-       
-          <OffCanvasExample  placement={'end'} /></OffCanvasExample>
-       
-      </>
 
-    )} */
 export default OffCanvas;
-  //render(<Example />);

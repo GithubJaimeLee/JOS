@@ -11,11 +11,11 @@ import WHelp from "../Icon/WHelp.png";
   
     return (
       <>
-            <div  alt=" " style={{
+            <div className="Help" alt=" " style={{
                     backgroundImage: `url(${WHelp})`,
-                    position: 'relative',
-                    top: -6,
-                    left: 320,
+                     position: 'relative',
+                     top: -6,
+                     left: 320,
                     opacity: 1,
                     zIndex: '10',
                     width:30,
@@ -24,10 +24,8 @@ import WHelp from "../Icon/WHelp.png";
                 }}
                 onClick={handleShow} 
                 />
-           {/*    {name}   </div> */}
-     
         
-        <Offcanvas show={show} onHide={handleClose} {...props}>
+        <Offcanvas  show={show} onHide={handleClose} {...props}>
           <Offcanvas.Header closeButton>
             <Offcanvas.Title> {contextTitle}</Offcanvas.Title>
           </Offcanvas.Header>

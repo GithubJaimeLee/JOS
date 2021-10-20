@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import backIcon from "../Icon/Wback.png";
 import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from "react";
 
 const BoxBtn = {
     width: 54,
@@ -66,15 +65,15 @@ const DeskFolder = () => {
                 }} />
             </Link>
 
-            <div 
-            className="Screen"
-            style={{
-                display: 'grid',
-                width:'100%',
-                height:'100%',
-                position: 'absolute',
-                justifyContent: 'center'
-            }}
+            <div
+                className="Screen"
+                style={{
+                    display: 'grid',
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    justifyContent: 'center'
+                }}
             >
                 <AnimatePresence >
                     <div style={{
@@ -85,16 +84,16 @@ const DeskFolder = () => {
                         opacity: 1,
                         zIndex: '0'
                     }} >
-                    <motion.div className='boxChange'
-                        style={BoxBtn}
-                        variants={boxAnimation}
-                        animate={animationBox}
-                        drag={DragBox}
-                        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                        dragElastic={1}
-                        // onClick={toggleOpen}
-                        onClick={() => cycleAnimation() & cycleDrag()}
-                    /></div>
+                        <motion.div className='boxChange'
+                            style={BoxBtn}
+                            variants={boxAnimation}
+                            animate={animationBox}
+                            drag={DragBox}
+                            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+                            dragElastic={1}
+                            // onClick={toggleOpen}
+                            onClick={() => cycleAnimation() & cycleDrag()}
+                        /></div>
                 </AnimatePresence>
             </div>
             <div className='bg'

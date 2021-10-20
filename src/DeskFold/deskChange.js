@@ -12,7 +12,7 @@ import { useState } from "react";
 //变形完整交互
 
 const boxChange = {
-  
+
     width: 70,
     height: 70,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
@@ -25,10 +25,10 @@ const boxChange = {
     left: 20,
     top: 60,
     zIndex: 20,
-  // overflow: 'hidden'
+    // overflow: 'hidden'
 }
 const SetCenterStyle = {
-    width:122,
+    width: 122,
     height: 122,
     scale: 0.45,
     opacity: 0,
@@ -58,59 +58,59 @@ const boxAnimation = {
 }
 
 const SetAnimation = {
-    SanimationOne: { 
-        bottom:26,
-        right:26,
+    SanimationOne: {
+        bottom: 26,
+        right: 26,
         position: 'relative',
-        zIndex:-1,
+        zIndex: -1,
         opacity: 1
     },
     SanimationTwo: {
-         
+
         scale: 1,
-        bottom:10,
-        right:-36,
+        bottom: 10,
+        right: -36,
         position: 'relative',
-        zIndex:-1,
+        zIndex: -1,
         opacity: 1
     },
     SanimationThree: {
-         
+
         scale: 0.85,
-        bottom:-10,
-        right:0,
+        bottom: -10,
+        right: 0,
         position: 'relative',
-        zIndex:-1,
+        zIndex: -1,
         opacity: 1
     },
     SanimationFour: {
-         
+
         scale: 1.36,
-        bottom:-30,
-        right:-35,
+        bottom: -30,
+        right: -35,
         position: 'relative',
-        zIndex:-1,
+        zIndex: -1,
         opacity: 1
     }
 }
 const MaskAnimation = {
     ManimationOne: {
-         
+
         width: 70,
         height: 70
     },
     ManimationTwo: {
-         
+
         width: 140,
         height: 70
     },
     ManimationThree: {
-         
+
         width: 70,
         height: 140
     },
     ManimationFour: {
-         
+
         width: 140,
         height: 140
     }
@@ -153,24 +153,24 @@ const DChange = () => {
                     style={{
                         backgroundColor: '#E6ECF4',
                         position: 'absolute',
-                        width: '100%', 
-                        height: '100%', 
+                        width: '100%',
+                        height: '100%',
                         zIndex: 10,
                     }}
                     onClick={toggleClose} >
 
                 </div>
-               
+
                 <motion.div className='boxChange'
                     style={boxChange}
                     variants={boxAnimation}
                     animate={animationBox}
                     onPanStart={toggleOpen}
-                    whileTap={{scale:0.8}}
-          
-                    transition={{type: "tween"}}
+                    whileTap={{ scale: 0.8 }}
+
+                    transition={{ type: "tween" }}
                 >
-                <p
+                    <p
                         style={{
                             color: "#666",
                             fontWeight: 'bold',
@@ -179,26 +179,26 @@ const DChange = () => {
                             left: 10,
                             fontSize: 14
                         }}
-                    >长 按</p>  
-                    <motion.div 
-                    style={{
-                        overflow: 'hidden',
-                        width:70,
-                        height: 70
-                     }}
-                     transition={{type: "tween"}}
-                     variants={MaskAnimation}
-                    animate={animationMask}
+                    >长 按</p>
+                    <motion.div
+                        style={{
+                            overflow: 'hidden',
+                            width: 70,
+                            height: 70
+                        }}
+                        transition={{ type: "tween" }}
+                        variants={MaskAnimation}
+                        animate={animationMask}
 
-                    className="Mask">
-                    <motion.div className="SetCenter"
-        variants={SetAnimation}
-        animate={animationSet}
-        transition={{type: "tween"}}
-        style={SetCenterStyle}/>
+                        className="Mask">
+                        <motion.div className="SetCenter"
+                            variants={SetAnimation}
+                            animate={animationSet}
+                            transition={{ type: "tween" }}
+                            style={SetCenterStyle} />
                     </motion.div>
                     {isOpen &&
-                        <div className='AllbtnTwo' onClick={() => cycleAnimation()&ScycleAnimation()&McycleAnimation()} >
+                        <div className='AllbtnTwo' onClick={() => cycleAnimation() & ScycleAnimation() & McycleAnimation()} >
                             <img src={zoomIcon} alt=" " style={{
                                 width: 16,
                                 position: 'absolute',
@@ -225,8 +225,8 @@ const DChange = () => {
                                 }>
                             </div>
                         </div>
-                       
-                    }     
+
+                    }
                 </motion.div>
             </AnimatePresence>
         </div>

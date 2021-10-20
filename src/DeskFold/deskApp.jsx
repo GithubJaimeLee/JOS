@@ -10,12 +10,12 @@ import {
   LayoutMeasuringStrategy
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
-import { Grid } from "../DeskFold/Grid";
+import { Grid } from "../DeskFold/DeskMoveGrid";
 import { SortablePhoto } from "../DeskFold/SortablePhoto";
 import { Photo } from "../DeskFold/Photo";
 import photos from "../DeskFold/photos.json";
 
-const UploadGallery = () => {
+const DeskMoveApp = () => {
   const [items, setItems] = useState(photos);
   const [activeId, setActiveId] = useState(null);
   const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
@@ -93,4 +93,4 @@ const UploadGallery = () => {
   }
 };
 
-export default UploadGallery;
+export default DeskMoveApp;
