@@ -19,7 +19,7 @@ function NavBarPage({ name, context, contextTitle, ...props }) {
     return (
         <div>
 {/*  <Navbar bg="light" expand="lg"> */}
-           <Navbar  expand="lg">
+           <Navbar   expand="lg">
                 <Container>
                     <Navbar.Brand href="javascript:history.back()">
 

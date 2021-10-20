@@ -7,9 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SetBg from "../Img/SetBg.png";
 import SetCenter from "../Img/SetCenter.png";
 import { useState } from "react";
+import NavBarPage from '../Component/NavBarPage';
 
-//press功能
-//变形完整交互
 
 const boxChange = {
 
@@ -132,30 +131,24 @@ const DChange = () => {
     // const toggleClose = () => setIsOpen(!isOpen); 
     // const toggleOpen = () => setIsOpen(!isOpen);
     //   const toggleOpen = () => setIsOpen(true);
-
+    const Info = <p>Hello,<br/> world!</p>;
     return (
 
         <div>
-            <Link to="/Desk">
-                <img src={backIcon} alt=" " style={{
-                    width: 30,
-                    position: 'absolute',
-                    top: 20,
-                    left: 20,
-                    opacity: 1,
-                    zIndex: '100'
-                }}>
-                </img>
-            </Link>
-
+            <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+        />
             <AnimatePresence>
                 <div className='Background'
                     style={{
                         backgroundColor: '#E6ECF4',
                         position: 'absolute',
                         width: '100%',
+                        top:0,
                         height: '100%',
-                        zIndex: 10,
+                        zIndex: 1,
                     }}
                     onClick={toggleClose} >
 
