@@ -114,6 +114,8 @@ const MaskAnimation = {
 }
 
 
+
+
 const DChange = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo", "animationThree", "animationFour");
     const [animationSet, ScycleAnimation] = useCycle("SanimationOne", "SanimationTwo", "SanimationThree", "SanimationFour");
@@ -123,8 +125,11 @@ const DChange = () => {
     const toggleClose = () => setIsOpen(false);
     const Info = <p>Hello,<br/> world!</p>;
 
+
+
     return (
         <div>
+
             <NavBarPage
         placement={'end'}
         contextTitle={'说明'}
@@ -180,6 +185,13 @@ const DChange = () => {
                             transition={{ type: "tween" }}
                             style={SetCenterStyle} />
                     </motion.div>
+
+
+
+
+
+
+
                     {isOpen &&
                         <div className='AllbtnTwo' onClick={() => cycleAnimation() & ScycleAnimation() & McycleAnimation()} >
                             <img src={zoomIcon} alt=" " style={{

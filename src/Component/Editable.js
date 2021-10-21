@@ -1,29 +1,112 @@
 import React from "react";
+import DeskOpen from '../Component/fc';
+import { motion, useCycle} from 'framer-motion';
+
+
+
+const ObjStyle = {
+    width: 54,
+    height: 54,
+    boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+    color: "#415fff",
+    opacity: 1,
+    background: '#fff',
+    borderRadius: 12,
+    position: 'relative',
+    left: 128,
+    top: 647,
+    zIndex: 100
+}
+
+const boxAnimation = {
+    animationOne: {
+        borderRadius: 12,
+        width: 54,
+        height: 54,
+        left: 128,
+
+  
+        position: 'relative',
+    },
+    animationTwo: {
+        borderRadius: 0,
+        position: 'relative',
+        top: -56,
+        left: 0,
+        right:0,
+        scale: 1.02,
+        width: '100vw',
+        height: '100vh',
+        borderRadius: 12,
+
+    }
+}
+
+
+const Obj = () => {
+  
+    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
+//
+    const [DragBox, cycleDrag] = useCycle(false, true);
+
+    return (
+<div>
+<MyComponent className='boxChange'
+     style={ObjStyle}
+                            variants={boxAnimation}
+                            animate={animationBox}
+                            drag={DragBox}
+                            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+                            dragElastic={1}
+                            onClick={() => cycleAnimation() & cycleDrag()}
+/>
+     
+                        </div>
+    );
+}
+
 
 class MyComponent extends React.Component {
-//这里是重点....要求使用constructor，有constructor就必须带上super，这部分
-//看上去很冗余我想简化但是没有好办法...帮帮忙看看如何简化
+
+
   constructor(props) {
     super(props);
     this.state = {};
   }
-//这个功能是为NewColor属性赋值
-ChangeColorFunction(value) {
+
+  ChangeColorFunction(value) {
     this.setState({
       NewColor: value
     });
   }
 
-render() {
+  render() {
+
+    
     return (
-      <div>
-        <div style={{
-          width: 100,
-          height: 200,
-//下面是目的为div赋值新的backgroundColor
-          backgroundColor: `#${this.state.NewColor}`,
-        }} />
-{/* 下面是拿到的InputBar组件，Goal这个obj也是从下面组件拿到的*/}
+      <div className="Component"
+        style={{
+          zIndex: 10,
+          position: 'absolute',
+        }}
+      >
+  
+       <motion.div
+  // transition= {{ duration: `${this.state.NewColor}` }}
+        whileTap={{
+           scale: 2,
+         transition: {type: "tween", duration: `${this.state.NewColor}`}
+        }}
+
+          style={{
+            width: 100,
+            height: 200,
+            //下面是目的为div赋值新的backgroundColor
+            backgroundColor: "red",
+          }}
+
+        /> 
+        {/* 下面是拿到的InputBar组件，Goal这个obj也是从下面组件拿到的*/}
         <InputBar Goal={this.ChangeColorFunction.bind(this)} />
       </div>
     );
@@ -43,4 +126,4 @@ class InputBar extends React.Component {
   }
 }
 
-export default MyComponent;
+export default Obj;
