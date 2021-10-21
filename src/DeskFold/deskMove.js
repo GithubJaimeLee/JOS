@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Grid } from "antd-mobile";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DeskMoveApp from '../DeskFold/DeskMoveApp.jsx';
+import DeskMoveApp from './DeskMoveApp.jsx';
 import NavBarPage from '../Component/NavBarPage';
 
 const DApp = () => {
