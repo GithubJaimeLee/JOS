@@ -3,7 +3,7 @@ import * as React from "react";
 import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WNavBarPage from '../Component/WNavBarPage';
-import MyComponent from '../Component/Editable';
+import App from '../Component/Important';
 
 const BoxBtn = {
     width: 54,
@@ -58,19 +58,30 @@ const DeskOpen = () => {
         contextTitle={'说明'}
         context={Info}
         />
- 
+
             <div
              className="Screen"
              style={{
+            
+                 top:0,
                 display: 'flex',
                 height: '100%',
                 justifyContent: 'center'
              }}
             >
-      
-                <AnimatePresence >
-             
-                        <motion.div className='boxChange'
+           <div
+           >
+              <App/>
+    
+          </div>
+
+
+
+                 
+
+          {/*    
+            
+                       <motion.div className='boxChange'
                             style={BoxBtn}
                             variants={boxAnimation}
                             animate={animationBox}
@@ -80,21 +91,17 @@ const DeskOpen = () => {
                             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
                             dragElastic={1}
                             onClick={() => cycleAnimation() & cycleDrag()}
-                        />
-                  </AnimatePresence>
+                        /> 
+              */}
          
             <div   className="BgImg"
-          //          variants={BgAnimation}
-       //             animate={animationBg}     
-    //                transition={{ type: "tween" }}       
-   //                 transition= {{ duration: 2 }}
                      style={{   
                         backgroundImage: `url(${background})`,
                         width: 375,
                         height: 812,   
                         top: 0,
                         opacity: 1,
-                        zIndex: '0',
+                        zIndex: '-2',
                     position: 'absolute',
                     }} />
             <div className='bg'

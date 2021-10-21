@@ -3,7 +3,7 @@ import * as React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from '../Component/Important';
+
 
 const ContactBtnStyle = {
     position: 'relative',
@@ -80,7 +80,6 @@ const AlertNew = () => {
                 />
             </Link>
 
-<App/>
             <div className='ContactBody'
                 style={ContactBodyStyle}
             />

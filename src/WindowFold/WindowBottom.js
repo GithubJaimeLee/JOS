@@ -1,4 +1,4 @@
-import { motion, useCycle, AnimatePresence } from 'framer-motion';
+import { motion, useCycle} from 'framer-motion';
 import * as React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
@@ -82,7 +82,7 @@ const WindowBottom = () => {
                 <div className='ContactBody'
                     style={ContactBodyStyle}
                 />
-            <AnimatePresence>
+     
                     <div className='ContactBtn' 
                     onClick={() => cycleAnimation()} 
                     style={ContactBtnStyle}
@@ -94,7 +94,7 @@ const WindowBottom = () => {
                     animate={animationBox}
                 />
              
-            </AnimatePresence>
+
         </div>
     );
 }
