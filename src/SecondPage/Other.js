@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
-import background from "./Img/bg2.png";
-import backIcon from "./Icon/back.png";
+import background from "../Img/bg2.png";
+import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-import FoldContext from './FoldFold/FoldContext';
-import FoldCard from './FoldFold/FoldCard';
-import App from './App';
+import OtherBackToTop from '../OtherFold/OtherBackToTop';
+import OtherPull from '../OtherFold/OtherPull';
+import OtherOpen from '../OtherFold/OtherOpen';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App from '../App';
 
 let card = {
   width: 160, height: 100, backgroundColor: "#fff",
@@ -26,24 +27,24 @@ const cardHover = {
 }
 
 
-const Fold = () => {
+const Other = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/Fold">
+        <Route exact path="/Other">
           <div >
-            <motion.h1
+            <motion.h1 
              className="text-center" 
               style={{
                 padding: 18,
-                fontSize: 28,
                 color: "#333",
+                fontSize: 28,
                 y: 0
               }}
 
               transition={{ type: "spring", velocity: 120 }}
             >
-              OOS展开折叠动效
+              OOS其他动效
             </motion.h1>
             <Link to="/">
               <img src={backIcon} alt=" " style={{
@@ -56,22 +57,25 @@ const Fold = () => {
               }}>
               </img>
             </Link>
-            <div
-              className="Gird"
-              style={{
+            <div 
+      className="Grid"
+      style={{
             display: "flex",
             justifyContent: 'center',
             }}
-             >
-               <div className="Row1">
-              <Link to="/Fold/FoldContext" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>内容展开折叠</p></motion.div>
+            >
+      <div className="Row1">
+              <Link to="/Other/OtherBackToTop" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>状态、标题栏置顶</p></motion.div>
               </Link>
+
+   
             </div>
-             <div className="Row2">
-              <Link to="/Fold/FoldCard" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>卡片展开折叠</p> </motion.div>
+            <div className="Row2">
+            <Link to="/Other/OtherPull" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>下拉刷新</p></motion.div>
               </Link>
+             
             </div>
             </div>
             <div style={{
@@ -87,11 +91,15 @@ const Fold = () => {
             </div>
           </div>
         </Route>
-        <Route path="/Fold/FoldContext">
-          <FoldContext />
+        <Route path="/Other/OtherBackToTop">
+          <OtherBackToTop />
         </Route>
-        <Route path="/Fold/FoldCard">
-          <FoldCard />
+        <Route path="/Other/OtherOpen">
+          <OtherOpen />
+        </Route>
+
+        <Route path="/Other/OtherPull">
+          <OtherPull />
         </Route>
         <Route path="/">
           <App />
@@ -101,4 +109,4 @@ const Fold = () => {
   );
 }
 
-export default Fold;
+export default Other;

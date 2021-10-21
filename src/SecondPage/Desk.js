@@ -1,17 +1,17 @@
 //图片
-import background from "./Img/bg2.png";
-import backIcon from "./Icon/back.png";
+import background from "../Img/bg2.png";
+import backIcon from "../Icon/back.png";
 //页码
-import App from './App';
-import DApp from './DeskFold/DeskMove';
-import DChange from './DeskFold/DeskChange';
-import DZoom from './DeskFold/DeskZoom';
-import DDirection from './DeskFold/DeskDirection';
-import DeskOpen from './DeskFold/DeskOpen';
-import DeskFolder from './DeskFold/DeskFolder';
-import DeskMultiDrag from './DeskFold/DeskMultiDrag';
+import App from '../App';
+import DApp from '../DeskFold/DeskMove';
+import DChange from '../DeskFold/DeskChange';
+import DZoom from '../DeskFold/DeskZoom';
+import DDirection from '../DeskFold/DeskDirection';
+import DeskOpen from '../DeskFold/DeskOpen';
+import DeskFolder from '../DeskFold/DeskFolder';
+import DeskMultiDrag from '../DeskFold/DeskMultiDrag';
 //import {DraggableStory ,Grid }  from './DeskFold/deskGrid';
-import DGrid from './DeskFold/DeskGrid';
+import DGrid from '../DeskFold/DeskGrid';
 //库
 import { motion } from 'framer-motion';
 import React from "react";

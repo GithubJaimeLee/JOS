@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
-import background from "./Img/bg2.png";
-import Bback from "./Icon/back.png";
-import ClickList from './ClickFold/ClickList';
-import ClickBtn from './ClickFold/ClickBtn';
-import ClickIcon from './ClickFold/ClickIcon';
-import ClickCard from './ClickFold/ClickCard';
-import ClickNum from './ClickFold/ClickNum';
+import background from "../Img/bg2.png";
+import Bback from "../Icon/back.png";
+import ClickList from '../ClickFold/ClickList';
+import ClickBtn from '../ClickFold/ClickBtn';
+import ClickIcon from '../ClickFold/ClickIcon';
+import ClickCard from '../ClickFold/ClickCard';
+import ClickNum from '../ClickFold/ClickNum';
 import React from "react";
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App from './App';
+import App from '../App';
 
 let cardActive = {
   width: 160, height: 100, backgroundColor: "#fff",

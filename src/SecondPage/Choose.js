@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
-import background from "./Img/bg2.png";
-import backIcon from "./Icon/back.png";
+import background from "../Img/bg2.png";
+import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-import ChooseDate from './ChooseFold/ChooseDate';
-import ChooseLoadingSwitch from './ChooseFold/ChooseLoadingSwitch';
-import ChooseMultipleChoice from './ChooseFold/ChooseMultipleChoice';
-import ChooseSingleChoice from './ChooseFold/ChooseSingleChoice';
-import ChooseSlider from './ChooseFold/ChooseSlider';
-import ChooseSwitch from './ChooseFold/ChooseSwitch';
+import ChooseDate from '../ChooseFold/ChooseDate';
+import ChooseLoadingSwitch from '../ChooseFold/ChooseLoadingSwitch';
+import ChooseMultipleChoice from '../ChooseFold/ChooseMultipleChoice';
+import ChooseSingleChoice from '../ChooseFold/ChooseSingleChoice';
+import ChooseSlider from '../ChooseFold/ChooseSlider';
+import ChooseSwitch from '../ChooseFold/ChooseSwitch';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App from './App';
+import App from '../App';
 
 let card = {
   width: 160, height: 100, backgroundColor: "#fff",

@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
-import background from "./Img/bg2.png";
-import backIcon from "./Icon/back.png";
+import background from "../Img/bg2.png";
+import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-import AlertLoading from './AlertFold/AlertLoading';
-import AlertNew from './AlertFold/AlertNew';
-import AlertPage from './AlertFold/AlertPage';
-import AlertPercent from './AlertFold/AlertPercent';
-import AlertToast from './AlertFold/AlertToast';
+import AlertLoading from '../AlertFold/AlertLoading';
+import AlertNew from '../AlertFold/AlertNew';
+import AlertPage from '../AlertFold/AlertPage';
+import AlertPercent from '../AlertFold/AlertPercent';
+import AlertToast from '../AlertFold/AlertToast';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App from './App';
+import App from '../App';
 
 let card = {
   width: 160, height: 100, backgroundColor: "#fff",

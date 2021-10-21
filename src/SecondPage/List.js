@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
-import background from "./Img/bg2.png";
-import Bback from "./Icon/back.png";
-import Scroll from './ListFold/Scroll';
-import ScrollJump from './ListFold/ScrollJump';
-import ScrollTitle from './ListFold/ScrollTitle';
-import ScrollTap from './ListFold/ScrollTap';
-import ScrollTitleList from './ListFold/ScrollTitleList';
+import background from "../Img/bg2.png";
+import Bback from "../Icon/back.png";
+import Scroll from '../ListFold/Scroll';
+import ScrollJump from '../ListFold/ScrollJump';
+import ScrollTitle from '../ListFold/ScrollTitle';
+import ScrollTap from '../ListFold/ScrollTap';
+import ScrollTitleList from '../ListFold/ScrollTitleList';
 import React from "react";
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App from './App';
+import App from '../App';
 
 let cardActive = {
   width: 160, height: 100, backgroundColor: "#fff",

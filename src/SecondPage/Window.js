@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion';
-import background from "./Img/bg2.png";
-import backIcon from "./Icon/back.png";
+import background from "../Img/bg2.png";
+import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-import WindowJump from './WindowFold/WindowJump';
-import WindowPull from './WindowFold/WindowPull';
-import WindowBubble from './WindowFold/WindowBubble';
-import WindowAlert from './WindowFold/WindowAlert';
-import WindowBottom from './WindowFold/WindowBottom';
-import WindowCenter from './WindowFold/WindowCenter';
-import WindowInput from './WindowFold/WindowInput';
-import WindowSide from './WindowFold/WindowSide';
-import WindowVoice from './WindowFold/WindowVoice';
-import App from './App';
+import WindowJump from '../WindowFold/WindowJump';
+import WindowPull from '../WindowFold/WindowPull';
+import WindowBubble from '../WindowFold/WindowBubble';
+import WindowAlert from '../WindowFold/WindowAlert';
+import WindowBottom from '../WindowFold/WindowBottom';
+import WindowCenter from '../WindowFold/WindowCenter';
+import WindowInput from '../WindowFold/WindowInput';
+import WindowSide from '../WindowFold/WindowSide';
+import WindowVoice from '../WindowFold/WindowVoice';
+import App from '../App';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 let cardActive = {

@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
-import background from "./Img/bg2.png";
-import backIcon from "./Icon/back.png";
+import background from "../Img/bg2.png";
+import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
-import JumpSecond from './JumpFold/JumpSecond';
-import JumpNew from './JumpFold/JumpNew';
-import JumpSearch from './JumpFold/JumpSearch';
-import JumpApp from './JumpFold/JumpApp';
+import JumpSecond from '../JumpFold/JumpSecond';
+import JumpNew from '../JumpFold/JumpNew';
+import JumpSearch from '../JumpFold/JumpSearch';
+import JumpApp from '../JumpFold/JumpApp';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App from './App';
+import App from '../App';
 
 
 let card = {
