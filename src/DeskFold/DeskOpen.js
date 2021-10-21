@@ -13,27 +13,47 @@ const BoxBtn = {
     background: '#fff',
     borderRadius: 12,
     position: 'relative',
-    left: 118,
-    top: 732,
+    left: 128,
+    top: 647,
     zIndex: 100
 }
 
 const boxAnimation = {
     animationOne: {
+        borderRadius: 12,
         width: 54,
         height: 54,
-        left: 118,
-        bottom: 60
+        left: 128,
+
+  
+        position: 'relative',
     },
     animationTwo: {
-
-        width: 300,
-        height: 500,
-        left: 40,
-        top: 100,
-        opacity: 1
+        borderRadius: 0,
+        position: 'relative',
+        top: -56,
+        left: 0,
+        right:0,
+        scale: 1.02,
+        width: '100vw',
+        height: '100vh',
+        borderRadius: 12,
+        
+      
     }
 }
+
+/* const BgAnimation = {
+    BgAnimationOne: {
+        width: 375,
+        height: 812,   
+    },
+    BgAnimationTwo: {
+        position: 'initial',
+     
+ 
+    }
+} */
 
 /* const boxDrag = {
     DragOne: {
@@ -47,13 +67,15 @@ const boxAnimation = {
 
 const DeskOpen = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
+//   const [animationBg, BgcycleAnimation] = useCycle("BgAnimationOne", "BgAnimationTwo");
     const [DragBox, cycleDrag] = useCycle(false, true);
-    //const [isDrag, setIsDrag] = useState(false);
-    //  const toggleDragging = () => setIsDrag(!isDrag);
+
     const Info = <p>Hello,<br/> world!</p>;
     return (
 
-        <div >
+        <div className="All"
+        
+        >
                    <WNavBarPage
         placement={'end'}
         contextTitle={'说明'}
@@ -63,35 +85,40 @@ const DeskOpen = () => {
             <div
                 className="Screen"
                 style={{
-                    display: 'grid',
-                    width: '100%',
-                    height: '100%',
-                    position: 'absolute',
-                    top:0,
-                    justifyContent: 'center'
-                }}
+        display: 'flex',
+        justifyContent: 'center'
+        }}
             >
+              
                 <AnimatePresence >
-                    <div style={{
+             
+                        <motion.div className='boxChange'
+                            style={BoxBtn}
+                            variants={boxAnimation}
+                            animate={animationBox}
+                            transition={{ type: "tween" }}
+                            transition= {{ duration: 1 }}
+                            drag={DragBox}
+                            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+                            dragElastic={1}
+                            onClick={() => cycleAnimation() & cycleDrag()}
+                        />
+                  </AnimatePresence>
+         
+            <div   className="BgImg"
+          //          variants={BgAnimation}
+       //             animate={animationBg}     
+    //                transition={{ type: "tween" }}       
+   //                 transition= {{ duration: 2 }}
+                     style={{   
                         backgroundImage: `url(${background})`,
                         width: 375,
                         height: 812,   
                         top: 0,
                         opacity: 1,
-                        zIndex: '0'
-                    }} >
-                        <motion.div className='boxChange'
-                            style={BoxBtn}
-                            variants={boxAnimation}
-                            animate={animationBox}
-                            drag={DragBox}
-                            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                            dragElastic={1}
-                            // onClick={toggleOpen}
-                            onClick={() => cycleAnimation() & cycleDrag()}
-                        /></div>
-                </AnimatePresence>
-            </div>
+                        zIndex: '0',
+                    position: 'absolute',
+                    }} />
             <div className='bg'
                 style={{
                     width: '100vw',
@@ -103,6 +130,8 @@ const DeskOpen = () => {
                     
                 }}
             />
+
+</div>
         </div>
     );
 }
