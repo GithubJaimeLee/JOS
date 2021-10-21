@@ -3,7 +3,7 @@ import * as React from "react";
 import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WNavBarPage from '../Component/WNavBarPage';
-import App from '../Component/Important';
+import SetWindow from '../Component/SetWindow';
 
 const BoxBtn = {
     width: 54,
@@ -71,29 +71,10 @@ const DeskOpen = () => {
             >
            <div
            >
-              <App/>
+              <SetWindow/>
     
           </div>
 
-
-
-                 
-
-          {/*    
-            
-                       <motion.div className='boxChange'
-                            style={BoxBtn}
-                            variants={boxAnimation}
-                            animate={animationBox}
-                            transition={{ type: "tween" }}
-                            transition= {{ duration: 1 }}
-                            drag={DragBox}
-                            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                            dragElastic={1}
-                            onClick={() => cycleAnimation() & cycleDrag()}
-                        /> 
-              */}
-         
             <div   className="BgImg"
                      style={{   
                         backgroundImage: `url(${background})`,

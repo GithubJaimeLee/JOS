@@ -110,7 +110,7 @@ const ContactBodyStyle = {
 /*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
 
 
-export default function App() {
+export default function SetWindow() {
   const [AnimationAppWIndow, cycleAnimation] = useCycle("animationOne", "animationTwo");
   const [SetWindowAnimation, UPcycleAnimation] = useCycle("UPanimationOne", "UPanimationTwo");
   const [DragBox, cycleDrag] = useCycle(false, true);
