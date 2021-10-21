@@ -1,10 +1,7 @@
 import * as React from "react";
-import backIcon from "../Icon/back.png";
-import { Link } from 'react-router-dom';
-import { Grid } from "antd-mobile";
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from '../DeskFold/deskAppDirect.jsx';
+import DeskDirectApp from '../DeskFold/DeskDirectApp.jsx';
 import NavBarPage from '../Component/NavBarPage';
 
 const boxHome = {
@@ -136,7 +133,7 @@ const DZoom = () => {
         </Container>
         {/* ------------------------------自动补位状态----------------------------------------- */}
 
-        <App />
+        <DeskDirectApp />
       </div>
 
 

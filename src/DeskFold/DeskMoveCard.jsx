@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import photos from "./photos.json"; 
+import photos from "./DeskMove.json"; 
 //宽度
 const colSpan = {
 

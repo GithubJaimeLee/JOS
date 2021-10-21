@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import photos from "./photosZoom.json";
+import photos from "./DeskZoom.json";
 //宽度
 const colSpan = {
   [photos[0]]: 1,

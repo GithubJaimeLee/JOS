@@ -13,12 +13,12 @@ import {
   SortableContext,
   rectSortingStrategy
 } from "@dnd-kit/sortable";
-import { GridD } from "../DeskFold/GridDirect";
-import { SortablePhotoD } from "./SortablePhotoDirect";
-import { PhotoD } from "../DeskFold/PhotoDirect.jsx";
-import photos from "../DeskFold/photosDirect.json";
+import { GridD } from "../DeskFold/DeskDirectGrid";
+import { SortablePhotoD } from "./DeskDirectSortable";
+import { PhotoD } from "../DeskFold/DeskDirectCard.jsx";
+import photos from "../DeskFold/DeskDirect.json";
 
-const UploadGallery = () => {
+const DeskDirectApp = () => {
   const [items, setItems] = useState(photos);
   const [activeId, setActiveId] = useState(null);
   const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
@@ -74,4 +74,4 @@ const UploadGallery = () => {
   }
 };
 
-export default UploadGallery;
+export default DeskDirectApp;

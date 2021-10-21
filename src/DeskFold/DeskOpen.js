@@ -1,9 +1,8 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/Wback.png";
 import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import WNavBarPage from '../Component/WNavBarPage';
 
 const BoxBtn = {
     width: 54,
@@ -51,19 +50,15 @@ const DeskOpen = () => {
     const [DragBox, cycleDrag] = useCycle(false, true);
     //const [isDrag, setIsDrag] = useState(false);
     //  const toggleDragging = () => setIsDrag(!isDrag);
+    const Info = <p>Hello,<br/> world!</p>;
     return (
 
         <div >
-            <Link to="/Desk">
-                <img src={backIcon} alt=" " style={{
-                    width: 30,
-                    position: 'absolute',
-                    top: 20,
-                    left: 20,
-                    opacity: 1,
-                    zIndex: '100'
-                }} />
-            </Link>
+                   <WNavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+        />
 
             <div
                 className="Screen"
@@ -72,6 +67,7 @@ const DeskOpen = () => {
                     width: '100%',
                     height: '100%',
                     position: 'absolute',
+                    top:0,
                     justifyContent: 'center'
                 }}
             >
@@ -79,7 +75,7 @@ const DeskOpen = () => {
                     <div style={{
                         backgroundImage: `url(${background})`,
                         width: 375,
-                        height: 812,
+                        height: 812,   
                         top: 0,
                         opacity: 1,
                         zIndex: '0'
@@ -101,7 +97,10 @@ const DeskOpen = () => {
                     width: '100vw',
                     height: '100vh',
                     backgroundColor: '#000000',
+                    top: 0,
+                    position: 'absolute',
                     zIndex: '-10000'
+                    
                 }}
             />
         </div>

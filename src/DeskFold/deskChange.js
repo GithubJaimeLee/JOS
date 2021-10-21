@@ -119,19 +119,11 @@ const DChange = () => {
     const [animationSet, ScycleAnimation] = useCycle("SanimationOne", "SanimationTwo", "SanimationThree", "SanimationFour");
     const [animationMask, McycleAnimation] = useCycle("ManimationOne", "ManimationTwo", "ManimationThree", "ManimationFour");
     const [isOpen, setIsOpen] = useState(false);
-    // const toggleOpen = () => setIsOpen(!isOpen);
     const toggleOpen = () => setIsOpen(true);
-    //  const toggleClose = () => setIsOpen(!isOpen); 
-    // const [isClose, setIsClose] = useState(true);
-    // const toggleOpen = () => setIsOpen(!isOpen);
     const toggleClose = () => setIsOpen(false);
-    // const [isClose, setIsClose] = useState(false);
-    // const toggleClose = () => setIsOpen(!isOpen); 
-    // const toggleOpen = () => setIsOpen(!isOpen);
-    //   const toggleOpen = () => setIsOpen(true);
     const Info = <p>Hello,<br/> world!</p>;
-    return (
 
+    return (
         <div>
             <NavBarPage
         placement={'end'}

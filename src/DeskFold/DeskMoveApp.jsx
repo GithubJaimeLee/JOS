@@ -11,9 +11,9 @@ import {
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { Grid } from "../DeskFold/DeskMoveGrid";
-import { SortablePhoto } from "../DeskFold/SortablePhoto";
-import { Photo } from "../DeskFold/Photo";
-import photos from "../DeskFold/photos.json";
+import { SortablePhoto } from "../DeskFold/DeskMoveSortable";
+import { Photo } from "../DeskFold/DeskMoveCard";
+import photos from "../DeskFold/DeskMove.json";
 
 const DeskMoveApp = () => {
   const [items, setItems] = useState(photos);

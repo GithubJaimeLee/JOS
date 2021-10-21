@@ -1,10 +1,9 @@
-import { motion, useCycle } from 'framer-motion';
+import { motion  } from 'framer-motion';
 import * as React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DeskOOS from "../Img/DeskOOS.png";
-import { useState } from "react";
 import OneFingerClick from "../Img/OneFingerClick.png";
 
 const boxChange = {
