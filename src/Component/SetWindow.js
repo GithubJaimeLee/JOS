@@ -1,35 +1,23 @@
 import React, { useState } from "react";
 import { motion, useCycle } from 'framer-motion';
 import WSet from "../Icon/WSet.png";
-import Note from "../Img/Note.png";
+import NoteAndroid from "../Img/NoteAndroid.png";
 import NoteBg from "../Img/NoteBg.png";
 
-const AppWindowStyle = {
-  width: 152,
-  height: 152,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-  color: "#415fff",
-  opacity: 1,
-  backgroundColor: '#FFFFFF',
-  //backgroundImage: `url(${Note})`,
-  borderRadius: 14,
-  position: 'absolute',
-  x: 82,
-  top: 66,
-  zIndex: 0,
-  overflow: 'hidden'
-}
+
 
 const SetIconBgStyle={
   backgroundImage: `url(${NoteBg})`,
-  width:'100vw',
-  height:  '100vh',
+  width:690,
+  height:  812,
   position: 'relative',
 /*   top: -100,
   left: -100, */
   backgroundColor: '#FFFFFF',
   borderColor: '#FFFFFF',
-  scale:1,
+  y:-355,
+  x:-300,
+  scale: 0.2,
   opacity: 1,
   zIndex:100,
 }
@@ -52,15 +40,35 @@ const SetWindowStyle = {
 }
 
 
-const AppWindowAnimation = {
+
+const AppWindowStyle = {
+  width: 152,
+  height: 152,
+  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+  color: "#415fff",
+  opacity: 1,
+  backgroundColor: '#FFFFFF',
+
+  borderRadius: 14,
+  position: 'absolute',
+  x: 82,
+  top: 66,
+  zIndex: 0,
+  overflow: 'hidden'
+}
+
+
+
+const AppWindowVariants = {
   animationOne: {
-    // borderRadius: 12,
-   // width: 54,
-  //  height: 54,
+    backgroundImage: null,
+    
     y: 0
 
   },
   animationTwo: {
+    backgroundImage: `url(${NoteAndroid})`,
+  
     //  borderRadius:0,
     top: -56,
     x: 0,
@@ -102,12 +110,26 @@ const UPBoxAnimation = {
 }
 
 
+const NoteBgVariants = {
+  NoteBgAnimationOne: {
+   y:-355,
+   x:-300,
+   scale: 0.2
+  },
+  NoteBgAnimationTwo: {
+    y:-100,
+    x:-100,
+    scale: 2,
+    opacity: [0.1, 0] 
+  }
+}
 /*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
 
 
 export default function SetWindow() {
-  const [AnimationAppWIndow, cycleAnimation] = useCycle("animationOne", "animationTwo");
+  const [AppWindowAnimation, cycleAnimation] = useCycle("animationOne", "animationTwo");
   const [SetWindowAnimation, UPcycleAnimation] = useCycle("UPanimationOne", "UPanimationTwo");
+  const [NoteBgAnimation, CycleNoteBgAnimation] = useCycle("NoteBgAnimationOne", "NoteBgAnimationTwo");
   const [DragBox, cycleDrag] = useCycle(false, true);
 
   const [color, setColor] = useState("1");
@@ -145,9 +167,11 @@ export default function SetWindow() {
             variants={UPBoxAnimation}
             animate={SetWindowAnimation}
 
-          ><h6 style={{
-          height:20
-          }}>hello</h6>
+          ><p style={{
+           width:220,
+          height:'auto',
+          fontSize:12
+          }}>动校速度设置<br/>(值越小速度越快，默认值为1，可为小数)</p>
             <input
               className="in"
               type="text"
@@ -179,17 +203,20 @@ export default function SetWindow() {
           onChange={handleColorChange}
 
           style={AppWindowStyle}
-          variants={AppWindowAnimation}
-          animate={AnimationAppWIndow}
+          variants={AppWindowVariants}
+          animate={AppWindowAnimation}
           transition={style}
 
           drag={DragBox}
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           dragElastic={1}
-          onClick={() => cycleAnimation() & cycleDrag()}
+          onClick={() => cycleAnimation() & cycleDrag() & CycleNoteBgAnimation()}
          >
          <motion.div
-         style={SetIconBgStyle}
+          variants={NoteBgVariants}
+          animate={NoteBgAnimation}
+          transition={style}
+          style={SetIconBgStyle}
          />
          </motion.div>
       </div>
