@@ -48,13 +48,13 @@ const AppWindowStyle = {
   color: "#415fff",
   opacity: 1,
   backgroundColor: '#FFFFFF',
-
   borderRadius: 14,
   position: 'absolute',
   x: 82,
   top: 66,
   zIndex: 0,
-  overflow: 'hidden'
+  overflow: 'hidden',
+  backgroundRepeat:'no-repeat'
 }
 
 
@@ -62,9 +62,7 @@ const AppWindowStyle = {
 const AppWindowVariants = {
   animationOne: {
     backgroundImage: null,
-    
     y: 0
-
   },
   animationTwo: {
     backgroundImage: `url(${NoteAndroid})`,
@@ -75,8 +73,8 @@ const AppWindowVariants = {
     y: 56,
     scale: 1.01,
     width: '100vw',
-    height: '100vh'
-
+    height: '100vh',
+    backgroundSize:'100vw 100vh'
   }
 }
 
@@ -120,7 +118,8 @@ const NoteBgVariants = {
     y:-100,
     x:-100,
     scale: 2,
-    opacity: [0.1, 0] 
+    opacity: [0.1, 0] ,
+
   }
 }
 /*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
