@@ -57,7 +57,7 @@ const AppWindowAnimation = {
 const SetBtnStyle = {
   position: 'absolute',
   backgroundImage: `url(${WSet})`,
-  top: 15,
+  top: 13,
   right: 80,
   width: 30,
   height: 30,
