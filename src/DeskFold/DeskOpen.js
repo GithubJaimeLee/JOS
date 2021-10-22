@@ -1,5 +1,5 @@
 import * as React from "react";
-import background from "../Img/DeskAndroid.png";
+import Background from "../Img/NoteAndroidDesk.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WNavBarPage from '../Component/WNavBarPage';
 import SetWindow from '../Component/SetWindow';
@@ -38,7 +38,7 @@ const DeskOpen = () => {
 
             <div   className="BgImg"
                      style={{   
-                        backgroundImage: `url(${background})`,
+                        backgroundImage: `url(${Background})`,
                         width: 375,
                         height: 812,   
                         top: 0,
