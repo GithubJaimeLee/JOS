@@ -1,10 +1,8 @@
-import React, { Component, useState } from 'react'
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Navbar, Container } from 'react-bootstrap'
 import '../Component/Component.css';
-import Logo from "../Img/logo.png";
-import backIcon from "../Icon/back.png";
-import WbackIcon from "../Icon/Wback.png";
-import { Button, Offcanvas } from 'react-bootstrap'
+import BackIcon from "../Icon/back.png";
+import {  Offcanvas } from 'react-bootstrap'
 import Help from "../Icon/Help.png";
 
 function NavBarPage({ name, context, contextTitle,...props }) {
@@ -17,14 +15,16 @@ function NavBarPage({ name, context, contextTitle,...props }) {
           scroll: false,
           backdrop: true,
         }]; */
-    return (
+  /*  <Navbar bg="light" expand="lg"> */
+
+  return (
         <div>
-{/*  <Navbar bg="light" expand="lg"> */}
-           <Navbar   expand="lg">
+          <Navbar   expand="lg">
                 <Container>
                     <Navbar.Brand href="javascript:history.back()">
 
-                        <img src={backIcon} alt=" " style={{
+                        <img src={BackIcon} alt="BackIcon" 
+                        style={{
                             width: 30,
                             position: 'absolute',
                             top: 16,
@@ -34,8 +34,10 @@ function NavBarPage({ name, context, contextTitle,...props }) {
                         }}>
                         </img>
 
+
                     </Navbar.Brand>
-                    <div className="Help" alt=" " style={{
+                    <div className="HelpIcon" alt=" " 
+                    style={{
                         backgroundImage: `url(${Help})`,
                         position: 'relative',
                         top: 0,

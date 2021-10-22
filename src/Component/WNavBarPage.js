@@ -22,7 +22,8 @@ function WNavBarPage({ name, context, contextTitle,...props }) {
                 <Container>
                     <Navbar.Brand href="javascript:history.back()">
 
-                        <img src={WbackIcon} alt=" " style={{
+                        <img src={WbackIcon} alt="WbackIcon" 
+                        style={{
                             width: 30,
                             position: 'absolute',
                             top: 16,
@@ -33,7 +34,8 @@ function WNavBarPage({ name, context, contextTitle,...props }) {
                         </img>
 
                     </Navbar.Brand>
-                    <div className="Help" alt=" " style={{
+                    <div className="Help" alt=" " 
+                    style={{
                         backgroundImage: `url(${Help})`,
                         position: 'relative',
                         top: 0,

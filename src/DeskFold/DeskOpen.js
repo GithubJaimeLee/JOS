@@ -1,52 +1,13 @@
-import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
 import background from "../Img/DeskAndroid.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WNavBarPage from '../Component/WNavBarPage';
 import SetWindow from '../Component/SetWindow';
 
-const BoxBtn = {
-    width: 54,
-    height: 54,
-    boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-    color: "#415fff",
-    opacity: 1,
-    background: '#fff',
-    borderRadius: 12,
-    position: 'relative',
-    left: 128,
-    top: 647,
-    zIndex: 100
-}
-
-const boxAnimation = {
-    animationOne: {
-        borderRadius: 12,
-        width: 54,
-        height: 54,
-        left: 128,
-
-  
-        position: 'relative',
-    },
-    animationTwo: {
-        borderRadius: 0,
-        position: 'relative',
-        top: -56,
-        left: 0,
-        right:0,
-        scale: 1.02,
-        width: '100vw',
-        height: '100vh',
-        borderRadius: 12,
-
-    }
-}
 
 
 const DeskOpen = () => {
-    const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
-    const [DragBox, cycleDrag] = useCycle(false, true);
+   
 
     const Info = <p>Hello,<br/> world!</p>;
     return (
