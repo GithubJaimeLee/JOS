@@ -11,7 +11,7 @@ const AppWindowStyle = {
   color: "#415fff",
   opacity: 1,
   backgroundColor: '#FFFFFF',
-  backgroundImage: `url(${Note})`,
+  //backgroundImage: `url(${Note})`,
   borderRadius: 14,
   position: 'absolute',
   x: 82,
@@ -22,15 +22,16 @@ const AppWindowStyle = {
 
 const SetIconBgStyle={
   backgroundImage: `url(${NoteBg})`,
-  width: 152,
-  height: 152,
+  width:'100vw',
+  height:  '100vh',
   position: 'relative',
-  top: 0,
+/*   top: -100,
+  left: -100, */
   backgroundColor: '#FFFFFF',
   borderColor: '#FFFFFF',
-  scale: 0.45,
-  opacity: 0,
-  boxShadow:0
+  scale:1,
+  opacity: 1,
+  zIndex:100,
 }
 
 
@@ -64,7 +65,7 @@ const AppWindowAnimation = {
     top: -56,
     x: 0,
     y: 56,
-    scale: 1,
+    scale: 1.01,
     width: '100vw',
     height: '100vh'
 
@@ -81,7 +82,6 @@ const SetBtnStyle = {
   right: 80,
   width: 30,
   height: 30,
-
   borderRadius: 20,
   textAlign: 'center',
   zIndex: 1,
@@ -110,8 +110,7 @@ export default function SetWindow() {
   const [SetWindowAnimation, UPcycleAnimation] = useCycle("UPanimationOne", "UPanimationTwo");
   const [DragBox, cycleDrag] = useCycle(false, true);
 
-  const [color, setColor] = useState("1"
-  );
+  const [color, setColor] = useState("1");
 
   function handleColorChange(e) {
     const newValue = e.target.value;
@@ -125,8 +124,6 @@ export default function SetWindow() {
   };
 
   return (
-
-
 
     <div>
       <div
@@ -169,8 +166,6 @@ export default function SetWindow() {
           </motion.div>
         </div>
 
-
-
         <div className='SetBtn'
           onClick={() => UPcycleAnimation()}
           style={SetBtnStyle}
@@ -193,7 +188,7 @@ export default function SetWindow() {
           dragElastic={1}
           onClick={() => cycleAnimation() & cycleDrag()}
          >
-         <motion.img  
+         <motion.div
          style={SetIconBgStyle}
          />
          </motion.div>
