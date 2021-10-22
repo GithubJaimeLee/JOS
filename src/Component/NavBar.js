@@ -31,7 +31,7 @@ export default class NavBar extends Component {
                                     <NavDropdown.Item href="/Desk/deskZoom">图标变形(缩放)</NavDropdown.Item>
                                     <NavDropdown.Item href="/Desk/DeskOpen">开屏界面</NavDropdown.Item>
                                     <NavDropdown.Item href="/Desk/deskGrid">图标Grid</NavDropdown.Item>
-                                    <NavDropdown.Item href="/Desk/Folder">图标创建文件夹</NavDropdown.Item>
+                            {/*         <NavDropdown.Item href="/Desk/Folder">图标创建文件夹</NavDropdown.Item> */}
                                     <NavDropdown.Item href="/Desk/MultiDrag">多选拖动</NavDropdown.Item>
                                 </NavDropdown>
 

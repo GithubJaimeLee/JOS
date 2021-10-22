@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.735f8b09.chunk.css",
-    "main.js": "/static/js/main.89a62e1f.chunk.js",
-    "main.js.map": "/static/js/main.89a62e1f.chunk.js.map",
+    "main.js": "/static/js/main.5b8f978e.chunk.js",
+    "main.js.map": "/static/js/main.5b8f978e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.088d9d08.js",
     "runtime-main.js.map": "/static/js/runtime-main.088d9d08.js.map",
     "static/css/2.f2512455.chunk.css": "/static/css/2.f2512455.chunk.css",
@@ -30,7 +30,7 @@
     "static/media/MusicBodyRecommed.705471b1.png": "/static/media/MusicBodyRecommed.705471b1.png",
     "static/media/NewMessage.7162d1c3.png": "/static/media/NewMessage.7162d1c3.png",
     "static/media/NewPhoto.20aa85eb.png": "/static/media/NewPhoto.20aa85eb.png",
-    "static/media/NoteAndroid.d0aef153.png": "/static/media/NoteAndroid.d0aef153.png",
+    "static/media/NoteAndroid.47d6023f.png": "/static/media/NoteAndroid.47d6023f.png",
     "static/media/NoteAndroidDesk.e61f2dd1.png": "/static/media/NoteAndroidDesk.e61f2dd1.png",
     "static/media/NoteBg.69294e17.png": "/static/media/NoteBg.69294e17.png",
     "static/media/SetBg.e4a1df28.png": "/static/media/SetBg.e4a1df28.png",
@@ -44,6 +44,6 @@
     "static/css/2.f2512455.chunk.css",
     "static/js/2.a2e1dd9f.chunk.js",
     "static/css/main.735f8b09.chunk.css",
-    "static/js/main.89a62e1f.chunk.js"
+    "static/js/main.5b8f978e.chunk.js"
   ]
 }
