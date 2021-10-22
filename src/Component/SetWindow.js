@@ -31,25 +31,23 @@ const SetWindowStyle = {
 
 const AppWindowAnimation = {
   animationOne: {
-    borderRadius: 12,
+   // borderRadius: 12,
     width: 54,
     height: 54,
     y:0
 
   },
   animationTwo: {
-    borderRadius:0,
+  //  borderRadius:0,
     top: -56,
     x:0,
     y:56,
     scale: 1,
     width: '100vw',
-    height: '100vh',
-    borderRadius: 12,
+    height: '100vh'
 
   }
 }
-
 
 
 /////*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
