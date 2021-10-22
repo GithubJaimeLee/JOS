@@ -1,8 +1,8 @@
 # Getting Started with OOS Animation Platform App
-![FireShot Capture 004 - OOS动效平台 - localhost](https://user-images.githubusercontent.com/22385710/138428164-4524a3c4-8aa9-4b25-9259-dbe457a71788.png)
-![FireShot Capture 007 - OOS动效平台 - localhost](https://user-images.githubusercontent.com/22385710/138428184-add73d87-dc9c-48f0-907a-4cd8ed5218ea.png)![FireShot Capture 005 - OOS动效平台 - localhost](https://user-images.githubusercontent.com/22385710/138428193-c3075592-ef92-4aa2-bb43-dd9be9d66461.png)
-![2](https://user-images.githubusercontent.com/22385710/138428199-c4878a2a-e6a7-4996-bb9e-40c046d2705d.png)
-
+![4](https://user-images.githubusercontent.com/22385710/138428619-e4099658-b618-4059-9b7b-56665861eb8f.png)
+![3](https://user-images.githubusercontent.com/22385710/138428631-d487ce20-efc2-4ab1-9b32-4b0da0b1928d.png)
+![2](https://user-images.githubusercontent.com/22385710/138428638-797fdc9b-5e69-4a24-97e0-47c81270094f.png)
+![1](https://user-images.githubusercontent.com/22385710/138428646-50bdfabf-8653-4110-9053-ceb54cc65fa2.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
