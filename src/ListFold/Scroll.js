@@ -4,18 +4,29 @@ import { motion } from 'framer-motion';
 import background from "../Img/DeskOOS.png";
 import Wback from "../Icon/Wback.png";
 import { Link } from 'react-router-dom';
+import NavBarPage from '../Component/NavBarPage';
 import '../App.css';
 
 const Scroll = () => {
   const constraintsRef = useRef(null);
+  const Info = <p>Hello,<br/> world!</p>;
   return (
+<div 
+className="screen"
+>
+    <NavBarPage
+    placement={'end'}
+    contextTitle={'说明'}
+    context={Info}
+    />
     <div className="All"
     style={{
     display: 'grid',
     justifyContent: 'center'
     }}
     >
-      <Link to="/List">
+    
+   {/*    <Link to="/List">
         <img src={Wback} alt=" " style={{
           width: 30,
           position: 'relative',
@@ -24,7 +35,7 @@ const Scroll = () => {
           opacity: 1,
           zIndex: '100'
         }} />
-      </Link>
+      </Link> */}
       <div className="Scroll"
         style={{
           overflow: "hidden",
@@ -79,6 +90,7 @@ const Scroll = () => {
             }} >
         </div>
       </div>
+    </div>
     </div>
   );
 }
