@@ -2,6 +2,7 @@ import * as React from "react";
 import { useRef } from "react";
 import { motion, useMotionValue, useTransform, useElementScroll } from "framer-motion";
 import { Link } from 'react-router-dom';
+import NavBarPage from '../Component/NavBarPage';
 
 import '../App.css';
 import '../scroll.css';
@@ -16,6 +17,7 @@ const ScrollTitle = () => {
   const { scrollYProgress } = useElementScroll(ref)
   const y = useMotionValue(0);
   const scale = useTransform( scrollYProgress, [0, 0.3, 1],["26px", "14px", "14px"]);
+  const Info = <p>Hello,<br/> world!</p>;
 
   return (
     <div className="allImportant" 
@@ -24,16 +26,11 @@ const ScrollTitle = () => {
     height:812,
     overflow: 'scroll'
     }} >
-          <Link className="BackIcon" to="/List">
-        <img src={Bback} alt=" " style={{
-          width: 30,
-          position: 'fixed',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '10000'
-        }} />
-      </Link>
+           <NavBarPage
+    placement={'end'}
+    contextTitle={'说明'}
+    context={Info}
+    />
       <div className="HeadCard"
         style={{
         
