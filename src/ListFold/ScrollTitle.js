@@ -1,13 +1,12 @@
 import * as React from "react";
 import { useRef } from "react";
 import { motion, useMotionValue, useTransform, useElementScroll } from "framer-motion";
-import { Link } from 'react-router-dom';
+
 import NavBarPage from '../Component/NavBarPage';
 
-import '../App.css';
-import '../scroll.css';
+import '../css/App.css';
+import '../css/scroll.css';
 
-import Bback from "../Icon/back.png";
 import SetHeader from "../Img/WSetHeader.png";
 import SetBody from "../Img/SetBody.png";
 

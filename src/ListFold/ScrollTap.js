@@ -7,7 +7,7 @@ import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
 import MyTab from '../Component/Tab';
-import '../App.css';
+import '../css/App.css';
 import '../Component/Component.css';
 
 

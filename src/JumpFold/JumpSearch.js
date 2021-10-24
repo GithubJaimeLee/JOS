@@ -1,11 +1,12 @@
 import * as React from "react";
-import Bback from "../Icon/back.png";
-import { Link } from 'react-router-dom';
-import '../App.css';
-import SetHeader from "../Img/WSetHeader.png";
-import SetBody from "../Img/SetBody.png";
 import { useRef } from "react";
 import { motion, useMotionValue, useTransform, useElementScroll } from "framer-motion";
+import Bback from "../Icon/back.png";
+import { Link } from 'react-router-dom';
+import SetHeader from "../Img/WSetHeader.png";
+import SetBody from "../Img/SetBody.png";
+import '../css/App.css';
+
 
 const JumpSearch = () => {
   const ref = useRef()

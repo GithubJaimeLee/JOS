@@ -2,10 +2,8 @@ import * as React from "react";
 import { useRef } from "react";
 import { motion } from 'framer-motion';
 import background from "../Img/DeskOOS.png";
-import Wback from "../Icon/Wback.png";
-import { Link } from 'react-router-dom';
 import NavBarPage from '../Component/NavBarPage';
-import '../App.css';
+import '../css/App.css';
 
 const Scroll = () => {
   const constraintsRef = useRef(null);

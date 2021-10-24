@@ -6,7 +6,7 @@ import ContactHeader from "../Img/ContactHeader.png";
 import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";
 import ContactSetBar from "../Img/ContactSetBar.png";
-import '../App.css';
+import '../css/App.css';
 
 const JumpNew = () => {
   return (

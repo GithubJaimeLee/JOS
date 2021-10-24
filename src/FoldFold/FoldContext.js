@@ -1,11 +1,12 @@
 import * as React from "react";
 import { Link } from 'react-router-dom';
-import backIcon from "../Icon/Wback.png";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import FoldInfo from "../Img/FoldInfo.png";
-import '../Component/Component.css';
 import ArrowToggle from '../Component/ArrowToggle';
 import WOffCanvas from '../Component/WOffcanvas';
+import backIcon from "../Icon/Wback.png";
+import FoldInfo from "../Img/FoldInfo.png";
+import '../Component/Component.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const FoldContext = () => {
