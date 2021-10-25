@@ -3,7 +3,7 @@ import * as React from "react";
 import { Link } from 'react-router-dom';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import NavBarPage from '../Component/NavBarPage';
 const ContactBtnStyle =  {                          
     position: 'relative',
     
@@ -73,9 +73,12 @@ const BackIconStyle ={
 const ContactBodyStyle ={
     backgroundColor: '#EEEEEE',
     position: 'absolute',
+    display: 'flex',
+    justifyContent: 'center',
     width: 375,
     height: 812,
     zIndex: 1,
+    overflow: 'hidden'
  }
 
 
@@ -83,29 +86,28 @@ const ContactBodyStyle ={
 const WindowBottom = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
     const [animationKeyBoard, KcycleAnimation] = useCycle("KAnimationOne", "KAnimationTwo");
-
+    const Info = <p>Hello,<br/> world!</p>;
     return (
-        <div className="All"
+<div className="All">
+        <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
+        <div className="ScreenCenter"
         style={{
             width: '100%',
        display: 'flex',
        justifyContent: 'center',
         height: 812,
-        position: 'absolute'
-      
+        position: 'absolute',
+        top:0
         }}>
-            <Link to="/Window">
-                <img src={backIcon} 
-                alt=" " 
-                style={BackIconStyle}
-                />         
-            </Link>
 
-    
                 <div className='ContactBody'
                     style={ContactBodyStyle}
-                />
-            <AnimatePresence>
+                >
+       
             
                     <div className='ContactBtn' 
                     onClick={() => cycleAnimation()&KcycleAnimation()} 
@@ -124,8 +126,9 @@ const WindowBottom = () => {
                     variants={KeyBoardAnimation}
                     animate={animationKeyBoard}
                 />
-             
-            </AnimatePresence>
+             </div>
+  
+        </div>
         </div>
     );
 }
