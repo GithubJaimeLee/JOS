@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, useCycle } from 'framer-motion';
-import WSet from "../Icon/WSet.png";
+import WSet from "../Icon/Set.png";
 import NoteAndroid from "../Img/NoteAndroid.png";
 import NoteBg from "../Img/NoteBg.png";
 

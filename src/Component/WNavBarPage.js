@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Navbar, Container } from 'react-bootstrap'
 import '../Component/Component.css';
-import WbackIcon from "../Icon/Wback.png";
+import WbackIcon from "../Icon/back.png";
 import { Offcanvas } from 'react-bootstrap'
-import Help from "../Icon/WHelp.png";
+import Help from "../Icon/Help.png";
 
 function WNavBarPage({ name, context, contextTitle, ...props }) {
     const [show, setShow] = useState(false);
@@ -12,7 +12,7 @@ function WNavBarPage({ name, context, contextTitle, ...props }) {
     const CodeColor = { color: '#62A66E' }
     const CodeTextStyle = { padding: '20px 20px 40px 20px', color: '#eee' }
     const CodeBoardStyle = {
-        width: 400 - 32,
+        width: '100%',
         backgroundColor: '#000000',
         borderRadius: 12,
         marginTop: 40,
@@ -26,8 +26,10 @@ function WNavBarPage({ name, context, contextTitle, ...props }) {
             }]; */
     return (
         <div>
-            {/*  <Navbar bg="light" expand="lg"> */}
-            <Navbar expand="lg">
+             <Navbar style={{
+             backgroundColor:'rgba(255, 255, 255, 0.3)',
+             }} expand="lg"> 
+           {/*  <Navbar expand="lg"> */}
                 <Container>
                     <Navbar.Brand href="javascript:history.back()">
 
