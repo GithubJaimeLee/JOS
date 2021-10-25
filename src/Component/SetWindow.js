@@ -23,9 +23,6 @@ const SetIconBgStyle={
 }
 
 
-
-
-
 const SetWindowStyle = {
   position: 'relative',
   top: 400,
@@ -51,7 +48,7 @@ const AppWindowStyle = {
   borderRadius: 14,
   position: 'absolute',
   x: 82,
-  top: 66,
+  top: 70,
   zIndex: 0,
   overflow: 'hidden',
   backgroundRepeat:'no-repeat'
@@ -106,7 +103,6 @@ const UPBoxAnimation = {
 
   }
 }
-
 
 const NoteBgVariants = {
   NoteBgAnimationOne: {
