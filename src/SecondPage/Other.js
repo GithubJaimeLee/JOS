@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import background from "../Img/bg2.png";
 import backIcon from "../Icon/back.png";
