@@ -1,6 +1,7 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
 import { Link } from 'react-router-dom';
+import NavBarPage from '../Component/NavBarPage';
 import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Calendar from "../Img/Calendar.png";
@@ -71,24 +72,27 @@ const WindowPull = () => {
         right: 0
         }
     }
-   
-       
-    return (
-        <div 
+   const Info = <p>Hello,<br/> world!</p>;
+  
+   return (
+       <div className="All">
+                 <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
+     
+        <div className="ScreenCenter"
         style={{
         width:'100%',
         height: 812,
         opacity: 1,
         position: 'absolute',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        top:0
         }}>
-            <Link to="/Window">
-                <img src={backIcon} 
-                     alt=" " 
-                     style={BackIcon}/>
-            </Link>
-            <AnimatePresence>
+        
             <div 
                     className="boxPress"
                     onClick={() => cycleAnimation()}
@@ -100,11 +104,12 @@ const WindowPull = () => {
                     transition={{type: "tween"}}
                 />
              </div>
-            </AnimatePresence>
+  
             <div className='Background'
                     style={Background}
             />
         </div>
+        </div>      
     );
 }
 
