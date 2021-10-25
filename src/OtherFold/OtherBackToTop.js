@@ -6,7 +6,7 @@ import MusicHead from "../Img/MusicHead.png";
 import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
-import { useState } from "react";
+//import { useState } from "react";
 import '../App.css';
 
 const BoxAnimation = {

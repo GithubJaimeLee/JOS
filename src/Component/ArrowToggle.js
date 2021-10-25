@@ -41,7 +41,8 @@ const ArrowToggle = () => {
     
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
     const [animationArrow, AcycleAnimation] = useCycle("AAnimationOne", "AAnimationTwo");
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen] = useState(true);
+    //const [isOpen, setIsOpen] = useState(true);
 
     return (
         <div>

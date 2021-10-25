@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const now = 60;
 
-const progressInstance = <ProgressBar now={now} label={`${now}%`} />;
+//const progressInstance = <ProgressBar now={now} label={`${now}%`} />;
 
 
 

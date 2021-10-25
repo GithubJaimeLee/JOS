@@ -1,12 +1,12 @@
 import * as React from "react";
-import { useRef } from "react";
+//import { useRef } from "react";
 import { motion } from 'framer-motion';
 import background from "../Img/DeskOOS.png";
 import NavBarPage from '../Component/NavBarPage';
 import '../css/App.css';
 
 const Scroll = () => {
-  const constraintsRef = useRef(null);
+ // const constraintsRef = useRef(null);
   const Info = <p>Hello,<br/> world!</p>;
   return (
 <div 
