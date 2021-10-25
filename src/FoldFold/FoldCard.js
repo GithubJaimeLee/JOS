@@ -5,15 +5,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FoldScreen from "../Img/FoldScreen.png";
 import OffCanvas from '../Component/Offcanvas';
 import ArrowToggle from '../Component/ArrowToggle';
-
+import NavBarPage from '../Component/NavBarPage';
 const FoldCard = () => {
+    const Info = <p>Hello,<br/> world!</p>;
     return (
-        <div
-            style={{
-                display: 'grid',
-                justifyContent: 'center'
-            }}
-        >
+        <div className="All">
+        <NavBarPage
+placement={'end'}
+contextTitle={'说明'}
+context={Info}
+/>
+
+<div className="ScreenCenter"
+style={{
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  position:'absolute',
+  top:0
+}}
+>
             <div className='Background'
                 style={{
                     backgroundImage: `url(${FoldScreen})`,
@@ -24,24 +35,11 @@ const FoldCard = () => {
                     
                 }}
             >    
-            <Link to="/Fold">
-                <img src={backIcon} alt=" " style={{
-                    width: 30,
-                    position: 'relative',
-                    top: 20,
-                    left: 20,
-                    opacity: 1,
-                    zIndex: '10'
-                }}>
-                </img>
-            </Link>
-            <OffCanvas  
-                placement={'end'}  
-                contextTitle={'我在测试'} 
-                context={'我在测试'}
-            />
+            
+          
             <ArrowToggle/>
             </div>
+        </div>
         </div>
     );
 }

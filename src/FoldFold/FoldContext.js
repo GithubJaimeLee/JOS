@@ -1,21 +1,28 @@
 import * as React from "react";
-import { Link } from 'react-router-dom';
 import ArrowToggle from '../Component/ArrowToggle';
-import WOffCanvas from '../Component/WOffcanvas';
-import backIcon from "../Icon/Wback.png";
 import FoldInfo from "../Img/FoldInfo.png";
 import '../Component/Component.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import NavBarPage from '../Component/NavBarPage';
 
 
 const FoldContext = () => {
-  
+    const Info = <p>Hello,<br/> world!</p>;
     return (
-        <div
+        <div className="All">
+                      <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
+   
+        <div className="ScreenCenter"
             style={{
-                display: 'grid',
-                justifyContent: 'center'
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                position:'absolute',
+                top:0
             }}
         >
             <div className='Background'
@@ -28,24 +35,10 @@ const FoldContext = () => {
                     
                 }}
             >    
-            <Link to="/Fold">
-                <img src={backIcon} alt=" " style={{
-                    width: 30,
-                    position: 'relative',
-                    top: 20,
-                    left: 20,
-                    opacity: 1,
-                    zIndex: '10'
-                }}>
-                </img>
-            </Link>
-            <WOffCanvas  
-                placement={'end'}  
-                contextTitle={'我在测试'} 
-                context={'我在测试'}
-            />
+
             <ArrowToggle/>
             </div>
+        </div>
         </div>
     );
 }
