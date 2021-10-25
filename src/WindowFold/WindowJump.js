@@ -1,12 +1,11 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";
 import ContactHeader from "../Img/ContactHeader.png";
 import ContactWindow from "../Img/ContactWindow.png";
+import NavBarPage from '../Component/NavBarPage';
 
 const ContactWindowStyle = {
     width: 0,
@@ -86,23 +85,25 @@ const ContactFooterStyle = {
 
 const WindowJump = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
-
+    const Info = <p>Hello,<br/> world!</p>;
     return (
-        <div className="All"
+        <div className="All">
+              <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
+        <div className="ScreenCenter"
             style={{
                 width: '100%',
                 height: 812,
                 overflow: 'scroll',
                 position: 'absolute',
                 display: 'flex',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                top:0
             }}>
-            <Link to="/Window">
-                <img src={backIcon}
-                    alt=" "
-                    style={BackIconStyle}
-                />
-            </Link>
+          
             <div className='ContactHeader'
                 style={ContactHeaderStyle}
             >
@@ -128,6 +129,7 @@ const WindowJump = () => {
 
             </div>
 
+        </div>
         </div>
     );
 }
