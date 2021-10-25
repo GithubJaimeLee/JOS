@@ -2,6 +2,8 @@ import * as React from "react";
 import { motion } from 'framer-motion';
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
+import NavBarPage from '../Component/NavBarPage';
+
 import MusicHead from "../Img/MusicHead.png";
 //import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
 import MusicFooter from "../Img/MusicFooter.png";
@@ -12,19 +14,14 @@ import '../Component/Component.css';
 
 
 const ScrollTap = () => {
+  const Info = <p>Hello,<br/> world!</p>;
   return (
     <div>
-      <Link to="/List">
-        <img src={Bback} alt=" " style={{
-          width: 30,
-          position: 'fixed',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '100'
-        }} />
-      </Link>
-    
+        <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
       <motion.div className="MusicHead"
         //    drag="y"
         // dragConstraints={{ top: -40, bottom: 0 }}

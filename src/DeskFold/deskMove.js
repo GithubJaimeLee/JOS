@@ -13,10 +13,7 @@ const DApp = () => {
         contextTitle={'说明'}
         context={Info}
       />
-
       <div
-      
-
         style={{
           display: 'Grid',
           justifyContent: 'center'

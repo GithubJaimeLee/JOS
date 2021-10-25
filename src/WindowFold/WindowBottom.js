@@ -1,7 +1,6 @@
 import { motion, useCycle} from 'framer-motion';
 import * as React from "react";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
+import NavBarPage from '../Component/NavBarPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ContactBtnStyle =  {                          
@@ -53,32 +52,31 @@ const ContactBodyStyle ={
     position: 'absolute',
     width: 375,
     height: 812,
-    zIndex: 1,
+    zIndex: 1
  }
 
 
 
 const WindowBottom = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
-
+    const Info = <p>Hello,<br/> world!</p>;
     return (
-        <div className="All"
+        <div className="All">
+        <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
+        <div className="ScreenCenter"
         style={{
             width: '100%',
-       display: 'flex',
-       justifyContent: 'center',
-        height: 812,
-        position: 'absolute'
-      
-        }}>
-            <Link to="/Window">
-                <img src={backIcon} 
-                alt=" " 
-                style={BackIconStyle}
-                />         
-            </Link>
-
-    
+            display: 'flex',
+            justifyContent: 'center',
+             height: 812,
+             position: 'absolute',
+             top:0
+             }}>
+       
                 <div className='ContactBody'
                     style={ContactBodyStyle}
                 />
@@ -93,8 +91,7 @@ const WindowBottom = () => {
                     variants={BoxAnimation}
                     animate={animationBox}
                 />
-             
-
+          </div>
         </div>
     );
 }

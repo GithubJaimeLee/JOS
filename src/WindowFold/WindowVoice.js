@@ -1,12 +1,11 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
+import NavBarPage from '../Component/NavBarPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ContactBtnStyle =  {                          
     position: 'relative',
-    right: -150,
+    left:300,
     bottom: -500,
     width: 60,
     height: 60,
@@ -53,36 +52,39 @@ const ContactBodyStyle ={
     width: 375,
     height: 812,
     zIndex: 1,
+    overflow: 'hidden'
  }
 
 
 
 const WindowVoice = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
-
+    const Info = <p>Hello,<br/> world!</p>;
     return (
-        <div className="All"
+
+        <div className="All">
+              <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
+      
+        <div className="ScreenCenter"
         style={{
             width: '100%',
        display: 'flex',
        justifyContent: 'center',
         height: 812,
-        position: 'absolute'
-      
+        position: 'absolute',
+       top:0
         }}>
-            <Link to="/Window">
-                <img src={backIcon} 
-                alt=" " 
-                style={BackIconStyle}
-                />         
-            </Link>
+          
 
     
                 <div className='ContactBody'
                     style={ContactBodyStyle}
-                />
-            <AnimatePresence>
-                    <div className='ContactBtn' 
+                >
+  <div className='ContactBtn' 
                     onClick={() => cycleAnimation()} 
                     style={ContactBtnStyle}
                  >
@@ -90,10 +92,18 @@ const WindowVoice = () => {
                     style={ContactBubbleStyle}
                     variants={BoxAnimation}
                     animate={animationBox}
-                /></div>
+                />
+                </div>
+
+
+
+                </div>
+         
+                  
                     
              
-            </AnimatePresence>
+           
+        </div>
         </div>
     );
 }

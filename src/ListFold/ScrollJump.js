@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useTransform, useElementScroll } from "framer-motion";
 import SetHeader from "../Img/WSetHeader.png";
 import SetBody from "../Img/SetBody.png";
+import NavBarPage from '../Component/NavBarPage';
 import '../css/App.css';
 
 const ScrollJump = () => {
@@ -13,6 +14,7 @@ const ScrollJump = () => {
   const y = useMotionValue(0);
   const scale = useTransform(scrollYProgress, [0, 0.3, 1], ["26px", "14px", "14px"]);
 
+  const Info = <p>Hello,<br/> world!</p>;
   return (
     <div className="All"
       ref={ref}
@@ -22,16 +24,11 @@ const ScrollJump = () => {
         overflow: 'scroll'
       }} 
       >
-      <Link className="BackIcon" to="/List">
-        <img src={Bback} alt=" " style={{
-          width: 30,
-          position: 'fixed',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '10000'
-        }} />
-      </Link>
+      <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
       <div className="GridCenter"
       
       

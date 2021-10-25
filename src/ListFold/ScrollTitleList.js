@@ -1,7 +1,6 @@
 import * as React from "react";
 import { motion } from 'framer-motion';
-import Bback from "../Icon/back.png";
-import { Link } from 'react-router-dom';
+import NavBarPage from '../Component/NavBarPage';
 import ContactHeader from "../Img/ContactHeader.png";
 import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";
@@ -9,18 +8,14 @@ import ContactSetBar from "../Img/ContactSetBar.png";
 import '../css/App.css';
 
 const ScrollTitleList = () => {
+  const Info = <p>Hello,<br/> world!</p>;
   return (
     <div>
-      <Link to="/List">
-        <img src={Bback} alt=" " style={{
-          width: 30,
-          position: 'fixed',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '100'
-        }} />
-      </Link>
+   <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
       <motion.div className="ContactHeader"
         drag="y"
         dragConstraints={{ top: -40, bottom: 0 }}
