@@ -87,7 +87,7 @@ const SetBtnStyle = {
   height: 30,
   borderRadius: 20,
   textAlign: 'center',
-  zIndex: 1,
+  zIndex: 1001,
   display: 'flex',
   justifyContent: 'center',
 }
