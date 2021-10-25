@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";
 import ContactHeader from "../Img/ContactHeader.png";
+import NavBarPage from '../Component/NavBarPage';
 
 const ContactBtnStyle =  {                          
     position: 'absolute',
@@ -77,24 +78,29 @@ const ContactBodyStyle ={
 
 const WindowBubble = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
-
+    const Info = <p>Hello,<br/> world!</p>;
     return (
-        <div className="All"
+        <div className="All">
+
+<NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
+
+   
+        <div className="ScreenCenter"
         style={{
             width: '100%',
        display: 'flex',
        justifyContent: 'center',
         height: 812,
         overflow: 'scroll',
-        position: 'absolute'
+        position: 'absolute',
+        top:0
       
         }}>
-            <Link to="/Window">
-                <img src={backIcon} 
-                alt=" " 
-                style={BackIconStyle}
-                />         
-            </Link>
+           
 
             <div className='ContactHeader'
                     style={ContactHeaderStyle}
@@ -119,6 +125,7 @@ const WindowBubble = () => {
                     </div>
              
             </AnimatePresence>
+        </div>
         </div>
     );
 }

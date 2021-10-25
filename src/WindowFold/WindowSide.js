@@ -1,8 +1,7 @@
-import { motion, useCycle, AnimatePresence } from 'framer-motion';
+import { motion, useCycle } from 'framer-motion';
 import * as React from "react";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBarPage from '../Component/NavBarPage';
 
 const ContactBtnStyle =  {                          
     position: 'relative',
@@ -34,7 +33,7 @@ const SideStyle = {
     height: 812,
     boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
     opacity: 1,
-    background: '#fff',
+    background: '#eee',
     position: 'absolute',
     bottom: 100,
     zIndex: 20,
@@ -43,7 +42,7 @@ const SideStyle = {
 }
 const BoxAnimation = {
     animationOne: {
-      x:-310
+      x:-320
      
     },
     animationTwo: {
@@ -60,21 +59,16 @@ const BgAnimation = {
     opacity:0.5
   }
 }
-const BackIconStyle ={
-    width: 30,
-    position: 'fixed',
-    top: 20,
-    left: 20,
-    opacity: 1,
-    zIndex: '100'
- }
 
 const ContactBodyStyle ={
-    backgroundColor: '#EEEEEE',
+    backgroundColor: '#ddd',
     position: 'absolute',
     width: 375,
     height: 812,
     zIndex: 1,
+    display: 'flex',
+    justifyContent: 'center',
+    overflow: 'hidden'
  
  }
 
@@ -83,36 +77,31 @@ const ContactBodyStyle ={
 const   WindowSide = () => {
     const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
     const [animationBg, BgCycleAnimation] = useCycle("BgAnimationOne", "BgAnimationTwo");
+    const Info = <p>Hello,<br/> world!</p>;
     return (
-        <div className="All"
+      <div className="All">
+         <NavBarPage
+        placement={'end'}
+        contextTitle={'说明'}
+        context={Info}
+      />
+      
+        <div className="ScreenCenter"
         style={{
             width: '100%',
        display: 'flex',
        justifyContent: 'center',
         height: 812,
-        position: 'absolute'
+        position: 'absolute',
+        top:0
       
         }}>
-            <Link to="/Window">
-                <img src={backIcon} 
-                alt=" " 
-                style={BackIconStyle}
-                />         
-            </Link>
-       {/*          <div
-                style={{
-                  width: 375,
-                  height:812,
-                overflow:'hidden',
-                display: 'flex',
-       justifyContent: 'center',
-                }}
-                 > */}
+          
                 <div className='ContactBody'
                     style={ContactBodyStyle}
-                />
+                >
                  
-            <AnimatePresence>
+ 
                     <div className='ContactBtn' 
                     onClick={() => cycleAnimation()&BgCycleAnimation()} 
                     style={ContactBtnStyle}
@@ -129,10 +118,10 @@ const   WindowSide = () => {
                     variants={BgAnimation}
                     animate={animationBg}
                    />
-                 
+                  </div>
              
-            </AnimatePresence>
-          {/*   </div> */}
+    
+        </div>
         </div>
     );
 }
