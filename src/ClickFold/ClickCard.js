@@ -5,6 +5,7 @@ import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DeskOOS from "../Img/DeskOOS.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
+import NavBarPage from '../Component/NavBarPage';
 
 const boxChange = {
     width: 300,
@@ -22,28 +23,25 @@ const boxChange = {
 
 
 const ClickCard = () => {
-
+    const Info = <p>Hello,<br/> world!</p>;
     return (
+        <div className="All">
 
-        <div className="All"
-       style={{
-       width: '100%',
-       height: 812,
-       display: 'flex',
-       justifyContent: 'center',
-       }}
-        >
-            <Link to="/Click">
-                <img src={backIcon} alt=" " style={{
-                    width: 30,
-                    position: 'absolute',
-                    top: 20,
-                    left: 20,
-                    opacity: 1,
-                    zIndex: '100'
-                }}>
-                </img>
-            </Link>
+        <NavBarPage
+placement={'end'}
+contextTitle={'说明'}
+context={Info}
+/>
+   <div className="ScreenCenter"
+            style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                position:'absolute',
+                top:0
+            }}
+            >
+     
             <div className="OneFingerClick"
                 style={{
                     width: 32,
@@ -94,6 +92,7 @@ const ClickCard = () => {
                     }}
                 >Press me</p>
             </motion.div>
+        </div>
         </div>
     );
 }

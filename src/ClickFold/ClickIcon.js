@@ -6,34 +6,39 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ClickOOS from "../Img/ClickOOS.png";
 import CameraIcon from "../Img/CameraIcon.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
-
+import NavBarPage from '../Component/NavBarPage';
 const ClickIcon = () => {
+    const Info = <p>Hello,<br/> world!</p>;
     return (
 
-        <div >
-            <Link to="/Click">
-                <img src={backIcon} alt=" " style={{
-                    width: 30,
-                    position: 'absolute',
-                    top: 20,
-                    left: 20,
-                    opacity: 1,
-                    zIndex: '100'
-                }}>
-                </img>
-            </Link>
-            <div className="OneFingerClick"
+        <div className="All">
+
+        <NavBarPage
+placement={'end'}
+contextTitle={'说明'}
+context={Info}
+/>
+   <div className="ScreenCenter"
+            style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                position:'absolute',
+                top:0
+            }}
+            >
+    
+
+            <div className='Background'
                 style={{
-                    width: 32,
-                    height: 60,
-                    backgroundImage: `url(${OneFingerClick})`,
+                    backgroundImage: `url(${ClickOOS})`,
                     position: 'absolute',
-                    top: 435,
-                    left: 245,
-                    zIndex: 11
+                    width: 375,
+                    height: 812,
+                    zIndex: 10,
                 }}
-            />
-            <motion.div className='boxChange'
+            >
+                        <motion.div className='boxChange'
                 style={
                     {
                         width: 52,
@@ -65,22 +70,23 @@ const ClickIcon = () => {
                     whileTap={{
                         opacity: 0.4
                     }}
-                >
-                </motion.div>
-
+               />
             </motion.div>
 
-            <div className='Background'
+        <div className="OneFingerClick"
                 style={{
-                    backgroundImage: `url(${ClickOOS})`,
+                    width: 32,
+                    height: 60,
+                    backgroundImage: `url(${OneFingerClick})`,
                     position: 'absolute',
-                    width: 375,
-                    height: 812,
-                    zIndex: 10,
+                    top: 430,
+                    left: 240,
+                    zIndex: 11
                 }}
-            >
-
+            />
             </div>
+
+        </div>
 
         </div>
     );

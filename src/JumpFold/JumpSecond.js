@@ -1,6 +1,4 @@
 import * as React from "react";
-import Bback from "../Icon/back.png";
-import { Link } from 'react-router-dom';
 import { useRef } from "react";
 import { motion, useMotionValue, useTransform, useElementScroll } from "framer-motion";
 import SetHeader from "../Img/WSetHeader.png";

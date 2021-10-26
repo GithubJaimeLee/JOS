@@ -6,6 +6,7 @@ import ClickB from "../Img/ClickB.png";
 import ClickBtn from "../Img/ClickBtn.png";
 import { motion } from 'framer-motion';
 import OneFingerClick from "../Img/OneFingerClick.png";
+import NavBarPage from '../Component/NavBarPage';
 
 const ClickBtnStyle = {
     width: 291,
@@ -22,31 +23,25 @@ const ClickBtnStyle = {
 
 
 const ClickCard = () => {
-
+    const Info = <p>Hello,<br/> world!</p>;
     return (
-        <div >
-            <Link to="/Click">
-                <img src={backIcon} alt=" " style={{
-                    width: 30,
-                    position: 'absolute',
-                    top: 20,
-                    left: 20,
-                    opacity: 1,
-                    zIndex: '100'
-                }}>
-                </img>
-            </Link>
-            <div className="OneFingerClick"
-                style={{
-                    width: 32,
-                    height: 60,
-                    backgroundImage: `url(${OneFingerClick})`,
-                    position: 'absolute',
-                    top: 745,
-                    left: 260,
-                    zIndex: 11
-                }}
-            />
+        <div className="All">
+
+        <NavBarPage
+placement={'end'}
+contextTitle={'说明'}
+context={Info}
+/>
+   <div className="ScreenCenter"
+            style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                position:'absolute',
+                top:0
+            }}
+            >
+    
 
             <div className='Background'
                 style={{
@@ -57,9 +52,7 @@ const ClickCard = () => {
                     zIndex: 10,
                 }}
             >
-            </div>
-
-            <motion.div className='boxChange'
+                      <motion.div className='boxChange'
                 style={ClickBtnStyle}
                 whileTap={{ scale: 0.95 }}
             >
@@ -74,10 +67,25 @@ const ClickCard = () => {
                     whileTap={{
                         opacity: 0.2
                     }}
-                ></motion.div>
+                />
 
             </motion.div>
+        <div className="OneFingerClick"
+                style={{
+                    width: 32,
+                    height: 60,
+                    backgroundImage: `url(${OneFingerClick})`,
+                    position: 'absolute',
+                    top: 745,
+                    left: 260,
+                    zIndex: 11
+                }}
+            />
 
+            </div>
+
+  
+            </div>
 
         </div>
     );
