@@ -63,7 +63,6 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
                         </Offcanvas.Header>
                         <Offcanvas.Body >
                             {context}
-                          
                         </Offcanvas.Body>
                     </Offcanvas>
 

@@ -33,6 +33,8 @@ const SetWindowStyle = {
   justifyContent: 'center',
   alignContent: 'center',
   backgroundColor: '#FFFFFF',
+/*   border:'1px solid #ddd', */
+  boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.2)",
   zindex: 1
 }
 
