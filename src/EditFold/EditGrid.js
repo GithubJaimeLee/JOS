@@ -4,34 +4,28 @@ import { Link } from 'react-router-dom';
 import { Grid } from "antd-mobile";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../EditFold/EditGridApp.jsx';
-
+import NavBarPage from '../Component/NavBarPage';
 const EditGrid = () => {
+  const Info = <p>Hello,<br/> world!</p>;
   return (
-    <div 
+    <div className="All">
+    <NavBarPage
+    placement={'end'}
+    contextTitle={'说明'}
+    context={Info}
+    />
+    <div className="ScreenCenter"
     style={{
-  
-    }}
-    >
-    <div 
-    className="Gird"
-    style={{
-    display: 'Grid',
-    justifyContent: 'center'
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+        top:0
     }}
     >
     <App/>
     </div>  
-      <Link to="/Edit">
-        <img src={backIcon} alt=" " style={{
-          width: 30,
-          position: 'absolute',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '100'
-        }}>
-        </img>
-      </Link>
+
       <div className='boxAll' style={{
         display: Grid
       }}
