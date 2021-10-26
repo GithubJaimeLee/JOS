@@ -3,7 +3,7 @@ import { motion, useCycle } from 'framer-motion';
 import WSet from "../Icon/Set.png";
 import NoteAndroid from "../Img/NoteAndroid.png";
 import NoteBg from "../Img/NoteBg.png";
-
+import '../Component/Component.css';
 
 
 const SetIconBgStyle={
@@ -26,10 +26,10 @@ const SetIconBgStyle={
 const SetWindowStyle = {
   position: 'relative',
   top: 400,
-  width: 300,
-  height: 300,
+  width: 350,
+  height: 340,
   borderRadius: 12,
-  display: "grid",
+  display: 'flex',
   justifyContent: 'center',
   alignContent: 'center',
   backgroundColor: '#FFFFFF',
@@ -161,12 +161,27 @@ export default function SetWindow() {
             }
             variants={UPBoxAnimation}
             animate={SetWindowAnimation}
-
-          ><p style={{
+          >
+          <div
+          className='SetText'
+          style={{
+         marginTop:30
+          }}
+          >
+          <div
+           style={{
            width:220,
           height:'auto',
           fontSize:12
-          }}>动校速度设置<br/>(值越小速度越快，默认值为1，可为小数)</p>
+          }}>
+          <h6>动校速度设置</h6>
+          <p
+             style={{
+          color: '#666'
+          }}
+          >(值越小速度越快，默认值为1，可为小数)</p>
+          </div>
+           
             <input
               className="in"
               type="text"
@@ -177,11 +192,9 @@ export default function SetWindow() {
                 height: 30,
                 width: 220,
                 borderRadius: 6,
-                borderWidth: 2,
-                borderColor: "#eee",
-
               }}
             />
+             </div>  
           </motion.div>
         </div>
 

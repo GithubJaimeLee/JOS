@@ -25,3 +25,13 @@ color:red!important;
 .navbar-toggler:focus{
     box-shadow:none !important;
 }
+
+/* SetWindow.js*/
+input.in:focus-visible{
+outline-color:#415FFF;
+}
+input.in{
+   border-color:#aaa !important;
+   padding: 6px;
+   border: 1px solid;
+    }
