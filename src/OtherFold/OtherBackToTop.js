@@ -1,12 +1,10 @@
 import * as React from "react";
-import { motion, useCycle, AnimatePresence } from 'framer-motion';
-import Bback from "../Icon/back.png";
-import { Link } from 'react-router-dom';
+import { motion, useCycle  } from 'framer-motion';
 import MusicHead from "../Img/MusicHead.png";
 import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
-//import { useState } from "react";
+import NavBarPage from '../Component/NavBarPage';
 import '../App.css';
 
 const BoxAnimation = {
@@ -19,21 +17,39 @@ const BoxAnimation = {
   }
 }
 const OtherBackToTop = () => {
-
+  const Info = <p>Hello,<br/> world!</p>;
   const [animationBox, cycleAnimation] = useCycle("animationOne", "animationTwo");
   return (
-    <div>
-      <Link to="/Other">
-        <img src={Bback} alt=" " style={{
-          width: 30,
-          position: 'fixed',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '100'
-        }} />
-      </Link>
-      <AnimatePresence>  
+
+    <div className="All">
+    <NavBarPage
+    placement={'end'}
+    contextTitle={'说明'}
+    context={Info}
+    />
+    <div className="ScreenCenter"
+    style={{
+        width: '100%',
+      height:812,
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+        top:0
+    }}
+    >
+
+   <div className="ScreenPhoneSize"
+        style={{
+        width:375,
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+        height:812,
+        overflow: 'scroll',
+        top:0
+    }}
+    >
+    
       <motion.div className="MusicHead"
         //    drag="y"
         // dragConstraints={{ top: -40, bottom: 0 }}
@@ -46,8 +62,8 @@ const OtherBackToTop = () => {
           position: 'fixed',
           opacity: 1,
           zIndex: 1
-        }}>
-      </motion.div>
+        }}/>
+ 
       <div className="MusicHeaderTap"
         style={{
           backgroundImage: `url(${MusicHeaderTap})`,
@@ -56,23 +72,7 @@ const OtherBackToTop = () => {
           width: 375,
           height: 38,
           zIndex: 1
-        }}>
-
-      </div> 
-      <motion.div ClassName="BackToTopBtn"
-            onClick={() => cycleAnimation()} 
-        style={{
-          width: 46,
-          height: 46,
-          position: 'fixed',
-          bottom: 2,
-          left: 24,
-          backgroundColor: "blue",
-          zIndex: 11,
-          opacity: 0.5
-        }}
-      />
-
+        }}/>
 
 
       <motion.div className="MusicBody" 
@@ -98,6 +98,9 @@ const OtherBackToTop = () => {
         }}
       />
 
+  
+      
+      </div>
       <div className="MusicFooter"
         style={{
           backgroundImage: `url(${MusicFooter})`,
@@ -105,11 +108,23 @@ const OtherBackToTop = () => {
           width: 375,
           height: 54,
           zIndex: 10,
-          position: 'fixed'
+          position: 'absolute',
         }}
-      >
-      </div>
-      </AnimatePresence>  
+      >  
+        <motion.div ClassName="BackToTopBtn"
+            onClick={() => cycleAnimation()} 
+        style={{
+          width: 46,
+          height: 46,
+          position: 'absolute',
+          bottom: 2,
+          left: 24,
+          backgroundColor: "blue",
+          zIndex: 11,
+          opacity: 0.5
+        }} />
+</div>
+    </div>
     </div>
   );
 }

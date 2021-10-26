@@ -7,21 +7,41 @@ import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
 import Arrow from "../Icon/Arrow.png";
+import NavBarPage from '../Component/NavBarPage';
 import '../App.css';
 
 const DeskPull = () => {
+  const Info = <p>Hello,<br/> world!</p>;
   return (
-    <div>
-      <Link to="/Other">
-        <img src={Bback} alt=" " style={{
-          width: 30,
-          position: 'fixed',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: 10
-        }} />
-      </Link>
+    <div className="All">
+    <NavBarPage
+    placement={'end'}
+    contextTitle={'说明'}
+    context={Info}
+    />
+    <div className="ScreenCenter"
+    style={{
+        width: '100%',
+      height:812,
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+        top:0
+    }}
+    >
+
+     <div className="ScreenPhoneSize"
+        style={{
+        width:375,
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+        height:812,
+        overflow: 'scroll',
+        top:0
+    }}
+    >
+    
       <motion.div className="MusicHead"
         //    drag="y"
         // dragConstraints={{ top: -40, bottom: 0 }}
@@ -69,19 +89,22 @@ const DeskPull = () => {
           opacity: 1  
         }} />
       </motion.div>
-      <div className="MusicFooter"
+  
+      
+    </div>
+    <div className="MusicFooter"
         style={{
           backgroundImage: `url(${MusicFooter})`,
           bottom: 0,
           width: 375,
           height: 54,
           zIndex: 10,
-          position: 'fixed'
+          position: 'absolute'
         }}
-      >
-      </div>
-    </div>
+     />
 
+</div>
+</div>
   );
 }
 
