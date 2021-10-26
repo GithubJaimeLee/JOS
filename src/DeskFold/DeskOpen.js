@@ -20,11 +20,11 @@ const DeskOpen = () => {
     const Info =<div> <p>1.打开应用：图标动画参数
     <br/><br/>Scale：动画结束时，图标缩放到应用卡片大小的基础上，又增加的缩放倍数。
     <br/><br/>2.打开应用：应用卡片动画参数
-    <br/>DampingRatio：阻尼系数
+    <br/>Damping：阻尼系数
     <br/>Stiffness：刚度
     <br/><br/>3.打开应用：桌面动画参数
     <br/>Scale：缩放
-    <br/>DampingRatio：阻尼系数
+    <br/>Damping：阻尼系数
     <br/>Stiffness：刚度</p>  
        <div
        className="CodeBoard"
