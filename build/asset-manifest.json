@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.dc256fa4.chunk.css",
-    "main.js": "/static/js/main.1a0556d5.chunk.js",
-    "main.js.map": "/static/js/main.1a0556d5.chunk.js.map",
+    "main.js": "/static/js/main.d58e5e3f.chunk.js",
+    "main.js.map": "/static/js/main.d58e5e3f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.16eea494.js",
     "runtime-main.js.map": "/static/js/runtime-main.16eea494.js.map",
     "static/css/2.0a9ec390.chunk.css": "/static/css/2.0a9ec390.chunk.css",
@@ -14,22 +14,22 @@
     "static/css/2.0a9ec390.chunk.css.map": "/static/css/2.0a9ec390.chunk.css.map",
     "static/css/main.dc256fa4.chunk.css.map": "/static/css/main.dc256fa4.chunk.css.map",
     "static/js/2.102b44be.chunk.js.LICENSE.txt": "/static/js/2.102b44be.chunk.js.LICENSE.txt",
-    "static/media/Calendar.ffd731ab.png": "/static/media/Calendar.ffd731ab.png",
+    "static/media/Calendar.ae741820.png": "/static/media/Calendar.ae741820.png",
     "static/media/ClickB.c9c07939.png": "/static/media/ClickB.c9c07939.png",
     "static/media/ClickBtn.83b09bf2.png": "/static/media/ClickBtn.83b09bf2.png",
-    "static/media/ClickN.d7fcd705.png": "/static/media/ClickN.d7fcd705.png",
+    "static/media/ClickN.568032f7.png": "/static/media/ClickN.568032f7.png",
     "static/media/ClickOOS.058657d5.png": "/static/media/ClickOOS.058657d5.png",
     "static/media/ContactBody.f0934efc.png": "/static/media/ContactBody.f0934efc.png",
     "static/media/ContactHeader.ab5833dd.png": "/static/media/ContactHeader.ab5833dd.png",
     "static/media/ContactSetBar.cfc21884.png": "/static/media/ContactSetBar.cfc21884.png",
     "static/media/DeskAndroid.e21d4b49.png": "/static/media/DeskAndroid.e21d4b49.png",
     "static/media/DeskOOS.29e7114c.png": "/static/media/DeskOOS.29e7114c.png",
-    "static/media/FoldInfo.a73e9b4f.png": "/static/media/FoldInfo.a73e9b4f.png",
+    "static/media/FoldInfo.fd7d3c2c.png": "/static/media/FoldInfo.fd7d3c2c.png",
     "static/media/FoldScreen.b7b02325.png": "/static/media/FoldScreen.b7b02325.png",
     "static/media/Loading.643ca93f.gif": "/static/media/Loading.643ca93f.gif",
     "static/media/MusicBodyRecommed.705471b1.png": "/static/media/MusicBodyRecommed.705471b1.png",
-    "static/media/NewMessage.7162d1c3.png": "/static/media/NewMessage.7162d1c3.png",
-    "static/media/NewPhoto.20aa85eb.png": "/static/media/NewPhoto.20aa85eb.png",
+    "static/media/NewMessage.1b59bb06.png": "/static/media/NewMessage.1b59bb06.png",
+    "static/media/NewPhoto.40d0a0de.png": "/static/media/NewPhoto.40d0a0de.png",
     "static/media/NoteAndroid.3d71b95d.png": "/static/media/NoteAndroid.3d71b95d.png",
     "static/media/NoteAndroidDesk.e61f2dd1.png": "/static/media/NoteAndroidDesk.e61f2dd1.png",
     "static/media/NoteBg.69294e17.png": "/static/media/NoteBg.69294e17.png",
@@ -44,6 +44,6 @@
     "static/css/2.0a9ec390.chunk.css",
     "static/js/2.102b44be.chunk.js",
     "static/css/main.dc256fa4.chunk.css",
-    "static/js/main.1a0556d5.chunk.js"
+    "static/js/main.d58e5e3f.chunk.js"
   ]
 }
