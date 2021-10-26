@@ -35,8 +35,7 @@ style={{
                     
                 }}
             >    
-            
-          
+
             <ArrowToggle/>
             </div>
         </div>
