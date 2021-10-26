@@ -5,6 +5,7 @@ import { Grid } from "antd-mobile";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../EditFold/EditServiceListApp.jsx';
 import NavBarPage from '../Component/NavBarPage';
+
 const EditServiceList = () => {
   const Info = <p>Hello,<br/> world!</p>;
   return (

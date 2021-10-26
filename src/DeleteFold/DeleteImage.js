@@ -2,6 +2,7 @@ import * as React from "react";
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import PhotoBg from "../Img/NewPhoto.png";
+import NavBarPage from '../Component/NavBarPage';
 import '../App.css';
 /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓grid输入/↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
 
@@ -11,23 +12,23 @@ import App from '../DeleteFold/DeleteImgApp.jsx';
 
 
 const DeleteImage = () => {
+  const Info = <p>Hello,<br/> world!</p>;
   return (
-    <div >
-
-
-
-{/*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓下方功能完整/↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/}
-      <Link to="/Delete">
-        <img src={Bback} alt=" "
-          style={{
-            width: 30,
-            position: 'absolute',
-            top: 20,
-            left: 20,
-            opacity: 1,
-            zIndex: '100'
-          }} />
-      </Link>
+    <div className="All">
+    <NavBarPage
+    placement={'end'}
+    contextTitle={'说明'}
+    context={Info}
+    />
+    <div className="ScreenCenter"
+    style={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+        top:0
+    }}
+    >
      
       <div style={{
         top: 96,
@@ -51,7 +52,7 @@ const DeleteImage = () => {
 {/*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑gird输入/↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/}
         </div> 
     </div>
-
+    </div>
   );
 }
 

@@ -4,6 +4,7 @@ import MessageBg from "../Img/NewMessage.png";
 import Bback from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import { Stack } from 'react-bootstrap';
+import NavBarPage from '../Component/NavBarPage';
 import '../App.css';
 
 const StyleCard ={    
@@ -15,18 +16,23 @@ const StyleCard ={
     zIndex: 0,
   }
 const   DeleteList = () => {
+  const Info = <p>Hello,<br/> world!</p>;
   return (
-    <div >
-      <Link to="/Delete">
-        <img  src={Bback} alt=" " style={{
-          width: 30,
-          position: 'absolute',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '100'
-        }} />
-      </Link>
+<div className="All">
+    <NavBarPage
+    placement={'end'}
+    contextTitle={'说明'}
+    context={Info}
+    />
+    <div className="ScreenCenter"
+    style={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+        top:0
+    }}
+    >
           <motion.div className="HeadCard"
           drag="y"
           dragConstraints={{ top: -40, bottom: 0 }}
@@ -65,7 +71,7 @@ const   DeleteList = () => {
               zIndex: '1'
             }}></div>
           </div>
-
+          </div>
   );
 }
 
