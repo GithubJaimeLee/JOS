@@ -6,20 +6,20 @@ import NoteBg from "../Img/NoteBg.png";
 import '../Component/Component.css';
 
 
-const SetIconBgStyle={
+const SetIconBgStyle = {
   backgroundImage: `url(${NoteBg})`,
-  width:690,
-  height:  812,
+  width: 690,
+  height: 812,
   position: 'relative',
-/*   top: -100,
-  left: -100, */
+  /*   top: -100,
+    left: -100, */
   backgroundColor: '#FFFFFF',
   borderColor: '#FFFFFF',
-  y:-355,
-  x:-300,
+  y: -355,
+  x: -300,
   scale: 0.2,
   opacity: 1,
-  zIndex:100,
+  zIndex: 100,
 }
 
 
@@ -27,13 +27,13 @@ const SetWindowStyle = {
   position: 'relative',
   top: 400,
   width: 350,
-  height: 340,
+  height: 360,
   borderRadius: 12,
   display: 'flex',
   justifyContent: 'center',
   alignContent: 'center',
   backgroundColor: '#FFFFFF',
-/*   border:'1px solid #ddd', */
+  /*   border:'1px solid #ddd', */
   boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.2)",
   zindex: 1
 }
@@ -53,7 +53,7 @@ const AppWindowStyle = {
   top: 70,
   zIndex: 0,
   overflow: 'hidden',
-  backgroundRepeat:'no-repeat'
+  backgroundRepeat: 'no-repeat'
 }
 
 
@@ -65,7 +65,7 @@ const AppWindowVariants = {
   },
   animationTwo: {
     backgroundImage: `url(${NoteAndroid})`,
-  
+
     //  borderRadius:0,
     top: -56,
     x: 0,
@@ -73,7 +73,7 @@ const AppWindowVariants = {
     scale: 1.01,
     width: '100vw',
     height: '100vh',
-    backgroundSize:'100vw 100vh'
+    backgroundSize: '100vw 100vh'
   }
 }
 
@@ -100,7 +100,7 @@ const UPBoxAnimation = {
     zIndex: 1
   },
   UPanimationTwo: {
-    y: 0,
+    y: -30,
     zIndex: 1
 
   }
@@ -108,15 +108,15 @@ const UPBoxAnimation = {
 
 const NoteBgVariants = {
   NoteBgAnimationOne: {
-   y:-355,
-   x:-300,
-   scale: 0.2
+    y: -355,
+    x: -300,
+    scale: 0.2
   },
   NoteBgAnimationTwo: {
-    y:-100,
-    x:-100,
+    y: -100,
+    x: -100,
     scale: 2,
-    opacity: [0.1, 0] ,
+    opacity: [0.1, 0],
 
   }
 }
@@ -164,39 +164,96 @@ export default function SetWindow() {
             variants={UPBoxAnimation}
             animate={SetWindowAnimation}
           >
-          <div
-          className='SetText'
-          style={{
-         marginTop:30
-          }}
-          >
-          <div
-           style={{
-           width:220,
-          height:'auto',
-          fontSize:12
-          }}>
-          <h6>动校速度设置</h6>
-          <p
-             style={{
-          color: '#666'
-          }}
-          >(值越小速度越快，默认值为1，可为小数)</p>
-          </div>
-           
-            <input
-              className="in"
-              type="text"
-              value={color}
-              onChange={handleColorChange}
-              style={{
-                margin:0,
-                height: 30,
-                width: 220,
-                borderRadius: 6,
-              }}
-            />
-             </div>  
+            <div
+              className='SetText'
+            >
+              <div className="DefaultSet"
+                style={{
+                  width: 220,
+                  height: 'auto',
+                  fontSize: 14,
+                marginTop: 20
+                }}>
+                <h6>动校速度设置</h6>
+                <p
+                  style={{
+                    color: '#666',
+                    marginBottom: 6
+                  }}
+                >(值越小速度越快，默认值为1，可为小数)</p>
+                   <input
+                className="in"
+                type="text"
+                value={color}
+                onChange={handleColorChange}
+                style={{
+                  margin: 0,
+                  height: 30,
+                  width: 220,
+                  borderRadius: 6,
+                }}
+              />
+              </div>
+
+              <div className="DefaultSet"
+                style={{
+                  width: 220,
+                  height: 'auto',
+                  fontSize: 14,
+                marginTop: 20
+                }}>
+                <h6>Stiffness 刚度设置</h6>
+                <p
+                  style={{
+                    color: '#666',
+                    marginBottom: 6
+                  }}
+                >(默认值为1)</p>
+                   <input
+                className="in"
+                type="text"
+                value={color}
+                onChange={handleColorChange}
+                style={{
+                  margin: 0,
+                  height: 30,
+                  width: 220,
+                  borderRadius: 6,
+                }}
+              />
+              </div>
+
+              <div className="DefaultSet"
+                style={{
+                  width: 220,
+                  height: 'auto',
+                  fontSize: 14,
+                marginTop: 20
+                }}>
+                <h6>Damping 阻尼系数设置</h6>
+                <p
+                  style={{
+                    color: '#666',
+                    marginBottom: 6
+                  }}
+                >(默认值为300)</p>
+                   <input
+                className="in"
+                type="text"
+                value={color}
+                onChange={handleColorChange}
+                style={{
+                  margin: 0,
+                  height: 30,
+                  width: 220,
+                  borderRadius: 6,
+                }}
+              />
+              </div>
+             
+
+
+            </div>
           </motion.div>
         </div>
 
@@ -221,14 +278,14 @@ export default function SetWindow() {
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           dragElastic={1}
           onClick={() => cycleAnimation() & cycleDrag() & CycleNoteBgAnimation()}
-         >
-         <motion.div
-          variants={NoteBgVariants}
-          animate={NoteBgAnimation}
-          transition={style}
-          style={SetIconBgStyle}
-         />
-         </motion.div>
+        >
+          <motion.div
+            variants={NoteBgVariants}
+            animate={NoteBgAnimation}
+            transition={style}
+            style={SetIconBgStyle}
+          />
+        </motion.div>
       </div>
     </div>
   );
