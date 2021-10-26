@@ -16,12 +16,21 @@ import '../Component/Component.css';
 const ScrollTap = () => {
   const Info = <p>Hello,<br/> world!</p>;
   return (
-    <div>
-        <NavBarPage
-        placement={'end'}
-        contextTitle={'说明'}
-        context={Info}
-      />
+    <div className="All">
+    <NavBarPage
+    placement={'end'}
+    contextTitle={'说明'}
+    context={Info}
+    />
+    <div className="ScreenCenter"
+    style={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+        top:0
+    }}
+    >
       <motion.div className="MusicHead"
         //    drag="y"
         // dragConstraints={{ top: -40, bottom: 0 }}
@@ -156,6 +165,7 @@ const ScrollTap = () => {
           position: 'fixed'
         }}></div>
    {/*   </div> */}
+   </div>
    </div>
   );
 }

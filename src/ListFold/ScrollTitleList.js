@@ -10,12 +10,31 @@ import '../css/App.css';
 const ScrollTitleList = () => {
   const Info = <p>Hello,<br/> world!</p>;
   return (
-    <div>
-   <NavBarPage
-        placement={'end'}
-        contextTitle={'说明'}
-        context={Info}
-      />
+    <div className="All">
+    <NavBarPage
+    placement={'end'}
+    contextTitle={'说明'}
+    context={Info}
+    />
+    <div className="ScreenCenter"
+    style={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+     
+        top:0
+    }}
+    >
+    <div className="ScreenPhoneSize"
+      style={{
+        
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+     height:812,
+        top:0
+    }}>
       <motion.div className="ContactHeader"
         drag="y"
         dragConstraints={{ top: -40, bottom: 0 }}
@@ -29,8 +48,28 @@ const ScrollTitleList = () => {
           position: 'fixed',
           opacity: 1,
           zIndex: 2
-        }}>
-      </motion.div>
+        }}/>
+         <div className="ContactFooter"
+        style={{
+          backgroundImage: `url(${ContactFooter})`,
+          width: 375,
+          height: 65,
+          position: 'absolute',
+          bottom: 0,
+          opacity: 1,
+          zIndex: 100000
+        }}/> 
+         <div className="Body"
+        style={{
+          backgroundColor: '#f7f7f7',
+          width: 375,
+          height: 812,
+          position: 'absolute',
+          top: 0,
+          overflow: 'scroll',
+          opacity: 1,
+          zIndex: -1
+        }} >
       <div className="ContactSetBar"
       style={{
       width:20,
@@ -42,7 +81,7 @@ const ScrollTitleList = () => {
       position: 'fixed'
       }}
       />
-      <motion.div className="ContactBody"
+        <motion.div className="ContactBody"
         drag="y"
         dragConstraints={{ top: -580, bottom: 0 }}
         dragElastic={1}
@@ -116,32 +155,21 @@ const ScrollTitleList = () => {
             left: 0,
           }}/>
 
-      </motion.div>
-      <div className="ContactFooter"
-        style={{
-          backgroundImage: `url(${ContactFooter})`,
-
-          width: 375,
-          height: 65,
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          opacity: 1,
-          zIndex: 1
-        }} ></div>
-      <div className="Background"
+        </motion.div>
+        <div className="Background"
         style={{
           backgroundColor: '#f7f7f7',
           width: 375,
           height: 812,
           position: 'absolute',
           top: 0,
-          left: 0,
           opacity: 1,
           zIndex: -1
-        }} ></div>
+        }} />
+       </div>
+        </div>
     </div>
-
+    </div>
   );
 }
 

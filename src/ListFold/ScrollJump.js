@@ -1,6 +1,4 @@
 import * as React from "react";
-import Bback from "../Icon/back.png";
-import { Link } from 'react-router-dom';
 import { useRef } from "react";
 import { motion, useMotionValue, useTransform, useElementScroll } from "framer-motion";
 import SetHeader from "../Img/WSetHeader.png";
@@ -8,48 +6,54 @@ import SetBody from "../Img/SetBody.png";
 import NavBarPage from '../Component/NavBarPage';
 import '../css/App.css';
 
+
 const ScrollJump = () => {
   const ref = useRef()
   const { scrollYProgress } = useElementScroll(ref)
   const y = useMotionValue(0);
   const scale = useTransform(scrollYProgress, [0, 0.3, 1], ["26px", "14px", "14px"]);
-
   const Info = <p>Hello,<br/> world!</p>;
   return (
-    <div className="All"
+
+
+    <div className="All">
+    <NavBarPage
+    placement={'end'}
+    contextTitle={'说明'}
+    context={Info}
+    />
+    <div className="ScreenCenter"
+    style={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        position:'absolute',
+        top:0
+    }}
+    >
+    <div className="allImportant"
       ref={ref}
       style={{
-        width:'100%',
         height: 812,
         overflow: 'scroll'
-      }} 
-      >
-      <NavBarPage
-        placement={'end'}
-        contextTitle={'说明'}
-        context={Info}
-      />
-      <div className="GridCenter"
-      
-      
-      >
+      }} >
+     
+      <div className="GridCenter">
         <div className="HeadCard"
           style={{
             backgroundImage: `url(${SetHeader})`,
             top: 0,
-            left: 0,
+       
             width: 375,
             height: 148,
             position: 'fixed',
             opacity: 1,
-            zIndex: 1,
-         
+            zIndex: 1
           }}>
-        </div>
-        <motion.p className="SetP"
+    <motion.p className="SetP"
           style={{
             fontSize: scale,
-            position: 'fixed',
+            position: 'relative',
             top: 52,
             left: 20,
             margin: 0,
@@ -57,6 +61,8 @@ const ScrollJump = () => {
             zIndex: 10
           }}> 设置
         </motion.p>
+        </div>
+    
         <motion.div className="MoveBackground"
           drag="y"
           //   draggable="false"
@@ -73,8 +79,8 @@ const ScrollJump = () => {
             opacity: 1,
             zIndex: 0,
 
-          }}>
-        </motion.div>
+          }}/>
+        
         <div className="Background"
           style={{
             backgroundColor: '#f7f7f7',
@@ -82,13 +88,15 @@ const ScrollJump = () => {
             height: 812,
             position: 'absolute',
             top: 0,
-            left: 0,
+            
             opacity: 1,
             zIndex: -1
-          }} >
-        </div>
+          }} />
+        
       </div>
 
+    </div>
+    </div>
     </div>
   );
 }
