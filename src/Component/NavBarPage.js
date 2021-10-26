@@ -27,7 +27,7 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
              }}
               expand="lg"> 
            {/*  <Navbar expand="lg"> */}
-                <Container>
+                <Container fluid>
                     <Navbar.Brand href="javascript:history.back()">
 
                         <img src={WbackIcon} alt="WbackIcon"
