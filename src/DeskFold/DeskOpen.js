@@ -1,5 +1,5 @@
 import * as React from "react";
-import Background from "../Img/NoteAndroidDesk.png";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBarPage from '../Component/NavBarPage';
 import SetWindow from '../Component/SetWindow';
