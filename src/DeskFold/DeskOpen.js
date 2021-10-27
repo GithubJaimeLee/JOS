@@ -123,16 +123,7 @@ const DeskOpen = () => {
     
           </div>
 
-            <div   className="BgImg"
-                     style={{   
-                        backgroundImage: `url(${Background})`,
-                        width: 375,
-                        height: 812,   
-                        top: 0,
-                        opacity: 1,
-                        zIndex: '-2',
-                    position: 'absolute',
-                    }} />
+     
             <div className='bg'
                 style={{
                     width: '100vw',

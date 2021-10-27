@@ -3,6 +3,7 @@ import { motion, useCycle } from 'framer-motion';
 import WSet from "../Icon/Set.png";
 import NoteAndroid from "../Img/NoteAndroid.png";
 import NoteBg from "../Img/NoteBg.png";
+import Background from "../Img/NoteAndroidDesk.png";
 import '../Component/Component.css';
 
 
@@ -25,7 +26,7 @@ const SetWindowStyle = {
   position: 'relative',
   top: 400,
   width: 350,
-  height: 400,
+  height: 280,
   borderRadius: 12,
   display: 'flex',
   justifyContent: 'center',
@@ -101,7 +102,7 @@ const UPBoxAnimation = {
     zIndex: 1
   },
   UPanimationTwo: {
-    y: -60,
+    y: 60,
     zIndex: 1
 
   }
@@ -121,6 +122,8 @@ const NoteBgVariants = {
 
   }
 }
+
+
 /*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
 
 
@@ -128,17 +131,24 @@ export default function SetWindow() {
   const [AppWindowAnimation, cycleAnimation] = useCycle("animationOne", "animationTwo");
   const [SetWindowAnimation, UPcycleAnimation] = useCycle("UPanimationOne", "UPanimationTwo");
   const [NoteBgAnimation, CycleNoteBgAnimation] = useCycle("NoteBgAnimationOne", "NoteBgAnimationTwo");
+  const [ImgBgAnimation, CycleImgBgAnimation] = useCycle("ImgBgAnimationOne", "ImgBgAnimationTwo");
   const [DragBox, cycleDrag] = useCycle(false, true);
 
-  const [Speed, setSpeed] = useState("1");
+/* const [Speed, setSpeed] = useState("1"); */
+  //const [Scale, setScale] = useState("1.1");
   const [Stiffness, setStiffness] = useState("100");
   const [Damping, setDamping] = useState("20");
 
-  function HandleSpeedChange(e) {
+/*  function HandleSpeedChange(e) {
     const newValue = e.target.value;
     setSpeed(newValue);
     console.log(newValue);
-  }
+  }  */
+/*   function HandleScaleChange(e) {
+    const newValue = e.target.value;
+    setScale(newValue);
+    console.log(newValue);
+  } */
   function HandleStiffnessChange(e) {
     const newValue = e.target.value;
     setStiffness(newValue);
@@ -152,13 +162,34 @@ export default function SetWindow() {
 
   const style = {
     type: "spring",
-   duration: Speed,
-   //restSpeed: Speed,
+ 
+   restSpeed: 2,
     stiffness: Stiffness,
     damping: Damping
 
   };
+/*   const ≈ = {
+    type: "tween",
+    duration: 1,
+   //restSpeed: Speed,
+   // stiffness: Stiffness,
+   // damping: Damping
 
+  };
+ */
+
+  const ImgBgVariants = {
+
+    ImgBgAnimationOne: {
+   
+      scale:1,
+
+    },
+    ImgBgAnimationTwo: {
+      scale:1.1
+    }} 
+ 
+  
   return (
 
     <div>
@@ -184,20 +215,21 @@ export default function SetWindow() {
             <div
               className='SetText'
             >
-              <div className="DefaultSet"
+{/*               <div className="DefaultSet"
                 style={{
                   width: 220,
                   height: 'auto',
                   fontSize: 14,
                 marginTop: 20
                 }}>
-                <h6>动校速度设置</h6>
+                 <h6>Scale缩放设置</h6> 
+                <h6>Speed速度设置</h6>
                 <p
                   style={{
                     color: '#666',
                     marginBottom: 6
                   }}
-                >(值越小速度越快，默认值为1，可为小数)</p>
+                > (默认值为1，值需大于等于1，值可为小数)(默认值为1，越接近0速度越快，值可为小数) </p>
                    <input
                 className="in"
                 type="text"
@@ -209,36 +241,10 @@ export default function SetWindow() {
                   width: 220,
                   borderRadius: 6,
                 }}
-              />
-              </div>
+              /> 
+              </div>*/}
 
-              <div className="DefaultSet"
-                style={{
-                  width: 220,
-                  height: 'auto',
-                  fontSize: 14,
-                marginTop: 20
-                }}>
-                <h6>Stiffness 刚度设置</h6>
-                <p
-                  style={{
-                    color: '#666',
-                    marginBottom: 6
-                  }}
-                >(默认值为100，更高的值将使运动更突然)</p>
-                   <input
-                className="in"
-                type="text"
-                value={Stiffness}
-                onChange={HandleStiffnessChange}
-                style={{
-                  margin: 0,
-                  height: 30,
-                  width: 220,
-                  borderRadius: 6,
-                }}
-              />
-              </div>
+            
 
               <div className="DefaultSet"
                 style={{
@@ -268,7 +274,33 @@ export default function SetWindow() {
               />
               </div>
              
-
+              <div className="DefaultSet"
+                style={{
+                  width: 220,
+                  height: 'auto',
+                  fontSize: 14,
+                marginTop: 20
+                }}>
+                <h6>Stiffness 刚度设置</h6>
+                <p
+                  style={{
+                    color: '#666',
+                    marginBottom: 6
+                  }}
+                >(默认值为100，更高的值将使运动更突然)</p>
+                   <input
+                className="in"
+                type="text"
+                value={Stiffness}
+                onChange={HandleStiffnessChange}
+                style={{
+                  margin: 0,
+                  height: 30,
+                  width: 220,
+                  borderRadius: 6,
+                }}
+              />
+              </div>
 
             </div>
           </motion.div>
@@ -283,7 +315,7 @@ export default function SetWindow() {
           className="AppWindow"
        //   value={Speed}
           whileTap={{ scale: 0.8}}
-          onChange={HandleSpeedChange}
+       //   onChange={HandleSpeedChange}
           style={AppWindowStyle}
           variants={AppWindowVariants}
           animate={AppWindowAnimation}
@@ -291,7 +323,7 @@ export default function SetWindow() {
           drag={DragBox}
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           dragElastic={1}
-          onClick={() => cycleAnimation() & cycleDrag() & CycleNoteBgAnimation()}
+          onClick={() => cycleAnimation() & cycleDrag() & CycleNoteBgAnimation()& CycleImgBgAnimation()}
         >
           <motion.div
             variants={NoteBgVariants}
@@ -300,7 +332,22 @@ export default function SetWindow() {
             style={SetIconBgStyle}
           />
         </motion.div>
-      </div>
+        <motion.div  className="BgImg"
+           // whileTap={{ scale: 0.8}}
+            variants={ImgBgVariants}
+          animate={ImgBgAnimation}
+       transition={{ duration: 0.5 }}
+           //  transition={{type:'spring', duration: 20 }}
+           style={{   
+                        backgroundImage: `url(${Background})`,
+                        width: 375,
+                        height: 812,   
+                        top: 0,
+                        opacity: 1,
+                        zIndex: '-1',
+                    position: 'absolute',
+                    }} />
+       </div>
     </div>
   );
 }
