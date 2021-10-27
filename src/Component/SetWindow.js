@@ -130,7 +130,7 @@ export default function SetWindow() {
   const [NoteBgAnimation, CycleNoteBgAnimation] = useCycle("NoteBgAnimationOne", "NoteBgAnimationTwo");
   const [DragBox, cycleDrag] = useCycle(false, true);
 
-  const [Speed, setSpeed] = useState("0.1");
+  const [Speed, setSpeed] = useState("1");
   const [Stiffness, setStiffness] = useState("100");
   const [Damping, setDamping] = useState("20");
 
@@ -152,7 +152,8 @@ export default function SetWindow() {
 
   const style = {
     type: "spring",
-    duration: Speed,
+   duration: Speed,
+   //restSpeed: Speed,
     stiffness: Stiffness,
     damping: Damping
 
@@ -196,7 +197,7 @@ export default function SetWindow() {
                     color: '#666',
                     marginBottom: 6
                   }}
-                >(值越小速度越快，默认值为0.1，可为小数)</p>
+                >(值越小速度越快，默认值为1，可为小数)</p>
                    <input
                 className="in"
                 type="text"
@@ -280,7 +281,7 @@ export default function SetWindow() {
 
         <motion.div
           className="AppWindow"
-          value={Speed}
+       //   value={Speed}
           whileTap={{ scale: 0.8}}
           onChange={HandleSpeedChange}
           style={AppWindowStyle}
