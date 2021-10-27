@@ -11,8 +11,6 @@ const SetIconBgStyle = {
   width: 690,
   height: 812,
   position: 'relative',
-  /*   top: -100,
-    left: -100, */
   backgroundColor: '#FFFFFF',
   borderColor: '#FFFFFF',
   y: -355,
@@ -27,7 +25,7 @@ const SetWindowStyle = {
   position: 'relative',
   top: 400,
   width: 350,
-  height: 360,
+  height: 400,
   borderRadius: 12,
   display: 'flex',
   justifyContent: 'center',
@@ -103,7 +101,7 @@ const UPBoxAnimation = {
     zIndex: 1
   },
   UPanimationTwo: {
-    y: -30,
+    y: -60,
     zIndex: 1
 
   }
@@ -190,7 +188,7 @@ export default function SetWindow() {
                   width: 220,
                   height: 'auto',
                   fontSize: 14,
-                marginTop: 11
+                marginTop: 20
                 }}>
                 <h6>动校速度设置</h6>
                 <p
@@ -218,7 +216,7 @@ export default function SetWindow() {
                   width: 220,
                   height: 'auto',
                   fontSize: 14,
-                marginTop: 11
+                marginTop: 20
                 }}>
                 <h6>Stiffness 刚度设置</h6>
                 <p
@@ -246,7 +244,7 @@ export default function SetWindow() {
                   width: 220,
                   height: 'auto',
                   fontSize: 14,
-                marginTop: 11
+                marginTop: 20
                 }}>
                 <h6>Damping 阻尼系数设置</h6>
                 <p
