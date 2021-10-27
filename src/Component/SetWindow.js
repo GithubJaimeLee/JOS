@@ -43,36 +43,39 @@ const SetWindowStyle = {
 const AppWindowStyle = {
   width: 152,
   height: 152,
+  x: 82,
+  top: 70,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   color: "#415fff",
   opacity: 1,
   backgroundColor: '#FFFFFF',
   borderRadius: 14,
   position: 'absolute',
-  x: 82,
-  top: 70,
   zIndex: 0,
   overflow: 'hidden',
   backgroundRepeat: 'no-repeat'
 }
 
-
-
 const AppWindowVariants = {
   animationOne: {
-    backgroundImage: null,
-    y: 0
+    width: 152,
+    height: 152,
+    y: 0,
+    backgroundImage: null
+
+  
   },
   animationTwo: {
     backgroundImage: `url(${NoteAndroid})`,
 
     //  borderRadius:0,
-    top: -56,
-    x: 0,
-    y: 56,
-    scale: 1.01,
+ 
     width: '100vw',
     height: '100vh',
+    x: 0,
+    y: 56,
+    top: -56,
+    scale: 1.01,
     backgroundSize: '100vw 100vh'
   }
 }
@@ -129,17 +132,32 @@ export default function SetWindow() {
   const [NoteBgAnimation, CycleNoteBgAnimation] = useCycle("NoteBgAnimationOne", "NoteBgAnimationTwo");
   const [DragBox, cycleDrag] = useCycle(false, true);
 
-  const [color, setColor] = useState("1");
+  const [Speed, setSpeed] = useState("0.1");
+  const [Stiffness, setStiffness] = useState("100");
+  const [Damping, setDamping] = useState("20");
 
-  function handleColorChange(e) {
+  function HandleSpeedChange(e) {
     const newValue = e.target.value;
-    setColor(newValue);
+    setSpeed(newValue);
+    console.log(newValue);
+  }
+  function HandleStiffnessChange(e) {
+    const newValue = e.target.value;
+    setStiffness(newValue);
+    console.log(newValue);
+  }
+  function HandleDampingChange(e) {
+    const newValue = e.target.value;
+    setDamping(newValue);
     console.log(newValue);
   }
 
   const style = {
-    type: "tween",
-    duration: color
+    type: "spring",
+    duration: Speed,
+    stiffness: Stiffness,
+    damping: Damping
+
   };
 
   return (
@@ -172,7 +190,7 @@ export default function SetWindow() {
                   width: 220,
                   height: 'auto',
                   fontSize: 14,
-                marginTop: 20
+                marginTop: 11
                 }}>
                 <h6>动校速度设置</h6>
                 <p
@@ -180,12 +198,12 @@ export default function SetWindow() {
                     color: '#666',
                     marginBottom: 6
                   }}
-                >(值越小速度越快，默认值为1，可为小数)</p>
+                >(值越小速度越快，默认值为0.1，可为小数)</p>
                    <input
                 className="in"
                 type="text"
-                value={color}
-                onChange={handleColorChange}
+                value={Speed}
+                onChange={HandleSpeedChange}
                 style={{
                   margin: 0,
                   height: 30,
@@ -200,7 +218,7 @@ export default function SetWindow() {
                   width: 220,
                   height: 'auto',
                   fontSize: 14,
-                marginTop: 20
+                marginTop: 11
                 }}>
                 <h6>Stiffness 刚度设置</h6>
                 <p
@@ -208,12 +226,12 @@ export default function SetWindow() {
                     color: '#666',
                     marginBottom: 6
                   }}
-                >(默认值为1)</p>
+                >(默认值为100，更高的值将使运动更突然)</p>
                    <input
                 className="in"
                 type="text"
-                value={color}
-                onChange={handleColorChange}
+                value={Stiffness}
+                onChange={HandleStiffnessChange}
                 style={{
                   margin: 0,
                   height: 30,
@@ -228,7 +246,7 @@ export default function SetWindow() {
                   width: 220,
                   height: 'auto',
                   fontSize: 14,
-                marginTop: 20
+                marginTop: 11
                 }}>
                 <h6>Damping 阻尼系数设置</h6>
                 <p
@@ -236,12 +254,12 @@ export default function SetWindow() {
                     color: '#666',
                     marginBottom: 6
                   }}
-                >(默认值为300)</p>
+                >(默认值为20，如果设置为0，弹力将无限振荡)</p>
                    <input
                 className="in"
                 type="text"
-                value={color}
-                onChange={handleColorChange}
+                value={Damping}
+                onChange={HandleDampingChange}
                 style={{
                   margin: 0,
                   height: 30,
@@ -262,18 +280,14 @@ export default function SetWindow() {
           style={SetBtnStyle}
         ></div>
 
-
-
         <motion.div
           className="AppWindow"
-          value={color}
-          onChange={handleColorChange}
-
+          value={Speed}
+          onChange={HandleSpeedChange}
           style={AppWindowStyle}
           variants={AppWindowVariants}
           animate={AppWindowAnimation}
           transition={style}
-
           drag={DragBox}
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           dragElastic={1}
