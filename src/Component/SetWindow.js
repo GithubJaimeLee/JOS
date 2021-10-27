@@ -110,9 +110,10 @@ const UPBoxAnimation = {
 
 const NoteBgVariants = {
   NoteBgAnimationOne: {
+    opacity: [0.1, 0.3, 1],
     y: -355,
     x: -300,
-    scale: 0.2
+    scale: 0.2,
   },
   NoteBgAnimationTwo: {
     y: -100,
@@ -162,8 +163,8 @@ export default function SetWindow() {
 
   const style = {
     type: "spring",
- 
-   restSpeed: 2,
+    //duration: 2,
+    restSpeed: 2,
     stiffness: Stiffness,
     damping: Damping
 
