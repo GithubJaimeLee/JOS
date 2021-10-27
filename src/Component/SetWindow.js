@@ -281,6 +281,7 @@ export default function SetWindow() {
         <motion.div
           className="AppWindow"
           value={Speed}
+          whileTap={{ scale: 0.8}}
           onChange={HandleSpeedChange}
           style={AppWindowStyle}
           variants={AppWindowVariants}
