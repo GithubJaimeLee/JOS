@@ -1,7 +1,5 @@
 import * as React from "react";
 import { motion } from 'framer-motion';
-import Bback from "../Icon/back.png";
-import { Link } from 'react-router-dom';
 import ContactHeader from "../Img/ContactHeader.png";
 import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";

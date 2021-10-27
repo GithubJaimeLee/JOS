@@ -1,8 +1,6 @@
-import { motion, useCycle, AnimatePresence } from 'framer-motion';
+import { motion, useCycle } from 'framer-motion';
 import * as React from "react";
-import { Link } from 'react-router-dom';
 import NavBarPage from '../Component/NavBarPage';
-import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Calendar from "../Img/Calendar.png";
 import CalendarWindow from "../Img/CalendarWindow.png";
@@ -43,14 +41,6 @@ const Background = {
     width: 375,
     height: 812,
     zIndex: 1
-}
-const BackIcon = {
-    width: 30,
-    position: 'absolute',
-    top: 20,
-    left: 20,
-    opacity: 1,
-    zIndex: 2
 }
 
 const WindowPull = () => {

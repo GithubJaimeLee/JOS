@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Grid } from "antd-mobile";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DeskMoveApp from './DeskMoveApp.jsx';
 import NavBarPage from '../Component/NavBarPage';
@@ -26,7 +25,7 @@ const DApp = () => {
         <div 
         className='boxAll' 
         style={{
-          display: Grid
+          display: 'Grid'
         }}
         />
       

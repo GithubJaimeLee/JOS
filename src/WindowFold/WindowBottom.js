@@ -38,14 +38,7 @@ const BoxAnimation = {
  
     }
 }
-const BackIconStyle ={
-    width: 30,
-    position: 'fixed',
-    top: 20,
-    left: 20,
-    opacity: 1,
-    zIndex: '100'
- }
+
 
 const ContactBodyStyle ={
     backgroundColor: '#EEEEEE',

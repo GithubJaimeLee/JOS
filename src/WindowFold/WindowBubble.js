@@ -1,7 +1,5 @@
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import * as React from "react";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";
@@ -42,14 +40,7 @@ const BoxAnimation = {
         height: 0
     }
 }
-const BackIconStyle ={
-    width: 30,
-    position: 'fixed',
-    top: 20,
-    left: 20,
-    opacity: 1,
-    zIndex: '100'
- }
+
 const ContactHeaderStyle ={
    backgroundImage: `url(${ContactHeader})`,
         width: 375,

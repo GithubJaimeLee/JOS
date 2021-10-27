@@ -1,9 +1,6 @@
 import * as React from "react";
 import { motion } from 'framer-motion';
-import Bback from "../Icon/back.png";
-import { Link } from 'react-router-dom';
 import NavBarPage from '../Component/NavBarPage';
-
 import MusicHead from "../Img/MusicHead.png";
 //import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
 import MusicFooter from "../Img/MusicFooter.png";

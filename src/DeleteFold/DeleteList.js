@@ -1,8 +1,6 @@
 import * as React from "react";
 import { motion} from 'framer-motion';
 import MessageBg from "../Img/NewMessage.png";
-import Bback from "../Icon/back.png";
-import { Link } from 'react-router-dom';
 import { Stack } from 'react-bootstrap';
 import NavBarPage from '../Component/NavBarPage';
 import '../App.css';

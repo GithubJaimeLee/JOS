@@ -1,7 +1,5 @@
 import * as React from "react";
 import { motion } from 'framer-motion';
-import Bback from "../Icon/back.png";
-import { Link } from 'react-router-dom';
 import ClickN from "../Img/ClickN.png";
 import FingerClick from "../Img/OneFingerClick.png";
 import '../App.css';

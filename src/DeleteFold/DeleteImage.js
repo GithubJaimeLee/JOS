@@ -1,6 +1,4 @@
 import * as React from "react";
-import Bback from "../Icon/back.png";
-import { Link } from 'react-router-dom';
 import PhotoBg from "../Img/NewPhoto.png";
 import NavBarPage from '../Component/NavBarPage';
 import '../App.css';

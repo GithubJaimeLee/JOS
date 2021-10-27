@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
 import * as React from "react";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ClickOOS from "../Img/ClickOOS.png";
 import CameraIcon from "../Img/CameraIcon.png";

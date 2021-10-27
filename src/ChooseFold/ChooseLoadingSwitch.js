@@ -1,6 +1,4 @@
 import  React from "react";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
 import {Form} from 'react-bootstrap'
 import NavBarPage from '../Component/NavBarPage';
 const ChooseLoadingSwitch = () => {

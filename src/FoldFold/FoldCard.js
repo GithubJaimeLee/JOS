@@ -1,9 +1,6 @@
 import * as React from "react";
-import { Link } from 'react-router-dom';
-import backIcon from "../Icon/back.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FoldScreen from "../Img/FoldScreen.png";
-import OffCanvas from '../Component/Offcanvas';
 import ArrowToggle from '../Component/ArrowToggle';
 import NavBarPage from '../Component/NavBarPage';
 const FoldCard = () => {

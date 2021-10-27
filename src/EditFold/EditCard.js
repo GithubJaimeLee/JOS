@@ -1,7 +1,4 @@
 import * as React from "react";
-import backIcon from "../Icon/back.png";
-import { Link } from 'react-router-dom';
-import { Grid } from "antd-mobile";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../EditFold/EditCardApp.jsx';
 import NavBarPage from '../Component/NavBarPage';
@@ -28,7 +25,7 @@ const EditCard = () => {
     </div>  
      
       <div className='boxAll' style={{
-        display: Grid
+          display: 'Grid'
       }}
       >
       </div>
