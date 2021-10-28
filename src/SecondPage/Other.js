@@ -5,7 +5,7 @@ import backIcon from "../Icon/back.png";
 import { Link } from 'react-router-dom';
 import OtherBackToTop from '../OtherFold/OtherBackToTop';
 import OtherPull from '../OtherFold/OtherPull';
-import OtherOpen from '../OtherFold/OtherOpen';
+import Test from '../OtherFold/Test';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from '../App';
 
@@ -69,8 +69,9 @@ const Other = () => {
               <Link to="/Other/OtherBackToTop" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>状态、标题栏置顶</p></motion.div>
               </Link>
-
-   
+              <Link to="/Other/Test" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={card} ><p style={{ paddingTop: 40 }}>测试中</p></motion.div>
+              </Link>
             </div>
             <div className="Row2">
             <Link to="/Other/OtherPull" style={{ textDecoration: 'none' }}>
@@ -95,8 +96,8 @@ const Other = () => {
         <Route path="/Other/OtherBackToTop">
           <OtherBackToTop />
         </Route>
-        <Route path="/Other/OtherOpen">
-          <OtherOpen />
+        <Route path="/Other/Test">
+          <Test />
         </Route>
 
         <Route path="/Other/OtherPull">

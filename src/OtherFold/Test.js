@@ -1,7 +1,7 @@
 import  React from "react";
 import NavBarPage from '../Component/NavBarPage';
 import Example from '../Other/Example';
-const ChooseDate = () => {
+const Test = () => {
   const Info = <p>Hello,<br/> world!</p>;
   return (
     <div className="All">
@@ -20,7 +20,7 @@ const ChooseDate = () => {
                 top:0
             }}
             >
-
+<Example/>
       <div className="bg"
           style={{
             backgroundColor: "#eee",
@@ -37,4 +37,4 @@ const ChooseDate = () => {
   );
 }
 
-export default ChooseDate;
+export default Test;

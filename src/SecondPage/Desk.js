@@ -8,6 +8,7 @@ import DChange from '../DeskFold/DeskChange';
 import DZoom from '../DeskFold/DeskZoom';
 import DDirection from '../DeskFold/DeskDirection';
 import DeskOpen from '../DeskFold/DeskOpen';
+import DeskQuit from '../DeskFold/DeskQuit';
 import DeskFolder from '../DeskFold/DeskFolder';
 import DeskMultiDrag from '../DeskFold/DeskMultiDrag';
 //import {DraggableStory ,Grid }  from './DeskFold/deskGrid';
@@ -96,9 +97,9 @@ const Desk = () => {
               <Link to="/Desk/DeskOpen" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>打开应用</p> </motion.div>
               </Link>
-              <Link to="/Desk/DeskMultiDrag" style={{ textDecoration: 'none' }}>
-                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>多选拖动</p></motion.div> 
-               </Link>
+              <Link to="/Desk/DeskQuit" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>退出应用</p> </motion.div>
+              </Link>
 
             </div>
             <div sclassName="Row2">
@@ -112,6 +113,9 @@ const Desk = () => {
               <Link to="/Desk/deskGrid" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardActive} ><p style={{ paddingTop: 40 }}>图标Grid</p></motion.div>
               </Link>
+              <Link to="/Desk/DeskMultiDrag" style={{ textDecoration: 'none' }}>
+                <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>多选拖动</p></motion.div> 
+               </Link>
                {/*            <Link to="/Desk/DeskFolder" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>图标创建文件夹 </p></motion.div>
                 </Link> */}
@@ -148,6 +152,9 @@ const Desk = () => {
         </Route>
         <Route path="/Desk/DeskOpen">
           <DeskOpen />
+        </Route>
+        <Route path="/Desk/DeskQuit">
+          <DeskQuit />
         </Route>
         <Route path="/Desk/DeskFolder">
           <DeskFolder />

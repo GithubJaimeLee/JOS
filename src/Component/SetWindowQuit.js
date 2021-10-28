@@ -90,16 +90,18 @@ const UPBoxAnimation = {
 
 const NoteBgVariants = {
   NoteBgAnimationOne: {
-    opacity: [0.1, 0.3, 1],
-    y: -355,
-    x: -300,
-    scale: 0.2,
-  },
-  NoteBgAnimationTwo: {
+  
+
     y: -100,
     x: -100,
     scale: 2,
     opacity: [0.1, 0],
+  },
+  NoteBgAnimationTwo: {
+  opacity: [0.1, 0.3, 1],
+    y: -355,
+    x: -300,
+    scale: 0.2,
 
   }
 }
@@ -109,22 +111,22 @@ const NoteBgVariants = {
 const AppWindowVariants = {
  
 
-  animationOne: {
+  animationOne: { 
+  backgroundImage: `url(${NoteAndroid})`,
+  width: '100vw',
+  height: '100vh',
+  x: 0,
+  y: 56,
+  top: -56,
+  scale: 1.01,
+  backgroundSize: '100vw 100vh'
+  
+  },
+  animationTwo: {
     width: 152,
     height: 152,
     y: 0,
     backgroundImage: null
-  },
-  animationTwo: {
-    
-    backgroundImage: `url(${NoteAndroid})`,
-    width: '100vw',
-    height: '100vh',
-    x: 0,
-    y: 56,
-    top: -56,
-    scale: 1.01,
-    backgroundSize: '100vw 100vh'
   }
 }
 
@@ -183,11 +185,12 @@ export default function SetWindow() {
 
     ImgBgAnimationOne: {
 
-      scale: 1,
+      scale: 1.1
 
     },
     ImgBgAnimationTwo: {
-      scale: 1.1
+     
+      scale: 1,
     }
   }
 
@@ -199,8 +202,9 @@ export default function SetWindow() {
         className='All'
         style={{
           zindex: 10,
-          height: 812-56,
+        height: 812-56,
           width: '100vw',
+       //   height: '100vh',
           overflow: 'hidden',
           display: 'flex',
           justifyContent: 'center',
@@ -336,6 +340,14 @@ export default function SetWindow() {
             style={SetIconBgStyle}
           />
         </motion.div>
+  {/*       <div
+          style={{
+
+          width: '100vw',
+         height: '100vh-56',
+          overflow: 'hidden'
+        }}
+        > */}
         <motion.div className="BgImg"
           // whileTap={{ scale: 0.8}}
           variants={ImgBgVariants}
@@ -349,8 +361,11 @@ export default function SetWindow() {
             top: 0,
             opacity: 1,
             zIndex: '-1',
+            scale: 1.1,
+    
             position: 'absolute',
           }} />
+      {/*      </div> */}
       </div>
     </div>
   );

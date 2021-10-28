@@ -2,11 +2,11 @@ import * as React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBarPage from '../Component/NavBarPage';
-import SetWindow from '../Component/SetWindow';
+import SetWindow from '../Component/SetWindowQuit';
 
 
 
-const DeskOpen = () => {
+const DeskQuit = () => {
 
     const CodeColor = { color: '#62A66E' }
     const CodeTextStyle = { padding: '20px 20px 40px 20px', color: '#eee' }
@@ -120,10 +120,7 @@ const DeskOpen = () => {
                 <div
                 >
                     <SetWindow />
-
                 </div>
-
-
                 <div className='bg'
                     style={{
                         width: '100vw',
@@ -141,5 +138,5 @@ const DeskOpen = () => {
     );
 }
 
-export default DeskOpen;
+export default DeskQuit;
 
