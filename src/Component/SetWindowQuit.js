@@ -99,8 +99,7 @@ const SetBtnStyle = {
 }
 
 export default function SetWindow() {
- // const Y = useMotionValue(812);
-  //const YScale = useTransform(Y, [812,0], [ 1, 0]);
+
   const y = useMotionValue(0);
   const scale = useTransform(y, [0, -150], [ 1, 0.3]);
  
@@ -147,7 +146,7 @@ export default function SetWindow() {
     stiffness: Stiffness,
     damping: Damping
 
-  };
+  }
 
   const ImgBgVariants = {
     ImgBgAnimationOne: {
@@ -157,7 +156,7 @@ export default function SetWindow() {
       scale:1,
     }
   }
-
+  
 
   return (
     <div>
@@ -275,7 +274,8 @@ export default function SetWindow() {
            dragConstraints={{ left: 0, right: 0, top: 0, bottom: -0 }}
            dragElastic={0.25}
           onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation() &cycleDrag()}
-     // if     onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation() }
+         //  onDragStart ={ }
+      
         >
           <motion.div
             variants={NoteBgVariants}
@@ -312,4 +312,8 @@ export default function SetWindow() {
       </div>
     </div>
   );
-}
+
+
+   
+  }
+
