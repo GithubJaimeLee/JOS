@@ -6,7 +6,7 @@ import NoteBg from "../Img/NoteBg.png";
 import Background from "../Img/NoteAndroidDesk.png";
 import '../Component/Component.css';
 
-const AppWindowStyle = {
+/* const AppWindowStyle = {
   width: '100vw',
   height:'100vh',
   x: 0,
@@ -21,23 +21,8 @@ const AppWindowStyle = {
   overflow: 'hidden',
   backgroundRepeat: 'no-repeat'
 }
+ */
 
-const AppWindowVariants = {
-  animationOne: { 
-  backgroundImage: `url(${NoteAndroid})`,
-  width: '100vw',
-  height: '100vh',
-  scale: 1.01,
-  backgroundSize: '100vw 100vh'  
-  },
-  animationTwo: {
-    x: 82,
-    y: 72,   
-    width: 152,
-    height: 152,
-    backgroundImage: null
-  }
-}
 
 const NoteBgStyle = {
   backgroundImage: `url(${NoteBg})`,
@@ -82,7 +67,6 @@ const UPBoxStyle = {
   justifyContent: 'center',
   alignContent: 'center',
   backgroundColor: '#FFFFFF',
-  /*   border:'1px solid #ddd', */
   boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.2)",
   zindex: 1,
   y: 500
@@ -100,13 +84,6 @@ const UPBoxVariants = {
   }
 }
 
-
-
-
-
-
-/////*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
-
 const SetBtnStyle = {
   position: 'absolute',
   backgroundImage: `url(${WSet})`,
@@ -121,40 +98,38 @@ const SetBtnStyle = {
   justifyContent: 'center',
 }
 
-
-
-
-/*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
- 
-
-
-
 export default function SetWindow() {
-
- // const y = useMotionValue(0);
- // const scale = useTransform(y, [0,200, 500, 750], [ 0.1, 0.2, 0.8, 1]);
-
+ // const Y = useMotionValue(812);
+  //const YScale = useTransform(Y, [812,0], [ 1, 0]);
+  const y = useMotionValue(0);
+  const scale = useTransform(y, [0, -150], [ 1, 0.3]);
+ 
   const [AppWindowAnimation, cycleAnimation] = useCycle("animationOne", "animationTwo");
   const [UPBoxAnimation, UPcycleAnimation] = useCycle("UPanimationOne", "UPanimationTwo");
   const [NoteBgAnimation, CycleNoteBgAnimation] = useCycle("NoteBgAnimationOne", "NoteBgAnimationTwo");
   const [ImgBgAnimation, CycleImgBgAnimation] = useCycle("ImgBgAnimationOne", "ImgBgAnimationTwo");
-//  const [DragBox, cycleDrag] = useCycle(false, true);
-
-  /* const [Speed, setSpeed] = useState("1"); */
-  //const [Scale, setScale] = useState("1.1");
+  //const [DragBox, cycleDrag] = useCycle('y', false);
+  const [DragBox, cycleDrag] = useCycle(true, false);
   const [Stiffness, setStiffness] = useState("100");
   const [Damping, setDamping] = useState("20");
-
-  /*  function HandleSpeedChange(e) {
-      const newValue = e.target.value;
-      setSpeed(newValue);
-      console.log(newValue);
-    }  */
-  /*   function HandleScaleChange(e) {
-      const newValue = e.target.value;
-      setScale(newValue);
-      console.log(newValue);
-    } */
+  
+  const AppWindowVariants = {
+    animationOne: { 
+    backgroundImage: `url(${NoteAndroid})`,
+    width: '100vw',
+    height: '100vh',
+    scale: 1.01,
+    backgroundSize: '100vw 100vh',
+    y:0,
+    },
+    animationTwo: {
+      x: 82,
+      y: 72,  
+      width: 152,
+      height: 152,
+      backgroundImage: null,
+    }
+  }
   function HandleStiffnessChange(e) {
     const newValue = e.target.value;
     setStiffness(newValue);
@@ -168,7 +143,6 @@ export default function SetWindow() {
 
   const style = {
     type: "spring",
-    //duration: 2,
     restSpeed: 2,
     stiffness: Stiffness,
     damping: Damping
@@ -176,21 +150,16 @@ export default function SetWindow() {
   };
 
   const ImgBgVariants = {
-
     ImgBgAnimationOne: {
-
-      scale: 1.1
-
+      scale:  1.05,
     },
-    ImgBgAnimationTwo: {
-     
-      scale: 1,
+    ImgBgAnimationTwo: {   
+      scale:1,
     }
   }
 
 
   return (
-
     <div>
       <div
         className='All'
@@ -198,7 +167,6 @@ export default function SetWindow() {
           zindex: 10,
         height: 812-56,
           width: '100vw',
-       //   height: '100vh',
           overflow: 'hidden',
           display: 'flex',
           justifyContent: 'center',
@@ -215,37 +183,6 @@ export default function SetWindow() {
             <div
               className='SetText'
             >
-              {/*               <div className="DefaultSet"
-                style={{
-                  width: 220,
-                  height: 'auto',
-                  fontSize: 14,
-                marginTop: 20
-                }}>
-                 <h6>Scale缩放设置</h6> 
-                <h6>Speed速度设置</h6>
-                <p
-                  style={{
-                    color: '#666',
-                    marginBottom: 6
-                  }}
-                > (默认值为1，值需大于等于1，值可为小数)(默认值为1，越接近0速度越快，值可为小数) </p>
-                   <input
-                className="in"
-                type="text"
-                value={Speed}
-                onChange={HandleSpeedChange}
-                style={{
-                  margin: 0,
-                  height: 30,
-                  width: 220,
-                  borderRadius: 6,
-                }}
-              /> 
-              </div>*/}
-
-
-
               <div className="DefaultSet"
                 style={{
                   width: 220,
@@ -313,19 +250,32 @@ export default function SetWindow() {
 
         <motion.div
           className="AppWindow"
-          //   value={Speed}
-          whileTap={{ scale: 0.8 }}
-          //   onChange={HandleSpeedChange}
-          style={AppWindowStyle}
-         // style={{y, scale}}
+          //whileTap={{ scale: 0.8 }}
+          style={{
+           width: '100vw',
+           height:'100vh',
+           x: 0,
+           top: 0,
+           boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+           color: "#415fff",
+           opacity: 1,
+           backgroundColor: '#FFFFFF',
+           borderRadius: 14,
+           position: 'absolute',
+           zIndex: 0,
+           overflow: 'hidden',
+           backgroundRepeat: 'no-repeat',
+           y, 
+           scale,
+}}
           variants={AppWindowVariants}
           animate={AppWindowAnimation}
           transition={style}
-         // drag={DragBox}
-          // dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-         //  dragElastic={1}
-          //onClick={() => cycleAnimation() & cycleDrag() & CycleNoteBgAnimation() & CycleImgBgAnimation()}
-          onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation()}
+         drag={DragBox}
+           dragConstraints={{ left: 0, right: 0, top: 0, bottom: -0 }}
+           dragElastic={0.25}
+          onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation() &cycleDrag()}
+     // if     onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation() }
         >
           <motion.div
             variants={NoteBgVariants}
@@ -355,7 +305,7 @@ export default function SetWindow() {
             top: 0,
             opacity: 1,
             zIndex: '-1',
-            scale: 1.1,
+            scale:  1.05,
             position: 'absolute',
           }} />
       {/*      </div> */}
