@@ -41,10 +41,10 @@ const SetWindowStyle = {
 
 
 const AppWindowStyle = {
-  width: 152,
-  height: 152,
-  x: 82,
-  top: 70,
+  width: '100vw',
+  height:'100vh',
+  x: 0,
+  top: 0,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   color: "#415fff",
   opacity: 1,
@@ -109,23 +109,27 @@ const NoteBgVariants = {
 /*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
  
 const AppWindowVariants = {
- 
+  x: 82,
+  top: 70,
 
   animationOne: { 
   backgroundImage: `url(${NoteAndroid})`,
   width: '100vw',
   height: '100vh',
-  x: 0,
-  y: 56,
-  top: -56,
+ // x: 0,
+  //y: 56,
+ // top: -56,
   scale: 1.01,
   backgroundSize: '100vw 100vh'
   
   },
   animationTwo: {
+    x: 82,
+    y: 72,
+   
     width: 152,
     height: 152,
-    y: 0,
+  //  y: 0,
     backgroundImage: null
   }
 }
@@ -176,10 +180,6 @@ export default function SetWindow() {
     damping: Damping
 
   };
-
-
-  
- 
 
   const ImgBgVariants = {
 
