@@ -1,5 +1,4 @@
 import * as React from "react";
-import { motion, useMotionValue, useTransform } from "framer-motion";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBarPage from '../Component/NavBarPage';
 import SetWindow from '../Component/SetWindow';
