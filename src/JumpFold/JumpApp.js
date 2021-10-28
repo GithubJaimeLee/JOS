@@ -55,7 +55,31 @@ context={Info}
       position: 'fixed'
       }}
       />
-      <motion.div className="ContactBody"
+    
+      <div className="ContactFooter"
+        style={{
+          backgroundImage: `url(${ContactFooter})`,
+
+          width: 375,
+          height: 65,
+          position: 'fixed',
+          bottom: 0,
+           
+          opacity: 1,
+          zIndex: 1
+        }} ></div>
+      <div className="Background"
+        style={{
+          backgroundColor: '#f7f7f7',
+          width: 375,
+          height: 812,
+          position: 'absolute',
+          top: 0,
+          overflow: 'scroll',
+          opacity: 1,
+          zIndex: -1
+        }} >
+  <motion.div className="ContactBody"
         drag="y"
         dragConstraints={{ top: -580, bottom: 0 }}
         dragElastic={1}
@@ -130,29 +154,8 @@ context={Info}
           }}/>
 
       </motion.div>
-      <div className="ContactFooter"
-        style={{
-          backgroundImage: `url(${ContactFooter})`,
 
-          width: 375,
-          height: 65,
-          position: 'fixed',
-          bottom: 0,
-           
-          opacity: 1,
-          zIndex: 1
-        }} ></div>
-      <div className="Background"
-        style={{
-          backgroundColor: '#f7f7f7',
-          width: 375,
-          height: 812,
-          position: 'absolute',
-          top: 0,
-          
-          opacity: 1,
-          zIndex: -1
-        }} ></div>
+        </div>
     </div>
 </div>
   );
