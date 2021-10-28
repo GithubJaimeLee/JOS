@@ -6,40 +6,6 @@ import NoteBg from "../Img/NoteBg.png";
 import Background from "../Img/NoteAndroidDesk.png";
 import '../Component/Component.css';
 
-
-const SetIconBgStyle = {
-  backgroundImage: `url(${NoteBg})`,
-  width: 690,
-  height: 812,
-  position: 'relative',
-  backgroundColor: '#FFFFFF',
-  borderColor: '#FFFFFF',
-  y: -355,
-  x: -300,
-  scale: 0.2,
-  opacity: 1,
-  zIndex: 100,
-}
-
-
-const SetWindowStyle = {
-  position: 'relative',
-  top: 400,
-  width: 350,
-  height: 280,
-  borderRadius: 12,
-  display: 'flex',
-  justifyContent: 'center',
-  alignContent: 'center',
-  backgroundColor: '#FFFFFF',
-  /*   border:'1px solid #ddd', */
-  boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.2)",
-  zindex: 1,
-  y: 500
-}
-
-
-
 const AppWindowStyle = {
   width: '100vw',
   height:'100vh',
@@ -55,6 +21,85 @@ const AppWindowStyle = {
   overflow: 'hidden',
   backgroundRepeat: 'no-repeat'
 }
+
+const AppWindowVariants = {
+  animationOne: { 
+  backgroundImage: `url(${NoteAndroid})`,
+  width: '100vw',
+  height: '100vh',
+  scale: 1.01,
+  backgroundSize: '100vw 100vh'  
+  },
+  animationTwo: {
+    x: 82,
+    y: 72,   
+    width: 152,
+    height: 152,
+    backgroundImage: null
+  }
+}
+
+const NoteBgStyle = {
+  backgroundImage: `url(${NoteBg})`,
+  width: 690,
+  height: 812,
+  position: 'relative',
+  backgroundColor: '#FFFFFF',
+  borderColor: '#FFFFFF',
+  y: -100,
+  x: -100,
+  scale: 2,
+  opacity: 0,
+  zIndex: 100,
+}
+
+const NoteBgVariants = {
+  NoteBgAnimationOne: {
+    y: -100,
+    x: -100,
+    scale: 2,
+  //opacity: [0.1, 0],
+    opacity:   0,
+  },
+  NoteBgAnimationTwo: {
+    opacity: [0.1, 0.1, 1],
+ // opacity: [0.1, 0.3, 1],
+    y: -355,
+    x: -300,
+    scale: 0.2,
+
+  }
+}
+
+
+const UPBoxStyle = {
+  position: 'relative',
+  top: 400,
+  width: 350,
+  height: 280,
+  borderRadius: 12,
+  display: 'flex',
+  justifyContent: 'center',
+  alignContent: 'center',
+  backgroundColor: '#FFFFFF',
+  /*   border:'1px solid #ddd', */
+  boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.2)",
+  zindex: 1,
+  y: 500
+}
+
+const UPBoxVariants = {
+  UPanimationOne: {
+    y: 500,
+    zIndex: 1
+  },
+  UPanimationTwo: {
+    y: 60,
+    zIndex: 1
+
+  }
+}
+
 
 
 
@@ -76,63 +121,12 @@ const SetBtnStyle = {
   justifyContent: 'center',
 }
 
-const UPBoxAnimation = {
-  UPanimationOne: {
-    y: 500,
-    zIndex: 1
-  },
-  UPanimationTwo: {
-    y: 60,
-    zIndex: 1
 
-  }
-}
 
-const NoteBgVariants = {
-  NoteBgAnimationOne: {
-  
-
-    y: -100,
-    x: -100,
-    scale: 2,
-    opacity: [0.1, 0],
-  },
-  NoteBgAnimationTwo: {
-  opacity: [0.1, 0.3, 1],
-    y: -355,
-    x: -300,
-    scale: 0.2,
-
-  }
-}
 
 /*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
  
-const AppWindowVariants = {
-  x: 82,
-  top: 70,
 
-  animationOne: { 
-  backgroundImage: `url(${NoteAndroid})`,
-  width: '100vw',
-  height: '100vh',
- // x: 0,
-  //y: 56,
- // top: -56,
-  scale: 1.01,
-  backgroundSize: '100vw 100vh'
-  
-  },
-  animationTwo: {
-    x: 82,
-    y: 72,
-   
-    width: 152,
-    height: 152,
-  //  y: 0,
-    backgroundImage: null
-  }
-}
 
 
 export default function SetWindow() {
@@ -141,7 +135,7 @@ export default function SetWindow() {
  // const scale = useTransform(y, [0,200, 500, 750], [ 0.1, 0.2, 0.8, 1]);
 
   const [AppWindowAnimation, cycleAnimation] = useCycle("animationOne", "animationTwo");
-  const [SetWindowAnimation, UPcycleAnimation] = useCycle("UPanimationOne", "UPanimationTwo");
+  const [UPBoxAnimation, UPcycleAnimation] = useCycle("UPanimationOne", "UPanimationTwo");
   const [NoteBgAnimation, CycleNoteBgAnimation] = useCycle("NoteBgAnimationOne", "NoteBgAnimationTwo");
   const [ImgBgAnimation, CycleImgBgAnimation] = useCycle("ImgBgAnimationOne", "ImgBgAnimationTwo");
 //  const [DragBox, cycleDrag] = useCycle(false, true);
@@ -213,10 +207,10 @@ export default function SetWindow() {
         <div>
           <motion.div className='SetWindow'
             style={
-              SetWindowStyle
+              UPBoxStyle
             }
-            variants={UPBoxAnimation}
-            animate={SetWindowAnimation}
+            variants={UPBoxVariants}
+            animate={UPBoxAnimation}
           >
             <div
               className='SetText'
@@ -337,7 +331,7 @@ export default function SetWindow() {
             variants={NoteBgVariants}
             animate={NoteBgAnimation}
             transition={style}
-            style={SetIconBgStyle}
+            style={NoteBgStyle}
           />
         </motion.div>
   {/*       <div
@@ -362,7 +356,6 @@ export default function SetWindow() {
             opacity: 1,
             zIndex: '-1',
             scale: 1.1,
-    
             position: 'absolute',
           }} />
       {/*      </div> */}
