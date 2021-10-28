@@ -1,6 +1,5 @@
 import  React from "react";
 import NavBarPage from '../Component/NavBarPage';
-import Example from '../Other/Example';
 const ChooseDate = () => {
   const Info = <p>Hello,<br/> world!</p>;
   return (

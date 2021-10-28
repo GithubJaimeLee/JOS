@@ -269,7 +269,7 @@ export default function SetWindow() {
            backgroundRepeat: 'no-repeat',
            y, 
            scale,
-}}
+          }}
           variants={AppWindowVariants}
           animate={AppWindowAnimation}
           transition={style}
@@ -282,11 +282,8 @@ export default function SetWindow() {
          onDragEnd={function(event, info) {
        if(info.point.y < 300) {
         FourToOne()
-         } 
+       } 
        }}
-
-
- 
         >
           <motion.div
             variants={NoteBgVariants}
