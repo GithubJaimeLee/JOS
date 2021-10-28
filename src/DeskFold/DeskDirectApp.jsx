@@ -6,12 +6,12 @@ import {
   TouchSensor,
   DragOverlay,
   useSensor,
-  useSensors
+  useSensors,
 } from "@dnd-kit/core";
 import {
   arrayMove,
   SortableContext,
-  rectSortingStrategy
+  rectSortingStrategy,
 } from "@dnd-kit/sortable";
 import { GridD } from "../DeskFold/DeskDirectGrid";
 import { SortablePhotoD } from "./DeskDirectSortable";
@@ -32,7 +32,6 @@ const DeskDirectApp = () => {
       onDragCancel={handleDragCancel}
     >
       <SortableContext items={items} strategy={rectSortingStrategy}>
-
         <GridD columns={1}>
           {items.map((url, index) => (
             <SortablePhotoD key={url} url={url} index={index} />

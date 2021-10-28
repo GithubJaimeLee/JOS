@@ -7,15 +7,13 @@ import {
   DragOverlay,
   useSensor,
   useSensors,
-  LayoutMeasuringStrategy
+  LayoutMeasuringStrategy,
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 
-
 import { GridZ } from "../DeskFold/DeskZoomGrid";
 import { SortablePhotoZ } from "../DeskFold/DeskZoomSortable";
-import { PhotoZ} from "../DeskFold/DeskZoomCard";
-
+import { PhotoZ } from "../DeskFold/DeskZoomCard";
 
 import photos from "../DeskFold/DeskZoom.json";
 
@@ -24,23 +22,21 @@ const UploadGallery = () => {
   const [activeId, setActiveId] = useState(null);
   const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
   const layoutMeasuring = {
-    strategy: LayoutMeasuringStrategy.BeforeDragging
+    strategy: LayoutMeasuringStrategy.BeforeDragging,
   };
 
   return (
-    
     <DndContext
       sensors={sensors}
-     layoutMeasuring={layoutMeasuring}
+      layoutMeasuring={layoutMeasuring}
       collisionDetection={closestCorners}
-    onDragStart={handleDragStart}
-     onDragOver={handleDragOver}
-     onDragEnd={handleDragEnd}
+      onDragStart={handleDragStart}
+      onDragOver={handleDragOver}
+      onDragEnd={handleDragEnd}
       onDragCancel={handleDragCancel}
     >
-
-      <SortableContext   items={items} strategy={() => {}}>
-        <GridZ columns={2} >
+      <SortableContext items={items} strategy={() => {}}>
+        <GridZ columns={2}>
           {items.map((url, index) => (
             <SortablePhotoZ key={url} url={url} index={index} />
           ))}
@@ -49,16 +45,16 @@ const UploadGallery = () => {
       {/* 调整运动种的比例 */}
       <DragOverlay adjustScale={false}>
         {activeId ? (
-          <div 
+          <div
             style={{
               display: "grid",
               gridAutoColumns: "100%",
               gridAutoRows: "auto",
               //gridAutoRows: "18",
-              height: "100%"
+              height: "100%",
             }}
           >
-            <PhotoZ/>
+            <PhotoZ />
           </div>
         ) : null}
       </DragOverlay>

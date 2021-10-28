@@ -2,15 +2,13 @@ import React, { forwardRef } from "react";
 import photosD from "./DeskDirect.json";
 
 const colSpan = {
-
   [photosD[1]]: 1,
   //保留
-  };
-  //高度
-  const rowSpan = {
+};
+//高度
+const rowSpan = {
   [photosD[1]]: 1,
-  };
-
+};
 
 export const PhotoD = forwardRef(
   ({ url, index, faded, style, ...props }, ref) => {
@@ -26,10 +24,9 @@ export const PhotoD = forwardRef(
       backgroundPosition: "center",
       backgroundColor: "#5EDD7B",
       borderRadius: index === 0 ? 6 : 12,
-      ...style
+      ...style,
     };
 
     return <div ref={ref} style={inlineStyles} {...props} />;
   }
 );
-

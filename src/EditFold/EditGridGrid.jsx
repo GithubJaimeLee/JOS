@@ -9,12 +9,12 @@ export function Grid({ children, columns }) {
         gridAutoRows: `70px`,
         padding: 20,
         gridGap: 18,
-        paddingTop:60,
-        width:355,
-        gridAutoFlow: "row dense"
+        paddingTop: 60,
+        width: 355,
+        gridAutoFlow: "row dense",
       }}
     >
-    {children}
+      {children}
     </div>
   );
 }

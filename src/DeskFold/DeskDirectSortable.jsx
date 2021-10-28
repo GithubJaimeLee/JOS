@@ -1,8 +1,8 @@
-import React from 'react';
-import {useSortable} from '@dnd-kit/sortable';
-import {CSS} from '@dnd-kit/utilities';
+import React from "react";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
-import {PhotoD} from '../DeskFold/DeskDirectCard';
+import { PhotoD } from "../DeskFold/DeskDirectCard";
 
 export const SortablePhotoD = (props) => {
   const {
@@ -12,7 +12,7 @@ export const SortablePhotoD = (props) => {
     setNodeRef,
     transform,
     transition,
-  } = useSortable({id: props.url});
+  } = useSortable({ id: props.url });
 
   const style = {
     transform: CSS.Transform.toString(transform),

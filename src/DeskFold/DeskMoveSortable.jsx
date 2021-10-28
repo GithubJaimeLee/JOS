@@ -1,7 +1,7 @@
-import React from 'react';
-import {useSortable} from '@dnd-kit/sortable';
-import {CSS} from '@dnd-kit/utilities';
-import {Photo} from '../DeskFold/DeskMoveCard';
+import React from "react";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import { Photo } from "../DeskFold/DeskMoveCard";
 
 export const SortablePhoto = (props) => {
   const {
@@ -11,7 +11,7 @@ export const SortablePhoto = (props) => {
     setNodeRef,
     transform,
     transition,
-  } = useSortable({id: props.url});
+  } = useSortable({ id: props.url });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -19,7 +19,6 @@ export const SortablePhoto = (props) => {
   };
 
   return (
-  
     <Photo
       ref={setNodeRef}
       style={style}
@@ -28,7 +27,5 @@ export const SortablePhoto = (props) => {
       {...attributes}
       {...listeners}
     />
-   
   );
 };
-

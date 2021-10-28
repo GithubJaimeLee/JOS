@@ -6,7 +6,6 @@ const colSpan = {
   [photos[1]]: 1,
   //保留
   [photos[2]]: 1,
-
 };
 //高度
 const rowSpan = {
@@ -22,15 +21,15 @@ export const PhotoZ = forwardRef(
       transformOrigin: "0 0",
       //  height: index === 0  ? 158  : (index === 1 ? 70 :(index === 2 ? 158 : 70 ) ),
       // width: index === 0 ? 158 :(index === 1  ? 158  : (index === 2 ? 70 : 158 )) ,
-      height: index === 1 ? 70 : (index === 2 ? 158 : (index === 0 ? 158 : 70)),
-      width: index === 1 ? 158 : (index === 2 ? 70 : (index === 0 ? 158 : 70)),
-     
+      height: index === 1 ? 70 : index === 2 ? 158 : index === 0 ? 158 : 70,
+      width: index === 1 ? 158 : index === 2 ? 70 : index === 0 ? 158 : 70,
+
       //  height: index === 1 ? 70  :  158  ,
       //width: index === 1 ?    158  :  70  ,
       //1号为第三项高
       //    height: index === 2 ?158 : 158  ,
       //3项宽
-      //width: index === 2  ? 70  :  158  ,  
+      //width: index === 2  ? 70  :  158  ,
       //1号为第三项高
       //   height: index === 3 ? 158 :  158   ,
       //3项宽
@@ -40,13 +39,12 @@ export const PhotoZ = forwardRef(
       boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
       backgroundSize: "cover",
       backgroundPosition: "center",
-     // backgroundColor: "#fff",
+      // backgroundColor: "#fff",
       backgroundColor: "#5EDD7B",
       borderRadius: 12,
-      ...style
+      ...style,
     };
 
-    return <div ref={ref} style={inlineStyles} {...props} >
-    </div>;
+    return <div ref={ref} style={inlineStyles} {...props}></div>;
   }
 );
