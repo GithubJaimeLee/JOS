@@ -156,6 +156,9 @@ export default function SetWindow() {
       scale:1,
     }
   }
+  const FourToOne = () => {
+    cycleAnimation();  CycleNoteBgAnimation();   CycleImgBgAnimation()  ;cycleDrag()
+  };
   
 
   return (
@@ -274,8 +277,16 @@ export default function SetWindow() {
            dragConstraints={{ left: 0, right: 0, top: 0, bottom: -0 }}
            dragElastic={0.25}
           onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation() &cycleDrag()}
+        //  onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation() &cycleDrag()}
          //  onDragStart ={ }
-      
+         onDragEnd={function(event, info) {
+       if(info.point.y < 300) {
+        FourToOne()
+         } 
+       }}
+
+
+ 
         >
           <motion.div
             variants={NoteBgVariants}
