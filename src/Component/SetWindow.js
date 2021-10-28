@@ -1,44 +1,40 @@
 import React, { useState } from "react";
-import { motion, useCycle} from 'framer-motion';
+import { motion, useCycle } from "framer-motion";
 import WSet from "../Icon/Set.png";
 import NoteAndroid from "../Img/NoteAndroid.png";
 import NoteBg from "../Img/NoteBg.png";
 import Background from "../Img/NoteAndroidDesk.png";
-import '../Component/Component.css';
-
+import "../Component/Component.css";
 
 const SetIconBgStyle = {
   backgroundImage: `url(${NoteBg})`,
   width: 690,
   height: 812,
-  position: 'relative',
-  backgroundColor: '#FFFFFF',
-  borderColor: '#FFFFFF',
+  position: "relative",
+  backgroundColor: "#FFFFFF",
+  borderColor: "#FFFFFF",
   y: -355,
   x: -300,
   scale: 0.2,
   opacity: 1,
   zIndex: 100,
-}
-
+};
 
 const SetWindowStyle = {
-  position: 'relative',
+  position: "relative",
   top: 400,
   width: 350,
   height: 280,
   borderRadius: 12,
-  display: 'flex',
-  justifyContent: 'center',
-  alignContent: 'center',
-  backgroundColor: '#FFFFFF',
+  display: "flex",
+  justifyContent: "center",
+  alignContent: "center",
+  backgroundColor: "#FFFFFF",
   /*   border:'1px solid #ddd', */
   boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.2)",
   zindex: 1,
-  y: 500
-}
-
-
+  y: 500,
+};
 
 const AppWindowStyle = {
   width: 152,
@@ -48,45 +44,40 @@ const AppWindowStyle = {
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   color: "#415fff",
   opacity: 1,
-  backgroundColor: '#FFFFFF',
+  backgroundColor: "#FFFFFF",
   borderRadius: 14,
-  position: 'absolute',
+  position: "absolute",
   zIndex: 0,
-  overflow: 'hidden',
-  backgroundRepeat: 'no-repeat'
-}
-
-
-
-
+  overflow: "hidden",
+  backgroundRepeat: "no-repeat",
+};
 
 /////*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
 
 const SetBtnStyle = {
-  position: 'absolute',
+  position: "absolute",
   backgroundImage: `url(${WSet})`,
   top: 13,
   right: 80,
   width: 30,
   height: 30,
   borderRadius: 20,
-  textAlign: 'center',
+  textAlign: "center",
   zIndex: 1001,
-  display: 'flex',
-  justifyContent: 'center',
-}
+  display: "flex",
+  justifyContent: "center",
+};
 
 const UPBoxAnimation = {
   UPanimationOne: {
     y: 500,
-    zIndex: 1
+    zIndex: 1,
   },
   UPanimationTwo: {
     y: 60,
-    zIndex: 1
-
-  }
-}
+    zIndex: 1,
+  },
+};
 
 const NoteBgVariants = {
   NoteBgAnimationOne: {
@@ -100,45 +91,51 @@ const NoteBgVariants = {
     x: -100,
     scale: 2,
     opacity: [0.1, 0],
-
-  }
-}
+  },
+};
 
 /*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/
- 
-const AppWindowVariants = {
- 
 
+const AppWindowVariants = {
   animationOne: {
     width: 152,
     height: 152,
     y: 0,
-    backgroundImage: null
+    backgroundImage: null,
   },
   animationTwo: {
-    
     backgroundImage: `url(${NoteAndroid})`,
-    width: '100vw',
-    height: '100vh',
+    width: "100vw",
+    height: "100vh",
     x: 0,
     y: 56,
     top: -56,
     scale: 1.01,
-    backgroundSize: '100vw 100vh'
-  }
-}
-
+    backgroundSize: "100vw 100vh",
+  },
+};
 
 export default function SetWindow() {
+  // const y = useMotionValue(0);
+  // const scale = useTransform(y, [0,200, 500, 750], [ 0.1, 0.2, 0.8, 1]);
 
- // const y = useMotionValue(0);
- // const scale = useTransform(y, [0,200, 500, 750], [ 0.1, 0.2, 0.8, 1]);
-
-  const [AppWindowAnimation, cycleAnimation] = useCycle("animationOne", "animationTwo");
-  const [SetWindowAnimation, UPcycleAnimation] = useCycle("UPanimationOne", "UPanimationTwo");
-  const [NoteBgAnimation, CycleNoteBgAnimation] = useCycle("NoteBgAnimationOne", "NoteBgAnimationTwo");
-  const [ImgBgAnimation, CycleImgBgAnimation] = useCycle("ImgBgAnimationOne", "ImgBgAnimationTwo");
-//  const [DragBox, cycleDrag] = useCycle(false, true);
+  const [AppWindowAnimation, cycleAnimation] = useCycle(
+    "animationOne",
+    "animationTwo"
+  );
+  const [SetWindowAnimation, UPcycleAnimation] = useCycle(
+    "UPanimationOne",
+    "UPanimationTwo"
+  );
+  const [NoteBgAnimation, CycleNoteBgAnimation] = useCycle(
+    "NoteBgAnimationOne",
+    "NoteBgAnimationTwo"
+  );
+  const [ImgBgAnimation, CycleImgBgAnimation] = useCycle(
+    "ImgBgAnimationOne",
+    "ImgBgAnimationTwo"
+  );
+  //  const [DragBox, cycleDrag] = useCycle(false, true);
 
   /* const [Speed, setSpeed] = useState("1"); */
   //const [Scale, setScale] = useState("1.1");
@@ -171,52 +168,39 @@ export default function SetWindow() {
     //duration: 2,
     restSpeed: 2,
     stiffness: Stiffness,
-    damping: Damping
-
+    damping: Damping,
   };
 
-
-  
- 
-
   const ImgBgVariants = {
-
     ImgBgAnimationOne: {
-
       scale: 1,
-
     },
     ImgBgAnimationTwo: {
-      scale: 1.1
-    }
-  }
-
+      scale: 1.1,
+    },
+  };
 
   return (
-
     <div>
       <div
-        className='All'
+        className="All"
         style={{
           zindex: 10,
-          height: 812-56,
-          width: '100vw',
-          overflow: 'hidden',
-          display: 'flex',
-          justifyContent: 'center',
+          height: 812 - 56,
+          width: "100vw",
+          overflow: "hidden",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         <div>
-          <motion.div className='SetWindow'
-            style={
-              SetWindowStyle
-            }
+          <motion.div
+            className="SetWindow"
+            style={SetWindowStyle}
             variants={UPBoxAnimation}
             animate={SetWindowAnimation}
           >
-            <div
-              className='SetText'
-            >
+            <div className="SetText">
               {/*               <div className="DefaultSet"
                 style={{
                   width: 220,
@@ -246,22 +230,24 @@ export default function SetWindow() {
               /> 
               </div>*/}
 
-
-
-              <div className="DefaultSet"
+              <div
+                className="DefaultSet"
                 style={{
                   width: 220,
-                  height: 'auto',
+                  height: "auto",
                   fontSize: 14,
-                  marginTop: 20
-                }}>
+                  marginTop: 20,
+                }}
+              >
                 <h6>Damping 阻尼系数设置</h6>
                 <p
                   style={{
-                    color: '#666',
-                    marginBottom: 6
+                    color: "#666",
+                    marginBottom: 6,
                   }}
-                >(默认值为20，如果设置为0，弹力将无限振荡)</p>
+                >
+                  (默认值为20，如果设置为0，弹力将无限振荡)
+                </p>
                 <input
                   className="in"
                   type="text"
@@ -276,20 +262,24 @@ export default function SetWindow() {
                 />
               </div>
 
-              <div className="DefaultSet"
+              <div
+                className="DefaultSet"
                 style={{
                   width: 220,
-                  height: 'auto',
+                  height: "auto",
                   fontSize: 14,
-                  marginTop: 20
-                }}>
+                  marginTop: 20,
+                }}
+              >
                 <h6>Stiffness 刚度设置</h6>
                 <p
                   style={{
-                    color: '#666',
-                    marginBottom: 6
+                    color: "#666",
+                    marginBottom: 6,
                   }}
-                >(默认值为100，更高的值将使运动更突然)</p>
+                >
+                  (默认值为100，更高的值将使运动更突然)
+                </p>
                 <input
                   className="in"
                   type="text"
@@ -303,12 +293,12 @@ export default function SetWindow() {
                   }}
                 />
               </div>
-
             </div>
           </motion.div>
         </div>
 
-        <div className='SetBtn'
+        <div
+          className="SetBtn"
           onClick={() => UPcycleAnimation()}
           style={SetBtnStyle}
         ></div>
@@ -319,15 +309,17 @@ export default function SetWindow() {
           whileTap={{ scale: 0.8 }}
           //   onChange={HandleSpeedChange}
           style={AppWindowStyle}
-         // style={{y, scale}}
+          // style={{y, scale}}
           variants={AppWindowVariants}
           animate={AppWindowAnimation}
           transition={style}
-         // drag={DragBox}
+          // drag={DragBox}
           // dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-         //  dragElastic={1}
+          //  dragElastic={1}
           //onClick={() => cycleAnimation() & cycleDrag() & CycleNoteBgAnimation() & CycleImgBgAnimation()}
-          onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation()}
+          onClick={() =>
+            cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation()
+          }
         >
           <motion.div
             variants={NoteBgVariants}
@@ -336,7 +328,8 @@ export default function SetWindow() {
             style={SetIconBgStyle}
           />
         </motion.div>
-        <motion.div className="BgImg"
+        <motion.div
+          className="BgImg"
           // whileTap={{ scale: 0.8}}
           variants={ImgBgVariants}
           animate={ImgBgAnimation}
@@ -348,9 +341,10 @@ export default function SetWindow() {
             height: 812,
             top: 0,
             opacity: 1,
-            zIndex: '-1',
-            position: 'absolute',
-          }} />
+            zIndex: "-1",
+            position: "absolute",
+          }}
+        />
       </div>
     </div>
   );
