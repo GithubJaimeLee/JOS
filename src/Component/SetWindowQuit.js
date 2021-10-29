@@ -25,16 +25,16 @@ import "../Component/Component.css";
 
 const NoteBgStyle = {
   backgroundImage: `url(${NoteBg})`,
-  width: 690,
-  height: 812,
-  position: "relative",
+  width          : 690,
+  height         : 812,
+  position       : "relative",
   backgroundColor: "#FFFFFF",
-  borderColor: "#FFFFFF",
-  y: -100,
-  x: -100,
-  scale: 2,
-  opacity: 0,
-  zIndex: 100,
+  borderColor    : "#FFFFFF",
+  y              : -100,
+  x              : -100,
+  scale          : 2,
+  opacity        : 0,
+  zIndex         : 100,
 };
 
 const NoteBgVariants = {

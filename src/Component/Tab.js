@@ -20,12 +20,12 @@ const MyTab = () => {
           style={{
             backgroundImage: `url(${MusicBodyRecommed})`,
             backgroundColor: "#ddd",
-            top: 130,
-            width: 375,
-            height: 1205,
+            top     : 130,
+            width   : 375,
+            height  : 1205,
             position: "absolute",
-            opacity: 1,
-            zIndex: -1,
+            opacity : 1,
+            zIndex  : -1,
           }}
           whileTap={{ x: -200 }}
         ></motion.div>

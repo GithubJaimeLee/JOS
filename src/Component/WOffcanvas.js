@@ -15,13 +15,13 @@ function WOffCanvas({ name, context, contextTitle, ...props }) {
         alt=" "
         style={{
           backgroundImage: `url(${WHelp})`,
-          position: "relative",
-          top: -6,
-          left: 320,
-          opacity: 1,
-          zIndex: "10",
-          width: 30,
-          height: 30,
+          position       : "relative",
+          top            : -6,
+          left           : 320,
+          opacity        : 1,
+          zIndex         : "10",
+          width          : 30,
+          height         : 30,
           //   backgroundColor: '#FFFFFF'
         }}
         onClick={handleShow}

@@ -16,15 +16,14 @@ const ListBtn = () => {
     <motion.div
       whileTap={{ scaleY: 0.8 }}
       style={{
-        width: 375,
-        height: 90,
-        opacity: 0.3,
+        width          : 375,
+        height         : 90,
+        opacity        : 0.3,
         backgroundColor: "red",
-
-        left: 0,
-        zIndex: 1,
-        position: "relative",
-        marginBottom: 2,
+        left           : 0,
+        zIndex         : 1,
+        position       : "relative",
+        marginBottom   : 2,
       }}
     />
   );
