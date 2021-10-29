@@ -1,37 +1,37 @@
-.navbar-toggler:focus{
-    color:#ccc;
-   box-shadow:0 0 0 0.1rem
+.navbar-toggler:focus {
+  color: #ccc;
+  box-shadow: 0 0 0 0.1rem;
 }
 
 .carousel-control-next,
-.carousel-control-prev{
-display: none !important;
+.carousel-control-prev {
+  display: none !important;
 }
 .nav-link,
 .nav-link.active,
-.nav-tabs{
-border:none !important;
-background:#f7f7f7 !important;
+.nav-tabs {
+  border: none !important;
+  background: #f7f7f7 !important;
 }
 /* .nav-link{
 color:red!important;
 } */
-.nav-link.active{
-    color:black!important;
-   font-weight:bold!important;
-   font-size: 17px!important;
+.nav-link.active {
+  color: black !important;
+  font-weight: bold !important;
+  font-size: 17px !important;
 }
 
-.navbar-toggler:focus{
-    box-shadow:none !important;
+.navbar-toggler:focus {
+  box-shadow: none !important;
 }
 
 /* SetWindow.js*/
-input.in:focus-visible{
-outline-color:#415FFF;
+input.in:focus-visible {
+  outline-color: #415fff;
 }
-input.in{
-   border-color:#aaa !important;
-   padding: 6px;
-   border: 1px solid;
-    }
+input.in {
+  border-color: #aaa !important;
+  padding: 6px;
+  border: 1px solid;
+}

@@ -5,7 +5,6 @@ import NavBarPage from "../Component/NavBarPage";
 
 const ContactBtnStyle = {
   position: "relative",
-
   bottom: -750,
   width: 60,
   height: 60,

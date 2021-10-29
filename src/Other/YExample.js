@@ -1,9 +1,9 @@
-import * as React from "react"
-import ReactDOM from "react-dom"
-import { Frame, useAnimation, transform } from "framer"
+import * as React from "react";
+import ReactDOM from "react-dom";
+import { Frame, useAnimation, transform } from "framer";
 //https://codesandbox.io/s/311-if-else-screencast-qbxqh?file=/src/index.tsx
 //https://codesandbox.io/s/311-if-else-screencast-qbxqh
-import "./styles.css"
+import "./styles.css";
 
 function Skinny(props) {
   return (
@@ -72,7 +72,7 @@ function Skinny(props) {
         rotate={-80}
       />
     </Frame>
-  )
+  );
 }
 
 function Slider(props) {
@@ -98,14 +98,13 @@ function Slider(props) {
         onDrag={props.onDrag}
       />
     </Frame>
-  )
+  );
 }
 
 // Scope
 
 function App() {
- 
-  const wingAnimation = useAnimation()
+  const wingAnimation = useAnimation();
   return (
     <div
       className="App"
@@ -114,37 +113,30 @@ function App() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh"
+        height: "100vh",
       }}
     >
-      <Skinny
-      
-        wingAnimation={wingAnimation}
-      />
+      <Skinny wingAnimation={wingAnimation} />
       <Slider
-        onDrag={function(event, info) {
+        onDrag={function (event, info) {
           //console.log(info.point.x)
           //  change scale of cheek based on info.point.x
-          const scale = transform(info.point.y, [0, 220], [0.4, 1.5])
-       
+          const scale = transform(info.point.y, [0, 220], [0.4, 1.5]);
+
           if (info.point.y > 100) {
             wingAnimation.start({
-              rotate: 180
-         
-            })
-          
+              rotate: 180,
+            });
           } else {
             wingAnimation.start({
-              rotate: -100
-              
-            })
-          
+              rotate: -100,
+            });
           }
         }}
       />
     </div>
-  )
+  );
 }
 
-const rootElement = document.getElementById("root")
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);

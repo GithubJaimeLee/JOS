@@ -1,8 +1,5 @@
 import React from "react";
-import { motion } from 'framer-motion';
-
-
-
+import { motion } from "framer-motion";
 
 class MyComponent extends React.Component {
   //这里是重点....要求使用constructor，有constructor就必须带上super，这部分
@@ -14,35 +11,32 @@ class MyComponent extends React.Component {
   //这个功能是为NewColor属性赋值
   ChangeColorFunction(value) {
     this.setState({
-      NewColor: value
+      NewColor: value,
     });
   }
 
   render() {
     return (
-      <div className="Component"
+      <div
+        className="Component"
         style={{
           zIndex: 10,
-          position: 'absolute',
+          position: "absolute",
         }}
       >
-  
-   <motion.div
-
+        <motion.div
           //   transition= {{ duration: `${this.state.NewColor}` }}
           whileTap={{
             scale: `${this.state.NewColor}`,
-            transition: { duration:  1}
+            transition: { duration: 1 },
           }}
-
           style={{
             width: 100,
             height: 200,
             //下面是目的为div赋值新的backgroundColor
             backgroundColor: "red",
           }}
-
-        /> 
+        />
         {/* 下面是拿到的InputBar组件，Goal这个obj也是从下面组件拿到的*/}
         <InputBar Goal={this.ChangeColorFunction.bind(this)} />
       </div>

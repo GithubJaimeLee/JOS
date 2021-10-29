@@ -122,7 +122,6 @@ const Delete = () => {
             ></div>
           </div>
         </Route>
-
         <Route path="/Delete/DeleteCard">
           <DeleteCard />
         </Route>

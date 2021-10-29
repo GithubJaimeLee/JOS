@@ -37,8 +37,8 @@
   }
 }
 
-div.BlurBackground{
-    filter: blur(4px); 
+div.BlurBackground {
+  filter: blur(4px);
 }
 
 /* #root{
@@ -46,10 +46,9 @@ div.BlurBackground{
   width: 375px!important;
   height: 812px!important; 
 }  */
-div.ListCard{
-  border:1px solid #000;
-} 
-
+div.ListCard {
+  border: 1px solid #000;
+}
 
 /*   html {
     overflow-x:hidden;

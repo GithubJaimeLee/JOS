@@ -11,11 +11,11 @@ export function DeleteGrid({ children, columns }) {
         gridAutoRows: `87px`,
         gridGap: 6,
         padding: 4,
-        paddingTop:100,
-        gridAutoFlow: "row dense"
+        paddingTop: 100,
+        gridAutoFlow: "row dense",
       }}
     >
-    {children}
+      {children}
     </div>
   );
 }
