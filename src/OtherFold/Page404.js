@@ -11,8 +11,16 @@ export default function Page404() {
         alignItems: "center",
       }}
     >
-      <h1>404</h1>
-      <h3>这个地址不存在呀,请核对</h3>
+      <p>
+        <h1
+          style={{
+            textAlign: "center",
+          }}
+        >
+          404
+        </h1>
+        <h3>这个地址不存在呀</h3>{" "}
+      </p>
     </div>
   );
 }
