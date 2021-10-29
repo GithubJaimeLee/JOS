@@ -21,8 +21,8 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
       <Navbar
         style={{
           backgroundColor: "rgba(255, 255, 255, 0.2)",
-          backdropFilter : "blur(2px)",
-          zIndex         : 1000,
+          backdropFilter: "blur(2px)",
+          zIndex: 1000,
         }}
         expand="lg"
       >
@@ -33,12 +33,12 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
               src={WbackIcon}
               alt="WbackIcon"
               style={{
-                width   : 30,
+                width: 30,
                 position: "absolute",
-                top     : 16,
-                left    : 20,
-                opacity : 1,
-                zIndex  : "100",
+                top: 16,
+                left: 20,
+                opacity: 1,
+                zIndex: "100",
               }}
             ></img>
           </Navbar.Brand>
