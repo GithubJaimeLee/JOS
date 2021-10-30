@@ -7,7 +7,13 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar bg="light" expand="lg">
+        <Navbar
+          bg="white"
+          expand="lg"
+          style={{
+            boxShadow: "0px 0px 16px  rgba(0, 0, 0, 0.05)",
+          }}
+        >
           <Container>
             <Navbar.Brand href="/">
               {" "}
