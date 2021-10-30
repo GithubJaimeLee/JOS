@@ -16,7 +16,7 @@ let card = {
   borderRadius: 12,
   textAlign: "center",
   boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
-  opacity: 0.8,
+  opacity: 1,
   color: "#666",
 };
 

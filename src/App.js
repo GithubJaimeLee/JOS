@@ -15,7 +15,7 @@ import MenuIcon from "./Icon/Menu.png";
 import NavBar from "./Component/NavBar";
 //导入库
 import { motion } from "framer-motion";
-import background from "./Img/bg.png";
+//import background from "./Img/bg.png";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
