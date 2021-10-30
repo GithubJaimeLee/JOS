@@ -48,7 +48,7 @@ let cardInactive = {
 
 const cardHover = {
   scale: 1.1,
-  // boxShadow: "0px 0px 16px rgba(65, 95, 255, 0.6)",
+  boxShadow: "0px 0px 16px rgba(65, 95, 255, 0.2)",
   fontWeight: "bold",
   color: "#415fff",
   opacity: 1,
