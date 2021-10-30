@@ -28,7 +28,7 @@ let cardActive = {
   borderRadius: 12,
   textAlign: "center",
   // boxShadow: "0px 0px 12px  rgba(65, 95, 255, 0.05)",
-  boxShadow: "0px 0px 16px  rgba(0, 0, 0, 0.10)",
+  boxShadow: "0px 0px 16px  rgba(0, 0, 0, 0.15)",
   opacity: 0.8,
   color: "#666",
 };
@@ -40,7 +40,7 @@ let cardInactive = {
   margin: 8,
   borderRadius: 12,
   textAlign: "center",
-  boxShadow: "0px 0px 16px  rgba(0, 0, 0, 0.10)",
+  boxShadow: "0px 0px 16px  rgba(0, 0, 0, 0.15)",
   // boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
   opacity: 0.4,
   color: "#999",
@@ -48,7 +48,7 @@ let cardInactive = {
 
 const cardHover = {
   scale: 1.1,
-  boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)",
+  boxShadow: "0px 0px 16px rgba(65, 95, 255, 0.6)",
   fontWeight: "bold",
   color: "#415fff",
   opacity: 1,
