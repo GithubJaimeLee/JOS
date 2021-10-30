@@ -359,7 +359,6 @@ function App() {
             ></div>
           </motion.div>
         </Route>
-
         <Route path="/List">
           <List />
         </Route>
