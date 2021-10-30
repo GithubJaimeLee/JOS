@@ -7,6 +7,17 @@ import ContactFooter from "../Img/ContactFooter.png";
 import ContactSetBar from "../Img/ContactSetBar.png";
 import "../css/App.css";
 
+const ClickStyle = {
+  width: 375,
+  height: 50,
+  backgroundColor: "#C7000B",
+  opacity: 0.5,
+  position: "sticky",
+  top: 159,
+  left: 0,
+  marginBottom: 50,
+};
+
 const ScrollTitleList = () => {
   const Info = (
     <p>
@@ -106,78 +117,12 @@ const ScrollTitleList = () => {
                 zIndex: 0,
               }}
             >
-              <div
-                className="MaskA"
-                style={{
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#C7000B",
-                  opacity: 0.5,
-                  position: "relative",
-                  top: 56,
-                  left: 0,
-                }}
-              />
-              <div
-                className="MaskF"
-                style={{
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#C7000B",
-                  opacity: 0.5,
-                  position: "relative",
-                  top: 314,
-                  left: 0,
-                }}
-              />
-              <div
-                className="MaskL"
-                style={{
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#C7000B",
-                  opacity: 0.5,
-                  position: "relative",
-                  top: 358,
-                  left: 0,
-                }}
-              />
-              <div
-                className="MaskW"
-                style={{
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#C7000B",
-                  opacity: 0.5,
-                  position: "relative",
-                  top: 455,
-                  left: 0,
-                }}
-              />
-              <div
-                className="MaskX"
-                style={{
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#C7000B",
-                  opacity: 0.5,
-                  position: "relative",
-                  top: 552,
-                  left: 0,
-                }}
-              />
-              <div
-                className="MaskZ"
-                style={{
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#C7000B",
-                  opacity: 0.5,
-                  position: "relative",
-                  top: 768,
-                  left: 0,
-                }}
-              />
+              <div className="MaskA" style={ClickStyle} />
+              <div className="MaskF" style={ClickStyle} />
+              <div className="MaskL" style={ClickStyle} />
+              <div className="MaskW" style={ClickStyle} />
+              <div className="MaskX" style={ClickStyle} />
+              <div className="MaskZ" style={ClickStyle} />
             </motion.div>
             <div
               className="Background"
