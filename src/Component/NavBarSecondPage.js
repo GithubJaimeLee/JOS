@@ -10,7 +10,7 @@ function NavBarSecondPage({ Title, ...props }) {
     <div>
       <Navbar
         style={{
-          backgroundColor: "white",
+          backgroundColor: "none",
           backdropFilter: "blur(2px)",
           zIndex: 1000,
         }}
@@ -32,7 +32,7 @@ function NavBarSecondPage({ Title, ...props }) {
               }}
             ></img>
           </Navbar.Brand>
-          <Navbar.Brand position="middle-center" href="/">
+          <Navbar.Brand>
             {" "}
             <img
               alt=""
