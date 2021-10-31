@@ -38,7 +38,7 @@ const Fold = () => {
               className="text-center"
               style={{
                 padding: 18,
-                fontSize: 28,
+                fontSize: 22,
                 color: "#333",
                 y: 0,
               }}

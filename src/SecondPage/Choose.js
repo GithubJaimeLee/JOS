@@ -43,7 +43,7 @@ const Choose = () => {
               style={{
                 padding: 18,
                 color: "#333",
-                fontSize: 28,
+                fontSize: 22,
                 y: 0,
               }}
               transition={{ type: "spring", velocity: 120 }}
