@@ -1,6 +1,8 @@
 import React from "react";
 import NavBarPage from "../Component/NavBarPage";
 import Example from "../Other/Example";
+import NavBarSecondPage from "../Component/NavBarSecondPage";
+
 const Test = () => {
   const Info = (
     <p>
@@ -10,7 +12,8 @@ const Test = () => {
   );
   return (
     <div className="All">
-      <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
+      <NavBarSecondPage Title="测试" />
+
       <div
         className="ScreenCenter"
         style={{
