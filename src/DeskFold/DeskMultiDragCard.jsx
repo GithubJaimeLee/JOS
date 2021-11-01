@@ -1,3 +1,4 @@
+//文件主要描述css
 import React, { forwardRef } from "react";
 import photos from "./DeskMultiDrag.json";
 //宽度
@@ -19,7 +20,6 @@ export const Photo = forwardRef(
     const inlineStyles = {
       opacity: faded ? "0.2" : "1",
       transformOrigin: "0 0",
-      //  height: index === 0 ? 410 : 200,
       gridRowStart: `span ${rowSpan[url] || 1}`,
       gridColumnStart: `span ${colSpan[url] || 1}`,
       boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",

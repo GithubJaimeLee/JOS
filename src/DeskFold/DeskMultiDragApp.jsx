@@ -29,6 +29,7 @@ const DeskMultiDragApp = () => {
       layoutMeasuring={layoutMeasuring}
       collisionDetection={closestCorners}
       onDragStart={handleDragStart}
+      // onClick={handleDragStart}
       // 下面两项是重点
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
