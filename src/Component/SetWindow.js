@@ -75,7 +75,7 @@ const UPBoxAnimation = {
     zIndex: 1,
   },
   UPanimationTwo: {
-    y: 10,
+    y: 0,
     zIndex: 1,
   },
 };
@@ -114,7 +114,7 @@ const AppWindowVariants = {
     y: 56,
     top: -56,
     scale: 1.02,
-    //  backgroundSize: "100vw 100vh",
+    backgroundSize: "375px 100vh",
   },
 };
 
