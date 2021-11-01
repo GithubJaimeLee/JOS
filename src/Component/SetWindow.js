@@ -75,7 +75,7 @@ const UPBoxAnimation = {
     zIndex: 1,
   },
   UPanimationTwo: {
-    y: 40,
+    y: 10,
     zIndex: 1,
   },
 };
@@ -194,7 +194,7 @@ export default function SetWindow() {
           overflow: "hidden",
           display: "flex",
           top: 0,
-
+          position: "relative",
           justifyContent: "center",
         }}
       >
