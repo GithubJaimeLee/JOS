@@ -164,9 +164,7 @@ const DeskOpen = () => {
         style={{
           top: 0,
           display: "flex",
-
           position: "absolute",
-
           justifyContent: "center",
         }}
       >

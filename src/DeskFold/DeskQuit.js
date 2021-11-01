@@ -164,7 +164,7 @@ const DeskQuit = () => {
         style={{
           top: 0,
           display: "flex",
-          height: "100%",
+          position: "absolute",
           justifyContent: "center",
         }}
       >
