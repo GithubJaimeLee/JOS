@@ -124,5 +124,4 @@ const DDirection = () => {
   );
 };
 
-//</div> )};
 export default DDirection;
