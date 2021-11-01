@@ -10,12 +10,6 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  /*     const options = [
-            {
-              context: '标题',
-              scroll: false,
-              backdrop: true,
-            }]; */
   return (
     <div>
       <Navbar
