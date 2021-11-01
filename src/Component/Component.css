@@ -44,3 +44,16 @@ input.in {
   padding: 6px;
   border: 1px solid;
 }
+
+@media screen and (max-width: 992px) {
+  #basic-nav-dropdown {
+    padding: 4px !important;
+  }
+  .HomeRightBox {
+    display: none !important;
+    position: absolute !important;
+  }
+  #HomePageScreen {
+    display: block !important;
+  }
+}

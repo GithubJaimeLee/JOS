@@ -91,7 +91,12 @@ function App() {
             ></img>
           </Link>
           <NavBar />
-          <motion.div>
+          <div
+            id="HomePageScreen"
+            style={{
+              display: "flex",
+            }}
+          >
             {/*             <motion.h1 className="text-center" style={{
               padding: 18
             }}
@@ -109,11 +114,13 @@ function App() {
               transition={{ type: "spring", velocity: 120 }}
             >OOS动效平台
             </motion.h1> */}
+
             <div
-              className="Grid"
+              className="Grid col-lg-5"
               style={{
                 display: "flex",
                 justifyContent: "center",
+                position: "relative",
                 marginTop: 14,
               }}
             >
@@ -344,6 +351,25 @@ function App() {
               </div>
             </div>
             <div
+              className="HomeRightBox col-lg-7"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
+                top: 20,
+                right: 20,
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 30,
+                }}
+              >
+                Vivo风格的多终端 动效 组件库
+              </p>
+            </div>
+            <div
               className="Mbg"
               style={{
                 //backgroundImage: `url(${background})`,
@@ -357,7 +383,7 @@ function App() {
                 zIndex: "-2",
               }}
             ></div>
-          </motion.div>
+          </div>
         </Route>
         <Route path="/List">
           <List />
