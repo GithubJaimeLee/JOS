@@ -1,6 +1,6 @@
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import App from "../DeskFold/DeskMoveApp.jsx";
+import DeskMultiDragApp from "../DeskFold/DeskMultiDragApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
 
 const DeskMultiDrag = () => {
@@ -21,7 +21,7 @@ const DeskMultiDrag = () => {
           justifyContent: "center",
         }}
       >
-        <App />
+        <DeskMultiDragApp />
       </div>
 
       <div
