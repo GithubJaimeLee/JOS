@@ -5,6 +5,7 @@ import NoteAndroid from "../Img/NoteAndroid.png";
 import NoteBg from "../Img/NoteBg.png";
 import Background from "../Img/NoteAndroidDesk.png";
 import "../Component/Component.css";
+import Close from "../Icon/Close.png";
 
 const SetIconBgStyle = {
   backgroundImage: `url(${NoteBg})`,
@@ -24,9 +25,9 @@ const SetWindowStyle = {
   position: "relative",
   top: 400,
   width: 350,
-  height: 280,
+  height: 300,
   borderRadius: 12,
-  display: "flex",
+  display: "grid",
   justifyContent: "center",
   alignContent: "center",
   backgroundColor: "#FFFFFF",
@@ -74,7 +75,7 @@ const UPBoxAnimation = {
     zIndex: 1,
   },
   UPanimationTwo: {
-    y: 60,
+    y: 40,
     zIndex: 1,
   },
 };
@@ -105,13 +106,15 @@ const AppWindowVariants = {
   },
   animationTwo: {
     backgroundImage: `url(${NoteAndroid})`,
-    width: "100vw",
-    height: "100vh",
+    /*   width: "100vw",
+    height: "100vh", */
+    width: 375,
+    height: 812,
     x: 0,
     y: 56,
     top: -56,
-    scale: 1.01,
-    backgroundSize: "100vw 100vh",
+    scale: 1.02,
+    //  backgroundSize: "100vw 100vh",
   },
 };
 
@@ -183,25 +186,57 @@ export default function SetWindow() {
   return (
     <div>
       <div
-        className="All"
+        className="SetWindowAll"
         style={{
           zindex: 10,
-          height: 812 - 56,
+          height: "100vh",
           width: "100vw",
           overflow: "hidden",
           display: "flex",
+          top: 0,
+
           justifyContent: "center",
         }}
       >
-        <div>
-          <motion.div
-            className="SetWindow"
-            style={SetWindowStyle}
-            variants={UPBoxAnimation}
-            animate={SetWindowAnimation}
-          >
-            <div className="SetText">
-              {/*               <div className="DefaultSet"
+        <div
+          className="SetBtn"
+          onClick={() => UPcycleAnimation()}
+          style={SetBtnStyle}
+        ></div>
+
+        <div
+          className="Mask"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            width: 375,
+            height: 812,
+            overflow: "hidden",
+            position: "absolute",
+          }}
+        >
+          <div className="JumpWindow">
+            <motion.div
+              className="SetWindow"
+              style={SetWindowStyle}
+              variants={UPBoxAnimation}
+              animate={SetWindowAnimation}
+            >
+              <motion.img
+                className="CloseBtn"
+                onClick={() => UPcycleAnimation()}
+                src={Close}
+                alt=""
+                style={{
+                  width: 20,
+                  height: 20,
+                  right: 20,
+                  top: 20,
+                  position: "absolute",
+                }}
+              />
+              <div className="SetText">
+                {/*               <div className="DefaultSet"
                 style={{
                   width: 220,
                   height: 'auto',
@@ -230,121 +265,116 @@ export default function SetWindow() {
               /> 
               </div>*/}
 
-              <div
-                className="DefaultSet"
-                style={{
-                  width: 220,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 20,
-                }}
-              >
-                <h6>Damping 阻尼系数设置</h6>
-                <p
+                <div
+                  className="DefaultSet"
                   style={{
-                    color: "#666",
-                    marginBottom: 6,
+                    width: 220,
+                    height: "auto",
+                    fontSize: 14,
+                    marginTop: 20,
                   }}
                 >
-                  (默认值为20，如果设置为0，弹力将无限振荡)
-                </p>
-                <input
-                  className="in"
-                  type="text"
-                  value={Damping}
-                  onChange={HandleDampingChange}
-                  style={{
-                    margin: 0,
-                    height: 30,
-                    width: 220,
-                    borderRadius: 6,
-                  }}
-                />
-              </div>
+                  <h6>Damping 阻尼系数设置</h6>
+                  <p
+                    style={{
+                      color: "#666",
+                      marginBottom: 6,
+                    }}
+                  >
+                    (默认值为20，如果设置为0，弹力将无限振荡)
+                  </p>
+                  <input
+                    className="in"
+                    type="text"
+                    value={Damping}
+                    onChange={HandleDampingChange}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 220,
+                      borderRadius: 6,
+                    }}
+                  />
+                </div>
 
-              <div
-                className="DefaultSet"
-                style={{
-                  width: 220,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 20,
-                }}
-              >
-                <h6>Stiffness 刚度设置</h6>
-                <p
+                <div
+                  className="DefaultSet"
                   style={{
-                    color: "#666",
-                    marginBottom: 6,
+                    width: 220,
+                    height: "auto",
+                    fontSize: 14,
+                    marginTop: 20,
                   }}
                 >
-                  (默认值为100，更高的值将使运动更突然)
-                </p>
-                <input
-                  className="in"
-                  type="text"
-                  value={Stiffness}
-                  onChange={HandleStiffnessChange}
-                  style={{
-                    margin: 0,
-                    height: 30,
-                    width: 220,
-                    borderRadius: 6,
-                  }}
-                />
+                  <h6>Stiffness 刚度设置</h6>
+                  <p
+                    style={{
+                      color: "#666",
+                      marginBottom: 6,
+                    }}
+                  >
+                    (默认值为100，更高的值将使运动更突然)
+                  </p>
+                  <input
+                    className="in"
+                    type="text"
+                    value={Stiffness}
+                    onChange={HandleStiffnessChange}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 220,
+                      borderRadius: 6,
+                    }}
+                  />
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </div>
+            </motion.div>
+          </div>
 
-        <div
-          className="SetBtn"
-          onClick={() => UPcycleAnimation()}
-          style={SetBtnStyle}
-        ></div>
-
-        <motion.div
-          className="AppWindow"
-          //   value={Speed}
-          whileTap={{ scale: 0.8 }}
-          //   onChange={HandleSpeedChange}
-          style={AppWindowStyle}
-          // style={{y, scale}}
-          variants={AppWindowVariants}
-          animate={AppWindowAnimation}
-          transition={style}
-          // drag={DragBox}
-          // dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-          //  dragElastic={1}
-          //onClick={() => cycleAnimation() & cycleDrag() & CycleNoteBgAnimation() & CycleImgBgAnimation()}
-          onClick={() =>
-            cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation()
-          }
-        >
           <motion.div
-            variants={NoteBgVariants}
-            animate={NoteBgAnimation}
+            className="AppWindow"
+            //   value={Speed}
+            whileTap={{ scale: 0.8 }}
+            //   onChange={HandleSpeedChange}
+            style={AppWindowStyle}
+            // style={{y, scale}}
+            variants={AppWindowVariants}
+            animate={AppWindowAnimation}
             transition={style}
-            style={SetIconBgStyle}
+            // drag={DragBox}
+            // dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+            //  dragElastic={1}
+            //onClick={() => cycleAnimation() & cycleDrag() & CycleNoteBgAnimation() & CycleImgBgAnimation()}
+            onClick={() =>
+              cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation()
+            }
+          >
+            <motion.div
+              variants={NoteBgVariants}
+              animate={NoteBgAnimation}
+              transition={style}
+              style={SetIconBgStyle}
+            />
+          </motion.div>
+          <motion.div
+            className="BgImg"
+            // whileTap={{ scale: 0.8}}
+            variants={ImgBgVariants}
+            animate={ImgBgAnimation}
+            transition={{ duration: 0.5 }}
+            //  transition={{type:'spring', duration: 20 }}
+            style={{
+              backgroundImage: `url(${Background})`,
+              width: 375,
+              height: 812,
+              top: 0,
+              opacity: 1,
+              zIndex: "-1",
+              position: "absolute",
+            }}
           />
-        </motion.div>
-        <motion.div
-          className="BgImg"
-          // whileTap={{ scale: 0.8}}
-          variants={ImgBgVariants}
-          animate={ImgBgAnimation}
-          transition={{ duration: 0.5 }}
-          //  transition={{type:'spring', duration: 20 }}
-          style={{
-            backgroundImage: `url(${Background})`,
-            width: 375,
-            height: 812,
-            top: 0,
-            opacity: 1,
-            zIndex: "-1",
-            position: "absolute",
-          }}
-        />
+        </div>
       </div>
     </div>
   );
