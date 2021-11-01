@@ -125,7 +125,7 @@ export default function SetWindow() {
       width: 375,
       height: 812,
       scale: 1.02,
-      backgroundSize: "375px 812px",
+      backgroundSize: "375px 100vh",
       y: 0,
     },
     animationTwo: {
