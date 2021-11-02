@@ -7,12 +7,7 @@ const now = 60;
 //const progressInstance = <ProgressBar now={now} label={`${now}%`} />;
 
 const AlertPercent = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>进度指示器</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

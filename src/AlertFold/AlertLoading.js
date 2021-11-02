@@ -2,12 +2,7 @@ import React from "react";
 import Loading from "../Img/Loading.gif";
 import NavBarPage from "../Component/NavBarPage";
 const AlertLoading = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>Loading</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

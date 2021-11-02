@@ -2,12 +2,7 @@ import React from "react";
 import { ProgressBar } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
 const now = 60;
-const Info = (
-  <p>
-    Hello,
-    <br /> world!
-  </p>
-);
+const Info = <p>滑动条</p>;
 const ChooseSlider = () => {
   return (
     <div className="All">

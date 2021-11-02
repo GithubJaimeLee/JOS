@@ -1,12 +1,7 @@
 import React from "react";
 import NavBarPage from "../Component/NavBarPage";
 const ChooseDate = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>日期滑动选择器</p>;
 
   const ClockItemStyle = {
     margin: 10,

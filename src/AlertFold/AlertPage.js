@@ -6,12 +6,7 @@ import Bg from "../Img/bg.png";
 import Bg2 from "../Img/bg2.png";
 
 const AlertPage = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>页码指示</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

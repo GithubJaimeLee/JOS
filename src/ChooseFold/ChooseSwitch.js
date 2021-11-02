@@ -2,12 +2,7 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
 const ChooseSwitch = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>加载类开关</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

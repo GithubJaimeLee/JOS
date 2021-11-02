@@ -2,12 +2,7 @@ import React from "react";
 import { InputGroup } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
 const ChooseMultipleChoice = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>复选框</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

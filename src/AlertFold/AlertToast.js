@@ -43,12 +43,7 @@ const ContactBodyStyle = {
 };
 
 const AlertToast = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>Toast</p>;
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"

@@ -46,12 +46,7 @@ const ContactBodyStyle = {
 };
 
 const AlertNew = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>新事件标记</p>;
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
