@@ -36,7 +36,7 @@ const ChooseSlider = () => {
         <div
           className="bg"
           style={{
-            backgroundColor: "#aaa",
+            backgroundColor: "#eee",
             width: 375,
             height: 812,
             position: "absolute",

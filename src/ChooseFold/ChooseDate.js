@@ -7,6 +7,18 @@ const ChooseDate = () => {
       <br /> world!
     </p>
   );
+
+  const ClockItemStyle = {
+    margin: 10,
+    backgroundColor: "grey",
+    width: 50,
+    height: 60,
+    position: "relative",
+    opacity: 1,
+    top: 100,
+    zIndex: 10,
+    textAlign: "center",
+  };
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -16,10 +28,48 @@ const ChooseDate = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
+
           position: "absolute",
           top: 0,
         }}
       >
+        <div
+          className="ClockAll"
+          style={{
+            display: "flex",
+          }}
+        >
+          <div
+            style={{
+              display: "gird",
+            }}
+          >
+            <div className="" style={ClockItemStyle}>
+              01
+            </div>
+            <div className="" style={ClockItemStyle}>
+              02
+            </div>
+            <div className="" style={ClockItemStyle}>
+              03
+            </div>
+          </div>
+          <div
+            style={{
+              display: "gird",
+            }}
+          >
+            <div className="" style={ClockItemStyle}>
+              01
+            </div>
+            <div className="" style={ClockItemStyle}>
+              02
+            </div>
+            <div className="" style={ClockItemStyle}>
+              03
+            </div>
+          </div>
+        </div>
         <div
           className="bg"
           style={{
