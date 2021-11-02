@@ -5,17 +5,12 @@ import MusicHead from "../Img/MusicHead.png";
 //import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
 import MusicFooter from "../Img/MusicFooter.png";
 //import MusicHeaderTap from "../Img/MusicHeaderTap.png";
-import MyTab from "../Component/Tab";
+import { ListTab } from "../Component/TabBar";
 import "../css/App.css";
 import "../Component/Component.css";
 
 const ListTap = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>子页签(Tap)</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -26,7 +21,6 @@ const ListTap = () => {
           display: "flex",
           justifyContent: "center",
           position: "absolute",
-          top: 0,
         }}
       >
         <motion.div
@@ -44,7 +38,12 @@ const ListTap = () => {
             zIndex: 2,
           }}
         ></motion.div>
-
+        <ListTab
+          style={{
+            position: "absolute",
+            top: 300,
+          }}
+        />
         <motion.div
           className="MusicHeaderTap"
           style={{
@@ -57,31 +56,6 @@ const ListTap = () => {
           }}
         >
           {" "}
-          <MyTab
-            className="MyTab"
-            style={{
-              width: "100%",
-              height: 70,
-              zindex: "1000",
-              position: "absolute",
-            }}
-          />
-          <ul>
-            <li>
-              <a class="active" href="#home">
-                主页
-              </a>
-            </li>
-            <li>
-              <a href="#news">新闻</a>
-            </li>
-            <li>
-              <a href="#contact">联系</a>
-            </li>
-            <li>
-              <a href="#about">关于</a>
-            </li>
-          </ul>
           {/*         <div
         style={{
         width:66,
