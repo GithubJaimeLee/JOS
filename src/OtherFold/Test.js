@@ -27,6 +27,8 @@ const Test = () => {
         <div
           className="bg"
           style={{
+            //重要旋转
+            transform: "rotateX(0deg)",
             backgroundColor: "#eee",
             width: 375,
             height: 812,

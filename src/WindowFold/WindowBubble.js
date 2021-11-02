@@ -12,7 +12,7 @@ const ContactBtnStyle = {
   bottom: 6,
   width: 60,
   height: 60,
-  backgroundColor: "red",
+  backgroundColor: "grey",
   borderRadius: 20,
   textAlign: "center",
   zIndex: 1,
@@ -23,7 +23,7 @@ const ContactBubbleStyle = {
   height: 60,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  background: "#415fff",
+  background: "grey",
   borderRadius: 12,
   position: "absolute",
   right: 200,
@@ -60,7 +60,7 @@ const ContactBodyStyle = {
 };
 const ContactFooterStyle = {
   backgroundImage: `url(${ContactFooter})`,
-  position: "fixed",
+  position: "absolute",
   bottom: 0,
   width: 375,
   height: 65,
@@ -89,28 +89,36 @@ const WindowBubble = () => {
           display: "flex",
           justifyContent: "center",
           height: 812,
-          overflow: "scroll",
           position: "absolute",
           top: 0,
         }}
       >
-        <div className="ContactHeader" style={ContactHeaderStyle} />
-        <div className="ContactBody" style={ContactBodyStyle} />
-        <AnimatePresence>
-          <div className="ContactFooter" style={ContactFooterStyle}>
-            <motion.div
-              className="boxChange"
-              style={ContactBubbleStyle}
-              variants={BoxAnimation}
-              animate={animationBox}
-            />
-            <div
-              className="ContactBtn"
-              onClick={() => cycleAnimation()}
-              style={ContactBtnStyle}
-            />
-          </div>
-        </AnimatePresence>
+        <div
+          className="Mask"
+          style={{
+            height: 812,
+            width: 375,
+            position: "absolute",
+            overflow: "scroll",
+          }}
+        >
+          <div className="ContactHeader" style={ContactHeaderStyle} />
+          <div className="ContactBody" style={ContactBodyStyle} />
+        </div>
+        <div className="ContactFooter" style={ContactFooterStyle}>
+          <motion.div
+            className="boxChange"
+            style={ContactBubbleStyle}
+            variants={BoxAnimation}
+            animate={animationBox}
+          />
+
+          <div
+            className="ContactBtn"
+            onClick={() => cycleAnimation()}
+            style={ContactBtnStyle}
+          />
+        </div>
       </div>
     </div>
   );

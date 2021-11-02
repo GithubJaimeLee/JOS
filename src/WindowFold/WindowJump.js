@@ -66,7 +66,7 @@ const ContactBodyStyle = {
 };
 const ContactFooterStyle = {
   backgroundImage: `url(${ContactFooter})`,
-  position: "fixed",
+  position: "absolute",
   bottom: 0,
   width: 375,
   height: 65,
@@ -92,15 +92,23 @@ const WindowJump = () => {
         style={{
           width: "100%",
           height: 812,
-          overflow: "scroll",
+
           position: "absolute",
           display: "flex",
           justifyContent: "center",
           top: 0,
         }}
       >
-        <div className="ContactHeader" style={ContactHeaderStyle}>
-          <AnimatePresence>
+        <div
+          className="Mask"
+          style={{
+            height: 812,
+            width: 375,
+            position: "absolute",
+            overflow: "scroll",
+          }}
+        >
+          <div className="ContactHeader" style={ContactHeaderStyle}>
             <div
               className="boxPress"
               onClick={() => cycleAnimation()}
@@ -114,10 +122,10 @@ const WindowJump = () => {
                 transition={{ type: "tween" }}
               />
             </div>
-          </AnimatePresence>
+          </div>
+          <div className="ContactBody" style={ContactBodyStyle} />
         </div>
-        <div className="ContactBody" style={ContactBodyStyle} />
-        <div className="ContactFooter" style={ContactFooterStyle}></div>
+        <div className="ContactFooter" style={ContactFooterStyle} />
       </div>
     </div>
   );
