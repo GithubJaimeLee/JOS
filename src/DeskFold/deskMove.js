@@ -4,12 +4,7 @@ import DeskMoveApp from "./DeskMoveApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
 
 const DApp = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>图标移动自动补位</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

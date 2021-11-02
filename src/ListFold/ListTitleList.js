@@ -18,7 +18,7 @@ const ClickStyle = {
   marginBottom: 50,
 };
 
-const ScrollTitleList = () => {
+const ListTitleList = () => {
   const Info = (
     <p>
       Hello,
@@ -143,4 +143,4 @@ const ScrollTitleList = () => {
   );
 };
 
-export default ScrollTitleList;
+export default ListTitleList;

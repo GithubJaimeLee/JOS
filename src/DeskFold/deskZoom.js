@@ -38,12 +38,7 @@ const cssRow = {
 };
 
 const DZoom = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>图标移动自动补位</p>;
   return (
     <div>
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

@@ -11,7 +11,7 @@ import SetBody from "../Img/SetBody.png";
 import NavBarPage from "../Component/NavBarPage";
 import "../css/App.css";
 
-const ScrollTitle = () => {
+const ListJump = () => {
   const ref = useRef();
   const { scrollYProgress } = useElementScroll(ref);
   const y = useMotionValue(0);
@@ -117,4 +117,4 @@ const ScrollTitle = () => {
   );
 };
 
-export default ScrollTitle;
+export default ListJump;

@@ -9,7 +9,7 @@ import MyTab from "../Component/Tab";
 import "../css/App.css";
 import "../Component/Component.css";
 
-const ScrollTap = () => {
+const ListTap = () => {
   const Info = (
     <p>
       Hello,
@@ -188,4 +188,4 @@ const ScrollTap = () => {
   );
 };
 
-export default ScrollTap;
+export default ListTap;

@@ -126,12 +126,7 @@ const DChange = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(true);
   const toggleClose = () => setIsOpen(false);
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>图标移动自动补位</p>;
 
   return (
     <div>

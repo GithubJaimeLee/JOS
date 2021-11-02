@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import background from "../Img/bg2.png";
 import Bback from "../Icon/back.png";
-import Scroll from "../ListFold/Scroll";
-import ScrollJump from "../ListFold/ScrollJump";
-import ScrollTitle from "../ListFold/ScrollTitle";
-import ScrollTap from "../ListFold/ScrollTap";
-import ScrollTitleList from "../ListFold/ScrollTitleList";
+import ListPosition from "../ListFold/ListPosition";
+import ListJump from "../ListFold/ListJump";
+import ListTitle from "../ListFold/ListTitle";
+import ListTap from "../ListFold/ListTap";
+import ListTitleList from "../ListFold/ListTitleList";
 import React from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -73,30 +73,33 @@ const List = () => {
               }}
             >
               <div className="Row1">
-                <Link to="/List/ScrollJump" style={{ textDecoration: "none" }}>
+                <Link to="/List/ListJump" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>列表滑动及回弹</p>
                   </motion.div>
                 </Link>
-                <Link to="/List/Scroll" style={{ textDecoration: "none" }}>
+                <Link
+                  to="/List/ListPosition"
+                  style={{ textDecoration: "none" }}
+                >
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>横滑定位</p>
                   </motion.div>
                 </Link>
-                <Link to="/List/ScrollTitle" style={{ textDecoration: "none" }}>
+                <Link to="/List/ListTitle" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>标题栏</p>
                   </motion.div>
                 </Link>
               </div>
               <div className="Row2">
-                <Link to="/List/ScrollTap" style={{ textDecoration: "none" }}>
+                <Link to="/List/ListTap" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>子页签(Tap)</p>{" "}
                   </motion.div>
                 </Link>
                 <Link
-                  to="/List/ScrollTitleList"
+                  to="/List/ListTitleList"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
@@ -120,20 +123,20 @@ const List = () => {
             ></div>
           </div>
         </Route>
-        <Route path="/List/ScrollJump">
-          <ScrollJump />
+        <Route path="/List/ListJump">
+          <ListJump />
         </Route>
-        <Route path="/List/Scroll">
-          <Scroll />
+        <Route path="/List/ListPosition">
+          <ListPosition />
         </Route>
-        <Route path="/List/ScrollTitle">
-          <ScrollTitle />
+        <Route path="/List/ListTitle">
+          <ListTitle />
         </Route>
-        <Route path="/List/ScrollTap">
-          <ScrollTap />
+        <Route path="/List/ListTap">
+          <ListTap />
         </Route>
-        <Route path="/List/ScrollTitleList">
-          <ScrollTitleList />
+        <Route path="/List/ListTitleList">
+          <ListTitleList />
         </Route>
         <Route path="/">
           <App />

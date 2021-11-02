@@ -5,7 +5,7 @@ import background from "../Img/DeskOOS.png";
 import NavBarPage from "../Component/NavBarPage";
 import "../css/App.css";
 
-const Scroll = () => {
+const ListPosition = () => {
   // const constraintsRef = useRef(null);
   const Info = (
     <p>
@@ -95,4 +95,4 @@ const Scroll = () => {
   );
 };
 
-export default Scroll;
+export default ListPosition;
