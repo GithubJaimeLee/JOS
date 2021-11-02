@@ -19,7 +19,7 @@ const ListBtn = () => {
         width: 375,
         height: 90,
         opacity: 0.3,
-        backgroundColor: "red",
+        backgroundColor: "grey",
         left: 0,
         zIndex: 1,
         position: "relative",

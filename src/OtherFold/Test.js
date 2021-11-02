@@ -12,7 +12,7 @@ const Test = () => {
   return (
     <div className="All">
       <NavBarSecondPage Title="测试" />
-      <ListTab />
+
       <div
         className="ScreenCenter"
         style={{
