@@ -4,7 +4,7 @@ import Bback from "../Icon/back.png";
 import ListPosition from "../ListFold/ListPosition";
 import ListJump from "../ListFold/ListJump";
 import ListTitle from "../ListFold/ListTitle";
-import ListTap from "../ListFold/ListTap";
+import { ListTab } from "../ListFold/ListTab";
 import ListTitleList from "../ListFold/ListTitleList";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -93,7 +93,7 @@ const List = () => {
                 </Link>
               </div>
               <div className="Row2">
-                <Link to="/List/ListTap" style={{ textDecoration: "none" }}>
+                <Link to="/List/ListTab" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>子页签(Tap)</p>{" "}
                   </motion.div>
@@ -132,8 +132,8 @@ const List = () => {
         <Route path="/List/ListTitle">
           <ListTitle />
         </Route>
-        <Route path="/List/ListTap">
-          <ListTap />
+        <Route path="/List/ListTab">
+          <ListTab />
         </Route>
         <Route path="/List/ListTitleList">
           <ListTitleList />
