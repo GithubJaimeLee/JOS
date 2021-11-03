@@ -2,6 +2,8 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
+import WindowBg from "../Img/WindowBg.png";
+import WindowVoiceWin from "../Img/WindowVoiceWin.png";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -9,18 +11,20 @@ const ContactBtnStyle = {
   bottom: -500,
   width: 60,
   height: 60,
+
   backgroundColor: "#aaa",
   borderRadius: 20,
   textAlign: "center",
   zIndex: 1,
-  opacity: 0.5,
+  opacity: 1,
 };
 const ContactBubbleStyle = {
-  width: 60,
-  height: 300,
+  width: 56,
+  height: 306,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  background: "#666",
+  backgroundImage: `url(${WindowVoiceWin})`,
+  //background: "#666",
   borderRadius: 12,
   position: "absolute",
   x: 100,
@@ -37,7 +41,8 @@ const BoxAnimation = {
 };
 
 const ContactBodyStyle = {
-  backgroundColor: "#EEEEEE",
+  backgroundImage: `url(${WindowBg})`,
+  //backgroundColor: "#EEEEEE",
   position: "absolute",
   width: 375,
   height: 812,

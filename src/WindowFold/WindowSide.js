@@ -2,6 +2,7 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+//import WindowBg from "../Img/WindowBg.png";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -33,6 +34,7 @@ const SideStyle = {
   height: 812,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
+  // backgroundImage: `url(${WindowBg})`,
   background: "#eee",
   position: "absolute",
   bottom: 100,
