@@ -107,7 +107,7 @@ const Window = () => {
                   to="/Window/WindowAlert"
                   style={{ textDecoration: "none" }}
                 >
-                  <motion.div whileHover={cardHover} style={cardInactive}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>悬浮通知</p>
                   </motion.div>
                 </Link>
@@ -123,7 +123,7 @@ const Window = () => {
                   to="/Window/WindowSide"
                   style={{ textDecoration: "none" }}
                 >
-                  <motion.div whileHover={cardHover} style={cardInactive}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>侧边菜单</p>
                   </motion.div>
                 </Link>

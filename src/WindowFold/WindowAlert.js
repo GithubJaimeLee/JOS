@@ -2,26 +2,30 @@ import { motion, useCycle, AnimatePresence } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
-
+import WindowBg from "../Img/WindowBg.png";
+import WindowAlertWin from "../Img/WindowAlertWin.png";
+import OneFingerClick from "../Img/OneFingerClick.png";
 const ContactBtnStyle = {
   position: "relative",
-  bottom: -750,
-  width: 60,
+  bottom: -700,
+  width: 32,
   height: 60,
-  backgroundColor: "#aaa",
+  backgroundImage: `url(${OneFingerClick})`,
+  //backgroundColor: "#aaa",
   borderRadius: 20,
   textAlign: "center",
   zIndex: 1,
-  opacity: 0.5,
   display: "flex",
   justifyContent: "center",
 };
 const ContactBubbleStyle = {
-  width: 300,
-  height: 80,
+  width: 340,
+  height: 102,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-  opacity: 1,
-  background: "#666",
+  //opacity: 1,
+  backgroundImage: `url(${WindowAlertWin})`,
+  border: "1px solid #ccc",
+  // background: "#666",
   borderRadius: 12,
   position: "absolute",
   y: -720,
@@ -33,12 +37,13 @@ const BoxAnimation = {
     y: -720,
   },
   animationTwo: {
-    y: -560,
+    y: -488,
   },
 };
 
 const ContactBodyStyle = {
-  backgroundColor: "#EEEEEE",
+  backgroundImage: `url(${WindowBg})`,
+  //backgroundColor: "#EEEEEE",
   position: "absolute",
   width: 375,
   height: 812,
