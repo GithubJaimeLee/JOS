@@ -115,7 +115,7 @@ const Window = () => {
                   to="/Window/WindowInput"
                   style={{ textDecoration: "none" }}
                 >
-                  <motion.div whileHover={cardHover} style={cardInactive}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>输入式弹窗</p>
                   </motion.div>{" "}
                 </Link>
