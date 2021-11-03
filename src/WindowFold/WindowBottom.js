@@ -79,12 +79,7 @@ const WindowBottom = () => {
     "animationOne",
     "animationTwo"
   );
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>底部弹窗</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
