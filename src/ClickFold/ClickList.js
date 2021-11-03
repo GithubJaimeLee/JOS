@@ -9,25 +9,8 @@ import {
 import SetHeader from "../Img/WSetHeader.png";
 import SetBody from "../Img/SetBody.png";
 import NavBarPage from "../Component/NavBarPage";
+import OneFingerClick from "../Img/OneFingerClick.png";
 import "../css/App.css";
-
-const ListBtn = () => {
-  return (
-    <motion.div
-      whileTap={{ scaleY: 0.8 }}
-      style={{
-        width: 375,
-        height: 90,
-        opacity: 0.3,
-        backgroundColor: "grey",
-        left: 0,
-        zIndex: 1,
-        position: "relative",
-        marginBottom: 2,
-      }}
-    />
-  );
-};
 
 const ClickList = () => {
   const ref = useRef();
@@ -71,7 +54,6 @@ const ClickList = () => {
               style={{
                 backgroundImage: `url(${SetHeader})`,
                 top: 0,
-
                 width: 375,
                 height: 148,
                 position: "fixed",
@@ -114,23 +96,333 @@ const ClickList = () => {
                 zIndex: 0,
               }}
             >
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
-              <ListBtn />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 70,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 30,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 70,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 30 + 70,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 100,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 30 + 70 * 2,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 60,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 130 + 70 * 2,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 60,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 130 + 70 * 2 + 60,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 60,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 270 + 60 * 2,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 60,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 270 + 60 * 3,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 65,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 270 + 60 * 4,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 60 * 4,
+                }}
+              />
+
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 60 * 4 + 55,
+                }}
+              />
+
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 60 * 4 + 55 * 2,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 240 + 55 * 3,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 70,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 240 + 55 * 4 + 10,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 240 + 55 * 4 + 80,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 240 + 55 * 5 + 80,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 240 + 55 * 6 + 80,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 240 + 55 * 7 + 80,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 240 + 55 * 8 + 80,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 240 + 55 * 9 + 80,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 65,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 575 + 55 * 10 + 90,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 335 + 55 * 10 + 395,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 575 + 55 * 11 + 155,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 575 + 55 * 12 + 155,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 575 + 55 * 12 + 225,
+                }}
+              />
+              <motion.div
+                whileTap={{ opacity: 0.5 }}
+                style={{
+                  width: 375,
+                  height: 55,
+                  opacity: 0,
+                  backgroundColor: "grey",
+                  left: 0,
+                  zIndex: 1,
+                  position: "absolute",
+                  marginTop: 575 + 55 * 13 + 225,
+                }}
+              />
             </motion.div>
             <div
               className="Background"
@@ -140,13 +432,24 @@ const ClickList = () => {
                 height: 812,
                 position: "absolute",
                 top: 0,
-
                 opacity: 1,
                 zIndex: -1,
               }}
             />
           </div>
         </div>
+        <div
+          className="OneFingerClick"
+          style={{
+            width: 32,
+            height: 60,
+            backgroundImage: `url(${OneFingerClick})`,
+            position: "absolute",
+            top: 300,
+            left: 260,
+            zIndex: 11,
+          }}
+        />
       </div>
     </div>
   );

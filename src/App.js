@@ -187,15 +187,15 @@ function App() {
                   </motion.div>
                 </Link>
                 <Link to="/Choose" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardInactive}>
-                    <p style={{ paddingTop: 40 }}>选择类0%</p>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>选择类5%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.0,
+                          width: 140 * 0.05,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,
@@ -207,15 +207,15 @@ function App() {
                   </motion.div>
                 </Link>
                 <Link to="/Edit" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardInactive}>
-                    <p style={{ paddingTop: 40 }}>编辑类0%</p>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>编辑类5%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.0,
+                          width: 140 * 0.05,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,
@@ -270,14 +270,14 @@ function App() {
                 </Link>
                 <Link to="/Click" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>点击反馈45%</p>
+                    <p style={{ paddingTop: 40 }}>点击反馈100%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.45,
+                          width: 140 * 1,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,
@@ -289,15 +289,15 @@ function App() {
                   </motion.div>
                 </Link>
                 <Link to="/Alert" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardInactive}>
-                    <p style={{ paddingTop: 40 }}>提示类0%</p>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>提示类5%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.0,
+                          width: 140 * 0.05,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,
