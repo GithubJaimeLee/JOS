@@ -64,12 +64,7 @@ const WindowPull = () => {
       right: 0,
     },
   };
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>下拉弹窗</p>;
 
   return (
     <div className="All">
