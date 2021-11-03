@@ -59,12 +59,7 @@ const WindowVoice = () => {
     "animationOne",
     "animationTwo"
   );
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>侧边音量</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
