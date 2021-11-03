@@ -4,23 +4,26 @@ import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import WindowBg from "../Img/WindowBg.png";
 import WindowVoiceWin from "../Img/WindowVoiceWin.png";
+import OneFingerClick from "../Img/OneFingerClick.png";
 
 const ContactBtnStyle = {
   position: "relative",
-  left: 300,
-  bottom: -500,
-  width: 60,
+  left: 310,
+  bottom: -480,
+  width: 32,
   height: 60,
-
-  backgroundColor: "#aaa",
+  backgroundImage: `url(${OneFingerClick})`,
+  // backgroundColor: "#aaa",
   borderRadius: 20,
-  textAlign: "center",
+  justifyContent: "center",
+  display: "flex",
   zIndex: 1,
   opacity: 1,
 };
 const ContactBubbleStyle = {
   width: 56,
   height: 306,
+
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
   backgroundImage: `url(${WindowVoiceWin})`,
@@ -28,6 +31,7 @@ const ContactBubbleStyle = {
   borderRadius: 12,
   position: "absolute",
   x: 100,
+  y: 20,
   bottom: 100,
   zIndex: 20,
 };
