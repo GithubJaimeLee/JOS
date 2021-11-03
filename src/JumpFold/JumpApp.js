@@ -2,68 +2,69 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+
 const ContactBtnStyle = {
   position: "relative",
-
   bottom: -750,
   width: 60,
   height: 60,
-  backgroundColor: "#000",
+  backgroundColor: "#666",
   borderRadius: 20,
   textAlign: "center",
-  zIndex: 100,
-  opacity: 0.5,
+  zIndex: 21,
   display: "flex",
   justifyContent: "center",
 };
-const ContactBubbleStyle = {
+const MaskStyle = {
+  position: "absolute",
+  bottom: 0,
   width: 375,
+  height: 812,
+  backgroundColor: "#999",
+  textAlign: "center",
+  zIndex: 1,
+  opacity: 0,
+  display: "flex",
+  justifyContent: "center",
+  y: 0,
+};
+const SideStyle = {
+  width: 260,
   height: 812,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  background: "#fff",
-  borderRadius: 12,
-  position: "absolute",
-  bottom: -300,
-  zIndex: 20,
-  y: 400,
-};
-const KeyboardStyle = {
-  width: 375,
-  height: 300,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-  opacity: 1,
-  background: "#aaa",
+  background: "#eee",
   position: "absolute",
   bottom: 100,
   zIndex: 20,
-  y: 400,
+  y: 101,
+  x: 320,
 };
 const BoxAnimation = {
   animationOne: {
-    y: 400,
+    x: 320,
   },
   animationTwo: {
-    y: -300,
+    x: 60,
   },
 };
-const KeyBoardAnimation = {
-  KAnimationOne: {
-    y: 400,
+const BgAnimation = {
+  BgAnimationOne: {
+    opacity: 0,
   },
-  KAnimationTwo: {
-    y: 100,
+  BgAnimationTwo: {
+    opacity: 0.5,
   },
 };
 
 const ContactBodyStyle = {
-  backgroundColor: "#EEEEEE",
+  backgroundColor: "#ddd",
   position: "absolute",
-  display: "flex",
-  justifyContent: "center",
   width: 375,
   height: 812,
   zIndex: 1,
+  display: "flex",
+  justifyContent: "center",
   overflow: "hidden",
 };
 
@@ -72,9 +73,9 @@ const JumpApp = () => {
     "animationOne",
     "animationTwo"
   );
-  const [animationKeyBoard, KcycleAnimation] = useCycle(
-    "KAnimationOne",
-    "KAnimationTwo"
+  const [animationBg, BgCycleAnimation] = useCycle(
+    "BgAnimationOne",
+    "BgAnimationTwo"
   );
   const Info = (
     <p>
@@ -85,6 +86,7 @@ const JumpApp = () => {
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
+
       <div
         className="ScreenCenter"
         style={{
@@ -99,20 +101,22 @@ const JumpApp = () => {
         <div className="ContactBody" style={ContactBodyStyle}>
           <div
             className="ContactBtn"
-            onClick={() => cycleAnimation() & KcycleAnimation()}
+            onClick={() => cycleAnimation() & BgCycleAnimation()}
             style={ContactBtnStyle}
-          ></div>
+          />
+
           <motion.div
             className="boxChange"
-            style={ContactBubbleStyle}
+            style={SideStyle}
             variants={BoxAnimation}
             animate={animationBox}
+            transition={{ type: "tween" }}
           />
           <motion.div
-            className="KeyBoard"
-            style={KeyboardStyle}
-            variants={KeyBoardAnimation}
-            animate={animationKeyBoard}
+            className="MaskChange"
+            style={MaskStyle}
+            variants={BgAnimation}
+            animate={animationBg}
           />
         </div>
       </div>

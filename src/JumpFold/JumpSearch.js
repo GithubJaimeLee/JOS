@@ -1,24 +1,80 @@
+import { motion, useCycle } from "framer-motion";
 import * as React from "react";
-import { useRef } from "react";
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useElementScroll,
-} from "framer-motion";
-import SetHeader from "../Img/WSetHeader.png";
-import SetBody from "../Img/SetBody.png";
+import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
-import "../css/App.css";
+const ContactBtnStyle = {
+  position: "relative",
+
+  bottom: -750,
+  width: 60,
+  height: 60,
+  backgroundColor: "#000",
+  borderRadius: 20,
+  textAlign: "center",
+  zIndex: 100,
+  opacity: 0.5,
+  display: "flex",
+  justifyContent: "center",
+};
+const ContactBubbleStyle = {
+  width: 375,
+  height: 812,
+  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+  opacity: 1,
+  background: "#fff",
+  borderRadius: 12,
+  position: "absolute",
+  bottom: -420,
+  zIndex: 20,
+  y: 400,
+};
+const KeyboardStyle = {
+  width: 375,
+  height: 300,
+  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+  opacity: 1,
+  background: "#aaa",
+  position: "absolute",
+  bottom: 100,
+  zIndex: 20,
+  y: 400,
+};
+const BoxAnimation = {
+  animationOne: {
+    y: 520,
+  },
+  animationTwo: {
+    y: -300,
+  },
+};
+const KeyBoardAnimation = {
+  KAnimationOne: {
+    y: 400,
+  },
+  KAnimationTwo: {
+    y: 100,
+  },
+};
+
+const ContactBodyStyle = {
+  backgroundColor: "#EEEEEE",
+  position: "absolute",
+  display: "flex",
+  justifyContent: "center",
+  width: 375,
+  height: 812,
+  zIndex: 1,
+  overflow: "hidden",
+};
 
 const JumpSearch = () => {
-  const ref = useRef();
-  const { scrollYProgress } = useElementScroll(ref);
-  const y = useMotionValue(0);
-  const scale = useTransform(
-    scrollYProgress,
-    [0, 0.3, 1],
-    ["26px", "14px", "14px"]
+  const [animationBox, cycleAnimation] = useCycle(
+    "animationOne",
+    "animationTwo"
+  );
+  const [animationKeyBoard, KcycleAnimation] = useCycle(
+    "KAnimationOne",
+    "KAnimationTwo"
   );
   const Info = (
     <p>
@@ -35,82 +91,29 @@ const JumpSearch = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          height: 812,
           position: "absolute",
           top: 0,
         }}
       >
-        <div
-          className="allImportant"
-          ref={ref}
-          style={{
-            height: 812,
-            overflow: "scroll",
-          }}
-        >
-          <div className="GridCenter">
-            <div
-              className="HeadCard"
-              style={{
-                backgroundImage: `url(${SetHeader})`,
-                top: 0,
-
-                width: 375,
-                height: 148,
-                position: "fixed",
-                opacity: 1,
-                zIndex: 1,
-              }}
-            >
-              <motion.p
-                className="SetP"
-                style={{
-                  fontSize: scale,
-                  position: "relative",
-                  top: 52,
-                  left: 20,
-                  margin: 0,
-                  fontWeight: "bold",
-                  zIndex: 10,
-                }}
-              >
-                {" "}
-                设置
-              </motion.p>
-            </div>
-
-            <motion.div
-              className="MoveBackground"
-              drag="y"
-              //   draggable="false"
-              dragConstraints={{ top: -960, bottom: 0 }}
-              dragElastic={1}
-              dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
-              style={{
-                y,
-                backgroundImage: `url(${SetBody})`,
-                top: 148,
-                width: 375,
-                height: 1590,
-                position: "relative",
-                opacity: 1,
-                zIndex: 0,
-              }}
-            />
-
-            <div
-              className="Background"
-              style={{
-                backgroundColor: "#f7f7f7",
-                width: 375,
-                height: 812,
-                position: "absolute",
-                top: 0,
-
-                opacity: 1,
-                zIndex: -1,
-              }}
-            />
-          </div>
+        <div className="ContactBody" style={ContactBodyStyle}>
+          <div
+            className="ContactBtn"
+            onClick={() => cycleAnimation() & KcycleAnimation()}
+            style={ContactBtnStyle}
+          ></div>
+          <motion.div
+            className="boxChange"
+            style={ContactBubbleStyle}
+            variants={BoxAnimation}
+            animate={animationBox}
+          />
+          <motion.div
+            className="KeyBoard"
+            style={KeyboardStyle}
+            variants={KeyBoardAnimation}
+            animate={animationKeyBoard}
+          />
         </div>
       </div>
     </div>
