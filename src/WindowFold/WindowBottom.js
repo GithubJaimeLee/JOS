@@ -4,14 +4,15 @@ import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import WindowBottomBg from "../Img/WindowBottomBg.png";
 import WindowBottomWin from "../Img/WindowBottomWin.png";
+import OneFingerClick from "../Img/OneFingerClick.png";
 
 const ContactBtnStyle = {
   position: "relative",
-  bottom: -750,
-  width: 60,
+  bottom: -700,
+  width: 32,
   height: 60,
-
-  backgroundColor: "#666",
+  backgroundImage: `url(${OneFingerClick})`,
+  // backgroundColor: "#666",
   borderRadius: 20,
   textAlign: "center",
   zIndex: 1,
