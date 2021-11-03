@@ -5,26 +5,23 @@ import ContactHeader from "../Img/ContactHeader.png";
 import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";
 import ContactSetBar from "../Img/ContactSetBar.png";
+import A from "../Img/A.png";
+import F from "../Img/F.png";
+import L from "../Img/L.png";
 import "../css/App.css";
 
 const ClickStyle = {
   width: 375,
   height: 50,
-  backgroundColor: "#C7000B",
+  backgroundColor: "#ddd",
   opacity: 0.5,
   position: "sticky",
   top: 159,
   left: 0,
   marginBottom: 50,
 };
-
 const ListTitleList = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>子标题交替悬停</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -74,7 +71,7 @@ const ListTitleList = () => {
               position: "absolute",
               bottom: 0,
               opacity: 1,
-              zIndex: 100000,
+              zIndex: 1000,
             }}
           />
           <div
@@ -117,12 +114,87 @@ const ListTitleList = () => {
                 zIndex: 0,
               }}
             >
-              <div className="MaskA" style={ClickStyle} />
-              <div className="MaskF" style={ClickStyle} />
-              <div className="MaskL" style={ClickStyle} />
-              <div className="MaskW" style={ClickStyle} />
-              <div className="MaskX" style={ClickStyle} />
-              <div className="MaskZ" style={ClickStyle} />
+              <div
+                className="MaskA"
+                style={{
+                  backgroundImage: `url(${A})`,
+                  width: 375,
+                  height: 50,
+                  backgroundColor: "#ddd",
+                  opacity: 1,
+                  position: "sticky",
+                  top: 159,
+                  left: 0,
+                  marginTop: 55,
+                }}
+              />
+              <div
+                className="MaskF"
+                style={{
+                  backgroundImage: `url(${F})`,
+                  width: 375,
+                  height: 50,
+                  backgroundColor: "#ddd",
+                  opacity: 1,
+                  position: "sticky",
+                  top: 159,
+                  left: 0,
+                  marginTop: 260,
+                }}
+              />
+              <div
+                className="MaskL"
+                style={{
+                  backgroundImage: `url(${L})`,
+                  width: 375,
+                  height: 50,
+                  backgroundColor: "#ddd",
+                  opacity: 1,
+                  position: "sticky",
+                  top: 159,
+                  left: 0,
+                  marginTop: 45,
+                }}
+              />
+              <div
+                className="MaskW"
+                style={{
+                  width: 375,
+                  height: 50,
+                  backgroundColor: "#ddd",
+                  opacity: 0,
+                  position: "sticky",
+                  top: 159,
+                  left: 0,
+                  marginTop: 95,
+                }}
+              />
+              <div
+                className="MaskX"
+                style={{
+                  width: 375,
+                  height: 50,
+                  backgroundColor: "#ddd",
+                  opacity: 0,
+                  position: "sticky",
+                  top: 159,
+                  left: 0,
+                  marginTop: 95,
+                }}
+              />
+              <div
+                className="MaskZ"
+                style={{
+                  width: 375,
+                  height: 50,
+                  backgroundColor: "#ddd",
+                  opacity: 0,
+                  position: "sticky",
+                  top: 159,
+                  left: 0,
+                  marginTop: 215,
+                }}
+              />
             </motion.div>
             <div
               className="Background"

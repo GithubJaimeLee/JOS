@@ -75,7 +75,11 @@ const List = () => {
               <div className="Row1">
                 <Link to="/List/ListJump" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>列表滑动及回弹</p>
+                    <p style={{ paddingTop: 28 }}>
+                      列表滑动及回弹
+                      <br />
+                      标题栏滑动缩放
+                    </p>
                   </motion.div>
                 </Link>
                 <Link
@@ -86,11 +90,11 @@ const List = () => {
                     <p style={{ paddingTop: 40 }}>横滑定位</p>
                   </motion.div>
                 </Link>
-                <Link to="/List/ListTitle" style={{ textDecoration: "none" }}>
+                {/*     <Link to="/List/ListTitle" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>标题栏</p>
                   </motion.div>
-                </Link>
+                </Link> */}
               </div>
               <div className="Row2">
                 <Link to="/List/ListTab" style={{ textDecoration: "none" }}>
