@@ -7,9 +7,9 @@ import "../Component/Component.css";
 import React, { useRef, useState, useLayoutEffect, useCallback } from "react";
 import styled from "styled-components";
 import { Pager, useMeasure } from "../Component/TabBar";
-import bg from "../Img/MusicBodyRecommed.png";
-import bg2 from "../Img/MusicBodyRecommed.png";
-import bg3 from "../Img/MusicBodyRecommed.png";
+import bg from "../Img/MusicBodyRecommend.png";
+import bg2 from "../Img/MusicBodyRecommend.png";
+import bg3 from "../Img/MusicBodyRecommend.png";
 
 export function useCallbackRef() {
   const [ref, setRef] = useState(null);

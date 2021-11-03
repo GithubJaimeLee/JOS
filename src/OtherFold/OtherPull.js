@@ -1,7 +1,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import MusicHead from "../Img/MusicHead.png";
-import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
+import MusicBodyRecommend from "../Img/MusicBodyRecommend.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
 import Arrow from "../Icon/Arrow.png";
@@ -68,13 +68,13 @@ const DeskPull = () => {
             }}
           ></div>
           <motion.div
-            className="MusicBodyRecommed"
+            className="MusicBodyRecommend"
             drag="y"
             dragConstraints={{ top: -578, bottom: 0 }}
             dragElastic={1}
             dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
             style={{
-              backgroundImage: `url(${MusicBodyRecommed})`,
+              backgroundImage: `url(${MusicBodyRecommend})`,
               backgroundColor: "#ddd",
               top: 130,
               width: 375,

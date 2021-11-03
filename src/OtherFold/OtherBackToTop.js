@@ -1,7 +1,7 @@
 import * as React from "react";
 import { motion, useCycle } from "framer-motion";
 import MusicHead from "../Img/MusicHead.png";
-import MusicBodyRecommed from "../Img/MusicBodyRecommed.png";
+import MusicBodyRecommend from "../Img/MusicBodyRecommend.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
 import NavBarPage from "../Component/NavBarPage";
@@ -87,7 +87,7 @@ const OtherBackToTop = () => {
             dragElastic={1}
             dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
             style={{
-              backgroundImage: `url(${MusicBodyRecommed})`,
+              backgroundImage: `url(${MusicBodyRecommend})`,
               backgroundColor: "#ddd",
               top: 130,
               width: 375,
