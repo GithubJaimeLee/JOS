@@ -2,12 +2,15 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
+import WindowBottomBg from "../Img/WindowBottomBg.png";
+import WindowBottomWin from "../Img/WindowBottomWin.png";
 
 const ContactBtnStyle = {
   position: "relative",
   bottom: -750,
   width: 60,
   height: 60,
+
   backgroundColor: "#666",
   borderRadius: 20,
   textAlign: "center",
@@ -16,35 +19,61 @@ const ContactBtnStyle = {
   justifyContent: "center",
 };
 const ContactBubbleStyle = {
-  width: 300,
-  height: 300,
+  width: 340,
+  height: 275,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  background: "#aaa",
-  borderRadius: 12,
+  backgroundImage: `url(${WindowBottomWin})`,
+  // background: "#aaa",
+  borderRadius: 20,
   position: "absolute",
-
   bottom: 100,
   zIndex: 20,
 };
 const BoxAnimation = {
   animationOne: {
-    y: 0,
+    y: 400,
   },
   animationTwo: {
-    y: -200,
+    y: -100,
   },
 };
 
 const ContactBodyStyle = {
+  backgroundImage: `url(${WindowBottomBg})`,
   backgroundColor: "#EEEEEE",
   position: "absolute",
   width: 375,
   height: 812,
-  zIndex: 1,
+  zIndex: 0,
 };
 
+const MaskStyle = {
+  position: "absolute",
+  bottom: 0,
+  width: 375,
+  height: 812,
+  backgroundColor: "#999",
+  textAlign: "center",
+  zIndex: 1,
+  opacity: 0,
+  display: "flex",
+  justifyContent: "center",
+  y: 0,
+};
+const BgAnimation = {
+  BgAnimationOne: {
+    opacity: 0,
+  },
+  BgAnimationTwo: {
+    opacity: 0.5,
+  },
+};
 const WindowBottom = () => {
+  const [animationBg, BgCycleAnimation] = useCycle(
+    "BgAnimationOne",
+    "BgAnimationTwo"
+  );
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
@@ -65,17 +94,24 @@ const WindowBottom = () => {
           display: "flex",
           justifyContent: "center",
           height: 812,
+          overflow: "hidden",
           position: "absolute",
           top: 0,
         }}
       >
+        <motion.div
+          className="MaskChange"
+          style={MaskStyle}
+          variants={BgAnimation}
+          animate={animationBg}
+        />
         <div className="ContactBody" style={ContactBodyStyle} />
 
         <div
           className="ContactBtn"
-          onClick={() => cycleAnimation()}
+          onClick={() => cycleAnimation() & BgCycleAnimation()}
           style={ContactBtnStyle}
-        ></div>
+        />
         <motion.div
           className="boxChange"
           style={ContactBubbleStyle}
