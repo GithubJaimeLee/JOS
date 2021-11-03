@@ -2,14 +2,18 @@ import { motion, useCycle, AnimatePresence } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+import AlertNewBg from "../Img/AlertNewBg.png";
+import OneFingerClick from "../Img/OneFingerClick.png";
 
 const ContactBtnStyle = {
   position: "relative",
 
-  bottom: -450,
-  width: 60,
-  height: 60,
-  backgroundColor: "#666",
+  bottom: -308,
+  left: 38,
+  width: 78,
+  height: 78,
+  //backgroundColor: "#666",
+
   borderRadius: 20,
   textAlign: "center",
   zIndex: 1,
@@ -38,7 +42,8 @@ const BoxAnimation = {
 };
 
 const ContactBodyStyle = {
-  backgroundColor: "#EEEEEE",
+  backgroundImage: `url(${AlertNewBg})`,
+  //backgroundColor: "#EEEEEE",
   position: "absolute",
   width: 375,
   height: 812,
@@ -72,6 +77,17 @@ const AlertNew = () => {
             onClick={() => cycleAnimation()}
             style={ContactBtnStyle}
           >
+            <div
+              className="FingerClick"
+              style={{
+                backgroundImage: `url(${OneFingerClick})`,
+                position: "relative",
+                top: 36,
+                width: 32,
+                height: 60,
+                backgroundRepeat: "no-repeat",
+              }}
+            />
             <motion.div
               className="boxChange"
               style={ContactBubbleStyle}
