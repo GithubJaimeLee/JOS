@@ -91,7 +91,7 @@ const Window = () => {
                   to="/Window/WindowBottom"
                   style={{ textDecoration: "none" }}
                 >
-                  <motion.div whileHover={cardHover} style={cardInactive}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>底部弹窗</p>
                   </motion.div>
                 </Link>
@@ -133,7 +133,7 @@ const Window = () => {
                   to="/Window/WindowVoice"
                   style={{ textDecoration: "none" }}
                 >
-                  <motion.div whileHover={cardHover} style={cardInactive}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>侧边音量</p>{" "}
                   </motion.div>{" "}
                 </Link>
@@ -157,7 +157,7 @@ const Window = () => {
                   to="/Window/WindowCenter"
                   style={{ textDecoration: "none" }}
                 >
-                  <motion.div whileHover={cardHover} style={cardInactive}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>中心弹窗</p>
                   </motion.div>
                 </Link>

@@ -2,15 +2,19 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
-//import WindowBg from "../Img/WindowBg.png";
+import WindowSideBg from "../Img/WindowSideBg.png";
+import OneFingerClick from "../Img/OneFingerClick.png";
+import WindowSideSide from "../Img/WindowSideSide.png";
 
 const ContactBtnStyle = {
   position: "relative",
-  bottom: -750,
-  width: 60,
+  bottom: -50,
+  left: -160,
+  width: 32,
   height: 60,
-  backgroundColor: "#666",
-  borderRadius: 20,
+  backgroundImage: `url(${OneFingerClick})`,
+  // backgroundColor: "#666",
+
   textAlign: "center",
   zIndex: 21,
   display: "flex",
@@ -21,7 +25,7 @@ const MaskStyle = {
   bottom: 0,
   width: 375,
   height: 812,
-  backgroundColor: "#999",
+  backgroundColor: "#000",
   textAlign: "center",
   zIndex: 1,
   opacity: 0,
@@ -30,12 +34,12 @@ const MaskStyle = {
   y: 0,
 };
 const SideStyle = {
-  width: 260,
+  width: 286,
   height: 812,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  // backgroundImage: `url(${WindowBg})`,
-  background: "#eee",
+  backgroundImage: `url(${WindowSideSide})`,
+  //background: "#eee",
   position: "absolute",
   bottom: 100,
   zIndex: 20,
@@ -47,7 +51,7 @@ const BoxAnimation = {
     x: -320,
   },
   animationTwo: {
-    x: -60,
+    x: -50,
   },
 };
 const BgAnimation = {
@@ -60,7 +64,8 @@ const BgAnimation = {
 };
 
 const ContactBodyStyle = {
-  backgroundColor: "#ddd",
+  backgroundImage: `url(${WindowSideBg})`,
+  //backgroundColor: "#ddd",
   position: "absolute",
   width: 375,
   height: 812,

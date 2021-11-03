@@ -14,7 +14,7 @@ const ContactBtnStyle = {
   height: 60,
   backgroundImage: `url(${OneFingerClick})`,
   // backgroundColor: "#aaa",
-  borderRadius: 20,
+
   justifyContent: "center",
   display: "flex",
   zIndex: 1,

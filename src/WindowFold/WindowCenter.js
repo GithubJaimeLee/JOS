@@ -2,15 +2,16 @@ import { motion, useCycle, AnimatePresence } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
-
+import WindowCenterBg from "../Img/WindowCenterBg.png";
+import OneFingerClick from "../Img/OneFingerClick.png";
 const ContactBtnStyle = {
   position: "relative",
-
+  backgroundImage: `url(${OneFingerClick})`,
   bottom: -750,
-  width: 60,
+  width: 32,
   height: 60,
-  backgroundColor: "#666",
-  borderRadius: 20,
+  // backgroundColor: "#666",
+
   textAlign: "center",
   zIndex: 2,
   display: "flex",
@@ -21,7 +22,7 @@ const BgStyle = {
   bottom: 0,
   width: 375,
   height: 812,
-  backgroundColor: "#999",
+  backgroundColor: "#000",
   textAlign: "center",
   zIndex: 1,
   opacity: 0,
@@ -59,7 +60,8 @@ const BgAnimation = {
 };
 
 const ContactBodyStyle = {
-  backgroundColor: "#EEEEEE",
+  backgroundImage: `url(${WindowCenterBg})`,
+  // backgroundColor: "#EEEEEE",
   position: "absolute",
   width: 375,
   height: 812,
