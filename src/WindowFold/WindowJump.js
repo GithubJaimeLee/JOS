@@ -6,6 +6,7 @@ import ContactFooter from "../Img/ContactFooter.png";
 import ContactHeader from "../Img/ContactHeader.png";
 import ContactWindow from "../Img/ContactWindow.png";
 import NavBarPage from "../Component/NavBarPage";
+import OneFingerClick from "../Img/OneFingerClick.png";
 
 const ContactWindowStyle = {
   width: 0,
@@ -17,7 +18,6 @@ const ContactWindowStyle = {
   position: "absolute",
   right: 0,
   top: 40,
-  zIndex: 200,
 };
 const boxPress = {
   position: "relative",
@@ -28,7 +28,7 @@ const boxPress = {
   height: 50,
   borderRadius: 20,
   textAlign: "center",
-  zIndex: 2,
+  zIndex: 10,
   //backgroundColor: "blue",
 };
 
@@ -53,7 +53,7 @@ const ContactHeaderStyle = {
   width: 375,
   height: 159,
   position: "fixed",
-  zIndex: 2,
+  zIndex: 1,
   top: 0,
 };
 const ContactBodyStyle = {
@@ -62,7 +62,7 @@ const ContactBodyStyle = {
   top: 159,
   width: 375,
   height: 1169,
-  zIndex: 1,
+  zIndex: 0,
 };
 const ContactFooterStyle = {
   backgroundImage: `url(${ContactFooter})`,
@@ -109,6 +109,19 @@ const WindowJump = () => {
           }}
         >
           <div className="ContactHeader" style={ContactHeaderStyle}>
+            <div
+              className="FingerClick"
+              style={{
+                backgroundImage: `url(${OneFingerClick})`,
+                position: "absolute",
+                top: 90,
+                left: 326,
+                width: 32,
+                height: 60,
+                backgroundRepeat: "no-repeat",
+                zIndex: 2,
+              }}
+            />
             <div
               className="boxPress"
               onClick={() => cycleAnimation()}
