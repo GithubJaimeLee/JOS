@@ -173,6 +173,11 @@ export default function SetWindow() {
   return (
     <div>
       <div
+        className="SetBtn"
+        onClick={() => UPcycleAnimation()}
+        style={SetBtnStyle}
+      />
+      <div
         className="SetWindowAll"
         style={{
           zIndex: 10,
@@ -185,11 +190,6 @@ export default function SetWindow() {
           justifyContent: "center",
         }}
       >
-        <div
-          className="SetBtn"
-          onClick={() => UPcycleAnimation()}
-          style={SetBtnStyle}
-        />
         <div
           className="Mask"
           style={{

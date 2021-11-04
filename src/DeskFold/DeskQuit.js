@@ -1,7 +1,7 @@
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
-import SetWindow from "../Component/SetWindowQuit";
+import SetWindowQuit from "../Component/SetWindowQuit";
 
 const DeskQuit = () => {
   const CodeColor = { color: "#62A66E" };
@@ -169,7 +169,7 @@ const DeskQuit = () => {
         }}
       >
         <div>
-          <SetWindow />
+          <SetWindowQuit />
         </div>
         <div
           className="bg"
