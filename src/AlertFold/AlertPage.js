@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "../Component/Component.css";
 import NavBarPage from "../Component/NavBarPage";
-import Bg from "../Img/bg.png";
-import Bg2 from "../Img/bg2.png";
-
+import AlertPageBgOne from "../Img/AlertPageBgOne.png";
+import AlertPageBgTwo from "../Img/AlertPageBgTwo.png";
+import AlertPageBg from "../Img/AlertPageBg.png";
+import { motion } from "framer-motion";
 const AlertPage = () => {
+  const VarLeft = ["375", "-375"];
+
+  const [Left, setLeft] = useState(VarLeft[0]);
+
   const Info = <p>页码指示</p>;
   return (
     <div className="All">
@@ -17,65 +22,83 @@ const AlertPage = () => {
           justifyContent: "center",
         }}
       >
-        <Carousel
-          style={{
-            height: 600,
-            width: 375,
-            zIndex: "10",
-            position: "absolute",
-            top: 0,
-          }}
-          variant="dark"
-        >
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={Bg}
-              alt="First slide"
-              style={{
-                height: 500,
-                width: 375,
-                zIndex: "10",
-              }}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={Bg2}
-              alt="Second slide"
-              style={{
-                height: 500,
-                width: 375,
-                zIndex: "10",
-              }}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={Bg}
-              alt="Third slide"
-              style={{
-                height: 500,
-                width: 375,
-                zIndex: "10",
-              }}
-            />
-          </Carousel.Item>
-        </Carousel>
         <div
-          className="bg"
+          className="Mask"
           style={{
             backgroundColor: "#eee",
             width: 375,
             height: 812,
             position: "absolute",
             top: 0,
+            display: "flex",
             opacity: 1,
-            zIndex: "2",
+            zIndex: 2,
+            // overflow: "hidden",
           }}
-        ></div>
+        >
+          <div
+            onClick={() => setLeft()}
+            className="PointSetLeft"
+            style={{
+              width: 10,
+              height: 10,
+              backgroundColor: "#FFFFFF",
+              position: "absolute",
+              zIndex: 2,
+              top: 685,
+              left: 190,
+            }}
+          />
+          <div
+            className="PointSetRight"
+            style={{
+              width: 10,
+              height: 10,
+              backgroundColor: "#FFFFFF",
+              position: "absolute",
+              zIndex: 1,
+              top: 685,
+              left: 210,
+            }}
+          />
+
+          <motion.div
+            //  animate={{ x: VarLeft }} 给两个一样的usecycle
+            className="Icons"
+            style={{
+              display: "flex",
+              x: 0,
+            }}
+          >
+            <img
+              src={AlertPageBgOne}
+              alt="First"
+              style={{
+                height: 812,
+                width: 375,
+                zIndex: "10",
+              }}
+            />
+            <img
+              src={AlertPageBgTwo}
+              alt="Second"
+              style={{
+                height: 812,
+                width: 375,
+                zIndex: "10",
+              }}
+            />{" "}
+          </motion.div>
+          <div
+            style={{
+              backgroundImage: `url(${AlertPageBg})`,
+              position: "absolute",
+              width: 375,
+              height: 812,
+              zIndex: 0,
+            }}
+          />
+        </div>
       </div>
     </div>
   );
