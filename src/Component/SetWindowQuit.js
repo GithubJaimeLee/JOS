@@ -6,6 +6,9 @@ import NoteBg from "../Img/NoteBg.png";
 import Background from "../Img/NoteAndroidDesk.png";
 import "../Component/Component.css";
 import Close from "../Icon/Close.png";
+import DeskBackBg from "../Img/DeskBackBg.png";
+import DeskFrontBg from "../Img/DeskFrontBg.png";
+
 /* const AppWindowStyle = {
   width: '100vw',
   height:'100vh',
@@ -65,7 +68,7 @@ const UPBoxStyle = {
   alignContent: "center",
   backgroundColor: "#FFFFFF",
   boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.2)",
-  zindex: 1,
+  zIndex: 1,
   y: 500,
 };
 
@@ -114,6 +117,10 @@ export default function SetWindow() {
     "ImgBgAnimationOne",
     "ImgBgAnimationTwo"
   );
+  const [BackBgAnimation, CycleBackBgAnimation] = useCycle(
+    "BackBgAnimationOne",
+    "BackBgAnimationTwo"
+  );
   //const [DragBox, cycleDrag] = useCycle('y', false);
   const [DragBox, cycleDrag] = useCycle(true, false);
   const [Stiffness, setStiffness] = useState("100");
@@ -127,13 +134,12 @@ export default function SetWindow() {
       scale: 1.02,
       backgroundSize: "375px 812px",
       //   backgroundSize: "375px 100vh",
-      y: 0,
     },
     animationTwo: {
-      x: 82,
-      y: 72,
-      width: 152,
-      height: 152,
+      x: 195,
+      y: 62,
+      width: 148,
+      height: 148,
       backgroundImage: null,
     },
   };
@@ -157,16 +163,24 @@ export default function SetWindow() {
 
   const ImgBgVariants = {
     ImgBgAnimationOne: {
-      scale: 1.05,
+      scale: 0.9,
+      filter: "blur(4px)",
     },
     ImgBgAnimationTwo: {
       scale: 1,
     },
   };
+  const BackBgVariants = {
+    BackBgAnimationOne: {
+      filter: "blur(4px)",
+    },
+    BackBgAnimationTwo: {},
+  };
   const FourToOne = () => {
     cycleAnimation();
     CycleNoteBgAnimation();
     CycleImgBgAnimation();
+    CycleBackBgAnimation();
     cycleDrag();
   };
 
@@ -191,9 +205,9 @@ export default function SetWindow() {
         }}
       >
         <div
-          className="Mask"
+          className="DeskQuitMask"
           style={{
-            display: "flex",
+            display: "grid",
             justifyContent: "center",
             width: 375,
             height: 812,
@@ -319,6 +333,7 @@ export default function SetWindow() {
               cycleAnimation() &
               CycleNoteBgAnimation() &
               CycleImgBgAnimation() &
+              CycleBackBgAnimation() &
               cycleDrag()
             }
             //  onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation() &cycleDrag()}
@@ -352,17 +367,33 @@ export default function SetWindow() {
             transition={{ duration: 0.5 }}
             //  transition={{type:'spring', duration: 20 }}
             style={{
-              backgroundImage: `url(${Background})`,
+              backgroundImage: `url(${DeskFrontBg})`,
+              width: 375,
+              height: 738,
+              top: 60,
+              opacity: 1,
+              zIndex: -1,
+              scale: 1,
+              position: "absolute",
+            }}
+          />
+          <motion.div
+            className="BgBack"
+            // whileTap={{ scale: 0.8}}
+            variants={BackBgVariants}
+            animate={BackBgAnimation}
+            transition={{ duration: 0.5 }}
+            style={{
+              backgroundImage: `url(${DeskBackBg})`,
               width: 375,
               height: 812,
               top: 0,
               opacity: 1,
-              zIndex: "-1",
+              zIndex: -2,
               scale: 1.05,
               position: "absolute",
             }}
           />
-          {/*      </div> */}
         </div>
       </div>
     </div>
