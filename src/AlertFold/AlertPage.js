@@ -1,16 +1,35 @@
-import React, { useState } from "react";
-import { Carousel } from "react-bootstrap";
+import React from "react";
 import "../Component/Component.css";
 import NavBarPage from "../Component/NavBarPage";
 import AlertPageBgOne from "../Img/AlertPageBgOne.png";
 import AlertPageBgTwo from "../Img/AlertPageBgTwo.png";
 import AlertPageBg from "../Img/AlertPageBg.png";
-import { motion } from "framer-motion";
+import OneFingerClick from "../Img/OneFingerClick.png";
+import { Carousel } from "antd";
+import "antd/dist/antd.css";
+
+const OneFingerClickStyle = {
+  position: "relative",
+  left: 180,
+  bottom: 100,
+  width: 32,
+  height: 60,
+  backgroundImage: `url(${OneFingerClick})`,
+  // backgroundColor: "#aaa",
+  justifyContent: "center",
+  display: "flex",
+  zIndex: 1,
+  opacity: 1,
+};
+
 const AlertPage = () => {
-  const VarLeft = ["375", "-375"];
-
-  const [Left, setLeft] = useState(VarLeft[0]);
-
+  const contentStyle = {
+    height: "160px",
+    color: "#fff",
+    lineHeight: "160px",
+    textAlign: "center",
+    background: "#364d79",
+  };
   const Info = <p>页码指示</p>;
   return (
     <div className="All">
@@ -23,7 +42,46 @@ const AlertPage = () => {
         }}
       >
         <div
-          className="Mask"
+          className="AlertPageMask"
+          style={{
+            height: 812,
+            width: 375,
+            zIndex: 10,
+            position: "absolute",
+            top: 0,
+          }}
+        >
+          <Carousel className="AlertPage">
+            <div>
+              <img
+                src={AlertPageBgOne}
+                alt="First"
+                style={{
+                  //   backgroundColor: "#415FFF",
+                  height: 812,
+                  width: 375,
+                  zIndex: 10,
+                }}
+              />
+            </div>
+            <div>
+              <img
+                src={AlertPageBgTwo}
+                alt="Second"
+                style={{
+                  //   backgroundColor: "red",
+                  height: 812,
+                  width: 375,
+                  zIndex: 10,
+                }}
+              />
+            </div>
+          </Carousel>
+          <div className="OneFingerClickStyle" style={OneFingerClickStyle} />
+        </div>
+
+        <div
+          className="AlertPageBg"
           style={{
             backgroundColor: "#eee",
             width: 375,
@@ -32,73 +90,11 @@ const AlertPage = () => {
             top: 0,
             display: "flex",
             opacity: 1,
-            zIndex: 2,
+            zIndex: 0,
+            backgroundImage: `url(${AlertPageBg})`,
             // overflow: "hidden",
           }}
-        >
-          <div
-            onClick={() => setLeft()}
-            className="PointSetLeft"
-            style={{
-              width: 10,
-              height: 10,
-              backgroundColor: "#FFFFFF",
-              position: "absolute",
-              zIndex: 2,
-              top: 685,
-              left: 190,
-            }}
-          />
-          <div
-            className="PointSetRight"
-            style={{
-              width: 10,
-              height: 10,
-              backgroundColor: "#FFFFFF",
-              position: "absolute",
-              zIndex: 1,
-              top: 685,
-              left: 210,
-            }}
-          />
-
-          <motion.div
-            //  animate={{ x: VarLeft }} 给两个一样的usecycle
-            className="Icons"
-            style={{
-              display: "flex",
-              x: 0,
-            }}
-          >
-            <img
-              src={AlertPageBgOne}
-              alt="First"
-              style={{
-                height: 812,
-                width: 375,
-                zIndex: "10",
-              }}
-            />
-            <img
-              src={AlertPageBgTwo}
-              alt="Second"
-              style={{
-                height: 812,
-                width: 375,
-                zIndex: "10",
-              }}
-            />{" "}
-          </motion.div>
-          <div
-            style={{
-              backgroundImage: `url(${AlertPageBg})`,
-              position: "absolute",
-              width: 375,
-              height: 812,
-              zIndex: 0,
-            }}
-          />
-        </div>
+        />
       </div>
     </div>
   );

@@ -57,3 +57,17 @@ input.in {
     display: block !important;
   }
 }
+
+div.AlertPageMask .ant-carousel .slick-dots li,
+div.AlertPageMask .ant-carousel .slick-dots li button,
+div.AlertPageMask .ant-carousel .slick-dots li.slick-active {
+  width: 6px !important;
+  height: 6px !important;
+  margin: 0px !important;
+  border-radius: 3px !important;
+  margin-left: 12px !important;
+  margin-right: 3px !important;
+}
+.ant-carousel .slick-dots {
+  top: 688px;
+}
