@@ -444,9 +444,9 @@ const ClickList = () => {
             width: 32,
             height: 60,
             backgroundImage: `url(${OneFingerClick})`,
-            position: "absolute",
+            position: "relative",
             top: 300,
-            left: 260,
+            left: -338,
             zIndex: 11,
           }}
         />
