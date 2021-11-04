@@ -13,7 +13,7 @@ const ContactBtnStyle = {
   width: 78,
   height: 78,
   //backgroundColor: "#666",
-
+  color: "#fff",
   borderRadius: 20,
   textAlign: "center",
   zIndex: 1,
@@ -21,15 +21,16 @@ const ContactBtnStyle = {
   justifyContent: "center",
 };
 const ContactBubbleStyle = {
-  width: 20,
-  height: 20,
+  width: 22,
+  height: 22,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  background: "#aaa",
-  borderRadius: 12,
+  background: "#FF4924",
+  borderRadius: 11,
   position: "absolute",
+  textAlign: "center",
   right: 0,
-  bottom: 50,
+  bottom: 65,
   zIndex: 20,
 };
 const BoxAnimation = {
@@ -93,7 +94,9 @@ const AlertNew = () => {
               style={ContactBubbleStyle}
               variants={BoxAnimation}
               animate={animationBox}
-            />
+            >
+              8
+            </motion.div>
           </div>
         </AnimatePresence>
       </div>
