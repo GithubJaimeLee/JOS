@@ -418,7 +418,7 @@ function App() {
         <Route path="/Edit">
           <Edit />
         </Route>
-        <Route>
+        <Route path="*">
           <Page404 />
         </Route>
       </Switch>
