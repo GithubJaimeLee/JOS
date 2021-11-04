@@ -4,6 +4,7 @@ import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Calendar from "../Img/Calendar.png";
 import CalendarWindow from "../Img/CalendarWindow.png";
+import OneFingerClick from "../Img/OneFingerClick.png";
 //press功能
 
 //变形完整交互
@@ -82,6 +83,19 @@ const WindowPull = () => {
           top: 0,
         }}
       >
+        <div
+          className="FingerClick"
+          style={{
+            backgroundImage: `url(${OneFingerClick})`,
+            position: "relative",
+            top: 90,
+            left: 178,
+            width: 32,
+            height: 60,
+            backgroundRepeat: "no-repeat",
+            zIndex: 2,
+          }}
+        />
         <div
           className="boxPress"
           onClick={() => cycleAnimation()}
