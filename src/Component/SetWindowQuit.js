@@ -130,6 +130,7 @@ export default function SetWindow() {
     animationOne: {
       backgroundImage: `url(${NoteAndroid})`,
       width: 375,
+
       height: 812,
       scale: 1.02,
       backgroundSize: "375px 812px",
@@ -137,9 +138,11 @@ export default function SetWindow() {
     },
     animationTwo: {
       x: 195,
-      y: 62,
+      //y: 62,
+      top: 62,
       width: 148,
       height: 148,
+      scale: 1,
       backgroundImage: null,
     },
   };
@@ -323,6 +326,7 @@ export default function SetWindow() {
               y,
               scale,
             }}
+            whileTap={{ scale: 0.9 }}
             variants={AppWindowVariants}
             animate={AppWindowAnimation}
             transition={style}
