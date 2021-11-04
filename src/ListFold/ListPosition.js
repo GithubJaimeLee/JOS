@@ -3,7 +3,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import background from "../Img/DeskOOS.png";
 import NavBarPage from "../Component/NavBarPage";
-import "../css/App.css";
+import "../Component/Component.css";
 
 const ListPosition = () => {
   // const constraintsRef = useRef(null);
@@ -23,16 +23,6 @@ const ListPosition = () => {
           justifyContent: "center",
         }}
       >
-        {/*    <Link to="/List">
-        <img src={Wback} alt=" " style={{
-          width: 30,
-          position: 'relative',
-          top: 20,
-          left: 20,
-          opacity: 1,
-          zIndex: '100'
-        }} />
-      </Link> */}
         <div
           className="Scroll"
           style={{

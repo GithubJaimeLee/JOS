@@ -37,10 +37,6 @@
   }
 }
 
-div.BlurBackground {
-  filter: blur(4px);
-}
-
 /* #root{
  position: absolute;
   width: 375px!important;

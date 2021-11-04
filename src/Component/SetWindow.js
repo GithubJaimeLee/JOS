@@ -181,6 +181,7 @@ export default function SetWindow() {
     },
     ImgBgAnimationTwo: {
       scale: 1.1,
+      filter: "blur(4px)",
     },
   };
 

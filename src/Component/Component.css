@@ -71,3 +71,7 @@ div.AlertPageMask .ant-carousel .slick-dots li.slick-active {
 .ant-carousel .slick-dots {
   top: 688px;
 }
+
+div.BlurBackground {
+  filter: blur(4px);
+}
