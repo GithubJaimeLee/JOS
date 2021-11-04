@@ -123,6 +123,8 @@ export default function SetWindow() {
   );
   //const [DragBox, cycleDrag] = useCycle('y', false);
   const [DragBox, cycleDrag] = useCycle(true, false);
+  const [TapBox, cycleTap] = useCycle(false, { scale: 0.9 });
+
   const [Stiffness, setStiffness] = useState("100");
   const [Damping, setDamping] = useState("20");
 
@@ -185,6 +187,7 @@ export default function SetWindow() {
     CycleImgBgAnimation();
     CycleBackBgAnimation();
     cycleDrag();
+    cycleTap();
   };
 
   return (
@@ -308,7 +311,7 @@ export default function SetWindow() {
 
           <motion.div
             className="AppWindow"
-            //whileTap={{ scale: 0.8 }}
+            whileTap={{ scale: 0.8 }}
             style={{
               width: 375,
               height: 812,
@@ -326,7 +329,8 @@ export default function SetWindow() {
               y,
               scale,
             }}
-            whileTap={{ scale: 0.9 }}
+            whileTap={TapBox}
+            drag={DragBox}
             variants={AppWindowVariants}
             animate={AppWindowAnimation}
             transition={style}
@@ -338,7 +342,8 @@ export default function SetWindow() {
               CycleNoteBgAnimation() &
               CycleImgBgAnimation() &
               CycleBackBgAnimation() &
-              cycleDrag()
+              cycleDrag() &
+              cycleTap()
             }
             //  onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation() &cycleDrag()}
             //  onDragStart ={ }
@@ -346,6 +351,9 @@ export default function SetWindow() {
               if (info.point.y < 300) {
                 FourToOne();
               }
+              // else {
+              //     cycleAnimation("animationOne");
+              //      }
             }}
           >
             <motion.div
