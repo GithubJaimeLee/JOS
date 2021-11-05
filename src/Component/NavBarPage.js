@@ -14,6 +14,7 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
     <div>
       <Navbar
         style={{
+          width: "100vw",
           backgroundColor: "rgba(255, 255, 255, 0.2)",
           backdropFilter: "blur(2px)",
           zIndex: 1000,
