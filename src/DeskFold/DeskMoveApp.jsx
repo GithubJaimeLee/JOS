@@ -14,6 +14,7 @@ import { Grid } from "../DeskFold/DeskMoveGrid";
 import { SortablePhoto } from "../DeskFold/DeskMoveSortable";
 import { Photo } from "../DeskFold/DeskMoveCard";
 import photos from "../DeskFold/DeskMove.json";
+import { motion } from "framer-motion";
 
 const DeskMoveApp = () => {
   const [items, setItems] = useState(photos);
@@ -29,6 +30,7 @@ const DeskMoveApp = () => {
       layoutMeasuring={layoutMeasuring}
       collisionDetection={closestCorners}
       onDragStart={handleDragStart}
+      //   whileDrag={handleDragStart}
       // 下面两项是重点
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
@@ -45,17 +47,19 @@ const DeskMoveApp = () => {
       {/* 调整运动后的比例 */}
       <DragOverlay adjustScale={false}>
         {activeId ? (
-          <div
-            c
+          <motion.div
+            whileTap={{ scale: 0.8 }}
             style={{
+              //    transform: "scale(1.2, 1.2)",
               display: "grid",
               gridAutoColumns: "auto",
               gridAutoRows: "auto",
               height: "100%",
+              // transform: "scale(1.2, 1.2)",
             }}
           >
             <Photo />
-          </div>
+          </motion.div>
         ) : null}
       </DragOverlay>
     </DndContext>
@@ -63,6 +67,7 @@ const DeskMoveApp = () => {
 
   function handleDragStart(event) {
     setActiveId(event.active.id);
+    // style = {{ transform: "scale(1.8, 1.8)" }};
   }
 
   function handleDragOver(event) {
