@@ -1,6 +1,6 @@
 import React from "react";
 import NavBarPage from "../Component/NavBarPage";
-import Loading from "../Img/loading.gif";
+import Loading from "../Img/Loading.gif";
 import Bg from "../Component/Bg";
 const AlertLoading = () => {
   const Info = <p>Loading</p>;
