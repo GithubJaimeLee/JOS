@@ -59,8 +59,21 @@ const ClickList = () => {
                 position: "fixed",
                 opacity: 1,
                 zIndex: 1,
+                display: "flex",
               }}
             >
+              <div
+                className="OneFingerClick"
+                style={{
+                  width: 32,
+                  height: 60,
+                  backgroundImage: `url(${OneFingerClick})`,
+                  position: "relative",
+                  top: 300,
+                  left: 28,
+                  zIndex: 11,
+                }}
+              />
               <motion.p
                 className="SetP"
                 style={{
@@ -438,18 +451,6 @@ const ClickList = () => {
             />
           </div>
         </div>
-        <div
-          className="OneFingerClick"
-          style={{
-            width: 32,
-            height: 60,
-            backgroundImage: `url(${OneFingerClick})`,
-            position: "relative",
-            top: 300,
-            left: -338,
-            zIndex: 11,
-          }}
-        />
       </div>
     </div>
   );

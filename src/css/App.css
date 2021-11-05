@@ -50,3 +50,10 @@ div.ListCard {
     overflow-x:hidden;
     overflow-y:auto;
     } */
+
+@media screen and (max-width: 375px) {
+  .Background {
+    height: 100vh !important;
+    background-repeat: no-repeat !important;
+  }
+}

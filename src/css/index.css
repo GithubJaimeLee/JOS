@@ -16,3 +16,10 @@ code {
 .vsc-initialized {
   display: contents !important;
 }
+
+/* body {
+  height: 100vh;
+  overflow-x: hidden !important;
+  position: "absolute" !important;
+}
+ */

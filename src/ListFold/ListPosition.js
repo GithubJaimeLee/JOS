@@ -27,6 +27,8 @@ const ListPosition = () => {
           className="Scroll"
           style={{
             overflow: "hidden",
+            position: "absolute",
+            top: 0,
             width: 375,
             height: 812,
           }}
