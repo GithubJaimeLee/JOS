@@ -4,10 +4,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import WindowCenterBg from "../Img/WindowCenterBg.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
+import WindowCenterWin from "../Img/WindowCenterWin.png";
+
 const ContactBtnStyle = {
   position: "relative",
   backgroundImage: `url(${OneFingerClick})`,
-  bottom: -750,
+  bottom: -500,
   width: 32,
   height: 60,
   // backgroundColor: "#666",
@@ -30,12 +32,13 @@ const BgStyle = {
   justifyContent: "center",
 };
 const ContactBubbleStyle = {
-  width: 300,
-  height: 100,
+  width: 232,
+  height: 72,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
+  backgroundImage: `url(${WindowCenterWin})`,
   background: "#aaa",
-  borderRadius: 12,
+  borderRadius: 17,
   position: "absolute",
   bottom: 100,
   zIndex: 20,
