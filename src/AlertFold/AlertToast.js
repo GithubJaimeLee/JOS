@@ -2,6 +2,7 @@ import { motion, useCycle, AnimatePresence } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+import AlertNewBg from "../Img/AlertNewBg.png";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -20,6 +21,7 @@ const ContactBubbleStyle = {
   height: 812,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
+
   background: "#aaa",
   position: "absolute",
   bottom: 100,
@@ -35,6 +37,7 @@ const BoxAnimation = {
 };
 
 const ContactBodyStyle = {
+  backgroundImage: `url(${AlertNewBg})`,
   backgroundColor: "#EEEEEE",
   position: "absolute",
   width: 375,

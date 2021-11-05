@@ -107,14 +107,22 @@ const Desk = () => {
                     <p style={{ paddingTop: 40 }}>图标变形（方向）</p>
                   </motion.div>
                 </Link>
-                <Link to="/Desk/DeskOpen" style={{ textDecoration: "none" }}>
+                {/*        <Link to="/Desk/DeskOpen" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>打开应用</p>{" "}
                   </motion.div>
-                </Link>
+                </Link> */}
                 <Link to="/Desk/DeskQuit" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>退出应用</p>{" "}
+                    <p style={{ paddingTop: 40 }}>打开/退出应用</p>{" "}
+                  </motion.div>
+                </Link>
+                <Link
+                  to="/Desk/DeskMultiDrag"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={cardInactive}>
+                    <p style={{ paddingTop: 40 }}>多选拖动</p>
                   </motion.div>
                 </Link>
               </div>
@@ -135,14 +143,7 @@ const Desk = () => {
                     <p style={{ paddingTop: 40 }}>图标Grid</p>
                   </motion.div>
                 </Link>
-                <Link
-                  to="/Desk/DeskMultiDrag"
-                  style={{ textDecoration: "none" }}
-                >
-                  <motion.div whileHover={cardHover} style={cardInactive}>
-                    <p style={{ paddingTop: 40 }}>多选拖动</p>
-                  </motion.div>
-                </Link>
+
                 {/*            <Link to="/Desk/DeskFolder" style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={cardHover} style={cardInactive} ><p style={{ paddingTop: 40 }}>图标创建文件夹 </p></motion.div>
                 </Link> */}

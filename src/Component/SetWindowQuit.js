@@ -9,23 +9,6 @@ import Close from "../Icon/Close.png";
 import DeskBackBg from "../Img/DeskBackBg.png";
 import DeskFrontBg from "../Img/DeskFrontBg.png";
 
-/* const AppWindowStyle = {
-  width: '100vw',
-  height:'100vh',
-  x: 0,
-  top: 0,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-  color: "#415fff",
-  opacity: 1,
-  backgroundColor: '#FFFFFF',
-  borderRadius: 14,
-  position: 'absolute',
-  zIndex: 0,
-  overflow: 'hidden',
-  backgroundRepeat: 'no-repeat'
-}
- */
-
 const NoteBgStyle = {
   backgroundImage: `url(${NoteBg})`,
   width: 690,
@@ -33,27 +16,39 @@ const NoteBgStyle = {
   position: "relative",
   backgroundColor: "#FFFFFF",
   borderColor: "#FFFFFF",
-  y: -100,
-  x: -100,
-  scale: 2,
-  opacity: 0,
+  y: -355,
+  x: -300,
+  scale: 0.2,
+  opacity: 1,
   zIndex: 100,
 };
 
 const NoteBgVariants = {
-  NoteBgAnimationOne: {
+  /*  NoteBgAnimationOne: {
     y: -100,
     x: -100,
     scale: 2,
-    //opacity: [0.1, 0],
     opacity: 0,
   },
   NoteBgAnimationTwo: {
     opacity: [0.1, 0.1, 1],
-    // opacity: [0.1, 0.3, 1],
     y: -355,
     x: -300,
     scale: 0.2,
+  }, */
+  NoteBgAnimationOne: {
+    opacity: 1,
+    y: -355,
+    x: -300,
+    scale: 0.2,
+
+    // scale: 0.2,
+  },
+  NoteBgAnimationTwo: {
+    opacity: [1, 0, 0, 0, 0],
+    y: -100,
+    x: -100,
+    scale: 1,
   },
 };
 
@@ -121,31 +116,28 @@ export default function SetWindow() {
     "BackBgAnimationOne",
     "BackBgAnimationTwo"
   );
-  //const [DragBox, cycleDrag] = useCycle('y', false);
-  const [DragBox, cycleDrag] = useCycle(true, false);
-  const [TapBox, cycleTap] = useCycle(false, { scale: 0.9 });
 
+  const [DragBox, cycleDrag] = useCycle(false, true);
+  const [TapBox, cycleTap] = useCycle({ scale: 0.9 }, false);
   const [Stiffness, setStiffness] = useState("100");
   const [Damping, setDamping] = useState("20");
 
   const AppWindowVariants = {
     animationOne: {
-      backgroundImage: `url(${NoteAndroid})`,
-      width: 375,
-
-      height: 812,
-      scale: 1.02,
-      backgroundSize: "375px 812px",
-      //   backgroundSize: "375px 100vh",
-    },
-    animationTwo: {
       x: 195,
-      //y: 62,
       top: 62,
       width: 148,
       height: 148,
-      scale: 1,
       backgroundImage: null,
+    },
+    animationTwo: {
+      backgroundImage: `url(${NoteAndroid})`,
+      width: 375,
+      height: 812,
+      scale: 1.02,
+      backgroundSize: "375px 812px",
+      x: 0,
+      top: 0,
     },
   };
   function HandleStiffnessChange(e) {
@@ -159,7 +151,7 @@ export default function SetWindow() {
     console.log(newValue);
   }
 
-  const style = {
+  const TSstyle = {
     type: "spring",
     restSpeed: 2,
     stiffness: Stiffness,
@@ -168,18 +160,18 @@ export default function SetWindow() {
 
   const ImgBgVariants = {
     ImgBgAnimationOne: {
+      scale: 1,
+    },
+    ImgBgAnimationTwo: {
       scale: 0.9,
       filter: "blur(4px)",
     },
-    ImgBgAnimationTwo: {
-      scale: 1,
-    },
   };
   const BackBgVariants = {
-    BackBgAnimationOne: {
+    BackBgAnimationOne: {},
+    BackBgAnimationTwo: {
       filter: "blur(4px)",
     },
-    BackBgAnimationTwo: {},
   };
   const FourToOne = () => {
     cycleAnimation();
@@ -313,10 +305,11 @@ export default function SetWindow() {
             className="AppWindow"
             whileTap={{ scale: 0.8 }}
             style={{
-              width: 375,
-              height: 812,
-              x: 0,
-              top: 0,
+              width: 148,
+              height: 148,
+              x: 195,
+              top: 62,
+
               boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
               color: "#415fff",
               opacity: 1,
@@ -326,6 +319,7 @@ export default function SetWindow() {
               zIndex: 0,
               overflow: "hidden",
               backgroundRepeat: "no-repeat",
+              backgroundImage: null,
               y,
               scale,
             }}
@@ -333,7 +327,7 @@ export default function SetWindow() {
             drag={DragBox}
             variants={AppWindowVariants}
             animate={AppWindowAnimation}
-            transition={style}
+            transition={TSstyle}
             drag={DragBox}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: -0 }}
             dragElastic={0.25}
@@ -359,18 +353,11 @@ export default function SetWindow() {
             <motion.div
               variants={NoteBgVariants}
               animate={NoteBgAnimation}
-              transition={style}
+              transition={TSstyle}
               style={NoteBgStyle}
             />
           </motion.div>
-          {/*       <div
-          style={{
 
-          width: '100vw',
-         height: '100vh-56',
-          overflow: 'hidden'
-        }}
-        > */}
           <motion.div
             className="BgImg"
             // whileTap={{ scale: 0.8}}
@@ -400,7 +387,6 @@ export default function SetWindow() {
               width: 375,
               height: 812,
               top: 0,
-              opacity: 1,
               zIndex: -2,
               scale: 1.05,
               position: "absolute",
