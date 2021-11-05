@@ -15,8 +15,10 @@ export const PhotoD = forwardRef(
     const inlineStyles = {
       opacity: faded ? "0.2" : "1",
       transformOrigin: "0 0",
+
       height: index === 0 ? 70 : 158,
       width: index === 0 ? 70 : 158,
+      // opacity: index === 1 ? "1" : "0.1",
       gridRowStart: `span ${rowSpan[url] || 1}`,
       gridColumnStart: `span ${colSpan[url] || 1}`,
       boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",

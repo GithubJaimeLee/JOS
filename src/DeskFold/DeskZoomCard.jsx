@@ -21,6 +21,7 @@ export const PhotoZ = forwardRef(
       transformOrigin: "0 0",
       //  height: index === 0  ? 158  : (index === 1 ? 70 :(index === 2 ? 158 : 70 ) ),
       // width: index === 0 ? 158 :(index === 1  ? 158  : (index === 2 ? 70 : 158 )) ,
+
       height: index === 1 ? 70 : index === 2 ? 158 : index === 0 ? 158 : 70,
       width: index === 1 ? 158 : index === 2 ? 70 : index === 0 ? 158 : 70,
 

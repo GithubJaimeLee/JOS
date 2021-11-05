@@ -5,18 +5,17 @@ import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";
 import ContactHeader from "../Img/ContactHeader.png";
 import NavBarPage from "../Component/NavBarPage";
-
+import OneFingerClick from "../Img/OneFingerClick.png";
 const ContactBtnStyle = {
+  backgroundImage: `url(${OneFingerClick})`,
   position: "absolute",
-  left: 110,
-  bottom: 6,
-  width: 60,
+  top: 0,
+  left: 156,
+  transform: "rotate(270deg)",
+  width: 32,
   height: 60,
-  backgroundColor: "grey",
-  borderRadius: 20,
-  textAlign: "center",
-  zIndex: 1,
-  opacity: 0.5,
+  backgroundRepeat: "no-repeat",
+  zIndex: 2,
 };
 const ContactBubbleStyle = {
   width: 160,
