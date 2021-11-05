@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DeskDirectApp from "../DeskFold/DeskDirectApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
 
 const boxHome = {
   width: 70,
@@ -102,19 +103,20 @@ const DZoom = () => {
         {/* ------------------------------自动补位状态----------------------------------------- */}
 
         <DeskDirectApp />
-      </div>
 
-      <div
-        style={{
-          background: "#E6ECF4",
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          top: 0,
-          opacity: 1,
-          zIndex: "-1",
-        }}
-      ></div>
+        <div
+          style={{
+            background: "#E6ECF4",
+            width: 375,
+            height: 812,
+            position: "absolute",
+            top: 0,
+            opacity: 1,
+            zIndex: "-10",
+          }}
+        />
+      </div>
+      <Bg />
     </div>
   );
 };
