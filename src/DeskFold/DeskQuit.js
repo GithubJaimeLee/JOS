@@ -2,7 +2,7 @@ import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import SetWindowQuit from "../Component/SetWindowQuit";
-
+import Bg from "../Component/Bg";
 const DeskQuit = () => {
   const CodeColor = { color: "#62A66E" };
   const CodeTextStyle = { padding: "20px 20px 40px 20px", color: "#eee" };
@@ -171,17 +171,7 @@ const DeskQuit = () => {
         <div>
           <SetWindowQuit />
         </div>
-        <div
-          className="bg"
-          style={{
-            width: "100vw",
-            height: "100vh",
-            backgroundColor: "#000000",
-            top: 0,
-            position: "absolute",
-            zIndex: "-10000",
-          }}
-        />
+        <Bg />
       </div>
     </div>
   );

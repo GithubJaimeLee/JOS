@@ -2,7 +2,7 @@ import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DeskMoveApp from "./DeskMoveApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
-
+import Bg from "../Component/Bg";
 const DApp = () => {
   const Info = <p>图标移动自动补位</p>;
   return (
@@ -23,20 +23,21 @@ const DApp = () => {
           style={{
             display: "Grid",
           }}
-        />
-
-        <div style={{ marginLeft: 180, marginTop: -116 }}></div>
-        <div
-          style={{
-            background: "#E6ECF4",
-            width: "100%",
-            height: "100vh",
-            position: "absolute",
-            top: 0,
-            opacity: 1,
-            zIndex: "-1",
-          }}
-        ></div>
+        >
+          <div style={{ marginLeft: 180, marginTop: -116 }}></div>
+          <div
+            style={{
+              background: "#E6ECF4",
+              width: 375,
+              height: 812,
+              position: "absolute",
+              top: 0,
+              opacity: 1,
+              zIndex: "-1",
+            }}
+          />
+        </div>
+        <Bg />
       </div>
     </div>
   );

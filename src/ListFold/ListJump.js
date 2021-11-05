@@ -10,6 +10,7 @@ import SetHeader from "../Img/WSetHeader.png";
 import SetBody from "../Img/SetBody.png";
 import NavBarPage from "../Component/NavBarPage";
 import "../css/App.css";
+import Bg from "../Component/Bg";
 
 const ListJump = () => {
   const ref = useRef();
@@ -113,6 +114,7 @@ const ListJump = () => {
           </div>
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

@@ -11,6 +11,7 @@ import SetBody from "../Img/SetBody.png";
 import NavBarPage from "../Component/NavBarPage";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import "../css/App.css";
+import Bg from "../Component/Bg";
 
 const ClickList = () => {
   const ref = useRef();
@@ -449,6 +450,7 @@ const ClickList = () => {
                 zIndex: -1,
               }}
             />
+            <Bg />
           </div>
         </div>
       </div>

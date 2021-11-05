@@ -1,6 +1,7 @@
 import React from "react";
-import Loading from "../Img/Loading.gif";
 import NavBarPage from "../Component/NavBarPage";
+import Loading from "../Img/loading.gif";
+import Bg from "../Component/Bg";
 const AlertLoading = () => {
   const Info = <p>Loading</p>;
   return (
@@ -19,7 +20,7 @@ const AlertLoading = () => {
         <div
           className="bg"
           style={{
-            backgroundColor: "#eee",
+            backgroundColor: "#fff",
             width: 375,
             height: 812,
             position: "absolute",
@@ -38,7 +39,8 @@ const AlertLoading = () => {
             opacity: 1,
             zIndex: "100",
           }}
-        ></img>
+        />
+        <Bg />
       </div>
     </div>
   );

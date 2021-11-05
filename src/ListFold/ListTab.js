@@ -10,6 +10,7 @@ import { Pager, useMeasure } from "../Component/TabBar";
 import bg from "../Img/MusicBodyRecommend.png";
 import bg2 from "../Img/MusicBodyRecommend.png";
 import bg3 from "../Img/MusicBodyRecommend.png";
+import Bg from "../Component/Bg";
 
 export function useCallbackRef() {
   const [ref, setRef] = useState(null);
@@ -211,6 +212,7 @@ export function ListTab() {
           }}
         />
       </div>
+      <Bg />
     </div>
   );
 }
