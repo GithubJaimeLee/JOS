@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import background from "../Img/DeskOOS.png";
 import NavBarPage from "../Component/NavBarPage";
 import "../Component/Component.css";
-
+import Bg from "../Component/Bg";
 const ListPosition = () => {
   // const constraintsRef = useRef(null);
   const Info = (
@@ -19,7 +19,7 @@ const ListPosition = () => {
       <div
         className="All"
         style={{
-          display: "grid",
+          display: "flex",
           justifyContent: "center",
         }}
       >
@@ -82,6 +82,7 @@ const ListPosition = () => {
             }}
           ></div>
         </div>
+        <Bg />
       </div>
     </div>
   );
