@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import WindowBg from "../Img/WindowBg.png";
 import WindowVoiceWin from "../Img/WindowVoiceWin.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
-import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -90,7 +89,6 @@ const WindowVoice = () => {
             />
           </div>
         </div>
-        <Bg />
       </div>
     </div>
   );

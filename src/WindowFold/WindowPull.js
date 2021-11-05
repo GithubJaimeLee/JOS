@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Calendar from "../Img/Calendar.png";
 import CalendarWindow from "../Img/CalendarWindow.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
-import Bg from "../Component/Bg";
 //press功能
 
 //变形完整交互
@@ -112,7 +111,6 @@ const WindowPull = () => {
         </div>
 
         <div className="Background" style={Background} />
-        <Bg />
       </div>
     </div>
   );
