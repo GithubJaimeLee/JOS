@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import App from "./DeskZoomApp.jsx";
+import App from "../DeskFold/DeskZoomApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
 
 const boxHome = {

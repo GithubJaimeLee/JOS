@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Container, Row, Col } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
-import Bg from "../Component/Bg";
+
 const boxHome = {
   width: 70,
   height: 70,
@@ -19,7 +19,7 @@ const cssContainer = {
   marginTop: 16,
   width: 335,
   padding: 0,
-  zIndex: 10,
+  zIndex: "-1",
 };
 const cssRow = {
   top: -80,
@@ -31,108 +31,99 @@ export default function App() {
   return (
     <div>
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
-      <div
-        className="All"
-        style={{
-          width: "100vw",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Container style={cssContainer}>
-          <motion.div
-            style={{
-              width: 70,
-              height: 70,
-              top: 0,
-              left: 0,
-              position: "relative",
-              backgroundColor: "#fff",
-              boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.2)",
-              borderRadius: 12,
-              zIndex: "10",
-            }}
-            drag
-            dragElastic={0.2}
-            dragTransition={{
-              timeConstant: 80,
-              power: 0,
-              modifyTarget: (target) => Math.round(target / 88) * 88,
-            }}
-            dragConstraints={{ left: 0, right: 275, top: 0, bottom: 530 }}
-            dragMomentum={true}
-          >
-            <p
-              style={{
-                color: "#666",
-                position: "absolute",
-                top: 10,
-                left: 10,
-                fontSize: 14,
-                fontWeight: "bold",
-              }}
-            >
-              Move me
-            </p>
-          </motion.div>
-          <div>
-            <Row style={cssRow}>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-            </Row>
-            <Row style={cssRow}>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-            </Row>
-            <Row style={cssRow}>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-            </Row>
-            <Row style={cssRow}>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-            </Row>
-            <Row style={cssRow}>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-            </Row>
-            <Row style={cssRow}>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-            </Row>
-            <Row style={cssRow}>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-              <Col style={boxHome}></Col>
-            </Row>
-          </div>
-        </Container>
-        <div
+
+      <Container style={cssContainer}>
+        <motion.div
           style={{
-            background: "#E6ECF4",
-            width: 375,
-            height: 812,
-            position: "absolute",
+            width: 70,
+            height: 70,
             top: 0,
-            opacity: 1,
-            zIndex: "-10",
+            left: 0,
+            position: "relative",
+            backgroundColor: "#fff",
+            boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.2)",
+            borderRadius: 12,
+            zIndex: "10",
           }}
-        />
-        <Bg />
-      </div>
+          drag
+          dragElastic={0.2}
+          dragTransition={{
+            timeConstant: 80,
+            power: 0,
+            modifyTarget: (target) => Math.round(target / 88) * 88,
+          }}
+          dragConstraints={{ left: 0, right: 275, top: 0, bottom: 530 }}
+          dragMomentum={true}
+        >
+          <p
+            style={{
+              color: "#666",
+              position: "absolute",
+              top: 10,
+              left: 10,
+              fontSize: 14,
+              fontWeight: "bold",
+            }}
+          >
+            Move me
+          </p>
+        </motion.div>
+        <div>
+          <Row style={cssRow}>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+          </Row>
+          <Row style={cssRow}>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+            <Col style={boxHome}></Col>
+          </Row>
+        </div>
+      </Container>
+      <div
+        style={{
+          background: "#E6ECF4",
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          opacity: 1,
+          zIndex: "-10",
+        }}
+      />
     </div>
   );
 }

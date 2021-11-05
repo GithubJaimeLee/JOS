@@ -1,9 +1,8 @@
 import React from "react";
-//import { motion } from "framer-motion";
+
 export function Grid({ children, columns }) {
   return (
     <div
-      //   whileTap={{ scale: 0.8 }}
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(${columns}, 1fr)`,

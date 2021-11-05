@@ -5,6 +5,7 @@ import ContactHeader from "../Img/ContactHeader.png";
 import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";
 import ContactSetBar from "../Img/ContactSetBar.png";
+import Bg from "../Component/Bg";
 import A from "../Img/A.png";
 import F from "../Img/F.png";
 import L from "../Img/L.png";
@@ -210,6 +211,7 @@ const ListTitleList = () => {
             />
           </div>
         </div>
+        <Bg />
       </div>
     </div>
   );

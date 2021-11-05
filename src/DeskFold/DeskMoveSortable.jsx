@@ -2,7 +2,6 @@ import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { Photo } from "../DeskFold/DeskMoveCard";
-import { motion } from "framer-motion";
 
 export const SortablePhoto = (props) => {
   const {

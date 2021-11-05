@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import WindowBottomBg from "../Img/WindowBottomBg.png";
 import WindowBottomWin from "../Img/WindowBottomWin.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
-
+import Bg from "../Component/Bg";
 const ContactBtnStyle = {
   position: "relative",
   bottom: -700,
@@ -115,6 +115,7 @@ const WindowBottom = () => {
           animate={animationBox}
         />
       </div>
+      <Bg />
     </div>
   );
 };

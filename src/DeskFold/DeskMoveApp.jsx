@@ -30,7 +30,6 @@ const DeskMoveApp = () => {
       layoutMeasuring={layoutMeasuring}
       collisionDetection={closestCorners}
       onDragStart={handleDragStart}
-      //   whileDrag={handleDragStart}
       // 下面两项是重点
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
@@ -67,7 +66,6 @@ const DeskMoveApp = () => {
 
   function handleDragStart(event) {
     setActiveId(event.active.id);
-    // style = {{ transform: "scale(1.8, 1.8)" }};
   }
 
   function handleDragOver(event) {

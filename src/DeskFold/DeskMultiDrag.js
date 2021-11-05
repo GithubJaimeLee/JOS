@@ -4,7 +4,12 @@ import DeskMultiDragApp from "../DeskFold/DeskMultiDragApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
 
 const DeskMultiDrag = () => {
-  const Info = <p>图标移动自动补位</p>;
+  const Info = (
+    <p>
+      Hello,
+      <br /> world!
+    </p>
+  );
 
   return (
     <div className="All">
@@ -19,12 +24,6 @@ const DeskMultiDrag = () => {
         <DeskMultiDragApp />
       </div>
 
-      <div
-        className="boxAll"
-        style={{
-          display: "Grid",
-        }}
-      ></div>
       <div style={{ marginLeft: 180, marginTop: -116 }}></div>
       <div
         style={{
