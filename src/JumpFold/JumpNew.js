@@ -8,6 +8,7 @@ import ContactHeader from "../Img/ContactHeader.png";
 import Bg from "../Component/Bg";
 import FingerClick from "../Img/OneFingerClick.png";
 import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
+import NewContact from "../Img/NewContact.png";
 
 const FingerStyle = {
   width: 32,
@@ -20,14 +21,13 @@ const FingerStyle = {
 const ContactBubbleStyle = {
   width: 375,
   height: 812,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+
   opacity: 1,
-  background: "#fff",
-  borderRadius: 12,
+  y: 812,
+  backgroundImage: `url(${NewContact})`,
   position: "absolute",
-  bottom: -420,
+  //bottom: -420,
   zIndex: 20,
-  y: 400,
 };
 const KeyboardStyle = {
   width: 375,
@@ -40,12 +40,12 @@ const KeyboardStyle = {
   y: 400,
 };
 
-const BoxAnimation = {
+const BoxAnimationVariants = {
   animationOne: {
-    y: 520,
+    y: 812,
   },
   animationTwo: {
-    y: -300,
+    y: 0,
   },
 };
 const KeyBoardAnimation = {
@@ -137,8 +137,11 @@ const JumpNew = () => {
         <motion.div
           className="boxChange"
           style={ContactBubbleStyle}
-          variants={BoxAnimation}
+          variants={BoxAnimationVariants}
           animate={animationBox}
+          transition={{
+            type: "tween",
+          }}
         />
         <motion.div
           className="KeyBoard"
