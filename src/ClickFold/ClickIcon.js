@@ -5,6 +5,8 @@ import ClickOOS from "../Img/ClickOOS.png";
 import CameraIcon from "../Img/CameraIcon.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
+
 const ClickIcon = () => {
   const Info = (
     <p>
@@ -82,6 +84,7 @@ const ClickIcon = () => {
           />
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

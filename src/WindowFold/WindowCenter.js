@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import WindowCenterBg from "../Img/WindowCenterBg.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
-import WindowCenterWin from "../Img/WindowCenterWin.png";
+import CenterWin from "../Img/WindowCenterWin.png";
+import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -35,8 +36,8 @@ const ContactBubbleStyle = {
   width: 232,
   height: 72,
   opacity: 1,
-  backgroundImage: `url(${WindowCenterWin})`,
-  background: "#aaa",
+  backgroundImage: `url(${CenterWin})`,
+  // background: "#aaa",
   borderRadius: 17,
   position: "absolute",
   bottom: 100,
@@ -120,6 +121,7 @@ const WindowCenter = () => {
           animate={animationBg}
         />
       </div>
+      <Bg />
     </div>
   );
 };

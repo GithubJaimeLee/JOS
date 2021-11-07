@@ -6,6 +6,7 @@ import WindowInputBg from "../Img/WindowInputBg.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
 import WindowInputRename from "../Img/WindowInputRename.png";
+import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -156,6 +157,7 @@ const WindowInput = () => {
           />
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

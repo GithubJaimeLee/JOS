@@ -2,6 +2,7 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -120,6 +121,7 @@ const JumpApp = () => {
           />
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import NavBarPage from "../Component/NavBarPage";
 import { Radio, Space } from "antd";
+import Bg from "../Component/Bg";
 import "antd/dist/antd.css";
 
 const ChooseSingleChoice = () => {
@@ -58,6 +59,7 @@ const ChooseSingleChoice = () => {
           }}
         ></div>
       </div>
+      <Bg />
     </div>
   );
 };

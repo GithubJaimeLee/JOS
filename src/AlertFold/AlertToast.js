@@ -1,8 +1,9 @@
-import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import AlertNewBg from "../Img/AlertNewBg.png";
+import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -66,21 +67,21 @@ const AlertToast = () => {
         }}
       >
         <div className="ContactBody" style={ContactBodyStyle} />
-        <AnimatePresence>
-          <div
-            className="ContactBtn"
-            onClick={() => cycleAnimation()}
-            style={ContactBtnStyle}
-          ></div>
-          <motion.div
-            className="boxChange"
-            style={ContactBubbleStyle}
-            variants={BoxAnimation}
-            animate={animationBox}
-            transition={{ type: "tween" }}
-          />
-        </AnimatePresence>
+
+        <div
+          className="ContactBtn"
+          onClick={() => cycleAnimation()}
+          style={ContactBtnStyle}
+        ></div>
+        <motion.div
+          className="boxChange"
+          style={ContactBubbleStyle}
+          variants={BoxAnimation}
+          animate={animationBox}
+          transition={{ type: "tween" }}
+        />
       </div>
+      <Bg />
     </div>
   );
 };

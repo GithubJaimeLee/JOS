@@ -1,6 +1,8 @@
 import React from "react";
 import { InputGroup } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
+
 const ChooseMultipleChoice = () => {
   const Info = <p>复选框</p>;
   return (
@@ -58,6 +60,7 @@ const ChooseMultipleChoice = () => {
           }}
         ></div>
       </div>
+      <Bg />
     </div>
   );
 };

@@ -6,6 +6,7 @@ import AlertPageBgTwo from "../Img/AlertPageBgTwo.png";
 import AlertPageBg from "../Img/AlertPageBg.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import { Carousel } from "antd";
+import Bg from "../Component/Bg";
 import "antd/dist/antd.css";
 
 const OneFingerClickStyle = {
@@ -96,6 +97,7 @@ const AlertPage = () => {
           }}
         />
       </div>
+      <Bg />
     </div>
   );
 };

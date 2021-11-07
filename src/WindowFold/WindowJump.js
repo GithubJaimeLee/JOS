@@ -7,6 +7,7 @@ import ContactHeader from "../Img/ContactHeader.png";
 import ContactWindow from "../Img/ContactWindow.png";
 import NavBarPage from "../Component/NavBarPage";
 import OneFingerClick from "../Img/OneFingerClick.png";
+import Bg from "../Component/Bg";
 
 const ContactWindowStyle = {
   width: 0,
@@ -140,6 +141,7 @@ const WindowJump = () => {
         </div>
         <div className="ContactFooter" style={ContactFooterStyle} />
       </div>
+      <Bg />
     </div>
   );
 };

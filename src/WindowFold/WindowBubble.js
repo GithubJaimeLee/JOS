@@ -1,4 +1,4 @@
-import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ContactBody from "../Img/ContactBody.png";
@@ -6,6 +6,8 @@ import ContactFooter from "../Img/ContactFooter.png";
 import ContactHeader from "../Img/ContactHeader.png";
 import NavBarPage from "../Component/NavBarPage";
 import OneFingerClick from "../Img/OneFingerClick.png";
+import Bg from "../Component/Bg";
+
 const ContactBtnStyle = {
   backgroundImage: `url(${OneFingerClick})`,
   position: "absolute",
@@ -118,6 +120,7 @@ const WindowBubble = () => {
             style={ContactBtnStyle}
           />
         </div>
+        <Bg />
       </div>
     </div>
   );

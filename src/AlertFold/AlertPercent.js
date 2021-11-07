@@ -2,7 +2,7 @@ import React from "react";
 //import { ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
-import { StyledEngineProvider } from "@mui/material/styles";
+import Bg from "../Component/Bg";
 import Demo from "../Component/ProgressBar";
 
 const now = 60;
@@ -41,6 +41,7 @@ const AlertPercent = () => {
           </div>
         </div>
       </div>
+      <Bg />
     </div>
   );
 };
