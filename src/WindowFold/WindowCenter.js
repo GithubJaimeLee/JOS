@@ -34,7 +34,6 @@ const BgStyle = {
 const ContactBubbleStyle = {
   width: 232,
   height: 72,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
   backgroundImage: `url(${WindowCenterWin})`,
   background: "#aaa",
@@ -101,26 +100,25 @@ const WindowCenter = () => {
         }}
       >
         <div className="ContactBody" style={ContactBodyStyle} />
-        <AnimatePresence>
-          <div
-            className="ContactBtn"
-            onClick={() => cycleAnimation() & BgCycleAnimation()}
-            style={ContactBtnStyle}
-          />
 
-          <motion.div
-            className="boxChange"
-            style={ContactBubbleStyle}
-            variants={BoxAnimation}
-            animate={animationBox}
-          />
-          <motion.div
-            className="BgChange"
-            style={BgStyle}
-            variants={BgAnimation}
-            animate={animationBg}
-          />
-        </AnimatePresence>
+        <div
+          className="ContactBtn"
+          onClick={() => cycleAnimation() & BgCycleAnimation()}
+          style={ContactBtnStyle}
+        />
+
+        <motion.div
+          className="boxChange"
+          style={ContactBubbleStyle}
+          variants={BoxAnimation}
+          animate={animationBox}
+        />
+        <motion.div
+          className="BgChange"
+          style={BgStyle}
+          variants={BgAnimation}
+          animate={animationBg}
+        />
       </div>
     </div>
   );
