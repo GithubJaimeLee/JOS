@@ -77,11 +77,11 @@ const Other = () => {
                     <p style={{ paddingTop: 40 }}>状态、标题栏置顶</p>
                   </motion.div>
                 </Link>
-                <Link to="/Other/Test" style={{ textDecoration: "none" }}>
+                {/*         <Link to="/Other/Test" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>测试中</p>
                   </motion.div>
-                </Link>
+                </Link> */}
               </div>
               <div className="Row2">
                 <Link to="/Other/OtherPull" style={{ textDecoration: "none" }}>
