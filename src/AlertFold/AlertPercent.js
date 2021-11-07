@@ -2,8 +2,10 @@ import React from "react";
 //import { ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+import AlertPercentBg from "../Img/AlertPercentBg.png";
 import Bg from "../Component/Bg";
 import Demo from "../Component/ProgressBar";
+import "../Component/Component.css";
 
 const now = 60;
 
@@ -27,7 +29,7 @@ const AlertPercent = () => {
         <div
           className="bg"
           style={{
-            backgroundColor: "#ddd",
+            backgroundImage: `url(${AlertPercentBg})`,
             width: 375,
             height: 812,
             position: "absolute",
@@ -36,7 +38,14 @@ const AlertPercent = () => {
             zIndex: "0",
           }}
         >
-          <div style={{ width: 300, position: "absolute", top: 400 }}>
+          <div
+            style={{
+              width: 355,
+              position: "absolute",
+              top: 352,
+              left: 32,
+            }}
+          >
             <Demo />
           </div>
         </div>
