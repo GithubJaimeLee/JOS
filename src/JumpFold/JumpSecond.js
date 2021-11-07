@@ -8,7 +8,7 @@ import Bg from "../Component/Bg";
 
 const MoveCard = {
   // backgroundColor: "#fff",
-  backgroundColor: "grey",
+  backgroundColor: "#eee",
   top: "15%",
   width: 225,
   height: "60%",
