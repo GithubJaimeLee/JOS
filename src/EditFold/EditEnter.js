@@ -2,6 +2,8 @@ import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "../EditFold/EditEnterApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
+
 const EditEnter = () => {
   const Info = (
     <p>
@@ -60,6 +62,7 @@ const EditEnter = () => {
           }}
         ></div>
       </div>
+      <Bg />
     </div>
   );
 };
