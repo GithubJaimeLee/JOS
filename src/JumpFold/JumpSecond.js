@@ -1,82 +1,27 @@
-import { motion, useCycle } from "framer-motion";
 import * as React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+//import { useRef } from "react";
+import { motion } from "framer-motion";
+import background from "../Img/DeskOOS.png";
 import NavBarPage from "../Component/NavBarPage";
+import "../Component/Component.css";
+import Bg from "../Component/Bg";
 
-const ContactBtnStyle = {
+const MoveCard = {
+  // backgroundColor: "#fff",
+  backgroundColor: "grey",
+  top: "15%",
+  width: 225,
+  height: "60%",
   position: "relative",
-  bottom: -750,
-  width: 60,
-  height: 60,
-  backgroundColor: "#666",
   borderRadius: 20,
-  textAlign: "center",
-  zIndex: 21,
-  display: "flex",
-  justifyContent: "center",
-};
-const MaskStyle = {
-  position: "absolute",
-  bottom: 0,
-  width: 375,
-  height: 812,
-  backgroundColor: "#999",
-  textAlign: "center",
-  zIndex: 1,
-  opacity: 0,
-  display: "flex",
-  justifyContent: "center",
-  y: 0,
-};
-const SideStyle = {
-  width: 260,
-  height: 812,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  background: "#eee",
-  position: "absolute",
-  bottom: 100,
   zIndex: 20,
-  y: 101,
-  x: 320,
-};
-const BoxAnimation = {
-  animationOne: {
-    x: 320,
-  },
-  animationTwo: {
-    x: 60,
-  },
-};
-const BgAnimation = {
-  BgAnimationOne: {
-    opacity: 0,
-  },
-  BgAnimationTwo: {
-    opacity: 0.5,
-  },
-};
-
-const ContactBodyStyle = {
-  backgroundColor: "#ddd",
-  position: "absolute",
-  width: 375,
-  height: 812,
-  zIndex: 1,
-  display: "flex",
-  justifyContent: "center",
-  overflow: "hidden",
+  marginLeft: 20,
+  marginRight: 20,
 };
 
 const JumpSecond = () => {
-  const [animationBox, cycleAnimation] = useCycle(
-    "animationOne",
-    "animationTwo"
-  );
-  const [animationBg, BgCycleAnimation] = useCycle(
-    "BgAnimationOne",
-    "BgAnimationTwo"
-  );
+  // const constraintsRef = useRef(null);
   const Info = (
     <p>
       Hello,
@@ -84,42 +29,87 @@ const JumpSecond = () => {
     </p>
   );
   return (
-    <div className="All">
+    <div
+      className="screen"
+      style={{
+        position: "absolute",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
-
       <div
-        className="ScreenCenter"
+        className="All"
         style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          height: 812,
           position: "absolute",
-          top: 0,
+          display: "flex",
+          width: 375,
+          height: 812,
+          justifyContent: "center",
+          overflow: "hidden",
         }}
       >
-        <div className="ContactBody" style={ContactBodyStyle}>
-          <div
-            className="ContactBtn"
-            onClick={() => cycleAnimation() & BgCycleAnimation()}
-            style={ContactBtnStyle}
-          />
+        <motion.div
+          className="Scroll"
+          dragElastic={0.2}
+          dragTransition={{
+            timeConstant: 80,
+            power: 1,
+            modifyTarget: (target) => Math.round(target / 240) * 240,
+          }}
+          dragConstraints={{ left: -265, top: 0, bottom: 0, right: 265 }}
+          dragMomentum={true}
+          drag="x"
+          style={{
+            display: "flex",
+            overflow: "hidden",
+            position: "absolute",
+            top: 0,
 
-          <motion.div
-            className="boxChange"
-            style={SideStyle}
-            variants={BoxAnimation}
-            animate={animationBox}
-            transition={{ type: "tween" }}
-          />
-          <motion.div
-            className="MaskChange"
-            style={MaskStyle}
-            variants={BgAnimation}
-            animate={animationBg}
-          />
-        </div>
+            //width: 375 * 3,
+            height: 812,
+            zIndex: 3,
+          }}
+        >
+          <motion.div className="AlertCard" style={MoveCard} />
+          <motion.div className="AlertCard" style={MoveCard} />
+          <motion.div className="AlertCard" style={MoveCard} />
+        </motion.div>
       </div>
+      <div
+        className="Background"
+        style={{
+          width: 375,
+          position: "absolute",
+        }}
+      >
+        <div
+          className="blackMask"
+          style={{
+            backgroundColor: "#000000",
+            width: 375,
+            height: 812,
+            position: "absolute",
+            top: 0,
+            opacity: 0.5,
+            zIndex: 2,
+          }}
+        />
+        <div
+          className="BlurBackground"
+          style={{
+            backgroundImage: `url(${background})`,
+            width: 375,
+            height: 812,
+            position: "absolute",
+            top: 0,
+            opacity: 1,
+            filter: "blur(4px)",
+            zIndex: -1,
+          }}
+        />
+      </div>
+      <Bg />
     </div>
   );
 };
