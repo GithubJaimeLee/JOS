@@ -1,135 +1,106 @@
-import * as React from "react";
-import { motion, useCycle } from "framer-motion";
+import { BackTop } from "antd";
+import Bg from "../Component/Bg";
+import NavBarPage from "../Component/NavBarPage";
 import MusicHead from "../Img/MusicHead.png";
 import MusicBodyRecommend from "../Img/MusicBodyRecommend.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
-import NavBarPage from "../Component/NavBarPage";
-import "../App.css";
 
-const BoxAnimation = {
-  animationOne: {},
-  animationTwo: {
-    y: 0,
-  },
-};
+const Info = <p>状态、标题栏置顶</p>;
+
 const OtherBackToTop = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
-  const [animationBox, cycleAnimation] = useCycle(
-    "animationOne",
-    "animationTwo"
-  );
   return (
-    <div className="All">
+    <div
+      className="All"
+      style={{
+        width: "100vw",
+        height: 812,
+        position: "absolute",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
       <div
-        className="ScreenCenter"
+        className="Head"
         style={{
-          width: "100%",
-          height: 812,
-          display: "flex",
-          justifyContent: "center",
           position: "absolute",
-          top: 0,
+          display: "flex",
+          height: 130,
+          width: 375,
+          justifyContent: "center",
         }}
       >
         <div
-          className="ScreenPhoneSize"
+          className="MusicHead"
           style={{
-            width: 375,
-            display: "flex",
-            justifyContent: "center",
-            position: "absolute",
-            height: 812,
-            overflow: "scroll",
+            backgroundImage: `url(${MusicHead})`,
             top: 0,
-          }}
-        >
-          <motion.div
-            className="MusicHead"
-            //    drag="y"
-            // dragConstraints={{ top: -40, bottom: 0 }}
-            //    dragElastic={0}
-            style={{
-              backgroundImage: `url(${MusicHead})`,
-              top: 0,
-              width: 375,
-              height: 92,
-              position: "fixed",
-              opacity: 1,
-              zIndex: 1,
-            }}
-          />
-
-          <div
-            className="MusicHeaderTap"
-            style={{
-              backgroundImage: `url(${MusicHeaderTap})`,
-              top: 92,
-              position: "fixed",
-              width: 375,
-              height: 38,
-              zIndex: 1,
-            }}
-          />
-
-          <motion.div
-            className="MusicBody"
-            variants={BoxAnimation}
-            animate={animationBox}
-            drag="y"
-            dragConstraints={{ top: -578, bottom: 0 }}
-            dragElastic={1}
-            dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
-            style={{
-              backgroundImage: `url(${MusicBodyRecommend})`,
-              backgroundColor: "#ddd",
-              top: 130,
-              width: 375,
-              height: 1205,
-              position: "absolute",
-              opacity: 1,
-              zIndex: 0,
-            }}
-            whileTap={{
-              y: 0,
-            }}
-          />
-        </div>
-        <div
-          className="MusicFooter"
-          style={{
-            backgroundImage: `url(${MusicFooter})`,
-            bottom: 0,
             width: 375,
-            height: 54,
-            zIndex: 10,
-            position: "absolute",
+            height: 92,
+            position: "fixed",
+            opacity: 1,
+            zIndex: 1,
           }}
-        >
-          <motion.div
-            ClassName="BackToTopBtn"
-            onClick={() => cycleAnimation()}
-            style={{
-              width: 46,
-              height: 46,
-              position: "absolute",
-              bottom: 2,
-              left: 24,
-              backgroundColor: "blue",
-              zIndex: 11,
-              opacity: 0.5,
-            }}
-          />
-        </div>
+        />
+        <div
+          className="MusicHeaderTap"
+          style={{
+            backgroundImage: `url(${MusicHeaderTap})`,
+            top: 92,
+            position: "fixed",
+            width: 375,
+            height: 38,
+            zIndex: 1,
+          }}
+        />
       </div>
+      <div
+        id="ScrollDiv"
+        style={{
+          width: 375,
+          height: 812,
+          position: "absolute",
+          overflow: "scroll",
+        }}
+      >
+        <div
+          className="MusicBody"
+          style={{
+            backgroundImage: `url(${MusicBodyRecommend})`,
+            backgroundColor: "#ddd",
+            top: 130,
+            width: 375,
+            height: 1206,
+            position: "absolute",
+            opacity: 1,
+            zIndex: 0,
+          }}
+        />
+      </div>
+      <div
+        className="MusicFooter"
+        style={{
+          backgroundImage: `url(${MusicFooter})`,
+          bottom: 0,
+          width: 375,
+          height: 54,
+          zIndex: 1000,
+          position: "absolute",
+        }}
+      >
+        <BackTop
+          style={{
+            position: "absolute",
+            left: 26,
+            bottom: 10,
+          }}
+          target={() => document.getElementById("ScrollDiv")}
+          visibilityHeight={1}
+        />
+      </div>
+      <Bg />
     </div>
   );
 };
-
 export default OtherBackToTop;

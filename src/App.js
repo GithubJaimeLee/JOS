@@ -290,14 +290,14 @@ function App() {
                 </Link>
                 <Link to="/Alert" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>提示类25%</p>
+                    <p style={{ paddingTop: 40 }}>提示类50%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.25,
+                          width: 140 * 0.5,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,

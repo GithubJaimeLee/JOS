@@ -1,7 +1,10 @@
 import React from "react";
-import { ProgressBar } from "react-bootstrap";
+//import { ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+import { StyledEngineProvider } from "@mui/material/styles";
+import Demo from "../Component/ProgressBar";
+
 const now = 60;
 
 //const progressInstance = <ProgressBar now={now} label={`${now}%`} />;
@@ -21,18 +24,6 @@ const AlertPercent = () => {
           top: 0,
         }}
       >
-        <ProgressBar
-          now={now}
-          label={`${now}%`}
-          style={{
-            position: "absolute",
-            top: 300,
-            width: 305,
-            height: 20,
-            zIndex: "2",
-          }}
-        />
-
         <div
           className="bg"
           style={{
@@ -44,7 +35,11 @@ const AlertPercent = () => {
             opacity: 1,
             zIndex: "0",
           }}
-        ></div>
+        >
+          <div style={{ width: 300, position: "absolute", top: 400 }}>
+            <Demo />
+          </div>
+        </div>
       </div>
     </div>
   );
