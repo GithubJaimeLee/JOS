@@ -2,6 +2,7 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+import JumpSearchBg from "../Img/JumpSearchBg.png";
 import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
@@ -59,7 +60,7 @@ const KeyBoardAnimation = {
 };
 
 const ContactBodyStyle = {
-  backgroundColor: "#EEEEEE",
+  backgroundImage: `url(${JumpSearchBg})`,
   position: "absolute",
   display: "flex",
   justifyContent: "center",
