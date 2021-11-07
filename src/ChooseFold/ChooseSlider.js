@@ -2,12 +2,12 @@ import NavBarPage from "../Component/NavBarPage";
 import React from "react";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
+import ChooseSliderBg from "../Img/ChooseSliderBg.png";
 import Bg from "../Component/Bg";
 const Info = <p>滑动条</p>;
 
 function valueLabelFormat(value) {
   const units = ["%"];
-
   let unitIndex = 0;
   let scaledValue = value;
 
@@ -68,7 +68,7 @@ const ChooseSlider = () => {
         <div
           className="bg"
           style={{
-            backgroundColor: "#eee",
+            backgroundImage: `url(${ChooseSliderBg})`,
             width: 375,
             height: 812,
             position: "absolute",
