@@ -2,6 +2,7 @@ import React from "react";
 import { InputGroup } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
+import ChooseMultipleChoiceBg from "../Img/ChooseMultipleChoiceBg.png";
 
 const ChooseMultipleChoice = () => {
   const Info = <p>复选框</p>;
@@ -50,7 +51,7 @@ const ChooseMultipleChoice = () => {
         <div
           className="bg"
           style={{
-            backgroundColor: "#eee",
+            backgroundImage: `url(${ChooseMultipleChoiceBg})`,
             width: 375,
             height: 812,
             position: "absolute",
