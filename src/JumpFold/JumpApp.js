@@ -2,6 +2,7 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+import JumpAppWin from "../Img/JumpAppWin.png";
 import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
@@ -30,23 +31,23 @@ const MaskStyle = {
   y: 0,
 };
 const SideStyle = {
-  width: 260,
+  width: 375,
   height: 812,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  background: "#eee",
+  backgroundImage: `url(${JumpAppWin})`,
   position: "absolute",
   bottom: 100,
   zIndex: 20,
   y: 101,
-  x: 320,
+  x: 375,
 };
 const BoxAnimation = {
   animationOne: {
-    x: 320,
+    x: 375,
   },
   animationTwo: {
-    x: 60,
+    x: 0,
   },
 };
 const BgAnimation = {
