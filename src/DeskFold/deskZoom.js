@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import DeskDirectApp from "../DeskFold/DeskDirectApp.jsx";
+import DeskDirectApp from "./DeskDirectApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 
