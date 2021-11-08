@@ -10,10 +10,12 @@ import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
-  bottom: -38,
+  bottom: -28,
   left: -138,
-  width: 32,
-  height: 60,
+  width: 100,
+  height: 100,
+  backgroundPosition: "25px 25px",
+  backgroundRepeat: "no-repeat",
   backgroundImage: `url(${OneFingerClick})`,
   textAlign: "center",
   zIndex: 100,
@@ -49,6 +51,15 @@ const BoxAnimation = {
   },
   animationTwo: {
     y: 0,
+  },
+};
+
+const FingerVariants = {
+  animationOne: {
+    x: 0,
+  },
+  animationTwo: {
+    x: 298,
   },
 };
 const KeyBoardAnimation = {
@@ -101,11 +112,14 @@ const JumpSearch = () => {
         }}
       >
         <div className="ContactBody" style={ContactBodyStyle}>
-          <div
-            className="ContactBtn"
+          <motion.div
+            className="FingerClick"
             onClick={() => cycleAnimation() & KcycleAnimation()}
+            variants={FingerVariants}
+            animate={animationBox}
             style={ContactBtnStyle}
-          ></div>
+            transition={{ type: "tween" }}
+          />
           <motion.div
             className="boxChange"
             style={ContactBubbleStyle}
