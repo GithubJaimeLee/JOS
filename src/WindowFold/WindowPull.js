@@ -19,19 +19,20 @@ const boxChange = {
   borderRadius: 12,
   position: "absolute",
   right: 100,
+
   top: 40,
   zIndex: 2,
 };
 const boxPress = {
   display: "block",
   position: "relative",
-  right: -154,
+  right: -128,
   top: 46,
-  width: 40,
+  width: 80,
   //  opacity: 1,
-  height: 40,
-  //   backgroundColor: "#ccc",
-  borderRadius: 20,
+  height: 80,
+  //backgroundColor: "#ccc",
+
   textAlign: "center",
   zIndex: 2,
   // boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"

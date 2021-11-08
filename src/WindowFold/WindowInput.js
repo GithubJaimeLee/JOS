@@ -21,8 +21,8 @@ const ContactBtnStyle = {
   justifyContent: "center",
 };
 const ContactBubbleStyle = {
-  width: 300,
-  height: 200,
+  width: 340,
+  height: 205,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   backgroundImage: `url(${WindowInputRename})`,
   borderRadius: 12,
@@ -46,6 +46,15 @@ const BoxAnimation = {
   },
   animationTwo: {
     y: -300,
+  },
+};
+const FingerVariants = {
+  animationOne: {
+    y: 0,
+  },
+  animationTwo: {
+    y: 170,
+    x: 80,
   },
 };
 const KeyBoardAnimation = {
@@ -123,13 +132,18 @@ const WindowInput = () => {
         }}
       >
         <div className="ContactBody" style={ContactBodyStyle}>
-          <div
+          <motion.div
             className="ContactBtn"
+            variants={FingerVariants}
+            animate={animationBox}
+            transition={{
+              type: "tween",
+            }}
             onClick={() =>
               cycleAnimation() & KcycleAnimation() & BgCycleAnimation()
             }
             style={ContactBtnStyle}
-          ></div>
+          />
           <motion.div
             className="MaskChange"
             style={MaskStyle}
