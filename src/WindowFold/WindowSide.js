@@ -55,11 +55,22 @@ const BoxAnimation = {
     x: -50,
   },
 };
+const FingerVariants = {
+  animationOne: {
+    x: 0,
+    y: 0,
+  },
+  animationTwo: {
+    x: 288,
+    y: 188,
+  },
+};
 const BgAnimation = {
   BgAnimationOne: {
-    opacity: 0,
+    display: "none",
   },
   BgAnimationTwo: {
+    display: "block",
     opacity: 0.5,
   },
 };
@@ -107,8 +118,11 @@ const WindowSide = () => {
         }}
       >
         <div className="ContactBody" style={ContactBodyStyle}>
-          <div
-            className="ContactBtn"
+          <motion.div
+            className="FingerBtn"
+            variants={FingerVariants}
+            animate={animationBox}
+            transition={{ type: "tween" }}
             onClick={() => cycleAnimation() & BgCycleAnimation()}
             style={ContactBtnStyle}
           />
@@ -121,6 +135,7 @@ const WindowSide = () => {
             transition={{ type: "tween" }}
           />
           <motion.div
+            onClick={() => cycleAnimation() & BgCycleAnimation()}
             className="MaskChange"
             style={MaskStyle}
             variants={BgAnimation}
