@@ -11,12 +11,14 @@ import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
 import NewContact from "../Img/NewContact.png";
 
 const FingerStyle = {
-  width: 32,
-  height: 60,
+  width: 100,
+  height: 100,
   backgroundImage: `url(${FingerClick})`,
   position: "relative",
-  top: 660,
+  top: 88,
+  backgroundPosition: "25px 25px",
   zIndex: 100,
+  backgroundRepeat: "no-repeat",
 };
 const ContactBubbleStyle = {
   width: 375,
@@ -46,6 +48,15 @@ const BoxVariants = {
   },
   animationTwo: {
     y: 0,
+  },
+};
+const FingerVariants = {
+  animationOne: {
+    y: 0,
+  },
+  animationTwo: {
+    y: -30,
+    x: -138,
   },
 };
 const KeyBoardVariants = {
@@ -129,7 +140,10 @@ const JumpNew = () => {
           top: 0,
         }}
       >
-        <div
+        <motion.div
+          variants={FingerVariants}
+          animate={animationBox}
+          transition={{ type: "tween" }}
           className="ContactBtn"
           onClick={() =>
             cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
@@ -137,6 +151,9 @@ const JumpNew = () => {
           style={FingerStyle}
         />
         <motion.div
+          onClick={() =>
+            cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
+          }
           className="BG"
           variants={BGVariants}
           animate={animationBG}
