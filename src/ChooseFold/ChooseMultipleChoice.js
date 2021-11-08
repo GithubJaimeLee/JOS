@@ -3,8 +3,31 @@ import { InputGroup } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import ChooseMultipleChoiceBg from "../Img/ChooseMultipleChoiceBg.png";
+import { Checkbox } from "antd";
+import "../Component/Component.css";
+const CheckboxGroup = Checkbox.Group;
+
+const plainOptions = ["a", "b", "c"];
+const defaultCheckedList = [];
 
 const ChooseMultipleChoice = () => {
+  const [checkedList, setCheckedList] = React.useState(defaultCheckedList);
+  //const [checkedList, setCheckedList] = React.useState(false);
+  const [indeterminate, setIndeterminate] = React.useState(false);
+  const [checkAll, setCheckAll] = React.useState(false);
+
+  const onChange = (list) => {
+    setCheckedList(list);
+    setIndeterminate(!!list.length && list.length < plainOptions.length);
+    setCheckAll(list.length === plainOptions.length);
+  };
+
+  const onCheckAllChange = (e) => {
+    setCheckedList(e.target.checked ? plainOptions : []);
+    setIndeterminate(false);
+    setCheckAll(e.target.checked);
+  };
+
   const Info = <p>复选框</p>;
   return (
     <div className="All">
@@ -22,31 +45,40 @@ const ChooseMultipleChoice = () => {
         <div
           className="Choose"
           style={{
-            width: 300,
+            width: 375,
             height: 812,
-            position: "absolute",
-            top: 300,
+            position: "relative",
+            top: 126,
+            left: 20,
             opacity: 1,
             zIndex: "2",
           }}
         >
-          <InputGroup className="mb-3">
-            <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-          </InputGroup>
-          <InputGroup className="mb-3">
-            <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-          </InputGroup>
-          <InputGroup className="mb-3">
-            <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-          </InputGroup>
-
-          <InputGroup className="mb-3">
-            <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-          </InputGroup>
-
-          <InputGroup className="mb-3">
-            <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-          </InputGroup>
+          <Checkbox
+            style={{
+              display: "flex",
+              width: 188,
+            }}
+            indeterminate={indeterminate}
+            onChange={onCheckAllChange}
+            checked={checkAll}
+            defaultChecked={false}
+          >
+            Check all
+          </Checkbox>
+          <div
+            style={{
+              display: "flex",
+              width: 18,
+            }}
+          >
+            <CheckboxGroup
+              direction="vertical"
+              options={plainOptions}
+              value={checkedList}
+              onChange={onChange}
+            />
+          </div>
         </div>
         <div
           className="bg"

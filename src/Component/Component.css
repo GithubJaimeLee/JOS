@@ -77,3 +77,10 @@ p.MuiTypography-root.MuiTypography-body2.css-r40f8v-MuiTypography-root {
   font-size: 15px !important;
   position: absolute !important;
 }
+
+.ant-checkbox + span {
+  display: none;
+}
+.ant-checkbox {
+  margin-bottom: 60px !important;
+}
