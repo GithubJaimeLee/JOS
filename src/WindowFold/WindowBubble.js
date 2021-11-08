@@ -25,10 +25,10 @@ const BubbleStyle = {
   height: 60,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  background: "grey",
+  background: "#5979F7",
   borderRadius: 12,
   position: "absolute",
-  right: 200,
+  right: 218,
   bottom: 60,
   zIndex: 20,
 };
