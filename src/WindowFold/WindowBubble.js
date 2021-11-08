@@ -6,6 +6,7 @@ import ContactFooter from "../Img/ContactFooter.png";
 import ContactHeader from "../Img/ContactHeader.png";
 import NavBarPage from "../Component/NavBarPage";
 import OneFingerClick from "../Img/OneFingerClick.png";
+import ContactFooterActive from "../Img/ContactFooterActive.png";
 import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
@@ -17,9 +18,9 @@ const ContactBtnStyle = {
   width: 32,
   height: 60,
   backgroundRepeat: "no-repeat",
-  zIndex: 2,
+  zIndex: 20,
 };
-const ContactBubbleStyle = {
+const BubbleStyle = {
   width: 160,
   height: 60,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
@@ -30,6 +31,25 @@ const ContactBubbleStyle = {
   right: 200,
   bottom: 60,
   zIndex: 20,
+};
+const IconStyle = {
+  width: 32,
+  height: 50,
+  backgroundImage: `url(${ContactFooterActive})`,
+  opacity: 0.5,
+  backgroundRepeat: "no-repeat",
+  position: "absolute",
+  right: 218,
+  bottom: 0,
+  zIndex: 1,
+};
+const IconVariants = {
+  animationOne: {
+    opacity: 1,
+  },
+  animationTwo: {
+    opacity: 0,
+  },
 };
 const BoxAnimation = {
   animationOne: {
@@ -109,9 +129,18 @@ const WindowBubble = () => {
         <div className="ContactFooter" style={ContactFooterStyle}>
           <motion.div
             className="boxChange"
-            style={ContactBubbleStyle}
+            style={BubbleStyle}
             variants={BoxAnimation}
             animate={animationBox}
+          />
+          <motion.div
+            className="IconChange"
+            style={IconStyle}
+            variants={IconVariants}
+            animate={animationBox}
+            transition={{
+              type: "tween",
+            }}
           />
 
           <div
