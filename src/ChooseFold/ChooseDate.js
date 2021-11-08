@@ -1,11 +1,12 @@
-import React from "react";
+//import React from "react";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import ChooseDateBg from "../Img/ChooseDateBg.png";
+import React from "react";
+import Wheel from "../Component/Wheel";
 
 const ChooseDate = () => {
   const Info = <p>日期滑动选择器</p>;
-
   const ClockItemStyle = {
     margin: 10,
     backgroundColor: "grey",
@@ -17,9 +18,11 @@ const ChooseDate = () => {
     zIndex: 10,
     textAlign: "center",
   };
+
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
+
       <div
         className="ScreenCenter"
         style={{
@@ -32,41 +35,43 @@ const ChooseDate = () => {
         }}
       >
         <div
-          className="ClockAll"
+          className="TimePicker"
           style={{
+            width: 375,
+            position: "absolute",
+            height: 200,
+            // padding: "50px",
             display: "flex",
+            justifyContent: "center",
+            //background: "#666",
+            top: 110,
+            zIndex: 3,
           }}
         >
-          <div
+          <div style={{ width: 120 }}>
+            <Wheel initIdx={8} length={24} width={23} />
+          </div>
+          <h6
             style={{
-              display: "gird",
+              position: "absolute",
+              top: 92,
+              left: 148,
             }}
           >
-            <div className="" style={ClockItemStyle}>
-              01
-            </div>
-            <div className="" style={ClockItemStyle}>
-              02
-            </div>
-            <div className="" style={ClockItemStyle}>
-              03
-            </div>
+            时
+          </h6>
+          <div style={{ width: 120 }}>
+            <Wheel initIdx={30} length={60} width={23} perspective="left" />
           </div>
-          <div
+          <h6
             style={{
-              display: "gird",
+              position: "absolute",
+              top: 92,
+              right: 98,
             }}
           >
-            <div className="" style={ClockItemStyle}>
-              01
-            </div>
-            <div className="" style={ClockItemStyle}>
-              02
-            </div>
-            <div className="" style={ClockItemStyle}>
-              03
-            </div>
-          </div>
+            分
+          </h6>
         </div>
         <div
           className="bg"
@@ -81,6 +86,7 @@ const ChooseDate = () => {
           }}
         ></div>
       </div>
+
       <Bg />
     </div>
   );
