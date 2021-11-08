@@ -102,11 +102,7 @@ const WindowCenter = () => {
       >
         <div className="ContactBody" style={ContactBodyStyle} />
 
-        <div
-          className="ContactBtn"
-          onClick={() => cycleAnimation() & BgCycleAnimation()}
-          style={ContactBtnStyle}
-        />
+        <div className="ContactBtn" style={ContactBtnStyle} />
 
         <motion.div
           className="boxChange"
@@ -115,7 +111,8 @@ const WindowCenter = () => {
           animate={animationBox}
         />
         <motion.div
-          className="BgChange"
+          className="MaskChange"
+          onClick={() => cycleAnimation() & BgCycleAnimation()}
           style={BgStyle}
           variants={BgAnimation}
           animate={animationBg}
