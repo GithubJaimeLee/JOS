@@ -96,6 +96,7 @@ const WindowBottom = () => {
         }}
       >
         <motion.div
+          onClick={() => cycleAnimation() & BgCycleAnimation()}
           className="MaskChange"
           style={MaskStyle}
           variants={BgAnimation}
@@ -109,6 +110,7 @@ const WindowBottom = () => {
           style={ContactBtnStyle}
         />
         <motion.div
+          onClick={() => cycleAnimation() & BgCycleAnimation()}
           className="boxChange"
           style={ContactBubbleStyle}
           variants={BoxAnimation}
