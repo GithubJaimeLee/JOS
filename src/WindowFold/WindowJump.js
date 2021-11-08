@@ -22,12 +22,11 @@ const ContactWindowStyle = {
 };
 const boxPress = {
   position: "relative",
-  right: -310,
+  right: -290,
   top: 50,
-  width: 50,
+  width: 80,
   opacity: 1,
-  height: 50,
-  borderRadius: 20,
+  height: 80,
   textAlign: "center",
   zIndex: 10,
   //backgroundColor: "blue",
@@ -120,7 +119,7 @@ const WindowJump = () => {
                 width: 32,
                 height: 60,
                 backgroundRepeat: "no-repeat",
-                zIndex: 2,
+                zIndex: 1,
               }}
             />
             <div
