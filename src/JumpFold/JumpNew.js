@@ -40,7 +40,7 @@ const KeyboardStyle = {
   y: 400,
 };
 
-const BoxAnimationVariants = {
+const BoxVariants = {
   animationOne: {
     y: 812,
   },
@@ -48,7 +48,7 @@ const BoxAnimationVariants = {
     y: 0,
   },
 };
-const KeyBoardAnimation = {
+const KeyBoardVariants = {
   KAnimationOne: {
     y: 400,
   },
@@ -72,7 +72,19 @@ const ContactBodyStyle = {
   width: 375,
   height: 1169,
   zIndex: 1,
+  // backgroundColor: "#000000",
   overflow: "hidden",
+};
+const BGVariants = {
+  BGanimationOne: {
+    y: 0,
+  },
+  BGAnimationTwo: {
+    y: -10,
+    scale: 0.9,
+    borderRadius: "30px",
+    opacity: 0.5,
+  },
 };
 const ContactFooterStyle = {
   backgroundImage: `url(${ContactFooter})`,
@@ -91,6 +103,10 @@ const JumpNew = () => {
   const [animationKeyBoard, KcycleAnimation] = useCycle(
     "KAnimationOne",
     "KAnimationTwo"
+  );
+  const [animationBG, BGcycleAnimation] = useCycle(
+    "BGAnimationOne",
+    "BGAnimationTwo"
   );
   const Info = (
     <p>
@@ -115,29 +131,45 @@ const JumpNew = () => {
       >
         <div
           className="ContactBtn"
-          onClick={() => cycleAnimation() & KcycleAnimation()}
+          onClick={() =>
+            cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
+          }
           style={FingerStyle}
         />
-
-        <div className="ContactHeader" style={ContactHeaderStyle} />
-        <div
-          className="ScrollBody"
+        <motion.div
+          className="BG"
+          variants={BGVariants}
+          animate={animationBG}
+          transition={{
+            type: "tween",
+          }}
           style={{
-            height: 812,
             width: 375,
+            height: 812,
             position: "absolute",
-            top: 0,
-            overflow: "scroll",
+            overflow: "hidden",
           }}
         >
-          <div className="ContactBody" style={ContactBodyStyle} />
-        </div>
-        <div className="ContactFooter" style={ContactFooterStyle}></div>
+          <div className="ContactHeader" style={ContactHeaderStyle} />
+          <div
+            className="ScrollBody"
+            style={{
+              height: 812,
 
+              width: 375,
+              position: "absolute",
+              top: 0,
+              overflow: "scroll",
+            }}
+          >
+            <div className="ContactBody" style={ContactBodyStyle} />
+          </div>
+          <div className="ContactFooter" style={ContactFooterStyle}></div>
+        </motion.div>
         <motion.div
           className="boxChange"
           style={ContactBubbleStyle}
-          variants={BoxAnimationVariants}
+          variants={BoxVariants}
           animate={animationBox}
           transition={{
             type: "tween",
@@ -146,8 +178,18 @@ const JumpNew = () => {
         <motion.div
           className="KeyBoard"
           style={KeyboardStyle}
-          variants={KeyBoardAnimation}
+          variants={KeyBoardVariants}
           animate={animationKeyBoard}
+        />
+        <div
+          className="blackBg"
+          style={{
+            position: "absolute",
+            width: 375,
+            height: 812,
+            zIndex: -10,
+            backgroundColor: "#000000",
+          }}
         />
       </div>
       <Bg />
