@@ -84,3 +84,9 @@ p.MuiTypography-root.MuiTypography-body2.css-r40f8v-MuiTypography-root {
 .ant-checkbox {
   margin-bottom: 60px !important;
 }
+.ant-space.ant-space-vertical {
+  gap: 38px !important;
+}
+span.ant-radio + * {
+  padding-left: 32px !important;
+}
