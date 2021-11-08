@@ -1,4 +1,4 @@
-import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
@@ -78,22 +78,25 @@ const WindowAlert = () => {
           top: 0,
         }}
       >
-        <div className="ContactBody" style={ContactBodyStyle} />
-        <AnimatePresence>
-          <div
-            className="ContactBtn"
-            onClick={() => cycleAnimation()}
-            style={ContactBtnStyle}
-          >
-            <motion.div
-              className="boxChange"
-              style={ContactBubbleStyle}
-              variants={BoxAnimation}
-              animate={animationBox}
-              transition={{ type: "tween" }}
-            />
-          </div>
-        </AnimatePresence>
+        <div
+          onClick={() => cycleAnimation()}
+          className="ContactBody"
+          style={ContactBodyStyle}
+        />
+
+        <div
+          className="ContactBtn"
+          onClick={() => cycleAnimation()}
+          style={ContactBtnStyle}
+        >
+          <motion.div
+            className="boxChange"
+            style={ContactBubbleStyle}
+            variants={BoxAnimation}
+            animate={animationBox}
+            transition={{ type: "tween" }}
+          />
+        </div>
       </div>
       <Bg />
     </div>
