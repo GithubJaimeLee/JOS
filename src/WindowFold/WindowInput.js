@@ -133,7 +133,7 @@ const WindowInput = () => {
       >
         <div className="ContactBody" style={ContactBodyStyle}>
           <motion.div
-            className="ContactBtn"
+            className="WinChange"
             variants={FingerVariants}
             animate={animationBox}
             transition={{
@@ -144,19 +144,20 @@ const WindowInput = () => {
             }
             style={ContactBtnStyle}
           />
+
           <motion.div
-            className="MaskChange"
+            onClick={() =>
+              cycleAnimation() & KcycleAnimation() & BgCycleAnimation()
+            }
+            className="WinChange"
             style={MaskStyle}
             variants={BgAnimation}
             animate={animationBg}
           />
           <motion.div
-            className="MaskChange"
-            style={MaskStyle}
-            variants={BgAnimation}
-            animate={animationBg}
-          />
-          <motion.div
+            onClick={() =>
+              cycleAnimation() & KcycleAnimation() & BgCycleAnimation()
+            }
             className="boxChange"
             style={ContactBubbleStyle}
             variants={BoxAnimation}

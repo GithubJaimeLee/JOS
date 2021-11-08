@@ -29,7 +29,7 @@ const boxPress = {
   height: 80,
   textAlign: "center",
   zIndex: 10,
-  //backgroundColor: "blue",
+  // backgroundColor: "blue",
 };
 
 const boxAnimation = {
@@ -114,7 +114,7 @@ const WindowJump = () => {
               style={{
                 backgroundImage: `url(${OneFingerClick})`,
                 position: "absolute",
-                top: 90,
+                top: 78,
                 left: 326,
                 width: 32,
                 height: 60,
