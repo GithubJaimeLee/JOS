@@ -20,7 +20,7 @@ const cssContainer = {
   marginTop: 16,
   width: 335,
   padding: 0,
-  zIndex: "-1",
+  zIndex: 1,
 };
 const cssRow = {
   top: -80,
@@ -68,7 +68,6 @@ export default function App() {
                 color: "#666",
                 position: "absolute",
                 top: 10,
-
                 left: 10,
                 fontSize: 14,
                 fontWeight: "bold",
