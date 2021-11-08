@@ -69,18 +69,6 @@ const BoxAnimation = {
   },
 };
 
-const ArrowVariants = {
-  animationOne: {
-    opacity: 1,
-    top: 10,
-    left: 120,
-  },
-  animationTwo: {
-    opacity: 0,
-    top: -20,
-    left: 0,
-  },
-};
 const ContactHeaderStyle = {
   backgroundImage: `url(${ContactHeader})`,
   width: 375,
