@@ -76,7 +76,11 @@ const WindowVoice = () => {
           top: 0,
         }}
       >
-        <div className="ContactBody" style={ContactBodyStyle}>
+        <div
+          onClick={() => cycleAnimation()}
+          className="ContactBody"
+          style={ContactBodyStyle}
+        >
           <div
             className="ContactBtn"
             onClick={() => cycleAnimation()}

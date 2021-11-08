@@ -61,15 +61,15 @@ input.in {
 div.AlertPageMask .ant-carousel .slick-dots li,
 div.AlertPageMask .ant-carousel .slick-dots li button,
 div.AlertPageMask .ant-carousel .slick-dots li.slick-active {
-  width: 6px !important;
-  height: 6px !important;
+  width: 10px !important;
+  height: 10px !important;
   margin: 0px !important;
-  border-radius: 3px !important;
+  border-radius: 5px !important;
   margin-left: 12px !important;
   margin-right: 3px !important;
 }
 .ant-carousel .slick-dots {
-  top: 688px;
+  top: 686px;
 }
 p.MuiTypography-root.MuiTypography-body2.css-r40f8v-MuiTypography-root {
   top: -58px !important;

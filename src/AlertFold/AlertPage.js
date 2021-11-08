@@ -8,11 +8,12 @@ import OneFingerClick from "../Img/OneFingerClick.png";
 import { Carousel } from "antd";
 import Bg from "../Component/Bg";
 import "antd/dist/antd.css";
+import { motion } from "framer-motion";
 
 const OneFingerClickStyle = {
   position: "relative",
   left: 180,
-  bottom: 100,
+  bottom: 110,
   width: 32,
   height: 60,
   backgroundImage: `url(${OneFingerClick})`,
@@ -71,7 +72,18 @@ const AlertPage = () => {
               />
             </div>
           </Carousel>
-          <div className="OneFingerClickStyle" style={OneFingerClickStyle} />
+          <motion.div
+            animate={{ x: 20, scale: [0.8, 1.1, 1.1, 0.8] }}
+            transition={{
+              delay: 1,
+              duration: 2,
+              ease: [0, 0, 1, 1],
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="OneFingerClickStyle"
+            style={OneFingerClickStyle}
+          />
         </div>
 
         <div
