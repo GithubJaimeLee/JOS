@@ -7,6 +7,7 @@ import ContactHeader from "../Img/ContactHeader.png";
 import NavBarPage from "../Component/NavBarPage";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import ContactFooterActive from "../Img/ContactFooterActive.png";
+import Bubble from "../Img/Bubble.png";
 import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
@@ -22,15 +23,20 @@ const ContactBtnStyle = {
 };
 const BubbleStyle = {
   width: 160,
-  height: 60,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+  height: 69,
   opacity: 1,
-  background: "#5979F7",
+  backgroundImage: `url(${Bubble})`,
+  //background: "#5979F7",
+  backgroundRepeat: "no-repeat",
   borderRadius: 12,
   position: "absolute",
-  right: 218,
-  bottom: 60,
+  right: 215,
+  bottom: 56,
   zIndex: 20,
+  fontSize: 20,
+  color: "#fff",
+  textAlign: "center",
+  padding: 13,
 };
 const IconStyle = {
   width: 32,
@@ -54,7 +60,7 @@ const IconVariants = {
 const BoxAnimation = {
   animationOne: {
     width: 160,
-    height: 60,
+    height: 69,
   },
   animationTwo: {
     scale: 0,
@@ -63,6 +69,18 @@ const BoxAnimation = {
   },
 };
 
+const ArrowVariants = {
+  animationOne: {
+    opacity: 1,
+    top: 10,
+    left: 120,
+  },
+  animationTwo: {
+    opacity: 0,
+    top: -20,
+    left: 0,
+  },
+};
 const ContactHeaderStyle = {
   backgroundImage: `url(${ContactHeader})`,
   width: 375,
@@ -132,7 +150,9 @@ const WindowBubble = () => {
             style={BubbleStyle}
             variants={BoxAnimation}
             animate={animationBox}
-          />
+          >
+            气泡引导
+          </motion.div>
           <motion.div
             className="IconChange"
             style={IconStyle}
