@@ -154,6 +154,7 @@ const WindowBubble = () => {
             气泡引导
           </motion.div>
           <motion.div
+            onClick={() => cycleAnimation()}
             className="IconChange"
             style={IconStyle}
             variants={IconVariants}
