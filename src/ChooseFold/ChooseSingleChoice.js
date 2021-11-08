@@ -40,10 +40,9 @@ const ChooseSingleChoice = () => {
         >
           <Radio.Group onChange={onChange} value={value}>
             <Space direction="vertical">
-              <Radio value={1}>A</Radio>
-              <Radio value={2}>B</Radio>
-              <Radio value={3}>C</Radio>
-              <Radio value={4}>D</Radio>
+              <Radio value={1}>全屏手势</Radio>
+              <Radio value={2}>经典三段式</Radio>
+              <Radio value={3}>导航键</Radio>
             </Space>
           </Radio.Group>
         </div>
