@@ -1,4 +1,4 @@
-import React, { useRef, useState, useLayoutEffect, useCallback } from "react";
+import React, { useState, useLayoutEffect, useCallback } from "react";
 import ResizeObserver from "resize-observer-polyfill";
 import styled from "styled-components";
 import { motion } from "framer-motion";

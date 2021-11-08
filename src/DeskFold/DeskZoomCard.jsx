@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 import photos from "./DeskZoom.json";
-import OneFingerClick from "../Img/OneFingerClick.png";
 //宽度
 const colSpan = {
   [photos[0]]: 1,

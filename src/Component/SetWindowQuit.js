@@ -3,7 +3,6 @@ import { motion, useCycle, useMotionValue, useTransform } from "framer-motion";
 import WSet from "../Icon/Set.png";
 import NoteAndroid from "../Img/NoteAndroid.png";
 import NoteBg from "../Img/NoteBg.png";
-import Background from "../Img/NoteAndroidDesk.png";
 import "../Component/Component.css";
 import Close from "../Icon/Close.png";
 import DeskBackBg from "../Img/DeskBackBg.png";
@@ -303,7 +302,6 @@ export default function SetWindow() {
 
           <motion.div
             className="AppWindow"
-            whileTap={{ scale: 0.8 }}
             style={{
               width: 148,
               height: 148,
@@ -328,7 +326,6 @@ export default function SetWindow() {
             variants={AppWindowVariants}
             animate={AppWindowAnimation}
             transition={TSstyle}
-            drag={DragBox}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: -0 }}
             dragElastic={0.25}
             onClick={() =>

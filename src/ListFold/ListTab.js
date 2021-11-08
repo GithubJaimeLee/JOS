@@ -4,7 +4,7 @@ import MusicHead from "../Img/MusicHead.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import "../css/App.css";
 import "../Component/Component.css";
-import React, { useRef, useState, useLayoutEffect, useCallback } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import styled from "styled-components";
 import { Pager, useMeasure } from "../Component/TabBar";
 import bg from "../Img/MusicBodyRecommend.png";

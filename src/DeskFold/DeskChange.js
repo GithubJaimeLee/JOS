@@ -1,4 +1,4 @@
-import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import zoomIcon from "../Icon/zoomIcon.png";
 import "bootstrap/dist/css/bootstrap.min.css";

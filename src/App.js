@@ -32,7 +32,7 @@ let cardActive = {
   opacity: 0.8,
   color: "#666",
 };
-
+/* 
 let cardInactive = {
   width: 160,
   height: 100,
@@ -45,7 +45,7 @@ let cardInactive = {
   opacity: 0.4,
   color: "#999",
 };
-
+ */
 const cardHover = {
   scale: 1.1,
   boxShadow: "0px 0px 16px rgba(65, 95, 255, 0.2)",

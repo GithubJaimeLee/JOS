@@ -11,16 +11,6 @@ import F from "../Img/F.png";
 import L from "../Img/L.png";
 import "../css/App.css";
 
-const ClickStyle = {
-  width: 375,
-  height: 50,
-  backgroundColor: "#ddd",
-  opacity: 0.5,
-  position: "sticky",
-  top: 159,
-  left: 0,
-  marginBottom: 50,
-};
 const ListTitleList = () => {
   const Info = <p>子标题交替悬停</p>;
   return (

@@ -1,9 +1,8 @@
-import React, { Component } from "react";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import React from "react";
+import { Navbar, Container } from "react-bootstrap";
 import "../Component/Component.css";
 import Logo from "../Img/logo.png";
 import WbackIcon from "../Icon/back.png";
-import { Offcanvas } from "react-bootstrap";
 
 function NavBarSecondPage({ Title, ...props }) {
   return (

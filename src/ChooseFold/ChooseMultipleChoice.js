@@ -1,5 +1,4 @@
 import React from "react";
-import { InputGroup } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import ChooseMultipleChoiceBg from "../Img/ChooseMultipleChoiceBg.png";

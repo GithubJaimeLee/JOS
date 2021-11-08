@@ -7,8 +7,6 @@ import Bg from "../Component/Bg";
 import Demo from "../Component/ProgressBar";
 import "../Component/Component.css";
 
-const now = 60;
-
 //const progressInstance = <ProgressBar now={now} label={`${now}%`} />;
 
 const AlertPercent = () => {

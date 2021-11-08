@@ -24,13 +24,6 @@ const OneFingerClickStyle = {
 };
 
 const AlertPage = () => {
-  const contentStyle = {
-    height: "160px",
-    color: "#fff",
-    lineHeight: "160px",
-    textAlign: "center",
-    background: "#364d79",
-  };
   const Info = <p>页码指示</p>;
   return (
     <div className="All">
