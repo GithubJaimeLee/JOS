@@ -15,8 +15,8 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
       <Navbar
         style={{
           width: "100vw",
-          backgroundColor: "rgba(255, 255, 255, 0.2)",
-          backdropFilter: "blur(2px)",
+          //  backgroundColor: "rgba(255, 255, 255, 0.2)",
+          //  backdropFilter: "blur(2px)",
           zIndex: 1000,
         }}
         expand="lg"
@@ -30,17 +30,21 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
               style={{
                 width: 30,
                 position: "absolute",
+                filter:
+                  "drop-shadow(0px 0px 2px #fff) drop-shadow(0px 0px 8px #fff)",
                 top: 16,
                 left: 20,
                 opacity: 1,
                 zIndex: "100",
               }}
-            ></img>
+            />
           </Navbar.Brand>
           <div
             className="Help"
             alt=" "
             style={{
+              filter:
+                "drop-shadow(0px 0px 2px #fff) drop-shadow(0px 0px 8px #fff)",
               backgroundImage: `url(${Help})`,
               position: "relative",
               top: 0,

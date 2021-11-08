@@ -79,6 +79,7 @@ const UPBoxVariants = {
 
 const SetBtnStyle = {
   position: "absolute",
+  filter: "drop-shadow(0px 0px 2px #fff) drop-shadow(0px 0px 8px #fff)",
   backgroundImage: `url(${WSet})`,
   top: 13,
   right: 80,
