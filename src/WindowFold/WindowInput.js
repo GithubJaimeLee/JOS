@@ -6,6 +6,7 @@ import WindowInputBg from "../Img/WindowInputBg.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
 import WindowInputRename from "../Img/WindowInputRename.png";
+import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -33,7 +34,6 @@ const ContactBubbleStyle = {
 const KeyboardStyle = {
   width: 375,
   height: 290,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   backgroundImage: `url(${WindowInputKeyboard})`,
   position: "absolute",
   bottom: 100,
@@ -157,6 +157,7 @@ const WindowInput = () => {
           />
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

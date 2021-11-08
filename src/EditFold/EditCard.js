@@ -2,6 +2,8 @@ import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "../EditFold/EditCardApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
+
 const EditCard = () => {
   const Info = (
     <p>
@@ -59,6 +61,7 @@ const EditCard = () => {
           }}
         ></div>
       </div>
+      <Bg />
     </div>
   );
 };

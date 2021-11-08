@@ -5,6 +5,7 @@ import ClickBtn from "../Img/ClickBtn.png";
 import { motion } from "framer-motion";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
 
 const ClickBtnStyle = {
   width: 291,
@@ -81,6 +82,7 @@ const ClickCard = () => {
           />
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

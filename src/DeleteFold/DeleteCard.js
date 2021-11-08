@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Stack } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
 import "../App.css";
 
 const StyleCard = {
@@ -68,12 +69,12 @@ const DeleteCard = () => {
             height: 812,
             position: "absolute",
             top: 0,
-
             opacity: 1,
             zIndex: -1,
           }}
-        ></div>
+        />
       </div>
+      <Bg />
     </div>
   );
 };

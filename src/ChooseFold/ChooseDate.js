@@ -1,5 +1,7 @@
 import React from "react";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
+
 const ChooseDate = () => {
   const Info = <p>日期滑动选择器</p>;
 
@@ -78,6 +80,7 @@ const ChooseDate = () => {
           }}
         ></div>
       </div>
+      <Bg />
     </div>
   );
 };

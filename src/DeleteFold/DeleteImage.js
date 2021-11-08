@@ -1,6 +1,7 @@
 import * as React from "react";
 import PhotoBg from "../Img/NewPhoto.png";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
 import "../App.css";
 /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓grid输入/↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
 
@@ -51,6 +52,7 @@ const DeleteImage = () => {
           {/*//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑gird输入/↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//*/}
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import NavBarPage from "../Component/NavBarPage";
 import WindowSideBg from "../Img/WindowSideBg.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import WindowSideSide from "../Img/WindowSideSide.png";
+import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -126,6 +127,7 @@ const WindowSide = () => {
             animate={animationBg}
           />
         </div>
+        <Bg />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import DeskOOS from "../Img/DeskOOS.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
 
 const boxChange = {
   width: 300,
@@ -96,6 +97,7 @@ const ClickCard = () => {
           </p>
         </motion.div>
       </div>
+      <Bg />
     </div>
   );
 };

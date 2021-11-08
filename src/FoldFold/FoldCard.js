@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import FoldScreen from "../Img/FoldScreen.png";
 import ArrowToggle from "../Component/ArrowToggle";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
+
 const FoldCard = () => {
   const Info = (
     <p>
@@ -37,6 +39,7 @@ const FoldCard = () => {
           <ArrowToggle />
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import FoldInfo from "../Img/FoldInfo.png";
 import "../Component/Component.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
 
 const FoldContext = () => {
   const Info = (
@@ -39,6 +40,7 @@ const FoldContext = () => {
           <ArrowToggle />
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import SetBg from "../Img/SetBg.png";
 import SetCenter from "../Img/SetCenter.png";
 import { useState } from "react";
 import NavBarPage from "../Component/NavBarPage";
-
+import Bg from "../Component/Bg";
 const boxChange = {
   width: 70,
   height: 70,
@@ -131,100 +131,117 @@ const DChange = () => {
   return (
     <div>
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
-      <AnimatePresence>
+      <div
+        onClick={toggleClose}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          zIndex: -11,
+        }}
+      >
+        <div
+          className="Screen"
+          style={{
+            width: 375,
+            position: "absolute",
+            top: 0,
+          }}
+        >
+          <motion.div
+            className="boxChange"
+            style={boxChange}
+            variants={boxAnimation}
+            animate={animationBox}
+            onPanStart={toggleOpen}
+            whileTap={{ scale: 0.8 }}
+            transition={{ type: "tween" }}
+          >
+            <p
+              style={{
+                color: "#666",
+                fontWeight: "bold",
+                position: "absolute",
+                top: 10,
+                left: 10,
+                fontSize: 14,
+              }}
+            >
+              长 按
+            </p>
+            <motion.div
+              style={{
+                overflow: "hidden",
+                width: 70,
+                height: 70,
+              }}
+              transition={{ type: "tween" }}
+              variants={MaskAnimation}
+              animate={animationMask}
+              className="Mask"
+            >
+              <motion.div
+                className="SetCenter"
+                variants={SetAnimation}
+                animate={animationSet}
+                transition={{ type: "tween" }}
+                style={SetCenterStyle}
+              />
+            </motion.div>
+
+            {isOpen && (
+              <div
+                className="AllbtnTwo"
+                onClick={() =>
+                  cycleAnimation() & ScycleAnimation() & McycleAnimation()
+                }
+              >
+                <img
+                  src={zoomIcon}
+                  alt=" "
+                  style={{
+                    width: 16,
+                    position: "absolute",
+                    bottom: 2,
+                    right: 2,
+                    opacity: 1,
+                    zIndex: "100",
+                  }}
+                ></img>
+                <div
+                  className="boxPress"
+                  //exit={{ opacity: 0 }}
+                  style={{
+                    display: "block",
+                    position: "absolute",
+                    right: -10,
+                    bottom: -10,
+                    width: 40,
+                    height: 40,
+                    backgroundColor: "#fff",
+                    borderRadius: 20,
+                    textAlign: "center",
+                    boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)",
+                  }}
+                ></div>
+              </div>
+            )}
+          </motion.div>
+        </div>
         <div
           className="Background"
-          style={{
-            backgroundColor: "#E6ECF4",
-            position: "absolute",
-            width: "100%",
-            top: 0,
-            height: "100%",
-            zIndex: 1,
-          }}
           onClick={toggleClose}
-        ></div>
-
-        <motion.div
-          className="boxChange"
-          style={boxChange}
-          variants={boxAnimation}
-          animate={animationBox}
-          onPanStart={toggleOpen}
-          whileTap={{ scale: 0.8 }}
-          transition={{ type: "tween" }}
-        >
-          <p
-            style={{
-              color: "#666",
-              fontWeight: "bold",
-              position: "absolute",
-              top: 10,
-              left: 10,
-              fontSize: 14,
-            }}
-          >
-            长 按
-          </p>
-          <motion.div
-            style={{
-              overflow: "hidden",
-              width: 70,
-              height: 70,
-            }}
-            transition={{ type: "tween" }}
-            variants={MaskAnimation}
-            animate={animationMask}
-            className="Mask"
-          >
-            <motion.div
-              className="SetCenter"
-              variants={SetAnimation}
-              animate={animationSet}
-              transition={{ type: "tween" }}
-              style={SetCenterStyle}
-            />
-          </motion.div>
-
-          {isOpen && (
-            <div
-              className="AllbtnTwo"
-              onClick={() =>
-                cycleAnimation() & ScycleAnimation() & McycleAnimation()
-              }
-            >
-              <img
-                src={zoomIcon}
-                alt=" "
-                style={{
-                  width: 16,
-                  position: "absolute",
-                  bottom: 2,
-                  right: 2,
-                  opacity: 1,
-                  zIndex: "100",
-                }}
-              ></img>
-              <div
-                className="boxPress"
-                //exit={{ opacity: 0 }}
-                style={{
-                  display: "block",
-                  position: "absolute",
-                  right: -10,
-                  bottom: -10,
-                  width: 40,
-                  height: 40,
-                  backgroundColor: "#fff",
-                  borderRadius: 20,
-                  textAlign: "center",
-                  boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)",
-                }}
-              ></div>
-            </div>
-          )}
-        </motion.div>
-      </AnimatePresence>
+          style={{
+            background: "#E6ECF4",
+            width: 375,
+            height: 812,
+            position: "absolute",
+            top: 0,
+            opacity: 1,
+            zIndex: "-10",
+          }}
+        />
+        <Bg />
+      </div>
     </div>
   );
 };

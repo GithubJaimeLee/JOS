@@ -167,15 +167,15 @@ function App() {
                   </motion.div>
                 </Link>
                 <Link to="/Jump" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardInactive}>
-                    <p style={{ paddingTop: 40 }}>界面跳转0%</p>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>界面跳转20%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.0,
+                          width: 140 * 0.2,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,
@@ -290,14 +290,14 @@ function App() {
                 </Link>
                 <Link to="/Alert" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>提示类25%</p>
+                    <p style={{ paddingTop: 40 }}>提示类70%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.25,
+                          width: 140 * 0.7,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,

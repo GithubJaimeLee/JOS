@@ -9,7 +9,7 @@ import DeleteList from "../DeleteFold/DeleteList";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
 
-let card = {
+let cardActive = {
   width: 160,
   height: 100,
   backgroundColor: "#fff",
@@ -84,7 +84,7 @@ const Delete = () => {
                   to="/Delete/DeleteList"
                   style={{ textDecoration: "none" }}
                 >
-                  <motion.div whileHover={cardHover} style={card}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>列表删除</p>
                   </motion.div>
                 </Link>
@@ -92,7 +92,7 @@ const Delete = () => {
                   to="/Delete/DeleteImage"
                   style={{ textDecoration: "none" }}
                 >
-                  <motion.div whileHover={cardHover} style={card}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>图片删除</p>
                   </motion.div>
                 </Link>
@@ -102,7 +102,7 @@ const Delete = () => {
                   to="/Delete/DeleteCard"
                   style={{ textDecoration: "none" }}
                 >
-                  <motion.div whileHover={cardHover} style={cardInactive}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>卡片删除(新版本无)</p>{" "}
                   </motion.div>
                 </Link>

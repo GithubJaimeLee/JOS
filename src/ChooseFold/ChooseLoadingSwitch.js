@@ -1,6 +1,8 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
+
 const ChooseLoadingSwitch = () => {
   const Info = <p>单选框</p>;
   return (
@@ -41,6 +43,7 @@ const ChooseLoadingSwitch = () => {
           <Form.Check type="switch" id="custom-switch" label="开关" />
         </Form>
       </div>
+      <Bg />
     </div>
   );
 };

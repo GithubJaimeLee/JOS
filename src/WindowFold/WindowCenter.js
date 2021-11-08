@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import WindowCenterBg from "../Img/WindowCenterBg.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
-import WindowCenterWin from "../Img/WindowCenterWin.png";
+import CenterWin from "../Img/WindowCenterWin.png";
+import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -34,10 +35,9 @@ const BgStyle = {
 const ContactBubbleStyle = {
   width: 232,
   height: 72,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  backgroundImage: `url(${WindowCenterWin})`,
-  background: "#aaa",
+  backgroundImage: `url(${CenterWin})`,
+  // background: "#aaa",
   borderRadius: 17,
   position: "absolute",
   bottom: 100,
@@ -101,27 +101,27 @@ const WindowCenter = () => {
         }}
       >
         <div className="ContactBody" style={ContactBodyStyle} />
-        <AnimatePresence>
-          <div
-            className="ContactBtn"
-            onClick={() => cycleAnimation() & BgCycleAnimation()}
-            style={ContactBtnStyle}
-          />
 
-          <motion.div
-            className="boxChange"
-            style={ContactBubbleStyle}
-            variants={BoxAnimation}
-            animate={animationBox}
-          />
-          <motion.div
-            className="BgChange"
-            style={BgStyle}
-            variants={BgAnimation}
-            animate={animationBg}
-          />
-        </AnimatePresence>
+        <div
+          className="ContactBtn"
+          onClick={() => cycleAnimation() & BgCycleAnimation()}
+          style={ContactBtnStyle}
+        />
+
+        <motion.div
+          className="boxChange"
+          style={ContactBubbleStyle}
+          variants={BoxAnimation}
+          animate={animationBox}
+        />
+        <motion.div
+          className="BgChange"
+          style={BgStyle}
+          variants={BgAnimation}
+          animate={animationBg}
+        />
       </div>
+      <Bg />
     </div>
   );
 };

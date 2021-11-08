@@ -5,6 +5,8 @@ import NavBarPage from "../Component/NavBarPage";
 import WindowBg from "../Img/WindowBg.png";
 import WindowAlertWin from "../Img/WindowAlertWin.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
+import Bg from "../Component/Bg";
+
 const ContactBtnStyle = {
   position: "relative",
   bottom: -700,
@@ -93,6 +95,7 @@ const WindowAlert = () => {
           </div>
         </AnimatePresence>
       </div>
+      <Bg />
     </div>
   );
 };

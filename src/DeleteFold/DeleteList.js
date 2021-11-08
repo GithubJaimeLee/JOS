@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import MessageBg from "../Img/NewMessage.png";
 import { Stack } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
 import "../App.css";
 
 const StyleCard = {
@@ -52,6 +53,8 @@ const DeleteList = () => {
           style={{
             top: 100,
             position: "absolute",
+            zIndex: 2,
+            opacity: 0.5,
           }}
         >
           <Stack gap={1}>
@@ -71,11 +74,12 @@ const DeleteList = () => {
             height: 812,
             position: "absolute",
             top: 0,
-            opacity: 0.5,
-            zIndex: "1",
+            opacity: 1,
+            zIndex: 1,
           }}
         ></div>
       </div>
+      <Bg />
     </div>
   );
 };

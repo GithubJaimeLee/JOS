@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import AlertNewBg from "../Img/AlertNewBg.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
+import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
@@ -100,6 +101,7 @@ const AlertNew = () => {
           </div>
         </AnimatePresence>
       </div>
+      <Bg />
     </div>
   );
 };

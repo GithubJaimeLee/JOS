@@ -2,8 +2,10 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import ClickN from "../Img/ClickN.png";
 import FingerClick from "../Img/OneFingerClick.png";
-import "../App.css";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
+import "../App.css";
+
 const GridBox = {
   width: 315,
   height: 256,
@@ -99,6 +101,7 @@ const ClickNum = () => {
           />
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

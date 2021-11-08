@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import App from "../DeskFold/DeskZoomApp.jsx";
+import App from "./DeskZoomApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
 
 const boxHome = {
   width: 70,
@@ -102,19 +103,21 @@ const DDirection = () => {
         </Container>
         <App />
 
+        <div
+          style={{
+            background: "#E6ECF4",
+            width: 375,
+            height: 812,
+            position: "absolute",
+            top: 0,
+            opacity: 1,
+            zIndex: "-10",
+          }}
+        />
         {/* ------------------------------自动补位状态----------------------------------------- */}
       </div>
 
-      <div
-        style={{
-          backgroundColor: "#E6ECF4",
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          top: 0,
-          zIndex: -10,
-        }}
-      ></div>
+      <Bg />
     </div>
   );
 };

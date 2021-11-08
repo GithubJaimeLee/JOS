@@ -6,6 +6,7 @@ import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
 import Arrow from "../Icon/Arrow.png";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
 import "../App.css";
 
 const DeskPull = () => {
@@ -110,6 +111,7 @@ const DeskPull = () => {
           }}
         />
       </div>
+      <Bg />
     </div>
   );
 };

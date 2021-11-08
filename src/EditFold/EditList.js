@@ -2,6 +2,8 @@ import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "../EditFold/EditListApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
+import Bg from "../Component/Bg";
+
 const EditList = () => {
   const Info = (
     <p>
@@ -58,6 +60,7 @@ const EditList = () => {
           }}
         ></div>
       </div>
+      <Bg />
     </div>
   );
 };

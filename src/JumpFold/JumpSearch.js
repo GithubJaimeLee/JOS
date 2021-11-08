@@ -2,9 +2,13 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
+import JumpSearchBg from "../Img/JumpSearchBg.png";
+import JumpSearchSearch from "../Img/JumpSearchSearch.png";
+import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
+import Bg from "../Component/Bg";
+
 const ContactBtnStyle = {
   position: "relative",
-
   bottom: -750,
   width: 60,
   height: 60,
@@ -21,19 +25,19 @@ const ContactBubbleStyle = {
   height: 812,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  background: "#fff",
-  borderRadius: 12,
+  backgroundImage: `url(${JumpSearchSearch})`,
   position: "absolute",
-  bottom: -420,
+  bottom: 0,
   zIndex: 20,
-  y: 400,
+  y: 812,
 };
 const KeyboardStyle = {
   width: 375,
-  height: 300,
+  height: 290,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  background: "#aaa",
+  backgroundImage: `url(${WindowInputKeyboard})`,
+  //  background: "#aaa",
   position: "absolute",
   bottom: 100,
   zIndex: 20,
@@ -41,10 +45,10 @@ const KeyboardStyle = {
 };
 const BoxAnimation = {
   animationOne: {
-    y: 520,
+    y: 812,
   },
   animationTwo: {
-    y: -300,
+    y: 0,
   },
 };
 const KeyBoardAnimation = {
@@ -57,7 +61,7 @@ const KeyBoardAnimation = {
 };
 
 const ContactBodyStyle = {
-  backgroundColor: "#EEEEEE",
+  backgroundImage: `url(${JumpSearchBg})`,
   position: "absolute",
   display: "flex",
   justifyContent: "center",
@@ -113,9 +117,11 @@ const JumpSearch = () => {
             style={KeyboardStyle}
             variants={KeyBoardAnimation}
             animate={animationKeyBoard}
+            transition={{ type: "tween" }}
           />
         </div>
       </div>
+      <Bg />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import background from "../Img/DeskOOS.png";
 import NavBarPage from "../Component/NavBarPage";
 import "../Component/Component.css";
 import Bg from "../Component/Bg";
+
 const ListPosition = () => {
   // const constraintsRef = useRef(null);
   const Info = (

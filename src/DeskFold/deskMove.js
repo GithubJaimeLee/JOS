@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import DeskMoveApp from "./DeskMoveApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
+
 const DApp = () => {
   const Info = <p>图标移动自动补位</p>;
   return (

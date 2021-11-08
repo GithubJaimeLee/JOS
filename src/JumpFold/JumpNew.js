@@ -2,49 +2,50 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
-const ContactBtnStyle = {
-  position: "relative",
+import ContactBody from "../Img/ContactBody.png";
+import ContactFooter from "../Img/ContactFooter.png";
+import ContactHeader from "../Img/ContactHeader.png";
+import Bg from "../Component/Bg";
+import FingerClick from "../Img/OneFingerClick.png";
+import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
+import NewContact from "../Img/NewContact.png";
 
-  bottom: -750,
-  width: 60,
+const FingerStyle = {
+  width: 32,
   height: 60,
-  backgroundColor: "#000",
-  borderRadius: 20,
-  textAlign: "center",
+  backgroundImage: `url(${FingerClick})`,
+  position: "relative",
+  top: 660,
   zIndex: 100,
-  opacity: 0.5,
-  display: "flex",
-  justifyContent: "center",
 };
 const ContactBubbleStyle = {
   width: 375,
   height: 812,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+
   opacity: 1,
-  background: "#fff",
-  borderRadius: 12,
+  y: 812,
+  backgroundImage: `url(${NewContact})`,
   position: "absolute",
-  bottom: -420,
+  //bottom: -420,
   zIndex: 20,
-  y: 400,
 };
 const KeyboardStyle = {
   width: 375,
-  height: 300,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-  opacity: 1,
-  background: "#aaa",
+  height: 290,
+
+  backgroundImage: `url(${WindowInputKeyboard})`,
   position: "absolute",
   bottom: 100,
   zIndex: 20,
   y: 400,
 };
-const BoxAnimation = {
+
+const BoxAnimationVariants = {
   animationOne: {
-    y: 520,
+    y: 812,
   },
   animationTwo: {
-    y: -300,
+    y: 0,
   },
 };
 const KeyBoardAnimation = {
@@ -56,15 +57,30 @@ const KeyBoardAnimation = {
   },
 };
 
-const ContactBodyStyle = {
-  backgroundColor: "#EEEEEE",
-  position: "absolute",
-  display: "flex",
-  justifyContent: "center",
+const ContactHeaderStyle = {
+  backgroundImage: `url(${ContactHeader})`,
   width: 375,
-  height: 812,
+  height: 159,
+  position: "fixed",
+  zIndex: 2,
+  top: 0,
+};
+const ContactBodyStyle = {
+  backgroundImage: `url(${ContactBody})`,
+  position: "absolute",
+  top: 0,
+  width: 375,
+  height: 1169,
   zIndex: 1,
   overflow: "hidden",
+};
+const ContactFooterStyle = {
+  backgroundImage: `url(${ContactFooter})`,
+  position: "absolute",
+  bottom: 0,
+  width: 375,
+  height: 65,
+  zIndex: 1,
 };
 
 const JumpNew = () => {
@@ -93,29 +109,48 @@ const JumpNew = () => {
           justifyContent: "center",
           height: 812,
           position: "absolute",
+          overflow: "hidden",
           top: 0,
         }}
       >
-        <div className="ContactBody" style={ContactBodyStyle}>
-          <div
-            className="ContactBtn"
-            onClick={() => cycleAnimation() & KcycleAnimation()}
-            style={ContactBtnStyle}
-          ></div>
-          <motion.div
-            className="boxChange"
-            style={ContactBubbleStyle}
-            variants={BoxAnimation}
-            animate={animationBox}
-          />
-          <motion.div
-            className="KeyBoard"
-            style={KeyboardStyle}
-            variants={KeyBoardAnimation}
-            animate={animationKeyBoard}
-          />
+        <div
+          className="ContactBtn"
+          onClick={() => cycleAnimation() & KcycleAnimation()}
+          style={FingerStyle}
+        />
+
+        <div className="ContactHeader" style={ContactHeaderStyle} />
+        <div
+          className="ScrollBody"
+          style={{
+            height: 812,
+            width: 375,
+            position: "absolute",
+            top: 0,
+            overflow: "scroll",
+          }}
+        >
+          <div className="ContactBody" style={ContactBodyStyle} />
         </div>
+        <div className="ContactFooter" style={ContactFooterStyle}></div>
+
+        <motion.div
+          className="boxChange"
+          style={ContactBubbleStyle}
+          variants={BoxAnimationVariants}
+          animate={animationBox}
+          transition={{
+            type: "tween",
+          }}
+        />
+        <motion.div
+          className="KeyBoard"
+          style={KeyboardStyle}
+          variants={KeyBoardAnimation}
+          animate={animationKeyBoard}
+        />
       </div>
+      <Bg />
     </div>
   );
 };
