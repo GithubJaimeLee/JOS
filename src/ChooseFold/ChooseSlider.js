@@ -3,6 +3,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 import ChooseSliderBg from "../Img/ChooseSliderBg.png";
+import "../Component/Component.css";
 import Bg from "../Component/Bg";
 const Info = <p>滑动条</p>;
 
@@ -44,14 +45,13 @@ const ChooseSlider = () => {
         <div
           id="ProgressContainer"
           style={{
-            width: 300,
             position: "absolute",
-            top: 400,
+            top: 136,
             height: 100,
             zIndex: 1000,
           }}
         >
-          <div style={{ width: 250 }}>
+          <div style={{ width: 230 }}>
             <Typography id="non-linear-slider" gutterBottom>
               {valueLabelFormat(value)}
             </Typography>

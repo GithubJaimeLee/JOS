@@ -29,14 +29,12 @@ const ChooseLoadingSwitch = () => {
             opacity: 1,
             zIndex: "2",
           }}
-        ></div>
+        />
         <Form
           style={{
             position: "relative",
-            width: 375,
-            height: 812,
+            height: 60,
             top: 300,
-            left: 100,
             zIndex: "2",
           }}
         >

@@ -90,3 +90,23 @@ p.MuiTypography-root.MuiTypography-body2.css-r40f8v-MuiTypography-root {
 span.ant-radio + * {
   padding-left: 32px !important;
 }
+#non-linear-slider {
+  display: none;
+}
+.css-eg0mwd-MuiSlider-thumb {
+  width: 6px !important;
+  height: 6px !important;
+  filter: drop-shadow(0px 0px 2px #5ed5ff) drop-shadow(0px 0px 2px #5ed5ff) !important;
+  color: #fff;
+}
+.css-187mznn-MuiSlider-root {
+  height: 10px !important;
+}
+
+span.css-14pt78w-MuiSlider-rail {
+  color: #ddd !important;
+}
+.MuiSlider-track.css-1gv0vcd-MuiSlider-track {
+  color: #fff !important;
+  background: linear-gradient(0.25turn, #579ef8, #5ed5ff) !important;
+}

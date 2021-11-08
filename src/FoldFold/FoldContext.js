@@ -1,5 +1,5 @@
 import * as React from "react";
-import ArrowToggle from "../Component/ArrowToggle";
+import FoldContextArrow from "../Component/FoldContextArrow";
 import FoldInfo from "../Img/FoldInfo.png";
 import "../Component/Component.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -31,13 +31,12 @@ const FoldContext = () => {
           className="Background"
           style={{
             backgroundImage: `url(${FoldInfo})`,
-            top: 0,
             width: 375,
             height: 812,
             zIndex: 10,
           }}
         >
-          <ArrowToggle />
+          <FoldContextArrow />
         </div>
       </div>
       <Bg />

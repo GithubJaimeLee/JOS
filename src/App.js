@@ -188,14 +188,14 @@ function App() {
                 </Link>
                 <Link to="/Choose" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>选择类35%</p>
+                    <p style={{ paddingTop: 40 }}>选择类60%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.35,
+                          width: 140 * 0.6,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,

@@ -27,16 +27,16 @@ const ChooseSwitch = () => {
             position: "absolute",
             top: 0,
             opacity: 1,
-            zIndex: "2",
+            zIndex: 2,
+            display: "flex",
+            justifyContent: "center",
           }}
-        ></div>
+        />
         <Form
           style={{
             position: "relative",
-            width: 375,
-            height: 812,
+            height: 60,
             top: 300,
-            left: 100,
             zIndex: "2",
           }}
         >
