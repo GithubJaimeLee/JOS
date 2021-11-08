@@ -3,15 +3,16 @@ import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import AlertNewBg from "../Img/AlertNewBg.png";
+import OneFingerClick from "../Img/OneFingerClick.png";
+import AlertToastBg from "../Img/AlertToastBg.png";
 import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
-  bottom: -750,
-  width: 60,
+  bottom: -580,
+  width: 32,
   height: 60,
-  backgroundColor: "#666",
-  borderRadius: 20,
+  backgroundImage: `url(${OneFingerClick})`,
   textAlign: "center",
   zIndex: 2,
   display: "flex",
@@ -20,20 +21,19 @@ const ContactBtnStyle = {
 const ContactBubbleStyle = {
   width: 375,
   height: 812,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-
-  background: "#aaa",
+  backgroundImage: `url(${AlertToastBg})`,
+  y: -812,
   position: "absolute",
-  bottom: 100,
+  top: 0,
   zIndex: 1,
 };
-const BoxAnimation = {
+const ToastVariants = {
   animationOne: {
-    y: 300,
+    y: -812,
   },
   animationTwo: {
-    y: -812,
+    y: 0,
   },
 };
 
@@ -76,7 +76,7 @@ const AlertToast = () => {
         <motion.div
           className="boxChange"
           style={ContactBubbleStyle}
-          variants={BoxAnimation}
+          variants={ToastVariants}
           animate={animationBox}
           transition={{ type: "tween" }}
         />

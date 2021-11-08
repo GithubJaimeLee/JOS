@@ -1,6 +1,7 @@
 import React from "react";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
+import ChooseDateBg from "../Img/ChooseDateBg.png";
 
 const ChooseDate = () => {
   const Info = <p>日期滑动选择器</p>;
@@ -70,7 +71,7 @@ const ChooseDate = () => {
         <div
           className="bg"
           style={{
-            backgroundColor: "#eee",
+            backgroundImage: `url(${ChooseDateBg})`,
             width: 375,
             height: 812,
             position: "absolute",

@@ -2,6 +2,7 @@ import React from "react";
 import NavBarPage from "../Component/NavBarPage";
 import { Radio, Space } from "antd";
 import Bg from "../Component/Bg";
+import ChooseSingleChoiceBg from "../Img/ChooseSingleChoiceBg.png";
 import "antd/dist/antd.css";
 
 const ChooseSingleChoice = () => {
@@ -30,7 +31,7 @@ const ChooseSingleChoice = () => {
           className="Choose"
           style={{
             width: 300,
-            height: 812,
+            height: 120,
             position: "absolute",
             top: 300,
             opacity: 1,
@@ -47,17 +48,28 @@ const ChooseSingleChoice = () => {
           </Radio.Group>
         </div>
         <div
-          className="bg"
           style={{
-            backgroundColor: "#eee",
             width: 375,
             height: 812,
             position: "absolute",
             top: 0,
             opacity: 1,
-            zIndex: "1",
+            overflow: "scroll",
           }}
-        ></div>
+        >
+          <div
+            className="bg"
+            style={{
+              backgroundImage: `url(${ChooseSingleChoiceBg})`,
+              width: 375,
+              height: 1092,
+              position: "absolute",
+              top: 0,
+              opacity: 1,
+              zIndex: "1",
+            }}
+          />
+        </div>
       </div>
       <Bg />
     </div>

@@ -88,22 +88,23 @@ const Delete = () => {
                     <p style={{ paddingTop: 40 }}>列表删除</p>
                   </motion.div>
                 </Link>
+                {/*      <Link
+                  to="/Delete/DeleteCard"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>卡片删除(新版本无)</p>{" "}
+                  </motion.div>
+                </Link>
+ */}
+              </div>
+              <div className="Row2">
                 <Link
                   to="/Delete/DeleteImage"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>图片删除</p>
-                  </motion.div>
-                </Link>
-              </div>
-              <div className="Row2">
-                <Link
-                  to="/Delete/DeleteCard"
-                  style={{ textDecoration: "none" }}
-                >
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>卡片删除(新版本无)</p>{" "}
                   </motion.div>
                 </Link>
               </div>

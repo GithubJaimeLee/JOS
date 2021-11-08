@@ -78,11 +78,9 @@ const ListJump = () => {
                 设置
               </motion.p>
             </div>
-
             <motion.div
               className="MoveBackground"
               drag="y"
-              //   draggable="false"
               dragConstraints={{ top: -960, bottom: 0 }}
               dragElastic={1}
               dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}

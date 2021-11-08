@@ -5,18 +5,18 @@ import NavBarPage from "../Component/NavBarPage";
 import JumpSearchBg from "../Img/JumpSearchBg.png";
 import JumpSearchSearch from "../Img/JumpSearchSearch.png";
 import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
+import OneFingerClick from "../Img/OneFingerClick.png";
 import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
   position: "relative",
-  bottom: -750,
-  width: 60,
+  bottom: -38,
+  left: -138,
+  width: 32,
   height: 60,
-  backgroundColor: "#000",
-  borderRadius: 20,
+  backgroundImage: `url(${OneFingerClick})`,
   textAlign: "center",
   zIndex: 100,
-  opacity: 0.5,
   display: "flex",
   justifyContent: "center",
 };
