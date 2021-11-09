@@ -1,41 +1,47 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Arrow from "../Icon/Arrow.png";
 //const WinWidth = window.innerWidth;
 const MESSAGES = [
-  { id: 0, author: "Bob", message: "dolor sit amet, consect" },
+  { id: 0, avatar: Arrow, author: "Bob", message: "dolor sit amet, consect" },
   {
     id: 1,
+    avatar: Arrow,
     author: "John",
     message: "sed do eiusmod tempor incididunt ",
     isSwiped: false,
   },
   {
     id: 2,
+    avatar: Arrow,
     author: "Jane",
     message: "Excepteur sint occaecat cupidatat",
     isSwiped: false,
   },
   {
     id: 3,
+    avatar: Arrow,
     author: "Grace",
     message: "cillum dolore eu fugiat nu",
     isSwiped: false,
   },
   {
     id: 4,
+    avatar: Arrow,
     author: "John",
     message: "sed do eiusmod tempor incididunt ",
     isSwiped: false,
   },
   {
     id: 5,
+    avatar: Arrow,
     author: "Jane",
     message: "Excepteur sint occaecat cupidatat",
     isSwiped: false,
   },
   {
     id: 6,
+    avatar: Arrow,
     author: "Grace",
     message: "cillum dolore eu fugiat nu",
     isSwiped: false,
@@ -231,11 +237,12 @@ const SwipeToDelete = () => {
                   //opacity: 0.5,
                 }}
               >
-                <div className="user-icon" />
-                <div className="message-text">
-                  <h3>{message.author}</h3>
-                  <p>{message.message}</p>
-                </div>
+                <img
+                  className="user-icon"
+                  src={message.avatar}
+                  alt="User icon"
+                />
+                <div className="message-text"></div>
               </motion.div>
               <div
                 className="delete-btn"
@@ -255,7 +262,7 @@ const SwipeToDelete = () => {
                   color: "#fff",
                 }}
               >
-                Delete
+                删除
               </div>
             </motion.li>
           ))}
