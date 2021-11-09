@@ -134,6 +134,7 @@ const SwipeToDelete = () => {
         if (item.id === messageId) {
           //管理出现delete
           item.isSwiped = true;
+          //  window.location.reload(false);
         } else {
           item.isSwiped = false;
         }
