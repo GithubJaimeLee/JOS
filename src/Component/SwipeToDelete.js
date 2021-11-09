@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const WinWidth = window.innerWidth;
 const MESSAGES = [
   { id: 0, author: "Bob", message: "dolor sit amet, consect" },
   {
@@ -73,7 +74,6 @@ const SwipeToDelete = () => {
 
       return item;
     });
-
     setMessagesList(newMessagesList);
   };
 
@@ -91,7 +91,9 @@ const SwipeToDelete = () => {
     ) {
       console.log("ignore");
     }
-    /*  else if (
+
+    //拉通消失
+    /*     if (
       dragDistance < 0 &&
       (dragDistance < -DELETE_BTN_WIDTH * 2 ||
         (messageSwiped.isSwiped && dragDistance < -DELETE_BTN_WIDTH - 10))
@@ -99,10 +101,13 @@ const SwipeToDelete = () => {
       const filteredMessages = messagesList.filter(
         (message) => message.id !== messageId
       );
-
+      // console.log(filteredMessages);
       setMessagesList(filteredMessages);
-    }  */ /* else if (dragDistance > -DELETE_BTN_WIDTH && messageSwiped.isSwiped) {
+    } else
+     */
+    else if (dragDistance > -DELETE_BTN_WIDTH && messageSwiped.isSwiped) {
       console.log("reset");
+
       const newMessagesList = messagesList.map((item) => {
         if (item.id === messageId) {
           item.isSwiped = false;
@@ -112,18 +117,30 @@ const SwipeToDelete = () => {
       });
 
       setMessagesList(newMessagesList);
-    } else  */ if (
-      dragDistance < 460 /*  && dragDistance <= -DELETE_BTN_WIDTH / 3 */
+    } else if (
+      //管理出现delete
+
+      // dragDistance < 0 &&
+      // dragDistance <= -DELETE_BTN_WIDTH / 3
+      dragDistance <
+      WinWidth / 2 + 88
+      // 375/2-70
+      // && dragDistance <= -DELETE_BTN_WIDTH / 3
     ) {
+      console.log("屏幕宽" + WinWidth);
+      console.log(dragDistance);
       console.log("prep for removal");
       const newMessagesList = messagesList.map((item) => {
         if (item.id === messageId) {
+          //管理出现delete
           item.isSwiped = true;
         } else {
           item.isSwiped = false;
         }
+
         return item;
       });
+
       setMessagesList(newMessagesList);
     }
   };
@@ -156,6 +173,7 @@ const SwipeToDelete = () => {
               style={{
                 width: 375,
                 position: "relative",
+
                 borderTop: "1px solid #ddd",
                 borderBottom: "1px solid #ddd",
               }}
