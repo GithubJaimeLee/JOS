@@ -71,7 +71,7 @@ const DeskPull = () => {
               height: 38,
               zIndex: 1,
             }}
-          ></div>
+          />
           <motion.div
             className="Arrow"
             style={{
@@ -104,7 +104,7 @@ const DeskPull = () => {
               opacity: 1,
               zIndex: 0,
             }}
-          ></motion.div>
+          />
         </div>
         <div
           className="MusicFooter"
