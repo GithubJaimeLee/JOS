@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const WinWidth = window.innerWidth;
+//const WinWidth = window.innerWidth;
 const MESSAGES = [
   { id: 0, author: "Bob", message: "dolor sit amet, consect" },
   {
@@ -54,6 +54,14 @@ const MESSAGE_DELETE_TRANSITION = {
 };
 
 const SwipeToDelete = () => {
+  const [WinWidth, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
   const [messagesList, setMessagesList] = useState(MESSAGES);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -123,7 +131,7 @@ const SwipeToDelete = () => {
       // dragDistance < 0 &&
       // dragDistance <= -DELETE_BTN_WIDTH / 3
       dragDistance <
-      WinWidth / 2 + 88
+      WinWidth / 2 + 120
       // 375/2-70
       // && dragDistance <= -DELETE_BTN_WIDTH / 3
     ) {
