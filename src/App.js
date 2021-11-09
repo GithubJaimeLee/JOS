@@ -228,14 +228,14 @@ function App() {
                 </Link>
                 <Link to="/Other" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>其他45%</p>
+                    <p style={{ paddingTop: 40 }}>其他90%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.45,
+                          width: 140 * 0.9,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,
