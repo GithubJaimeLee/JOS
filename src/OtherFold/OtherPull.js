@@ -1,5 +1,5 @@
 import * as React from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import MusicHead from "../Img/MusicHead.png";
 import MusicBodyRecommend from "../Img/MusicBodyRecommend.png";
 import MusicFooter from "../Img/MusicFooter.png";
@@ -10,6 +10,9 @@ import Bg from "../Component/Bg";
 import "../App.css";
 
 const DeskPull = () => {
+  const y = useMotionValue(0);
+  const rotate = useTransform(y, [0, 100], [180, 0]);
+  const top = useTransform(y, [0, 100], [70, 170]);
   const Info = (
     <p>
       Hello,
@@ -39,6 +42,7 @@ const DeskPull = () => {
             position: "absolute",
             height: 812,
             overflow: "scroll",
+            backgroundColor: "#f7f7f7",
             top: 0,
           }}
         >
@@ -69,12 +73,28 @@ const DeskPull = () => {
             }}
           ></div>
           <motion.div
+            className="Arrow"
+            style={{
+              rotate,
+              top,
+              backgroundRepeat: "no-repeat",
+              backgroundImage: `url(${Arrow})`,
+              width: 20,
+              height: 30,
+              position: "absolute",
+              //top: -70,
+              left: 170,
+              opacity: 1,
+            }}
+          />
+          <motion.div
             className="MusicBodyRecommend"
             drag="y"
             dragConstraints={{ top: -578, bottom: 0 }}
             dragElastic={1}
             dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
             style={{
+              y,
               backgroundImage: `url(${MusicBodyRecommend})`,
               backgroundColor: "#ddd",
               top: 130,
@@ -84,20 +104,7 @@ const DeskPull = () => {
               opacity: 1,
               zIndex: 0,
             }}
-          >
-            {" "}
-            <img
-              src={Arrow}
-              alt=" "
-              style={{
-                width: 30,
-                position: "relative",
-                top: -70,
-                left: 170,
-                opacity: 1,
-              }}
-            />
-          </motion.div>
+          ></motion.div>
         </div>
         <div
           className="MusicFooter"

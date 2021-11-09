@@ -1,9 +1,9 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import MessageBg from "../Img/NewMessage.png";
-import { Stack } from "react-bootstrap";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
+import SwipeToDelete from "../Component/SwipeToDelete";
 import "../App.css";
 
 const StyleCard = {
@@ -48,7 +48,7 @@ const DeleteList = () => {
             opacity: 1,
             zIndex: 1,
           }}
-        ></motion.div>
+        />
         <div
           style={{
             top: 100,
@@ -56,16 +56,8 @@ const DeleteList = () => {
             zIndex: 2,
             opacity: 0.5,
           }}
-        >
-          <Stack gap={1}>
-            <div className="ListCard" style={StyleCard}></div>
-            <div className="ListCard" style={StyleCard}></div>
-            <div className="ListCard" style={StyleCard}></div>
-            <div className="ListCard" style={StyleCard}></div>
-            <div className="ListCard" style={StyleCard}></div>
-            <div className="ListCard" style={StyleCard}></div>
-          </Stack>
-        </div>
+        />
+
         <div
           className="Bg"
           style={{
@@ -76,8 +68,11 @@ const DeleteList = () => {
             top: 0,
             opacity: 1,
             zIndex: 1,
+            overflow: "hidden",
           }}
-        ></div>
+        >
+          <SwipeToDelete />
+        </div>
       </div>
       <Bg />
     </div>
