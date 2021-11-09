@@ -54,6 +54,7 @@ const MESSAGE_DELETE_TRANSITION = {
 };
 
 const SwipeToDelete = () => {
+  //完成WinWidth数据更新
   const [WinWidth, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -62,6 +63,8 @@ const SwipeToDelete = () => {
       window.removeEventListener("resize", handleResize);
     };
   });
+  //完成WinWidth数据更新
+
   const [messagesList, setMessagesList] = useState(MESSAGES);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -120,7 +123,6 @@ const SwipeToDelete = () => {
         if (item.id === messageId) {
           item.isSwiped = false;
         }
-
         return item;
       });
 
