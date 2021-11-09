@@ -330,14 +330,14 @@ function App() {
                 </Link>
                 <Link to="/Fold" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>展开折叠类30%</p>
+                    <p style={{ paddingTop: 40 }}>展开折叠类50%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.3,
+                          width: 140 * 0.5,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,
