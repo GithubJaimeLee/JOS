@@ -3,47 +3,39 @@ import { motion, AnimatePresence } from "framer-motion";
 import Arrow from "../Icon/Arrow.png";
 //const WinWidth = window.innerWidth;
 const MESSAGES = [
-  { id: 0, avatar: Arrow, author: "Bob", message: "dolor sit amet, consect" },
+  {
+    id: 0,
+    avatar: Arrow,
+    isSwiped: false,
+  },
   {
     id: 1,
     avatar: Arrow,
-    author: "John",
-    message: "sed do eiusmod tempor incididunt ",
     isSwiped: false,
   },
   {
     id: 2,
     avatar: Arrow,
-    author: "Jane",
-    message: "Excepteur sint occaecat cupidatat",
     isSwiped: false,
   },
   {
     id: 3,
     avatar: Arrow,
-    author: "Grace",
-    message: "cillum dolore eu fugiat nu",
     isSwiped: false,
   },
   {
     id: 4,
     avatar: Arrow,
-    author: "John",
-    message: "sed do eiusmod tempor incididunt ",
     isSwiped: false,
   },
   {
     id: 5,
     avatar: Arrow,
-    author: "Jane",
-    message: "Excepteur sint occaecat cupidatat",
     isSwiped: false,
   },
   {
     id: 6,
     avatar: Arrow,
-    author: "Grace",
-    message: "cillum dolore eu fugiat nu",
     isSwiped: false,
   },
 ];
@@ -258,8 +250,8 @@ const SwipeToDelete = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   //  transform: "translateY(-50%)",
-                  backgroundColor: "red",
-                  color: "#fff",
+                  backgroundColor: "#eee",
+                  color: "#000",
                 }}
               >
                 删除
