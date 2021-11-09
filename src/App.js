@@ -168,14 +168,14 @@ function App() {
                 </Link>
                 <Link to="/Jump" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>界面跳转70%</p>
+                    <p style={{ paddingTop: 40 }}>界面跳转80%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.7,
+                          width: 140 * 0.8,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,
