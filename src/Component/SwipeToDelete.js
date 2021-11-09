@@ -1,41 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Arrow from "../Icon/Arrow.png";
+import MessageA from "../Img/MessageA.png";
+import MessageB from "../Img/MessageB.png";
+import MessageC from "../Img/MessageC.png";
+import MessageDelete from "../Img/MessageDelete.png";
 //const WinWidth = window.innerWidth;
 const MESSAGES = [
   {
     id: 0,
-    avatar: Arrow,
+    avatar: MessageA,
     isSwiped: false,
   },
   {
     id: 1,
-    avatar: Arrow,
+    avatar: MessageB,
     isSwiped: false,
   },
   {
     id: 2,
-    avatar: Arrow,
+    avatar: MessageC,
     isSwiped: false,
   },
   {
     id: 3,
-    avatar: Arrow,
-    isSwiped: false,
-  },
-  {
-    id: 4,
-    avatar: Arrow,
-    isSwiped: false,
-  },
-  {
-    id: 5,
-    avatar: Arrow,
-    isSwiped: false,
-  },
-  {
-    id: 6,
-    avatar: Arrow,
+    avatar: MessageA,
     isSwiped: false,
   },
 ];
@@ -183,14 +171,17 @@ const SwipeToDelete = () => {
                 width: 375,
                 position: "relative",
 
-                borderTop: "1px solid #ddd",
-                borderBottom: "1px solid #ddd",
+                borderTop: "1px solid #f7f7f7",
+                borderBottom: "1px solid f7f7f7",
               }}
             >
               <motion.div
                 drag="x"
                 // dragDirectionLock
                 dragElastic={0.7}
+                transition={{
+                  type: "tween",
+                }}
                 dragPropagation={true}
                 dragConstraints={{
                   top: 0,
@@ -222,18 +213,19 @@ const SwipeToDelete = () => {
                 style={{
                   position: "relative",
                   zIndex: "999",
-                  height: 70,
+                  height: 92,
                   // display: "flex",
                   alignItems: "center",
                   backgroundColor: "#fff",
                   //opacity: 0.5,
+                  backgroundImage: `url(${message.avatar})`,
                 }}
               >
-                <img
+                {/*     <img
                   className="user-icon"
                   src={message.avatar}
                   alt="User icon"
-                />
+                /> */}
                 <div className="message-text"></div>
               </motion.div>
               <div
@@ -242,7 +234,7 @@ const SwipeToDelete = () => {
                 style={{
                   zIndex: 10,
                   position: "absolute",
-                  height: 70,
+                  height: 92,
                   width: 70,
                   top: 0,
                   right: 0,
@@ -252,10 +244,11 @@ const SwipeToDelete = () => {
                   //  transform: "translateY(-50%)",
                   backgroundColor: "#eee",
                   color: "#000",
+                  backgroundImage: `url(${MessageDelete})`,
+                  MessageDelete,
                 }}
-              >
-                删除
-              </div>
+              />
+              {/*   删除 */}
             </motion.li>
           ))}
         </AnimatePresence>
