@@ -30,6 +30,7 @@
     "react-scripts": "^4.0.3",
     "react-spring": "^9.2.4",
     "react-time-picker": "^4.4.4",
+    "react-ui-animate": "^1.2.0",
     "react-use-measure": "1.0.0",
     "resize-observer-polyfill": "^1.5.1",
     "styled-components": "4.4.1",
