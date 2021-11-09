@@ -81,20 +81,28 @@ const Choose = () => {
                     <p style={{ paddingTop: 40 }}>日期滑动选择器</p>
                   </motion.div>
                 </Link>
-                <Link
+                {/*    <Link
                   to="/Choose/ChooseSwitch"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>开关</p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 <Link
                   to="/Choose/ChooseSlider"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>滑动条</p>
+                  </motion.div>
+                </Link>
+                <Link
+                  to="/Choose/ChooseMultipleChoice"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>复选框</p>
                   </motion.div>
                 </Link>
               </div>
@@ -104,7 +112,11 @@ const Choose = () => {
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={card}>
-                    <p style={{ paddingTop: 40 }}>加载类开关</p>{" "}
+                    <p style={{ paddingTop: 30 }}>
+                      加载类开关
+                      <br />
+                      开关
+                    </p>
                   </motion.div>
                 </Link>
                 <Link
@@ -113,14 +125,6 @@ const Choose = () => {
                 >
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>单选框</p>
-                  </motion.div>
-                </Link>
-                <Link
-                  to="/Choose/ChooseMultipleChoice"
-                  style={{ textDecoration: "none" }}
-                >
-                  <motion.div whileHover={cardHover} style={card}>
-                    <p style={{ paddingTop: 40 }}>复选框</p>
                   </motion.div>
                 </Link>
               </div>
