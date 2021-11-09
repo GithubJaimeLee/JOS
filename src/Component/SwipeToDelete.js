@@ -62,7 +62,7 @@ const SwipeToDelete = () => {
     setMessagesList(filteredMessages);
   };
 
-  const resetItem = (messageId) => {
+  /*   const resetItem = (messageId) => {
     console.log("reset item");
     const newMessagesList = messagesList.map((item) => {
       if (item.id === messageId) {
@@ -72,7 +72,7 @@ const SwipeToDelete = () => {
       return item;
     });
     setMessagesList(newMessagesList);
-  };
+  }; */
 
   const handleDragEnd = (info, messageId) => {
     const dragDistance = info.point.x;
@@ -204,12 +204,18 @@ const SwipeToDelete = () => {
                 className={`msg-container ${
                   message.isSwiped ? "is-swiped" : ""
                 }`}
-                // onTap={() => {
-                //   // console.log(isDragging);
-                //   if (!isDragging && message.isSwiped) {
-                //     resetItem(message.id);
-                //   }
-                // }}
+                onTap={() => {
+                  console.log(isDragging);
+                  //   if (!isDragging && message.isSwiped) {
+                  //     resetItem(message.id);
+                  // }
+                  // }}
+                  // onTap={() => {
+                  //   // console.log(isDragging);
+                  //   if (!isDragging && message.isSwiped) {
+                  //     resetItem(message.id);
+                  //   }
+                }}
                 style={{
                   position: "relative",
                   zIndex: "999",
