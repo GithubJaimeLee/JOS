@@ -1,7 +1,7 @@
 //有效
 import React, { forwardRef } from "react";
-//import ItemsArray from "./DeleteImg.json";
-/* //宽度
+import ItemsArray from "./DeleteImg.json";
+//宽度
 const colSpan = {
   [ItemsArray[1]]: 1,
   //保留
@@ -9,19 +9,19 @@ const colSpan = {
 //高度
 const rowSpan = {
   [ItemsArray[1]]: 1,
-}; */
+};
 
 export const Delete = forwardRef(
   //  ({ url, index, faded, style, ...props }, ref) => {
-  ({ index, faded, style, ...props }, ref) => {
+  ({ url, index, faded, style, ...props }, ref) => {
     const inlineStyles = {
       opacity: faded ? "0.2" : "1",
       transformOrigin: "0 0",
       //  height: index === 0 ? 410 : 200,
-      //   gridRowStart: `span ${rowSpan[url] || 1}`,
-      //  gridColumnStart: `span ${colSpan[url] || 1}`,å
-      gridRowStart: `span ${1}`,
-      gridColumnStart: `span ${1}`,
+      gridRowStart: `span ${rowSpan[url] || 1}`,
+      gridColumnStart: `span ${colSpan[url] || 1}`,
+      //  gridRowStart: `span ${1}`,
+      //  gridColumnStart: `span ${1}`,
       boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
       backgroundSize: "cover",
       backgroundPosition: "center",

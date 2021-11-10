@@ -71,7 +71,7 @@ const UploadGallery = () => {
             zIndex: 100,
           }}
         >
-          {item.Title}
+          {item.id}
           <input
             onChange={() => CheckAction(item.id, item.checked)}
             type="checkbox"
@@ -205,16 +205,18 @@ const UploadGallery = () => {
 
   function handleDragStart(event) {
     setActiveId(event.active.id);
-    console.log(event.active.id);
+    console.log(items[1], event.active.id);
   }
   //排查bug点
   function handleDragOver(event) {
     const { active, over } = event;
-
+    // if (active.id !== over.id) {
     if (active.id !== over.id) {
       setItems((items) => {
-        const oldIndex = items.indexOf(active.id);
-        const newIndex = items.indexOf(over.id);
+        // const oldIndex = items.indexOf(active.id);
+        //const newIndex = items.indexOf(over.id);
+        const oldIndex = active.id;
+        const newIndex = over.id;
         console.log(oldIndex, newIndex);
         return arrayMove(items, oldIndex, newIndex);
       });
