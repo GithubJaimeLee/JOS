@@ -26,14 +26,14 @@ export const Delete = forwardRef(
       backgroundSize: "cover",
       backgroundPosition: "center",
       /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓这里是卡片本身的颜色↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
-      backgroundColor: "#ccc",
+      backgroundColor: "#ddd",
       borderRadius: 0,
       ...style,
     };
     /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓勾选器颜色↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
     return (
       <div ref={ref} style={inlineStyles} {...props}>
-        <div
+        {/*   <div
           style={{
             width: 16,
             height: 16,
@@ -47,7 +47,7 @@ export const Delete = forwardRef(
             position: "relative",
             borderRadius: 2,
           }}
-        />
+        /> */}
       </div>
     );
   }
