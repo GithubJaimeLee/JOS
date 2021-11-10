@@ -7,6 +7,10 @@ import Close from "../Icon/Close.png";
 import DeskBackBg from "../Img/DeskBackBg.png";
 import DeskFrontBg from "../Img/DeskFrontBg.png";
 import "../Component/Component.css";
+//下一步还原SliderInput在本文件中
+import { Slider, InputNumber } from "antd";
+import "antd/dist/antd.css";
+//上一步还原结束
 
 const AppNoteBgStyle = {
   backgroundImage: `url(${NoteBg})`,
@@ -41,7 +45,7 @@ const SetWindowStyle = {
   position: "relative",
   top: 400,
   width: 350,
-  height: 280,
+  height: 318,
   borderRadius: 12,
   display: "flex",
   justifyContent: "center",
@@ -58,7 +62,7 @@ const SetWindowVariants = {
     zIndex: 1,
   },
   UPanimationTwo: {
-    y: 10,
+    y: 0,
     zIndex: 1,
   },
 };
@@ -215,7 +219,7 @@ export default function SetWindow() {
                   width: 20,
                   height: 20,
                   right: 20,
-                  top: 20,
+                  top: 18,
                   position: "absolute",
                 }}
               />
@@ -226,9 +230,42 @@ export default function SetWindow() {
                     width: 220,
                     height: "auto",
                     fontSize: 14,
-                    marginTop: 20,
+                    marginTop: 18,
                   }}
                 >
+                  <div
+                    className="ImportSliderInput"
+                    style={{
+                      position: "absolute",
+                      top: 300,
+                      zIndex: 10000,
+                    }}
+                  >
+                    {/*<SliderInput /> 开始还原*/}
+                    <div
+                      className="InputTest"
+                      style={{
+                        display: "flex",
+                      }}
+                    >
+                      <div
+                        className="SliderInput"
+                        style={{
+                          width: 160,
+                          height: 80,
+                        }}
+                      ></div>
+                      <div
+                        style={{
+                          width: 30,
+                          height: 80,
+                        }}
+                        className="InputNumberBox"
+                      ></div>
+                    </div>
+                    {/*       //上一步还原结束 */}
+                  </div>
+
                   <h6>Damping 阻尼系数设置</h6>
                   <p
                     style={{
@@ -238,7 +275,7 @@ export default function SetWindow() {
                   >
                     (默认值为20，如果设置为0，弹力将无限振荡)
                   </p>
-                  <input
+                  {/*         <input
                     className="in"
                     type="text"
                     value={Damping}
@@ -249,6 +286,26 @@ export default function SetWindow() {
                       width: 220,
                       borderRadius: 6,
                     }}
+                  /> */}
+                  <Slider
+                    min={5}
+                    max={50}
+                    onChange={setDamping}
+                    value={Damping}
+                    step={0.1}
+                  />
+                  <InputNumber
+                    min={5}
+                    max={50}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 220,
+                      borderRadius: 6,
+                    }}
+                    step={0.1}
+                    onChange={setDamping}
+                    value={Damping}
                   />
                 </div>
 
@@ -258,7 +315,7 @@ export default function SetWindow() {
                     width: 220,
                     height: "auto",
                     fontSize: 14,
-                    marginTop: 20,
+                    marginTop: 18,
                   }}
                 >
                   <h6>Stiffness 刚度设置</h6>
@@ -270,7 +327,7 @@ export default function SetWindow() {
                   >
                     (默认值为100，更高的值将使运动更突然)
                   </p>
-                  <input
+                  {/*        <input
                     className="in"
                     type="text"
                     value={Stiffness}
@@ -281,6 +338,26 @@ export default function SetWindow() {
                       width: 220,
                       borderRadius: 6,
                     }}
+                  /> */}
+                  <Slider
+                    min={5}
+                    max={50}
+                    onChange={setStiffness}
+                    value={Stiffness}
+                    step={0.1}
+                  />
+                  <InputNumber
+                    min={5}
+                    max={100}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 220,
+                      borderRadius: 6,
+                    }}
+                    step={0.1}
+                    onChange={setStiffness}
+                    value={Stiffness}
                   />
                 </div>
               </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import Example from "../Other/Example";
+import SliderInput from "../Component/SliderInput";
 import NavBarSecondPage from "../Component/NavBarSecondPage";
-import { ListTab } from "../Other/TabTest";
+
 const Test = () => {
   const Info = (
     <p>
@@ -23,7 +23,16 @@ const Test = () => {
           top: 0,
         }}
       >
-        <Example />
+        <div
+          className="ImportSliderInput"
+          style={{
+            position: "absolute",
+            top: 300,
+            zIndex: 10000,
+          }}
+        >
+          <SliderInput />
+        </div>
         <div
           className="bg"
           style={{
@@ -35,7 +44,7 @@ const Test = () => {
             position: "absolute",
             top: 0,
             opacity: 1,
-            zIndex: "2",
+            zIndex: -10,
           }}
         ></div>
       </div>
