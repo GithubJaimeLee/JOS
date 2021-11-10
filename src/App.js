@@ -10,6 +10,7 @@ import Choose from "./SecondPage/Choose";
 import Desk from "./SecondPage/Desk";
 import Edit from "./SecondPage/Edit";
 import Page404 from "./OtherFold/Page404";
+import Test from "./OtherFold/Test";
 import MenuIcon from "./Icon/Menu.png";
 //导自定义组件
 import NavBar from "./Component/NavBar";
@@ -417,6 +418,9 @@ function App() {
         </Route>
         <Route path="/Edit">
           <Edit />
+        </Route>
+        <Route path="/Test">
+          <Test />
         </Route>
         <Route path="*">
           <Page404 />

@@ -1,5 +1,5 @@
 import React from "react";
-import SliderInput from "../Component/SliderInput";
+import MultiDelete from "../Component/MultiDelete";
 import NavBarSecondPage from "../Component/NavBarSecondPage";
 
 const Test = () => {
@@ -31,7 +31,7 @@ const Test = () => {
             zIndex: 10000,
           }}
         >
-          <SliderInput />
+          <MultiDelete />
         </div>
         <div
           className="bg"
