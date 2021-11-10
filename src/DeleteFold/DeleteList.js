@@ -6,14 +6,6 @@ import Bg from "../Component/Bg";
 import SwipeToDelete from "../Component/SwipeToDelete";
 import "../App.css";
 
-const StyleCard = {
-  backgroundColor: "#fff",
-  top: 120,
-  width: 375,
-  height: 90,
-  opacity: 1,
-  zIndex: 0,
-};
 const DeleteList = () => {
   const Info = (
     <p>

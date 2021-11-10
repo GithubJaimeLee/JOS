@@ -390,6 +390,17 @@ export default function SetWindow() {
               position: "absolute",
             }}
           />
+          <div
+            className="BgBlack"
+            style={{
+              backgroundColor: "#202020",
+              width: 375,
+              height: 812,
+              top: 0,
+              zIndex: -10,
+              position: "absolute",
+            }}
+          />
         </div>
       </div>
     </div>

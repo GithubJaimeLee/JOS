@@ -1,43 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import MessageA from "../Img/MessageA.png";
+import MessageB from "../Img/MessageB.png";
+import MessageC from "../Img/MessageC.png";
+import MessageDelete from "../Img/MessageDelete.png";
 //const WinWidth = window.innerWidth;
 const MESSAGES = [
-  { id: 0, author: "Bob", message: "dolor sit amet, consect" },
+  {
+    id: 0,
+    avatar: MessageA,
+    isSwiped: false,
+  },
   {
     id: 1,
-    author: "John",
-    message: "sed do eiusmod tempor incididunt ",
+    avatar: MessageB,
     isSwiped: false,
   },
   {
     id: 2,
-    author: "Jane",
-    message: "Excepteur sint occaecat cupidatat",
+    avatar: MessageC,
     isSwiped: false,
   },
   {
     id: 3,
-    author: "Grace",
-    message: "cillum dolore eu fugiat nu",
-    isSwiped: false,
-  },
-  {
-    id: 4,
-    author: "John",
-    message: "sed do eiusmod tempor incididunt ",
-    isSwiped: false,
-  },
-  {
-    id: 5,
-    author: "Jane",
-    message: "Excepteur sint occaecat cupidatat",
-    isSwiped: false,
-  },
-  {
-    id: 6,
-    author: "Grace",
-    message: "cillum dolore eu fugiat nu",
+    avatar: MessageA,
     isSwiped: false,
   },
 ];
@@ -76,7 +62,7 @@ const SwipeToDelete = () => {
     setMessagesList(filteredMessages);
   };
 
-  const resetItem = (messageId) => {
+  /*   const resetItem = (messageId) => {
     console.log("reset item");
     const newMessagesList = messagesList.map((item) => {
       if (item.id === messageId) {
@@ -86,7 +72,7 @@ const SwipeToDelete = () => {
       return item;
     });
     setMessagesList(newMessagesList);
-  };
+  }; */
 
   const handleDragEnd = (info, messageId) => {
     const dragDistance = info.point.x;
@@ -185,14 +171,17 @@ const SwipeToDelete = () => {
                 width: 375,
                 position: "relative",
 
-                borderTop: "1px solid #ddd",
-                borderBottom: "1px solid #ddd",
+                borderTop: "1px solid #f7f7f7",
+                borderBottom: "1px solid f7f7f7",
               }}
             >
               <motion.div
                 drag="x"
                 // dragDirectionLock
                 dragElastic={0.7}
+                transition={{
+                  type: "tween",
+                }}
                 dragPropagation={true}
                 dragConstraints={{
                   top: 0,
@@ -215,27 +204,35 @@ const SwipeToDelete = () => {
                 className={`msg-container ${
                   message.isSwiped ? "is-swiped" : ""
                 }`}
-                // onTap={() => {
-                //   // console.log(isDragging);
-                //   if (!isDragging && message.isSwiped) {
-                //     resetItem(message.id);
-                //   }
-                // }}
+                onTap={() => {
+                  console.log(isDragging);
+                  //   if (!isDragging && message.isSwiped) {
+                  //     resetItem(message.id);
+                  // }
+                  // }}
+                  // onTap={() => {
+                  //   // console.log(isDragging);
+                  //   if (!isDragging && message.isSwiped) {
+                  //     resetItem(message.id);
+                  //   }
+                }}
                 style={{
                   position: "relative",
                   zIndex: "999",
-                  height: 70,
+                  height: 92,
                   // display: "flex",
                   alignItems: "center",
                   backgroundColor: "#fff",
                   //opacity: 0.5,
+                  backgroundImage: `url(${message.avatar})`,
                 }}
               >
-                <div className="user-icon" />
-                <div className="message-text">
-                  <h3>{message.author}</h3>
-                  <p>{message.message}</p>
-                </div>
+                {/*     <img
+                  className="user-icon"
+                  src={message.avatar}
+                  alt="User icon"
+                /> */}
+                <div className="message-text"></div>
               </motion.div>
               <div
                 className="delete-btn"
@@ -243,7 +240,7 @@ const SwipeToDelete = () => {
                 style={{
                   zIndex: 10,
                   position: "absolute",
-                  height: 70,
+                  height: 92,
                   width: 70,
                   top: 0,
                   right: 0,
@@ -251,12 +248,13 @@ const SwipeToDelete = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   //  transform: "translateY(-50%)",
-                  backgroundColor: "red",
-                  color: "#fff",
+                  backgroundColor: "#eee",
+                  color: "#000",
+                  backgroundImage: `url(${MessageDelete})`,
+                  MessageDelete,
                 }}
-              >
-                Delete
-              </div>
+              />
+              {/*   删除 */}
             </motion.li>
           ))}
         </AnimatePresence>

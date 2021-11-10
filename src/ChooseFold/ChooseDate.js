@@ -7,7 +7,7 @@ import Wheel from "../Component/Wheel";
 
 const ChooseDate = () => {
   const Info = <p>日期滑动选择器</p>;
-  const ClockItemStyle = {
+  /* const ClockItemStyle = {
     margin: 10,
     backgroundColor: "grey",
     width: 50,
@@ -17,7 +17,7 @@ const ChooseDate = () => {
     top: 100,
     zIndex: 10,
     textAlign: "center",
-  };
+  }; */
 
   return (
     <div className="All">
