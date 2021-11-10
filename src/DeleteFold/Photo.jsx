@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import photos from "./Delete.json";
+import { Checkbox, Row, Col } from "antd";
 //宽度
 const colSpan = {
   [photos[1]]: 1,
@@ -9,7 +10,9 @@ const colSpan = {
 const rowSpan = {
   [photos[1]]: 1,
 };
-
+function onChange(checkedValues) {
+  console.log("checked = ", checkedValues);
+}
 export const Delete = forwardRef(
   ({ url, index, faded, style, ...props }, ref) => {
     const inlineStyles = {
@@ -24,23 +27,26 @@ export const Delete = forwardRef(
       /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓这里是卡片本身的颜色↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
       backgroundColor: "#ccc",
       borderRadius: 0,
-
+      zIndex: 10000,
       ...style,
     };
     /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓勾选器颜色↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
     return (
       <div ref={ref} style={inlineStyles} {...props}>
-        <div
+        <Checkbox
+          //  checked={item.checked}
+          // onChange={() => handleCheck(item.id, item.checked)}
+          // onChange={onChange}
           style={{
             width: 16,
             height: 16,
-            backgroundColor: "#aaa",
+            // backgroundColor: "#aaa",
             top: 4,
             left: 66,
             position: "relative",
             borderRadius: 2,
           }}
-        ></div>
+        />
       </div>
     );
   }
