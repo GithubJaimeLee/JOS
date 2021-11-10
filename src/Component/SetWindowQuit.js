@@ -3,12 +3,12 @@ import { motion, useCycle, useMotionValue, useTransform } from "framer-motion";
 import WSet from "../Icon/Set.png";
 import NoteAndroid from "../Img/NoteAndroid.png";
 import NoteBg from "../Img/NoteBg.png";
-import "../Component/Component.css";
 import Close from "../Icon/Close.png";
 import DeskBackBg from "../Img/DeskBackBg.png";
 import DeskFrontBg from "../Img/DeskFrontBg.png";
+import "../Component/Component.css";
 
-const NoteBgStyle = {
+const AppNoteBgStyle = {
   backgroundImage: `url(${NoteBg})`,
   width: 690,
   height: 812,
@@ -22,26 +22,12 @@ const NoteBgStyle = {
   zIndex: 100,
 };
 
-const NoteBgVariants = {
-  /*  NoteBgAnimationOne: {
-    y: -100,
-    x: -100,
-    scale: 2,
-    opacity: 0,
-  },
-  NoteBgAnimationTwo: {
-    opacity: [0.1, 0.1, 1],
-    y: -355,
-    x: -300,
-    scale: 0.2,
-  }, */
+const AppNoteBgVariants = {
   NoteBgAnimationOne: {
     opacity: 1,
     y: -355,
     x: -300,
     scale: 0.2,
-
-    // scale: 0.2,
   },
   NoteBgAnimationTwo: {
     opacity: [1, 0, 0, 0, 0],
@@ -51,7 +37,7 @@ const NoteBgVariants = {
   },
 };
 
-const UPBoxStyle = {
+const SetWindowStyle = {
   position: "relative",
   top: 400,
   width: 350,
@@ -66,7 +52,7 @@ const UPBoxStyle = {
   y: 500,
 };
 
-const UPBoxVariants = {
+const SetWindowVariants = {
   UPanimationOne: {
     y: 500,
     zIndex: 1,
@@ -97,14 +83,14 @@ export default function SetWindow() {
   const scale = useTransform(y, [0, -150], [1.02, 0.3]);
 
   const [AppWindowAnimation, cycleAnimation] = useCycle(
-    "animationOne",
-    "animationTwo"
+    "AppWindowAnimationOne",
+    "AppWindowAnimationTwo"
   );
-  const [UPBoxAnimation, UPcycleAnimation] = useCycle(
+  const [SetWindowAnimation, UPcycleAnimation] = useCycle(
     "UPanimationOne",
     "UPanimationTwo"
   );
-  const [NoteBgAnimation, CycleNoteBgAnimation] = useCycle(
+  const [AppNoteBgAnimation, CycleNoteBgAnimation] = useCycle(
     "NoteBgAnimationOne",
     "NoteBgAnimationTwo"
   );
@@ -117,20 +103,20 @@ export default function SetWindow() {
     "BackBgAnimationTwo"
   );
 
-  const [DragBox, cycleDrag] = useCycle(false, true);
-  const [TapBox, cycleTap] = useCycle({ scale: 0.9 }, false);
+  const [DragApp, cycleDrag] = useCycle(false, true);
+  const [TapApp, cycleTap] = useCycle({ scale: 0.9 }, false);
   const [Stiffness, setStiffness] = useState("100");
   const [Damping, setDamping] = useState("20");
 
   const AppWindowVariants = {
-    animationOne: {
+    AppWindowAnimationOne: {
       x: 195,
       top: 62,
       width: 148,
       height: 148,
       backgroundImage: null,
     },
-    animationTwo: {
+    AppWindowAnimationTwo: {
       backgroundImage: `url(${NoteAndroid})`,
       width: 375,
       height: 812,
@@ -140,18 +126,18 @@ export default function SetWindow() {
       top: 0,
     },
   };
-  function HandleStiffnessChange(e) {
-    const newValue = e.target.value;
-    setStiffness(newValue);
-    console.log(newValue);
+  function InputStiffnessChange(e) {
+    const NewStiffnessValue = e.target.value;
+    setStiffness(NewStiffnessValue);
+    console.log(NewStiffnessValue);
   }
-  function HandleDampingChange(e) {
-    const newValue = e.target.value;
-    setDamping(newValue);
-    console.log(newValue);
+  function InputDampingChange(e) {
+    const NewDampingValue = e.target.value;
+    setDamping(NewDampingValue);
+    console.log(NewDampingValue);
   }
 
-  const TSstyle = {
+  const TransitionStyle = {
     type: "spring",
     restSpeed: 2,
     stiffness: Stiffness,
@@ -173,7 +159,7 @@ export default function SetWindow() {
       filter: "blur(4px)",
     },
   };
-  const FourToOne = () => {
+  const ClickFunctionBundle = () => {
     cycleAnimation();
     CycleNoteBgAnimation();
     CycleImgBgAnimation();
@@ -216,9 +202,9 @@ export default function SetWindow() {
           <div>
             <motion.div
               className="SetWindow"
-              style={UPBoxStyle}
-              variants={UPBoxVariants}
-              animate={UPBoxAnimation}
+              style={SetWindowStyle}
+              variants={SetWindowVariants}
+              animate={SetWindowAnimation}
             >
               <motion.img
                 className="CloseBtn"
@@ -256,7 +242,7 @@ export default function SetWindow() {
                     className="in"
                     type="text"
                     value={Damping}
-                    onChange={HandleDampingChange}
+                    onChange={InputDampingChange}
                     style={{
                       margin: 0,
                       height: 30,
@@ -288,7 +274,7 @@ export default function SetWindow() {
                     className="in"
                     type="text"
                     value={Stiffness}
-                    onChange={HandleStiffnessChange}
+                    onChange={InputStiffnessChange}
                     style={{
                       margin: 0,
                       height: 30,
@@ -308,7 +294,6 @@ export default function SetWindow() {
               height: 148,
               x: 195,
               top: 62,
-
               boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
               color: "#415fff",
               opacity: 1,
@@ -322,11 +307,11 @@ export default function SetWindow() {
               y,
               scale,
             }}
-            whileTap={TapBox}
-            drag={DragBox}
+            whileTap={TapApp}
+            drag={DragApp}
             variants={AppWindowVariants}
             animate={AppWindowAnimation}
-            transition={TSstyle}
+            transition={TransitionStyle}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: -0 }}
             dragElastic={0.25}
             onClick={() =>
@@ -337,28 +322,22 @@ export default function SetWindow() {
               cycleDrag() &
               cycleTap()
             }
-            //  onClick={() => cycleAnimation() & CycleNoteBgAnimation() & CycleImgBgAnimation() &cycleDrag()}
-            //  onDragStart ={ }
             onDragEnd={function (event, info) {
               if (info.point.y < 300) {
-                FourToOne();
+                ClickFunctionBundle();
               }
-              // else {
-              //     cycleAnimation("animationOne");
-              //      }
             }}
           >
             <motion.div
-              variants={NoteBgVariants}
-              animate={NoteBgAnimation}
-              transition={TSstyle}
-              style={NoteBgStyle}
+              variants={AppNoteBgVariants}
+              animate={AppNoteBgAnimation}
+              transition={TransitionStyle}
+              style={AppNoteBgStyle}
             />
           </motion.div>
 
           <motion.div
             className="BgImg"
-            // whileTap={{ scale: 0.8}}
             variants={ImgBgVariants}
             animate={ImgBgAnimation}
             transition={{ duration: 0.5 }}
@@ -376,7 +355,6 @@ export default function SetWindow() {
           />
           <motion.div
             className="BgBack"
-            // whileTap={{ scale: 0.8}}
             variants={BackBgVariants}
             animate={BackBgAnimation}
             transition={{ duration: 0.5 }}

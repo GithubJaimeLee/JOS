@@ -15,7 +15,6 @@ const DeskQuit = () => {
 
   const Info = (
     <div>
-      {" "}
       <p>
         1.打开应用：“图标”动画参数
         <br />
