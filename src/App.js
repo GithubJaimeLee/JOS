@@ -310,14 +310,14 @@ function App() {
                 </Link>
                 <Link to="/Delete" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>删除类50%</p>
+                    <p style={{ paddingTop: 40 }}>删除类70%</p>
                     <div>
                       <div
                         style={{
                           position: "relative",
                           top: 0,
                           left: 10,
-                          width: 140 * 0.5,
+                          width: 140 * 0.7,
                           height: 10,
                           backgroundColor: "#415FFF",
                           zIndex: 1,
