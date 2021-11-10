@@ -77,102 +77,86 @@ const UploadGallery = () => {
       alignItems: "center",
       flexDirection: "column",
     }}
-  >
-    {items.map((item) => {
-      return (
-        <div
-          className="ItemBg"
-          key={item.id}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 120,
-            height: 70,
-            backgroundColor: "#fff",
-            border: "1px solid red",
-            color: "red",
-            fontSize: 24,
-            zIndex: 100,
-          }}
-        >
-          {item.id}
-          <input
-            onChange={() => CheckAction(item.id, item.checked)}
-            type="checkbox"
-            checked={item.checked}
-          />
-        </div>
-      );
-    })}
-    <button onClick={DeleteAction}>Delete</button>
-  </div>;
+  ></div>;
   /*  */
 
   return (
     <div>
       <div
-        className="DeleteTest"
+        onClick={DeleteAction}
         style={{
-          display: "flex",
+          top: 58,
           position: "absolute",
-          left: -300,
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
+          left: 22,
+          fontSize: 18,
+          fontWeight: "bold",
+          color: "#60abf8",
+          zIndex: 100,
         }}
       >
-        {items.map((item) => {
-          return (
-            <div
-              className="ItemBg"
-              key={item.id}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 120,
-                height: 70,
-                backgroundColor: "#fff",
-                border: "1px solid red",
-                color: "red",
-                fontSize: 24,
-                zIndex: 100,
-              }}
-            >
-              {item.id}
-              <input
-                onChange={() => CheckAction(item.id, item.checked)}
-                type="checkbox"
-                checked={item.checked}
-              />
-            </div>
-          );
-        })}
-        <button onClick={DeleteAction}>Delete</button>
+        删除
       </div>
       <DndContext
         sensors={sensors}
         layoutMeasuring={layoutMeasuring}
         collisionDetection={closestCorners}
         onDragStart={handleDragStart}
-        // 下面两项是重点
-        // whileTap={handleDragOver}
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
-        // 上面两项是重点
         onDragCancel={handleDragCancel}
       >
         <SortableContext items={items} strategy={() => {}}>
           <DeleteGrid columns={4}>
-            {/*     {items.map((url, index) => (
-            // <SortablePhoto key={url} url={url} index={index} />
-            <SortablePhoto key={url} url={url} index={index} />
-          ))} */}
-            {items.map((item, index) => (
-              <SortablePhoto key={item.id} url={item.id} index={index} />
-            ))}
+            {items.map((item) => {
+              return (
+                <div
+                  className="ItemBg"
+                  key={item.id}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: 87,
+                    height: 87,
+                    //  backgroundColor: "#fff",
+                    //  border: "1px solid red",
+                    color: "red",
+                    fontSize: 24,
+                    zIndex: 100,
+                  }}
+                >
+                  {/*     {item.id} */}
+                  <input
+                    style={{
+                      position: "relative",
+                      width: 16,
+                      height: 16,
+                      top: -30,
+                      left: 30,
+                    }}
+                    onChange={() => CheckAction(item.id, item.checked)}
+                    type="checkbox"
+                    checked={item.checked}
+                  />
+                </div>
+              );
+            })}
           </DeleteGrid>
+          <div
+            className="GridPosition"
+            style={{
+              position: "absolute",
+              top: 0,
+              width: 375,
+              paddingTop: 0,
+            }}
+          >
+            <DeleteGrid columns={4}>
+              {items.map((item, index) => (
+                <SortablePhoto key={item.id} url={item.id} index={index} />
+              ))}
+            </DeleteGrid>
+          </div>
         </SortableContext>
         {/* 调整运动后的比例 */}
         <DragOverlay adjustScale={false}>
@@ -185,41 +169,11 @@ const UploadGallery = () => {
                 height: "100%",
               }}
             >
-              {/*     {items.map((item) => {
-          return (
-            <div
-              className="ItemBg"
-              key={item.id}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 120,
-                height: 70,
-                backgroundColor: "#fff",
-                border: "1px solid red",
-                color: "red",
-                fontSize: 24,
-                zIndex: 100,
-              }}
-            >
-              {item.id}
-              <input
-                onChange={() => CheckAction(item.id, item.checked)}
-                type="checkbox"
-                checked={item.checked}
-              />
-            </div>
-          );
-        })}
- */}
-
               <Delete />
             </div>
           ) : null}
         </DragOverlay>
       </DndContext>
-      ;
     </div>
   );
 };
