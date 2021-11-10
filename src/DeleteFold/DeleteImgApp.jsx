@@ -38,6 +38,31 @@ const UploadGallery = () => {
     console.log(filteredItems);
   };
   /*  */
+
+  function handleDragStart(event) {
+    setActiveId(event.active.id);
+  }
+
+  function handleDragOver(event) {
+    const { active, over } = event;
+    if (active.id !== over.id) {
+      setItems((items) => {
+        const oldIndex = items.indexOf(active.id);
+        const newIndex = items.indexOf(over.id);
+
+        return arrayMove(items, oldIndex, newIndex);
+      });
+    }
+  }
+
+  function handleDragEnd(event) {
+    setActiveId(null);
+  }
+
+  function handleDragCancel() {
+    setActiveId(null);
+  }
+
   const [activeId, setActiveId] = useState(null);
   const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
   const layoutMeasuring = {
@@ -83,6 +108,7 @@ const UploadGallery = () => {
     <button onClick={DeleteAction}>Delete</button>
   </div>;
   /*  */
+
   return (
     <div>
       <div
@@ -125,7 +151,6 @@ const UploadGallery = () => {
         })}
         <button onClick={DeleteAction}>Delete</button>
       </div>
-
       <DndContext
         sensors={sensors}
         layoutMeasuring={layoutMeasuring}
@@ -144,8 +169,8 @@ const UploadGallery = () => {
             // <SortablePhoto key={url} url={url} index={index} />
             <SortablePhoto key={url} url={url} index={index} />
           ))} */}
-            {items.map((url, index) => (
-              <SortablePhoto key={url} url={url} index={index} />
+            {items.map((item, index) => (
+              <SortablePhoto key={item.id} url={item.id} index={index} />
             ))}
           </DeleteGrid>
         </SortableContext>
@@ -194,32 +219,9 @@ const UploadGallery = () => {
           ) : null}
         </DragOverlay>
       </DndContext>
+      ;
     </div>
   );
-
-  function handleDragStart(event) {
-    setActiveId(event.active.id);
-  }
-
-  function handleDragOver(event) {
-    const { active, over } = event;
-    if (active.id !== over.id) {
-      setItems((items) => {
-        const oldIndex = items.indexOf(active.id);
-        const newIndex = items.indexOf(over.id);
-
-        return arrayMove(items, oldIndex, newIndex);
-      });
-    }
-  }
-
-  function handleDragEnd(event) {
-    setActiveId(null);
-  }
-
-  function handleDragCancel() {
-    setActiveId(null);
-  }
 };
 
 export default UploadGallery;
