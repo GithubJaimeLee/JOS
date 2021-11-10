@@ -40,7 +40,11 @@ export const Delete = forwardRef(
           style={{
             width: 16,
             height: 16,
+<<<<<<< Updated upstream:src/DeleteFold/Photo.jsx
             // backgroundColor: "#aaa",
+=======
+            // backgroundImage: `url(${url})`,
+>>>>>>> Stashed changes:src/DeleteFold/DeleteImgPhoto.jsx
             top: 4,
             left: 66,
             position: "relative",
