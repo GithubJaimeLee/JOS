@@ -1,7 +1,7 @@
 import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { Delete } from "../DeleteFold/Photo";
+import { Delete } from "../DeleteFold/DeleteImgPhoto.jsx";
 
 export const SortablePhoto = (props) => {
   const {
@@ -12,6 +12,7 @@ export const SortablePhoto = (props) => {
     transform,
     transition,
   } = useSortable({ id: props.url });
+  //} = useSortable({ id: props.id });
 
   const style = {
     transform: CSS.Transform.toString(transform),

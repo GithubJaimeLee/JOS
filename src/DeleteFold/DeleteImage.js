@@ -4,7 +4,6 @@ import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import "../App.css";
 /*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓grid输入/↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "../DeleteFold/DeleteImgApp.jsx";
 
@@ -44,7 +43,7 @@ const DeleteImage = () => {
             position: "absolute",
             top: 0,
             opacity: 1,
-            zIndex: "-1",
+            zIndex: -1,
           }}
         >
           {/*//↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓grid输入/↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓//*/}

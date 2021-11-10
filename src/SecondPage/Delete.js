@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import background from "../Img/bg2.png";
 import backIcon from "../Icon/back.png";
 import { Link } from "react-router-dom";
-import DeleteCard from "../DeleteFold/DeleteCard";
 import DeleteImage from "../DeleteFold/DeleteImage";
 import DeleteList from "../DeleteFold/DeleteList";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -123,9 +122,7 @@ const Delete = () => {
             ></div>
           </div>
         </Route>
-        <Route path="/Delete/DeleteCard">
-          <DeleteCard />
-        </Route>
+
         <Route path="/Delete/DeleteImage">
           <DeleteImage />
         </Route>

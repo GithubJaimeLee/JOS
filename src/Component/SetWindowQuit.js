@@ -130,7 +130,7 @@ export default function SetWindow() {
       top: 0,
     },
   };
-  function InputStiffnessChange(e) {
+  /*   function InputStiffnessChange(e) {
     const NewStiffnessValue = e.target.value;
     setStiffness(NewStiffnessValue);
     console.log(NewStiffnessValue);
@@ -139,7 +139,7 @@ export default function SetWindow() {
     const NewDampingValue = e.target.value;
     setDamping(NewDampingValue);
     console.log(NewDampingValue);
-  }
+  } */
 
   const TransitionStyle = {
     type: "spring",
