@@ -137,6 +137,12 @@ function EditDeleteGrid() {
                                 // setState([...state, getItems(1)]);
                                 //setState([...state, []]);
 
+                                //下方按钮
+                                // console.log(newState[1].splice(1, 1));
+                                // console.log(newState[0].push(1));
+                                //上方按钮
+                                console.log(newState[0].splice(0, 0));
+                                console.log(newState[1].push(1));
                                 setState(
                                   newState.filter((group) => group.length)
                                 );
