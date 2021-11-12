@@ -126,7 +126,7 @@ const Desk = () => {
                   </motion.div>
                 </Link>
               </div>
-              <div sclassName="Row2">
+              <div className="Row2">
                 <Link to="/Desk/deskChange" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>图标变形</p>{" "}

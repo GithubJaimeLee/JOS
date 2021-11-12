@@ -4,32 +4,25 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import background from "../Img/DeskOOS.png";
 import NavBarPage from "../Component/NavBarPage";
 import "../Component/Component.css";
+import JumpSearchBg from "../Img/JumpSearchBg.png";
+import WindowCenterBg from "../Img/WindowCenterBg.png";
+import WindowSideBg from "../Img/WindowSideBg.png";
 import Bg from "../Component/Bg";
 
 const JumpSecond = () => {
   const x = useMotionValue(0);
-  const scale = useTransform(x, [-375, -188, 0, 188, 375], [1, 0.9, 1, 0.9, 1]);
+  const scale = useTransform(
+    x,
+    [-563, -375, -188, 0, 188, 375, 563],
+    [0.9, 1, 0.9, 1, 0.9, 1, 0.9]
+  );
   const borderRadius = useTransform(
     x,
-    [-375, -188, 0, 188, 375],
-    [0, 26, 0, 26, 0]
+    [-563, -375, -188, 0, 188, 375, 563],
+    [26, 0, 26, 0, 26, 0, 26]
   );
   //const top = useTransform(x, [0, 100], [70, 170]);
   // const constraintsRef = useRef(null);
-  const MoveCard = {
-    // backgroundColor: "#fff",
-    backgroundColor: "#eee",
-    // top: "15%",
-    width: 375,
-    height: 812,
-    position: "relative",
-    borderRadius,
-    opacity: 1,
-    scale,
-    zIndex: 20,
-    /*  marginLeft: 20,
-    marginRight: 20, */
-  };
 
   const Info = (
     <p>
@@ -60,7 +53,7 @@ const JumpSecond = () => {
       >
         <motion.div
           className="Scroll"
-          dragElastic={0.2}
+          dragElastic={0.7}
           dragTransition={{
             timeConstant: 80,
             power: 1,
@@ -81,9 +74,48 @@ const JumpSecond = () => {
             zIndex: 3,
           }}
         >
-          <motion.div className="AlertCard" style={MoveCard} />
-          <motion.div className="AlertCard" style={MoveCard} />
-          <motion.div className="AlertCard" style={MoveCard} />
+          <motion.div
+            className="AlertCard"
+            style={{
+              backgroundImage: `url(${WindowSideBg})`,
+              //    backgroundColor: "#eee",
+              width: 375,
+              height: 812,
+              position: "relative",
+              borderRadius,
+              opacity: 1,
+              scale,
+              zIndex: 20,
+            }}
+          />
+          <motion.div
+            className="AlertCard"
+            style={{
+              backgroundImage: `url(${JumpSearchBg})`,
+              // backgroundColor: "#eee",
+              width: 375,
+              height: 812,
+              position: "relative",
+              borderRadius,
+              opacity: 1,
+              scale,
+              zIndex: 20,
+            }}
+          />
+          <motion.div
+            className="AlertCard"
+            style={{
+              backgroundImage: `url(${WindowCenterBg})`,
+              // backgroundColor: "#eee",
+              width: 375,
+              height: 812,
+              position: "relative",
+              borderRadius,
+              opacity: 1,
+              scale,
+              zIndex: 20,
+            }}
+          />
         </motion.div>
       </div>
       <div
