@@ -2,6 +2,7 @@ import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "../EditFold/EditGridApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
+import EditDeleteGrid from "../Component/EditDeleteGrid";
 import Bg from "../Component/Bg";
 
 const EditGrid = () => {
@@ -24,6 +25,7 @@ const EditGrid = () => {
           top: 0,
         }}
       >
+        <EditDeleteGrid />
         <App />
       </div>
 
