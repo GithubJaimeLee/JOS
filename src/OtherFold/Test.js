@@ -3,12 +3,6 @@ import SliderInput from "../Component/SliderInput";
 import NavBarSecondPage from "../Component/NavBarSecondPage";
 
 const Test = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
   return (
     <div className="All">
       <NavBarSecondPage Title="测试" />
