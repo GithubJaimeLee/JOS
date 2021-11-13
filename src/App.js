@@ -137,7 +137,7 @@ function App() {
                           left: 10,
                           width: 140 * 0.75,
                           height: 10,
-                          backgroundColor: "#415FFF",
+                          backgroundColor: "#ccc",
                           zIndex: 1,
                           borderRadius: 5,
                         }}
@@ -148,42 +148,12 @@ function App() {
                 </Link>
                 <Link to="/Window" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>弹窗100%</p>
-                    <div>
-                      <div
-                        style={{
-                          position: "relative",
-                          top: 0,
-                          left: 10,
-                          width: 140 * 1,
-                          height: 10,
-                          backgroundColor: "#415FFF",
-                          zIndex: 1,
-                          borderRadius: 5,
-                        }}
-                      ></div>
-                      <ProgressBar />
-                    </div>
+                    <p style={{ paddingTop: 40 }}>弹窗</p>
                   </motion.div>
                 </Link>
                 <Link to="/Jump" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>界面跳转80%</p>
-                    <div>
-                      <div
-                        style={{
-                          position: "relative",
-                          top: 0,
-                          left: 10,
-                          width: 140 * 0.8,
-                          height: 10,
-                          backgroundColor: "#415FFF",
-                          zIndex: 1,
-                          borderRadius: 5,
-                        }}
-                      ></div>
-                      <ProgressBar />
-                    </div>{" "}
+                    <p style={{ paddingTop: 40 }}>界面跳转</p>
                   </motion.div>
                 </Link>
                 <Link to="/Choose" style={{ textDecoration: "none" }}>
@@ -197,7 +167,7 @@ function App() {
                           left: 10,
                           width: 140 * 0.7,
                           height: 10,
-                          backgroundColor: "#415FFF",
+                          backgroundColor: "#ccc",
                           zIndex: 1,
                           borderRadius: 5,
                         }}
@@ -217,7 +187,7 @@ function App() {
                           left: 10,
                           width: 140 * 0.05,
                           height: 10,
-                          backgroundColor: "#415FFF",
+                          backgroundColor: "#ccc",
                           zIndex: 1,
                           borderRadius: 5,
                         }}
@@ -228,84 +198,24 @@ function App() {
                 </Link>
                 <Link to="/Other" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>其他100%</p>
-                    <div>
-                      <div
-                        style={{
-                          position: "relative",
-                          top: 0,
-                          left: 10,
-                          width: 140 * 1,
-                          height: 10,
-                          backgroundColor: "#415FFF",
-                          zIndex: 1,
-                          borderRadius: 5,
-                        }}
-                      ></div>
-                      <ProgressBar />
-                    </div>{" "}
+                    <p style={{ paddingTop: 40 }}>其他</p>
                   </motion.div>
                 </Link>
               </div>
               <div className="Row2">
                 <Link to="/List" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>列表100%</p>
-                    <div>
-                      <div
-                        style={{
-                          position: "relative",
-                          top: 0,
-                          left: 10,
-                          width: 140 * 1,
-                          height: 10,
-                          backgroundColor: "#415FFF",
-                          zIndex: 1,
-                          borderRadius: 5,
-                        }}
-                      ></div>
-                      <ProgressBar />
-                    </div>{" "}
+                    <p style={{ paddingTop: 40 }}>列表</p>
                   </motion.div>
                 </Link>
                 <Link to="/Click" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>点击反馈100%</p>
-                    <div>
-                      <div
-                        style={{
-                          position: "relative",
-                          top: 0,
-                          left: 10,
-                          width: 140 * 1,
-                          height: 10,
-                          backgroundColor: "#415FFF",
-                          zIndex: 1,
-                          borderRadius: 5,
-                        }}
-                      ></div>
-                      <ProgressBar />
-                    </div>{" "}
+                    <p style={{ paddingTop: 40 }}>点击反馈</p>
                   </motion.div>
                 </Link>
                 <Link to="/Alert" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>提示类100%</p>
-                    <div>
-                      <div
-                        style={{
-                          position: "relative",
-                          top: 0,
-                          left: 10,
-                          width: 140 * 1,
-                          height: 10,
-                          backgroundColor: "#415FFF",
-                          zIndex: 1,
-                          borderRadius: 5,
-                        }}
-                      ></div>
-                      <ProgressBar />
-                    </div>{" "}
+                    <p style={{ paddingTop: 40 }}>提示类</p>
                   </motion.div>
                 </Link>
                 <Link to="/Delete" style={{ textDecoration: "none" }}>
@@ -319,7 +229,7 @@ function App() {
                           left: 10,
                           width: 140 * 0.7,
                           height: 10,
-                          backgroundColor: "#415FFF",
+                          backgroundColor: "#ccc",
                           zIndex: 1,
                           borderRadius: 5,
                         }}
@@ -339,7 +249,7 @@ function App() {
                           left: 10,
                           width: 140 * 0.5,
                           height: 10,
-                          backgroundColor: "#415FFF",
+                          backgroundColor: "#ccc",
                           zIndex: 1,
                           borderRadius: 5,
                         }}
