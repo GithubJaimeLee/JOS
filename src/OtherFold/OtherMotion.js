@@ -9,7 +9,7 @@ import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import "../App.css";
 
-const DeskPull = () => {
+const OtherMotion = () => {
   const y = useMotionValue(0);
   const rotate = useTransform(y, [0, 100], [180, 0]);
   const top = useTransform(y, [0, 100], [70, 170]);
@@ -123,4 +123,4 @@ const DeskPull = () => {
   );
 };
 
-export default DeskPull;
+export default OtherMotion;
