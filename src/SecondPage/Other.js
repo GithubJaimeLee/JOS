@@ -93,7 +93,7 @@ const Other = () => {
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={card}>
-                    <p style={{ paddingTop: 40 }}>下拉刷新</p>
+                    <p style={{ paddingTop: 40 }}>单元素动画</p>
                   </motion.div>
                 </Link>
               </div>
