@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform, useCycle } from "framer-motion";
 import { Slider, InputNumber } from "antd";
-import MusicHead from "../Img/MusicHead.png";
-import MusicBodyRecommend from "../Img/MusicBodyRecommend.png";
-import MusicFooter from "../Img/MusicFooter.png";
-import MusicHeaderTap from "../Img/MusicHeaderTap.png";
-import Arrow from "../Icon/Arrow.png";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import Set from "../Icon/Set.png";
@@ -123,6 +118,8 @@ const OtherMotion = () => {
       <br /> start(开始)
       <br /> stop(停止)
       <br /> await(异步动画)
+      <br /> layout(布局动画)
+      <br /> getVelocity(速度监测)
     </p>
   );
 
@@ -141,6 +138,7 @@ const OtherMotion = () => {
     setStiffness(newValue);
     console.log(newValue);
   }
+
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -176,6 +174,7 @@ const OtherMotion = () => {
         >
           <motion.div
             className="Box"
+            drag
             style={{
               width: 100,
               height: 100,
