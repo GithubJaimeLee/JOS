@@ -52,11 +52,16 @@ const OtherMotion = () => {
   const top = useTransform(y, [0, 100], [70, 170]); */
   const [Damping, setDamping] = useState(20);
   const [Stiffness, setStiffness] = useState(100);
+  const [BounceDamping, setBounceDamping] = useState(20);
+  const [BounceStiffness, setBounceStiffness] = useState(100);
+  const [Velocity, setVelocity] = useState(1);
+  const [TimeConstant, setTimeConstant] = useState(700);
   const [Mass, setMass] = useState(1);
   const [Drag, setDrag] = useState(false);
   const [Opacity, setOpacity] = useState(1);
   const [Scale, setScale] = useState(1);
   const [Rotate, setRotate] = useState("0");
+  const [BorderRadius, setBorderRadius] = useState("12");
   const [Color, setColor] = useState("415FFF");
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
@@ -129,6 +134,8 @@ const OtherMotion = () => {
     restSpeed: 2,
     stiffness: Stiffness,
     damping: Damping,
+    bounceDamping: BounceDamping,
+    bounceStiffness: BounceStiffness,
     mass: Mass,
   };
 
@@ -190,6 +197,7 @@ const OtherMotion = () => {
               y: Yaxis,
               x: Xaxis,
               scale: Scale,
+              borderRadius: BorderRadius,
             }}
             style={{
               opacity: Opacity,
@@ -227,7 +235,13 @@ const OtherMotion = () => {
             />
 
             <div className="SetText">
-              <Tabs defaultActiveKey="1" onChange={callback}>
+              <Tabs
+                defaultActiveKey="1"
+                style={{
+                  width: 300,
+                }}
+                onChange={callback}
+              >
                 <TabPane tab="基本参数" key="1">
                   <div
                     className="SwitchInput"
@@ -363,291 +377,503 @@ const OtherMotion = () => {
                       </div>
                     </div>
                   </div>
-                </TabPane>
-                <TabPane tab="更多参数" key="2"></TabPane>
-              </Tabs>
 
-              <div
-                className="DefaultSetOpacity"
-                style={{
-                  width: 300,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 12,
-                }}
-              >
-                <h6>Opacity 透明度</h6>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                  }}
-                >
-                  <Slider
-                    min={0}
-                    max={1}
-                    onChange={setOpacity}
-                    value={Opacity}
-                    step={0.1}
+                  <div
+                    className="DefaultSetOpacity"
                     style={{
-                      width: 220,
-                    }}
-                  />
-                  <InputNumber
-                    min={0}
-                    max={1}
-                    style={{
-                      margin: 0,
-                      height: 30,
-                      width: 80,
-                      borderRadius: 6,
-                    }}
-                    step={0.1}
-                    onChange={setOpacity}
-                    value={Opacity}
-                  />
-                </div>
-              </div>
-              <div
-                className="DefaultSetScale"
-                style={{
-                  width: 300,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 12,
-                }}
-              >
-                <h6>Scale 缩放</h6>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                  }}
-                >
-                  <Slider
-                    min={0}
-                    max={2.5}
-                    onChange={setScale}
-                    value={Scale}
-                    step={0.1}
-                    style={{
-                      width: 220,
-                    }}
-                  />
-                  <InputNumber
-                    min={0}
-                    max={2.5}
-                    style={{
-                      margin: 0,
-                      height: 30,
-                      width: 80,
-                      borderRadius: 6,
-                    }}
-                    step={0.1}
-                    onChange={setScale}
-                    value={Scale}
-                  />
-                </div>
-              </div>
-              <div
-                className="DefaultSetRotate"
-                style={{
-                  width: 300,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 12,
-                }}
-              >
-                <h6>Rotate 旋转</h6>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                  }}
-                >
-                  <Slider
-                    min={-360}
-                    max={360}
-                    onChange={setRotate}
-                    value={Rotate}
-                    step={1}
-                    style={{
-                      width: 220,
-                    }}
-                  />
-                  <InputNumber
-                    min={-360}
-                    max={360}
-                    style={{
-                      margin: 0,
-                      height: 30,
-                      width: 80,
-                      borderRadius: 6,
-                    }}
-                    step={1}
-                    onChange={setRotate}
-                    value={Rotate}
-                  />
-                </div>
-              </div>
-              <div
-                className="Btns"
-                style={{
-                  display: "flex",
-                  position: "relative",
-                }}
-              >
-                <div
-                  className="DefaultSetColor"
-                  style={{
-                    width: 230,
-                    height: "auto",
-                    fontSize: 14,
-                    marginTop: 12,
-                  }}
-                >
-                  <h6
-                    style={{
-                      fontSize: 15,
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
                     }}
                   >
-                    Color
-                  </h6>
+                    <h6>Opacity 透明度</h6>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={0}
+                        max={1}
+                        onChange={setOpacity}
+                        value={Opacity}
+                        step={0.1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={1}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setOpacity}
+                        value={Opacity}
+                      />
+                    </div>
+                  </div>
                   <div
+                    className="DefaultSetScale"
+                    style={{
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
+                    }}
+                  >
+                    <h6>Scale 缩放</h6>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={0}
+                        max={2.5}
+                        onChange={setScale}
+                        value={Scale}
+                        step={0.1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={2.5}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setScale}
+                        value={Scale}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="DefaultSetRotate"
+                    style={{
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
+                    }}
+                  >
+                    <h6>Rotate 旋转</h6>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={-360}
+                        max={360}
+                        onChange={setRotate}
+                        value={Rotate}
+                        step={1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={-360}
+                        max={360}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={1}
+                        onChange={setRotate}
+                        value={Rotate}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="Btns"
                     style={{
                       display: "flex",
-                      gap: 10,
-                      fontSize: 18,
+                      position: "relative",
                     }}
                   >
-                    #
-                    <Input
+                    <div
+                      className="DefaultSetColor"
                       style={{
-                        margin: 0,
-                        height: 30,
+                        width: 230,
+                        height: "auto",
+                        fontSize: 14,
+                        marginTop: 12,
+                      }}
+                    >
+                      <h6
+                        style={{
+                          fontSize: 15,
+                        }}
+                      >
+                        Color
+                      </h6>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 10,
+                          fontSize: 18,
+                        }}
+                      >
+                        #
+                        <Input
+                          style={{
+                            margin: 0,
+                            height: 30,
+                            width: 80,
+                            borderRadius: 6,
+                          }}
+                          onChange={(e) => setColor(e.target.value)}
+                          value={Color}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="DefaultSetDrag"
+                      style={{
                         width: 80,
-                        borderRadius: 6,
-                      }}
-                      onChange={(e) => setColor(e.target.value)}
-                      value={Color}
-                    />
-                  </div>
-                </div>
-                <div
-                  className="DefaultSetDrag"
-                  style={{
-                    width: 80,
-                    height: "auto",
+                        height: "auto",
 
-                    marginTop: 12,
-                  }}
-                >
-                  <h6
-                    style={{
-                      fontSize: 15,
-                    }}
-                  >
-                    拖拽 Drag
-                  </h6>
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: 10,
-                      fontSize: 18,
-                    }}
-                  >
-                    <Switch
-                      style={{
-                        marginTop: 5,
+                        marginTop: 12,
                       }}
-                      //   defaultChecked
-                      onChange={onChange}
-                    />
+                    >
+                      <h6
+                        style={{
+                          fontSize: 15,
+                        }}
+                      >
+                        拖拽 Drag
+                      </h6>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 10,
+                          fontSize: 18,
+                        }}
+                      >
+                        <Switch
+                          style={{
+                            marginTop: 5,
+                          }}
+                          //   defaultChecked
+                          onChange={onChange}
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div
-                className="DefaultSetXaxis"
-                style={{
-                  width: 300,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 12,
-                }}
-              >
-                <h6>X 轴</h6>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                  }}
-                >
-                  <Slider
-                    min={-100}
-                    max={100}
-                    onChange={setXaxis}
-                    value={Xaxis}
-                    step={0.1}
+                  <div
+                    className="DefaultSetXaxis"
                     style={{
-                      width: 220,
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
                     }}
-                  />
-                  <InputNumber
-                    min={-100}
-                    max={100}
+                  >
+                    <h6>X 轴</h6>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={-100}
+                        max={100}
+                        onChange={setXaxis}
+                        value={Xaxis}
+                        step={0.1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={-100}
+                        max={100}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setXaxis}
+                        value={Xaxis}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="DefaultSetYaxis"
                     style={{
-                      margin: 0,
-                      height: 30,
-                      width: 80,
-                      borderRadius: 6,
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
                     }}
-                    step={0.1}
-                    onChange={setXaxis}
-                    value={Xaxis}
-                  />
-                </div>
-              </div>
-              <div
-                className="DefaultSetYaxis"
-                style={{
-                  width: 300,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 12,
-                }}
-              >
-                <h6>Y 轴</h6>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                  }}
-                >
-                  <Slider
-                    min={-100}
-                    max={100}
-                    onChange={setYaxis}
-                    value={Yaxis}
-                    step={0.1}
+                  >
+                    <h6>Y 轴</h6>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={-100}
+                        max={100}
+                        onChange={setYaxis}
+                        value={Yaxis}
+                        step={0.1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={-100}
+                        max={100}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setYaxis}
+                        value={Yaxis}
+                      />
+                    </div>
+                  </div>
+                </TabPane>
+                <TabPane tab="更多参数" key="2">
+                  <div
+                    className="DefaultSetBounceStiffness"
                     style={{
-                      width: 220,
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
                     }}
-                  />
-                  <InputNumber
-                    min={-100}
-                    max={100}
+                  >
+                    <h6>Bounce Stiffness (刚度弹力)</h6>
+
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={0}
+                        max={100}
+                        onChange={setBounceStiffness}
+                        value={BounceStiffness}
+                        step={0.1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={100}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 70,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setBounceStiffness}
+                        value={BounceStiffness}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="DefaultSetBounceDamping"
                     style={{
-                      margin: 0,
-                      height: 30,
-                      width: 80,
-                      borderRadius: 6,
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
                     }}
-                    step={0.1}
-                    onChange={setYaxis}
-                    value={Yaxis}
-                  />
-                </div>
-              </div>
+                  >
+                    <h6>Bounce Damping (阻尼弹力)</h6>
+
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={0}
+                        max={100}
+                        onChange={setBounceDamping}
+                        value={BounceDamping}
+                        step={0.1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={100}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 70,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setBounceDamping}
+                        value={BounceDamping}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="DefaultSetVelocity"
+                    style={{
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
+                    }}
+                  >
+                    <h6>Velocity 初始速度</h6>
+
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={1}
+                        max={10}
+                        onChange={setVelocity}
+                        value={Velocity}
+                        step={0.1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={1}
+                        max={10}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 70,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setVelocity}
+                        value={Velocity}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="DefaultSetBorderRadius"
+                    style={{
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
+                    }}
+                  >
+                    <h6>BorderRadius 圆角</h6>
+
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={0}
+                        max={50}
+                        onChange={setBorderRadius}
+                        value={BorderRadius}
+                        step={1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={50}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 70,
+                          borderRadius: 6,
+                        }}
+                        step={1}
+                        onChange={setBorderRadius}
+                        value={BorderRadius}
+                      />
+                    </div>
+                  </div>
+
+                  {/*      <div
+                    className="DefaultSetTimeConstant"
+                    style={{
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
+                    }}
+                  >
+                    <h6>TimeConstant 持续时间</h6>
+
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={100}
+                        max={2000}
+                        onChange={setTimeConstant}
+                        value={TimeConstant}
+                        step={1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={100}
+                        max={2000}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 70,
+                          borderRadius: 6,
+                        }}
+                        step={1}
+                        onChange={setTimeConstant}
+                        value={TimeConstant}
+                      />
+                    </div>
+                  </div> */}
+                </TabPane>
+              </Tabs>
             </div>
           </motion.div>
         </div>
