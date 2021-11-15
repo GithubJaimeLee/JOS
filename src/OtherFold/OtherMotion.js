@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform, useCycle } from "framer-motion";
-import { Slider, InputNumber, Input } from "antd";
+import { Slider, InputNumber, Input, Switch } from "antd";
+
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import Set from "../Icon/Set.png";
@@ -34,7 +35,7 @@ const SetWindowStyle = {
   // filter: "blur(2px)",
   boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
   zIndex: 10,
-  y: 630,
+  y: 730,
 };
 
 const SetWindowVariants = {
@@ -50,8 +51,10 @@ const OtherMotion = () => {
   /*  const y = useMotionValue(0);
   const rotate = useTransform(y, [0, 100], [180, 0]);
   const top = useTransform(y, [0, 100], [70, 170]); */
-  const [Damping, setDamping] = useState("20");
-  const [Stiffness, setStiffness] = useState("100");
+  const [Damping, setDamping] = useState(20);
+  const [Stiffness, setStiffness] = useState(100);
+  const [Mass, setMass] = useState(1);
+  const [Drag, setDrag] = useState(false);
   const [Opacity, setOpacity] = useState(1);
   const [Scale, setScale] = useState(1);
   const [Rotate, setRotate] = useState("0");
@@ -111,11 +114,17 @@ const OtherMotion = () => {
     </p>
   );
 
+  function onChange(checked) {
+    setDrag(checked);
+    console.log(checked);
+  }
+
   const TransitionStyle = {
     type: "spring",
     restSpeed: 2,
     stiffness: Stiffness,
     damping: Damping,
+    mass: Mass,
   };
 
   const [SetWindowAnimation, UPcycleAnimation] = useCycle(
@@ -169,6 +178,9 @@ const OtherMotion = () => {
         >
           <motion.div
             className="Box"
+            drag={Drag}
+            dragElastic={0.2}
+            dragConstraints={{ left: -100, right: 100, top: -150, bottom: 480 }}
             animate={{
               y: Yaxis,
               x: Xaxis,
@@ -176,7 +188,6 @@ const OtherMotion = () => {
             }}
             style={{
               opacity: Opacity,
-
               rotate: Rotate,
               top: 200,
               width: 100,
@@ -187,7 +198,7 @@ const OtherMotion = () => {
               position: "absolute",
             }}
             transition={TransitionStyle}
-            whileTap={{ scale: Scale * 0.2 }}
+            whileTap={{ scale: Scale * 0.6 }}
           />
           <motion.div
             className="SetWindow"
@@ -226,7 +237,7 @@ const OtherMotion = () => {
                   }}
                 >
                   <Slider
-                    min={5}
+                    min={0}
                     max={50}
                     onChange={setDamping}
                     value={Damping}
@@ -236,7 +247,7 @@ const OtherMotion = () => {
                     }}
                   />
                   <InputNumber
-                    min={5}
+                    min={0}
                     max={50}
                     style={{
                       margin: 0,
@@ -261,14 +272,7 @@ const OtherMotion = () => {
                 }}
               >
                 <h6>Stiffness 刚度</h6>
-                {/*        <p
-                  style={{
-                    color: "#666",
-                    marginBottom: 6,
-                  }}
-                >
-                  (默认值为100，更高的值将使运动更突然)
-                </p> */}
+
                 <div
                   style={{
                     display: "flex",
@@ -276,8 +280,8 @@ const OtherMotion = () => {
                   }}
                 >
                   <Slider
-                    min={5}
-                    max={50}
+                    min={0}
+                    max={100}
                     onChange={setStiffness}
                     value={Stiffness}
                     step={0.1}
@@ -286,7 +290,7 @@ const OtherMotion = () => {
                     }}
                   />
                   <InputNumber
-                    min={5}
+                    min={0}
                     max={100}
                     style={{
                       margin: 0,
@@ -301,6 +305,47 @@ const OtherMotion = () => {
                 </div>
               </div>
               <div
+                className="DefaultSetMass"
+                style={{
+                  width: 300,
+                  height: "auto",
+                  fontSize: 14,
+                  marginTop: 18,
+                }}
+              >
+                <h6>Mass 缓动</h6>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                  }}
+                >
+                  <Slider
+                    min={1}
+                    max={50}
+                    onChange={setMass}
+                    value={Mass}
+                    step={0.1}
+                    style={{
+                      width: 220,
+                    }}
+                  />
+                  <InputNumber
+                    min={1}
+                    max={50}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 70,
+                      borderRadius: 6,
+                    }}
+                    step={0.1}
+                    onChange={setMass}
+                    value={Mass}
+                  />
+                </div>
+              </div>
+              <div
                 className="DefaultSetOpacity"
                 style={{
                   width: 300,
@@ -310,14 +355,6 @@ const OtherMotion = () => {
                 }}
               >
                 <h6>Opacity 透明度</h6>
-                {/*       <p
-                  style={{
-                    color: "#666",
-                    marginBottom: 6,
-                  }}
-                >
-                  (默认值为1)
-                </p> */}
                 <div
                   style={{
                     display: "flex",
@@ -390,6 +427,7 @@ const OtherMotion = () => {
                   />
                 </div>
               </div>
+
               <div
                 className="DefaultSetRotate"
                 style={{
@@ -432,33 +470,79 @@ const OtherMotion = () => {
                 </div>
               </div>
               <div
-                className="DefaultSetColor"
+                className="Btns"
                 style={{
-                  width: 300,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 18,
+                  display: "flex",
+                  position: "relative",
                 }}
               >
-                <h6>Color</h6>
                 <div
+                  className="DefaultSetColor"
                   style={{
-                    display: "flex",
-                    gap: 10,
-                    fontSize: 18,
+                    width: 230,
+                    height: "auto",
+                    fontSize: 14,
+                    marginTop: 18,
                   }}
                 >
-                  #
-                  <Input
+                  <h6
                     style={{
-                      margin: 0,
-                      height: 30,
-                      width: 80,
-                      borderRadius: 6,
+                      fontSize: 16,
                     }}
-                    onChange={(e) => setColor(e.target.value)}
-                    value={Color}
-                  />
+                  >
+                    Color
+                  </h6>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: 10,
+                      fontSize: 18,
+                    }}
+                  >
+                    #
+                    <Input
+                      style={{
+                        margin: 0,
+                        height: 30,
+                        width: 80,
+                        borderRadius: 6,
+                      }}
+                      onChange={(e) => setColor(e.target.value)}
+                      value={Color}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="DefaultSetDrag"
+                  style={{
+                    width: 80,
+                    height: "auto",
+
+                    marginTop: 18,
+                  }}
+                >
+                  <h6
+                    style={{
+                      fontSize: 16,
+                    }}
+                  >
+                    拖拽Drag
+                  </h6>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: 10,
+                      fontSize: 18,
+                    }}
+                  >
+                    <Switch
+                      style={{
+                        marginTop: 5,
+                      }}
+                      //   defaultChecked
+                      onChange={onChange}
+                    />
+                  </div>
                 </div>
               </div>
               <div

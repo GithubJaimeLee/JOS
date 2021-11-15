@@ -109,7 +109,7 @@ const Other = () => {
                 opacity: 1,
                 zIndex: "-1",
               }}
-            ></div>
+            />
           </div>
         </Route>
         <Route path="/Other/OtherBackToTop">
