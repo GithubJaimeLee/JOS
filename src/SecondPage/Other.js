@@ -5,6 +5,7 @@ import backIcon from "../Icon/back.png";
 import { Link } from "react-router-dom";
 import OtherBackToTop from "../OtherFold/OtherBackToTop";
 import OtherMotion from "../OtherFold/OtherMotion";
+import OtherTween from "../OtherFold/OtherTween";
 import Test from "../OtherFold/Test";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
@@ -116,7 +117,7 @@ const Other = () => {
           <OtherBackToTop />
         </Route>
         <Route path="/Other/Test">
-          <Test />
+          <OtherTween />
         </Route>
 
         <Route path="/Other/OtherMotion">
