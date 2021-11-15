@@ -7,7 +7,6 @@ import DApp from "../DeskFold/DeskMove";
 import DChange from "../DeskFold/DeskChange";
 import DZoom from "../DeskFold/DeskZoom";
 import DDirection from "../DeskFold/DeskDirection";
-import DeskOpen from "../DeskFold/DeskOpen";
 import DeskQuit from "../DeskFold/DeskQuit";
 import DeskFolder from "../DeskFold/DeskFolder";
 import DeskMultiDrag from "../DeskFold/DeskMultiDrag";
@@ -107,12 +106,10 @@ const Desk = () => {
                     <p style={{ paddingTop: 40 }}>图标变形（方向）</p>
                   </motion.div>
                 </Link>
-                {/*        <Link to="/Desk/DeskOpen" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>打开应用</p>{" "}
-                  </motion.div>
-                </Link> */}
-                <Link to="/Desk/DeskQuit" style={{ textDecoration: "none" }}>
+                <Link
+                  to="/Desk/DeskOpenAndQuit"
+                  style={{ textDecoration: "none" }}
+                >
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>打开/退出应用</p>{" "}
                   </motion.div>
@@ -178,10 +175,7 @@ const Desk = () => {
         <Route path="/Desk/deskGrid">
           <DGrid />
         </Route>
-        <Route path="/Desk/DeskOpen">
-          <DeskOpen />
-        </Route>
-        <Route path="/Desk/DeskQuit">
+        <Route path="/Desk/DeskOpenAndQuit">
           <DeskQuit />
         </Route>
         <Route path="/Desk/DeskFolder">
