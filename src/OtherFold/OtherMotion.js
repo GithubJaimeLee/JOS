@@ -24,9 +24,9 @@ const SetBtnStyle = {
 
 const SetWindowStyle = {
   position: "absolute",
-  top: 100,
+  top: 50,
   width: 350,
-  height: 700,
+  height: 740,
   borderRadius: 12,
   display: "flex",
   justifyContent: "center",

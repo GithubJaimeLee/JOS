@@ -35,7 +35,7 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
                 top: 16,
                 left: 20,
                 opacity: 1,
-                zIndex: "100",
+                zIndex: 10,
               }}
             />
           </Navbar.Brand>
@@ -50,7 +50,7 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
               top: 0,
               left: 0,
               opacity: 1,
-              zIndex: "10",
+              zIndex: 10,
               width: 30,
               height: 30,
               margin: 5,
