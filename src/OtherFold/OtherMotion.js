@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform, useCycle } from "framer-motion";
-import { Slider, InputNumber, Input, Switch } from "antd";
-
+import { Slider, InputNumber, Input, Switch, Tabs } from "antd";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import Set from "../Icon/Set.png";
@@ -35,12 +34,12 @@ const SetWindowStyle = {
   // filter: "blur(2px)",
   boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
   zIndex: 10,
-  y: 730,
+  y: 760,
 };
 
 const SetWindowVariants = {
   UPanimationOne: {
-    y: 730,
+    y: 760,
   },
   UPanimationTwo: {
     y: 0,
@@ -113,6 +112,12 @@ const OtherMotion = () => {
       <br /> useVelocity(速度监测)
     </p>
   );
+
+  const { TabPane } = Tabs;
+
+  function callback(key) {
+    console.log(key);
+  }
 
   function onChange(checked) {
     setDrag(checked);
@@ -212,146 +217,163 @@ const OtherMotion = () => {
               src={Close}
               alt=""
               style={{
-                width: 20,
-                height: 20,
+                width: 16,
+                height: 16,
                 right: 20,
-                top: 18,
+                top: 16,
+                zIndex: 10,
                 position: "absolute",
               }}
             />
-            <div className="SetText">
-              <div
-                className="DefaultSetDamping"
-                style={{
-                  width: 300,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 18,
-                }}
-              >
-                <h6>Damping 阻尼系数</h6>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                  }}
-                >
-                  <Slider
-                    min={0}
-                    max={50}
-                    onChange={setDamping}
-                    value={Damping}
-                    step={0.1}
-                    style={{
-                      width: 220,
-                    }}
-                  />
-                  <InputNumber
-                    min={0}
-                    max={50}
-                    style={{
-                      margin: 0,
-                      height: 30,
-                      width: 70,
-                      top: 0,
-                      borderRadius: 6,
-                    }}
-                    step={0.1}
-                    onChange={setDamping}
-                    value={Damping}
-                  />
-                </div>
-              </div>
-              <div
-                className="DefaultSetStiffness"
-                style={{
-                  width: 300,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 18,
-                }}
-              >
-                <h6>Stiffness 刚度</h6>
 
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                  }}
-                >
-                  <Slider
-                    min={0}
-                    max={100}
-                    onChange={setStiffness}
-                    value={Stiffness}
-                    step={0.1}
-                    style={{
-                      width: 220,
-                    }}
-                  />
-                  <InputNumber
-                    min={0}
-                    max={100}
-                    style={{
-                      margin: 0,
-                      height: 30,
-                      width: 70,
-                      borderRadius: 6,
-                    }}
-                    step={0.1}
-                    onChange={setStiffness}
-                    value={Stiffness}
-                  />
-                </div>
-              </div>
-              <div
-                className="DefaultSetMass"
-                style={{
-                  width: 300,
-                  height: "auto",
-                  fontSize: 14,
-                  marginTop: 18,
-                }}
-              >
-                <h6>Mass 缓动</h6>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                  }}
-                >
-                  <Slider
-                    min={1}
-                    max={50}
-                    onChange={setMass}
-                    value={Mass}
-                    step={0.1}
-                    style={{
-                      width: 220,
-                    }}
-                  />
-                  <InputNumber
-                    min={1}
-                    max={50}
-                    style={{
-                      margin: 0,
-                      height: 30,
-                      width: 70,
-                      borderRadius: 6,
-                    }}
-                    step={0.1}
-                    onChange={setMass}
-                    value={Mass}
-                  />
-                </div>
-              </div>
+            <div className="SetText">
+              <Tabs defaultActiveKey="1" onChange={callback}>
+                <TabPane tab="基本参数" key="1">
+                  <div
+                    className="SwitchInput"
+                    style={
+                      {
+                        // display: "none",
+                      }
+                    }
+                  >
+                    <div
+                      className="DefaultSetDamping"
+                      style={{
+                        width: 300,
+                        height: "auto",
+                        fontSize: 14,
+                        marginTop: 12,
+                      }}
+                    >
+                      <h6>Damping 阻尼系数</h6>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 10,
+                        }}
+                      >
+                        <Slider
+                          min={0}
+                          max={50}
+                          onChange={setDamping}
+                          value={Damping}
+                          step={0.1}
+                          style={{
+                            width: 220,
+                          }}
+                        />
+                        <InputNumber
+                          min={0}
+                          max={50}
+                          style={{
+                            margin: 0,
+                            height: 30,
+                            width: 70,
+                            top: 0,
+                            borderRadius: 6,
+                          }}
+                          step={0.1}
+                          onChange={setDamping}
+                          value={Damping}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="DefaultSetStiffness"
+                      style={{
+                        width: 300,
+                        height: "auto",
+                        fontSize: 14,
+                        marginTop: 12,
+                      }}
+                    >
+                      <h6>Stiffness 刚度</h6>
+
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 10,
+                        }}
+                      >
+                        <Slider
+                          min={0}
+                          max={100}
+                          onChange={setStiffness}
+                          value={Stiffness}
+                          step={0.1}
+                          style={{
+                            width: 220,
+                          }}
+                        />
+                        <InputNumber
+                          min={0}
+                          max={100}
+                          style={{
+                            margin: 0,
+                            height: 30,
+                            width: 70,
+                            borderRadius: 6,
+                          }}
+                          step={0.1}
+                          onChange={setStiffness}
+                          value={Stiffness}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="DefaultSetMass"
+                      style={{
+                        width: 300,
+                        height: "auto",
+                        fontSize: 14,
+                        marginTop: 12,
+                      }}
+                    >
+                      <h6>Mass 缓动</h6>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 10,
+                        }}
+                      >
+                        <Slider
+                          min={1}
+                          max={50}
+                          onChange={setMass}
+                          value={Mass}
+                          step={0.1}
+                          style={{
+                            width: 220,
+                          }}
+                        />
+                        <InputNumber
+                          min={1}
+                          max={50}
+                          style={{
+                            margin: 0,
+                            height: 30,
+                            width: 70,
+                            borderRadius: 6,
+                          }}
+                          step={0.1}
+                          onChange={setMass}
+                          value={Mass}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </TabPane>
+                <TabPane tab="更多参数" key="2"></TabPane>
+              </Tabs>
+
               <div
                 className="DefaultSetOpacity"
                 style={{
                   width: 300,
                   height: "auto",
                   fontSize: 14,
-                  marginTop: 18,
+                  marginTop: 12,
                 }}
               >
                 <h6>Opacity 透明度</h6>
@@ -392,7 +414,7 @@ const OtherMotion = () => {
                   width: 300,
                   height: "auto",
                   fontSize: 14,
-                  marginTop: 18,
+                  marginTop: 12,
                 }}
               >
                 <h6>Scale 缩放</h6>
@@ -427,14 +449,13 @@ const OtherMotion = () => {
                   />
                 </div>
               </div>
-
               <div
                 className="DefaultSetRotate"
                 style={{
                   width: 300,
                   height: "auto",
                   fontSize: 14,
-                  marginTop: 18,
+                  marginTop: 12,
                 }}
               >
                 <h6>Rotate 旋转</h6>
@@ -482,12 +503,12 @@ const OtherMotion = () => {
                     width: 230,
                     height: "auto",
                     fontSize: 14,
-                    marginTop: 18,
+                    marginTop: 12,
                   }}
                 >
                   <h6
                     style={{
-                      fontSize: 16,
+                      fontSize: 15,
                     }}
                   >
                     Color
@@ -518,15 +539,15 @@ const OtherMotion = () => {
                     width: 80,
                     height: "auto",
 
-                    marginTop: 18,
+                    marginTop: 12,
                   }}
                 >
                   <h6
                     style={{
-                      fontSize: 16,
+                      fontSize: 15,
                     }}
                   >
-                    拖拽Drag
+                    拖拽 Drag
                   </h6>
                   <div
                     style={{
@@ -551,7 +572,7 @@ const OtherMotion = () => {
                   width: 300,
                   height: "auto",
                   fontSize: 14,
-                  marginTop: 18,
+                  marginTop: 12,
                 }}
               >
                 <h6>X 轴</h6>
@@ -592,7 +613,7 @@ const OtherMotion = () => {
                   width: 300,
                   height: "auto",
                   fontSize: 14,
-                  marginTop: 18,
+                  marginTop: 12,
                 }}
               >
                 <h6>Y 轴</h6>
