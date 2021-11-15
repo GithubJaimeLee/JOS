@@ -79,17 +79,50 @@ const OtherMotion = () => {
 
   const Info = (
     <p>
-      scale
-      <br /> opacity
-      <br /> duration
-      <br /> stiffness
+      scale(缩放)
+      <br /> opacity(透明度)
+      <br /> color(颜色)
+      <br /> x(x轴)
+      <br /> y(y轴)
+      <br /> y(y轴)
+      <br /> rotate(旋转)
+      <br /> duration(持续时间)
+      <br /> borderRadius(圆角)
       <br /> delay 延时(秒)
       <br /> delayChildren 子组件延时(秒)
-      <br /> spring曲线
+      <br /> spring(拟物曲线动画)
+      <br /> drag(是否可拖动)
       <br /> staggerChildren
       错开(若为0.01，第一个孩子将被延迟0秒，第二个孩子将被延迟0.01，第三个孩子将被延迟0.02，依此类推)
       <br /> when: false | "beforeChildren" | "afterChildren" |(时间顺序)
       <br /> repeat: Infinity |数字 |(循环次数)
+      <br /> repeat: loop从头到尾,reverse反向循环,mirror交替循环 |(循环状态)
+      <br /> repeatDelay|(循环延时)
+      <br /> linear(线性匀速动画)
+      <br /> tween(补间动画)
+      <br /> linear:cubic bezier curve贝塞尔曲线(贝塞尔曲线)
+      贝塞尔曲线子项:"ease"、"linear"、"easeIn"、"easeOut"、"easeInOut"、"circIn"、"circOut"、"circInOut"、"backIn"、"backOut"、"backInOut"、"anticipate"
+      <br /> from(关键帧断点)
+      <br /> times: [0.1, 0.1, 0.1, 0.1](关键帧持续时间)
+      <br /> bounce(弹力)
+      <br /> damping(阻尼,会覆盖bounce,duration)
+      <br /> mass(缓动,会覆盖bounce,duration)
+      <br /> stiffness(刚度,会覆盖bounce,duration)
+      <br /> velocity(初速度)
+      <br /> restSpeed(低速结束动画)
+      <br /> restDelta(距离结束动画)
+      <br /> inertia(惯性曲线动画，可与velocity初速度配合使用)
+      <br /> modifyTarget(网格运动)
+      <br /> bounceStiffness(弹力刚度)
+      <br /> bounceDamping(弹力阻尼)
+      <br /> power(拖拽准心准确度,值越大准确度越高)
+      <br /> timeConstant(减速时间)
+      <br /> transition(过度)
+      <br /> transitionEnd(结束过度方式)
+      <br /> useTransform(联动)
+      <br /> start(开始)
+      <br /> stop(停止)
+      <br /> await(异步动画)
     </p>
   );
 
