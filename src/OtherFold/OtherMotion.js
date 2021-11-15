@@ -39,7 +39,7 @@ const SetWindowStyle = {
 
 const SetWindowVariants = {
   UPanimationOne: {
-    y: 630,
+    y: 730,
   },
   UPanimationTwo: {
     y: 0,
@@ -52,8 +52,8 @@ const OtherMotion = () => {
   const top = useTransform(y, [0, 100], [70, 170]); */
   const [Damping, setDamping] = useState("20");
   const [Stiffness, setStiffness] = useState("100");
-  const [Opacity, setOpacity] = useState("1");
-  const [Scale, setScale] = useState("1");
+  const [Opacity, setOpacity] = useState(1);
+  const [Scale, setScale] = useState(1);
   const [Rotate, setRotate] = useState("0");
   const [Color, setColor] = useState("415FFF");
   const [Yaxis, setYaxis] = useState(0);
@@ -172,10 +172,11 @@ const OtherMotion = () => {
             animate={{
               y: Yaxis,
               x: Xaxis,
+              scale: Scale,
             }}
             style={{
               opacity: Opacity,
-              scale: Scale,
+
               rotate: Rotate,
               top: 200,
               width: 100,
@@ -186,7 +187,7 @@ const OtherMotion = () => {
               position: "absolute",
             }}
             transition={TransitionStyle}
-            whileTap={{ scale: 0.2 }}
+            whileTap={{ scale: Scale * 0.2 }}
           />
           <motion.div
             className="SetWindow"
