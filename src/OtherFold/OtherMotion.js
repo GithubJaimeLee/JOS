@@ -1,22 +1,11 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform, useCycle } from "framer-motion";
-import { Slider, InputNumber } from "antd";
+import { Slider, InputNumber, Input } from "antd";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import Set from "../Icon/Set.png";
 import Close from "../Icon/Close.png";
 import "../App.css";
-
-const UPBoxAnimation = {
-  UPanimationOne: {
-    y: 500,
-    zIndex: 1,
-  },
-  UPanimationTwo: {
-    y: 0,
-    zIndex: 1,
-  },
-};
 
 const SetBtnStyle = {
   position: "absolute",
@@ -33,44 +22,41 @@ const SetBtnStyle = {
 };
 
 const SetWindowStyle = {
-  position: "relative",
-  top: 400,
+  position: "absolute",
+  top: 200,
   width: 350,
-  height: 318,
+  height: 600,
   borderRadius: 12,
   display: "flex",
   justifyContent: "center",
   alignContent: "center",
-  backgroundColor: "#FFFFFF",
-  boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.2)",
-  zIndex: 1,
-  y: 500,
+  backgroundColor: "rgba(255,255,255,0.7)",
+  // filter: "blur(2px)",
+  boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
+  zIndex: 10,
+  y: 630,
 };
 
 const SetWindowVariants = {
   UPanimationOne: {
-    y: 500,
-    zIndex: 1,
+    y: 630,
   },
   UPanimationTwo: {
     y: 0,
-    zIndex: 1,
   },
 };
 
 const OtherMotion = () => {
-  const y = useMotionValue(0);
+  /*  const y = useMotionValue(0);
   const rotate = useTransform(y, [0, 100], [180, 0]);
-  const top = useTransform(y, [0, 100], [70, 170]);
+  const top = useTransform(y, [0, 100], [70, 170]); */
   const [Damping, setDamping] = useState("20");
   const [Stiffness, setStiffness] = useState("100");
-
-  const TransitionStyle = {
-    type: "spring",
-    restSpeed: 2,
-    stiffness: Stiffness,
-    damping: Damping,
-  };
+  const [Opacity, setOpacity] = useState("1");
+  const [Scale, setScale] = useState("1");
+  const [Rotate, setRotate] = useState("0");
+  const [Color, setColor] = useState("415FFF");
+  const [Yaxis, setYaxis] = useState("0");
 
   const Info = (
     <p>
@@ -119,9 +105,17 @@ const OtherMotion = () => {
       <br /> stop(停止)
       <br /> await(异步动画)
       <br /> layout(布局动画)
-      <br /> getVelocity(速度监测)
+      <br /> useSpring(曲线监测)
+      <br /> useVelocity(速度监测)
     </p>
   );
+
+  const TransitionStyle = {
+    type: "spring",
+    restSpeed: 2,
+    stiffness: Stiffness,
+    damping: Damping,
+  };
 
   const [SetWindowAnimation, UPcycleAnimation] = useCycle(
     "UPanimationOne",
@@ -176,13 +170,16 @@ const OtherMotion = () => {
             className="Box"
             drag
             style={{
+              opacity: Opacity,
+              scale: Scale,
+              rotate: Rotate,
+              top: 200,
               width: 100,
               height: 100,
-              backgroundColor: "#415FFF",
+              backgroundColor: `#${Color}`,
               borderRadius: 12,
-              zIndex: 1,
+              zIndex: 2,
               position: "absolute",
-              top: 200,
             }}
             transition={TransitionStyle}
             whileTap={{ scale: 0.1 }}
@@ -208,117 +205,298 @@ const OtherMotion = () => {
             />
             <div className="SetText">
               <div
-                className="DefaultSet"
+                className="DefaultSetDamping"
                 style={{
-                  width: 220,
+                  width: 300,
                   height: "auto",
                   fontSize: 14,
                   marginTop: 18,
                 }}
               >
+                <h6>Damping 阻尼系数</h6>
                 <div
-                  className="ImportSliderInput"
                   style={{
-                    position: "absolute",
-                    top: 300,
-                    zIndex: 10000,
+                    display: "flex",
+                    gap: 10,
                   }}
                 >
-                  {/*<SliderInput /> 开始还原*/}
-                  <div
-                    className="InputTest"
+                  <Slider
+                    min={5}
+                    max={50}
+                    onChange={setDamping}
+                    value={Damping}
+                    step={0.1}
                     style={{
-                      display: "flex",
+                      width: 220,
                     }}
-                  >
-                    <div
-                      className="SliderInput"
-                      style={{
-                        width: 160,
-                        height: 80,
-                      }}
-                    ></div>
-                    <div
-                      style={{
-                        width: 30,
-                        height: 80,
-                      }}
-                      className="InputNumberBox"
-                    ></div>
-                  </div>
+                  />
+                  <InputNumber
+                    min={5}
+                    max={50}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 70,
+                      top: 0,
+
+                      borderRadius: 6,
+                    }}
+                    step={0.1}
+                    onChange={setDamping}
+                    value={Damping}
+                  />
                 </div>
-
-                <h6>Damping 阻尼系数设置</h6>
-                <p
-                  style={{
-                    color: "#666",
-                    marginBottom: 6,
-                  }}
-                >
-                  (默认值为20，如果设置为0，弹力将无限振荡)
-                </p>
-
-                <Slider
-                  min={5}
-                  max={50}
-                  onChange={setDamping}
-                  value={Damping}
-                  step={0.1}
-                />
-                <InputNumber
-                  min={5}
-                  max={50}
-                  style={{
-                    margin: 0,
-                    height: 30,
-                    width: 220,
-                    borderRadius: 6,
-                  }}
-                  step={0.1}
-                  onChange={setDamping}
-                  value={Damping}
-                />
               </div>
-
               <div
-                className="DefaultSet"
+                className="DefaultSetStiffness"
                 style={{
-                  width: 220,
+                  width: 300,
                   height: "auto",
                   fontSize: 14,
                   marginTop: 18,
                 }}
               >
-                <h6>Stiffness 刚度设置</h6>
-                <p
+                <h6>Stiffness 刚度</h6>
+                {/*        <p
                   style={{
                     color: "#666",
                     marginBottom: 6,
                   }}
                 >
                   (默认值为100，更高的值将使运动更突然)
-                </p>
-
-                <Slider
-                  min={5}
-                  max={50}
-                  onChange={setStiffness}
-                  value={Stiffness}
-                  step={0.1}
-                />
-                <InputNumber
-                  min={5}
-                  max={100}
+                </p> */}
+                <div
                   style={{
-                    margin: 0,
-                    height: 30,
-                    width: 220,
-                    borderRadius: 6,
+                    display: "flex",
+                    gap: 10,
                   }}
-                  step={0.1}
-                  onChange={setStiffness}
-                  value={Stiffness}
-                />
+                >
+                  <Slider
+                    min={5}
+                    max={50}
+                    onChange={setStiffness}
+                    value={Stiffness}
+                    step={0.1}
+                    style={{
+                      width: 220,
+                    }}
+                  />
+                  <InputNumber
+                    min={5}
+                    max={100}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 70,
+                      borderRadius: 6,
+                    }}
+                    step={0.1}
+                    onChange={setStiffness}
+                    value={Stiffness}
+                  />
+                </div>
+              </div>
+              <div
+                className="DefaultSetOpacity"
+                style={{
+                  width: 300,
+                  height: "auto",
+                  fontSize: 14,
+                  marginTop: 18,
+                }}
+              >
+                <h6>Opacity 透明度</h6>
+                {/*       <p
+                  style={{
+                    color: "#666",
+                    marginBottom: 6,
+                  }}
+                >
+                  (默认值为1)
+                </p> */}
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                  }}
+                >
+                  <Slider
+                    min={0}
+                    max={1}
+                    onChange={setOpacity}
+                    value={Opacity}
+                    step={0.1}
+                    style={{
+                      width: 220,
+                    }}
+                  />
+                  <InputNumber
+                    min={0}
+                    max={1}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 80,
+                      borderRadius: 6,
+                    }}
+                    step={0.1}
+                    onChange={setOpacity}
+                    value={Opacity}
+                  />
+                </div>
+              </div>
+              <div
+                className="DefaultSetScale"
+                style={{
+                  width: 300,
+                  height: "auto",
+                  fontSize: 14,
+                  marginTop: 18,
+                }}
+              >
+                <h6>Scale 缩放</h6>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                  }}
+                >
+                  <Slider
+                    min={0}
+                    max={2.5}
+                    onChange={setScale}
+                    value={Scale}
+                    step={0.1}
+                    style={{
+                      width: 220,
+                    }}
+                  />
+                  <InputNumber
+                    min={0}
+                    max={2.5}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 80,
+                      borderRadius: 6,
+                    }}
+                    step={0.1}
+                    onChange={setScale}
+                    value={Scale}
+                  />
+                </div>
+              </div>
+              <div
+                className="DefaultSetRotate"
+                style={{
+                  width: 300,
+                  height: "auto",
+                  fontSize: 14,
+                  marginTop: 18,
+                }}
+              >
+                <h6>Rotate 旋转</h6>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                  }}
+                >
+                  <Slider
+                    min={-360}
+                    max={360}
+                    onChange={setRotate}
+                    value={Rotate}
+                    step={1}
+                    style={{
+                      width: 220,
+                    }}
+                  />
+                  <InputNumber
+                    min={-360}
+                    max={360}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 80,
+                      borderRadius: 6,
+                    }}
+                    step={1}
+                    onChange={setRotate}
+                    value={Rotate}
+                  />
+                </div>
+              </div>
+              <div
+                className="DefaultSetXaxis"
+                style={{
+                  width: 300,
+                  height: "auto",
+                  fontSize: 14,
+                  marginTop: 18,
+                }}
+              >
+                <h6>Color</h6>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                    fontSize: 18,
+                  }}
+                >
+                  #
+                  <Input
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 80,
+                      borderRadius: 6,
+                    }}
+                    onChange={(e) => setColor(e.target.value)}
+                    value={Color}
+                  />
+                </div>
+              </div>
+              <div
+                className="DefaultSetYaxis"
+                style={{
+                  width: 300,
+                  height: "auto",
+                  fontSize: 14,
+                  marginTop: 18,
+                }}
+              >
+                <h6>Y 轴</h6>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                  }}
+                >
+                  <Slider
+                    min={-100}
+                    max={100}
+                    onChange={setYaxis}
+                    value={Yaxis}
+                    step={0.1}
+                    style={{
+                      width: 220,
+                    }}
+                  />
+                  <InputNumber
+                    min={-100}
+                    max={100}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 80,
+                      borderRadius: 6,
+                    }}
+                    step={0.1}
+                    onChange={setYaxis}
+                    value={Yaxis}
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
@@ -330,15 +508,3 @@ const OtherMotion = () => {
 };
 
 export default OtherMotion;
-<div
-  className="Box"
-  style={{
-    width: 100,
-    height: 100,
-    backgroundColor: "#415FFF",
-    borderRadius: 12,
-    zIndex: 1,
-    position: "relative",
-    top: 70,
-  }}
-></div>;
