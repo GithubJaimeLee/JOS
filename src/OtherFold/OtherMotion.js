@@ -23,9 +23,9 @@ const SetBtnStyle = {
 
 const SetWindowStyle = {
   position: "absolute",
-  top: 200,
+  top: 100,
   width: 350,
-  height: 600,
+  height: 700,
   borderRadius: 12,
   display: "flex",
   justifyContent: "center",
@@ -56,7 +56,8 @@ const OtherMotion = () => {
   const [Scale, setScale] = useState("1");
   const [Rotate, setRotate] = useState("0");
   const [Color, setColor] = useState("415FFF");
-  const [Yaxis, setYaxis] = useState("0");
+  const [Yaxis, setYaxis] = useState(0);
+  const [Xaxis, setXaxis] = useState(0);
 
   const Info = (
     <p>
@@ -168,7 +169,10 @@ const OtherMotion = () => {
         >
           <motion.div
             className="Box"
-            drag
+            animate={{
+              y: Yaxis,
+              x: Xaxis,
+            }}
             style={{
               opacity: Opacity,
               scale: Scale,
@@ -182,7 +186,7 @@ const OtherMotion = () => {
               position: "absolute",
             }}
             transition={TransitionStyle}
-            whileTap={{ scale: 0.1 }}
+            whileTap={{ scale: 0.2 }}
           />
           <motion.div
             className="SetWindow"
@@ -238,7 +242,6 @@ const OtherMotion = () => {
                       height: 30,
                       width: 70,
                       top: 0,
-
                       borderRadius: 6,
                     }}
                     step={0.1}
@@ -428,7 +431,7 @@ const OtherMotion = () => {
                 </div>
               </div>
               <div
-                className="DefaultSetXaxis"
+                className="DefaultSetColor"
                 style={{
                   width: 300,
                   height: "auto",
@@ -454,6 +457,47 @@ const OtherMotion = () => {
                     }}
                     onChange={(e) => setColor(e.target.value)}
                     value={Color}
+                  />
+                </div>
+              </div>
+              <div
+                className="DefaultSetXaxis"
+                style={{
+                  width: 300,
+                  height: "auto",
+                  fontSize: 14,
+                  marginTop: 18,
+                }}
+              >
+                <h6>X 轴</h6>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                  }}
+                >
+                  <Slider
+                    min={-100}
+                    max={100}
+                    onChange={setXaxis}
+                    value={Xaxis}
+                    step={0.1}
+                    style={{
+                      width: 220,
+                    }}
+                  />
+                  <InputNumber
+                    min={-100}
+                    max={100}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 80,
+                      borderRadius: 6,
+                    }}
+                    step={0.1}
+                    onChange={setXaxis}
+                    value={Xaxis}
                   />
                 </div>
               </div>
