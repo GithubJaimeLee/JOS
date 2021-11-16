@@ -53,7 +53,7 @@ const OtherTween = () => {
   const top = useTransform(y, [0, 100], [70, 170]); */
   const [Damping, setDamping] = useState(20);
   const [Stiffness, setStiffness] = useState(100);
-  const [Duration, setDuration] = useState(6);
+  const [Duration, setDuration] = useState(2);
   const [BounceDamping, setBounceDamping] = useState(20);
   const [BounceStiffness, setBounceStiffness] = useState(100);
   const [Velocity, setVelocity] = useState(1);
@@ -142,7 +142,7 @@ const OtherTween = () => {
     yoyo: Infinity,
     type: "spring",
     // restSpeed: 2,
-    // duration: Duration,
+    duration: Duration,
     stiffness: Stiffness,
     damping: Damping,
     bounceDamping: BounceDamping,
@@ -468,7 +468,7 @@ const OtherTween = () => {
                       />
                     </div>
                   </div>
-                  {/*    <div
+                  <div
                     className="DefaultSetDuration"
                     style={{
                       width: 300,
@@ -495,8 +495,8 @@ const OtherTween = () => {
                         }}
                       />
                       <InputNumber
-                        min={-360}
-                        max={360}
+                        min={1}
+                        max={60}
                         style={{
                           margin: 0,
                           height: 30,
@@ -508,7 +508,7 @@ const OtherTween = () => {
                         value={Duration}
                       />
                     </div>
-                  </div> */}
+                  </div>
                   <div
                     className="Btns"
                     style={{
