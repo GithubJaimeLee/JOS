@@ -141,6 +141,7 @@ const OtherTween = () => {
     yoyo: Infinity,
     type: "spring",
     // restSpeed: 2,
+    // duration: 1,
     stiffness: Stiffness,
     damping: Damping,
     bounceDamping: BounceDamping,
