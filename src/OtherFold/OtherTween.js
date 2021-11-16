@@ -53,6 +53,7 @@ const OtherTween = () => {
   const top = useTransform(y, [0, 100], [70, 170]); */
   const [Damping, setDamping] = useState(20);
   const [Stiffness, setStiffness] = useState(100);
+  const [Duration, setDuration] = useState(6);
   const [BounceDamping, setBounceDamping] = useState(20);
   const [BounceStiffness, setBounceStiffness] = useState(100);
   const [Velocity, setVelocity] = useState(1);
@@ -141,7 +142,7 @@ const OtherTween = () => {
     yoyo: Infinity,
     type: "spring",
     // restSpeed: 2,
-    // duration: 1,
+    // duration: Duration,
     stiffness: Stiffness,
     damping: Damping,
     bounceDamping: BounceDamping,
@@ -467,6 +468,47 @@ const OtherTween = () => {
                       />
                     </div>
                   </div>
+                  {/*    <div
+                    className="DefaultSetDuration"
+                    style={{
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
+                    }}
+                  >
+                    <h6>Duration 持续时间</h6>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={1}
+                        max={60}
+                        onChange={setDuration}
+                        value={Duration}
+                        step={1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={-360}
+                        max={360}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={1}
+                        onChange={setDuration}
+                        value={Duration}
+                      />
+                    </div>
+                  </div> */}
                   <div
                     className="Btns"
                     style={{
