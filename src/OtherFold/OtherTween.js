@@ -137,8 +137,10 @@ const OtherTween = () => {
   }
 
   const TransitionStyle = {
+    linear: Value,
+    yoyo: Infinity,
     type: "spring",
-    restSpeed: 2,
+    // restSpeed: 2,
     stiffness: Stiffness,
     damping: Damping,
     bounceDamping: BounceDamping,
@@ -197,18 +199,15 @@ const OtherTween = () => {
         >
           <motion.div
             className="Box"
-            drag={Drag}
-            dragElastic={0.2}
-            dragConstraints={{ left: -100, right: 100, top: -150, bottom: 480 }}
             animate={{
-              y: Yaxis,
-              x: Xaxis,
-              scale: Scale,
-              borderRadius: BorderRadius,
+              y: [-180, 500],
+              x: [100, -100],
             }}
             style={{
+              borderRadius: BorderRadius,
               opacity: Opacity,
               rotate: Rotate,
+              borderRadius: `${BorderRadius}px`,
               top: 200,
               width: 100,
               height: 100,
@@ -218,7 +217,6 @@ const OtherTween = () => {
               position: "absolute",
             }}
             transition={TransitionStyle}
-            whileTap={{ scale: Scale * 0.6 }}
           />
           <motion.div
             className="SetWindow"
@@ -426,47 +424,7 @@ const OtherTween = () => {
                       />
                     </div>
                   </div>
-                  <div
-                    className="DefaultSetScale"
-                    style={{
-                      width: 300,
-                      height: "auto",
-                      fontSize: 14,
-                      marginTop: 12,
-                    }}
-                  >
-                    <h6>Scale 缩放</h6>
-                    <div
-                      style={{
-                        display: "flex",
-                        gap: 10,
-                      }}
-                    >
-                      <Slider
-                        min={0}
-                        max={2.5}
-                        onChange={setScale}
-                        value={Scale}
-                        step={0.1}
-                        style={{
-                          width: 220,
-                        }}
-                      />
-                      <InputNumber
-                        min={0}
-                        max={2.5}
-                        style={{
-                          margin: 0,
-                          height: 30,
-                          width: 80,
-                          borderRadius: 6,
-                        }}
-                        step={0.1}
-                        onChange={setScale}
-                        value={Scale}
-                      />
-                    </div>
-                  </div>
+
                   <div
                     className="DefaultSetRotate"
                     style={{
@@ -550,120 +508,6 @@ const OtherTween = () => {
                           value={Color}
                         />
                       </div>
-                    </div>
-                    <div
-                      className="DefaultSetDrag"
-                      style={{
-                        width: 80,
-                        height: "auto",
-
-                        marginTop: 12,
-                      }}
-                    >
-                      <h6
-                        style={{
-                          fontSize: 15,
-                        }}
-                      >
-                        拖拽 Drag
-                      </h6>
-                      <div
-                        style={{
-                          display: "flex",
-                          gap: 10,
-                          fontSize: 18,
-                        }}
-                      >
-                        <Switch
-                          style={{
-                            marginTop: 5,
-                          }}
-                          //   defaultChecked
-                          onChange={onChange}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="DefaultSetXaxis"
-                    style={{
-                      width: 300,
-                      height: "auto",
-                      fontSize: 14,
-                      marginTop: 12,
-                    }}
-                  >
-                    <h6>X 轴</h6>
-                    <div
-                      style={{
-                        display: "flex",
-                        gap: 10,
-                      }}
-                    >
-                      <Slider
-                        min={-100}
-                        max={100}
-                        onChange={setXaxis}
-                        value={Xaxis}
-                        step={0.1}
-                        style={{
-                          width: 220,
-                        }}
-                      />
-                      <InputNumber
-                        min={-100}
-                        max={100}
-                        style={{
-                          margin: 0,
-                          height: 30,
-                          width: 80,
-                          borderRadius: 6,
-                        }}
-                        step={0.1}
-                        onChange={setXaxis}
-                        value={Xaxis}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className="DefaultSetYaxis"
-                    style={{
-                      width: 300,
-                      height: "auto",
-                      fontSize: 14,
-                      marginTop: 12,
-                    }}
-                  >
-                    <h6>Y 轴</h6>
-                    <div
-                      style={{
-                        display: "flex",
-                        gap: 10,
-                      }}
-                    >
-                      <Slider
-                        min={-100}
-                        max={100}
-                        onChange={setYaxis}
-                        value={Yaxis}
-                        step={0.1}
-                        style={{
-                          width: 220,
-                        }}
-                      />
-                      <InputNumber
-                        min={-100}
-                        max={100}
-                        style={{
-                          margin: 0,
-                          height: 30,
-                          width: 80,
-                          borderRadius: 6,
-                        }}
-                        step={0.1}
-                        onChange={setYaxis}
-                        value={Yaxis}
-                      />
                     </div>
                   </div>
                 </TabPane>
@@ -791,48 +635,6 @@ const OtherTween = () => {
                         step={0.1}
                         onChange={setVelocity}
                         value={Velocity}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className="DefaultSetBorderRadius"
-                    style={{
-                      width: 300,
-                      height: "auto",
-                      fontSize: 14,
-                      marginTop: 12,
-                    }}
-                  >
-                    <h6>BorderRadius 圆角</h6>
-
-                    <div
-                      style={{
-                        display: "flex",
-                        gap: 10,
-                      }}
-                    >
-                      <Slider
-                        min={0}
-                        max={50}
-                        onChange={setBorderRadius}
-                        value={BorderRadius}
-                        step={1}
-                        style={{
-                          width: 220,
-                        }}
-                      />
-                      <InputNumber
-                        min={0}
-                        max={50}
-                        style={{
-                          margin: 0,
-                          height: 30,
-                          width: 70,
-                          borderRadius: 6,
-                        }}
-                        step={1}
-                        onChange={setBorderRadius}
-                        value={BorderRadius}
                       />
                     </div>
                   </div>
