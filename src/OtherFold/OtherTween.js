@@ -201,10 +201,6 @@ const OtherTween = () => {
         >
           <motion.div
             className="Box"
-            animate={{
-              y: [-180, 500],
-              x: [100, -100],
-            }}
             style={{
               borderRadius: BorderRadius,
               opacity: Opacity,
@@ -215,10 +211,11 @@ const OtherTween = () => {
               height: 100,
               backgroundColor: `#${Color}`,
               borderRadius: 12,
-              zIndex: 2,
+              zIndex: 10,
               position: "absolute",
             }}
             transition={TransitionStyle}
+            animate={{ y: [-180, 500], x: [100, -100] }}
           />
           <motion.div
             className="SetWindow"
@@ -468,7 +465,7 @@ const OtherTween = () => {
                       />
                     </div>
                   </div>
-                  <div
+                  {/*       <div
                     className="DefaultSetDuration"
                     style={{
                       width: 300,
@@ -486,7 +483,7 @@ const OtherTween = () => {
                     >
                       <Slider
                         min={1}
-                        max={60}
+                        max={30}
                         onChange={setDuration}
                         value={Duration}
                         step={1}
@@ -496,7 +493,7 @@ const OtherTween = () => {
                       />
                       <InputNumber
                         min={1}
-                        max={60}
+                        max={30}
                         style={{
                           margin: 0,
                           height: 30,
@@ -508,7 +505,7 @@ const OtherTween = () => {
                         value={Duration}
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <div
                     className="Btns"
                     style={{
