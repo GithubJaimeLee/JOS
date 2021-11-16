@@ -962,7 +962,7 @@ const OtherTween = () => {
                       />
                     </div>
                     {/*       <pre>{JSON.stringify(Value[1], null, 2)}</pre> */}
-                    <pre>{JSON.stringify(Value[1])}</pre>
+                    {/*     <pre>{JSON.stringify(Value[1])}</pre> */}
                   </div>
                 </TabPane>
               </Tabs>
