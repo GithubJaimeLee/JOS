@@ -82,11 +82,11 @@ const Other = () => {
                     </p>
                   </motion.div>
                 </Link>
-                {/*         <Link to="/Other/Test" style={{ textDecoration: "none" }}>
+                <Link to="/Other/OtherTween" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
-                    <p style={{ paddingTop: 40 }}>测试中</p>
+                    <p style={{ paddingTop: 40 }}>曲线动画</p>
                   </motion.div>
-                </Link> */}
+                </Link>
               </div>
               <div className="Row2">
                 <Link
@@ -116,7 +116,7 @@ const Other = () => {
         <Route path="/Other/OtherBackToTop">
           <OtherBackToTop />
         </Route>
-        <Route path="/Other/Test">
+        <Route path="/Other/OtherTween">
           <OtherTween />
         </Route>
 

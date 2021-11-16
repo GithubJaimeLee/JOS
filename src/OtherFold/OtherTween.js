@@ -66,7 +66,12 @@ const OtherTween = () => {
   const [Color, setColor] = useState("888");
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
-  const [value, setValue] = useState([0.8, 0.2, 0.2, 0.8]);
+  const [Value, setValue] = useState([0.8, 0.2, 0.2, 0.8]);
+  //  const [Value, setValue] = useState([0.8, 0.2, 0.2, 0.8]);
+  //const [Value, setValue] = useState([0.8, 0.2, 0.2, 0.8]);
+  // const [Value, setValue] = useState([0.8, 0.2, 0.2, 0.8]);
+  // const [Value, setValue] = useState([0.8, 0.2, 0.2, 0.8]);
+  // const [value, setValue] = useState[(0.8, 0.2, 0.2, 0.8)];
 
   const Info = (
     <p>
@@ -884,13 +889,75 @@ const OtherTween = () => {
                     }}
                   >
                     <BezierEditor
-                      width={220}
-                      height={220}
-                      value={value}
+                      width={300}
+                      height={300}
+                      value={Value}
                       onChange={setValue}
                       handleColor={"#415FFF"}
                     />
-                    <pre>{JSON.stringify(value, null, 2)}</pre>
+                    <div
+                      className="BezierValue"
+                      style={{
+                        width: 300,
+                        gap: 6,
+                        display: "flex",
+                        marginTop: 10,
+                      }}
+                    >
+                      <InputNumber
+                        min={0}
+                        max={50}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setValue}
+                        value={Value[0]}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={50}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setValue}
+                        value={Value[1]}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={50}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setValue}
+                        value={Value[2]}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={50}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setValue}
+                        value={Value[3]}
+                      />
+                    </div>
+                    <pre>{JSON.stringify(Value[1], null, 2)}</pre>
                   </div>
                 </TabPane>
               </Tabs>
