@@ -28,15 +28,18 @@ const AppNoteBgStyle = {
 
 const AppNoteBgVariants = {
   NoteBgAnimationOne: {
-    opacity: 1,
-    y: -355,
-    x: -300,
+    //  opacity: 1,
+    // width: 138,
+    // height: 162.4,
     scale: 0.2,
+
+    //  scale: [1, 0.8, 0.6, 0.4, 0.2],
   },
   NoteBgAnimationTwo: {
     opacity: [1, 0, 0, 0, 0],
-    y: -100,
-    x: -100,
+    // y: -100,
+    //  x: -100,
+
     scale: 1,
   },
 };
@@ -111,6 +114,7 @@ export default function SetWindow() {
   const [TapApp, cycleTap] = useCycle({ scale: 0.9 }, false);
   const [Stiffness, setStiffness] = useState("100");
   const [Damping, setDamping] = useState("20");
+  //const [Y, setY] = useState(0);
 
   const AppWindowVariants = {
     AppWindowAnimationOne: {
@@ -118,6 +122,7 @@ export default function SetWindow() {
       top: 62,
       width: 148,
       height: 148,
+      backgroundImage: `url(${NoteAndroid})`,
       backgroundImage: null,
     },
     AppWindowAnimationTwo: {
@@ -143,7 +148,6 @@ export default function SetWindow() {
 
   const TransitionStyle = {
     type: "spring",
-    restSpeed: 2,
     stiffness: Stiffness,
     damping: Damping,
   };
@@ -380,7 +384,7 @@ export default function SetWindow() {
               zIndex: 0,
               overflow: "hidden",
               backgroundRepeat: "no-repeat",
-              backgroundImage: null,
+              //   backgroundImage: null,
               y,
               scale,
             }}
@@ -399,10 +403,14 @@ export default function SetWindow() {
               cycleDrag() &
               cycleTap()
             }
+            onClick={() => ClickFunctionBundle()}
             onDragEnd={function (event, info) {
-              if (info.point.y < 300) {
+              if (info.point.y >= 260) {
                 ClickFunctionBundle();
-              }
+              } //else if (info.point.y >= 260) {
+              //console.log(info.point.y);
+              // }
+              console.log(info.point.y);
             }}
           >
             <motion.div
@@ -414,10 +422,12 @@ export default function SetWindow() {
           </motion.div>
 
           <motion.div
+            layout
             className="BgImg"
             variants={ImgBgVariants}
             animate={ImgBgAnimation}
-            transition={{ duration: 0.5 }}
+            transition={TransitionStyle}
+            //transition={{ duration: 0.5 }}
             //  transition={{type:'spring', duration: 20 }}
             style={{
               backgroundImage: `url(${DeskFrontBg})`,

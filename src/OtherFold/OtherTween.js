@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform, useCycle } from "framer-motion";
 import { Slider, InputNumber, Input, Switch, Tabs } from "antd";
+import { BezierEditor } from "bezier-editor";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import Set from "../Icon/Set.png";
@@ -65,6 +66,7 @@ const OtherTween = () => {
   const [Color, setColor] = useState("888");
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
+  const [value, setValue] = useState([0.8, 0.2, 0.2, 0.8]);
 
   const Info = (
     <p>
@@ -872,6 +874,24 @@ const OtherTween = () => {
                       />
                     </div>
                   </div> */}
+                  <div
+                    className="BezierEditor"
+                    style={{
+                      padding: 20,
+                      width: 300,
+                      display: "grid",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <BezierEditor
+                      width={220}
+                      height={220}
+                      value={value}
+                      onChange={setValue}
+                      handleColor={"#415FFF"}
+                    />
+                    <pre>{JSON.stringify(value, null, 2)}</pre>
+                  </div>
                 </TabPane>
               </Tabs>
             </div>
