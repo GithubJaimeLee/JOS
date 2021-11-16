@@ -67,15 +67,11 @@ const OtherTween = () => {
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
   const [Value, setValue] = useState([0.8, 0.2, 0.2, 0.8]);
-  //const Vone = Value[0];
-  // const Vtwo = Value[1];
-  // const Vthree = Value[2];
-  // const Vfour = Value[3];
-  //const [Vone, setVone] = useState( Value[0]);
-  // const [Vtwo, setVtwo] = useState(0.2);
-  //const [Vthree, setVthree] = useState(0.2);
-  // const [Vfour, setVfour] = useState(0.8);
-  // const [value, setValue] = useState[(0.8, 0.2, 0.2, 0.8)];
+
+  // const [V0, setV0] = useState(0.8);
+  // const [V1, setV1] = useState(0.2);
+  // const [V2, setV2] = useState(0.2);
+  //const [V3, setV3] = useState(0.8);
 
   const Info = (
     <p>
@@ -919,7 +915,7 @@ const OtherTween = () => {
                         }}
                         step={0.1}
                         onChange={setValue}
-                        value={Value[0]}
+                        value={Value[0].toFixed(1)}
                       />
                       <InputNumber
                         min={0}
@@ -932,7 +928,7 @@ const OtherTween = () => {
                         }}
                         step={0.1}
                         onChange={setValue}
-                        value={Value[1]}
+                        value={Value[1].toFixed(1)}
                       />
                       <InputNumber
                         min={0}
@@ -945,7 +941,7 @@ const OtherTween = () => {
                         }}
                         step={0.1}
                         onChange={setValue}
-                        value={Value[2]}
+                        value={Value[2].toFixed(1)}
                       />
                       <InputNumber
                         min={0}
@@ -958,7 +954,7 @@ const OtherTween = () => {
                         }}
                         step={0.1}
                         onChange={setValue}
-                        value={Value[3]}
+                        value={Value[3].toFixed(1)}
                       />
                     </div>
                     {/*       <pre>{JSON.stringify(Value[1], null, 2)}</pre> */}
