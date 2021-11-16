@@ -888,6 +888,7 @@ const OtherTween = () => {
                       justifyContent: "center",
                     }}
                   >
+                    <h6>Bezier curves 贝塞尔曲线</h6>
                     <BezierEditor
                       width={300}
                       height={300}
@@ -900,11 +901,13 @@ const OtherTween = () => {
                       style={{
                         width: 300,
                         gap: 6,
+
                         display: "flex",
                         marginTop: 10,
+                        justifyContent: "center",
                       }}
                     >
-                      <InputNumber
+                      {/*       <InputNumber
                         min={0}
                         max={50}
                         style={{
@@ -955,7 +958,52 @@ const OtherTween = () => {
                         step={0.1}
                         onChange={setValue}
                         value={Value[3].toFixed(1)}
-                      />
+                      /> */}
+
+                      <div
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                          textAlign: "center",
+                        }}
+                      >
+                        {Value[0].toFixed(1)}
+                      </div>
+                      <div
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                          textAlign: "center",
+                        }}
+                      >
+                        {Value[1].toFixed(1)}
+                      </div>
+                      <div
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                          textAlign: "center",
+                        }}
+                      >
+                        {Value[2].toFixed(1)}
+                      </div>
+                      <div
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          textAlign: "center",
+                          borderRadius: 6,
+                        }}
+                      >
+                        {Value[3].toFixed(1)}
+                      </div>
                     </div>
                     {/*       <pre>{JSON.stringify(Value[1], null, 2)}</pre> */}
                     {/*     <pre>{JSON.stringify(Value[1])}</pre> */}
