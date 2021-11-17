@@ -5,7 +5,7 @@ import NavBarPage from "../Component/NavBarPage";
 import AlertPercentBg from "../Img/AlertPercentBg.png";
 import Bg from "../Component/Bg";
 import Demo from "../Component/ProgressBar";
-import "../Component/Component.css";
+import "../css/Component.css";
 
 //const progressInstance = <ProgressBar now={now} label={`${now}%`} />;
 

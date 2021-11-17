@@ -9,7 +9,7 @@ import Bg from "../Component/Bg";
 import A from "../Img/A.png";
 import F from "../Img/F.png";
 import L from "../Img/L.png";
-import "../css/App.css";
+import "../App.css";
 
 const ListTitleList = () => {
   const Info = <p>子标题交替悬停</p>;

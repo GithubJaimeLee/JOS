@@ -1,7 +1,7 @@
 import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import "./Wheel.css";
+import "../css/Wheel.css";
 
 export default function Wheel(props) {
   const perspective = props.perspective || "center";

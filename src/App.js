@@ -306,7 +306,7 @@ function App() {
                 />
                 1.31 Beta版发布
               </a>
-              <Link to="/Apk/logo.png" target="_blank" download>
+              <Link to="/Apk/OOSbeta1.31.apk" target="_blank" download>
                 <div
                   className="DownloadBtn"
                   style={{

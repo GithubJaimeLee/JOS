@@ -1,7 +1,7 @@
 import * as React from "react";
 import FoldContextArrow from "../Component/FoldContextArrow";
 import FoldInfo from "../Img/FoldInfo.png";
-import "../Component/Component.css";
+import "../css/Component.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";

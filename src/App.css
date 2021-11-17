@@ -37,6 +37,36 @@
   }
 }
 
+/* #root{
+ position: absolute;
+  width: 375px!important;
+  height: 812px!important; 
+}  */
 div.ListCard {
   border: 1px solid #000;
+}
+
+/*   html {
+    overflow-x:hidden;
+    overflow-y:auto;
+    } */
+
+@media screen and (max-width: 375px) {
+  .Background {
+    height: 100vh !important;
+    background-repeat: no-repeat !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  #basic-nav-dropdown {
+    padding: 4px !important;
+  }
+
+  #HomePageScreen {
+    display: grid !important;
+  }
+  .DownloadBtn,
+  .MainTitle {
+    display: none;
+  }
 }

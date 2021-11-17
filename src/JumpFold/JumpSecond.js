@@ -3,7 +3,7 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 //import { useRef } from "react";
 import background from "../Img/DeskOOS.png";
 import NavBarPage from "../Component/NavBarPage";
-import "../Component/Component.css";
+import "../css/Component.css";
 import JumpSearchBg from "../Img/JumpSearchBg.png";
 import WindowCenterBg from "../Img/WindowCenterBg.png";
 import WindowSideBg from "../Img/WindowSideBg.png";

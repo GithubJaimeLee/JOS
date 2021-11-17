@@ -3,7 +3,7 @@ import NavBarPage from "../Component/NavBarPage";
 import { Radio, Space } from "antd";
 import Bg from "../Component/Bg";
 import ChooseSingleChoiceBg from "../Img/ChooseSingleChoiceBg.png";
-import "../Component/Component.css";
+import "../css/Component.css";
 import "antd/dist/antd.css";
 
 const ChooseSingleChoice = () => {

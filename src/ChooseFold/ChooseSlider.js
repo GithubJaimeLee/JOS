@@ -3,7 +3,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 import ChooseSliderBg from "../Img/ChooseSliderBg.png";
-import "../Component/Component.css";
+import "../css/Component.css";
 import Bg from "../Component/Bg";
 const Info = <p>滑动条</p>;
 

@@ -6,7 +6,7 @@ import NoteBg from "../Img/NoteBg.png";
 import Close from "../Icon/Close.png";
 import DeskBackBg from "../Img/DeskBackBg.png";
 import DeskFrontBg from "../Img/DeskFrontBg.png";
-import "../Component/Component.css";
+import "../css/Component.css";
 //下一步还原SliderInput在本文件中
 import { Slider, InputNumber } from "antd";
 import "antd/dist/antd.css";

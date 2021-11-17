@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navbar, Container } from "react-bootstrap";
-import "../Component/Component.css";
+import "../css/Component.css";
 import WbackIcon from "../Icon/back.png";
 import { Offcanvas } from "react-bootstrap";
 import Help from "../Icon/Help.png";

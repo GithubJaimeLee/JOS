@@ -3,7 +3,7 @@ import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import ChooseMultipleChoiceBg from "../Img/ChooseMultipleChoiceBg.png";
 import { Checkbox } from "antd";
-import "../Component/Component.css";
+import "../css/Component.css";
 const CheckboxGroup = Checkbox.Group;
 
 const plainOptions = ["a", "b", "c"];

@@ -10,7 +10,7 @@ import SetHeader from "../Img/WSetHeader.png";
 import SetBody from "../Img/SetBody.png";
 import NavBarPage from "../Component/NavBarPage";
 import OneFingerClick from "../Img/OneFingerClick.png";
-import "../css/App.css";
+import "../App.css";
 import Bg from "../Component/Bg";
 
 const ClickList = () => {

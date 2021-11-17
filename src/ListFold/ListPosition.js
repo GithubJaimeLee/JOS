@@ -3,7 +3,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import background from "../Img/DeskOOS.png";
 import NavBarPage from "../Component/NavBarPage";
-import "../Component/Component.css";
+import "../css/Component.css";
 import Bg from "../Component/Bg";
 
 const ListPosition = () => {

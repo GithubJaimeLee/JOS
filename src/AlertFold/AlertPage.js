@@ -1,5 +1,5 @@
 import React from "react";
-import "../Component/Component.css";
+import "../css/Component.css";
 import NavBarPage from "../Component/NavBarPage";
 import AlertPageBgOne from "../Img/AlertPageBgOne.png";
 import AlertPageBgTwo from "../Img/AlertPageBgTwo.png";
