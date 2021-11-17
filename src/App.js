@@ -354,6 +354,7 @@ function App() {
                 </p>
               </div>
               <a
+                className="DownloadText"
                 style={{
                   color: "#415FFF",
                   fontSize: 16,
