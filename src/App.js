@@ -11,14 +11,17 @@ import Desk from "./SecondPage/Desk";
 import Edit from "./SecondPage/Edit";
 import Page404 from "./OtherFold/Page404";
 import MenuIcon from "./Icon/Menu.png";
+import PhoneIcon from "./Icon/PhoneIcon.svg";
 //导自定义组件
 import NavBar from "./Component/NavBar";
 //导入库
 import { motion } from "framer-motion";
 import background from "./Img/bg2.png";
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
+
+const urlToDownload = "https://speed.hetzner.de/100MB.bin";
 
 let cardActive = {
   width: 160,
@@ -72,6 +75,7 @@ function ProgressBar() {
 }
 
 function App() {
+  const [download, setDownload] = useState(false);
   return (
     <Router>
       <Switch>
@@ -263,7 +267,9 @@ function App() {
             <div
               className="HomeRightBox col-lg-7"
               style={{
-                display: "flex",
+                display: "grid",
+                alignContent: "center",
+                justifyItems: "center",
                 justifyContent: "center",
                 alignItems: "center",
                 position: "relative",
@@ -271,13 +277,52 @@ function App() {
                 right: 20,
               }}
             >
-              <p
+              <div>
+                <p
+                  style={{
+                    position: "relative",
+                    fontSize: 30,
+                  }}
+                >
+                  Vivo风格的多终端 动效 组件库
+                </p>
+              </div>
+              <a
                 style={{
-                  fontSize: 30,
+                  color: "#415FFF",
+                  fontSize: 16,
                 }}
               >
-                Vivo风格的多终端 动效 组件库
-              </p>
+                <img
+                  src={PhoneIcon}
+                  alt=""
+                  style={{
+                    display: "inline-block",
+                    width: 18,
+                    marginRight: 8,
+                    verticalAlign: "text-bottom",
+                  }}
+                />
+                1.02 Beta版发布
+              </a>
+              <Link to="/Apk/logo.png" target="_blank" download>
+                <div
+                  style={{
+                    marginTop: 30,
+                    position: "relative",
+                    color: "#fff",
+                    background: "#415FFF",
+                    fontSize: 16,
+                    padding: "8px 22px",
+                    width: 168,
+                    height: 42,
+                    borderRadius: 32,
+                    alignItems: "flex-start",
+                  }}
+                >
+                  下载Android App
+                </div>
+              </Link>
             </div>
             <div
               className="Mbg"
