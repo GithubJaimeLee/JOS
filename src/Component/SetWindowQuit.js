@@ -150,6 +150,7 @@ export default function SetWindow() {
     type: "spring",
     stiffness: Stiffness,
     damping: Damping,
+    //   duration: 4,
   };
 
   const ImgBgVariants = {
