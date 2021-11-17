@@ -12,6 +12,8 @@ import Edit from "./SecondPage/Edit";
 import Page404 from "./OtherFold/Page404";
 import MenuIcon from "./Icon/Menu.png";
 import PhoneIcon from "./Icon/PhoneIcon.svg";
+import Building from "./Icon/Building.png";
+
 //导自定义组件
 import NavBar from "./Component/NavBar";
 //导入库
@@ -92,7 +94,7 @@ function App() {
                 opacity: 0.2,
                 zIndex: "0",
               }}
-            ></img>
+            />
           </Link>
           <NavBar />
           <div
@@ -131,8 +133,19 @@ function App() {
               <div className="Row1">
                 <Link to="/Desk" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    {" "}
-                    <p style={{ paddingTop: 40 }}>OOS桌面75%</p>
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={Building}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      OOS桌面75%
+                    </p>
                     <div>
                       <div
                         style={{
@@ -162,7 +175,20 @@ function App() {
                 </Link>
                 <Link to="/Choose" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>选择类70%</p>
+                    <p style={{ paddingTop: 40 }}>
+                      {" "}
+                      <img
+                        src={Building}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      选择类70%
+                    </p>
                     <div>
                       <div
                         style={{
@@ -182,7 +208,20 @@ function App() {
                 </Link>
                 <Link to="/Edit" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>编辑类5%</p>
+                    <p style={{ paddingTop: 40 }}>
+                      {" "}
+                      <img
+                        src={Building}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      编辑类5%
+                    </p>
                     <div>
                       <div
                         style={{
@@ -224,7 +263,20 @@ function App() {
                 </Link>
                 <Link to="/Delete" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>删除类70%</p>
+                    <p style={{ paddingTop: 40 }}>
+                      {" "}
+                      <img
+                        src={Building}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      删除类70%
+                    </p>
                     <div>
                       <div
                         style={{
@@ -244,7 +296,20 @@ function App() {
                 </Link>
                 <Link to="/Fold" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>展开折叠类50%</p>
+                    <p style={{ paddingTop: 40 }}>
+                      {" "}
+                      <img
+                        src={Building}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      展开折叠类50%
+                    </p>
                     <div>
                       <div
                         style={{
@@ -304,7 +369,7 @@ function App() {
                     verticalAlign: "text-bottom",
                   }}
                 />
-                1.31 Beta版发布
+                1.31 Beta版
               </a>
               <Link to="/Apk/OOSbeta1.31.apk" target="_blank" download>
                 <div
