@@ -45,19 +45,6 @@ input.in {
   border: 1px solid;
 }
 
-@media screen and (max-width: 992px) {
-  #basic-nav-dropdown {
-    padding: 4px !important;
-  }
-  .HomeRightBox {
-    display: none !important;
-    position: absolute !important;
-  }
-  #HomePageScreen {
-    display: block !important;
-  }
-}
-
 div.AlertPageMask .ant-carousel .slick-dots li,
 div.AlertPageMask .ant-carousel .slick-dots li button,
 div.AlertPageMask .ant-carousel .slick-dots li.slick-active {

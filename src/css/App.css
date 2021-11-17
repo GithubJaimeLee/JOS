@@ -57,3 +57,16 @@ div.ListCard {
     background-repeat: no-repeat !important;
   }
 }
+@media screen and (max-width: 992px) {
+  #basic-nav-dropdown {
+    padding: 4px !important;
+  }
+
+  #HomePageScreen {
+    display: grid !important;
+  }
+  .DownloadBtn,
+  .MainTitle {
+    display: none;
+  }
+}

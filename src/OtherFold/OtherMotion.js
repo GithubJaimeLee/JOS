@@ -5,7 +5,7 @@ import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import Set from "../Icon/Set.png";
 import Close from "../Icon/Close.png";
-import "../App.css";
+import "../css/App.css";
 
 const SetBtnStyle = {
   position: "absolute",

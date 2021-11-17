@@ -33,7 +33,7 @@ let cardActive = {
   // boxShadow: "0px 0px 12px  rgba(65, 95, 255, 0.05)",
   boxShadow: "0px 0px 16px  rgba(0, 0, 0, 0.15)",
   opacity: 0.8,
-  color: "#666",
+  color: "#333",
 };
 /* 
 let cardInactive = {
@@ -279,6 +279,7 @@ function App() {
             >
               <div>
                 <p
+                  className="MainTitle"
                   style={{
                     position: "relative",
                     fontSize: 30,
@@ -303,10 +304,11 @@ function App() {
                     verticalAlign: "text-bottom",
                   }}
                 />
-                1.02 Beta版发布
+                1.31 Beta版发布
               </a>
               <Link to="/Apk/logo.png" target="_blank" download>
                 <div
+                  className="DownloadBtn"
                   style={{
                     marginTop: 30,
                     position: "relative",
