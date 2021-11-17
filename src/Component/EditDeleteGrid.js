@@ -54,9 +54,10 @@ const getListStyle = (isDraggingOver) => ({
   display: "grid",
   gridGap: "10px 10px",
   gridAutoFlow: "row dense",
-  gridTemplateColumns: "repeat(4, 1fr)",
+  //  gridTemplateColumns: "repeat(4, 1fr)",
+  gridTemplateColumns: "78px 78px 78px 78px",
   position: "relative",
-  gridAutoRows: 87,
+  gridAutoRows: 78,
   paddingTop: 100,
 });
 
