@@ -38,7 +38,7 @@ const AlertPercent = () => {
         >
           <div
             style={{
-              width: 355,
+              width: 310,
               position: "absolute",
               top: 352,
               left: 32,
