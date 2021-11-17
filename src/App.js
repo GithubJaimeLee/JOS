@@ -13,6 +13,12 @@ import Page404 from "./OtherFold/Page404";
 import MenuIcon from "./Icon/Menu.png";
 import PhoneIcon from "./Icon/PhoneIcon.svg";
 import Building from "./Icon/Building.png";
+import ListIcon from "./Icon/ListIcon.png";
+import WindowIcon from "./Icon/WindowIcon.png";
+import ClickIcon from "./Icon/ClickIcon.png";
+import JumpIcon from "./Icon/JumpIcon.png";
+import AlertIcon from "./Icon/AlertIcon.png";
+import OtherIcon from "./Icon/OtherIcon.png";
 
 //导自定义组件
 import NavBar from "./Component/NavBar";
@@ -165,18 +171,41 @@ function App() {
                 </Link>
                 <Link to="/Window" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>弹窗</p>
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={WindowIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      弹窗
+                    </p>
                   </motion.div>
                 </Link>
                 <Link to="/Jump" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>界面跳转</p>
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={JumpIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      界面跳转
+                    </p>
                   </motion.div>
                 </Link>
                 <Link to="/Choose" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
-                      {" "}
                       <img
                         src={Building}
                         alt=""
@@ -203,13 +232,12 @@ function App() {
                         }}
                       ></div>
                       <ProgressBar />
-                    </div>{" "}
+                    </div>
                   </motion.div>
                 </Link>
                 <Link to="/Edit" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
-                      {" "}
                       <img
                         src={Building}
                         alt=""
@@ -236,35 +264,82 @@ function App() {
                         }}
                       ></div>
                       <ProgressBar />
-                    </div>{" "}
+                    </div>
                   </motion.div>
                 </Link>
                 <Link to="/Other" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>其他</p>
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={OtherIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      其他
+                    </p>
                   </motion.div>
                 </Link>
               </div>
               <div className="Row2">
                 <Link to="/List" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>列表</p>
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={ListIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      列表
+                    </p>
                   </motion.div>
                 </Link>
                 <Link to="/Click" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>点击反馈</p>
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={ClickIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      点击反馈
+                    </p>
                   </motion.div>
                 </Link>
                 <Link to="/Alert" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>提示类</p>
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={AlertIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      提示类
+                    </p>
                   </motion.div>
                 </Link>
                 <Link to="/Delete" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
-                      {" "}
                       <img
                         src={Building}
                         alt=""
@@ -291,13 +366,12 @@ function App() {
                         }}
                       ></div>
                       <ProgressBar />
-                    </div>{" "}
+                    </div>
                   </motion.div>
                 </Link>
                 <Link to="/Fold" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
-                      {" "}
                       <img
                         src={Building}
                         alt=""
@@ -324,7 +398,7 @@ function App() {
                         }}
                       ></div>
                       <ProgressBar />
-                    </div>{" "}
+                    </div>
                   </motion.div>
                 </Link>
               </div>
