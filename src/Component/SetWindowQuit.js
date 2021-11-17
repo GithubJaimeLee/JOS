@@ -405,7 +405,7 @@ export default function SetWindow() {
             }
             onClick={() => ClickFunctionBundle()}
             onDragEnd={function (event, info) {
-              if (info.point.y >= 260) {
+              if (info.point.y <= 260) {
                 ClickFunctionBundle();
               } //else if (info.point.y >= 260) {
               //console.log(info.point.y);
