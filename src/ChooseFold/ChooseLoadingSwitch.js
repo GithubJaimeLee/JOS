@@ -13,10 +13,18 @@ const ChooseLoadingSwitch = () => {
     animationOne: {
       justifyContent: "flex-end",
       backgroundColor: "#5F7DF7",
+      /*       transition: {
+        when: "afterChildren",
+        delay: 2,
+      }, */
     },
     animationTwo: {
       justifyContent: "flex-start",
       backgroundColor: "#ddd",
+      /*     transition: {
+        when: "afterChildren",
+        delay: 2,
+      }, */
     },
   };
   const PointVariants = {
@@ -25,12 +33,18 @@ const ChooseLoadingSwitch = () => {
       width: 8,
       borderRadius: "4px",
       backgroundColor: "#fff",
+      /*       transition: {
+        delay: 0.5,
+      }, */
     },
     animationTwo: {
       backgroundColor: "#b2b2b2",
       height: 16,
       width: 16,
       borderRadius: "16px",
+      /*       transition: {
+        delay: 0.5,
+      }, */
     },
   };
   const RotateVariants = {

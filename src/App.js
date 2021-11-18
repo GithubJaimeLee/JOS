@@ -19,6 +19,7 @@ import ClickIcon from "./Icon/ClickIcon.png";
 import JumpIcon from "./Icon/JumpIcon.png";
 import AlertIcon from "./Icon/AlertIcon.png";
 import OtherIcon from "./Icon/OtherIcon.png";
+import ChooseIcon from "./Icon/ChooseIcon.png";
 
 //导自定义组件
 import NavBar from "./Component/NavBar";
@@ -207,7 +208,7 @@ function App() {
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
-                        src={Building}
+                        src={ChooseIcon}
                         alt=""
                         style={{
                           display: "inline-block",
@@ -216,23 +217,9 @@ function App() {
                           verticalAlign: "text-bottom",
                         }}
                       />
-                      选择类70%
+                      选择类
                     </p>
-                    <div>
-                      <div
-                        style={{
-                          position: "relative",
-                          top: 0,
-                          left: 10,
-                          width: 140 * 0.7,
-                          height: 10,
-                          backgroundColor: "#ccc",
-                          zIndex: 1,
-                          borderRadius: 5,
-                        }}
-                      ></div>
-                      <ProgressBar />
-                    </div>
+                    <div></div>
                   </motion.div>
                 </Link>
                 <Link to="/Edit" style={{ textDecoration: "none" }}>
