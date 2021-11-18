@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Switch } from "antd";
 import NavBarPage from "../Component/NavBarPage";
@@ -33,7 +33,26 @@ const ChooseLoadingSwitch = () => {
       borderRadius: "16px",
     },
   };
+  const RotateVariants = {
+    animationOne: {
+      height: 20,
+      width: 8,
+      borderRadius: "4px",
+      backgroundColor: "#fff",
+    },
+    animationTwo: {
+      backgroundColor: "#b2b2b2",
+      height: 16,
+      width: 16,
+      borderRadius: "16px",
+    },
+  };
+
   const [BtnAnimation, cycleAnimation] = useCycle(
+    "animationOne",
+    "animationTwo"
+  );
+  const [RotateAnimation, cycleRotateAnimation] = useCycle(
     "animationOne",
     "animationTwo"
   );
@@ -98,7 +117,34 @@ const ChooseLoadingSwitch = () => {
               transition={spring}
             />
           </motion.div>
-          <Switch defaultChecked />
+          <motion.div
+            style={{
+              width: 60,
+              height: 30,
+              backgroundColor: "rgba(19, 3, 3, 0.4)",
+              display: "flex",
+              alignItems: "center",
+              borderRadius: 50,
+              padding: 10,
+              // cursor: "pointer",
+            }}
+            className="Switch"
+            data-isOn={isOn}
+            variants={BtnVariants}
+            animate={RotateAnimation}
+            transition={spring}
+            onClick={(toggleSwitch, cycleRotateAnimation)}
+          >
+            <motion.div
+              style={{
+                position: "relative",
+              }}
+              variants={RotateVariants}
+              animate={RotateAnimation}
+              className="Handle"
+              transition={spring}
+            />
+          </motion.div>
         </div>
       </div>
       <Bg />
