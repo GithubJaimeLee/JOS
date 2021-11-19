@@ -114,7 +114,7 @@ export default function SetWindow() {
   const [DragApp, cycleDrag] = useCycle(false, true);
   const [TapApp, cycleTap] = useCycle({ scale: 0.9 }, false);
   const [Stiffness, setStiffness] = useState("100");
-  const [Damping, setDamping] = useState("20");
+  const [Damping, setDamping] = useState("10");
   const [Velocity, setVelocity] = useState("0");
   //const [Y, setY] = useState(0);
 
@@ -328,22 +328,22 @@ export default function SetWindow() {
                     }}
                   /> */}
                   <Slider
-                    min={5}
-                    max={50}
+                    min={0}
+                    max={200}
                     onChange={setStiffness}
                     value={Stiffness}
-                    step={0.1}
+                    step={1}
                   />
                   <InputNumber
-                    min={5}
-                    max={100}
+                    min={0}
+                    max={200}
                     style={{
                       margin: 0,
                       height: 30,
                       width: 220,
                       borderRadius: 6,
                     }}
-                    step={0.1}
+                    step={1}
                     onChange={setStiffness}
                     value={Stiffness}
                   />
@@ -357,7 +357,7 @@ export default function SetWindow() {
                     marginTop: 18,
                   }}
                 >
-                  <h6>Velocity 初速度设置</h6>
+                  <h6>Velocity 初速度(谨慎选择)</h6>
                   <p
                     style={{
                       color: "#666",

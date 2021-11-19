@@ -128,11 +128,28 @@ const DChange = () => {
   const toggleClose = () => setIsOpen(false);
   const Info = <p>图标移动自动补位</p>;
 
+  var runCode;
+
+  const mouseDown = () => {
+    runCode = setTimeout(function () {
+      toggleOpen();
+    }, 500);
+  };
+
+  const mouseUp = () => {
+    clearTimeout(runCode);
+  };
+
+  const OnClick = () => {
+    cycleAnimation();
+    ScycleAnimation();
+    McycleAnimation();
+  };
   return (
     <div>
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
       <div
-        onClick={toggleClose}
+        //  onClick={OnClick}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -152,7 +169,7 @@ const DChange = () => {
             style={boxChange}
             variants={boxAnimation}
             animate={animationBox}
-            onPanStart={toggleOpen}
+            //onPanStart={toggleOpen}
             whileTap={{ scale: 0.8 }}
             transition={{ type: "tween" }}
           >
@@ -166,9 +183,11 @@ const DChange = () => {
                 fontSize: 14,
               }}
             >
-              长 按
+              {/*     长 按 */}
             </p>
             <motion.div
+              //     onClick={OnClick}
+              className="Mask"
               style={{
                 overflow: "hidden",
                 width: 70,
@@ -177,7 +196,8 @@ const DChange = () => {
               transition={{ type: "tween" }}
               variants={MaskAnimation}
               animate={animationMask}
-              className="Mask"
+              onMouseDown={mouseDown}
+              onMouseUp={mouseUp}
             >
               <motion.div
                 className="SetCenter"
@@ -189,12 +209,7 @@ const DChange = () => {
             </motion.div>
 
             {isOpen && (
-              <div
-                className="AllbtnTwo"
-                onClick={() =>
-                  cycleAnimation() & ScycleAnimation() & McycleAnimation()
-                }
-              >
+              <div className="AllbtnTwo" onClick={OnClick}>
                 <img
                   src={zoomIcon}
                   alt=" "
@@ -206,10 +221,9 @@ const DChange = () => {
                     opacity: 1,
                     zIndex: "100",
                   }}
-                ></img>
-                <div
+                />
+                <motion.div
                   className="boxPress"
-                  //exit={{ opacity: 0 }}
                   style={{
                     display: "block",
                     position: "absolute",
@@ -222,7 +236,7 @@ const DChange = () => {
                     textAlign: "center",
                     boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)",
                   }}
-                ></div>
+                />
               </div>
             )}
           </motion.div>
