@@ -76,14 +76,14 @@ const Alert = () => {
                     <p style={{ paddingTop: 40 }}>新事件标记</p>
                   </motion.div>
                 </Link>
-                <Link
+                {/*           <Link
                   to="/Alert/AlertLoading"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>Loading</p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 <Link to="/Alert/AlertToast" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>Toast</p>

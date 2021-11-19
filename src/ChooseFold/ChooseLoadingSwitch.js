@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Switch } from "antd";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import { motion, useCycle } from "framer-motion";
+import Loading from "../Img/Loading.gif";
 
 const ChooseLoadingSwitch = () => {
   const Info = <p>单选框</p>;
@@ -95,7 +95,7 @@ const ChooseLoadingSwitch = () => {
             height: 812,
             position: "absolute",
             top: 0,
-            backgroundColor: "#E6ECF4",
+            backgroundColor: "#fff",
             display: "grid",
             justifyContent: "center",
             alignContent: "space-evenly",
@@ -131,6 +131,17 @@ const ChooseLoadingSwitch = () => {
               transition={spring}
             />
           </motion.div>
+          <img
+            src={Loading}
+            alt=" "
+            style={{
+              width: 60,
+              position: "relative",
+
+              opacity: 1,
+              zIndex: "100",
+            }}
+          />
           {/*        <motion.div
             style={{
               width: 60,

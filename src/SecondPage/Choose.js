@@ -113,9 +113,9 @@ const Choose = () => {
                 >
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 30 }}>
-                      加载类开关
-                      <br />
                       开关
+                      <br />
+                      Loading
                     </p>
                   </motion.div>
                 </Link>
