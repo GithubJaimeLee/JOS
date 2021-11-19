@@ -131,7 +131,7 @@ const ChooseLoadingSwitch = () => {
               transition={spring}
             />
           </motion.div>
-          <motion.div
+          {/*        <motion.div
             style={{
               width: 60,
               height: 30,
@@ -158,7 +158,7 @@ const ChooseLoadingSwitch = () => {
               className="Handle"
               transition={spring}
             />
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
       <Bg />
