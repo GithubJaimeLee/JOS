@@ -101,7 +101,7 @@ const OtherBackToTop = () => {
             zIndex: 0,
           }}
         >
-          <motion.img
+          {/*    <motion.img
             src={Loading}
             alt=" "
             style={{
@@ -112,7 +112,7 @@ const OtherBackToTop = () => {
 
               zIndex: 0,
             }}
-          />
+          /> */}
         </motion.div>
         <motion.div
           className="MusicBodyRecommend"

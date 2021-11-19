@@ -72,7 +72,7 @@ const Jump = () => {
               <div className="Row1">
                 <Link to="/Jump/JumpSecond" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
-                    <p style={{ paddingTop: 40 }}>二级界面跳转</p>
+                    <p style={{ paddingTop: 40 }}>应用间跳转</p>
                   </motion.div>
                 </Link>
 
@@ -92,7 +92,7 @@ const Jump = () => {
 
                 <Link to="/Jump/JumpApp" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
-                    <p style={{ paddingTop: 40 }}>应用间跳转</p>
+                    <p style={{ paddingTop: 40 }}>二级界面跳转</p>
                   </motion.div>
                 </Link>
               </div>
