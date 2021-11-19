@@ -102,9 +102,6 @@ const OtherBackToTop = () => {
           }}
         >
           <motion.img
-            transition={{
-              delay: 0,
-            }}
             src={Loading}
             alt=" "
             style={{
