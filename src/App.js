@@ -20,7 +20,7 @@ import JumpIcon from "./Icon/JumpIcon.png";
 import AlertIcon from "./Icon/AlertIcon.png";
 import OtherIcon from "./Icon/OtherIcon.png";
 import ChooseIcon from "./Icon/ChooseIcon.png";
-
+import DeskIcon from "./Icon/DeskIcon.png";
 //导自定义组件
 import NavBar from "./Component/NavBar";
 //导入库
@@ -142,7 +142,7 @@ function App() {
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
-                        src={Building}
+                        src={DeskIcon}
                         alt=""
                         style={{
                           display: "inline-block",
@@ -151,10 +151,10 @@ function App() {
                           verticalAlign: "text-bottom",
                         }}
                       />
-                      OOS桌面75%
+                      OOS桌面
                     </p>
                     <div>
-                      <div
+                      {/*              <div
                         style={{
                           position: "relative",
                           top: 0,
@@ -166,7 +166,7 @@ function App() {
                           borderRadius: 5,
                         }}
                       ></div>
-                      <ProgressBar />
+                      <ProgressBar /> */}
                     </div>
                   </motion.div>
                 </Link>
