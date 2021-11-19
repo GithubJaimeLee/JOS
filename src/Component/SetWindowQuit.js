@@ -28,19 +28,9 @@ const AppNoteBgStyle = {
 };
 
 const AppNoteBgVariants = {
-  NoteBgAnimationOne: {
-    //  opacity: 1,
-    // width: 138,
-    // height: 162.4,
-    scale: 0.2,
-
-    //  scale: [1, 0.8, 0.6, 0.4, 0.2],
-  },
+  NoteBgAnimationOne: {},
   NoteBgAnimationTwo: {
     opacity: [1, 0, 0, 0, 0],
-    // y: -100,
-    //  x: -100,
-
     scale: 1,
   },
 };
@@ -114,16 +104,13 @@ export default function SetWindow() {
   const [DragApp, cycleDrag] = useCycle(false, true);
   const [TapApp, cycleTap] = useCycle({ scale: 0.9 }, false);
   const [Stiffness, setStiffness] = useState("100");
-  const [Damping, setDamping] = useState("10");
+  //const [Damping, setDamping] = useState("10");
+  const [Damping, setDamping] = useState("18");
   const [Velocity, setVelocity] = useState("0");
   //const [Y, setY] = useState(0);
 
   const AppWindowVariants = {
     AppWindowAnimationOne: {
-      x: 195,
-      top: 62,
-      width: 148,
-      height: 148,
       backgroundImage: `url(${NoteAndroid})`,
       backgroundImage: null,
     },
@@ -261,7 +248,7 @@ export default function SetWindow() {
                       marginBottom: 6,
                     }}
                   >
-                    (默认值为20，如果设置为0，弹力将无限振荡)
+                    默认值为18，如果设置为0弹力将无限振荡 (谨慎选择)
                   </p>
                   {/*         <input
                     className="in"
@@ -313,7 +300,7 @@ export default function SetWindow() {
                       marginBottom: 6,
                     }}
                   >
-                    (默认值为100，更高的值将使运动更突然)
+                    默认值为100，值越高运动速度越快
                   </p>
                   {/*        <input
                     className="in"
@@ -329,14 +316,14 @@ export default function SetWindow() {
                   /> */}
                   <Slider
                     min={0}
-                    max={200}
+                    max={110}
                     onChange={setStiffness}
                     value={Stiffness}
                     step={1}
                   />
                   <InputNumber
                     min={0}
-                    max={200}
+                    max={110}
                     style={{
                       margin: 0,
                       height: 30,
@@ -436,6 +423,7 @@ export default function SetWindow() {
             }}
           >
             <motion.div
+              className="NoteBg"
               variants={AppNoteBgVariants}
               animate={AppNoteBgAnimation}
               transition={TransitionStyle}
