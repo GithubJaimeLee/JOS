@@ -16,6 +16,17 @@ const OtherBackToTop = () => {
   const rotate = useTransform(y, [0, 100], [180, 0]);
   const top = useTransform(y, [0, 100], [70, 170]);
   const opacity = useTransform(y, [0, 150], [0, 1]);
+  /*   const  = () => {
+    return ( 
+      const opacity = 0;
+      if (y >= 200) {
+        opacity = 1;
+      } else if (y < 200) {
+        opacity = 0;
+      }
+   );
+  };
+   */
 
   return (
     <div
