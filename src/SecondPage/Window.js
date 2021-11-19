@@ -119,14 +119,6 @@ const Window = () => {
                     <p style={{ paddingTop: 40 }}>输入式弹窗</p>
                   </motion.div>{" "}
                 </Link>
-                <Link
-                  to="/Window/WindowSide"
-                  style={{ textDecoration: "none" }}
-                >
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>侧边菜单</p>
-                  </motion.div>
-                </Link>
               </div>
               <div className="Row2">
                 <Link
@@ -137,14 +129,14 @@ const Window = () => {
                     <p style={{ paddingTop: 40 }}>侧边音量</p>{" "}
                   </motion.div>{" "}
                 </Link>
-                <Link
+                {/*   <Link
                   to="/Window/WindowBubble"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>气泡</p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 <Link
                   to="/Window/WindowJump"
                   style={{ textDecoration: "none" }}
@@ -159,6 +151,14 @@ const Window = () => {
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>中心弹窗</p>
+                  </motion.div>
+                </Link>
+                <Link
+                  to="/Window/WindowSide"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>侧边菜单</p>
                   </motion.div>
                 </Link>
               </div>

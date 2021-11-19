@@ -222,7 +222,7 @@ function App() {
                     <div></div>
                   </motion.div>
                 </Link>
-                <Link to="/Edit" style={{ textDecoration: "none" }}>
+                {/*     <Link to="/Edit" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -253,8 +253,8 @@ function App() {
                       <ProgressBar />
                     </div>
                   </motion.div>
-                </Link>
-                <Link to="/Other" style={{ textDecoration: "none" }}>
+                </Link> */}
+                {/*           <Link to="/Other" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -270,7 +270,7 @@ function App() {
                       其他
                     </p>
                   </motion.div>
-                </Link>
+                </Link> */}
               </div>
               <div className="Row2">
                 <Link to="/List" style={{ textDecoration: "none" }}>
@@ -324,7 +324,24 @@ function App() {
                     </p>
                   </motion.div>
                 </Link>
-                <Link to="/Delete" style={{ textDecoration: "none" }}>
+                <Link to="/Other" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={OtherIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      其他
+                    </p>
+                  </motion.div>
+                </Link>
+                {/*     <Link to="/Delete" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -355,8 +372,8 @@ function App() {
                       <ProgressBar />
                     </div>
                   </motion.div>
-                </Link>
-                <Link to="/Fold" style={{ textDecoration: "none" }}>
+                </Link> */}
+                {/*            <Link to="/Fold" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -387,7 +404,7 @@ function App() {
                       <ProgressBar />
                     </div>
                   </motion.div>
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div
