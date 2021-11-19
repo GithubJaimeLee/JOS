@@ -10,6 +10,7 @@ import "../css/Component.css";
 //下一步还原SliderInput在本文件中
 import { Slider, InputNumber } from "antd";
 import "antd/dist/antd.css";
+import Velocity from "../Component/Action";
 //上一步还原结束
 
 const AppNoteBgStyle = {
@@ -48,7 +49,7 @@ const SetWindowStyle = {
   position: "relative",
   top: 400,
   width: 350,
-  height: 318,
+  height: 418,
   borderRadius: 12,
   display: "flex",
   justifyContent: "center",
@@ -65,7 +66,7 @@ const SetWindowVariants = {
     zIndex: 1,
   },
   UPanimationTwo: {
-    y: 0,
+    y: -20,
     zIndex: 1,
   },
 };
@@ -114,6 +115,7 @@ export default function SetWindow() {
   const [TapApp, cycleTap] = useCycle({ scale: 0.9 }, false);
   const [Stiffness, setStiffness] = useState("100");
   const [Damping, setDamping] = useState("20");
+  const [Velocity, setVelocity] = useState("0");
   //const [Y, setY] = useState(0);
 
   const AppWindowVariants = {
@@ -147,10 +149,11 @@ export default function SetWindow() {
   } */
 
   const TransitionStyle = {
-    // type: "spring",
+    type: "spring",
     stiffness: Stiffness,
     damping: Damping,
-    duration: 5,
+    // duration: 5,
+    velocity: Velocity,
   };
 
   const ImgBgVariants = {
@@ -247,27 +250,7 @@ export default function SetWindow() {
                     }}
                   >
                     {/*<SliderInput /> 开始还原*/}
-                    <div
-                      className="InputTest"
-                      style={{
-                        display: "flex",
-                      }}
-                    >
-                      <div
-                        className="SliderInput"
-                        style={{
-                          width: 160,
-                          height: 80,
-                        }}
-                      ></div>
-                      <div
-                        style={{
-                          width: 30,
-                          height: 80,
-                        }}
-                        className="InputNumberBox"
-                      ></div>
-                    </div>
+
                     {/*       //上一步还原结束 */}
                   </div>
 
@@ -363,6 +346,44 @@ export default function SetWindow() {
                     step={0.1}
                     onChange={setStiffness}
                     value={Stiffness}
+                  />
+                </div>
+                <div
+                  className="DefaultSet"
+                  style={{
+                    width: 220,
+                    height: "auto",
+                    fontSize: 14,
+                    marginTop: 18,
+                  }}
+                >
+                  <h6>Velocity 初速度设置</h6>
+                  <p
+                    style={{
+                      color: "#666",
+                      marginBottom: 6,
+                    }}
+                  ></p>
+
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={setVelocity}
+                    value={Velocity}
+                    step={1}
+                  />
+                  <InputNumber
+                    min={0}
+                    max={10}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 220,
+                      borderRadius: 6,
+                    }}
+                    step={1}
+                    onChange={setVelocity}
+                    value={Velocity}
                   />
                 </div>
               </div>
