@@ -147,10 +147,10 @@ export default function SetWindow() {
   } */
 
   const TransitionStyle = {
-    type: "spring",
+    // type: "spring",
     stiffness: Stiffness,
     damping: Damping,
-    //   duration: 4,
+    duration: 5,
   };
 
   const ImgBgVariants = {

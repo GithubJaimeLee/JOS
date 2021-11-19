@@ -7,6 +7,7 @@ import MusicBodyRecommend from "../Img/MusicBodyRecommend.png";
 import MusicFooter from "../Img/MusicFooter.png";
 import MusicHeaderTap from "../Img/MusicHeaderTap.png";
 import Arrow from "../Icon/Arrow.png";
+import Loading from "../Img/Loading.gif";
 
 const Info = <p>状态、标题栏置顶</p>;
 
@@ -14,6 +15,8 @@ const OtherBackToTop = () => {
   const y = useMotionValue(0);
   const rotate = useTransform(y, [0, 100], [180, 0]);
   const top = useTransform(y, [0, 100], [70, 170]);
+  const opacity = useTransform(y, [0, 150], [0, 1]);
+
   return (
     <div
       className="All"
@@ -68,6 +71,8 @@ const OtherBackToTop = () => {
           position: "absolute",
           overflow: "scroll",
           backgroundColor: "#f7f7f7",
+          display: "grid",
+          justifyContent: "center",
         }}
       >
         <motion.div
@@ -79,18 +84,40 @@ const OtherBackToTop = () => {
             backgroundImage: `url(${Arrow})`,
             width: 20,
             height: 30,
-            position: "absolute",
+            position: "relative",
             //top: -70,
-            left: 170,
-            opacity: 1,
+            //left: 170,
+            zIndex: 0,
           }}
-        />
+        >
+          <motion.img
+            transition={{
+              delay: 0,
+            }}
+            src={Loading}
+            alt=" "
+            style={{
+              width: 20,
+              opacity: opacity,
+              position: "relative",
+              top: 10,
+
+              zIndex: 0,
+            }}
+          />
+        </motion.div>
         <motion.div
           className="MusicBodyRecommend"
           drag="y"
           dragConstraints={{ top: -578, bottom: 0 }}
           dragElastic={0.5}
           dragTransition={{ bounceStiffness: 176, bounceDamping: 26 }}
+          //  onDrag={function (event, info) {
+          //    if (info.point.y >= 260) {
+          //      opacity = 1;
+          //      console.log(info.point.y);
+          //    }
+          //  }}
           style={{
             y,
             backgroundImage: `url(${MusicBodyRecommend})`,
