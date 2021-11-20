@@ -115,3 +115,8 @@ div#Clock div.ant-tabs-tab {
   margin-left: 27px !important;
   margin-right: 27px !important;
 }
+
+/* window flip */
+div.CNS div div div {
+  background: none !important;
+}

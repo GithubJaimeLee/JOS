@@ -89,7 +89,8 @@ const WindowFlip = () => {
         }}
       >
         <FlipPage
-          className="NS"
+          id="NS"
+          className="CNS"
           height={642}
           width={375}
           // showSwipeHint
