@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import OtherBackToTop from "../OtherFold/OtherBackToTop";
 import OtherMotion from "../OtherFold/OtherMotion";
 import OtherTween from "../OtherFold/OtherTween";
+import DemoClock from "../OtherFold/DemoClock";
 import Test from "../OtherFold/Test";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
@@ -121,7 +122,7 @@ const Other = () => {
         </Route>
 
         <Route path="/Other/OtherMotion">
-          <OtherMotion />
+          <DemoClock />
         </Route>
         <Route path="/">
           <App />

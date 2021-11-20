@@ -104,3 +104,14 @@ span.css-14pt78w-MuiSlider-rail {
   display: none !important;
 }
  */
+div#Clock div.ant-tabs-nav,
+div#Clock div.ant-tabs-nav div.ant-tabs-nav-wrap {
+  position: absolute;
+  bottom: -3px !important;
+  width: 375px !important;
+  margin: 0 !important;
+}
+div#Clock div.ant-tabs-tab {
+  margin-left: 27px !important;
+  margin-right: 27px !important;
+}
