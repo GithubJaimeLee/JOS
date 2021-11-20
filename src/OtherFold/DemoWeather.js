@@ -64,12 +64,13 @@ const DemoWeather = () => {
   const [Scale, setScale] = useState(1);
   const [Rotate, setRotate] = useState("0");
   const [BorderRadius, setBorderRadius] = useState("12");
-  const [Color, setColor] = useState("415FFF");
+  const [Color, setColor] = useState("red");
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
   const x = useMotionValue(0);
   const Px = useTransform(x, [0, -375], [0, 375]);
   const Py = useTransform(x, [0, -150, -375], [500, 500, 400]);
+  // const Pg = useTransform(x, [0, -150, -375], ["red", "500", "400"]);
   const Info = (
     <p>
       scale(缩放)
@@ -158,7 +159,6 @@ const DemoWeather = () => {
     setStiffness(newValue);
     console.log(newValue);
   }
-
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -204,8 +204,8 @@ const DemoWeather = () => {
           <motion.div
             className="VPoint"
             style={{
-              width: 30,
-              height: 30,
+              width: 100,
+              height: 100,
               borderRadius: 35,
               position: "absolute",
               zIndex: 1,
@@ -215,7 +215,8 @@ const DemoWeather = () => {
 
               backgroundColor: "#EEEEEE",
             }}
-          />
+          ></motion.div>
+
           <div
             className="Mask"
             style={{
@@ -240,12 +241,18 @@ const DemoWeather = () => {
                 top: 0,
                 left: 0,
                 x,
-                backgroundColor: "#c7000b",
+                backgroundColor: Color,
                 backgroundImage: `url(${Close})`,
+              }}
+              onDragEnd={function (event, info) {
+                if (info.point.x != 0) {
+                  //    console.log(Pg);
+                } //else if (info.point.y >= 260) {
+                //console.log(info.point.y);
+                // }
               }}
             />
           </div>
-
           <motion.div
             className="SetWindow"
             style={SetWindowStyle}

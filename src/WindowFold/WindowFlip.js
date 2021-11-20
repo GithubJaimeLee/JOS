@@ -98,7 +98,7 @@ const WindowFlip = () => {
           pageBackground={"#fff"}
           showSwipeHint={true}
           style={{ top: 100 }}
-          noShadow
+          noShadow="false"
         >
           <img className="NS" src={Flip1} />
           <img className="NS" src={Flip2} />
@@ -117,7 +117,7 @@ const WindowFlip = () => {
             zIndex: -1,
             backgroundImage: `url(${FlipBg})`,
           }}
-        ></div>
+        />
       </div>
       <Bg />
     </div>
