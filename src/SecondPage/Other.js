@@ -46,7 +46,7 @@ const Other = () => {
               }}
               transition={{ type: "spring", velocity: 120 }}
             >
-              OOS其他动效
+              模块demo
             </motion.h1>
             <Link to="/">
               <img
@@ -70,7 +70,7 @@ const Other = () => {
               }}
             >
               <div className="Row1">
-                <Link
+                {/*     <Link
                   to="/Other/OtherBackToTop"
                   style={{ textDecoration: "none" }}
                 >
@@ -81,10 +81,10 @@ const Other = () => {
                       下拉刷新
                     </p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 <Link to="/Other/OtherTween" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
-                    <p style={{ paddingTop: 40 }}>曲线动画</p>
+                    <p style={{ paddingTop: 40 }}>天气组件</p>
                   </motion.div>
                 </Link>
               </div>
@@ -94,7 +94,7 @@ const Other = () => {
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={card}>
-                    <p style={{ paddingTop: 40 }}>单元素动画</p>
+                    <p style={{ paddingTop: 40 }}>时间组件</p>
                   </motion.div>
                 </Link>
               </div>

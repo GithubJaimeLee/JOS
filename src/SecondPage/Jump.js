@@ -89,6 +89,11 @@ const Jump = () => {
                     </p>
                   </motion.div>
                 </Link>
+                <Link to="/Jump/EditList" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>列表滑动</p>
+                  </motion.div>
+                </Link>
                 {/*      <Link to="/Jump/EditList" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>列表滑动</p>

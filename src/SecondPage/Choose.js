@@ -107,7 +107,7 @@ const Choose = () => {
                 </Link>
               </div>
               <div className="Row2">
-                <Link
+                {/*       <Link
                   to="/Choose/ChooseLoadingSwitch"
                   style={{ textDecoration: "none" }}
                 >
@@ -118,7 +118,7 @@ const Choose = () => {
                       Loading
                     </p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 <Link
                   to="/Choose/ChooseSingleChoice"
                   style={{ textDecoration: "none" }}

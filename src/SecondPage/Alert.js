@@ -5,9 +5,12 @@ import backIcon from "../Icon/back.png";
 import { Link } from "react-router-dom";
 import AlertLoading from "../AlertFold/AlertLoading";
 import AlertNew from "../AlertFold/AlertNew";
+import ChooseLoadingSwitch from "../AlertFold/ChooseLoadingSwitch";
+import JumpNew from "../AlertFold/JumpNew";
 import AlertPage from "../AlertFold/AlertPage";
 import AlertPercent from "../AlertFold/AlertPercent";
 import AlertToast from "../AlertFold/AlertToast";
+import JumpApp from "../AlertFold/JumpApp";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
 
@@ -47,7 +50,7 @@ const Alert = () => {
               }}
               transition={{ type: "spring", velocity: 120 }}
             >
-              OOS提示动效
+              二级页面
             </motion.h1>
             <Link to="/">
               <img
@@ -71,11 +74,21 @@ const Alert = () => {
               }}
             >
               <div className="Row1">
-                <Link to="/Alert/AlertNew" style={{ textDecoration: "none" }}>
+                <Link to="/Alert/JumpNew" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>新建</p>
+                  </motion.div>
+                </Link>
+                <Link to="/Alert/JumpNew" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>搜索框</p>
+                  </motion.div>
+                </Link>
+                {/*   <Link to="/Alert/AlertNew" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>新事件标记</p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 {/*           <Link
                   to="/Alert/AlertLoading"
                   style={{ textDecoration: "none" }}
@@ -84,14 +97,27 @@ const Alert = () => {
                     <p style={{ paddingTop: 40 }}>Loading</p>
                   </motion.div>
                 </Link> */}
-                <Link to="/Alert/AlertToast" style={{ textDecoration: "none" }}>
+                {/*       <Link to="/Alert/AlertToast" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>Toast</p>
                   </motion.div>
-                </Link>
+                </Link> */}
               </div>
               <div className="Row2">
-                <Link to="/Alert/AlertPage" style={{ textDecoration: "none" }}>
+                <Link
+                  to="/Alert/ChooseLoadingSwitch"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>布尔开关</p>
+                  </motion.div>
+                </Link>
+                <Link to="/Alert/JumpApp" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>弹入</p>
+                  </motion.div>
+                </Link>
+                {/*          <Link to="/Alert/AlertPage" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>页码指示</p>{" "}
                   </motion.div>
@@ -103,7 +129,7 @@ const Alert = () => {
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>进度指示器</p>
                   </motion.div>
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div
@@ -120,8 +146,15 @@ const Alert = () => {
             ></div>
           </div>
         </Route>
-        <Route path="/Alert/AlertNew">
-          <AlertNew />
+
+        <Route path="/Alert/ChooseLoadingSwitch">
+          <ChooseLoadingSwitch />
+        </Route>
+        <Route path="/Alert/JumpApp">
+          <JumpApp />
+        </Route>
+        <Route path="/Alert/JumpNew">
+          <JumpNew />
         </Route>
         <Route path="/Alert/AlertLoading">
           <AlertLoading />

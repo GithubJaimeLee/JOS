@@ -1,6 +1,6 @@
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import App from "../EditFold/EditListApp.jsx";
+import App from "../JumpFold/EditListApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 

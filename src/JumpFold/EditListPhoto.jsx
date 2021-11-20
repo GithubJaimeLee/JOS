@@ -21,7 +21,8 @@ export const Photo = forwardRef(
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundColor: "#fff",
-      borderRadius: 0,
+      //  marginBottom: 20,
+      borderRadius: 12,
       ...style,
     };
 

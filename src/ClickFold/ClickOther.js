@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import background from "../Img/bg2.png";
+import Click from "../SecondPage/Click";
 import Bback from "../Icon/back.png";
 import ClickCard from "../ClickFold/ClickCard";
 import ClickNum from "../ClickFold/ClickNum";
@@ -50,7 +51,7 @@ const ClickOther = () => {
             >
               OOS点击动效
             </motion.h1>
-            <Link to="/">
+            <Link to="/Click">
               <img
                 src={Bback}
                 alt=" "
@@ -62,7 +63,7 @@ const ClickOther = () => {
                   opacity: 1,
                   zIndex: "100",
                 }}
-              ></img>
+              />
             </Link>
             <div
               className="Grid"
@@ -116,6 +117,9 @@ const ClickOther = () => {
         </Route>
         <Route path="/Click/ClickCard">
           <ClickCard />
+        </Route>
+        <Route path="/Click">
+          <Click />
         </Route>
       </Switch>
     </Router>

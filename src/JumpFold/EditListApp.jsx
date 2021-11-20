@@ -10,10 +10,10 @@ import {
   LayoutMeasuringStrategy,
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
-import { Grid } from "../EditFold/EditListGrid";
-import { SortablePhoto } from "../EditFold/EditListSortable";
-import { Photo } from "../EditFold/EditListPhoto";
-import photos from "../EditFold/EditList.json";
+import { Grid } from "../JumpFold/EditListGrid";
+import { SortablePhoto } from "../JumpFold/EditListSortable";
+import { Photo } from "../JumpFold/EditListPhoto";
+import photos from "../JumpFold/EditList.json";
 
 const UploadGallery = () => {
   const [items, setItems] = useState(photos);

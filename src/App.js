@@ -176,7 +176,7 @@ function App() {
                     </p>
                   </motion.div>
                 </Link>
-                <Link to="/Choose" style={{ textDecoration: "none" }}>
+                {/*  <Link to="/Choose" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -193,7 +193,7 @@ function App() {
                     </p>
                     <div></div>
                   </motion.div>
-                </Link>
+                </Link> */}
                 {/*     <Link to="/Edit" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
@@ -263,7 +263,7 @@ function App() {
                     <div></div>
                   </motion.div>
                 </Link>
-                <Link to="/List" style={{ textDecoration: "none" }}>
+                {/*   <Link to="/List" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -279,7 +279,7 @@ function App() {
                       列表
                     </p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 {/*          <Link to="/Desk" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
@@ -311,11 +311,28 @@ function App() {
                           verticalAlign: "text-bottom",
                         }}
                       />
-                      提示类
+                      二级页面
                     </p>
                   </motion.div>
                 </Link>
-                <Link to="/Other" style={{ textDecoration: "none" }}>
+                <Link to="/other" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={AlertIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      模块demo
+                    </p>
+                  </motion.div>
+                </Link>
+                {/*      <Link to="/Other" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -331,7 +348,7 @@ function App() {
                       其他
                     </p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 {/*     <Link to="/Delete" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>

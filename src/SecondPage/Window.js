@@ -7,6 +7,7 @@ import WindowJump from "../WindowFold/WindowJump";
 import WindowPull from "../WindowFold/WindowPull";
 import WindowBubble from "../WindowFold/WindowBubble";
 import WindowAlert from "../WindowFold/WindowAlert";
+import WindowFlip from "../WindowFold/WindowFlip";
 import WindowBottom from "../WindowFold/WindowBottom";
 import WindowCenter from "../WindowFold/WindowCenter";
 import WindowInput from "../WindowFold/WindowInput";
@@ -63,7 +64,7 @@ const Window = () => {
               }}
               transition={{ type: "spring", velocity: 120 }}
             >
-              OOS弹窗动效
+              弹窗
             </motion.h1>
             <Link to="/">
               <img
@@ -95,14 +96,14 @@ const Window = () => {
                     <p style={{ paddingTop: 40 }}>底部弹窗</p>
                   </motion.div>
                 </Link>
-                <Link
+                {/*         <Link
                   to="/Window/WindowPull"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>下拉弹窗</p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 <Link
                   to="/Window/WindowAlert"
                   style={{ textDecoration: "none" }}
@@ -119,8 +120,24 @@ const Window = () => {
                     <p style={{ paddingTop: 40 }}>输入式弹窗</p>
                   </motion.div>{" "}
                 </Link>
+                <Link
+                  to="/Window/WindowSide"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>侧边菜单</p>
+                  </motion.div>
+                </Link>
               </div>
               <div className="Row2">
+                <Link
+                  to="/Window/WindowFlip"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>翻页</p>{" "}
+                  </motion.div>{" "}
+                </Link>
                 <Link
                   to="/Window/WindowVoice"
                   style={{ textDecoration: "none" }}
@@ -153,14 +170,6 @@ const Window = () => {
                     <p style={{ paddingTop: 40 }}>中心弹窗</p>
                   </motion.div>
                 </Link>
-                <Link
-                  to="/Window/WindowSide"
-                  style={{ textDecoration: "none" }}
-                >
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>侧边菜单</p>
-                  </motion.div>
-                </Link>
               </div>
             </div>
             <div
@@ -176,6 +185,9 @@ const Window = () => {
               }}
             ></div>
           </div>
+        </Route>
+        <Route path="/Window/WindowFlip">
+          <WindowFlip />
         </Route>
         <Route path="/Window/WindowJump">
           <WindowJump />

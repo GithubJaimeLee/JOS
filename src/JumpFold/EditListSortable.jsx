@@ -1,7 +1,7 @@
 import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { Photo } from "../EditFold/EditListPhoto";
+import { Photo } from "../JumpFold/EditListPhoto";
 
 export const SortablePhoto = (props) => {
   const {
