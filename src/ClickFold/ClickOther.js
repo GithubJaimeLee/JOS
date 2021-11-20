@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
 import background from "../Img/bg2.png";
 import Bback from "../Icon/back.png";
-import ClickList from "../ClickFold/ClickList";
-import ClickBtn from "../ClickFold/ClickBtn";
+import ClickCard from "../ClickFold/ClickCard";
+import ClickNum from "../ClickFold/ClickNum";
 import ClickIcon from "../ClickFold/ClickIcon";
-
-import ClickAlert from "../ClickFold/ClickAlert";
-import ClickShadow from "../ClickFold/ClickShadow";
-import ClickOther from "../ClickFold/ClickOther";
-import ClickZoom from "../ClickFold/ClickZoom";
+import ClickBtn from "../ClickFold/ClickBtn";
 import React from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -33,11 +29,11 @@ const cardHover = {
   color: "#415fff",
   opacity: 1,
 };
-const Click = () => {
+const ClickOther = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/Click">
+        <Route exact path="/Click/ClickOther">
           <div>
             <motion.h1
               className="text-center"
@@ -52,7 +48,7 @@ const Click = () => {
                 velocity: 120,
               }}
             >
-              点击反馈
+              OOS点击动效
             </motion.h1>
             <Link to="/">
               <img
@@ -76,62 +72,23 @@ const Click = () => {
               }}
             >
               <div className="Row1">
-                <Link
-                  to="/Click/ClickShadow"
-                  style={{ textDecoration: "none" }}
-                >
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>阴影</p>
-                  </motion.div>
-                </Link>
-                <Link to="/Click/ClickOther" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>其他</p>
-                  </motion.div>
-                </Link>
-                {/*    <Link to="/Click/ClickAlert" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>暗示</p>
-                  </motion.div>
-                </Link> */}
-
-                {/*                 <Link to="/Click/ClickList" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>列表反馈</p>
-                  </motion.div>
-                </Link>
-                <Link to="/Click/ClickIcon" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>图标反馈</p>
-                  </motion.div>
-                </Link>
                 <Link to="/Click/ClickBtn" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>按钮反馈</p>
                   </motion.div>
-                </Link> */}
-              </div>
-              <div className="Row2">
-                <Link to="/Click/ClickZoom" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>缩放</p>
-                  </motion.div>
                 </Link>
-                {/*                <Link to="/Click/ClickOther" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>其他</p>
-                  </motion.div>
-                </Link> */}
-                {/*           <Link to="/Click/ClickNum" style={{ textDecoration: "none" }}>
+                <Link to="/Click/ClickNum" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>数字键盘反馈</p>{" "}
                   </motion.div>
                 </Link>
+              </div>
+              <div className="Row2">
                 <Link to="/Click/ClickCard" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>卡片反馈</p>
                   </motion.div>
-                </Link> */}
+                </Link>
               </div>
             </div>
             <div
@@ -148,34 +105,21 @@ const Click = () => {
             ></div>
           </div>
         </Route>
-        <Route path="/Click/ClickShadow">
-          <ClickShadow />
-        </Route>
-        <Route path="/Click/ClickAlert">
-          <ClickAlert />
-        </Route>
-        <Route path="/Click/ClickZoom">
-          <ClickZoom />
-        </Route>
-        <Route path="/Click/ClickOther">
-          <ClickOther />
-        </Route>
-        <Route path="/Click/ClickList">
-          <ClickList />
-        </Route>
         <Route path="/Click/ClickIcon">
           <ClickIcon />
         </Route>
         <Route path="/Click/ClickBtn">
           <ClickBtn />
         </Route>
-
-        <Route path="/">
-          <App />
+        <Route path="/Click/ClickNum">
+          <ClickNum />
+        </Route>
+        <Route path="/Click/ClickCard">
+          <ClickCard />
         </Route>
       </Switch>
     </Router>
   );
 };
 
-export default Click;
+export default ClickOther;

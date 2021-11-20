@@ -2,6 +2,7 @@
 import background from "../Img/bg2.png";
 import backIcon from "../Icon/back.png";
 //页码
+import WindowPull from "../DeskFold/WindowPull";
 import App from "../App";
 import DApp from "../DeskFold/DeskMove";
 import DChange from "../DeskFold/DeskChange";
@@ -69,7 +70,7 @@ const Desk = () => {
                 velocity: 120,
               }}
             >
-              OOS桌面动效
+              长按
             </motion.h1>
             <Link to="/">
               <img
@@ -93,11 +94,11 @@ const Desk = () => {
               }}
             >
               <div className="Row1">
-                <Link to="/Desk/deskMove" style={{ textDecoration: "none" }}>
+                {/*                 <Link to="/Desk/deskMove" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>图标移动自动补位</p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 {/*           <Link
                   to="/Desk/deskDirection"
                   style={{ textDecoration: "none" }}
@@ -106,40 +107,46 @@ const Desk = () => {
                     <p style={{ paddingTop: 40 }}>图标变形（方向）</p>
                   </motion.div>
                 </Link> */}
-                <Link
+                {/*        <Link
                   to="/Desk/DeskOpenAndQuit"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>打开/退出应用</p>{" "}
                   </motion.div>
+                </Link> */}{" "}
+                <Link to="/Desk/windowPull" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>气泡</p>
+                  </motion.div>
                 </Link>
-                <Link
+                {/*  <Link
                   to="/Desk/DeskMultiDrag"
                   style={{ textDecoration: "none" }}
                 >
-                  {/*         <motion.div whileHover={cardHover} style={cardInactive}>
+                     <motion.div whileHover={cardHover} style={cardInactive}>
                     <p style={{ paddingTop: 40 }}>多选拖动</p>
-                  </motion.div> */}
-                </Link>
+                  </motion.div> 
+                </Link>*/}
               </div>
               <div className="Row2">
                 <Link to="/Desk/deskChange" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>图标变形</p>{" "}
+                    <p style={{ paddingTop: 40 }}>图标变形</p>
                   </motion.div>
                 </Link>
+
                 {/*            <Link to="/Desk/deskZoom" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>图标变形（缩放）</p>
                   </motion.div>
                 </Link> */}
 
-                <Link to="/Desk/deskGrid" style={{ textDecoration: "none" }}>
+                {/*          <Link to="/Desk/deskGrid" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>图标Grid</p>
                   </motion.div>
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div
@@ -155,6 +162,9 @@ const Desk = () => {
               }}
             />
           </div>
+        </Route>
+        <Route path="/Desk/windowPull">
+          <WindowPull />
         </Route>
         <Route path="/Desk/deskMove">
           <DApp />

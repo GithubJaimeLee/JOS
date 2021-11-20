@@ -76,7 +76,7 @@ const ClickCard = () => {
             opacity: 1,
             zIndex: "-1",
           }}
-        ></div>
+        />
 
         <motion.div
           className="boxChange"

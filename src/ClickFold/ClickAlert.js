@@ -46,7 +46,7 @@ const SetWindowVariants = {
   },
 };
 
-const OtherMotion = () => {
+const ClickAlert = () => {
   /*  const y = useMotionValue(0);
   const rotate = useTransform(y, [0, 100], [180, 0]);
   const top = useTransform(y, [0, 100], [70, 170]); */
@@ -175,7 +175,7 @@ const OtherMotion = () => {
           style={SetBtnStyle}
         />
         <div
-          className="ThisBackground"
+          className="Background"
           style={{
             width: 375,
             display: "flex",
@@ -883,4 +883,4 @@ const OtherMotion = () => {
   );
 };
 
-export default OtherMotion;
+export default ClickAlert;

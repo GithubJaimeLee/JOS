@@ -192,10 +192,14 @@ const JumpApp = () => {
           </div>
         </div>
 
-        <div className="ContactBody" style={ContactBodyStyle}>
+        <div
+          className="ContactBody"
+          onClick={() => cycleAnimation() & BgCycleAnimation()}
+          style={ContactBodyStyle}
+        >
           <div
             className="ContactBtn"
-            onClick={() => cycleAnimation() & BgCycleAnimation()}
+            //      onClick={() => cycleAnimation() & BgCycleAnimation()}
             style={ContactBtnStyle}
           />
           <motion.div

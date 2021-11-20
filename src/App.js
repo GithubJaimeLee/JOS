@@ -44,20 +44,7 @@ let cardActive = {
   opacity: 0.8,
   color: "#333",
 };
-/* 
-let cardInactive = {
-  width: 160,
-  height: 100,
-  backgroundColor: "#fff",
-  margin: 8,
-  borderRadius: 12,
-  textAlign: "center",
-  boxShadow: "0px 0px 16px  rgba(0, 0, 0, 0.15)",
-  // boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
-  opacity: 0.4,
-  color: "#999",
-};
- */
+
 const cardHover = {
   scale: 1.1,
   boxShadow: "0px 0px 16px rgba(65, 95, 255, 0.2)",
@@ -138,11 +125,11 @@ function App() {
               }}
             >
               <div className="Row1">
-                <Link to="/Desk" style={{ textDecoration: "none" }}>
+                <Link to="/Click" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
-                        src={DeskIcon}
+                        src={ClickIcon}
                         alt=""
                         style={{
                           display: "inline-block",
@@ -151,23 +138,8 @@ function App() {
                           verticalAlign: "text-bottom",
                         }}
                       />
-                      OOS桌面
+                      点击反馈
                     </p>
-                    <div>
-                      {/*              <div
-                        style={{
-                          position: "relative",
-                          top: 0,
-                          left: 10,
-                          width: 140 * 0.75,
-                          height: 10,
-                          backgroundColor: "#ccc",
-                          zIndex: 1,
-                          borderRadius: 5,
-                        }}
-                      ></div>
-                      <ProgressBar /> */}
-                    </div>
                   </motion.div>
                 </Link>
                 <Link to="/Window" style={{ textDecoration: "none" }}>
@@ -200,7 +172,7 @@ function App() {
                           verticalAlign: "text-bottom",
                         }}
                       />
-                      界面跳转
+                      滑动
                     </p>
                   </motion.div>
                 </Link>
@@ -273,6 +245,24 @@ function App() {
                 </Link> */}
               </div>
               <div className="Row2">
+                <Link to="/Desk" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={DeskIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      长按
+                    </p>
+                    <div></div>
+                  </motion.div>
+                </Link>
                 <Link to="/List" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
@@ -290,11 +280,11 @@ function App() {
                     </p>
                   </motion.div>
                 </Link>
-                <Link to="/Click" style={{ textDecoration: "none" }}>
+                {/*          <Link to="/Desk" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
-                        src={ClickIcon}
+                        src={DeskIcon}
                         alt=""
                         style={{
                           display: "inline-block",
@@ -303,10 +293,11 @@ function App() {
                           verticalAlign: "text-bottom",
                         }}
                       />
-                      点击反馈
+                      长按
                     </p>
+                    <div></div>
                   </motion.div>
-                </Link>
+                </Link> */}
                 <Link to="/Alert" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>

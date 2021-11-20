@@ -190,13 +190,13 @@ const OtherMotion = () => {
         >
           <motion.div
             className="Box"
-            drag={Drag}
+            drag={true}
             dragElastic={0.2}
             dragConstraints={{ left: -100, right: 100, top: -150, bottom: 480 }}
             animate={{
               y: Yaxis,
               x: Xaxis,
-              scale: Scale,
+              //  scale: Scale,
               borderRadius: BorderRadius,
             }}
             style={{
@@ -251,7 +251,7 @@ const OtherMotion = () => {
                       }
                     }
                   >
-                    <div
+                    {/*            <div
                       className="DefaultSetDamping"
                       style={{
                         width: 300,
@@ -375,7 +375,7 @@ const OtherMotion = () => {
                           value={Mass}
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div
@@ -419,7 +419,7 @@ const OtherMotion = () => {
                       />
                     </div>
                   </div>
-                  <div
+                  {/*  <div
                     className="DefaultSetScale"
                     style={{
                       width: 300,
@@ -459,7 +459,7 @@ const OtherMotion = () => {
                         value={Scale}
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <div
                     className="DefaultSetRotate"
                     style={{
@@ -544,7 +544,7 @@ const OtherMotion = () => {
                         />
                       </div>
                     </div>
-                    <div
+                    {/*            <div
                       className="DefaultSetDrag"
                       style={{
                         width: 80,
@@ -575,7 +575,7 @@ const OtherMotion = () => {
                           onChange={onChange}
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   <div
                     className="DefaultSetXaxis"
@@ -660,7 +660,7 @@ const OtherMotion = () => {
                     </div>
                   </div>
                 </TabPane>
-                <TabPane tab="更多参数" key="2">
+                {/*    <TabPane tab="更多参数" key="2">
                   <div
                     className="DefaultSetBounceStiffness"
                     style={{
@@ -871,8 +871,8 @@ const OtherMotion = () => {
                         value={TimeConstant}
                       />
                     </div>
-                  </div> */}
-                </TabPane>
+                  </div> 
+                </TabPane> */}
               </Tabs>
             </div>
           </motion.div>
