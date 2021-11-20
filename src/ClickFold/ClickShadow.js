@@ -608,6 +608,17 @@ const ClickShadow = () => {
               }}
             />
           </div>
+          <div
+            className="BG"
+            style={{
+              width: 375,
+              height: 812,
+              backgroundColor: "#fff",
+              position: "absolute",
+              top: 0,
+              zIndex: -1,
+            }}
+          ></div>
         </div>
         <Bg />
       </div>

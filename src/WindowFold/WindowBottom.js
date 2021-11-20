@@ -36,7 +36,7 @@ const BoxAnimation = {
     y: 400,
   },
   animationTwo: {
-    y: -100,
+    y: -200,
   },
 };
 

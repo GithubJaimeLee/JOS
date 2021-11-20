@@ -63,6 +63,7 @@ const FingerVariants = {
   animationTwo: {
     x: 288,
     y: 188,
+    opacity: 0,
   },
 };
 const BgAnimation = {

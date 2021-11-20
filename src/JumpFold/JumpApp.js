@@ -52,7 +52,7 @@ const SideStyle = {
   y: 101,
   x: 375,
 };
-const BoxAnimation = {
+const SideVariants = {
   animationOne: {
     x: 375,
   },
@@ -60,7 +60,7 @@ const BoxAnimation = {
     x: 0,
   },
 };
-const BgAnimation = {
+const MaskVariants = {
   BgAnimationOne: {
     opacity: 0,
   },
@@ -205,14 +205,14 @@ const JumpApp = () => {
           <motion.div
             className="boxChange"
             style={SideStyle}
-            variants={BoxAnimation}
+            variants={SideVariants}
             animate={animationBox}
             transition={{ type: "tween" }}
           />
           <motion.div
             className="MaskChange"
             style={MaskStyle}
-            variants={BgAnimation}
+            variants={MaskVariants}
             animate={animationBg}
           />
         </div>
