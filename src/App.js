@@ -21,6 +21,7 @@ import AlertIcon from "./Icon/AlertIcon.png";
 import OtherIcon from "./Icon/OtherIcon.png";
 import ChooseIcon from "./Icon/ChooseIcon.png";
 import DeskIcon from "./Icon/DeskIcon.png";
+import DemoIcon from "./Icon/DemoIcon.png";
 //导自定义组件
 import NavBar from "./Component/NavBar";
 //导入库
@@ -319,7 +320,7 @@ function App() {
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
-                        src={AlertIcon}
+                        src={DemoIcon}
                         alt=""
                         style={{
                           display: "inline-block",
