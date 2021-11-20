@@ -7,6 +7,7 @@ import OtherBackToTop from "../OtherFold/OtherBackToTop";
 import OtherMotion from "../OtherFold/OtherMotion";
 import OtherTween from "../OtherFold/OtherTween";
 import DemoClock from "../OtherFold/DemoClock";
+import DemoWeather from "../OtherFold/DemoWeather";
 import Test from "../OtherFold/Test";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
@@ -83,7 +84,10 @@ const Other = () => {
                     </p>
                   </motion.div>
                 </Link> */}
-                <Link to="/Other/OtherTween" style={{ textDecoration: "none" }}>
+                <Link
+                  to="/Other/DemoWeather"
+                  style={{ textDecoration: "none" }}
+                >
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>天气组件</p>
                   </motion.div>
@@ -120,7 +124,9 @@ const Other = () => {
         <Route path="/Other/OtherTween">
           <OtherTween />
         </Route>
-
+        <Route path="/Other/DemoWeather">
+          <DemoWeather />
+        </Route>
         <Route path="/Other/OtherMotion">
           <DemoClock />
         </Route>
