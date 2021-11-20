@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useState } from "react";
+import { Slider, InputNumber } from "antd";
 import { useRef } from "react";
 import {
   motion,
@@ -14,6 +15,17 @@ import OneFingerClick from "../Img/OneFingerClick.png";
 import SetHeader from "../Img/WSetHeader.png";
 import SetBody from "../Img/SetBody.png";
 import Bg from "../Component/Bg";
+import Close from "../Icon/Close.png";
+import Set from "../Icon/Set.png";
+
+const SetWindowVariants = {
+  UPanimationOne: {
+    y: 780,
+  },
+  UPanimationTwo: {
+    y: 400,
+  },
+};
 
 const ContactBtnStyle = {
   position: "relative",
@@ -40,18 +52,7 @@ const MaskStyle = {
   justifyContent: "center",
   y: 0,
 };
-const SideStyle = {
-  width: 375,
-  height: 812,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-  opacity: 1,
-  backgroundImage: `url(${JumpAppWin})`,
-  position: "absolute",
-  bottom: 100,
-  zIndex: 20,
-  y: 101,
-  x: 375,
-};
+
 const BoxAnimation = {
   animationOne: {
     x: 375,
@@ -81,6 +82,12 @@ const ContactBodyStyle = {
 };
 
 const JumpApp = () => {
+  const [SetWindowAnimation, UPcycleAnimation] = useCycle(
+    "UPanimationOne",
+    "UPanimationTwo"
+  );
+  const [BR, setBR] = useState(12);
+  const [Duration, setDuration] = useState(0.2);
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
@@ -108,7 +115,23 @@ const JumpApp = () => {
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
-
+      <div
+        className="SetBtn"
+        onClick={() => UPcycleAnimation()}
+        style={{
+          position: "absolute",
+          backgroundImage: `url(${Set})`,
+          top: 13,
+          right: 80,
+          width: 30,
+          height: 30,
+          borderRadius: 20,
+          textAlign: "center",
+          zIndex: 1001,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      />
       <div
         className="ScreenCenter"
         style={{
@@ -191,30 +214,172 @@ const JumpApp = () => {
             />
           </div>
         </div>
-
         <div
-          className="ContactBody"
-          onClick={() => cycleAnimation() & BgCycleAnimation()}
-          style={ContactBodyStyle}
+          className="Mask"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            position: "absolute",
+            width: 375,
+            height: 812,
+            overflow: "hidden",
+          }}
         >
+          <motion.div
+            className="SetWindow"
+            style={{
+              position: "absolute",
+              top: 50,
+              width: 350,
+              height: 340,
+              borderRadius: 12,
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              backgroundColor: "rgba(255,255,255,0.9)",
+              // filter: "blur(2px)",
+              boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
+              zIndex: 100,
+              y: 780,
+            }}
+            variants={SetWindowVariants}
+            animate={SetWindowAnimation}
+          >
+            <motion.img
+              className="CloseBtn"
+              onClick={() => UPcycleAnimation()}
+              src={Close}
+              alt=""
+              style={{
+                width: 16,
+                height: 16,
+                right: 20,
+                top: 16,
+                zIndex: 1000,
+                position: "absolute",
+              }}
+            />
+            <div
+              className="DefaultSetScale"
+              style={{
+                width: 300,
+                height: "auto",
+                fontSize: 14,
+                marginTop: 12,
+              }}
+            >
+              <h6>圆角大小</h6>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                }}
+              >
+                <Slider
+                  min={0}
+                  max={60}
+                  onChange={setBR}
+                  value={BR}
+                  step={1}
+                  style={{
+                    width: 220,
+                  }}
+                />
+                <InputNumber
+                  min={0}
+                  max={60}
+                  style={{
+                    margin: 0,
+                    height: 30,
+                    width: 80,
+                    borderRadius: 6,
+                  }}
+                  step={1}
+                  onChange={setBR}
+                  value={BR}
+                />
+              </div>
+              <div
+                className="DefaultDuration"
+                style={{
+                  width: 300,
+                  height: "auto",
+                  fontSize: 14,
+                  marginTop: 12,
+                }}
+              >
+                <h6>Duration 持续时间</h6>
+
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                  }}
+                >
+                  <Slider
+                    min={0}
+                    max={1}
+                    onChange={setDuration}
+                    value={Duration}
+                    step={0.1}
+                    style={{
+                      width: 220,
+                    }}
+                  />
+                  <InputNumber
+                    min={0}
+                    max={1}
+                    style={{
+                      margin: 0,
+                      height: 30,
+                      width: 70,
+                      borderRadius: 6,
+                    }}
+                    step={0.1}
+                    onChange={setDuration}
+                    value={Duration}
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
           <div
-            className="ContactBtn"
-            //      onClick={() => cycleAnimation() & BgCycleAnimation()}
-            style={ContactBtnStyle}
-          />
-          <motion.div
-            className="boxChange"
-            style={SideStyle}
-            variants={BoxAnimation}
-            animate={animationBox}
-            transition={{ type: "tween" }}
-          />
-          <motion.div
-            className="MaskChange"
-            style={MaskStyle}
-            variants={BgAnimation}
-            animate={animationBg}
-          />
+            className="ContactBody"
+            onClick={() => cycleAnimation() & BgCycleAnimation()}
+            style={ContactBodyStyle}
+          >
+            <div
+              className="ContactBtn"
+              //      onClick={() => cycleAnimation() & BgCycleAnimation()}
+              style={ContactBtnStyle}
+            />
+            <motion.div
+              className="boxChange"
+              style={{
+                width: 375,
+                height: 812,
+                boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+                opacity: 1,
+                backgroundImage: `url(${JumpAppWin})`,
+                position: "absolute",
+                bottom: 100,
+                zIndex: 20,
+                borderTopLeftRadius: BR,
+                borderBottomLeftRadius: BR,
+                y: 101,
+                x: 375,
+              }}
+              variants={BoxAnimation}
+              animate={animationBox}
+              transition={{ type: "tween", duration: Duration }}
+            />
+            <motion.div
+              className="MaskChange"
+              style={MaskStyle}
+              variants={BgAnimation}
+              animate={animationBg}
+            />{" "}
+          </div>
         </div>
       </div>
       <Bg />

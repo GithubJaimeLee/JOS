@@ -170,7 +170,7 @@ const DChange = () => {
             variants={boxAnimation}
             animate={animationBox}
             //onPanStart={toggleOpen}
-            whileTap={{ scale: 0.8 }}
+            whileTap={{ scale: 0.9 }}
             transition={{ type: "tween" }}
           >
             <p

@@ -80,7 +80,6 @@ const ClickZoom = () => {
             style={{
               width: 52,
               height: 52,
-
               backgroundImage: `url(${CameraIcon})`,
               position: "absolute",
               zIndex: 11,
