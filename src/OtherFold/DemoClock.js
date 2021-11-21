@@ -11,7 +11,8 @@ import ClockBg3 from "../Img/ClockBg3.png";
 import ClockBg4 from "../Img/ClockBg4.png";
 import "../App.css";
 import "../css/Component.css";
-
+import StopWatch from "../Component/StopWatch";
+import SwitchBtn from "../Component/Switch";
 const SetBtnStyle = {
   position: "absolute",
   backgroundImage: `url(${Set})`,
@@ -192,6 +193,16 @@ const OtherMotion = () => {
           <TabPane tab="闹钟" key="1" id="Clock1">
             <div
               style={{
+                position: "absolute",
+                top: 160,
+                right: 20,
+              }}
+            >
+              <SwitchBtn />
+            </div>
+
+            <div
+              style={{
                 width: 375,
                 height: 812,
                 backgroundImage: `url(${ClockBg1})`,
@@ -208,6 +219,7 @@ const OtherMotion = () => {
             ></div>
           </TabPane>
           <TabPane tab="秒表" key="3" id="Clock3">
+            <StopWatch />
             <div
               style={{
                 width: 375,

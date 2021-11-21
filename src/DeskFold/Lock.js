@@ -6,6 +6,7 @@ import Calendar from "../Img/Calendar.png";
 import CalendarWindow from "../Img/CalendarWindow.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import Bg from "../Component/Bg";
+import LockBg from "../Img/LockBg.png";
 //press功能
 
 //变形完整交互
@@ -38,7 +39,7 @@ const boxPress = {
   // boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
 };
 const Background = {
-  backgroundImage: `url(${Calendar})`,
+  backgroundImage: `url(${LockBg})`,
   position: "absolute",
   width: 375,
   height: 812,

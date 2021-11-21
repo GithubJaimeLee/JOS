@@ -46,7 +46,7 @@ const SetWindowVariants = {
   },
 };
 
-const OtherMotion = () => {
+const JumpMotion = () => {
   /*  const y = useMotionValue(0);
   const rotate = useTransform(y, [0, 100], [180, 0]);
   const top = useTransform(y, [0, 100], [70, 170]); */
@@ -192,7 +192,7 @@ const OtherMotion = () => {
             className="Box"
             drag={true}
             dragElastic={0.2}
-            dragConstraints={{ left: -100, right: 100, top: -150, bottom: 480 }}
+            dragConstraints={{ left: -100, right: 100, top: -150, bottom: 380 }}
             animate={{
               y: Yaxis,
               x: Xaxis,
@@ -211,7 +211,7 @@ const OtherMotion = () => {
               position: "absolute",
             }}
             transition={TransitionStyle}
-            whileTap={{ scale: Scale * 0.6 }}
+            //whileTap={{ scale: Scale * 0.6 }}
           />
           <motion.div
             className="SetWindow"
@@ -883,4 +883,4 @@ const OtherMotion = () => {
   );
 };
 
-export default OtherMotion;
+export default JumpMotion;

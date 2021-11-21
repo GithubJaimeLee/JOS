@@ -2,7 +2,7 @@
 import background from "../Img/bg2.png";
 import backIcon from "../Icon/back.png";
 //页码
-import WindowPull from "../DeskFold/WindowPull";
+import WindowPull from "../DeskFold/Lock";
 import App from "../App";
 import DApp from "../DeskFold/DeskMove";
 import DChange from "../DeskFold/DeskChange";

@@ -8,7 +8,7 @@ import JumpSecond from "../JumpFold/JumpSecond";
 import ChooseDate from "../JumpFold/ChooseDate";
 import DeleteList from "../JumpFold/DeleteList";
 import JumpNew from "../JumpFold/JumpNew";
-import OtherMotion from "../JumpFold/OtherMotion";
+import JumpMotion from "../JumpFold/OtherMotion";
 import JumpSearch from "../JumpFold/JumpSearch";
 import JumpApp from "../JumpFold/JumpApp";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -112,7 +112,7 @@ const Jump = () => {
                     <p style={{ paddingTop: 40 }}>删除（横滑定位）</p>{" "}
                   </motion.div>
                 </Link>
-                <Link to="/Jump/OtherMotion" style={{ textDecoration: "none" }}>
+                <Link to="/Jump/JumpMotion" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>水面滑动(四角定位)</p>
                   </motion.div>
@@ -153,8 +153,8 @@ const Jump = () => {
         <Route path="/Jump/ChooseDate">
           <ChooseDate />
         </Route>
-        <Route path="/Jump/OtherMotion">
-          <OtherMotion />
+        <Route path="/Jump/JumpMotion">
+          <JumpMotion />
         </Route>
         <Route path="/Jump/JumpNew">
           <JumpNew />

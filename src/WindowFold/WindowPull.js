@@ -6,6 +6,7 @@ import Calendar from "../Img/Calendar.png";
 import CalendarWindow from "../Img/CalendarWindow.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import Bg from "../Component/Bg";
+import LockBg from "../Img/LockBg.png";
 //press功能
 
 //变形完整交互

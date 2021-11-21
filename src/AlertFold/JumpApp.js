@@ -87,7 +87,7 @@ const JumpApp = () => {
     "UPanimationTwo"
   );
   const [BR, setBR] = useState(12);
-  const [Duration, setDuration] = useState(0.2);
+  const [Duration, setDuration] = useState(0.3);
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
