@@ -197,11 +197,50 @@ const OtherMotion = () => {
             <div
               style={{
                 position: "absolute",
-                top: 160,
+                top: 130,
                 right: 20,
+                width: 375,
+                left: 0,
+                display: "flex",
+                justifyContent: "center",
               }}
             >
-              <SwitchBtn />
+              <motion.div
+                className="ClockCard"
+                style={{
+                  position: "absolute",
+                  width: 340,
+                  height: 110,
+                  borderRadius: 16,
+                  backgroundColor: "#FFFFFF",
+                  opacity: 1,
+                  boxShadow: "0px 0px 10px 10px rgba(0,0,0,0.03)",
+                }}
+              >
+                <SwitchBtn />
+                <p
+                  style={{
+                    position: "absolute",
+                    fontSize: 36,
+                    top: 6,
+                    left: 16,
+                    fontFamily: "math",
+                    fontWeight: "bold",
+                  }}
+                >
+                  08:30
+                </p>
+                <p
+                  style={{
+                    position: "absolute",
+                    fontSize: 5,
+                    left: 16,
+                    top: 60,
+                  }}
+                >
+                  周一 周二 周三 周四 周五
+                </p>
+              </motion.div>
             </div>
 
             <div

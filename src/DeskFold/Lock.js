@@ -6,10 +6,11 @@ import Calendar from "../Img/Calendar.png";
 import CalendarWindow from "../Img/CalendarWindow.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import Bg from "../Component/Bg";
-import LockBg from "../Img/LockBg.png";
-//press功能
 
-//变形完整交互
+import LockBg from "../Img/LockBg.png";
+import Phone from "../Img/Phone.png";
+import Camera from "../Img/Camera.png";
+import Point from "../Img/Point.png";
 
 const boxChange = {
   width: 0,
@@ -87,6 +88,60 @@ const WindowPull = () => {
         }}
       >
         <div
+          className="Screen"
+          style={{
+            width: 375,
+            height: 812,
+            position: "absolute",
+          }}
+        >
+          <motion.div
+            className="Phone"
+            drag={true}
+            style={{
+              width: 36,
+              height: 36,
+              position: "absolute",
+              top: 560,
+              left: 320,
+              zIndex: 10,
+              backgroundImage: `url(${Phone})`,
+            }}
+            whileTap={{ x: 10 }}
+            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+          />
+          <motion.div
+            className="Camera"
+            drag={true}
+            style={{
+              width: 35,
+              height: 35,
+              position: "absolute",
+              top: 700,
+              left: 320,
+              zIndex: 10,
+              backgroundImage: `url(${Camera})`,
+            }}
+            whileTap={{ x: 10 }}
+            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+          />
+          <motion.div
+            className="Point"
+            drag={true}
+            style={{
+              width: 31,
+              height: 31,
+              position: "absolute",
+              top: 710,
+              left: 30,
+              zIndex: 10,
+              backgroundImage: `url(${Point})`,
+            }}
+            whileTap={{ x: 10 }}
+            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+          />
+        </div>
+        {/*    <div
           className="FingerClick"
           style={{
             backgroundImage: `url(${OneFingerClick})`,
@@ -111,8 +166,7 @@ const WindowPull = () => {
             animate={animationBox}
             transition={{ type: "tween" }}
           />
-        </div>
-
+        </div> */}
         <div className="Background" style={Background} />
         <Bg />
       </div>

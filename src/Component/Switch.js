@@ -8,46 +8,59 @@ const SwitchBtn = () => {
   const [isOn, setIsOn] = useState(false);
   const toggleSwitch = () => setIsOn(!isOn);
   const BtnVariants = {
-    animationOne: {
-      justifyContent: "flex-end",
-      backgroundColor: "#5F7DF7",
+    animationTwo: {
+      //justifyContent: "flex-end",
+      backgroundColor: "#FFE9C4",
+      height: 18,
       /*       transition: {
         when: "afterChildren",
         delay: 2,
+        
       }, */
+      //  border: "4px solid #ccc",
     },
-    animationTwo: {
-      justifyContent: "flex-start",
-      backgroundColor: "#ddd",
+    animationOne: {
+      //  justifyContent: "flex-start",
+      backgroundColor: "#fff",
+      height: 18,
+      width: 42,
+      border: "3px solid #EBEBEB",
       /*     transition: {
+
         when: "afterChildren",
         delay: 2,
       }, */
     },
   };
   const PointVariants = {
-    animationOne: {
-      height: 20,
-      width: 8,
-      borderRadius: "4px",
-      backgroundColor: "#fff",
-      /*       transition: {
-        delay: 0.5,
-      }, */
-    },
     animationTwo: {
-      backgroundColor: "#b2b2b2",
-      height: 16,
-      width: 16,
+      height: 26,
+      width: 26,
+
       borderRadius: "16px",
+      backgroundColor: "#fff",
+
+      border: "4px solid #FAB953",
       /*       transition: {
         delay: 0.5,
       }, */
+      left: 20,
+    },
+    animationOne: {
+      backgroundColor: "#FFF",
+      height: 22,
+      width: 22,
+      borderRadius: "16px",
+      border: "4px solid #ccc",
+      /*       transition: {
+        delay: 0.5,
+      }, */
+      left: -5,
     },
   };
   const RotateVariants = {
     animationOne: {
-      height: 20,
+      height: 16,
       width: 8,
       borderRadius: "4px",
       backgroundColor: "#fff",
@@ -77,13 +90,14 @@ const SwitchBtn = () => {
     <div>
       <motion.div
         style={{
-          width: 60,
-          height: 30,
-          backgroundColor: "rgba(19, 3, 3, 0.4)",
+          width: 45,
+          height: 16,
+          position: "absolute",
           display: "flex",
           alignItems: "center",
           borderRadius: 50,
-          padding: 10,
+          top: 38,
+          left: 280,
           // cursor: "pointer",
         }}
         className="Switch"
@@ -94,8 +108,9 @@ const SwitchBtn = () => {
         onClick={(toggleSwitch, cycleAnimation)}
       >
         <motion.div
+          className="Btn"
           style={{
-            position: "relative",
+            position: "absolute",
           }}
           variants={PointVariants}
           animate={BtnAnimation}

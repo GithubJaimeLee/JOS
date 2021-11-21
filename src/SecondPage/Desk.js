@@ -117,7 +117,7 @@ const Desk = () => {
                 </Link> */}{" "}
                 <Link to="/Desk/windowPull" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>气泡</p>
+                    <p style={{ paddingTop: 40 }}>锁屏</p>
                   </motion.div>
                 </Link>
                 {/*  <Link
