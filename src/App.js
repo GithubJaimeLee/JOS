@@ -437,7 +437,7 @@ function App() {
                     fontSize: 30,
                   }}
                 >
-                  Vivo风格的多终端 动效 组件库
+                  vivo风格的多终端 动效 组件库
                 </p>
               </div>
               <a
