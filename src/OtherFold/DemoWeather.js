@@ -10,6 +10,14 @@ import "../App.css";
 import "../css/Component.css";
 import WeatherLine from "../Img/WeatherLine.png";
 import WeatherLine2 from "../Img/WeatherLine2.png";
+import O28 from "../Img/28.png";
+import O26 from "../Img/26.png";
+import O24 from "../Img/24.png";
+import O22 from "../Img/22.png";
+import O20 from "../Img/20.png";
+import O18 from "../Img/18.png";
+import O16 from "../Img/16.png";
+import PointBg from "../Img/PointBg.png";
 const SetBtnStyle = {
   position: "absolute",
   backgroundImage: `url(${Set})`,
@@ -96,6 +104,41 @@ const DemoWeather = () => {
       "#4DCEA8",
       "#4DCEA8",
     ]
+  );
+  const SO28 = useTransform(
+    x,
+    [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
+    [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  );
+  const SO26 = useTransform(
+    x,
+    [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
+    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  );
+  const SO24 = useTransform(
+    x,
+    [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
+    [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+  );
+  const SO22 = useTransform(
+    x,
+    [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
+    [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1]
+  );
+  const SO20 = useTransform(
+    x,
+    [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
+    [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1]
+  );
+  const SO18 = useTransform(
+    x,
+    [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
+    [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0]
+  );
+  const SO16 = useTransform(
+    x,
+    [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
+    [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0]
   );
 
   // const Pg = useTransform(x, [0, -150, -375], ["red", "500", "400"]);
@@ -244,10 +287,121 @@ const DemoWeather = () => {
               border: "5px solid",
               backgroundColor: "#fff",
               borderColor: PColor,
+              //     backgroundImage: `url(${Pbg})`,
               //   backgroundColor: PColor,
             }}
             // animate={{ backgroundColor: PColor }}
-          ></motion.div>
+          >
+            <div
+              style={{
+                backgroundImage: `url(${PointBg})`,
+                position: "absolute",
+                left: -28,
+                top: -100,
+                width: 75,
+                height: 306,
+                zIndex: -1,
+              }}
+            />
+            <motion.img
+              className="28"
+              src={O28}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: 22,
+                height: 22,
+                opacity: SO28,
+                zIndex: 28,
+              }}
+              alt=""
+            />
+            <motion.img
+              className="26"
+              src={O26}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: 22,
+                height: 22,
+                opacity: SO26,
+                zIndex: 26,
+              }}
+              alt=""
+            />
+            <motion.img
+              className="24"
+              src={O24}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: 22,
+                height: 22,
+                opacity: SO24,
+                zIndex: 24,
+              }}
+              alt=""
+            />
+            <motion.img
+              className="22"
+              src={O22}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: 22,
+                height: 22,
+                opacity: SO22,
+                zIndex: 22,
+              }}
+              alt=""
+            />
+            <motion.img
+              className="20"
+              src={O20}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: 22,
+                height: 22,
+                opacity: SO20,
+                zIndex: 20,
+              }}
+              alt=""
+            />
+            <motion.img
+              className="18"
+              src={O18}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: 22,
+                height: 22,
+                opacity: SO18,
+                zIndex: 18,
+              }}
+              alt=""
+            />
+            <motion.img
+              className="16"
+              src={O16}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: 22,
+                height: 22,
+                opacity: SO16,
+                zIndex: 16,
+              }}
+              alt=""
+            />
+          </motion.div>
 
           <div
             className="Mask"
