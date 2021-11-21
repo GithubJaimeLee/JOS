@@ -23,11 +23,12 @@ const ContactBtnStyle = {
   display: "flex",
   justifyContent: "center",
 };
-const ContactBubbleStyle = {
+const ChangeBoxStyle = {
   width: 340,
   height: 275,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
+  y: 400,
   backgroundImage: `url(${WindowBottomWin})`,
   // background: "#aaa",
   borderRadius: 20,
@@ -324,7 +325,7 @@ const WindowBottom = () => {
         <motion.div
           onClick={() => cycleAnimation() & BgCycleAnimation()}
           className="boxChange"
-          style={ContactBubbleStyle}
+          style={ChangeBoxStyle}
           variants={BoxAnimation}
           animate={animationBox}
           transition={{

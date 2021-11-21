@@ -55,6 +55,7 @@ const FingerVariants = {
   animationTwo: {
     y: 170,
     x: 80,
+    opacity: 0,
   },
 };
 const KeyBoardAnimation = {
