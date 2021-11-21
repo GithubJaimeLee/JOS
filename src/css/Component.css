@@ -120,3 +120,13 @@ div#Clock div.ant-tabs-tab {
 div.CNS div div div {
   background: none !important;
 }
+/* time wheel */
+
+div.DemoList .wheel__slide {
+  font-size: 40px !important;
+}
+div.DemoList .wheel__shadow-bottom,
+div.DemoList .wheel__shadow-top {
+  border-top: none !important;
+  border-bottom: none !important;
+}

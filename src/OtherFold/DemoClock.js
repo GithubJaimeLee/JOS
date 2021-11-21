@@ -13,6 +13,8 @@ import "../App.css";
 import "../css/Component.css";
 import StopWatch from "../Component/StopWatch";
 import SwitchBtn from "../Component/Switch";
+import Clock from "../Component/Clock/Clock";
+import Time from "../Component/Time";
 const SetBtnStyle = {
   position: "absolute",
   backgroundImage: `url(${Set})`,
@@ -212,6 +214,18 @@ const OtherMotion = () => {
           <TabPane tab="世界时钟" key="2" id="Clock2">
             <div
               style={{
+                position: "absolute",
+                display: "flex",
+                width: 375,
+                top: 126,
+                justifyContent: "center",
+              }}
+            >
+              <Clock digital />
+            </div>
+
+            <div
+              style={{
                 width: 375,
                 height: 812,
                 backgroundImage: `url(${ClockBg2})`,
@@ -229,6 +243,7 @@ const OtherMotion = () => {
             ></div>
           </TabPane>
           <TabPane tab="计时器" key="4" id="Clock4">
+            <Time />
             <div
               style={{
                 width: 375,
