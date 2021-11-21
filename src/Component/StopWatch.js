@@ -1,5 +1,13 @@
 import React, { Component } from "react";
+import Play from "../Img/Play.png";
+import { motion, useCycle } from "framer-motion";
+import Pause from "../Img/Pause.png";
+import Replay from "../Img/Replay.png";
 
+/*
+import { useCycle } from 'framer-motion
+onClick={() => OCycle()
+*/
 class StopWatch extends Component {
   state = {
     timerOn: false,
@@ -43,6 +51,7 @@ class StopWatch extends Component {
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
     // let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
+
     return (
       <div
         className="Stopwatch"
@@ -62,63 +71,160 @@ class StopWatch extends Component {
             // fontSize: 50,
 
             width: 375,
-            display: "grid",
-            justifyContent: "center",
+            display: "flex",
+            left: 60,
           }}
         >
-          {minutes} : {seconds} : {centiseconds}
+          <div
+            style={{
+              color: "#eee",
+              width: 72,
+              fontFamily: "math",
+              fontWeight: "bold",
+              fontSize: 60,
+            }}
+          >
+            {minutes}
+          </div>
+          <div
+            style={{
+              width: 20,
+              color: "#eee",
+              fontFamily: "math",
+              fontWeight: "bold",
+              fontSize: 60,
+            }}
+          >
+            :
+          </div>
+          {this.state.timerOn === false && this.state.timerTime === 0 && (
+            <div
+              style={{
+                width: 72,
+                color: "#eee",
+                fontFamily: "math",
+                fontWeight: "bold",
+                fontSize: 60,
+              }}
+            >
+              {seconds}
+            </div>
+          )}
+          {(this.state.timerOn === true || this.state.timerOn === false) &&
+            this.state.timerTime > 0 && (
+              <div
+                style={{
+                  width: 72,
+                  color: "#000",
+                  fontFamily: "math",
+                  fontWeight: "bold",
+                  fontSize: 60,
+                }}
+              >
+                {seconds}
+              </div>
+            )}
+          <div
+            style={{
+              width: 20,
+              color: "#F95F6D",
+              fontFamily: "math",
+              fontWeight: "bold",
+              fontSize: 60,
+            }}
+          >
+            .
+          </div>
+
+          {this.state.timerOn === false && this.state.timerTime === 0 && (
+            <div
+              style={{
+                color: "#000",
+                fontFamily: "math",
+                fontWeight: "bold",
+                fontSize: 60,
+              }}
+            >
+              {centiseconds}
+            </div>
+          )}
+
+          {this.state.timerOn === true && (
+            <div
+              style={{
+                color: "#aaa",
+                fontFamily: "math",
+                fontWeight: "bold",
+                fontSize: 60,
+              }}
+            >
+              {centiseconds}
+            </div>
+          )}
+
+          {this.state.timerOn === false && this.state.timerTime > 0 && (
+            <div
+              style={{
+                color: "#000",
+                fontFamily: "math",
+                fontWeight: "bold",
+                fontSize: 60,
+              }}
+            >
+              {centiseconds}
+            </div>
+          )}
         </div>
         {this.state.timerOn === false && this.state.timerTime === 0 && (
           <button
             onClick={this.startTimer}
             style={{
-              position: "relative",
+              position: "absolute",
               top: 366,
               width: 86,
               height: 86,
+              left: 150,
               borderRadius: 50,
               border: "none",
-              opacity: 0.5,
+              opacity: 1,
+              backgroundImage: `url(${Play})`,
               backgroundColor: "#F95F6D",
             }}
-          >
-            P
-          </button>
+          />
         )}
         {this.state.timerOn === true && (
           <button
             onClick={this.stopTimer}
             style={{
-              position: "relative",
+              position: "absolute",
               top: 366,
               width: 86,
               height: 86,
+              left: 150,
               borderRadius: 50,
               border: "none",
-              opacity: 0.5,
+              opacity: 1,
+              backgroundImage: `url(${Pause})`,
               backgroundColor: "#F95F6D",
             }}
-          >
-            Stop
-          </button>
+          ></button>
         )}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
           <button
             onClick={this.startTimer}
             style={{
-              position: "relative",
+              position: "absolute",
               top: 366,
-              left: 80,
+              left: 230,
               width: 86,
               height: 86,
               borderRadius: 50,
               border: "none",
-              opacity: 0.5,
+              opacity: 1,
+              backgroundImage: `url(${Play})`,
               backgroundColor: "#F95F6D",
             }}
-          >
-            Resume
-          </button>
+          ></button>
         )}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
           <button
@@ -126,17 +232,16 @@ class StopWatch extends Component {
             style={{
               position: "absolute",
               top: 366,
-              left: 60,
+              left: 58,
               width: 86,
               height: 86,
               borderRadius: 50,
               border: "none",
-              opacity: 0.5,
-              backgroundColor: "#F95F6D",
+              opacity: 1,
+              backgroundImage: `url(${Replay})`,
+              backgroundColor: "#fff",
             }}
-          >
-            Re
-          </button>
+          ></button>
         )}
       </div>
     );

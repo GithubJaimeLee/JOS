@@ -15,6 +15,7 @@ import StopWatch from "../Component/StopWatch";
 import SwitchBtn from "../Component/Switch";
 import Clock from "../Component/Clock/Clock";
 import Time from "../Component/Time";
+
 const SetBtnStyle = {
   position: "absolute",
   backgroundImage: `url(${Set})`,
@@ -162,7 +163,7 @@ const OtherMotion = () => {
     setStiffness(newValue);
     console.log(newValue);
   }
-
+  const date = new Date().toLocaleDateString();
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -221,6 +222,22 @@ const OtherMotion = () => {
                 justifyContent: "center",
               }}
             >
+              <div
+                style={{
+                  position: "absolute",
+                  top: 302,
+                  fontSize: 16,
+                  fontWeight: "bold",
+                }}
+              >
+                {/*     {date[0]}
+                {date[1]}
+                {date[2]}
+                {date[3]}年 */}
+                {date[5]}
+                {date[6]}月{date[8]}
+                {date[9]}日
+              </div>
               <Clock digital />
             </div>
 

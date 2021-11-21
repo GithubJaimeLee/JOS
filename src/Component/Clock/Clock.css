@@ -1,10 +1,11 @@
 .clock:before {
   content: "";
   position: absolute;
-  width: 80px;
-  height: 80px;
-  opacity: 0.8;
-  background: #eee;
+  width: 76px;
+  height: 76px;
+  opacity: 1;
+  border: 18px solid #f8f8f8;
+  background: #fff;
   border-radius: 50%;
   z-index: 10000;
 }
@@ -47,7 +48,7 @@
   content: "";
   position: absolute;
   width: 14px;
-  height: 56px;
+  height: 54px;
   background: #ff105e;
   z-index: 10;
   border-radius: 5px;
@@ -57,7 +58,7 @@
   content: "";
   position: absolute;
   width: 8px;
-  height: 60px;
+  height: 58px;
   background: #333;
   z-index: 11;
   border-radius: 3px;
@@ -76,8 +77,10 @@
 .digital {
   color: #333;
   transform: translateY(0%);
-  font-size: 36px;
+  font-size: 34px;
+  font-weight: bold;
   z-index: 10000;
+  font-family: math;
   /*  font-family: Consolas, Monaco, Lucida Console, Liberation Mono,
     DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace; */
 }

@@ -26,7 +26,7 @@ const Time = () => {
       style={{
         width: 375,
         position: "absolute",
-        height: 812,
+        height: 700,
         // padding: "50px",
         display: "flex",
         justifyContent: "center",
