@@ -11,6 +11,7 @@ import AlertPage from "../AlertFold/AlertPage";
 import AlertPercent from "../AlertFold/AlertPercent";
 import AlertToast from "../AlertFold/AlertToast";
 import JumpApp from "../AlertFold/JumpApp";
+import JumpSearch from "../JumpFold/JumpSearch";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
 
@@ -74,7 +75,7 @@ const Alert = () => {
               }}
             >
               <div className="Row1">
-                <Link to="/Alert/JumpNew" style={{ textDecoration: "none" }}>
+                <Link to="/Alert/JumpApp" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>新建</p>
                   </motion.div>
@@ -151,7 +152,7 @@ const Alert = () => {
           <ChooseLoadingSwitch />
         </Route>
         <Route path="/Alert/JumpApp">
-          <JumpApp />
+          <JumpSearch />
         </Route>
         <Route path="/Alert/JumpNew">
           <JumpNew />
