@@ -8,7 +8,8 @@ import Close from "../Icon/Close.png";
 import WeatherBg from "../Img/WeatherBg.png";
 import "../App.css";
 import "../css/Component.css";
-
+import WeatherLine from "../Img/WeatherLine.png";
+import WeatherLine2 from "../Img/WeatherLine2.png";
 const SetBtnStyle = {
   position: "absolute",
   backgroundImage: `url(${Set})`,
@@ -68,8 +69,35 @@ const DemoWeather = () => {
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
   const x = useMotionValue(0);
-  const Px = useTransform(x, [0, -375], [0, 375]);
-  const Py = useTransform(x, [0, -150, -375], [500, 500, 400]);
+  const Px = useTransform(
+    x,
+    [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
+    [22, 22, 22, 22, 97, 97, 172, 172, 247, 247, 325, 325]
+  );
+  const Py = useTransform(
+    x,
+    [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
+    [410, 418, 424, 436, 456, 475, 485, 485, 510, 505, 500, 480]
+  );
+  const PColor = useTransform(
+    x,
+    [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
+    [
+      "#FAA15B",
+      "#F9B15F",
+      "#DFBF6A",
+      "#E2BF69",
+      "#89D48F",
+      "#89D48F",
+      "#52D1AC",
+      "#52D1AC",
+      "#32B8C6",
+      "#34B8C6",
+      "#4DCEA8",
+      "#4DCEA8",
+    ]
+  );
+
   // const Pg = useTransform(x, [0, -150, -375], ["red", "500", "400"]);
   const Info = (
     <p>
@@ -204,17 +232,21 @@ const DemoWeather = () => {
           <motion.div
             className="VPoint"
             style={{
-              width: 100,
-              height: 100,
+              width: 32,
+              height: 32,
               borderRadius: 35,
               position: "absolute",
-              zIndex: 1,
+              zIndex: 20,
               top: Py,
               left: Px,
               //   scale: ThisScale,
-
-              backgroundColor: "#EEEEEE",
+              opacity: 1,
+              border: "5px solid",
+              backgroundColor: "#fff",
+              borderColor: PColor,
+              //   backgroundColor: PColor,
             }}
+            // animate={{ backgroundColor: PColor }}
           ></motion.div>
 
           <div
@@ -222,36 +254,62 @@ const DemoWeather = () => {
             style={{
               position: "absolute",
               overflow: "scroll",
+              display: "flex",
               zIndex: 10,
-              width: 375,
-              height: 30,
-              top: 600,
+              width: 900,
+              height: 400,
+              top: 412,
               left: 0,
             }}
           >
             <motion.div
               drag="x"
-              className="VPoint"
+              className="WeatherLine"
+              dragElastic={0}
+              dragConstraints={{ left: -525, right: 0 }}
               style={{
-                width: 3000,
-                height: 30,
-                borderRadius: 35,
-                position: "absolute",
-                zIndex: 1,
+                width: 900,
+                height: 400,
+                borderRadius: 0,
+                position: "relative",
+                zIndex: 2,
                 top: 0,
                 left: 0,
                 x,
+
                 backgroundColor: Color,
-                backgroundImage: `url(${Close})`,
+                backgroundImage: `url(${WeatherLine})`,
               }}
-              onDragEnd={function (event, info) {
-                if (info.point.x != 0) {
-                  //    console.log(Pg);
-                } //else if (info.point.y >= 260) {
-                //console.log(info.point.y);
-                // }
+              dragTransition={{
+                timeConstant: 80,
+                power: 0,
+                modifyTarget: (target) => Math.round(target / 75) * 75,
               }}
             />
+            {/*  <motion.div
+              drag="x"
+              className="WeatherLine2"
+              dragElastic={0}
+              dragConstraints={{ left: -525, right: 0 }}
+              style={{
+                width: 525,
+                height: 400,
+                borderRadius: 0,
+                position: "relative",
+                zIndex: 1,
+                top: 0,
+                left: 0,
+
+                x,
+                backgroundColor: Color,
+                backgroundImage: `url(${WeatherLine2})`,
+              }}
+              dragTransition={{
+                timeConstant: 80,
+                power: 0,
+                modifyTarget: (target) => Math.round(target / 66) * 66,
+              }}
+            /> */}
           </div>
           <motion.div
             className="SetWindow"
