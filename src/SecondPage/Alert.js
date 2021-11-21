@@ -7,11 +7,11 @@ import AlertLoading from "../AlertFold/AlertLoading";
 import AlertNew from "../AlertFold/AlertNew";
 import ChooseLoadingSwitch from "../AlertFold/ChooseLoadingSwitch";
 import JumpNew from "../AlertFold/JumpNew";
+import JumpApp from "../AlertFold/JumpApp";
 import AlertPage from "../AlertFold/AlertPage";
 import AlertPercent from "../AlertFold/AlertPercent";
 import AlertToast from "../AlertFold/AlertToast";
-import JumpApp from "../AlertFold/JumpApp";
-import JumpSearch from "../JumpFold/JumpSearch";
+import Create from "../AlertFold/Create";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
 
@@ -75,7 +75,7 @@ const Alert = () => {
               }}
             >
               <div className="Row1">
-                <Link to="/Alert/JumpApp" style={{ textDecoration: "none" }}>
+                <Link to="/Alert/Create" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>新建</p>
                   </motion.div>
@@ -151,14 +151,14 @@ const Alert = () => {
         <Route path="/Alert/ChooseLoadingSwitch">
           <ChooseLoadingSwitch />
         </Route>
-        <Route path="/Alert/JumpApp">
-          <JumpSearch />
+        <Route path="/Alert/Create">
+          <Create />
         </Route>
         <Route path="/Alert/JumpNew">
           <JumpNew />
         </Route>
-        <Route path="/Alert/AlertLoading">
-          <AlertLoading />
+        <Route path="/Alert/JumpApp">
+          <JumpApp />
         </Route>
         <Route path="/Alert/AlertPage">
           <AlertPage />

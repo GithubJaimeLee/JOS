@@ -259,6 +259,7 @@ const JumpApp = () => {
                 position: "absolute",
               }}
             />
+
             <div
               className="DefaultSetScale"
               style={{
@@ -268,6 +269,11 @@ const JumpApp = () => {
                 marginTop: 12,
               }}
             >
+              <div
+                style={{
+                  height: 40,
+                }}
+              />
               <h6>圆角大小</h6>
               <div
                 style={{
