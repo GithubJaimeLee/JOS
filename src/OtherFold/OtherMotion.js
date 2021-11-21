@@ -7,20 +7,6 @@ import Set from "../Icon/Set.png";
 import Close from "../Icon/Close.png";
 import "../App.css";
 
-const SetBtnStyle = {
-  position: "absolute",
-  backgroundImage: `url(${Set})`,
-  top: 13,
-  right: 80,
-  width: 30,
-  height: 30,
-  borderRadius: 20,
-  textAlign: "center",
-  zIndex: 1001,
-  display: "flex",
-  justifyContent: "center",
-};
-
 const SetWindowStyle = {
   position: "absolute",
   top: 50,
@@ -35,15 +21,6 @@ const SetWindowStyle = {
   boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
   zIndex: 10,
   y: 780,
-};
-
-const SetWindowVariants = {
-  UPanimationOne: {
-    y: 780,
-  },
-  UPanimationTwo: {
-    y: 0,
-  },
 };
 
 const OtherMotion = () => {
@@ -139,10 +116,19 @@ const OtherMotion = () => {
     mass: Mass,
   };
 
-  const [SetWindowAnimation, UPcycleAnimation] = useCycle(
-    "UPanimationOne",
-    "UPanimationTwo"
+  const [SetAnimation, SetCycle] = useCycle(
+    "SetanimationOne",
+    "SetanimationTwo"
   );
+
+  const SetVariants = {
+    SetanimationOne: {
+      y: 780,
+    },
+    SetanimationTwo: {
+      y: 0,
+    },
+  };
 
   function HandleDampingChange(e) {
     const newValue = e.target.value;
@@ -171,8 +157,20 @@ const OtherMotion = () => {
       >
         <div
           className="SetBtn"
-          onClick={() => UPcycleAnimation()}
-          style={SetBtnStyle}
+          onClick={() => SetCycle()}
+          style={{
+            position: "absolute",
+            backgroundImage: `url(${Set})`,
+            top: 13,
+            right: 80,
+            width: 30,
+            height: 30,
+            borderRadius: 20,
+            textAlign: "center",
+            zIndex: 1001,
+            display: "flex",
+            justifyContent: "center",
+          }}
         />
         <div
           className="ThisBackground"
@@ -216,12 +214,12 @@ const OtherMotion = () => {
           <motion.div
             className="SetWindow"
             style={SetWindowStyle}
-            variants={SetWindowVariants}
-            animate={SetWindowAnimation}
+            variants={SetVariants}
+            animate={SetAnimation}
           >
             <motion.img
               className="CloseBtn"
-              onClick={() => UPcycleAnimation()}
+              onClick={() => SetCycle()}
               src={Close}
               alt=""
               style={{

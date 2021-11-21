@@ -10,19 +10,19 @@ import Bg from "../Component/Bg";
 import Set from "../Icon/Set.png";
 import Close from "../Icon/Close.png";
 
-const SetWindowVariants = {
-  UPanimationOne: {
-    y: 780,
-  },
-  UPanimationTwo: {
-    y: 0,
-  },
-};
 const ClickZoom = () => {
   const [SetWindowAnimation, UPcycleAnimation] = useCycle(
     "UPanimationOne",
     "UPanimationTwo"
   );
+  const SetWindowVariants = {
+    UPanimationOne: {
+      y: 780,
+    },
+    UPanimationTwo: {
+      y: 0,
+    },
+  };
   const [Scale, setScale] = useState(0.85);
   const [Duration, setDuration] = useState(0.1);
 
@@ -212,7 +212,6 @@ const ClickZoom = () => {
                 }}
               >
                 <h6>Duration 持续时间</h6>
-
                 <div
                   style={{
                     display: "flex",
