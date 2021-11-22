@@ -153,6 +153,30 @@ const OtherMotion = () => {
     "UPanimationTwo"
   );
 
+  const [CardAnimation, Cardcycle] = useCycle(
+    "CardAnimationOne",
+    "CardAnimationTwo"
+  );
+
+  const CardVariants = {
+    CardAnimationOne: {
+      color: "#CDCDCD",
+      boxShadow: "none",
+    },
+    CardAnimationTwo: {
+      color: "#000",
+      boxShadow: "0px 0px 10px 10px rgba(0,0,0,0.03)",
+    },
+  };
+  const PVariants = {
+    CardAnimationOne: {
+      color: "#CDCDCD",
+      boxShadow: "none",
+    },
+    CardAnimationTwo: {
+      color: "#8F8F8F",
+    },
+  };
   function HandleDampingChange(e) {
     const newValue = e.target.value;
     setDamping(newValue);
@@ -214,10 +238,13 @@ const OtherMotion = () => {
                   borderRadius: 16,
                   backgroundColor: "#FFFFFF",
                   opacity: 1,
-                  boxShadow: "0px 0px 10px 10px rgba(0,0,0,0.03)",
                 }}
+                variants={CardVariants}
+                animate={CardAnimation}
               >
-                <SwitchBtn />
+                <div onClick={Cardcycle}>
+                  <SwitchBtn />
+                </div>
                 <p
                   style={{
                     position: "absolute",
@@ -230,16 +257,18 @@ const OtherMotion = () => {
                 >
                   08:30
                 </p>
-                <p
+                <motion.p
                   style={{
                     position: "absolute",
                     fontSize: 5,
                     left: 16,
                     top: 60,
                   }}
+                  variants={PVariants}
+                  animate={CardAnimation}
                 >
                   周一 周二 周三 周四 周五
-                </p>
+                </motion.p>
               </motion.div>
             </div>
 
