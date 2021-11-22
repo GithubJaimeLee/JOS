@@ -82,8 +82,53 @@ const WindowCenter = () => {
   );
   const Info = (
     <p>
-      Hello,
-      <br /> world!
+      <h6>弹出</h6>
+      <br />
+      弹窗： scale：0.8~1
+      <br />
+      time：300ms
+      <br />
+      bezier curve ：(0.28, 0.85, 0.36 ,1)
+      <br />
+      alpha：0~1
+      <br />
+      time：300ms
+      <br />
+      bezier curve ：(0.28, 0.85, 0.36 ,1)
+      <br />
+      <br />
+      背景压黑：
+      <br />
+      alpha：0～0.4
+      <br />
+      time：300ms
+      <br />
+      bezier curve ：(0.33, 0.1, 0.67 ,1)
+      <br />
+      <br />
+      <h6>收起</h6>
+      弹窗：
+      <br />
+      scale：1~0.8
+      <br />
+      time：300ms
+      <br />
+      bezier curve ：(0.25, 0.1, 0.25,1)
+      <br />
+      alpha：1~0
+      <br />
+      time：250ms
+      <br />
+      bezier curve ：(0.25, 0.1, 0.25 ,1)
+      <br />
+      <br />
+      背景压黑：
+      <br />
+      alpha：0.4～0
+      <br />
+      time：300ms
+      <br />
+      bezier curve ：(0.33, 0, 0.67 ,1)
     </p>
   );
   return (

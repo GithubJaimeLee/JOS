@@ -14,40 +14,23 @@ const ContactBtnStyle = {
   width: 32,
   height: 60,
   backgroundImage: `url(${OneFingerClick})`,
-  // backgroundColor: "#aaa",
-
   justifyContent: "center",
   display: "flex",
   zIndex: 1,
   opacity: 1,
 };
-const ContactBubbleStyle = {
-  width: 56,
-  height: 306,
 
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-  opacity: 1,
-  backgroundImage: `url(${WindowVoiceWin})`,
-  //background: "#666",
-  borderRadius: 12,
-  position: "absolute",
-  x: 100,
-  y: 20,
-  bottom: 100,
-  zIndex: 20,
-};
 const BoxAnimation = {
   animationOne: {
     x: 100,
   },
   animationTwo: {
-    x: 0,
+    x: 10,
   },
 };
 
 const ContactBodyStyle = {
   backgroundImage: `url(${WindowBg})`,
-  //backgroundColor: "#EEEEEE",
   position: "absolute",
   width: 375,
   height: 812,
@@ -60,7 +43,33 @@ const WindowVoice = () => {
     "animationOne",
     "animationTwo"
   );
-  const Info = <p>侧边音量</p>;
+  const Info = (
+    <p>
+      <h6>弹出</h6>
+      弹窗：
+      <br />
+      position：悬浮位置+比例值
+      <br />
+      time：250ms
+      <br />
+      bezier curve ：(0.37, 0.75, 0.46 ,1)
+      <br />
+      position：悬浮位置+比例值~悬浮位置
+      <br />
+      time：200ms
+      <br />
+      bezier curve ：(0.3, 0, 0.5 ,1)
+      <br /> <br />
+      <h6>收起</h6>
+      弹窗：
+      <br />
+      positionX：屏幕内 ~ 屏幕外
+      <br />
+      time：300ms
+      <br />
+      bezier curve:（0.4, 0, 0.68,0.06)
+    </p>
+  );
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -88,9 +97,22 @@ const WindowVoice = () => {
           >
             <motion.div
               className="boxChange"
-              style={ContactBubbleStyle}
+              style={{
+                width: 56,
+                height: 306,
+                boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+                opacity: 1,
+                backgroundImage: `url(${WindowVoiceWin})`,
+                borderRadius: 12,
+                position: "absolute",
+                x: 100,
+                y: 8,
+                bottom: 100,
+                zIndex: 20,
+              }}
               variants={BoxAnimation}
               animate={animationBox}
+              transition={{ type: "tween" }}
             />
           </div>
         </div>

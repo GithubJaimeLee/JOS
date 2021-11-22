@@ -29,7 +29,7 @@ const ContactBubbleStyle = {
   position: "absolute",
   bottom: 100,
   zIndex: 20,
-  y: 400,
+  //  y: 400,
 };
 const KeyboardStyle = {
   width: 375,
@@ -43,6 +43,8 @@ const KeyboardStyle = {
 const BoxAnimation = {
   animationOne: {
     y: 400,
+
+    //  y: -300,
   },
   animationTwo: {
     y: -300,
@@ -112,12 +114,7 @@ const WindowInput = () => {
     "KAnimationOne",
     "KAnimationTwo"
   );
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>弹窗出现是底部弹窗的参数（无回弹），退出原地消失。</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -159,10 +156,13 @@ const WindowInput = () => {
             onClick={() =>
               cycleAnimation() & KcycleAnimation() & BgCycleAnimation()
             }
-            className="boxChange"
+            className="InputWindow"
             style={ContactBubbleStyle}
             variants={BoxAnimation}
             animate={animationBox}
+            transition={{
+              type: "tween",
+            }}
           />
           <motion.div
             className="KeyBoard"

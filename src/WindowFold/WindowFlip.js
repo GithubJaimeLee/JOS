@@ -67,12 +67,7 @@ const WindowFlip = () => {
     "animationOne",
     "animationTwo"
   );
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>含有弹簧动画，开发中</p>;
 
   return (
     <div className="All">

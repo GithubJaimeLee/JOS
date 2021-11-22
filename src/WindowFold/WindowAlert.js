@@ -59,8 +59,29 @@ const WindowAlert = () => {
   );
   const Info = (
     <p>
-      Hello,
-      <br /> world!
+      <h6>弹出</h6>
+      弹窗：
+      <br />
+      position：悬浮位置+比例值
+      <br />
+      time：250ms
+      <br />
+      bezier curve ：(0.37, 0.75, 0.46 ,1)
+      <br />
+      position：悬浮位置+比例值~悬浮位置
+      <br />
+      time：200ms
+      <br />
+      bezier curve ：(0.3, 0, 0.5 ,1)
+      <br /> <br />
+      <h6>收起</h6>
+      弹窗：
+      <br />
+      position：回到屏幕外
+      <br />
+      time：300ms
+      <br />
+      bezier curve ：(0.5, 0.2, 0.5 ,1)
     </p>
   );
 

@@ -94,7 +94,46 @@ const WindowJump = () => {
     "animationOne",
     "animationTwo"
   );
-  const Info = <p>联系人字母角标交替悬停</p>;
+  const Info = (
+    <p>
+      <h6>弹出</h6>
+      弹窗：
+      <br />
+      scale：30%~ 105%
+      <br />
+      time：200ms
+      <br />
+      bezier curve ：(0.37, 0.75, 0.46 ,1)
+      <br />
+      scale：105%~100%
+      <br />
+      time：200ms
+      <br />
+      bezier curve ：(0.3, 0, 0.5 ,1)
+      <br />
+      alpha：0～1
+      <br />
+      time：200ms
+      <br />
+      bezier curve ：(0.33, 0.1, 0.67 ,1)
+      <br />
+      <br />
+      <h6>收起</h6>
+      弹窗：
+      <br />
+      scale：100%~ 30%
+      <br />
+      time：300ms
+      <br />
+      bezier curve ：(0.28, 0.4, 0.2 ,1)
+      <br />
+      alpha：1～0
+      <br />
+      time：300ms
+      <br />
+      bezier curve ：(0.28, 0.4, 0.2 ,1)
+    </p>
+  );
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

@@ -99,8 +99,41 @@ const WindowSide = () => {
   );
   const Info = (
     <p>
-      Hello,
-      <br /> world!
+      <h6>弹出</h6>
+      弹窗：
+      <br />
+      positionX：
+      <br />
+      time：300ms
+      <br />
+      bezier curve:（0.25, 0.1, 0.25,1)
+      <br />
+      <br />
+      蒙版：
+      <br />
+      alpha：0~0.4
+      <br />
+      time：300ms
+      <br />
+      bezier curve:（0.25, 0.1, 0.25,1)
+      <br /> <br />
+      <h6>收起</h6>
+      弹窗：
+      <br />
+      positionX：
+      <br />
+      time：300ms
+      <br />
+      bezier curve:（0.25, 0.1, 0.25,1)
+      <br />
+      <br />
+      蒙版：
+      <br />
+      alpha：0.4~0
+      <br />
+      time：300ms
+      <br />
+      bezier curve:（0.25, 0.1, 0.25,1)
     </p>
   );
   return (

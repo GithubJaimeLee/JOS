@@ -11,6 +11,9 @@ import LockBg from "../Img/LockBg.png";
 import Phone from "../Img/Phone.png";
 import Camera from "../Img/Camera.png";
 import Point from "../Img/Point.png";
+import LockRedBlue from "../Img/LockRedBlue.png";
+import LockPlay from "../Img/LockPlay.png";
+import LockList from "../Img/LockList.png";
 
 const boxChange = {
   width: 0,
@@ -59,8 +62,12 @@ const WindowPull = () => {
   const [GreyBtnY, setGreyBtnY] = useState(0);
   const [GreyBtnScale, setGreyBtnScale] = useState(1);
   const [PointScale, setPointScale] = useState(1);
+  const [LockBgBg, setLockBgBg] = useState();
+  const [LockPlayScale, setLockPlayScale] = useState(0);
+  const [RedO, setRedO] = useState(1);
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
+
     "animationTwo"
   );
   const boxAnimation = {
@@ -126,12 +133,14 @@ const WindowPull = () => {
               setPhoneY(0);
               setPointScale(1);
               setPhoneScale(1);
+              setRedO(1);
             }}
             onDragStart={() => {
               setPhoneX(-12);
               setPhoneY(0);
               setPointScale(3);
               setPhoneScale(1.2);
+              setRedO(0.5);
             }}
             onTapStart={() => {
               setPhoneX(-12);
@@ -150,13 +159,15 @@ const WindowPull = () => {
               setPhoneY(0);
               setPointScale(1);
               setPhoneScale(1);
+              setRedO(1);
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
           <div
             style={{
+              backgroundImage: `url(${LockBgBg})`,
               position: "absolute",
-              backgroundColor: "#fff",
+              backgroundColor: "#F7FCFF",
               top: 526,
               width: 214,
               height: 155,
@@ -171,19 +182,47 @@ const WindowPull = () => {
             <motion.div
               className="Btn"
               style={{
-                width: 90,
-                height: 90,
+                width: 96,
+                height: 96,
                 backgroundColor: "#fff",
 
                 position: "absolute",
                 // top: 560,
                 zIndex: 3,
                 //  left: 140,
-                borderRadius: 45,
-                opacity: 0.5,
+                borderRadius: 48,
+
                 border: "26px solid #E55C5C",
               }}
-              animate={{ scale: PointScale }}
+              animate={{ scale: PointScale, opacity: RedO }}
+              transition={{ duration: 0.1 }}
+            />
+
+            <motion.div
+              className="LockPlay"
+              style={{
+                position: "absolute",
+                top: 28,
+                width: 22,
+                height: 22,
+                backgroundImage: `url(${LockPlay})`,
+                scale: 0,
+              }}
+              animate={{ scale: LockPlayScale }}
+              //    transition={{ delay: 0.2 }}
+            />
+            <motion.div
+              className="LockList"
+              style={{
+                position: "absolute",
+                top: 100,
+                width: 22,
+                height: 22,
+                backgroundImage: `url(${LockList})`,
+                scale: 0,
+              }}
+              animate={{ scale: LockPlayScale }}
+              //    transition={{ delay: 0.2 }}
             />
           </div>
           <motion.div
@@ -205,12 +244,14 @@ const WindowPull = () => {
               setCameraY(0);
               setPointScale(1);
               setCameraScale(1);
+              setRedO(1);
             }}
             onDragStart={() => {
               setCameraX(-10);
               setCameraY(-10);
               setPointScale(3);
               setCameraScale(1.2);
+              setRedO(0.5);
             }}
             onTapStart={() => {
               setCameraX(-10);
@@ -229,9 +270,11 @@ const WindowPull = () => {
               setCameraY(0);
               setPointScale(1);
               setCameraScale(1);
+              setRedO(1);
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
+
           <motion.div
             className="Point"
             drag={true}
@@ -250,12 +293,16 @@ const WindowPull = () => {
               setGreyBtnY(0);
               setPointScale(1);
               setGreyBtnScale(1);
+              setLockBgBg();
+              setLockPlayScale(0);
             }}
             onDragStart={() => {
               setGreyBtnX(10);
               setGreyBtnY(-10);
               setPointScale(0);
               setGreyBtnScale(1.2);
+              setLockBgBg(LockRedBlue);
+              setLockPlayScale(1);
             }}
             onTapStart={() => {
               setGreyBtnX(10);
@@ -274,6 +321,8 @@ const WindowPull = () => {
               setGreyBtnY(0);
               setPointScale(1);
               setGreyBtnScale(1);
+              setLockBgBg();
+              setLockPlayScale(0);
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
