@@ -1,5 +1,5 @@
 import { motion, useCycle } from "framer-motion";
-import * as React from "react";
+import React, { useState } from "react";
 import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Calendar from "../Img/Calendar.png";
@@ -48,6 +48,7 @@ const Background = {
 };
 
 const WindowPull = () => {
+  const [XX, setXX] = useState(1);
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
@@ -97,7 +98,7 @@ const WindowPull = () => {
         >
           <motion.div
             className="Phone"
-            drag={true}
+            drag
             style={{
               width: 36,
               height: 36,
@@ -105,14 +106,30 @@ const WindowPull = () => {
               top: 560,
               left: 320,
               zIndex: 10,
+
               backgroundImage: `url(${Phone})`,
+              transformOrigin: "100px 100px",
             }}
-            whileTap={{ x: 10 }}
+            // whileTap={{ scale: 1.2 }}
+            //  onDragStart={{}}
+            // whileTap={{ x: 10 }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
           <motion.div
+            className="Btn"
+            style={{
+              width: 70,
+              height: 70,
+              backgroundColor: "blue",
+              position: "absolute",
+              top: 0,
+              zIndex: 2,
+            }}
+            animate={{ scale: XX }}
+          ></motion.div>
+          <motion.div
             className="Camera"
-            drag={true}
+            drag
             style={{
               width: 35,
               height: 35,
@@ -122,7 +139,22 @@ const WindowPull = () => {
               zIndex: 10,
               backgroundImage: `url(${Camera})`,
             }}
-            whileTap={{ x: 10 }}
+            animate={{ x: XX * -10 }}
+            onDragCancel={() => {
+              setXX(1);
+            }}
+            onDragStart={() => {
+              setXX(3);
+            }}
+            onTapStart={() => {
+              setXX(3);
+            }}
+            onTap={() => {
+              setXX(1);
+            }}
+            onDragEnd={() => {
+              setXX(1);
+            }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
           <motion.div
@@ -137,7 +169,8 @@ const WindowPull = () => {
               zIndex: 10,
               backgroundImage: `url(${Point})`,
             }}
-            whileTap={{ x: 10 }}
+            onDragEnd={{}}
+            whileTap={{}}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
         </div>
