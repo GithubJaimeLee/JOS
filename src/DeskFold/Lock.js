@@ -49,6 +49,16 @@ const Background = {
 
 const WindowPull = () => {
   const [XX, setXX] = useState(1);
+  const [CameraX, setCameraX] = useState(0);
+  const [CameraY, setCameraY] = useState(0);
+  const [CameraScale, setCameraScale] = useState(1);
+  const [PhoneX, setPhoneX] = useState(0);
+  const [PhoneY, setPhoneY] = useState(0);
+  const [PhoneScale, setPhoneScale] = useState(1);
+  const [GreyBtnX, setGreyBtnX] = useState(0);
+  const [GreyBtnY, setGreyBtnY] = useState(0);
+  const [GreyBtnScale, setGreyBtnScale] = useState(1);
+  const [PointScale, setPointScale] = useState(1);
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
@@ -103,30 +113,79 @@ const WindowPull = () => {
               width: 36,
               height: 36,
               position: "absolute",
-              top: 560,
-              left: 320,
+              top: 586,
+              left: 316,
               zIndex: 10,
 
               backgroundImage: `url(${Phone})`,
               transformOrigin: "100px 100px",
             }}
-            // whileTap={{ scale: 1.2 }}
-            //  onDragStart={{}}
-            // whileTap={{ x: 10 }}
+            animate={{ x: PhoneX, y: PhoneY, scale: PhoneScale }}
+            onDragCancel={() => {
+              setPhoneX(0);
+              setPhoneY(0);
+              setPointScale(1);
+              setPhoneScale(1);
+            }}
+            onDragStart={() => {
+              setPhoneX(-12);
+              setPhoneY(0);
+              setPointScale(3);
+              setPhoneScale(1.2);
+            }}
+            onTapStart={() => {
+              setPhoneX(-12);
+              setPhoneY(0);
+              setPointScale(1.3);
+              setPhoneScale(1.2);
+            }}
+            onTap={() => {
+              setPhoneX(0);
+              setPhoneY(0);
+              setPointScale(1);
+              setPhoneScale(1);
+            }}
+            onDragEnd={() => {
+              setPhoneX(0);
+              setPhoneY(0);
+              setPointScale(1);
+              setPhoneScale(1);
+            }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
-          <motion.div
-            className="Btn"
+          <div
             style={{
-              width: 70,
-              height: 70,
-              backgroundColor: "blue",
               position: "absolute",
-              top: 0,
+              backgroundColor: "#fff",
+              top: 526,
+              width: 214,
+              height: 155,
               zIndex: 2,
+              left: 80,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              overflow: "hidden",
             }}
-            animate={{ scale: XX }}
-          ></motion.div>
+          >
+            <motion.div
+              className="Btn"
+              style={{
+                width: 90,
+                height: 90,
+                backgroundColor: "#fff",
+
+                position: "absolute",
+                // top: 560,
+                zIndex: 3,
+                //  left: 140,
+                borderRadius: 45,
+                opacity: 0.5,
+                border: "26px solid #E55C5C",
+              }}
+              animate={{ scale: PointScale }}
+            />
+          </div>
           <motion.div
             className="Camera"
             drag
@@ -134,26 +193,42 @@ const WindowPull = () => {
               width: 35,
               height: 35,
               position: "absolute",
-              top: 700,
-              left: 320,
+              top: 728,
+              left: 316,
               zIndex: 10,
+              //  opacity: 0.1,
               backgroundImage: `url(${Camera})`,
             }}
-            animate={{ x: XX * -10 }}
+            animate={{ x: CameraX, y: CameraY, scale: CameraScale }}
             onDragCancel={() => {
-              setXX(1);
+              setCameraX(0);
+              setCameraY(0);
+              setPointScale(1);
+              setCameraScale(1);
             }}
             onDragStart={() => {
-              setXX(3);
+              setCameraX(-10);
+              setCameraY(-10);
+              setPointScale(3);
+              setCameraScale(1.2);
             }}
             onTapStart={() => {
-              setXX(3);
+              setCameraX(-10);
+              setCameraY(-10);
+              setPointScale(1.3);
+              setCameraScale(1.2);
             }}
             onTap={() => {
-              setXX(1);
+              setCameraX(0);
+              setCameraY(0);
+              setPointScale(1);
+              setCameraScale(1);
             }}
             onDragEnd={() => {
-              setXX(1);
+              setCameraX(0);
+              setCameraY(0);
+              setPointScale(1);
+              setCameraScale(1);
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
@@ -161,16 +236,45 @@ const WindowPull = () => {
             className="Point"
             drag={true}
             style={{
-              width: 31,
-              height: 31,
+              width: 32,
+              height: 32,
               position: "absolute",
               top: 710,
-              left: 30,
+              left: 24,
               zIndex: 10,
               backgroundImage: `url(${Point})`,
             }}
-            onDragEnd={{}}
-            whileTap={{}}
+            animate={{ x: GreyBtnX, y: GreyBtnY, scale: GreyBtnScale }}
+            onDragCancel={() => {
+              setGreyBtnX(0);
+              setGreyBtnY(0);
+              setPointScale(1);
+              setGreyBtnScale(1);
+            }}
+            onDragStart={() => {
+              setGreyBtnX(10);
+              setGreyBtnY(-10);
+              setPointScale(0);
+              setGreyBtnScale(1.2);
+            }}
+            onTapStart={() => {
+              setGreyBtnX(10);
+              setGreyBtnY(-10);
+              setPointScale(1.3);
+              setGreyBtnScale(1.2);
+            }}
+            onTap={() => {
+              setGreyBtnX(0);
+              setGreyBtnY(0);
+              setPointScale(1);
+              setGreyBtnScale(1);
+            }}
+            onDragEnd={() => {
+              setGreyBtnX(0);
+              setGreyBtnY(0);
+              setPointScale(1);
+              setGreyBtnScale(1);
+            }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
         </div>

@@ -14,17 +14,6 @@ import F from "../Img/F.png";
 import L from "../Img/L.png";
 import "../App.css";
 
-const ContactWindowStyle = {
-  width: 0,
-  height: 0,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.1)",
-  //opacity: 1,
-  backgroundImage: `url(${ContactWindow})`,
-  borderRadius: 12,
-  position: "absolute",
-  right: 0,
-  top: 40,
-};
 const boxPress = {
   position: "relative",
   right: -290,
@@ -40,25 +29,30 @@ const boxPress = {
 const boxAnimation = {
   animationOne: {
     scale: 0,
-    height: 0,
-    right: 0,
-    opacity: 0,
-  },
-  animationTwo: {
-    scale: 1,
     width: 131,
     height: 118,
     opacity: 1,
-    right: 0,
+    left: -62,
+    top: -1,
+  },
+  animationTwo: {
+    scale: 1,
+
+    left: -60,
+    top: 40,
   },
 };
 
 const P1V = {
   animationOne: {
     scale: 1,
+    zIndex: 100,
+    top: 55,
+    right: 22,
   },
   animationTwo: {
-    scale: 0,
+    top: 120,
+    right: 70,
   },
 };
 
@@ -67,7 +61,6 @@ const P2V = {
     scale: 0,
   },
   animationTwo: {
-    scale: 1,
     transition: { delay: 0.3 },
   },
 };
@@ -147,12 +140,15 @@ const WindowJump = () => {
                 backgroundColor: "red",
                 width: 10,
                 height: 10,
-                top: 56,
-                left: 346,
                 borderRadius: 5,
+                scale: 1,
+                zIndex: 100,
+                top: 55,
+                right: 22,
               }}
               variants={P1V}
               animate={animationBox}
+              transition={{ type: "tween" }}
             />
             <div
               className="boxPress"
@@ -161,12 +157,24 @@ const WindowJump = () => {
             >
               <motion.div
                 className="boxChange"
-                style={ContactWindowStyle}
+                style={{
+                  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.1)",
+                  backgroundImage: `url(${ContactWindow})`,
+                  borderRadius: 12,
+                  position: "absolute",
+                  transformOrigin: "131px 0px",
+                  scale: 0,
+                  width: 131,
+                  height: 118,
+                  opacity: 1,
+                  left: -62,
+                  top: -1,
+                }}
                 variants={boxAnimation}
                 animate={animationBox}
                 transition={{ type: "tween" }}
               >
-                <motion.div
+                {/*    <motion.div
                   className="RedPointTwo"
                   style={{
                     position: "absolute",
@@ -181,7 +189,7 @@ const WindowJump = () => {
                   }}
                   variants={P2V}
                   animate={animationBox}
-                />
+                /> */}
               </motion.div>
             </div>
           </div>

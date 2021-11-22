@@ -48,8 +48,8 @@ const FingerVariants = {
     y: 30,
   },
   animationTwo: {
-    //  y: -30,
-    // x: -138,
+    y: 100,
+    x: 138,
     opacity: 0,
   },
 };
@@ -306,7 +306,17 @@ const JumpNew = () => {
           onClick={() =>
             cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
           }
-          style={FingerStyle}
+          style={{
+            width: 100,
+            height: 100,
+            backgroundImage: `url(${FingerClick})`,
+            position: "relative",
+            top: 88,
+            y: 30,
+            backgroundPosition: "25px 25px",
+            zIndex: 100,
+            backgroundRepeat: "no-repeat",
+          }}
         />
         <motion.div
           onClick={() =>
@@ -350,8 +360,9 @@ const JumpNew = () => {
               width: 34,
               backgroundImage: `url(${CancelText})`,
               right: 28,
-              top: 60,
               zIndex: 30,
+              top: 126,
+              opacity: 0,
             }}
             variants={VCancelText}
             animate={animationBox}
@@ -437,7 +448,7 @@ const JumpNew = () => {
             width: 375,
             height: 34,
             opacity: 1,
-            y: 126,
+            y: 116,
             backgroundImage: `url(${SearchBar})`,
             position: "absolute",
             //bottom: -420,
