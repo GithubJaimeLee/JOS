@@ -15,6 +15,8 @@ import StopWatch from "../Component/StopWatch";
 import SwitchBtn from "../Component/Switch";
 import Clock from "../Component/Clock/Clock";
 import Time from "../Component/Time";
+import ClockSet from "../Img/ClockSet.png";
+import ClockSet2 from "../Img/ClockSet2.png";
 
 const SetBtnStyle = {
   position: "absolute",
@@ -147,7 +149,15 @@ const OtherMotion = () => {
     bounceStiffness: BounceStiffness,
     mass: Mass,
   };
-
+  const [SetAnimation, Setcyc] = useCycle("SetAnimationOne", "SetAnimationTwo");
+  const SetVariants = {
+    SetAnimationOne: {
+      scale: 0,
+    },
+    SetAnimationTwo: {
+      scale: 1,
+    },
+  };
   const [SetWindowAnimation, UPcycleAnimation] = useCycle(
     "UPanimationOne",
     "UPanimationTwo"
@@ -219,6 +229,40 @@ const OtherMotion = () => {
         >
           <TabPane tab="闹钟" key="1" id="Clock1">
             <div
+              onClick={Setcyc}
+              className="SetBtn"
+              style={{
+                width: 60,
+                height: 60,
+                position: "absolute",
+                zIndex: 20000,
+                backgroundColor: "red",
+                borderRadius: 16,
+                top: 25,
+                right: 10,
+                opacity: 0,
+              }}
+            />
+            <motion.div
+              className="ClockSet"
+              style={{
+                backgroundImage: `url(${ClockSet2})`,
+                width: 131,
+                height: 115,
+                position: "absolute",
+                zIndex: 1,
+                boxShadow: "0px 0px 6px 6px rgba(0,0,0,0.04)",
+                borderRadius: 16,
+                top: 80,
+                scale: 0,
+                right: 30,
+                transformOrigin: "131px 0px",
+              }}
+              transition={{ type: "tween", duration: 0.2 }}
+              variants={SetVariants}
+              animate={SetAnimation}
+            />
+            <div
               style={{
                 position: "absolute",
                 top: 130,
@@ -238,6 +282,8 @@ const OtherMotion = () => {
                   borderRadius: 16,
                   backgroundColor: "#FFFFFF",
                   opacity: 1,
+                  color: "#CDCDCD",
+                  boxShadow: "none",
                 }}
                 variants={CardVariants}
                 animate={CardAnimation}
@@ -282,6 +328,40 @@ const OtherMotion = () => {
           </TabPane>
           <TabPane tab="世界时钟" key="2" id="Clock2">
             <div
+              onClick={Setcyc}
+              className="SetBtn"
+              style={{
+                width: 60,
+                height: 60,
+                position: "absolute",
+                zIndex: 20000,
+                backgroundColor: "red",
+                borderRadius: 16,
+                top: 25,
+                right: 10,
+                opacity: 0,
+              }}
+            />
+            <motion.div
+              className="ClockSet"
+              style={{
+                backgroundImage: `url(${ClockSet})`,
+                width: 131,
+                height: 66,
+                position: "absolute",
+                zIndex: 1,
+                boxShadow: "0px 0px 6px 6px rgba(0,0,0,0.04)",
+                borderRadius: 16,
+                top: 80,
+                scale: 0,
+                right: 30,
+                transformOrigin: "131px 0px",
+              }}
+              transition={{ type: "tween", duration: 0.2 }}
+              variants={SetVariants}
+              animate={SetAnimation}
+            />
+            <div
               style={{
                 position: "absolute",
                 display: "flex",
@@ -318,6 +398,40 @@ const OtherMotion = () => {
             ></div>
           </TabPane>
           <TabPane tab="秒表" key="3" id="Clock3">
+            <div
+              onClick={Setcyc}
+              className="SetBtn"
+              style={{
+                width: 60,
+                height: 60,
+                position: "absolute",
+                zIndex: 20000,
+                backgroundColor: "red",
+                borderRadius: 16,
+                top: 25,
+                right: 10,
+                opacity: 0,
+              }}
+            />
+            <motion.div
+              className="ClockSet"
+              style={{
+                backgroundImage: `url(${ClockSet})`,
+                width: 131,
+                height: 66,
+                position: "absolute",
+                zIndex: 1,
+                boxShadow: "0px 0px 6px 6px rgba(0,0,0,0.04)",
+                borderRadius: 16,
+                top: 80,
+                scale: 0,
+                right: 30,
+                transformOrigin: "131px 0px",
+              }}
+              transition={{ type: "tween", duration: 0.2 }}
+              variants={SetVariants}
+              animate={SetAnimation}
+            />
             <StopWatch />
             <div
               style={{
@@ -328,6 +442,40 @@ const OtherMotion = () => {
             ></div>
           </TabPane>
           <TabPane tab="计时器" key="4" id="Clock4">
+            <div
+              onClick={Setcyc}
+              className="SetBtn"
+              style={{
+                width: 60,
+                height: 60,
+                position: "absolute",
+                zIndex: 20000,
+                backgroundColor: "red",
+                borderRadius: 16,
+                top: 25,
+                right: 10,
+                opacity: 0,
+              }}
+            />
+            <motion.div
+              className="ClockSet"
+              style={{
+                backgroundImage: `url(${ClockSet2})`,
+                width: 131,
+                height: 115,
+                position: "absolute",
+                zIndex: 10,
+                boxShadow: "0px 0px 6px 6px rgba(0,0,0,0.04)",
+                borderRadius: 16,
+                top: 80,
+                scale: 0,
+                right: 30,
+                transformOrigin: "131px 0px",
+              }}
+              transition={{ type: "tween", duration: 0.2 }}
+              variants={SetVariants}
+              animate={SetAnimation}
+            />
             <Time />
             <div
               style={{

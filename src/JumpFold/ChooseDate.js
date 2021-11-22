@@ -39,7 +39,7 @@ const ChooseDate = () => {
           style={{
             width: 375,
             position: "absolute",
-            height: 200,
+            height: 812,
             // padding: "50px",
             display: "flex",
             justifyContent: "center",
@@ -48,7 +48,7 @@ const ChooseDate = () => {
             zIndex: 3,
           }}
         >
-          <div style={{ width: 120 }}>
+          <div style={{ width: 120, height: 200 }}>
             <Wheel initIdx={8} length={24} width={23} />
           </div>
           <h6
@@ -60,7 +60,7 @@ const ChooseDate = () => {
           >
             时
           </h6>
-          <div style={{ width: 120 }}>
+          <div style={{ width: 120, height: 200 }}>
             <Wheel initIdx={30} length={60} width={23} perspective="left" />
           </div>
           <h6

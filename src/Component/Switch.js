@@ -8,54 +8,38 @@ const SwitchBtn = () => {
   const [isOn, setIsOn] = useState(false);
   const toggleSwitch = () => setIsOn(!isOn);
   const BtnVariants = {
-    animationTwo: {
-      //justifyContent: "flex-end",
-      backgroundColor: "#FFE9C4",
-      height: 18,
-      /*       transition: {
-        when: "afterChildren",
-        delay: 2,
-        
-      }, */
-      //  border: "4px solid #ccc",
-    },
     animationOne: {
       //  justifyContent: "flex-start",
       backgroundColor: "#fff",
       height: 18,
       width: 42,
       border: "3px solid #EBEBEB",
-      /*     transition: {
-
-        when: "afterChildren",
-        delay: 2,
-      }, */
+    },
+    animationTwo: {
+      //justifyContent: "flex-end",
+      backgroundColor: "#FFE9C4",
+      height: 18,
     },
   };
   const PointVariants = {
-    animationTwo: {
-      height: 26,
-      width: 26,
-
-      borderRadius: "16px",
-      backgroundColor: "#fff",
-
-      border: "4px solid #FAB953",
-      /*       transition: {
-        delay: 0.5,
-      }, */
-      left: 20,
-    },
     animationOne: {
       backgroundColor: "#FFF",
       height: 22,
       width: 22,
       borderRadius: "16px",
       border: "4px solid #ccc",
+      left: -5,
+    },
+    animationTwo: {
+      height: 26,
+      width: 26,
+      borderRadius: "16px",
+      backgroundColor: "#fff",
+      border: "4px solid #FAB953",
       /*       transition: {
         delay: 0.5,
       }, */
-      left: -5,
+      left: 20,
     },
   };
   const RotateVariants = {
@@ -90,14 +74,16 @@ const SwitchBtn = () => {
     <div>
       <motion.div
         style={{
-          width: 45,
-          height: 16,
           position: "absolute",
           display: "flex",
           alignItems: "center",
           borderRadius: 50,
           top: 38,
           left: 280,
+          backgroundColor: "#fff",
+          height: 18,
+          width: 42,
+          border: "3px solid #EBEBEB",
           // cursor: "pointer",
         }}
         className="Switch"
@@ -111,6 +97,12 @@ const SwitchBtn = () => {
           className="Btn"
           style={{
             position: "absolute",
+            backgroundColor: "#FFF",
+            height: 22,
+            width: 22,
+            borderRadius: "16px",
+            border: "4px solid #ccc",
+            left: -5,
           }}
           variants={PointVariants}
           animate={BtnAnimation}

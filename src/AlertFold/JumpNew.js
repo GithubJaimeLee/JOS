@@ -12,6 +12,8 @@ import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
 import NewContact from "../Img/NewContact.png";
 import SearchBg from "../Img/SearchBg.png";
 import SearchBar from "../Img/SearchBar.png";
+import SetText from "../Img/SetText.png";
+import CancelText from "../Img/CancelText.png";
 const FingerStyle = {
   width: 100,
   height: 100,
@@ -22,16 +24,7 @@ const FingerStyle = {
   zIndex: 100,
   backgroundRepeat: "no-repeat",
 };
-const SearchBarStyle = {
-  width: 375,
-  height: 36,
-  opacity: 1,
-  y: 126,
-  backgroundImage: `url(${SearchBar})`,
-  position: "absolute",
-  //bottom: -420,
-  zIndex: 20,
-};
+
 const KeyboardStyle = {
   width: 375,
   height: 290,
@@ -44,19 +37,20 @@ const KeyboardStyle = {
 
 const SearchBarVariants = {
   animationOne: {
-    y: 126,
+    y: 116,
   },
   animationTwo: {
-    y: 60,
+    y: 50,
   },
 };
 const FingerVariants = {
   animationOne: {
-    y: 0,
+    y: 30,
   },
   animationTwo: {
-    y: -30,
-    x: -138,
+    //  y: -30,
+    // x: -138,
+    opacity: 0,
   },
 };
 const KeyBoardVariants = {
@@ -94,14 +88,6 @@ const BGVariants = {
     opacity: 0,
   },
 };
-const ContactFooterStyle = {
-  backgroundImage: `url(${ContactFooter})`,
-  position: "absolute",
-  bottom: 0,
-  width: 375,
-  height: 65,
-  zIndex: 1,
-};
 
 const JumpNew = () => {
   const [animationBox, cycleAnimation] = useCycle(
@@ -116,6 +102,33 @@ const JumpNew = () => {
     "BGAnimationOne",
     "BGAnimationTwo"
   );
+  const greyLine = {
+    animationOne: {
+      width: 320,
+    },
+    animationTwo: {
+      width: 265,
+      top: 85,
+    },
+  };
+  const blackLine = {
+    animationOne: { width: 0 },
+    animationTwo: { width: 40, top: 85 },
+  };
+  const VSetText = {
+    animationOne: {},
+    animationTwo: { scale: 0.9, y: -6, opacity: 0 },
+  };
+  const VCancelText = {
+    animationOne: { top: 126, opacity: 0 },
+    animationTwo: { top: 60, opacity: 1 },
+  };
+  const blueLine = {
+    animationOne: {
+      y: 0,
+    },
+    animationTwo: {},
+  };
   const { TabPane } = Tabs;
 
   function callback(key) {
@@ -285,6 +298,7 @@ const JumpNew = () => {
         }}
       >
         <motion.div
+          className="Finger"
           variants={FingerVariants}
           animate={animationBox}
           transition={{ type: "tween" }}
@@ -299,8 +313,6 @@ const JumpNew = () => {
             cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
           }
           className="BG"
-          variants={BGVariants}
-          animate={animationBG}
           transition={{
             type: "tween",
           }}
@@ -309,9 +321,97 @@ const JumpNew = () => {
             height: 812,
             position: "absolute",
             overflow: "hidden",
+            display: "flex",
           }}
         >
-          {/*       <div className="ContactHeader" style={ContactHeaderStyle} /> */}
+          <motion.div
+            className="SetText"
+            style={{
+              height: 21,
+              position: "absolute",
+              width: 42,
+              backgroundImage: `url(${SetText})`,
+              left: 33,
+              top: 63,
+              zIndex: 3,
+              transformOrigin: "0px,0px",
+            }}
+            variants={VSetText}
+            animate={animationBox}
+            transition={{
+              type: "tween",
+            }}
+          />
+          <motion.div
+            className="CancelText"
+            style={{
+              height: 16,
+              position: "absolute",
+              width: 34,
+              backgroundImage: `url(${CancelText})`,
+              right: 28,
+              top: 60,
+              zIndex: 30,
+            }}
+            variants={VCancelText}
+            animate={animationBox}
+            transition={{
+              type: "tween",
+            }}
+          />
+          <motion.div
+            className="blackLine"
+            style={{
+              height: 6,
+              width: 0,
+              top: 162,
+              backgroundColor: "#000000",
+              zIndex: 3,
+              position: "absolute",
+              right: 28,
+            }}
+            variants={blackLine}
+            animate={animationBox}
+            transition={{
+              type: "tween",
+            }}
+          />
+          <motion.div
+            className="greyLine"
+            style={{
+              height: 6,
+              width: 320,
+              backgroundColor: "#eee",
+              zIndex: 2,
+              position: "absolute",
+              top: 162,
+              left: 28,
+              transformOrigin: "0px,0px",
+            }}
+            variants={greyLine}
+            animate={animationBox}
+            transition={{
+              type: "tween",
+            }}
+          />
+          <motion.div
+            className="blueLine"
+            style={{
+              height: 20,
+              width: 5,
+              backgroundColor: "#58AEEC",
+              zIndex: 2,
+              position: "absolute",
+              top: 64,
+              left: 24,
+              transformOrigin: "0px,0px",
+            }}
+            variants={blueLine}
+            animate={animationBox}
+            transition={{
+              type: "tween",
+            }}
+          />
           <div
             className="ScrollBody"
             style={{
@@ -323,19 +423,33 @@ const JumpNew = () => {
               overflow: "scroll",
             }}
           >
-            <div className="ContactBody" style={ContactBodyStyle} />
+            <motion.div
+              className="ContactBody"
+              style={ContactBodyStyle}
+              variants={BGVariants}
+              animate={animationBG}
+            />
           </div>
-          {/*    <div className="ContactFooter" style={ContactFooterStyle}></div> */}
         </motion.div>
         <motion.div
-          className="boxChange"
-          style={SearchBarStyle}
+          className="SearchBar"
+          style={{
+            width: 375,
+            height: 34,
+            opacity: 1,
+            y: 126,
+            backgroundImage: `url(${SearchBar})`,
+            position: "absolute",
+            //bottom: -420,
+            zIndex: 20,
+          }}
           variants={SearchBarVariants}
           animate={animationBox}
           transition={{
             type: "tween",
           }}
         />
+
         <motion.div
           className="KeyBoard"
           style={KeyboardStyle}
