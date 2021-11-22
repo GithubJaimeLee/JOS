@@ -27,6 +27,13 @@ export const Photo = forwardRef(
       ...style,
     };
 
-    return <div ref={ref} style={inlineStyles} {...props} />;
+    return (
+      <motion.div
+        //   whileTap={{ rotateX: 90 }}
+        ref={ref}
+        style={inlineStyles}
+        {...props}
+      />
+    );
   }
 );

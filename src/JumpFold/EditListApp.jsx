@@ -18,6 +18,7 @@ import {
 } from "@dnd-kit/modifiers";
 import { Photo } from "../JumpFold/EditListPhoto";
 import photos from "../JumpFold/EditList.json";
+import { motion } from "framer-motion";
 
 const UploadGallery = () => {
   const [items, setItems] = useState(photos);
