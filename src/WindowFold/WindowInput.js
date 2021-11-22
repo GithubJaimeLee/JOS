@@ -43,6 +43,7 @@ const KeyboardStyle = {
 const BoxAnimation = {
   animationOne: {
     y: 400,
+    // transitionDuration: "1s",
 
     //  y: -300,
   },
@@ -162,6 +163,7 @@ const WindowInput = () => {
             animate={animationBox}
             transition={{
               type: "tween",
+              //  y: { duration: 1 },
             }}
           />
           <motion.div

@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import photos from "./EditList.json";
+import { motion } from "framer-motion";
 //宽度
 const colSpan = {
   [photos[1]]: 1,

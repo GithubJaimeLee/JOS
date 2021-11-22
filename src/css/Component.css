@@ -142,3 +142,6 @@ div#Clock .ant-tabs-tab .ant-tabs-tab-btn {
 #Clock-tab-4 {
   margin-left: 3px !important;
 }
+div#Clock div.ant-tabs-tab {
+  padding-top: 40px !important;
+}

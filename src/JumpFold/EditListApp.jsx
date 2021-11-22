@@ -12,6 +12,10 @@ import {
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { Grid } from "../JumpFold/EditListGrid";
 import { SortablePhoto } from "../JumpFold/EditListSortable";
+import {
+  restrictToVerticalAxis,
+  restrictToWindowEdges,
+} from "@dnd-kit/modifiers";
 import { Photo } from "../JumpFold/EditListPhoto";
 import photos from "../JumpFold/EditList.json";
 
@@ -25,6 +29,7 @@ const UploadGallery = () => {
 
   return (
     <DndContext
+      modifiers={[restrictToVerticalAxis]}
       sensors={sensors}
       layoutMeasuring={layoutMeasuring}
       collisionDetection={closestCorners}
@@ -43,7 +48,7 @@ const UploadGallery = () => {
         </Grid>
       </SortableContext>
       {/* 调整运动后的比例 */}
-      <DragOverlay adjustScale={false}>
+      <DragOverlay modifiers={[restrictToWindowEdges]} adjustScale={false}>
         {activeId ? (
           <div
             style={{
