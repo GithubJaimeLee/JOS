@@ -107,13 +107,13 @@ span.css-14pt78w-MuiSlider-rail {
 div#Clock div.ant-tabs-nav,
 div#Clock div.ant-tabs-nav div.ant-tabs-nav-wrap {
   position: absolute;
-  bottom: -3px !important;
+  bottom: -4px !important;
   width: 375px !important;
   margin: 0 !important;
 }
 div#Clock div.ant-tabs-tab {
-  margin-left: 27px !important;
-  margin-right: 27px !important;
+  margin-left: 34px !important;
+  margin-right: 24px !important;
 }
 
 /* window flip */
@@ -129,4 +129,16 @@ div.DemoList .wheel__shadow-bottom,
 div.DemoList .wheel__shadow-top {
   border-top: none !important;
   border-bottom: none !important;
+}
+div#Clock .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #f95f6d !important;
+  font-size: 12px;
+}
+div#Clock .ant-tabs-tab .ant-tabs-tab-btn {
+  color: #aaa !important;
+  font-size: 12px !important;
+  font-weight: bold;
+}
+#Clock-tab-4 {
+  margin-left: 3px !important;
 }
