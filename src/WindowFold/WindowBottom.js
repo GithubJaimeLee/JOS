@@ -41,7 +41,7 @@ const BoxAnimation = {
     y: 400,
   },
   animationTwo: {
-    y: 40,
+    y: 0,
   },
 };
 

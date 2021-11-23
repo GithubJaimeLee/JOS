@@ -67,7 +67,7 @@ const WindowFlip = () => {
     "animationOne",
     "animationTwo"
   );
-  const Info = <p>含有弹簧动画，开发中</p>;
+  const Info = <p>翻页动画</p>;
 
   return (
     <div className="All">
@@ -92,7 +92,7 @@ const WindowFlip = () => {
           orientation={"vertical"}
           maskOpacity={0}
           pageBackground={"#fff"}
-          showSwipeHint={true}
+          //   showSwipeHint={true}
           style={{ top: 100 }}
           noShadow="false"
         >

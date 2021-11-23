@@ -48,6 +48,7 @@ const MaskStyle = {
   textAlign: "center",
   zIndex: 1,
   opacity: 0,
+
   display: "flex",
   justifyContent: "center",
   y: 0,
@@ -70,6 +71,14 @@ const BgAnimation = {
   },
 };
 
+const SetBgAnimation = {
+  BgAnimationOne: {
+    x: 0,
+  },
+  BgAnimationTwo: {
+    x: -60,
+  },
+};
 const ContactBodyStyle = {
   //backgroundColor: "#ddd",
   position: "absolute",
@@ -151,7 +160,12 @@ const JumpApp = () => {
             overflow: "scroll",
           }}
         >
-          <div className="GridCenter">
+          <motion.div
+            className="SetBg"
+            variants={SetBgAnimation}
+            animate={animationBg}
+            transition={{ type: "spring", damping: 16 }}
+          >
             <div
               className="HeadCard"
               style={{
@@ -177,7 +191,6 @@ const JumpApp = () => {
                   zIndex: 10,
                 }}
               >
-                {" "}
                 设置
               </motion.p>
             </div>
@@ -212,7 +225,7 @@ const JumpApp = () => {
                 zIndex: -1,
               }}
             />
-          </div>
+          </motion.div>
         </div>
         <div
           className="Mask"
@@ -384,7 +397,8 @@ const JumpApp = () => {
               style={MaskStyle}
               variants={BgAnimation}
               animate={animationBg}
-            />{" "}
+              transition={{ type: "spring" }}
+            />
           </div>
         </div>
       </div>

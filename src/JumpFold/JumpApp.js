@@ -154,7 +154,6 @@ const JumpApp = () => {
                   zIndex: 10,
                 }}
               >
-                {" "}
                 设置
               </motion.p>
             </div>

@@ -52,18 +52,10 @@ const P1V = {
   },
   animationTwo: {
     top: 120,
-    right: 70,
+    right: 22,
   },
 };
 
-const P2V = {
-  animationOne: {
-    scale: 0,
-  },
-  animationTwo: {
-    transition: { delay: 0.3 },
-  },
-};
 const ContactHeaderStyle = {
   backgroundImage: `url(${ContactHeader})`,
   width: 375,
