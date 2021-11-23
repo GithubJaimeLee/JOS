@@ -126,8 +126,8 @@ const DChange = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(true);
   const toggleClose = () => setIsOpen(false);
-  const [ZoomOpen, setZoomOpen] = useState(0);
-  const [ZoomOp, setZoomOp] = useState(0);
+  const [scale, setscale] = useState(0);
+  const [opacity, setopacity] = useState(0);
   /*   const toggleZoomOpen = () => setIsOpen(true);
   const toggleZoomClose = () => setIsOpen(false); */
   const Info = <p>图标移动自动补位</p>;
@@ -136,9 +136,9 @@ const DChange = () => {
 
   const mouseDown = () => {
     runCode = setTimeout(function () {
-      toggleOpen();
-      setZoomOpen(1);
-      setZoomOp(1);
+      // toggleOpen();
+      setscale(1);
+      setopacity(1);
     }, 500);
   };
 
@@ -152,9 +152,9 @@ const DChange = () => {
     McycleAnimation();
   };
   const OnClickClose = () => {
-    toggleClose();
-    setZoomOpen(1);
-    setZoomOp(1);
+    //  toggleClose();
+    setscale(0);
+    setopacity(0);
   };
   const [PressBtnAnimate, cyclePressBtnAnimate] = useCycle(
     "AnimationOne",
@@ -204,7 +204,7 @@ const DChange = () => {
                 fontSize: 14,
               }}
             >
-              {/*     长 按 */}
+              {/*   长 按 */}
             </p>
             <motion.div
               //     onClick={OnClick}
@@ -229,46 +229,62 @@ const DChange = () => {
               />
             </motion.div>
 
-            {isOpen && (
-              <motion.div
-                className="AllbtnTwo"
-                onClick={OnClick}
-                animate={{ scale: ZoomOpen, opacity: ZoomOp }}
+            {/*    {isOpen && ( */}
+            {/*       <motion.div
+              className="AllbtnTwo"
+              onClick={OnClick}
+              style={{
+                scale,
+                opacity,
+              }}
+              //  animate={{ scale: ZoomOpen, opacity: ZoomOp }}
+              transition={{ type: "tween", duration: 1000 }}
+            >
+                      <motion.img
+                src={zoomIcon}
+                alt=" "
+                style={{
+                  width: 16,
+                  position: "absolute",
+                  bottom: 2,
+                  right: 2,
+                  opacity: 1,
+                  zIndex: "100",
+                  scale,
+                  opacity,
+                }}
                 transition={{ type: "tween", duration: 1000 }}
-              >
-                <img
-                  src={zoomIcon}
-                  alt=" "
-                  style={{
-                    width: 16,
-                    position: "absolute",
-                    bottom: 2,
-                    right: 2,
-                    opacity: 1,
-                    zIndex: "100",
-                  }}
-                />
-                <motion.div
-                  className="PressBtn"
-                  style={{
-                    display: "block",
-                    position: "absolute",
-                    right: -10,
-                    bottom: -10,
-                    width: 40,
-                    height: 40,
-                    backgroundColor: "#fff",
-                    borderRadius: 20,
-                    textAlign: "center",
-                    boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)",
-                    //    scale: ZoomOpen,
-                    //  opacity: ZoomOp,
-                  }}
-                  //  variants={PressBtnVariants}
-                  //  animate={PressBtnAnimate}
-                />
-              </motion.div>
-            )}
+              /> */}
+            <motion.div
+              onClick={OnClick}
+              className="PressBtn"
+              style={{
+                backgroundImage: `url(${zoomIcon})`,
+                backgroundRepeat: "no-repeat",
+                //  backgroundPosition: "12px 12px",
+                //display: "block",
+                position: "absolute",
+                right: -10,
+                bottom: -10,
+                width: 40,
+                height: 40,
+                backgroundColor: "#fff",
+                borderRadius: 20,
+                //  textAlign: "center",
+                boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)",
+                scale: 0,
+                opacity: 0,
+              }}
+              animate={{ scale, opacity }}
+              transition={{
+                type: "tween",
+                duration: 0.2,
+              }}
+              //  variants={PressBtnVariants}
+              //  animate={PressBtnAnimate}
+            />
+            {/*   </motion.div>
+               )} */}
           </motion.div>
         </div>
         <motion.div
@@ -283,7 +299,7 @@ const DChange = () => {
             opacity: 1,
             zIndex: "-10",
           }}
-          transition={{ type: "tween", duration: 1000 }}
+          transition={{ type: "tween", duration: 1 }}
         />
         <Bg />
       </div>
