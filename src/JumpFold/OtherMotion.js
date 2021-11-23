@@ -131,12 +131,12 @@ const JumpMotion = () => {
 
   const TransitionStyle = {
     type: "spring",
-    restSpeed: 2,
-    stiffness: Stiffness,
-    damping: Damping,
-    bounceDamping: BounceDamping,
-    bounceStiffness: BounceStiffness,
-    mass: Mass,
+    // restSpeed: 2,
+    // stiffness: Stiffness,
+    damping: 36,
+    //  bounceDamping: BounceDamping,
+    //   bounceStiffness: BounceStiffness,
+    //   mass: Mass,
   };
 
   const [SetWindowAnimation, UPcycleAnimation] = useCycle(
@@ -191,8 +191,8 @@ const JumpMotion = () => {
           <motion.div
             className="Box"
             drag={true}
-            dragElastic={0.2}
-            dragConstraints={{ left: -100, right: 100, top: -150, bottom: 380 }}
+            dragElastic={0.1}
+            dragConstraints={{ left: -80, right: 80, top: -100, bottom: 380 }}
             animate={{
               y: Yaxis,
               x: Xaxis,

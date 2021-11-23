@@ -86,6 +86,7 @@ const BGVariants = {
   },
   BGAnimationTwo: {
     opacity: 0,
+    y: -66,
   },
 };
 
@@ -439,6 +440,9 @@ const JumpNew = () => {
               style={ContactBodyStyle}
               variants={BGVariants}
               animate={animationBG}
+              transition={{
+                type: "tween",
+              }}
             />
           </div>
         </motion.div>

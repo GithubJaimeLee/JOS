@@ -190,7 +190,9 @@ const Create = () => {
           variants={BoxVariants}
           animate={animationBox}
           transition={{
-            type: "tween",
+            type: "spring",
+            damping: 18,
+            stiffness: 105,
           }}
         />
         <motion.div

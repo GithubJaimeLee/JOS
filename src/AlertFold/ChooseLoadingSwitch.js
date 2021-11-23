@@ -11,16 +11,17 @@ const ChooseLoadingSwitch = () => {
   const toggleSwitch = () => setIsOn(!isOn);
   const BtnVariants = {
     animationOne: {
-      justifyContent: "flex-end",
-      backgroundColor: "#5F7DF7",
+      //  justifyContent: "flex-end",
+      backgroundColor: "#ddd",
       /*       transition: {
         when: "afterChildren",
         delay: 2,
       }, */
     },
     animationTwo: {
-      justifyContent: "flex-start",
-      backgroundColor: "#ddd",
+      //    justifyContent: "flex-start",
+
+      backgroundColor: "#5F7DF7",
       /*     transition: {
         when: "afterChildren",
         delay: 2,
@@ -29,19 +30,21 @@ const ChooseLoadingSwitch = () => {
   };
   const PointVariants = {
     animationOne: {
+      backgroundColor: "#b2b2b2",
+      height: 16,
+      width: 16,
+      borderRadius: "16px",
+      x: 0,
+    },
+    animationTwo: {
       height: 20,
       width: 8,
       borderRadius: "4px",
       backgroundColor: "#fff",
       /*       transition: {
         delay: 0.5,
-      }, */
-    },
-    animationTwo: {
-      backgroundColor: "#b2b2b2",
-      height: 16,
-      width: 16,
-      borderRadius: "16px",
+      }, */ x: 30,
+
       /*       transition: {
         delay: 0.5,
       }, */
@@ -71,9 +74,9 @@ const ChooseLoadingSwitch = () => {
     "animationTwo"
   );
   const spring = {
-    type: "spring",
-    stiffness: 700,
-    damping: 30,
+    type: "tweem",
+    // stiffness: 700,
+    //  damping: 30,
   };
   return (
     <div className="All">
@@ -107,7 +110,7 @@ const ChooseLoadingSwitch = () => {
             style={{
               width: 60,
               height: 30,
-              backgroundColor: "rgba(19, 3, 3, 0.4)",
+              backgroundColor: "#ddd",
               display: "flex",
               alignItems: "center",
               borderRadius: 50,
@@ -118,17 +121,37 @@ const ChooseLoadingSwitch = () => {
             data-isOn={isOn}
             variants={BtnVariants}
             animate={BtnAnimation}
-            transition={spring}
+            whileTap={{ type: "tween" }}
+            //  onDragStart={{ type: "spring" }}
+            //  onDragEnd={{ type: "spring" }}
+            //  onDragCancel={{ type: "spring" }}
             onClick={(toggleSwitch, cycleAnimation)}
           >
             <motion.div
+              //  drag="x"
+              //  draggable
+              className="Handle"
               style={{
                 position: "relative",
+                backgroundColor: "#b2b2b2",
+                height: 16,
+                width: 16,
+                borderRadius: "16px",
               }}
+              //    onDrag={cycleAnimation}
               variants={PointVariants}
               animate={BtnAnimation}
-              className="Handle"
-              transition={spring}
+              whileTap={{ type: "tween" }}
+              //  dragConstraints={
+              //     {
+              //   right: 0,
+              //    left: 0,
+              //    }
+              // }
+              //  onDragStart={{ type: "spring" }}
+              //  onDragEnd={{ type: "spring" }}
+              //  onDragCancel={{ type: "spring" }}
+              //    transition={spring}
             />
           </motion.div>
           {/*          <img
