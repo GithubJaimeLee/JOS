@@ -41,6 +41,7 @@ const UploadGallery = () => {
   return (
     <>
       <div
+        className="Finish Move"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -68,7 +69,6 @@ const UploadGallery = () => {
           dragElastic={1}
         />
       </div>
-
       <DndContext
         modifiers={[restrictToVerticalAxis]}
         sensors={sensors}
