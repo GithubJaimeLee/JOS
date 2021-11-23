@@ -25,7 +25,7 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
-
+import DeskOOS from "../Img/test.png";
 const UploadGallery = () => {
   const [items, setItems] = useState(photos);
   const [activeId, setActiveId] = useState(null);
@@ -34,16 +34,41 @@ const UploadGallery = () => {
     strategy: LayoutMeasuringStrategy.BeforeDragging,
   };
   const y = useMotionValue(0);
-  const yVelocity = useVelocity(y);
-
-  const Color = useTransform(
-    yVelocity,
-    [-100, 0, 100],
-    ["red", "black", "green"]
-  );
+  const ySmooth = useSpring(y, { damping: 16, stiffness: 300 });
+  const yVelocity = useVelocity(ySmooth);
+  const rotateX = useTransform(yVelocity, [-1000, 0, 1000], [-30, 0, 30]);
 
   return (
-    <div>
+    <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          position: "absolute",
+          width: 375,
+          perspective: "1000px",
+          transformOrigin: "50% 50%",
+        }}
+      >
+        <motion.img
+          src={DeskOOS}
+          style={{
+            position: "absolute",
+            width: 330,
+            height: 70,
+            backgroundColor: "#000",
+            top: 60,
+
+            y,
+            rotateX,
+            borderRadius: 12,
+            perspective: "300px",
+          }}
+          drag="y"
+          dragElastic={1}
+        />
+      </div>
+
       <DndContext
         modifiers={[restrictToVerticalAxis]}
         sensors={sensors}
@@ -92,7 +117,7 @@ const UploadGallery = () => {
           ) : null}
         </DragOverlay>
       </DndContext>
-    </div>
+    </>
   );
 
   function handleDragStart(event) {
