@@ -18,7 +18,13 @@ import {
 } from "@dnd-kit/modifiers";
 import { Photo } from "../JumpFold/EditListPhoto";
 import photos from "../JumpFold/EditList.json";
-import { motion } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useVelocity,
+  useTransform,
+  useSpring,
+} from "framer-motion";
 
 const UploadGallery = () => {
   const [items, setItems] = useState(photos);
@@ -27,43 +33,66 @@ const UploadGallery = () => {
   const layoutMeasuring = {
     strategy: LayoutMeasuringStrategy.BeforeDragging,
   };
+  const y = useMotionValue(0);
+  const yVelocity = useVelocity(y);
+
+  const Color = useTransform(
+    yVelocity,
+    [-100, 0, 100],
+    ["red", "black", "green"]
+  );
 
   return (
-    <DndContext
-      modifiers={[restrictToVerticalAxis]}
-      sensors={sensors}
-      layoutMeasuring={layoutMeasuring}
-      collisionDetection={closestCorners}
-      onDragStart={handleDragStart}
-      // 下面两项是重点
-      onDragOver={handleDragOver}
-      onDragEnd={handleDragEnd}
-      // 上面两项是重点
-      onDragCancel={handleDragCancel}
-    >
-      <SortableContext items={items} strategy={() => {}}>
-        <Grid columns={1}>
-          {items.map((url, index) => (
-            <SortablePhoto key={url} url={url} index={index} />
-          ))}
-        </Grid>
-      </SortableContext>
-      {/* 调整运动后的比例 */}
-      <DragOverlay modifiers={[restrictToWindowEdges]} adjustScale={false}>
-        {activeId ? (
-          <div
-            style={{
-              display: "grid",
-              gridAutoColumns: "auto",
-              gridAutoRows: "auto",
-              height: "100%",
-            }}
-          >
-            <Photo />
-          </div>
-        ) : null}
-      </DragOverlay>
-    </DndContext>
+    <div>
+      <DndContext
+        modifiers={[restrictToVerticalAxis]}
+        sensors={sensors}
+        layoutMeasuring={layoutMeasuring}
+        collisionDetection={closestCorners}
+        onDragStart={handleDragStart}
+        // 下面两项是重点
+        onDragOver={handleDragOver}
+        onDragEnd={handleDragEnd}
+        // 上面两项是重点
+        onDragCancel={handleDragCancel}
+      >
+        <SortableContext items={items} strategy={() => {}}>
+          <Grid columns={1}>
+            {items.map((url, index) => (
+              <SortablePhoto key={url} url={url} index={index} />
+            ))}
+          </Grid>
+        </SortableContext>
+        {/* 激活状态*/}
+        <DragOverlay modifiers={[restrictToWindowEdges]} adjustScale={false}>
+          {activeId ? (
+            <motion.div
+              style={{
+                display: "grid",
+                gridAutoColumns: "auto",
+                gridAutoRows: "auto",
+                height: "100%",
+                // border: "20px solid ",
+                //   rotateX: 70,
+                //   scale: 0.5,
+                //  borderColor: Color,
+              }}
+              //      animate={{ rotateX: 40 }}
+              //   transition={{ type: "spring" }}
+            >
+              <Photo
+                style={{
+                  display: "grid",
+                  gridAutoColumns: "auto",
+                  gridAutoRows: "auto",
+                  height: "100%",
+                }}
+              />
+            </motion.div>
+          ) : null}
+        </DragOverlay>
+      </DndContext>
+    </div>
   );
 
   function handleDragStart(event) {
