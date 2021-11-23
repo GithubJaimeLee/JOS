@@ -126,6 +126,10 @@ const DChange = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(true);
   const toggleClose = () => setIsOpen(false);
+  const [ZoomOpen, setZoomOpen] = useState(0);
+  const [ZoomOp, setZoomOp] = useState(0);
+  /*   const toggleZoomOpen = () => setIsOpen(true);
+  const toggleZoomClose = () => setIsOpen(false); */
   const Info = <p>图标移动自动补位</p>;
 
   var runCode;
@@ -133,6 +137,8 @@ const DChange = () => {
   const mouseDown = () => {
     runCode = setTimeout(function () {
       toggleOpen();
+      setZoomOpen(1);
+      setZoomOp(1);
     }, 500);
   };
 
@@ -145,6 +151,21 @@ const DChange = () => {
     ScycleAnimation();
     McycleAnimation();
   };
+  const OnClickClose = () => {
+    toggleClose();
+    setZoomOpen(1);
+    setZoomOp(1);
+  };
+  const [PressBtnAnimate, cyclePressBtnAnimate] = useCycle(
+    "AnimationOne",
+    "AnimationTwo"
+  );
+
+  const PressBtnVariants = {
+    AnimationOne: { scale: 0 },
+    AnimationTwo: { scale: 1 },
+  };
+
   return (
     <div>
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -209,7 +230,12 @@ const DChange = () => {
             </motion.div>
 
             {isOpen && (
-              <div className="AllbtnTwo" onClick={OnClick}>
+              <motion.div
+                className="AllbtnTwo"
+                onClick={OnClick}
+                animate={{ scale: ZoomOpen, opacity: ZoomOp }}
+                transition={{ type: "tween", duration: 1000 }}
+              >
                 <img
                   src={zoomIcon}
                   alt=" "
@@ -223,7 +249,7 @@ const DChange = () => {
                   }}
                 />
                 <motion.div
-                  className="boxPress"
+                  className="PressBtn"
                   style={{
                     display: "block",
                     position: "absolute",
@@ -235,15 +261,19 @@ const DChange = () => {
                     borderRadius: 20,
                     textAlign: "center",
                     boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)",
+                    //    scale: ZoomOpen,
+                    //  opacity: ZoomOp,
                   }}
+                  //  variants={PressBtnVariants}
+                  //  animate={PressBtnAnimate}
                 />
-              </div>
+              </motion.div>
             )}
           </motion.div>
         </div>
-        <div
+        <motion.div
           className="Background"
-          onClick={toggleClose}
+          onClick={OnClickClose}
           style={{
             background: "#E6ECF4",
             width: 375,
@@ -253,6 +283,7 @@ const DChange = () => {
             opacity: 1,
             zIndex: "-10",
           }}
+          transition={{ type: "tween", duration: 1000 }}
         />
         <Bg />
       </div>
