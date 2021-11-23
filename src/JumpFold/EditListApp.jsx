@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import {
   DndContext,
   closestCorners,
@@ -34,9 +34,14 @@ const UploadGallery = () => {
     strategy: LayoutMeasuringStrategy.BeforeDragging,
   };
   const y = useMotionValue(0);
-  const ySmooth = useSpring(y, { damping: 16, stiffness: 300 });
+  const ySmooth = useSpring(y, { damping: 16, stiffness: 200 });
   const yVelocity = useVelocity(ySmooth);
+  //const rotateX = useTransform(yVelocity, [-1000, 0, 1000], [-30, 0, 30]);
   const rotateX = useTransform(yVelocity, [-1000, 0, 1000], [-30, 0, 30]);
+
+  const Photo = forwardRef(() => {
+    return <div />;
+  });
 
   return (
     <>
@@ -48,25 +53,32 @@ const UploadGallery = () => {
           position: "absolute",
           width: 375,
           perspective: "1000px",
-          transformOrigin: "50% 50%",
         }}
       >
-        <motion.img
-          src={DeskOOS}
+        <motion.div
           style={{
             position: "absolute",
+
+            backgroundColor: "#fff",
             width: 330,
             height: 70,
-            backgroundColor: "#000",
-            top: 60,
-
-            y,
-            rotateX,
             borderRadius: 12,
-            perspective: "300px",
+            top: 60,
+            //    backgroundImage: `url(${DeskOOS})`,
+            transformOrigin: "50% 50%",
+            boxShadow: "0px 0px 10px 10px rgba(0, 0, 0, 0.08)",
+            rotateX,
+            y,
           }}
           drag="y"
-          dragElastic={1}
+          dragConstraints={{ top: 0, bottom: 450 }}
+          dragElastic={0.1}
+          dragTransition={{
+            damping: 18,
+            timeConstant: 60,
+            power: 0,
+            modifyTarget: (target) => Math.round(target / 90) * 90,
+          }}
         />
       </div>
       <DndContext
@@ -89,32 +101,21 @@ const UploadGallery = () => {
           </Grid>
         </SortableContext>
         {/* 激活状态*/}
-        <DragOverlay modifiers={[restrictToWindowEdges]} adjustScale={false}>
-          {activeId ? (
-            <motion.div
-              style={{
-                display: "grid",
-                gridAutoColumns: "auto",
-                gridAutoRows: "auto",
-                height: "100%",
-                // border: "20px solid ",
-                //   rotateX: 70,
-                //   scale: 0.5,
-                //  borderColor: Color,
-              }}
-              //      animate={{ rotateX: 40 }}
-              //   transition={{ type: "spring" }}
-            >
-              <Photo
-                style={{
-                  display: "grid",
-                  gridAutoColumns: "auto",
-                  gridAutoRows: "auto",
-                  height: "100%",
-                }}
-              />
-            </motion.div>
-          ) : null}
+
+        <DragOverlay
+          modifiers={[restrictToWindowEdges]}
+          //    adjustScale={false}
+        >
+          <motion.div
+            style={{
+              position: "absolute",
+              backgroundColor: "#fff",
+              width: 330,
+              height: 70,
+              borderRadius: 12,
+              transformOrigin: "50% 50%",
+            }}
+          />
         </DragOverlay>
       </DndContext>
     </>

@@ -323,6 +323,7 @@ const WindowBottom = () => {
         />
 
         <motion.div
+          drag="y"
           onClick={() => cycleAnimation() & BgCycleAnimation()}
           className="boxChange"
           style={ChangeBoxStyle}
@@ -335,6 +336,12 @@ const WindowBottom = () => {
             //  x: { type: "spring", stiffness: 100 },
             //default: { duration: 2 },
           }}
+          dragConstraints={{
+            top: 0,
+            bottom: 0,
+          }}
+          dragElastic={0.2}
+          //值越大越容易拖动
         />
       </div>
       <Bg />
