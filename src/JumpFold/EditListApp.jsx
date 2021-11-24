@@ -100,7 +100,6 @@ const UploadGallery = () => {
             ))}
           </Grid>
         </SortableContext>
-        {/* 激活状态*/}
 
         <DragOverlay
           modifiers={[restrictToWindowEdges]}
