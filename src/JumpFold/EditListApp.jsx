@@ -38,6 +38,13 @@ const UploadGallery = () => {
   const yVelocity = useVelocity(ySmooth);
   //const rotateX = useTransform(yVelocity, [-1000, 0, 1000], [-30, 0, 30]);
   const rotateX = useTransform(yVelocity, [-1000, 0, 1000], [-30, 0, 30]);
+  const [Y, setY] = useState();
+  const [isOpen, setIsOpen] = useState(false);
+  const [Drag, setDrag] = useState();
+  const onClick = () => {
+    setY(y);
+    setIsOpen(true);
+  };
 
   const Photo = forwardRef(() => {
     return <div />;
@@ -46,7 +53,7 @@ const UploadGallery = () => {
   return (
     <>
       <div
-        className="Finish Move"
+        className="FinishMove1"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -56,6 +63,9 @@ const UploadGallery = () => {
         }}
       >
         <motion.div
+          whileTap={() => setDrag("y")}
+          onDragEnd={() => setDrag()}
+          onDragCancel={() => setDrag()}
           style={{
             position: "absolute",
 
@@ -70,7 +80,7 @@ const UploadGallery = () => {
             rotateX,
             y,
           }}
-          drag="y"
+          drag={Drag}
           dragConstraints={{ top: 0, bottom: 450 }}
           dragElastic={0.1}
           dragTransition={{
@@ -81,43 +91,84 @@ const UploadGallery = () => {
           }}
         />
       </div>
-      <DndContext
-        modifiers={[restrictToVerticalAxis]}
-        sensors={sensors}
-        layoutMeasuring={layoutMeasuring}
-        collisionDetection={closestCorners}
-        onDragStart={handleDragStart}
-        // 下面两项是重点
-        onDragOver={handleDragOver}
-        onDragEnd={handleDragEnd}
-        // 上面两项是重点
-        onDragCancel={handleDragCancel}
+      <div
+        className="FinishMove2"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          position: "absolute",
+          width: 375,
+          perspective: "1000px",
+        }}
       >
-        <SortableContext items={items} strategy={() => {}}>
-          <Grid columns={1}>
-            {items.map((url, index) => (
-              <SortablePhoto key={url} url={url} index={index} />
-            ))}
-          </Grid>
-        </SortableContext>
-        {/* 激活状态*/}
+        <motion.div
+          whileTap={() => setDrag("y")}
+          onDragEnd={() => setDrag()}
+          onDragCancel={() => setDrag()}
+          style={{
+            position: "absolute",
 
-        <DragOverlay
-          modifiers={[restrictToWindowEdges]}
-          //    adjustScale={false}
-        >
-          <motion.div
-            style={{
-              position: "absolute",
-              backgroundColor: "#fff",
-              width: 330,
-              height: 70,
-              borderRadius: 12,
-              transformOrigin: "50% 50%",
-            }}
-          />
-        </DragOverlay>
-      </DndContext>
+            backgroundColor: "#fff",
+            width: 330,
+            height: 70,
+            borderRadius: 12,
+            top: 150,
+            //    backgroundImage: `url(${DeskOOS})`,
+            transformOrigin: "50% 50%",
+            boxShadow: "0px 0px 10px 10px rgba(0, 0, 0, 0.08)",
+            rotateX,
+            y,
+          }}
+          drag={Drag}
+          dragConstraints={{ top: 0, bottom: 450 }}
+          dragElastic={0.1}
+          dragTransition={{
+            damping: 18,
+            timeConstant: 60,
+            power: 0,
+            modifyTarget: (target) => Math.round(target / 90) * 90,
+          }}
+        />
+      </div>
+      <div
+        className="FinishMove3"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          position: "absolute",
+          width: 375,
+          perspective: "1000px",
+        }}
+      >
+        <motion.div
+          whileTap={() => setDrag("y")}
+          onDragEnd={() => setDrag()}
+          onDragCancel={() => setDrag()}
+          style={{
+            position: "absolute",
+
+            backgroundColor: "#fff",
+            width: 330,
+            height: 70,
+            borderRadius: 12,
+            top: 240,
+            //    backgroundImage: `url(${DeskOOS})`,
+            transformOrigin: "50% 50%",
+            boxShadow: "0px 0px 10px 10px rgba(0, 0, 0, 0.08)",
+            rotateX,
+            y,
+          }}
+          drag={Drag}
+          dragConstraints={{ top: 0, bottom: 450 }}
+          dragElastic={0.1}
+          dragTransition={{
+            damping: 18,
+            timeConstant: 60,
+            power: 0,
+            modifyTarget: (target) => Math.round(target / 90) * 90,
+          }}
+        />
+      </div>
     </>
   );
 
