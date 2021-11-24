@@ -20,12 +20,7 @@ const ClickBtnStyle = {
 };
 
 const ClickCard = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>按钮反馈</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

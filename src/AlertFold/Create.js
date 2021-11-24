@@ -120,12 +120,7 @@ const Create = () => {
     "BGAnimationOne",
     "BGAnimationTwo"
   );
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>新建动画</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

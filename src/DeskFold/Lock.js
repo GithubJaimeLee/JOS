@@ -105,7 +105,7 @@ const WindowPull = () => {
     };
   });
 
-  const Info = <p>下拉弹窗</p>;
+  const Info = <p>锁屏界面</p>;
 
   return (
     <div className="All">

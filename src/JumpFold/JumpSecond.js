@@ -24,12 +24,7 @@ const JumpSecond = () => {
   //const top = useTransform(x, [0, 100], [70, 170]);
   // const constraintsRef = useRef(null);
 
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>应用间跳转(横滑定位)</p>;
   return (
     <div
       className="screen"

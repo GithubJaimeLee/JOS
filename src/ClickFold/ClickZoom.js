@@ -28,12 +28,7 @@ const ClickZoom = () => {
   const [Scale, setScale] = useState(0.85);
   const [Duration, setDuration] = useState(0.1);
 
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>桌面图标</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -235,7 +230,7 @@ const ClickZoom = () => {
                 justifyContent: "center",
               }}
             >
-              缩放比例:0.9
+              缩放比例:0.90
             </div>
           </div>
           <div

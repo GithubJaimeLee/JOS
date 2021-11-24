@@ -39,12 +39,7 @@ const ClickShadow = () => {
     [0, 0.3, 1],
     ["26px", "14px", "14px"]
   );
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>阴影</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

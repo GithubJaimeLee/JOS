@@ -29,22 +29,21 @@ const ContactBubbleStyle = {
   position: "absolute",
   bottom: 100,
   zIndex: 20,
-  //  y: 400,
+  y: 400,
 };
 const KeyboardStyle = {
   width: 375,
   height: 290,
   backgroundImage: `url(${WindowInputKeyboard})`,
   position: "absolute",
+  y: 400,
   bottom: 100,
   zIndex: 20,
-  y: 400,
 };
 const BoxAnimation = {
   animationOne: {
     y: 400,
     // transitionDuration: "1s",
-
     //  y: -300,
   },
   animationTwo: {

@@ -115,7 +115,7 @@ const Desk = () => {
                     <p style={{ paddingTop: 40 }}>打开/退出应用</p>{" "}
                   </motion.div>
                 </Link> */}{" "}
-                <Link to="/Desk/windowPull" style={{ textDecoration: "none" }}>
+                <Link to="/Desk/Lock" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>锁屏</p>
                   </motion.div>
@@ -163,7 +163,7 @@ const Desk = () => {
             />
           </div>
         </Route>
-        <Route path="/Desk/windowPull">
+        <Route path="/Desk/Lock">
           <WindowPull />
         </Route>
         <Route path="/Desk/deskMove">

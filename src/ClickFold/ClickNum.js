@@ -35,12 +35,7 @@ const VBoxTap = {
   opacity: 0.1,
 };
 const ClickNum = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>数字键盘反馈</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

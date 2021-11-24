@@ -6,7 +6,7 @@ import { motion, useCycle } from "framer-motion";
 import Loading from "../Img/Loading.gif";
 
 const ChooseLoadingSwitch = () => {
-  const Info = <p>单选框</p>;
+  const Info = <p>布尔开关</p>;
   const [isOn, setIsOn] = useState(false);
   const toggleSwitch = () => setIsOn(!isOn);
   const BtnVariants = {

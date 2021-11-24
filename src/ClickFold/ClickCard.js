@@ -21,12 +21,7 @@ const boxChange = {
 };
 
 const ClickCard = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>卡片反馈</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -93,7 +88,7 @@ const ClickCard = () => {
               fontSize: 14,
             }}
           >
-            Press me
+            {/*  Press me */}
           </p>
         </motion.div>
       </div>

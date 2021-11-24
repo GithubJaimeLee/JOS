@@ -230,7 +230,7 @@ const WindowBottom = () => {
               marginTop: 12,
             }}
           >
-            <h6>Damping</h6>
+            <h6>Damping 阻尼</h6>
             <div
               style={{
                 display: "flex",

@@ -7,12 +7,7 @@ import SwipeToDelete from "../Component/SwipeToDelete";
 import "../App.css";
 
 const DeleteList = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>删除（横滑定位）</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />

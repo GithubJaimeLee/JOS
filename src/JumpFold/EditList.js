@@ -5,12 +5,7 @@ import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 
 const EditList = () => {
-  const Info = (
-    <p>
-      Hello,
-      <br /> world!
-    </p>
-  );
+  const Info = <p>列表滑动</p>;
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
