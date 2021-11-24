@@ -14,6 +14,8 @@ import Point from "../Img/Point.png";
 import LockRedBlue from "../Img/LockRedBlue.png";
 import LockPlay from "../Img/LockPlay.png";
 import LockList from "../Img/LockList.png";
+import WLockPlay from "../Img/WLockPlay.png";
+import WLockList from "../Img/WLockList.png";
 
 const boxChange = {
   width: 0,
@@ -63,6 +65,8 @@ const WindowPull = () => {
   const [RedO, setRedO] = useState(1);
   const [LockBgR, setLockBgR] = useState();
   const [LockBgB, setLockBgB] = useState();
+  const [LockIconP, setLockIconP] = useState(LockPlay);
+  const [LockIconL, setLockIconL] = useState(LockList);
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
 
@@ -233,7 +237,7 @@ const WindowPull = () => {
                   top: 28,
                   width: 22,
                   height: 22,
-                  backgroundImage: `url(${LockPlay})`,
+                  backgroundImage: `url(${LockIconP})`,
                   scale: 0,
                 }}
                 animate={{ scale: LockPlayScale }}
@@ -267,7 +271,7 @@ const WindowPull = () => {
                   top: 28,
                   width: 22,
                   height: 22,
-                  backgroundImage: `url(${LockList})`,
+                  backgroundImage: `url(${LockIconL})`,
                   scale: 0,
                 }}
                 animate={{ scale: LockPlayScale }}
@@ -350,16 +354,7 @@ const WindowPull = () => {
               const PDY = info.point.y;
               setLockBgB("#F7FCFF");
               setLockBgR("#F7FCFF");
-              //     if (PDY <= 615) {
-              //       setLockBgR("#E65B5C");
-              //       setLockBgB("#F7FCFF");
-              //     } else if (PDY <= 680 && 615 < PDY) {
-              //       setLockBgB("#4595E3");
-              //       setLockBgR("#F7FCFF");
-              //     } else if (PDY > 680) {
-              //       setLockBgB("#F7FCFF");
-              //       setLockBgR("#F7FCFF");
-              //     }
+
               console.log(info.point.x, info.point.y);
             }}
             onDragStart={() => {
@@ -381,6 +376,8 @@ const WindowPull = () => {
                 WinWidth / 2 - 107 < PDX &&
                 PDX < WinWidth / 2 + 107
               ) {
+                setLockIconL(LockList);
+                setLockIconP(WLockPlay);
                 setLockBgR("#E65B5C");
                 setLockBgB("#F7FCFF");
               } else if (
@@ -388,6 +385,8 @@ const WindowPull = () => {
                 WinWidth / 2 - 107 < PDX &&
                 PDX < WinWidth / 2 + 107
               ) {
+                setLockIconL(WLockList);
+                setLockIconP(LockPlay);
                 setLockBgB("#4595E3");
                 setLockBgR("#F7FCFF");
               } else if (
@@ -395,9 +394,13 @@ const WindowPull = () => {
                 WinWidth / 2 - 107 < PDX &&
                 PDX < WinWidth / 2 + 107
               ) {
+                setLockIconP(LockPlay);
+                setLockIconL(LockList);
                 setLockBgB("#F7FCFF");
                 setLockBgR("#F7FCFF");
               } else if (WinWidth / 2 - 107 > PDX || PDX > WinWidth / 2 + 107) {
+                setLockIconP(LockPlay);
+                setLockIconL(LockList);
                 setLockBgB("#F7FCFF");
                 setLockBgR("#F7FCFF");
               }
@@ -433,16 +436,7 @@ const WindowPull = () => {
               const PDY = info.point.y;
               setLockBgB("#F7FCFF");
               setLockBgR("#F7FCFF");
-              //   if (PDY <= 615) {
-              //     setLockBgR("#E65B5C");
-              //     setLockBgB("#F7FCFF");
-              //   } else if (PDY <= 680 && 615 < PDY) {
-              //     setLockBgB("#4595E3");
-              //     setLockBgR("#F7FCFF");
-              //   } else if (PDY > 680) {
-              //     setLockBgB("#F7FCFF");
-              //     setLockBgR("#F7FCFF");
-              //   }
+
               console.log(info.point.x, info.point.y);
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
