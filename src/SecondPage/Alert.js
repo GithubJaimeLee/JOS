@@ -7,7 +7,7 @@ import AlertLoading from "../AlertFold/AlertLoading";
 import AlertNew from "../AlertFold/AlertNew";
 import ChooseLoadingSwitch from "../AlertFold/ChooseLoadingSwitch";
 import JumpNew from "../AlertFold/JumpNew";
-import JumpApp from "../AlertFold/JumpApp";
+import JumpIn from "../AlertFold/JumpIn";
 import AlertPage from "../AlertFold/AlertPage";
 import AlertPercent from "../AlertFold/AlertPercent";
 import AlertToast from "../AlertFold/AlertToast";
@@ -80,7 +80,7 @@ const Alert = () => {
                     <p style={{ paddingTop: 40 }}>新建</p>
                   </motion.div>
                 </Link>
-                <Link to="/Alert/JumpNew" style={{ textDecoration: "none" }}>
+                <Link to="/Alert/SearchBar" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>搜索框</p>
                   </motion.div>
@@ -113,7 +113,7 @@ const Alert = () => {
                     <p style={{ paddingTop: 40 }}>布尔开关</p>
                   </motion.div>
                 </Link>
-                <Link to="/Alert/JumpApp" style={{ textDecoration: "none" }}>
+                <Link to="/Alert/JumpIn" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>弹入</p>
                   </motion.div>
@@ -154,11 +154,11 @@ const Alert = () => {
         <Route path="/Alert/Create">
           <Create />
         </Route>
-        <Route path="/Alert/JumpNew">
+        <Route path="/Alert/SearchBar">
           <JumpNew />
         </Route>
-        <Route path="/Alert/JumpApp">
-          <JumpApp />
+        <Route path="/Alert/JumpIn">
+          <JumpIn />
         </Route>
         <Route path="/Alert/AlertPage">
           <AlertPage />

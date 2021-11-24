@@ -90,7 +90,7 @@ const ContactBodyStyle = {
   overflow: "hidden",
 };
 
-const JumpApp = () => {
+const JumpIn = () => {
   const [SetWindowAnimation, UPcycleAnimation] = useCycle(
     "UPanimationOne",
     "UPanimationTwo"
@@ -402,4 +402,4 @@ const JumpApp = () => {
   );
 };
 
-export default JumpApp;
+export default JumpIn;
