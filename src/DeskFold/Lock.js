@@ -16,7 +16,9 @@ import LockPlay from "../Img/LockPlay.png";
 import LockList from "../Img/LockList.png";
 import WLockPlay from "../Img/WLockPlay.png";
 import WLockList from "../Img/WLockList.png";
-
+import PointBgT from "../Img/PointBgT.png";
+import Health2000 from "../Img/Health2000.png";
+import BHealth2000 from "../Img/BHealth2000.png";
 const boxChange = {
   width: 0,
   height: 0,
@@ -59,6 +61,12 @@ const WindowPull = () => {
   const [GreyBtnX, setGreyBtnX] = useState(0);
   const [GreyBtnY, setGreyBtnY] = useState(0);
   const [GreyBtnScale, setGreyBtnScale] = useState(1);
+  const [HealthX, setHealthX] = useState(0);
+  const [HealthY, setHealthY] = useState(0);
+  const [HealthScale, setHealthScale] = useState(1);
+  const [HealthO, setHealthO] = useState(0);
+  const [HealthOO, setHealthOO] = useState(1);
+  const [HealthBg, setHealthBg] = useState(Health2000);
   const [PointScale, setPointScale] = useState(1);
   const [LockBgBg, setLockBgBg] = useState();
   const [LockPlayScale, setLockPlayScale] = useState(0);
@@ -123,6 +131,111 @@ const WindowPull = () => {
             position: "absolute",
           }}
         >
+          <div>
+            <motion.div
+              className="Health"
+              drag
+              style={{
+                width: 68,
+                height: 81,
+                position: "absolute",
+                top: 564,
+                left: 6,
+                zIndex: 10,
+                borderRadius: 12,
+                // backgroundColor: `rgba(255,255,255,${HealthO})`,
+
+                backgroundImage: `url(${HealthBg})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "50% 50%",
+                transformOrigin: "100px 100px",
+              }}
+              dragElastic={1}
+              animate={{
+                x: HealthX,
+                y: HealthY,
+                backgroundColor: `rgba(255,255,255,${HealthO})`,
+                // opacity: HealthOO,
+                scale: HealthScale,
+                scale: 1.2,
+              }}
+              onDragCancel={() => {
+                setPointScale(1);
+                setHealthBg(Health2000);
+                setRedO(1);
+                setHealthO(0);
+                setHealthOO(1);
+              }}
+              onDragStart={() => {
+                setPointScale(3);
+                setHealthBg(BHealth2000);
+                setHealthScale(1.2);
+                setHealthO(1);
+                setHealthOO(0);
+                setRedO(0.5);
+                setLockBgB();
+                setLockBgR();
+              }}
+              onDragEnd={() => {
+                setPointScale(1);
+                setHealthBg(Health2000);
+                setRedO(1);
+                setHealthO(0);
+                setHealthOO(1);
+              }}
+              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+              // transition={{ type: "tween", duration: 0.5 }}
+              transition={{ type: "spring" }}
+            />
+            {/*       <motion.div
+              className="HealthImg"
+              drag
+              style={{
+                width: 68,
+                height: 81,
+                position: "absolute",
+                top: 564,
+                left: 6,
+                zIndex: 10,
+
+                backgroundImage: `url(${HealthBg})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "50% 50%",
+                transformOrigin: "100px 100px",
+              }}
+              dragElastic={1}
+              animate={{
+                x: HealthX,
+                y: HealthY,
+                opacity: HealthOO,
+                scale: HealthScale,
+                scale: 1.2,
+              }}
+              onDragCancel={() => {
+                setPointScale(1);
+                setHealthBg(Health2000);
+                setRedO(1);
+                setHealthO(0);
+              }}
+              onDragStart={() => {
+                setPointScale(3);
+                setHealthBg(BHealth2000);
+                setHealthScale(1.2);
+                setHealthO(1);
+
+                setRedO(0.5);
+                setLockBgB();
+                setLockBgR();
+              }}
+              onDragEnd={() => {
+                setPointScale(1);
+                setHealthBg(Health2000);
+                setRedO(1);
+                setHealthO(0);
+              }}
+              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+            /> */}
+          </div>
           <motion.div
             className="Phone"
             drag
@@ -152,6 +265,8 @@ const WindowPull = () => {
               setPointScale(3);
               setPhoneScale(1.2);
               setRedO(0.5);
+              setLockBgB();
+              setLockBgR();
             }}
             onTapStart={() => {
               setPhoneX(-12);
@@ -174,9 +289,11 @@ const WindowPull = () => {
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
+
           <motion.div
+            className="PointBgT"
             style={{
-              // backgroundImage: `url(${LockBgBg})`,
+              backgroundImage: `url(${PointBgT})`,
               position: "absolute",
               backgroundColor: "#F7FCFF",
               //     backgroundColor: LockBgC,
@@ -305,6 +422,8 @@ const WindowPull = () => {
               setPointScale(3);
               setCameraScale(1.2);
               setRedO(0.5);
+              setLockBgB();
+              setLockBgR();
             }}
             onTapStart={() => {
               setCameraX(-10);
