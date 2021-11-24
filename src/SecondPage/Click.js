@@ -114,7 +114,7 @@ const Click = () => {
               <div className="Row2">
                 <Link to="/Click/ClickZoom" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>缩放</p>
+                    <p style={{ paddingTop: 40 }}>桌面图标</p>
                   </motion.div>
                 </Link>
                 {/*                <Link to="/Click/ClickOther" style={{ textDecoration: "none" }}>

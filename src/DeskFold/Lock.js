@@ -1,5 +1,5 @@
 import { motion, useCycle } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Calendar from "../Img/Calendar.png";
@@ -34,13 +34,9 @@ const boxPress = {
   right: -128,
   top: 46,
   width: 80,
-  //  opacity: 1,
   height: 80,
-  //backgroundColor: "#ccc",
-
   textAlign: "center",
   zIndex: 2,
-  // boxShadow: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)"
 };
 const Background = {
   backgroundImage: `url(${LockBg})`,
@@ -65,6 +61,8 @@ const WindowPull = () => {
   const [LockBgBg, setLockBgBg] = useState();
   const [LockPlayScale, setLockPlayScale] = useState(0);
   const [RedO, setRedO] = useState(1);
+  const [LockBgR, setLockBgR] = useState();
+  const [LockBgB, setLockBgB] = useState();
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
 
@@ -72,14 +70,12 @@ const WindowPull = () => {
   );
   const boxAnimation = {
     animationOne: {
-      //    width: 0,
       scale: 0,
       height: 0,
       opacity: 0,
       right: 0,
     },
     animationTwo: {
-      //   width: 131,
       scale: 1,
       height: 163,
       opacity: 1,
@@ -87,6 +83,16 @@ const WindowPull = () => {
       right: 0,
     },
   };
+
+  const [WinWidth, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
   const Info = <p>下拉弹窗</p>;
 
   return (
@@ -127,6 +133,7 @@ const WindowPull = () => {
               backgroundImage: `url(${Phone})`,
               transformOrigin: "100px 100px",
             }}
+            dragElastic={1}
             animate={{ x: PhoneX, y: PhoneY, scale: PhoneScale }}
             onDragCancel={() => {
               setPhoneX(0);
@@ -163,11 +170,12 @@ const WindowPull = () => {
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
-          <div
+          <motion.div
             style={{
-              backgroundImage: `url(${LockBgBg})`,
+              // backgroundImage: `url(${LockBgBg})`,
               position: "absolute",
               backgroundColor: "#F7FCFF",
+              //     backgroundColor: LockBgC,
               top: 526,
               width: 214,
               height: 155,
@@ -199,32 +207,73 @@ const WindowPull = () => {
             />
 
             <motion.div
-              className="LockPlay"
+              className="LockPlayBgR"
               style={{
+                // backgroundImage: `url(${LockBgBg})`,
                 position: "absolute",
-                top: 28,
-                width: 22,
-                height: 22,
-                backgroundImage: `url(${LockPlay})`,
-                scale: 0,
+                //   backgroundColor: "#F7FCFF",
+                backgroundColor: LockBgR,
+                top: 526,
+                width: 214,
+                height: 77.5,
+                zIndex: 2,
+                top: 0,
+                left: 0,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                overflow: "hidden",
+                zIndex: 1,
               }}
-              animate={{ scale: LockPlayScale }}
-              //    transition={{ delay: 0.2 }}
-            />
+            >
+              <motion.div
+                className="LockPlay"
+                style={{
+                  position: "absolute",
+                  top: 28,
+                  width: 22,
+                  height: 22,
+                  backgroundImage: `url(${LockPlay})`,
+                  scale: 0,
+                }}
+                animate={{ scale: LockPlayScale }}
+              />
+            </motion.div>
+
             <motion.div
-              className="LockList"
+              className="LockListBgB"
               style={{
+                // backgroundImage: `url(${LockBgBg})`,
                 position: "absolute",
-                top: 100,
-                width: 22,
-                height: 22,
-                backgroundImage: `url(${LockList})`,
-                scale: 0,
+                //   backgroundColor: "#F7FCFF",
+                backgroundColor: LockBgB,
+                top: 526,
+                width: 214,
+                height: 77.5,
+                zIndex: 2,
+                top: 77.5,
+                left: 0,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                overflow: "hidden",
+                zIndex: 1,
               }}
-              animate={{ scale: LockPlayScale }}
-              //    transition={{ delay: 0.2 }}
-            />
-          </div>
+            >
+              <motion.div
+                className="LockList"
+                style={{
+                  position: "absolute",
+                  top: 28,
+                  width: 22,
+                  height: 22,
+                  backgroundImage: `url(${LockList})`,
+                  scale: 0,
+                }}
+                animate={{ scale: LockPlayScale }}
+              />
+            </motion.div>
+          </motion.div>
           <motion.div
             className="Camera"
             drag
@@ -235,9 +284,9 @@ const WindowPull = () => {
               top: 728,
               left: 316,
               zIndex: 10,
-              //  opacity: 0.1,
               backgroundImage: `url(${Camera})`,
             }}
+            dragElastic={1}
             animate={{ x: CameraX, y: CameraY, scale: CameraScale }}
             onDragCancel={() => {
               setCameraX(0);
@@ -287,14 +336,31 @@ const WindowPull = () => {
               zIndex: 10,
               backgroundImage: `url(${Point})`,
             }}
+            dragElastic={1}
             animate={{ x: GreyBtnX, y: GreyBtnY, scale: GreyBtnScale }}
-            onDragCancel={() => {
+            onDragCancel={(event, info) => {
               setGreyBtnX(0);
               setGreyBtnY(0);
               setPointScale(1);
               setGreyBtnScale(1);
               setLockBgBg();
               setLockPlayScale(0);
+
+              const PDX = info.point.x;
+              const PDY = info.point.y;
+              setLockBgB("#F7FCFF");
+              setLockBgR("#F7FCFF");
+              //     if (PDY <= 615) {
+              //       setLockBgR("#E65B5C");
+              //       setLockBgB("#F7FCFF");
+              //     } else if (PDY <= 680 && 615 < PDY) {
+              //       setLockBgB("#4595E3");
+              //       setLockBgR("#F7FCFF");
+              //     } else if (PDY > 680) {
+              //       setLockBgB("#F7FCFF");
+              //       setLockBgR("#F7FCFF");
+              //     }
+              console.log(info.point.x, info.point.y);
             }}
             onDragStart={() => {
               setGreyBtnX(10);
@@ -303,6 +369,45 @@ const WindowPull = () => {
               setGreyBtnScale(1.2);
               setLockBgBg(LockRedBlue);
               setLockPlayScale(1);
+            }}
+            onDrag={(event, info) => {
+              const PDX = info.point.x;
+              const PDY = info.point.y;
+              //          && WinWidth * 2 - 214 < PDX < WinWidth / 2 + 107
+              // &&      WinWidth / 2 - 107< PDX< WinWidth / 2 + 107
+
+              if (
+                PDY <= 615 &&
+                WinWidth / 2 - 107 < PDX &&
+                PDX < WinWidth / 2 + 107
+              ) {
+                setLockBgR("#E65B5C");
+                setLockBgB("#F7FCFF");
+              } else if (
+                PDY <= 680 &&
+                WinWidth / 2 - 107 < PDX &&
+                PDX < WinWidth / 2 + 107
+              ) {
+                setLockBgB("#4595E3");
+                setLockBgR("#F7FCFF");
+              } else if (
+                PDY > 680 &&
+                WinWidth / 2 - 107 < PDX &&
+                PDX < WinWidth / 2 + 107
+              ) {
+                setLockBgB("#F7FCFF");
+                setLockBgR("#F7FCFF");
+              } else if (WinWidth / 2 - 107 > PDX || PDX > WinWidth / 2 + 107) {
+                setLockBgB("#F7FCFF");
+                setLockBgR("#F7FCFF");
+              }
+
+              //else if (PDX < WinWidth * 2 - 214 || PDX > WinWidth / 2 + 107) {
+              //    setLockBgB("#F7FCFF");
+              //   setLockBgR("#F7FCFF");
+              //      }
+              console.log(WinWidth / 2 - 107, WinWidth / 2 + 107);
+              // console.log(info.point.x, info.point.y);
             }}
             onTapStart={() => {
               setGreyBtnX(10);
@@ -316,43 +421,33 @@ const WindowPull = () => {
               setPointScale(1);
               setGreyBtnScale(1);
             }}
-            onDragEnd={() => {
+            onDragEnd={(event, info) => {
               setGreyBtnX(0);
               setGreyBtnY(0);
               setPointScale(1);
               setGreyBtnScale(1);
               setLockBgBg();
               setLockPlayScale(0);
+
+              const PDX = info.point.x;
+              const PDY = info.point.y;
+              setLockBgB("#F7FCFF");
+              setLockBgR("#F7FCFF");
+              //   if (PDY <= 615) {
+              //     setLockBgR("#E65B5C");
+              //     setLockBgB("#F7FCFF");
+              //   } else if (PDY <= 680 && 615 < PDY) {
+              //     setLockBgB("#4595E3");
+              //     setLockBgR("#F7FCFF");
+              //   } else if (PDY > 680) {
+              //     setLockBgB("#F7FCFF");
+              //     setLockBgR("#F7FCFF");
+              //   }
+              console.log(info.point.x, info.point.y);
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
         </div>
-        {/*    <div
-          className="FingerClick"
-          style={{
-            backgroundImage: `url(${OneFingerClick})`,
-            position: "relative",
-            top: 90,
-            left: 178,
-            width: 32,
-            height: 60,
-            backgroundRepeat: "no-repeat",
-            zIndex: 2,
-          }}
-        />
-        <div
-          className="boxPress"
-          onClick={() => cycleAnimation()}
-          style={boxPress}
-        >
-          <motion.div
-            className="boxChange"
-            style={boxChange}
-            variants={boxAnimation}
-            animate={animationBox}
-            transition={{ type: "tween" }}
-          />
-        </div> */}
         <div className="Background" style={Background} />
         <Bg />
       </div>

@@ -31,7 +31,7 @@ const ColGridBox = {
 };
 const VBoxTap = {
   // scale: 0.9,
-  backgroundColor: "#000000",
+  backgroundColor: "#eee",
   opacity: 0.1,
 };
 const ClickNum = () => {
