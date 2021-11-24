@@ -121,7 +121,7 @@ const ChooseLoadingSwitch = () => {
             data-isOn={isOn}
             variants={BtnVariants}
             animate={BtnAnimation}
-            whileTap={{ type: "tween" }}
+            whileTap={{ type: "spring" }}
             //  onDragStart={{ type: "spring" }}
             //  onDragEnd={{ type: "spring" }}
             //  onDragCancel={{ type: "spring" }}
@@ -141,7 +141,7 @@ const ChooseLoadingSwitch = () => {
               //    onDrag={cycleAnimation}
               variants={PointVariants}
               animate={BtnAnimation}
-              whileTap={{ type: "tween" }}
+              whileTap={{ type: "spring" }}
               //  dragConstraints={
               //     {
               //   right: 0,

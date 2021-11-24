@@ -66,9 +66,11 @@ const SwitchBtn = () => {
     "animationTwo"
   );
   const spring = {
-    type: "spring",
-    stiffness: 700,
-    damping: 30,
+    type: "tween",
+    duration: 0.2,
+    //type: "spring",
+    // stiffness: 700,
+    //  damping: 30,
   };
   return (
     <div>
