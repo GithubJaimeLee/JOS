@@ -176,7 +176,8 @@ class StopWatch extends Component {
           )}
         </div>
         {this.state.timerOn === false && this.state.timerTime === 0 && (
-          <button
+          <motion.button
+            whileTap={{ scale: 0.9 }}
             onClick={this.startTimer}
             style={{
               position: "absolute",
@@ -193,7 +194,8 @@ class StopWatch extends Component {
           />
         )}
         {this.state.timerOn === true && (
-          <button
+          <motion.button
+            whileTap={{ scale: 0.9 }}
             onClick={this.stopTimer}
             style={{
               position: "absolute",
@@ -207,10 +209,11 @@ class StopWatch extends Component {
               backgroundImage: `url(${Pause})`,
               backgroundColor: "#F95F6D",
             }}
-          ></button>
+          ></motion.button>
         )}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
-          <button
+          <motion.button
+            whileTap={{ scale: 0.9 }}
             onClick={this.startTimer}
             style={{
               position: "absolute",
@@ -224,10 +227,11 @@ class StopWatch extends Component {
               backgroundImage: `url(${Play})`,
               backgroundColor: "#F95F6D",
             }}
-          ></button>
+          ></motion.button>
         )}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
-          <button
+          <motion.button
+            whileTap={{ scale: 0.9 }}
             onClick={this.resetTimer}
             style={{
               position: "absolute",
@@ -241,7 +245,7 @@ class StopWatch extends Component {
               backgroundImage: `url(${Replay})`,
               backgroundColor: "#fff",
             }}
-          ></button>
+          ></motion.button>
         )}
       </div>
     );
