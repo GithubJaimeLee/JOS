@@ -426,7 +426,7 @@ function App() {
                 alignItems: "center",
                 position: "relative",
                 top: 20,
-                right: 20,
+                //   right: 20,
               }}
             >
               <div>
@@ -467,12 +467,14 @@ function App() {
                     position: "relative",
                     color: "#fff",
                     background: "#415FFF",
-                    fontSize: 16,
+                    fontSize: 15,
                     padding: "8px 22px",
                     width: 168,
                     height: 42,
                     borderRadius: 32,
-                    alignItems: "flex-start",
+                    display: "flex",
+                    justifyContent: "center",
+                    //   alignItems: "center",
                   }}
                 >
                   下载Android App

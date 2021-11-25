@@ -170,9 +170,11 @@ const DChange = () => {
     <div>
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
       <div
-        //  onClick={OnClick}
+        className="ScreenCenter"
         style={{
           display: "flex",
+          height: "100%",
+          overflow: "hidden",
           justifyContent: "center",
           zIndex: -11,
         }}

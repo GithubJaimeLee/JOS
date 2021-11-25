@@ -14,6 +14,8 @@ const EditList = () => {
         style={{
           width: "100%",
           display: "flex",
+          height: "100%",
+          overflow: "hidden",
           justifyContent: "center",
           position: "absolute",
           top: 0,
@@ -46,8 +48,8 @@ const EditList = () => {
           className="bg"
           style={{
             backgroundColor: "#eee",
-            width: 375,
-            height: 812,
+            width: 360,
+            height: 800,
             position: "absolute",
             top: 0,
             opacity: 1,

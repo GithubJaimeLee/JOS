@@ -28,6 +28,8 @@ const ClickCard = () => {
         className="ScreenCenter"
         style={{
           width: "100%",
+          height: "100%",
+          overflow: "hidden",
           display: "flex",
           justifyContent: "center",
           position: "absolute",
@@ -70,9 +72,9 @@ const ClickCard = () => {
               height: 60,
               backgroundImage: `url(${OneFingerClick})`,
               position: "absolute",
-              top: 745,
-              left: 260,
-              zIndex: 11,
+              top: 735,
+              left: 325,
+              zIndex: 20,
             }}
           />
         </div>

@@ -130,9 +130,10 @@ const Create = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          height: 812,
-          position: "absolute",
+          height: "100%",
           overflow: "hidden",
+          position: "absolute",
+
           top: 0,
         }}
       >

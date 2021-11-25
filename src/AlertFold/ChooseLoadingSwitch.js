@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import { motion, useCycle } from "framer-motion";
-import Loading from "../Img/Loading.gif";
 
 const ChooseLoadingSwitch = () => {
   const Info = <p>布尔开关</p>;
@@ -50,34 +49,17 @@ const ChooseLoadingSwitch = () => {
       }, */
     },
   };
-  const RotateVariants = {
-    animationOne: {
-      height: 20,
-      width: 8,
-      borderRadius: "4px",
-      backgroundColor: "#fff",
-    },
-    animationTwo: {
-      backgroundColor: "#b2b2b2",
-      height: 16,
-      width: 16,
-      borderRadius: "16px",
-    },
-  };
 
   const [BtnAnimation, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
   );
-  const [RotateAnimation, cycleRotateAnimation] = useCycle(
-    "animationOne",
-    "animationTwo"
-  );
-  const spring = {
+
+  /*   const spring = {
     type: "tweem",
     // stiffness: 700,
     //  damping: 30,
-  };
+  }; */
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -88,6 +70,8 @@ const ChooseLoadingSwitch = () => {
           display: "flex",
           justifyContent: "center",
           position: "absolute",
+          height: "100%",
+          overflow: "hidden",
           top: 0,
         }}
       >

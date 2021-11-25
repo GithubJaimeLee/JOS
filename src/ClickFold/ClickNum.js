@@ -15,6 +15,7 @@ const GridBox = {
   left: 30,
   paddingRight: 0,
   display: "flex",
+  zIndex: 100,
   // opacity:0.5
 };
 const RowGridBox = {
@@ -43,6 +44,8 @@ const ClickNum = () => {
         className="ScreenCenter"
         style={{
           width: "100%",
+          height: "100%",
+          overflow: "hidden",
           display: "flex",
           justifyContent: "center",
           position: "absolute",
@@ -59,7 +62,7 @@ const ClickNum = () => {
             top: 0,
 
             opacity: 1,
-            zIndex: -1,
+            zIndex: 1,
           }}
         >
           <div className="R" style={GridBox}>

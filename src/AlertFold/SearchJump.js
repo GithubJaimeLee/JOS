@@ -90,7 +90,7 @@ const BGVariants = {
   },
 };
 
-const JumpNew = () => {
+const SearchJump = () => {
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
@@ -173,7 +173,7 @@ const JumpNew = () => {
           <h6>取消搜索</h6>
           设置界面： positionY：52dp time：500ms
           <br />
-          bezier curve:（0.2, 0.15, 0, 1)
+          bezier curve: (0.2, 0.15, 0, 1)
           <br />
           alpha:  0 ~ 1
           <br />
@@ -223,7 +223,7 @@ const JumpNew = () => {
           <br />
           time：500ms
           <br />
-          bezier curve:（0.2, 0.15, 0, 1)
+          bezier curve: (0.2, 0.15, 0, 1)
           <br />
           记录：
           <br />
@@ -256,7 +256,7 @@ const JumpNew = () => {
           <br />
           positionY：-74dp
           <br />
-          bezier curve:（0.2, 0.15, 0, 1)
+          bezier curve: (0.2, 0.15, 0, 1)
           <br />
           记录：
           <br />
@@ -292,8 +292,9 @@ const JumpNew = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          height: 812,
+
           position: "absolute",
+          height: "100%",
           overflow: "hidden",
           top: 0,
         }}
@@ -487,4 +488,4 @@ const JumpNew = () => {
   );
 };
 
-export default JumpNew;
+export default SearchJump;

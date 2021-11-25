@@ -13,12 +13,12 @@ const JumpSecond = () => {
   const x = useMotionValue(0);
   const scale = useTransform(
     x,
-    [-563, -375, -188, 0, 188, 375, 563],
+    [-540, -360, -180, 0, 180, 360, 540],
     [0.9, 1, 0.9, 1, 0.9, 1, 0.9]
   );
   const borderRadius = useTransform(
     x,
-    [-563, -375, -188, 0, 188, 375, 563],
+    [-540, -360, -180, 0, 180, 360, 540],
     [26, 0, 26, 0, 26, 0, 26]
   );
   //const top = useTransform(x, [0, 100], [70, 170]);
@@ -27,10 +27,13 @@ const JumpSecond = () => {
   const Info = <p>应用间跳转(横滑定位)</p>;
   return (
     <div
-      className="screen"
+      className="ScreenCenter"
       style={{
+        width: "100%",
         position: "absolute",
         display: "flex",
+        height: "100%",
+        overflow: "hidden",
         justifyContent: "center",
       }}
     >
@@ -40,8 +43,8 @@ const JumpSecond = () => {
         style={{
           position: "absolute",
           display: "flex",
-          width: 375,
-          height: 812,
+          width: 360,
+          height: 800,
           justifyContent: "center",
           overflow: "hidden",
         }}
@@ -52,9 +55,9 @@ const JumpSecond = () => {
           dragTransition={{
             timeConstant: 80,
             power: 1,
-            modifyTarget: (target) => Math.round(target / 375) * 375,
+            modifyTarget: (target) => Math.round(target / 360) * 360,
           }}
-          dragConstraints={{ left: -376, top: 0, bottom: 0, right: 376 }}
+          dragConstraints={{ left: -360, top: 0, bottom: 0, right: 360 }}
           dragMomentum={true}
           drag="x"
           style={{
@@ -65,7 +68,7 @@ const JumpSecond = () => {
             top: 0,
 
             //width: 375 * 3,
-            height: 812,
+            height: 800,
             zIndex: 3,
           }}
         >
@@ -74,8 +77,8 @@ const JumpSecond = () => {
             style={{
               backgroundImage: `url(${WindowSideBg})`,
               //    backgroundColor: "#eee",
-              width: 375,
-              height: 812,
+              width: 360,
+              height: 800,
               position: "relative",
               borderRadius,
               opacity: 1,
@@ -88,8 +91,8 @@ const JumpSecond = () => {
             style={{
               backgroundImage: `url(${JumpSearchBg})`,
               // backgroundColor: "#eee",
-              width: 375,
-              height: 812,
+              width: 360,
+              height: 800,
               position: "relative",
               borderRadius,
               opacity: 1,
@@ -102,8 +105,8 @@ const JumpSecond = () => {
             style={{
               backgroundImage: `url(${WindowCenterBg})`,
               // backgroundColor: "#eee",
-              width: 375,
-              height: 812,
+              width: 360,
+              height: 800,
               position: "relative",
               borderRadius,
               opacity: 1,
@@ -112,11 +115,25 @@ const JumpSecond = () => {
             }}
           />
         </motion.div>
+
+        <div
+          className="BlurBackground"
+          style={{
+            backgroundImage: `url(${background})`,
+            width: 360,
+            height: 800,
+            position: "absolute",
+            top: 0,
+            opacity: 1,
+            filter: "blur(4px)",
+            zIndex: -1,
+          }}
+        />
       </div>
       <div
         className="Background"
         style={{
-          width: 375,
+          width: 360,
           position: "absolute",
         }}
       >
@@ -124,25 +141,12 @@ const JumpSecond = () => {
           className="blackMask"
           style={{
             backgroundColor: "#000000",
-            width: 375,
-            height: 812,
+            width: 360,
+            height: 800,
             position: "absolute",
             top: 0,
             opacity: 0.5,
             zIndex: 2,
-          }}
-        />
-        <div
-          className="BlurBackground"
-          style={{
-            backgroundImage: `url(${background})`,
-            width: 375,
-            height: 812,
-            position: "absolute",
-            top: 0,
-            opacity: 1,
-            filter: "blur(4px)",
-            zIndex: -1,
           }}
         />
       </div>

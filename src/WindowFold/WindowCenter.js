@@ -135,12 +135,13 @@ const WindowCenter = () => {
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
       <div
-        className="All"
+        className="ScreenCenter"
         style={{
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          height: 812,
+          height: "100%",
+          overflow: "hidden",
           position: "absolute",
           top: 0,
         }}

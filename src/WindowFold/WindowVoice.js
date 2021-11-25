@@ -2,44 +2,45 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
-import WindowBg from "../Img/WindowBg.png";
+import WindowBg from "../Img/DeskOOS.png";
 import WindowVoiceWin from "../Img/WindowVoiceWin.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import Bg from "../Component/Bg";
 
-const ContactBtnStyle = {
-  position: "relative",
+const FingerStyle = {
+  position: "absolute",
   left: 310,
-  bottom: -480,
+  top: 480,
   width: 32,
   height: 60,
   backgroundImage: `url(${OneFingerClick})`,
   justifyContent: "center",
   display: "flex",
-  zIndex: 1,
+  zIndex: 10,
   opacity: 1,
 };
 
-const BoxAnimation = {
+const VoiceBarVariants = {
   animationOne: {
-    x: 100,
+    x: 15,
   },
   animationTwo: {
-    x: 10,
+    x: 100,
   },
 };
 
 const ContactBodyStyle = {
   backgroundImage: `url(${WindowBg})`,
   position: "absolute",
-  width: 375,
-  height: 812,
+  width: 360,
+  height: 800,
   zIndex: 1,
+  top: 0,
   overflow: "hidden",
 };
 
 const WindowVoice = () => {
-  const [animationBox, cycleAnimation] = useCycle(
+  const [VoiceBarAnimation, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
   );
@@ -80,42 +81,44 @@ const WindowVoice = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          height: 812,
+          height: "100%",
+          overflow: "hidden",
           position: "absolute",
           top: 0,
         }}
       >
-        <div
-          onClick={() => cycleAnimation()}
+        <motion.div
           className="ContactBody"
+          onClick={() => cycleAnimation()}
           style={ContactBodyStyle}
         >
           <div
-            className="ContactBtn"
+            className="Finger"
+            //  onClick={() => cycleAnimation()}
+            style={FingerStyle}
+          />
+          <motion.div
             onClick={() => cycleAnimation()}
-            style={ContactBtnStyle}
-          >
-            <motion.div
-              className="boxChange"
-              style={{
-                width: 56,
-                height: 306,
-                boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-                opacity: 1,
-                backgroundImage: `url(${WindowVoiceWin})`,
-                borderRadius: 12,
-                position: "absolute",
-                x: 100,
-                y: 8,
-                bottom: 100,
-                zIndex: 20,
-              }}
-              variants={BoxAnimation}
-              animate={animationBox}
-              transition={{ type: "tween" }}
-            />
-          </div>
-        </div>
+            className="VoiceBar"
+            style={{
+              width: 56,
+              height: 306,
+              boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+              opacity: 1,
+              backgroundImage: `url(${WindowVoiceWin})`,
+              borderRadius: 12,
+              position: "absolute",
+              //   x: 100,
+              //   y: 8,
+              top: 100,
+              right: 30,
+              zIndex: 20,
+            }}
+            variants={VoiceBarVariants}
+            animate={VoiceBarAnimation}
+            transition={{ type: "tween" }}
+          />
+        </motion.div>
         <Bg />
       </div>
     </div>

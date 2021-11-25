@@ -2,14 +2,14 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
-import WindowBg from "../Img/WindowBg.png";
+import WindowBg from "../Img/DeskOOS.png";
 import WindowAlertWin from "../Img/WindowAlertWin.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import Bg from "../Component/Bg";
 
 const ContactBtnStyle = {
-  position: "relative",
-  bottom: -700,
+  position: "absolute",
+  bottom: 550,
   width: 32,
   height: 60,
   backgroundImage: `url(${OneFingerClick})`,
@@ -47,8 +47,8 @@ const ContactBodyStyle = {
   backgroundImage: `url(${WindowBg})`,
   //backgroundColor: "#EEEEEE",
   position: "absolute",
-  width: 375,
-  height: 812,
+  width: 360,
+  height: 800,
   zIndex: 1,
 };
 
@@ -92,9 +92,11 @@ const WindowAlert = () => {
         className="ScreenCenter"
         style={{
           width: "100%",
+          height: "100%",
+          overflow: "hidden",
           display: "flex",
           justifyContent: "center",
-          height: 812,
+
           position: "absolute",
           top: 0,
         }}
@@ -109,15 +111,14 @@ const WindowAlert = () => {
           className="ContactBtn"
           onClick={() => cycleAnimation()}
           style={ContactBtnStyle}
-        >
-          <motion.div
-            className="boxChange"
-            style={ContactBubbleStyle}
-            variants={BoxAnimation}
-            animate={animationBox}
-            transition={{ type: "tween" }}
-          />
-        </div>
+        />
+        <motion.div
+          className="boxChange"
+          style={ContactBubbleStyle}
+          variants={BoxAnimation}
+          animate={animationBox}
+          transition={{ type: "tween" }}
+        />
       </div>
       <Bg />
     </div>

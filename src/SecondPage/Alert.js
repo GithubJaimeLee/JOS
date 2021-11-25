@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import AlertLoading from "../AlertFold/AlertLoading";
 import AlertNew from "../AlertFold/AlertNew";
 import ChooseLoadingSwitch from "../AlertFold/ChooseLoadingSwitch";
-import JumpNew from "../AlertFold/JumpNew";
+import SearchJump from "../AlertFold/SearchJump";
 import JumpIn from "../AlertFold/JumpIn";
 import AlertPage from "../AlertFold/AlertPage";
 import AlertPercent from "../AlertFold/AlertPercent";
@@ -80,7 +80,7 @@ const Alert = () => {
                     <p style={{ paddingTop: 40 }}>新建</p>
                   </motion.div>
                 </Link>
-                <Link to="/Alert/SearchBar" style={{ textDecoration: "none" }}>
+                <Link to="/Alert/SearchJump" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>搜索框</p>
                   </motion.div>
@@ -154,8 +154,8 @@ const Alert = () => {
         <Route path="/Alert/Create">
           <Create />
         </Route>
-        <Route path="/Alert/SearchBar">
-          <JumpNew />
+        <Route path="/Alert/SearchJump">
+          <SearchJump />
         </Route>
         <Route path="/Alert/JumpIn">
           <JumpIn />

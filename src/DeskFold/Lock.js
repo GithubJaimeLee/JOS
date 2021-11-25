@@ -115,7 +115,8 @@ const WindowPull = () => {
         className="ScreenCenter"
         style={{
           width: "100%",
-          height: 812,
+          height: "100%",
+          overflow: "hidden",
           opacity: 1,
           position: "absolute",
           display: "flex",

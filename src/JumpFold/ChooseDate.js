@@ -29,7 +29,8 @@ const ChooseDate = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
-
+          height: "100%",
+          overflow: "hidden",
           position: "absolute",
           top: 0,
         }}
