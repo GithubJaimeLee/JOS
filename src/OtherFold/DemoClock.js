@@ -162,7 +162,24 @@ const OtherMotion = () => {
     bounceStiffness: BounceStiffness,
     mass: Mass,
   };
-  const [SetAnimation, Setcyc] = useCycle("SetAnimationOne", "SetAnimationTwo");
+
+  const [SetAnimation1, Setcyc1] = useCycle(
+    "SetAnimationOne",
+    "SetAnimationTwo"
+  );
+  const [SetAnimation2, Setcyc2] = useCycle(
+    "SetAnimationOne",
+    "SetAnimationTwo"
+  );
+  const [SetAnimation3, Setcyc3] = useCycle(
+    "SetAnimationOne",
+    "SetAnimationTwo"
+  );
+  const [SetAnimation4, Setcyc4] = useCycle(
+    "SetAnimationOne",
+    "SetAnimationTwo"
+  );
+
   const SetVariants = {
     SetAnimationOne: {
       scale: 0,
@@ -171,6 +188,7 @@ const OtherMotion = () => {
       scale: 1,
     },
   };
+
   const [SetWindowAnimation, UPcycleAnimation] = useCycle(
     "UPanimationOne",
     "UPanimationTwo"
@@ -253,7 +271,7 @@ const OtherMotion = () => {
               alt=""
             />
             <div
-              onClick={Setcyc}
+              onClick={Setcyc1}
               className="SetBtn"
               style={{
                 width: 60,
@@ -282,9 +300,13 @@ const OtherMotion = () => {
                 right: 30,
                 transformOrigin: "131px 0px",
               }}
-              transition={{ type: "tween", duration: 0.2 }}
+              transition={{
+                left: { type: "tween" },
+                top: { type: "tween" },
+                scale: { type: "spring", damping: 12 },
+              }}
               variants={SetVariants}
-              animate={SetAnimation}
+              animate={SetAnimation1}
             />
             <div
               style={{
@@ -361,7 +383,7 @@ const OtherMotion = () => {
               alt=""
             />
             <div
-              onClick={Setcyc}
+              onClick={Setcyc2}
               className="SetBtn"
               style={{
                 width: 60,
@@ -390,9 +412,13 @@ const OtherMotion = () => {
                 right: 30,
                 transformOrigin: "131px 0px",
               }}
-              transition={{ type: "tween", duration: 0.2 }}
+              transition={{
+                left: { type: "tween" },
+                top: { type: "tween" },
+                scale: { type: "spring", damping: 12 },
+              }}
               variants={SetVariants}
-              animate={SetAnimation}
+              animate={SetAnimation2}
             />
 
             <div
@@ -444,7 +470,7 @@ const OtherMotion = () => {
             />
             <div
               //    whileTap={setTimer(TimerG)}
-              onClick={Setcyc}
+              onClick={Setcyc3}
               className="SetBtn"
               style={{
                 width: 60,
@@ -473,9 +499,13 @@ const OtherMotion = () => {
                 right: 30,
                 transformOrigin: "131px 0px",
               }}
-              transition={{ type: "tween", duration: 0.2 }}
+              transition={{
+                left: { type: "tween" },
+                top: { type: "tween" },
+                scale: { type: "spring", damping: 12 },
+              }}
               variants={SetVariants}
-              animate={SetAnimation}
+              animate={SetAnimation3}
             />
             <StopWatch />
             <div
@@ -494,7 +524,7 @@ const OtherMotion = () => {
             id="Clock4"
           >
             <div
-              onClick={Setcyc}
+              onClick={Setcyc4}
               className="SetBtn"
               style={{
                 width: 60,
@@ -523,9 +553,13 @@ const OtherMotion = () => {
                 right: 30,
                 transformOrigin: "131px 0px",
               }}
-              transition={{ type: "tween", duration: 0.2 }}
+              transition={{
+                left: { type: "tween" },
+                top: { type: "tween" },
+                scale: { type: "spring", damping: 12 },
+              }}
               variants={SetVariants}
-              animate={SetAnimation}
+              animate={SetAnimation4}
             />
             <img
               src={CounterVar}

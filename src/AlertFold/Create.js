@@ -190,12 +190,13 @@ const Create = () => {
             damping: 18,
             stiffness: 105,
           }}
-        />
+  />
         <motion.div
           className="KeyBoard"
           style={KeyboardStyle}
           variants={KeyBoardVariants}
           animate={animationKeyBoard}
+          transition={{ type: "tween" }}
         />
         <div
           className="blackBg"
