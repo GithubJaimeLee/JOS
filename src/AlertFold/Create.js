@@ -27,7 +27,7 @@ const FingerStyle = {
   backgroundRepeat: "no-repeat",
 };
 const ContactBubbleStyle = {
-  width: 375,
+  width: 360,
   height: 812,
 
   opacity: 1,
@@ -38,7 +38,7 @@ const ContactBubbleStyle = {
   zIndex: 20,
 };
 const KeyboardStyle = {
-  width: 375,
+  width: 360,
   height: 290,
 
   backgroundImage: `url(${WindowInputKeyboard})`,
@@ -77,7 +77,7 @@ const KeyBoardVariants = {
 
 const ContactHeaderStyle = {
   backgroundImage: `url(${ContactHeader})`,
-  width: 375,
+  width: 360,
   height: 159,
   position: "fixed",
   zIndex: 2,
@@ -87,7 +87,7 @@ const ContactBodyStyle = {
   backgroundImage: `url(${ContactBody})`,
   position: "absolute",
   top: 0,
-  width: 375,
+  width: 360,
   height: 1169,
   zIndex: 1,
   // backgroundColor: "#000000",
@@ -108,7 +108,7 @@ const ContactFooterStyle = {
   backgroundImage: `url(${ContactFooter})`,
   position: "absolute",
   bottom: 0,
-  width: 375,
+  width: 360,
   height: 65,
   zIndex: 1,
 };
@@ -164,7 +164,7 @@ const Create = () => {
             type: "tween",
           }}
           style={{
-            width: 375,
+            width: 360,
             height: 812,
             position: "absolute",
             overflow: "hidden",
@@ -200,7 +200,7 @@ const Create = () => {
                 width: 360,
                 height: 65,
                 position: "fixed",
-                top: 800,
+                top: 735,
                 opacity: 1,
                 zIndex: 1000,
               }}
@@ -215,7 +215,6 @@ const Create = () => {
                 zIndex: 1,
                 display: "grid",
                 justifyContent: "end",
-
                 position: "fixed",
               }}
             />
@@ -244,6 +243,7 @@ const Create = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 1,
+                position: "-webkit-sticky",
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -258,6 +258,7 @@ const Create = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 1,
+                position: "-webkit-sticky",
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -272,6 +273,7 @@ const Create = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 1,
+                position: "-webkit-sticky",
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -285,6 +287,7 @@ const Create = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 0,
+                position: "-webkit-sticky",
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -298,6 +301,7 @@ const Create = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 0,
+                position: "-webkit-sticky",
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -311,6 +315,7 @@ const Create = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 0,
+                position: "-webkit-sticky",
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -341,10 +346,10 @@ const Create = () => {
           className="blackBg"
           style={{
             position: "absolute",
-            width: 375,
-            height: 812,
+            width: 360,
+            height: 800,
             zIndex: -10,
-            backgroundColor: "#000000",
+            backgroundColor: "#000",
           }}
         />
       </div>
