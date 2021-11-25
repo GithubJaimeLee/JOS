@@ -258,7 +258,7 @@ const WindowJump = () => {
                 top: 210,
                 zIndex: 1,
                 display: "grid",
-                justifyItems: "end",
+                justifyContent: "end",
                 position: "fixed",
               }}
             />

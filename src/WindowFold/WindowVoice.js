@@ -91,11 +91,11 @@ const WindowVoice = () => {
           onClick={() => cycleAnimation()}
           style={ContactBodyStyle}
         >
-          <div
+          {/*        <div
             className="Finger"
             //  onClick={() => cycleAnimation()}
             style={FingerStyle}
-          />
+          /> */}
           <motion.div
             onClick={() => cycleAnimation()}
             className="VoiceBar"
@@ -118,7 +118,7 @@ const WindowVoice = () => {
             transition={{ type: "tween" }}
           />
         </motion.div>
-      </div>
+      </div>{" "}
       <Bg />
     </div>
   );
