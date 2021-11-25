@@ -299,7 +299,7 @@ const DChange = () => {
             position: "absolute",
             top: 0,
             opacity: 1,
-            zIndex: "-10",
+            zIndex: 10,
           }}
           transition={{ type: "tween", duration: 1 }}
         />
