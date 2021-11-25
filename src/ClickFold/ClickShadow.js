@@ -9,7 +9,7 @@ import Close from "../Icon/Close.png";
 
 import { useRef } from "react";
 import { useMotionValue, useTransform, useElementScroll } from "framer-motion";
-import SetHeader from "../Img/WSetHeader.png";
+import SetHeader from "../Img/SetHeader.png";
 import SetBody from "../Img/SetBody.png";
 import NavBarPage from "../Component/NavBarPage";
 import OneFingerClick from "../Img/OneFingerClick.png";
@@ -107,21 +107,6 @@ const ClickShadow = () => {
                   zIndex: 11,
                 }}
               />
-              <motion.p
-                className="SetP"
-                style={{
-                  fontSize: scale,
-                  position: "relative",
-                  top: 52,
-                  left: 20,
-                  margin: 0,
-                  fontWeight: "bold",
-                  zIndex: 10,
-                }}
-              >
-                {" "}
-                设置
-              </motion.p>
             </div>
 
             <motion.div

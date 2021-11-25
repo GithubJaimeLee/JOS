@@ -109,7 +109,7 @@ const WindowVoice = () => {
               borderRadius: 12,
               position: "absolute",
               //   x: 100,
-              //   y: 8,
+              x: 15,
               top: 100,
               right: 30,
               zIndex: 20,
