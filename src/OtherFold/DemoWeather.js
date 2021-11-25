@@ -253,18 +253,11 @@ const DemoWeather = () => {
           top: 0,
         }}
       >
-        {/*        <div
-          style={{
-            width: 375,
-
-            height: 812,
-          }}
-        ></div> */}
-        <div
+        {/*         <div
           className="SetBtn"
           onClick={() => UPcycleAnimation()}
           style={SetBtnStyle}
-        />
+        /> */}
 
         <div
           className="ThisBackground"

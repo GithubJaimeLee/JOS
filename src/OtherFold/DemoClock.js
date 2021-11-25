@@ -244,11 +244,11 @@ const OtherMotion = () => {
           top: 0,
         }}
       >
-        <div
+        {/*        <div
           className="SetBtn"
           onClick={() => UPcycleAnimation()}
           style={SetBtnStyle}
-        />
+        /> */}
         <Tabs
           id="Clock"
           defaultActiveKey="1"

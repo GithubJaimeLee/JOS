@@ -31,7 +31,7 @@ const DeleteList = () => {
           style={{
             backgroundColor: "#fff",
             top: 0,
-            width: 375,
+            width: 360,
             height: 100,
             position: "absolute",
             opacity: 1,
@@ -51,8 +51,8 @@ const DeleteList = () => {
           className="Bg"
           style={{
             backgroundImage: `url(${MessageBg})`,
-            width: 375,
-            height: 812,
+            width: 360,
+            height: 800,
             position: "absolute",
             top: 0,
             opacity: 1,

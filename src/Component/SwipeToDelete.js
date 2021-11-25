@@ -120,7 +120,7 @@ const SwipeToDelete = () => {
       // dragDistance <= -DELETE_BTN_WIDTH / 3
       dragDistance <
       WinWidth / 2 + 120
-      // 375/2-70
+      // 360/2-70
       // && dragDistance <= -DELETE_BTN_WIDTH / 3
     ) {
       console.log("屏幕宽" + WinWidth);
@@ -146,15 +146,15 @@ const SwipeToDelete = () => {
     <main
       className="screen"
       style={{
-        // height: 812,
-        width: 375,
+        // height: 800,
+        width: 360,
         //  backgroundColor: "grey",
       }}
     >
       <div
         className="DeleteUl"
         style={{
-          width: 375,
+          width: 360,
           position: "absolute",
           left: 0,
           top: 200,
@@ -168,7 +168,7 @@ const SwipeToDelete = () => {
               exit={MESSAGE_DELETE_ANIMATION}
               transition={MESSAGE_DELETE_TRANSITION}
               style={{
-                width: 375,
+                width: 360,
                 position: "relative",
 
                 borderTop: "1px solid #f7f7f7",
@@ -178,7 +178,7 @@ const SwipeToDelete = () => {
               <motion.div
                 drag="x"
                 // dragDirectionLock
-                dragElastic={0.7}
+                dragElastic={0.5}
                 transition={{
                   type: "tween",
                 }}
@@ -226,6 +226,7 @@ const SwipeToDelete = () => {
                   //opacity: 0.5,
                   backgroundImage: `url(${message.avatar})`,
                 }}
+                transition={{ type: "spring", damping: 26, stiffness: 400 }}
               >
                 {/*     <img
                   className="user-icon"
