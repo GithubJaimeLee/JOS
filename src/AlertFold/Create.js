@@ -11,6 +11,8 @@ import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
 import NewContact from "../Img/NewContact.png";
 
 const FingerStyle = {
+  y: -40,
+  x: 118,
   width: 100,
   height: 100,
   backgroundImage: `url(${FingerClick})`,
@@ -190,7 +192,7 @@ const Create = () => {
             damping: 18,
             stiffness: 105,
           }}
-  />
+        />
         <motion.div
           className="KeyBoard"
           style={KeyboardStyle}

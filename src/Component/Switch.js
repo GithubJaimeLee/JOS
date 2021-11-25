@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
-import NavBarPage from "../Component/NavBarPage";
-import Bg from "../Component/Bg";
+
 import { motion, useCycle } from "framer-motion";
 
 const SwitchBtn = () => {
@@ -42,29 +41,12 @@ const SwitchBtn = () => {
       left: 20,
     },
   };
-  const RotateVariants = {
-    animationOne: {
-      height: 16,
-      width: 8,
-      borderRadius: "4px",
-      backgroundColor: "#fff",
-    },
-    animationTwo: {
-      backgroundColor: "#b2b2b2",
-      height: 16,
-      width: 16,
-      borderRadius: "16px",
-    },
-  };
 
   const [BtnAnimation, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
   );
-  const [RotateAnimation, cycleRotateAnimation] = useCycle(
-    "animationOne",
-    "animationTwo"
-  );
+
   const spring = {
     type: "tween",
     duration: 0.2,
