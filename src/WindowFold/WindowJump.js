@@ -31,14 +31,14 @@ const boxAnimation = {
     scale: 0,
     width: 131,
     height: 118,
-    opacity: 1,
-    left: -62,
+    opacity: 0,
+    left: -72,
     top: -1,
   },
   animationTwo: {
+    opacity: 1,
     scale: 1,
-
-    left: -60,
+    left: -72,
     top: 40,
   },
 };
@@ -47,7 +47,7 @@ const P1V = {
   animationOne: {
     scale: 1,
     zIndex: 100,
-    top: 55,
+    top: 72,
     right: 22,
   },
   animationTwo: {
@@ -56,29 +56,21 @@ const P1V = {
   },
 };
 
+const P2V = {
+  animationOne: {
+    opacity: 1,
+  },
+  animationTwo: {
+    opacity: 0.5,
+  },
+};
 const ContactHeaderStyle = {
   backgroundImage: `url(${ContactHeader})`,
-  width: 375,
+  width: 360,
   height: 159,
   position: "fixed",
   zIndex: 1,
   top: 0,
-};
-const ContactBodyStyle = {
-  backgroundImage: `url(${ContactBody})`,
-  position: "absolute",
-  top: 159,
-  width: 375,
-  height: 1169,
-  zIndex: 0,
-};
-const ContactFooterStyle = {
-  backgroundImage: `url(${ContactFooter})`,
-  position: "absolute",
-  bottom: 0,
-  width: 375,
-  height: 65,
-  zIndex: 1,
 };
 
 const WindowJump = () => {
@@ -138,17 +130,18 @@ const WindowJump = () => {
           overflow: "hidden",
           justifyContent: "center",
           position: "absolute",
-
           top: 0,
         }}
       >
         <div
-          className="ScreenPhoneSize"
+          className="Screen"
           style={{
+            width: 360,
             display: "flex",
             justifyContent: "center",
             position: "absolute",
-            height: 812,
+            height: 800,
+            overflow: "scroll",
             top: 0,
           }}
         >
@@ -167,19 +160,38 @@ const WindowJump = () => {
               }}
             />
             <motion.div
-              className="RedPointOne"
+              className="RedPoint"
               style={{
                 position: "absolute",
                 backgroundColor: "red",
-                width: 10,
-                height: 10,
+                width: 8,
+                height: 8,
                 borderRadius: 5,
                 scale: 1,
                 zIndex: 100,
-                top: 55,
+                top: 72,
                 right: 22,
               }}
               variants={P1V}
+              animate={animationBox}
+              transition={{ type: "tween" }}
+            />
+            <motion.div
+              className="BlackPoint"
+              style={{
+                position: "absolute",
+                // backgroundColor: "red",
+                border: "3px solid #000",
+
+                width: 8,
+                height: 8,
+                borderRadius: 5,
+                scale: 1,
+                zIndex: 100,
+                top: 60,
+                right: 22,
+              }}
+              variants={P2V}
               animate={animationBox}
               transition={{ type: "tween" }}
             />
@@ -200,57 +212,41 @@ const WindowJump = () => {
                   width: 131,
                   height: 118,
                   opacity: 1,
-                  left: -62,
+                  left: -72,
                   top: -1,
                 }}
                 variants={boxAnimation}
                 animate={animationBox}
-                transition={{ type: "tween" }}
-              >
-                {/*    <motion.div
-                  className="RedPointTwo"
-                  style={{
-                    position: "absolute",
-                    backgroundColor: "red",
-                    width: 10,
-                    height: 10,
-                    top: 30,
-                    left: 70,
-                    zIndex: 1,
-                    scale: 0,
-                    borderRadius: 5,
-                  }}
-                  variants={P2V}
-                  animate={animationBox}
-                /> */}
-              </motion.div>
+                transition={{
+                  left: { type: "tween" },
+                  top: { type: "tween" },
+                  scale: { type: "spring", damping: 12 },
+                }}
+              ></motion.div>
             </div>
           </div>
           <div
-            className="ContactFooter"
+            className="Fix"
             style={{
-              backgroundImage: `url(${ContactFooter})`,
-              width: 375,
-              height: 65,
+              width: 360,
               position: "absolute",
-              bottom: 0,
-              opacity: 1,
-              zIndex: 1000,
-            }}
-          />
-          <div
-            className="Body"
-            style={{
-              backgroundColor: "#f7f7f7",
-              width: 375,
-              height: 812,
-              position: "absolute",
+              height: 800,
+
               top: 0,
-              overflow: "scroll",
-              opacity: 1,
-              zIndex: -1,
             }}
           >
+            <div
+              className="ContactFooter"
+              style={{
+                backgroundImage: `url(${ContactFooter})`,
+                width: 360,
+                height: 65,
+                position: "fixed",
+                top: 800,
+                opacity: 1,
+                zIndex: 1000,
+              }}
+            />
             <div
               className="ContactSetBar"
               style={{
@@ -258,124 +254,126 @@ const WindowJump = () => {
                 height: 456,
                 backgroundImage: `url(${ContactSetBar})`,
                 top: 210,
-                right: 0,
                 zIndex: 1,
+                display: "grid",
+                justifyItems: "end",
                 position: "fixed",
               }}
             />
-            <motion.div
-              className="ContactBody"
-              drag="y"
-              dragConstraints={{ top: -580, bottom: 0 }}
-              dragElastic={1}
-              style={{
-                backgroundImage: `url(${ContactBody})`,
-                top: 159,
-                width: 375,
-                height: 1169,
-                position: "absolute",
-                opacity: 1,
-                zIndex: 0,
-              }}
-            >
-              <div
-                className="MaskA"
-                style={{
-                  backgroundImage: `url(${A})`,
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#ddd",
-                  opacity: 1,
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 55,
-                }}
-              />
-              <div
-                className="MaskF"
-                style={{
-                  backgroundImage: `url(${F})`,
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#ddd",
-                  opacity: 1,
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 260,
-                }}
-              />
-              <div
-                className="MaskL"
-                style={{
-                  backgroundImage: `url(${L})`,
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#ddd",
-                  opacity: 1,
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 45,
-                }}
-              />
-              <div
-                className="MaskW"
-                style={{
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#ddd",
-                  opacity: 0,
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 95,
-                }}
-              />
-              <div
-                className="MaskX"
-                style={{
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#ddd",
-                  opacity: 0,
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 95,
-                }}
-              />
-              <div
-                className="MaskZ"
-                style={{
-                  width: 375,
-                  height: 50,
-                  backgroundColor: "#ddd",
-                  opacity: 0,
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 215,
-                }}
-              />
-            </motion.div>
+          </div>
+
+          <motion.div
+            className="ContactBody"
+            drag="y"
+            dragConstraints={{ top: -580, bottom: 0 }}
+            dragElastic={1}
+            style={{
+              backgroundImage: `url(${ContactBody})`,
+              top: 159,
+              width: 360,
+              height: 1169,
+              position: "absolute",
+              opacity: 1,
+              zIndex: 0,
+            }}
+          >
             <div
-              className="Background"
+              className="MaskA"
               style={{
-                backgroundColor: "#f7f7f7",
-                width: 375,
-                height: 812,
-                position: "absolute",
-                top: 0,
+                backgroundImage: `url(${A})`,
+                width: 360,
+                height: 50,
+                backgroundColor: "#ddd",
                 opacity: 1,
-                zIndex: -1,
+                position: "sticky",
+                top: 159,
+                left: 0,
+                marginTop: 55,
               }}
             />
-          </div>
+            <div
+              className="MaskF"
+              style={{
+                backgroundImage: `url(${F})`,
+                width: 360,
+                height: 50,
+                backgroundColor: "#ddd",
+                opacity: 1,
+                position: "sticky",
+                top: 159,
+                left: 0,
+                marginTop: 260,
+              }}
+            />
+            <div
+              className="MaskL"
+              style={{
+                backgroundImage: `url(${L})`,
+                width: 360,
+                height: 50,
+                backgroundColor: "#ddd",
+                opacity: 1,
+                position: "sticky",
+                top: 159,
+                left: 0,
+                marginTop: 45,
+              }}
+            />
+            <div
+              className="MaskW"
+              style={{
+                width: 360,
+                height: 50,
+                backgroundColor: "#ddd",
+                opacity: 0,
+                position: "sticky",
+                top: 159,
+                left: 0,
+                marginTop: 95,
+              }}
+            />
+            <div
+              className="MaskX"
+              style={{
+                width: 360,
+                height: 50,
+                backgroundColor: "#ddd",
+                opacity: 0,
+                position: "sticky",
+                top: 159,
+                left: 0,
+                marginTop: 95,
+              }}
+            />
+            <div
+              className="MaskZ"
+              style={{
+                width: 360,
+                height: 50,
+                backgroundColor: "#ddd",
+                opacity: 0,
+                position: "sticky",
+                top: 159,
+                left: 0,
+                marginTop: 215,
+              }}
+            />
+          </motion.div>
+          <div
+            className="Background"
+            style={{
+              backgroundColor: "#fff",
+              width: 360,
+              height: 800,
+              position: "absolute",
+              top: 0,
+              opacity: 1,
+              zIndex: -1,
+            }}
+          />
         </div>
-        <Bg />
       </div>
+      <Bg />
     </div>
   );
 };
