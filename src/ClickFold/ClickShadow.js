@@ -21,7 +21,7 @@ const SetWindowVariants = {
     y: 780,
   },
   UPanimationTwo: {
-    y: 0,
+    y: 550,
   },
 };
 const ClickShadow = () => {
@@ -449,12 +449,12 @@ const ClickShadow = () => {
                 position: "absolute",
                 top: 50,
                 width: 350,
-                height: 740,
+                height: 180,
                 borderRadius: 12,
                 display: "flex",
                 justifyContent: "center",
                 alignContent: "center",
-                backgroundColor: "rgba(255,255,255,0.7)",
+                backgroundColor: "rgba(255,255,255,0.9)",
                 // filter: "blur(2px)",
                 boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
                 zIndex: 100,

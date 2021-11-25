@@ -45,6 +45,7 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
             className="Help"
             alt=" "
             style={{
+              pointerEvents: "auto",
               filter:
                 "drop-shadow(0px 0px 2px #fff) drop-shadow(0px 0px 8px #fff)",
               backgroundImage: `url(${Help})`,

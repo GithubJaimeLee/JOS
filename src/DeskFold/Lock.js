@@ -2,16 +2,11 @@ import { motion, useCycle } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import CalendarWindow from "../Img/CalendarWindow.png";
-
 import Bg from "../Component/Bg";
-
 import LockBg from "../Img/LockBg.png";
 import Phone from "../Img/Phone.png";
 import Camera from "../Img/Camera.png";
 import Point from "../Img/Point.png";
-import LockRedBlue from "../Img/LockRedBlue.png";
 import LockPlay from "../Img/LockPlay.png";
 import LockList from "../Img/LockList.png";
 import WLockPlay from "../Img/WLockPlay.png";
@@ -19,29 +14,7 @@ import WLockList from "../Img/WLockList.png";
 import PointBgT from "../Img/PointBgT.png";
 import Health2000 from "../Img/Health2000.png";
 import BHealth2000 from "../Img/BHealth2000.png";
-const boxChange = {
-  width: 0,
-  height: 0,
-  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.1)",
-  opacity: 1,
-  backgroundImage: `url(${CalendarWindow})`,
-  borderRadius: 12,
-  position: "absolute",
-  right: 100,
 
-  top: 40,
-  zIndex: 2,
-};
-const boxPress = {
-  display: "block",
-  position: "relative",
-  right: -128,
-  top: 46,
-  width: 80,
-  height: 80,
-  textAlign: "center",
-  zIndex: 2,
-};
 const Background = {
   backgroundImage: `url(${LockBg})`,
   position: "absolute",
@@ -51,7 +24,6 @@ const Background = {
 };
 
 const WindowPull = () => {
-  const [XX, setXX] = useState(1);
   const [CameraX, setCameraX] = useState(0);
   const [CameraY, setCameraY] = useState(0);
   const [CameraScale, setCameraScale] = useState(1);
@@ -127,8 +99,9 @@ const WindowPull = () => {
                 backgroundImage: `url(${HealthBg})`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "50% 50%",
-                transformOrigin: "100px 100px",
+                transformOrigin: "0% 0%",
               }}
+              transition={{ type: "spring", damping: 26, stiffness: 400 }}
               dragElastic={1}
               animate={{
                 x: HealthX,
@@ -142,6 +115,8 @@ const WindowPull = () => {
                 setRedO(1);
                 setHealthO(0);
                 setHealthOO(1);
+                setHealthX(-1);
+                setHealthY(-1);
                 setHealthScale(1);
                 setLockBgO(1);
               }}
@@ -155,6 +130,8 @@ const WindowPull = () => {
                 setLockBgB();
                 setLockBgR();
                 setLockBgO(0);
+                setHealthX(0);
+                setHealthY(0);
               }}
               onDragEnd={() => {
                 setPointScale(1);
@@ -164,9 +141,10 @@ const WindowPull = () => {
                 setHealthOO(1);
                 setHealthScale(1);
                 setLockBgO(1);
+                setHealthX(-1);
+                setHealthY(-1);
               }}
               dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              transition={{ type: "spring" }}
             />
           </div>
           <motion.div
@@ -183,11 +161,12 @@ const WindowPull = () => {
               backgroundImage: `url(${Phone})`,
               transformOrigin: "100px 100px",
             }}
+            transition={{ type: "spring", damping: 26, stiffness: 400 }}
             dragElastic={1}
             animate={{ x: PhoneX, y: PhoneY, scale: PhoneScale }}
             onDragCancel={() => {
-              setPhoneX(0);
-              setPhoneY(0);
+              setPhoneX(-1);
+              setPhoneY(-1);
               setPointScale(1);
               setPhoneScale(1);
               setRedO(1);
@@ -216,8 +195,8 @@ const WindowPull = () => {
               setPhoneScale(1);
             }}
             onDragEnd={() => {
-              setPhoneX(0);
-              setPhoneY(0);
+              setPhoneX(-1);
+              setPhoneY(-1);
               setPointScale(1);
               setPhoneScale(1);
               setRedO(1);
@@ -348,6 +327,7 @@ const WindowPull = () => {
               zIndex: 10,
               backgroundImage: `url(${Camera})`,
             }}
+            transition={{ type: "spring", damping: 26, stiffness: 400 }}
             dragElastic={1}
             animate={{ x: CameraX, y: CameraY, scale: CameraScale }}
             onDragCancel={() => {
@@ -403,6 +383,7 @@ const WindowPull = () => {
               zIndex: 10,
               backgroundImage: `url(${Point})`,
             }}
+            transition={{ type: "spring", damping: 26, stiffness: 400 }}
             dragElastic={1}
             animate={{ x: GreyBtnX, y: GreyBtnY, scale: GreyBtnScale }}
             onDragCancel={(event, info) => {
