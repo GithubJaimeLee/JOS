@@ -74,7 +74,6 @@ const WindowVoice = () => {
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
-
       <div
         className="ScreenCenter"
         style={{
@@ -119,8 +118,8 @@ const WindowVoice = () => {
             transition={{ type: "tween" }}
           />
         </motion.div>
-        <Bg />
       </div>
+      <Bg />
     </div>
   );
 };

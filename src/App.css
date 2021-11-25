@@ -56,9 +56,8 @@ div.ListCard {
     height: 100vh !important;
     background-repeat: no-repeat !important;
   }
-  .DownloadText,
-  .DownloadBtn {
-    display: none;
+  .DownloadText {
+    display: none !important;
   }
 }
 @media screen and (max-width: 992px) {
@@ -77,5 +76,10 @@ div.ListCard {
 @media screen and (min-width: 375px) {
   .ScreenCenter {
     height: 800px !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  div.DownloadBtn {
+    display: none !important;
   }
 }

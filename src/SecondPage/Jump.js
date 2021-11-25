@@ -80,15 +80,15 @@ const Jump = () => {
                   </motion.div>
                 </Link>
 
-                <Link to="/Jump/JumpSecond" style={{ textDecoration: "none" }}>
+                {/*           <Link to="/Jump/JumpSecond" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 30 }}>
                       应用间跳转
                       <br />
-                      （横滑定位）
+                    （横滑定位）
                     </p>
                   </motion.div>
-                </Link>
+                </Link> */}
                 <Link to="/Jump/EditList" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>列表滑动</p>

@@ -15,7 +15,7 @@ const MaskStyle = {
   backgroundColor: "#000",
   textAlign: "center",
   zIndex: 1,
-  opacity: 0,
+
   display: "flex",
   justifyContent: "center",
   y: 0,
@@ -33,7 +33,7 @@ const SideStyle = {
   y: 101,
   x: -320,
 };
-const BoxAnimation = {
+const SideVariants = {
   animationOne: {
     x: -320,
   },
@@ -52,13 +52,10 @@ const FingerVariants = {
     opacity: 0,
   },
 };
-const BgAnimation = {
-  BgAnimationOne: {
-    display: "none",
-  },
+const BgVariants = {
+  BgAnimationOne: { opacity: 0.5 },
   BgAnimationTwo: {
-    display: "block",
-    opacity: 0.5,
+    opacity: 0,
   },
 };
 
@@ -75,11 +72,11 @@ const ContactBodyStyle = {
 };
 
 const WindowSide = () => {
-  const [animationBox, cycleAnimation] = useCycle(
+  const [SideAnimate, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
   );
-  const [animationBg, BgCycleAnimation] = useCycle(
+  const [BgAnimation, BgCycleAnimation] = useCycle(
     "BgAnimationOne",
     "BgAnimationTwo"
   );
@@ -138,15 +135,11 @@ const WindowSide = () => {
           top: 0,
         }}
       >
-        <div
-          className="ContactBody"
-          onClick={() => cycleAnimation() & BgCycleAnimation()}
-          style={ContactBodyStyle}
-        >
+        <div className="ContactBody" style={ContactBodyStyle}>
           <motion.div
             className="FingerBtn"
             variants={FingerVariants}
-            animate={animationBox}
+            animate={SideAnimate}
             transition={{ type: "tween" }}
             onClick={() => cycleAnimation() & BgCycleAnimation()}
             style={{
@@ -166,16 +159,16 @@ const WindowSide = () => {
           <motion.div
             className="boxChange"
             style={SideStyle}
-            variants={BoxAnimation}
-            animate={animationBox}
+            variants={SideVariants}
+            animate={SideAnimate}
             transition={{ type: "tween" }}
           />
           <motion.div
             onClick={() => cycleAnimation() & BgCycleAnimation()}
-            className="MaskChange"
+            className="Mask"
             style={MaskStyle}
-            variants={BgAnimation}
-            animate={animationBg}
+            variants={BgVariants}
+            animate={BgAnimation}
           />
         </div>
         <Bg />

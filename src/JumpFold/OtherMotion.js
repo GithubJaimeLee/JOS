@@ -178,13 +178,13 @@ const JumpMotion = () => {
         <div
           className="ThisBackground"
           style={{
-            width: 375,
+            width: 360,
             display: "flex",
             justifyContent: "center",
             position: "absolute",
-            height: 812,
+            height: 800,
             overflow: "scroll",
-            backgroundColor: "#E6ECF4",
+            backgroundColor: "#fff",
             overflow: "hidden",
             top: 0,
           }}
@@ -193,7 +193,7 @@ const JumpMotion = () => {
             className="Box"
             drag={true}
             dragElastic={0.1}
-            dragConstraints={{ left: -80, right: 80, top: -100, bottom: 380 }}
+            dragConstraints={{ left: -160, right: 160, top: 100, bottom: 720 }}
             animate={{
               y: Yaxis,
               x: Xaxis,
@@ -203,7 +203,7 @@ const JumpMotion = () => {
             style={{
               opacity: Opacity,
               rotate: Rotate,
-              top: 200,
+              top: 0,
               width: 100,
               height: 100,
               backgroundColor: `#${Color}`,

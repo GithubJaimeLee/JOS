@@ -219,8 +219,8 @@ const DChange = () => {
               transition={{ type: "tween" }}
               variants={MaskAnimation}
               animate={animationMask}
-              onMouseDown={mouseDown}
-              onMouseUp={mouseUp}
+              whileTap={mouseDown}
+              onTapCancel={mouseUp}
             >
               <motion.div
                 className="SetCenter"
@@ -293,7 +293,7 @@ const DChange = () => {
           className="Background"
           onClick={OnClickClose}
           style={{
-            background: "#E6ECF4",
+            background: "#fff",
             width: 375,
             height: 812,
             position: "absolute",

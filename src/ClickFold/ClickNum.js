@@ -85,7 +85,7 @@ const ClickNum = () => {
               <motion.div className="C" whileTap={VBoxTap} style={ColGridBox} />
             </div>
           </div>
-          <div
+          {/*     <div
             className="OneFingerClick"
             style={{
               width: 32,
@@ -96,7 +96,7 @@ const ClickNum = () => {
               left: 66,
               zIndex: 11,
             }}
-          />
+          /> */}
         </div>
       </div>
       <Bg />

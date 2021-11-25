@@ -17,6 +17,7 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
           width: "100vw",
           //  backgroundColor: "rgba(255, 255, 255, 0.2)",
           //  backdropFilter: "blur(2px)",
+          pointerEvents: "none",
           zIndex: 1000,
         }}
         expand="lg"
@@ -29,6 +30,7 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
               alt="WbackIcon"
               style={{
                 width: 30,
+                pointerEvents: "auto",
                 position: "absolute",
                 filter:
                   "drop-shadow(0px 0px 2px #fff) drop-shadow(0px 0px 8px #fff)",

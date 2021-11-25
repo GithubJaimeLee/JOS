@@ -29,7 +29,9 @@ const ClickZoom = () => {
   };
   const [Scale, setScale] = useState(1);
   const [Duration, setDuration] = useState(0.1);
-  const [O, setO] = useState(0);
+  //const [O, setO] = useState(0);
+
+  const [O, setO] = useCycle(0, 0.4);
 
   const Info = <p>桌面图标</p>;
   return (
@@ -69,8 +71,8 @@ const ClickZoom = () => {
           style={{
             //   backgroundImage: `url(${ClickOOS})`,
             position: "absolute",
-            width: 375,
-            backgroundColor: "#E6ECF4",
+            width: 360,
+            backgroundColor: "#fff",
             height: 800,
             overflow: "hidden",
             display: "grid",
@@ -81,280 +83,292 @@ const ClickZoom = () => {
         >
           <div
             style={{
-              width: 375,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              position: "absolute",
+              top: 70,
+              height: 680,
+
+              display: "grid",
             }}
           >
-            <motion.div
-              className="Btn"
+            <div
               style={{
-                width: 52,
-                height: 52,
-                backgroundImage: `url(${Zoom085})`,
-                position: "relaitve",
-                zIndex: 11,
-
-                borderRadius: 12,
-                top: 374,
+                width: 360,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
               }}
-              whileTap={{ scale: Scale * 0.85 }}
-              transition={{ duration: Duration }}
             >
               <motion.div
-                className="BtnMask"
+                className="Btn"
                 style={{
                   width: 52,
                   height: 52,
-                  backgroundColor: "#000",
+                  //   backgroundImage: `url(${Zoom085})`,
+                  position: "relaitve",
+                  zIndex: 11,
+                  backgroundColor: "#eee",
                   borderRadius: 12,
-                  opacity: 0,
-                  zIndex: 1,
+                  top: 374,
                 }}
-                whileTap={{
-                  opacity: O,
-                  transition: { duration: Duration },
+                whileTap={{ scale: Scale * 0.85 }}
+                transition={{ duration: Duration }}
+              >
+                <motion.div
+                  className="BtnMask"
+                  style={{
+                    width: 52,
+                    height: 52,
+                    backgroundColor: "#000",
+                    borderRadius: 12,
+                    opacity: 0,
+                    zIndex: 1,
+                  }}
+                  whileTap={{
+                    opacity: O,
+                    transition: { duration: Duration },
+                  }}
+                />
+              </motion.div>
+              <div
+                style={{
+                  position: "relaitve",
+
+                  fontSize: 12,
+                  width: 100,
+                  display: "flex",
+
+                  justifyContent: "center",
                 }}
-              />
-            </motion.div>
+              >
+                缩放比例:0.85
+              </div>
+            </div>
             <div
               style={{
-                position: "relaitve",
-
-                fontSize: 12,
-                width: 100,
+                width: 360,
                 display: "flex",
-
                 justifyContent: "center",
+                alignItems: "center",
               }}
-            >
-              缩放比例:0.85
-            </div>
-          </div>
-          <div
-            style={{
-              width: 375,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <motion.div
-              className="Btn"
-              style={{
-                width: 52,
-                height: 112,
-                backgroundImage: `url(${Zoom088})`,
-                position: "relaitve",
-                zIndex: 11,
-
-                borderRadius: 12,
-                top: 374,
-              }}
-              whileTap={{ scale: Scale * 0.88 }}
-              transition={{ duration: Duration }}
             >
               <motion.div
-                className="BtnMask"
+                className="Btn"
                 style={{
                   width: 52,
                   height: 112,
-                  backgroundColor: "#000",
+                  // backgroundImage: `url(${Zoom088})`,
+                  backgroundColor: "#eee",
+                  position: "relaitve",
+                  zIndex: 11,
+
                   borderRadius: 12,
-                  opacity: 0,
-                  zIndex: 1,
+                  top: 374,
                 }}
-                whileTap={{
-                  opacity: O,
-                  transition: { duration: Duration },
+                whileTap={{ scale: Scale * 0.88 }}
+                transition={{ duration: Duration }}
+              >
+                <motion.div
+                  className="BtnMask"
+                  style={{
+                    width: 52,
+                    height: 112,
+                    backgroundColor: "#000",
+                    borderRadius: 12,
+                    opacity: 0,
+                    zIndex: 1,
+                  }}
+                  whileTap={{
+                    opacity: O,
+                    transition: { duration: Duration },
+                  }}
+                />
+              </motion.div>
+              <div
+                style={{
+                  position: "relaitve",
+
+                  fontSize: 12,
+                  width: 100,
+                  display: "flex",
+
+                  justifyContent: "center",
                 }}
-              />
-            </motion.div>
+              >
+                缩放比例:0.88
+              </div>
+            </div>
             <div
               style={{
-                position: "relaitve",
-
-                fontSize: 12,
-                width: 100,
+                width: 360,
                 display: "flex",
-
                 justifyContent: "center",
+                alignItems: "center",
               }}
-            >
-              缩放比例:0.88
-            </div>
-          </div>
-          <div
-            style={{
-              width: 375,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <motion.div
-              className="Btn"
-              style={{
-                width: 112,
-                height: 112,
-                backgroundImage: `url(${Zoom09})`,
-                position: "relaitve",
-                zIndex: 11,
-
-                borderRadius: 12,
-                top: 374,
-              }}
-              whileTap={{ scale: Scale * 0.9 }}
-              transition={{ duration: Duration }}
             >
               <motion.div
-                className="BtnMask"
+                className="Btn"
                 style={{
                   width: 112,
                   height: 112,
-                  backgroundColor: "#000",
+                  //  backgroundImage: `url(${Zoom09})`,
+                  backgroundColor: "#eee",
+                  position: "relaitve",
+                  zIndex: 11,
+
                   borderRadius: 12,
-                  opacity: 0,
-                  zIndex: 1,
+                  top: 374,
                 }}
-                whileTap={{
-                  opacity: O,
-                  transition: { duration: Duration },
+                whileTap={{ scale: Scale * 0.9 }}
+                transition={{ duration: Duration }}
+              >
+                <motion.div
+                  className="BtnMask"
+                  style={{
+                    width: 112,
+                    height: 112,
+                    backgroundColor: "#000",
+                    borderRadius: 12,
+                    opacity: 0,
+                    zIndex: 1,
+                  }}
+                  whileTap={{
+                    opacity: O,
+                    transition: { duration: Duration },
+                  }}
+                />
+              </motion.div>
+              <div
+                style={{
+                  position: "relaitve",
+
+                  fontSize: 12,
+                  width: 100,
+                  display: "flex",
+
+                  justifyContent: "center",
                 }}
-              />
-            </motion.div>
+              >
+                缩放比例:0.90
+              </div>
+            </div>
             <div
               style={{
-                position: "relaitve",
-
-                fontSize: 12,
-                width: 100,
+                width: 360,
                 display: "flex",
-
                 justifyContent: "center",
+                alignItems: "center",
               }}
-            >
-              缩放比例:0.90
-            </div>
-          </div>
-          <div
-            style={{
-              width: 375,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <motion.div
-              className="Btn"
-              style={{
-                width: 174,
-                height: 229,
-                backgroundImage: `url(${Zoom091})`,
-                position: "relaitve",
-                zIndex: 11,
-
-                borderRadius: 12,
-                top: 374,
-              }}
-              whileTap={{ scale: Scale * 0.91 }}
-              transition={{ duration: Duration }}
             >
               <motion.div
-                className="BtnMask"
+                className="Btn"
                 style={{
                   width: 174,
                   height: 229,
-                  backgroundColor: "#000",
+                  //  backgroundImage: `url(${Zoom091})`,
+                  backgroundColor: "#eee",
+                  position: "relaitve",
+                  zIndex: 11,
+
                   borderRadius: 12,
-                  opacity: 0,
-                  zIndex: 1,
+                  top: 374,
                 }}
-                whileTap={{
-                  opacity: O,
-                  transition: { duration: Duration },
+                whileTap={{ scale: Scale * 0.91 }}
+                transition={{ duration: Duration }}
+              >
+                <motion.div
+                  className="BtnMask"
+                  style={{
+                    width: 174,
+                    height: 229,
+                    backgroundColor: "#000",
+                    borderRadius: 12,
+                    opacity: 0,
+                    zIndex: 1,
+                  }}
+                  whileTap={{
+                    opacity: O,
+                    transition: { duration: Duration },
+                  }}
+                />
+              </motion.div>
+              <div
+                style={{
+                  position: "relaitve",
+
+                  fontSize: 12,
+                  width: 100,
+                  display: "flex",
+
+                  justifyContent: "center",
                 }}
-              />
-            </motion.div>
+              >
+                缩放比例:0.91
+              </div>
+            </div>
             <div
               style={{
-                position: "relaitve",
-
-                fontSize: 12,
-                width: 100,
+                width: 360,
                 display: "flex",
-
                 justifyContent: "center",
+                alignItems: "center",
               }}
-            >
-              缩放比例:0.91
-            </div>
-          </div>
-          <div
-            style={{
-              width: 375,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <motion.div
-              className="Btn"
-              style={{
-                width: 221,
-                height: 52,
-                backgroundImage: `url(${Zoom093})`,
-                position: "relaitve",
-                zIndex: 11,
-
-                borderRadius: 23,
-                top: 374,
-              }}
-              whileTap={{ scale: Scale * 0.93 }}
-              transition={{ duration: Duration }}
             >
               <motion.div
-                className="BtnMask"
+                className="Btn"
                 style={{
                   width: 221,
                   height: 52,
-                  backgroundColor: "#000",
+                  //  backgroundImage: `url(${Zoom093})`,
+                  backgroundColor: "#eee",
+                  position: "relaitve",
+                  zIndex: 11,
+
                   borderRadius: 23,
-                  opacity: 0,
-                  zIndex: 1,
+                  top: 374,
                 }}
-                whileTap={{
-                  opacity: O,
-                  transition: { duration: Duration },
+                whileTap={{ scale: Scale * 0.93 }}
+                transition={{ duration: Duration }}
+              >
+                <motion.div
+                  className="BtnMask"
+                  style={{
+                    width: 221,
+                    height: 52,
+                    backgroundColor: "#000",
+                    borderRadius: 23,
+                    opacity: 0,
+                    zIndex: 1,
+                  }}
+                  whileTap={{
+                    opacity: O,
+                    transition: { duration: Duration },
+                  }}
+                />
+              </motion.div>
+              <div
+                style={{
+                  position: "relaitve",
+
+                  fontSize: 12,
+                  width: 100,
+                  display: "flex",
+
+                  justifyContent: "center",
                 }}
-              />
-            </motion.div>
-            <div
-              style={{
-                position: "relaitve",
-
-                fontSize: 12,
-                width: 100,
-                display: "flex",
-
-                justifyContent: "center",
-              }}
-            >
-              缩放比例:0.93
+              >
+                缩放比例:0.93
+              </div>
             </div>
+            <div
+              className="Background"
+              style={{
+                position: "absolute",
+                width: 360,
+                height: 800,
+                zIndex: 10,
+              }}
+            />
           </div>
-          <div
-            className="Background"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.5)",
-              position: "absolute",
-              width: 375,
-              height: 800,
-              zIndex: 10,
-            }}
-          />
-
           <motion.div
             className="SetWindow"
             style={{
@@ -499,8 +513,7 @@ const ClickZoom = () => {
                     style={{
                       marginTop: 5,
                     }}
-                    //   defaultChecked
-                    onChange={() => setO(0.4)}
+                    onClick={setO}
                   />
                 </div>
               </div>

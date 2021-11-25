@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { motion, useMotionValue, useTransform, useCycle } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  useCycle,
+  useSpring,
+} from "framer-motion";
 import { Slider, InputNumber, Input, Switch, Tabs } from "antd";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
@@ -48,6 +54,7 @@ const SetWindowStyle = {
   y: 780,
 };
 
+//值越大越容易拖动
 const SetWindowVariants = {
   UPanimationOne: {
     y: 780,
@@ -77,6 +84,7 @@ const DemoWeather = () => {
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
   const x = useMotionValue(0);
+  const xSmooth = useSpring(x, { damping: 50, stiffness: 400 });
   const Px = useTransform(
     x,
     [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
@@ -88,7 +96,7 @@ const DemoWeather = () => {
     [410, 418, 424, 436, 456, 475, 485, 485, 510, 505, 500, 480]
   );
   const PColor = useTransform(
-    x,
+    xSmooth,
     [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
     [
       "#FAA15B",
@@ -106,37 +114,37 @@ const DemoWeather = () => {
     ]
   );
   const SO28 = useTransform(
-    x,
+    xSmooth,
     [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
     [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   );
   const SO26 = useTransform(
-    x,
+    xSmooth,
     [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
     [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   );
   const SO24 = useTransform(
-    x,
+    xSmooth,
     [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
     [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
   );
   const SO22 = useTransform(
-    x,
+    xSmooth,
     [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
     [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1]
   );
   const SO20 = useTransform(
-    x,
+    xSmooth,
     [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
     [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1]
   );
   const SO18 = useTransform(
-    x,
+    xSmooth,
     [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
     [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0]
   );
   const SO16 = useTransform(
-    x,
+    xSmooth,
     [0, -48, -96, -144, -192, -240, -288, -336, -384, -432, -480, -525],
     [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0]
   );
@@ -302,6 +310,7 @@ const DemoWeather = () => {
                 width: 75,
                 height: 306,
                 zIndex: -1,
+                pointerEvents: "none",
               }}
             />
             <motion.img

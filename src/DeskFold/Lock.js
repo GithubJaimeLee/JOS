@@ -91,7 +91,6 @@ const WindowPull = () => {
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
-
       <div
         className="ScreenCenter"
         style={{
@@ -144,6 +143,7 @@ const WindowPull = () => {
                 setHealthO(0);
                 setHealthOO(1);
                 setHealthScale(1);
+                setLockBgO(1);
               }}
               onDragStart={() => {
                 setPointScale(3);
@@ -154,6 +154,7 @@ const WindowPull = () => {
                 setRedO(0.5);
                 setLockBgB();
                 setLockBgR();
+                setLockBgO(0);
               }}
               onDragEnd={() => {
                 setPointScale(1);
@@ -162,6 +163,7 @@ const WindowPull = () => {
                 setHealthO(0);
                 setHealthOO(1);
                 setHealthScale(1);
+                setLockBgO(1);
               }}
               dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
               transition={{ type: "spring" }}
@@ -493,8 +495,8 @@ const WindowPull = () => {
           />
         </div>
         <div className="Background" style={Background} />
-        <Bg />
       </div>
+      <Bg />
     </div>
   );
 };

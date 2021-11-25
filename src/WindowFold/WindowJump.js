@@ -3,7 +3,7 @@ import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ContactBody from "../Img/ContactBody.png";
 import ContactFooter from "../Img/ContactFooter.png";
-import ContactHeader from "../Img/ContactHeader.png";
+import ContactHeader from "../Img/CHeader.png";
 import ContactWindow from "../Img/ContactWindow.png";
 import NavBarPage from "../Component/NavBarPage";
 import ContactSetBar from "../Img/ContactSetBar.png";
@@ -68,6 +68,7 @@ const ContactHeaderStyle = {
   backgroundImage: `url(${ContactHeader})`,
   width: 360,
   height: 159,
+  backgroundSize: "360px 159px",
   position: "fixed",
   zIndex: 1,
   top: 0,
@@ -231,7 +232,8 @@ const WindowJump = () => {
               width: 360,
               position: "absolute",
               height: 800,
-
+              display: "grid",
+              justifyItems: "end",
               top: 0,
             }}
           >

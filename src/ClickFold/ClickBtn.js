@@ -65,7 +65,7 @@ const ClickCard = () => {
               }}
             />
           </motion.div>
-          <div
+          {/* <div
             className="OneFingerClick"
             style={{
               width: 32,
@@ -76,7 +76,7 @@ const ClickCard = () => {
               left: 325,
               zIndex: 20,
             }}
-          />
+          /> */}
         </div>
       </div>
       <Bg />

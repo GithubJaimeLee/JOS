@@ -24,7 +24,7 @@ const Time = () => {
     <div
       className="DemoTimePicker"
       style={{
-        width: 375,
+        width: 360,
         position: "absolute",
         height: 700,
         // padding: "50px",
@@ -42,7 +42,6 @@ const Time = () => {
           height: 170,
           top: 136,
           position: "relative",
-          marginLeft: 16,
         }}
       >
         <Wheel className="DemoClock1" initIdx={8} length={24} width={23} />
@@ -51,7 +50,7 @@ const Time = () => {
         style={{
           position: "absolute",
           top: 215,
-          left: 102,
+          left: 82,
         }}
       >
         时
@@ -78,7 +77,7 @@ const Time = () => {
         style={{
           position: "absolute",
           top: 215,
-          right: 142,
+          right: 146,
         }}
       >
         分

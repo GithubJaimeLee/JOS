@@ -85,10 +85,10 @@ const OtherMotion = () => {
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
 
-  const [TimerVar, setTimer] = useState(TimerP);
-  const [ClockVar, setClock] = useState(ClockP);
-  const [WorldVar, setWorld] = useState(WorldP);
-  const [CounterVar, setCounter] = useState(CounterP);
+  const [TimerVar, setTimer] = useState(TimerG);
+  const [ClockVar, setClock] = useState(ClockG);
+  const [WorldVar, setWorld] = useState(WorldG);
+  const [CounterVar, setCounter] = useState(CounterG);
 
   const Info = (
     <p>
@@ -303,7 +303,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 12 },
+                scale: { type: "spring", damping: 13 },
               }}
               variants={SetVariants}
               animate={SetAnimation1}
@@ -352,7 +352,7 @@ const OtherMotion = () => {
                 <motion.p
                   style={{
                     position: "absolute",
-                    fontSize: 5,
+                    fontSize: 15,
                     left: 16,
                     top: 60,
                   }}
@@ -415,7 +415,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 12 },
+                scale: { type: "spring", damping: 13 },
               }}
               variants={SetVariants}
               animate={SetAnimation2}
@@ -502,7 +502,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 12 },
+                scale: { type: "spring", damping: 13 },
               }}
               variants={SetVariants}
               animate={SetAnimation3}
@@ -556,7 +556,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 12 },
+                scale: { type: "spring", damping: 13 },
               }}
               variants={SetVariants}
               animate={SetAnimation4}
