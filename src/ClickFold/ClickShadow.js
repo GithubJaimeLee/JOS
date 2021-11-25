@@ -128,7 +128,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 70,
@@ -141,7 +141,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 100,
@@ -154,7 +154,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 60,
@@ -167,7 +167,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 60,
@@ -180,7 +180,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 60,
@@ -193,7 +193,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 60,
@@ -206,7 +206,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 65,
@@ -219,7 +219,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -233,7 +233,7 @@ const ClickShadow = () => {
               />
 
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -247,7 +247,7 @@ const ClickShadow = () => {
               />
 
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -260,7 +260,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -273,7 +273,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 70,
@@ -286,7 +286,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -299,7 +299,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -312,7 +312,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -325,7 +325,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -338,7 +338,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -351,7 +351,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -364,7 +364,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 65,
@@ -377,7 +377,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -390,7 +390,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -403,7 +403,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -416,7 +416,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,
@@ -429,7 +429,7 @@ const ClickShadow = () => {
                 }}
               />
               <motion.div
-                whileTap={{ opacity: 0.5 }}
+                whileTap={{ opacity: Opacity, scaleY: Scale }}
                 style={{
                   width: 375,
                   height: 55,

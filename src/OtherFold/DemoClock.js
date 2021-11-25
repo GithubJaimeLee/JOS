@@ -303,7 +303,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 23, stiffness: 300 },
+                scale: { type: "spring", damping: 24, stiffness: 300 },
               }}
               variants={SetVariants}
               animate={SetAnimation1}
@@ -415,7 +415,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 23, stiffness: 300 },
+                scale: { type: "spring", damping: 24, stiffness: 300 },
               }}
               variants={SetVariants}
               animate={SetAnimation2}
@@ -502,7 +502,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 23, stiffness: 300 },
+                scale: { type: "spring", damping: 24, stiffness: 300 },
               }}
               variants={SetVariants}
               animate={SetAnimation3}
@@ -556,7 +556,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 23, stiffness: 300 },
+                scale: { type: "spring", damping: 24, stiffness: 300 },
               }}
               variants={SetVariants}
               animate={SetAnimation4}

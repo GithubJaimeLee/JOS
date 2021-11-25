@@ -230,6 +230,7 @@ const JumpMotion = () => {
               boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
               zIndex: 10,
               y: 780,
+              
             }}
             variants={SetWindowVariants}
             animate={SetWindowAnimation}

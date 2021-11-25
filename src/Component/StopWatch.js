@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 import Play from "../Img/Play.png";
 import { motion, useCycle } from "framer-motion";
 import Pause from "../Img/Pause.png";
@@ -45,6 +45,7 @@ class StopWatch extends Component {
     });
   };
 
+  //const [ThisLeft, setThisLeft] = useState(150);
   render() {
     const { timerTime } = this.state;
     let centiseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
@@ -59,7 +60,7 @@ class StopWatch extends Component {
           position: "absolute",
           fontSize: 50,
           top: 240,
-          width: 375,
+          width: 360,
           display: "grid",
           justifyContent: "center",
         }}
@@ -70,9 +71,9 @@ class StopWatch extends Component {
             position: "absolute",
             // fontSize: 50,
 
-            width: 375,
+            width: 360,
             display: "flex",
-            left: 60,
+            left: 56,
           }}
         >
           <div
@@ -184,7 +185,7 @@ class StopWatch extends Component {
               top: 366,
               width: 86,
               height: 86,
-              left: 150,
+              left: 140,
               borderRadius: 50,
               border: "none",
               opacity: 1,
@@ -202,7 +203,7 @@ class StopWatch extends Component {
               top: 366,
               width: 86,
               height: 86,
-              left: 150,
+              left: 140,
               borderRadius: 50,
               border: "none",
               opacity: 1,
@@ -218,15 +219,18 @@ class StopWatch extends Component {
             style={{
               position: "absolute",
               top: 366,
-              left: 230,
+              left: 150,
+              // left: 230,
               width: 86,
               height: 86,
               borderRadius: 50,
               border: "none",
               opacity: 1,
+              zIndex: 2,
               backgroundImage: `url(${Play})`,
               backgroundColor: "#F95F6D",
             }}
+            animate={{ left: 230 }}
           ></motion.button>
         )}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
@@ -236,7 +240,7 @@ class StopWatch extends Component {
             style={{
               position: "absolute",
               top: 366,
-              left: 58,
+              left: 150,
               width: 86,
               height: 86,
               borderRadius: 50,
@@ -245,7 +249,8 @@ class StopWatch extends Component {
               backgroundImage: `url(${Replay})`,
               backgroundColor: "#fff",
             }}
-          ></motion.button>
+            animate={{ left: 58 }}
+          />
         )}
       </div>
     );
