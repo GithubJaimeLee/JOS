@@ -432,7 +432,7 @@ const DemoWeather = () => {
                 left: 0,
                 x,
 
-                backgroundColor: Color,
+                //   backgroundColor: Color,
                 backgroundImage: `url(${WeatherLine})`,
               }}
               dragTransition={{

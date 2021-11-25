@@ -1,16 +1,18 @@
 import { motion, useCycle } from "framer-motion";
 import React, { useState } from "react";
-import { Slider, InputNumber } from "antd";
+import { Slider, InputNumber, Switch } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ClickOOS from "../Img/ClickOOS.png";
+
 import Zoom085 from "../Img/CameraIcon.png";
-import OneFingerClick from "../Img/OneFingerClick.png";
+
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import Set from "../Icon/Set.png";
 import Close from "../Icon/Close.png";
 import Zoom09 from "../Img/Zoom09.png";
 import Zoom088 from "../Img/Zoom088.png";
+import Zoom091 from "../Img/Zoom091.png";
+import Zoom093 from "../Img/Zoom093.png";
 
 const ClickZoom = () => {
   const [SetWindowAnimation, UPcycleAnimation] = useCycle(
@@ -22,11 +24,12 @@ const ClickZoom = () => {
       y: 780,
     },
     UPanimationTwo: {
-      y: 540,
+      y: 476,
     },
   };
-  const [Scale, setScale] = useState(0.85);
+  const [Scale, setScale] = useState(1);
   const [Duration, setDuration] = useState(0.1);
+  const [O, setO] = useState(0);
 
   const Info = <p>桌面图标</p>;
   return (
@@ -68,7 +71,7 @@ const ClickZoom = () => {
             position: "absolute",
             width: 375,
             backgroundColor: "#E6ECF4",
-            height: 812,
+            height: 800,
             overflow: "hidden",
             display: "grid",
             justifyContent: "center",
@@ -96,7 +99,7 @@ const ClickZoom = () => {
                 borderRadius: 12,
                 top: 374,
               }}
-              whileTap={{ scale: Scale }}
+              whileTap={{ scale: Scale * 0.85 }}
               transition={{ duration: Duration }}
             >
               <motion.div
@@ -110,7 +113,7 @@ const ClickZoom = () => {
                   zIndex: 1,
                 }}
                 whileTap={{
-                  opacity: 0.4,
+                  opacity: O,
                   transition: { duration: Duration },
                 }}
               />
@@ -149,7 +152,7 @@ const ClickZoom = () => {
                 borderRadius: 12,
                 top: 374,
               }}
-              whileTap={{ scale: Scale }}
+              whileTap={{ scale: Scale * 0.88 }}
               transition={{ duration: Duration }}
             >
               <motion.div
@@ -163,7 +166,7 @@ const ClickZoom = () => {
                   zIndex: 1,
                 }}
                 whileTap={{
-                  opacity: 0.4,
+                  opacity: O,
                   transition: { duration: Duration },
                 }}
               />
@@ -202,7 +205,7 @@ const ClickZoom = () => {
                 borderRadius: 12,
                 top: 374,
               }}
-              whileTap={{ scale: Scale }}
+              whileTap={{ scale: Scale * 0.9 }}
               transition={{ duration: Duration }}
             >
               <motion.div
@@ -216,7 +219,7 @@ const ClickZoom = () => {
                   zIndex: 1,
                 }}
                 whileTap={{
-                  opacity: 0.4,
+                  opacity: O,
                   transition: { duration: Duration },
                 }}
               />
@@ -236,34 +239,129 @@ const ClickZoom = () => {
             </div>
           </div>
           <div
+            style={{
+              width: 375,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <motion.div
+              className="Btn"
+              style={{
+                width: 174,
+                height: 229,
+                backgroundImage: `url(${Zoom091})`,
+                position: "relaitve",
+                zIndex: 11,
+
+                borderRadius: 12,
+                top: 374,
+              }}
+              whileTap={{ scale: Scale * 0.91 }}
+              transition={{ duration: Duration }}
+            >
+              <motion.div
+                className="BtnMask"
+                style={{
+                  width: 174,
+                  height: 229,
+                  backgroundColor: "#000",
+                  borderRadius: 12,
+                  opacity: 0,
+                  zIndex: 1,
+                }}
+                whileTap={{
+                  opacity: O,
+                  transition: { duration: Duration },
+                }}
+              />
+            </motion.div>
+            <div
+              style={{
+                position: "relaitve",
+
+                fontSize: 12,
+                width: 100,
+                display: "flex",
+
+                justifyContent: "center",
+              }}
+            >
+              缩放比例:0.91
+            </div>
+          </div>
+          <div
+            style={{
+              width: 375,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <motion.div
+              className="Btn"
+              style={{
+                width: 221,
+                height: 52,
+                backgroundImage: `url(${Zoom093})`,
+                position: "relaitve",
+                zIndex: 11,
+
+                borderRadius: 23,
+                top: 374,
+              }}
+              whileTap={{ scale: Scale * 0.93 }}
+              transition={{ duration: Duration }}
+            >
+              <motion.div
+                className="BtnMask"
+                style={{
+                  width: 221,
+                  height: 52,
+                  backgroundColor: "#000",
+                  borderRadius: 23,
+                  opacity: 0,
+                  zIndex: 1,
+                }}
+                whileTap={{
+                  opacity: O,
+                  transition: { duration: Duration },
+                }}
+              />
+            </motion.div>
+            <div
+              style={{
+                position: "relaitve",
+
+                fontSize: 12,
+                width: 100,
+                display: "flex",
+
+                justifyContent: "center",
+              }}
+            >
+              缩放比例:0.93
+            </div>
+          </div>
+          <div
             className="Background"
             style={{
               backgroundColor: "rgba(255,255,255,0.5)",
               position: "absolute",
               width: 375,
-              height: 812,
+              height: 800,
               zIndex: 10,
             }}
           />
-          {/*           <div
-            className="OneFingerClick"
-            style={{
-              width: 32,
-              height: 60,
-              backgroundImage: `url(${OneFingerClick})`,
-              position: "absolute",
-              top: 430,
 
-              zIndex: 10,
-            }}
-          /> */}
           <motion.div
             className="SetWindow"
             style={{
               position: "absolute",
               top: 50,
               width: 350,
-              height: 188,
+              height: 254,
               left: 12,
               borderRadius: 12,
               display: "flex",
@@ -371,6 +469,38 @@ const ClickZoom = () => {
                     step={0.1}
                     onChange={setDuration}
                     value={Duration}
+                  />
+                </div>
+              </div>
+              <div
+                className="DefaultSetDrag"
+                style={{
+                  width: 120,
+                  height: "auto",
+
+                  marginTop: 12,
+                }}
+              >
+                <h6
+                  style={{
+                    fontSize: 15,
+                  }}
+                >
+                  开启1.0 遮罩效果
+                </h6>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                    fontSize: 18,
+                  }}
+                >
+                  <Switch
+                    style={{
+                      marginTop: 5,
+                    }}
+                    //   defaultChecked
+                    onChange={() => setO(0.4)}
                   />
                 </div>
               </div>

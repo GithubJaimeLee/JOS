@@ -21,6 +21,10 @@ import TimerG from "../Icon/timer.gif";
 import ClockG from "../Icon/clock.gif";
 import WorldG from "../Icon/world.gif";
 import CounterG from "../Icon/counter.gif";
+import TimerP from "../Icon/timer.png";
+import ClockP from "../Icon/clock.png";
+import WorldP from "../Icon/world.png";
+import CounterP from "../Icon/counter.png";
 
 const SetBtnStyle = {
   position: "absolute",
@@ -80,6 +84,11 @@ const OtherMotion = () => {
   const [Color, setColor] = useState("415FFF");
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
+
+  const [TimerVar, setTimer] = useState(TimerP);
+  const [ClockVar, setClock] = useState(ClockP);
+  const [WorldVar, setWorld] = useState(WorldP);
+  const [CounterVar, setCounter] = useState(CounterP);
 
   const Info = (
     <p>
@@ -227,18 +236,17 @@ const OtherMotion = () => {
           defaultActiveKey="1"
           style={{
             zIndex: 1,
-            width: 375,
+            width: 360,
             position: "absolute",
           }}
           onChange={callback}
         >
           <TabPane tab="闹钟" key="1" id="Clock1">
-            {" "}
             <img
-              src={ClockG}
+              src={ClockVar}
               style={{
                 position: "absolute",
-                bottom: 20,
+                bottom: 26,
                 width: 40,
                 left: 26,
               }}
@@ -283,7 +291,7 @@ const OtherMotion = () => {
                 position: "absolute",
                 top: 130,
                 right: 20,
-                width: 375,
+                width: 360,
                 left: 0,
                 display: "flex",
                 justifyContent: "center",
@@ -335,20 +343,20 @@ const OtherMotion = () => {
             </div>
             <div
               style={{
-                width: 375,
-                height: 812,
+                width: 360,
+                height: 800,
                 backgroundImage: `url(${ClockBg1})`,
               }}
             ></div>
           </TabPane>
           <TabPane tab="世界时钟" key="2" id="Clock2">
             <img
-              src={WorldG}
+              src={WorldVar}
               style={{
                 position: "absolute",
-                bottom: 20,
+                bottom: 26,
                 width: 40,
-                left: 120,
+                left: 116,
               }}
               alt=""
             />
@@ -391,7 +399,7 @@ const OtherMotion = () => {
               style={{
                 position: "absolute",
                 display: "flex",
-                width: 375,
+                width: 360,
                 top: 126,
                 justifyContent: "center",
               }}
@@ -416,24 +424,26 @@ const OtherMotion = () => {
             </div>
             <div
               style={{
-                width: 375,
-                height: 812,
+                width: 360,
+                height: 800,
                 backgroundImage: `url(${ClockBg2})`,
               }}
             ></div>
           </TabPane>
           <TabPane tab="秒表" key="3" id="Clock3">
             <img
-              src={TimerG}
+              //   onClick={() => setTimer(TimerG)}
+              src={TimerVar}
               style={{
                 position: "absolute",
-                bottom: 20,
+                bottom: 26,
                 width: 40,
-                left: 214,
+                left: 206,
               }}
               alt=""
             />
             <div
+              //    whileTap={setTimer(TimerG)}
               onClick={Setcyc}
               className="SetBtn"
               style={{
@@ -470,14 +480,19 @@ const OtherMotion = () => {
             <StopWatch />
             <div
               style={{
-                width: 375,
-                height: 812,
+                width: 360,
+                height: 800,
                 backgroundImage: `url(${ClockBg3})`,
               }}
             ></div>
           </TabPane>
 
-          <TabPane tab="计时器" key="4" id="Clock4">
+          <TabPane
+            onClick={() => setCounter(CounterG)}
+            tab="计时器"
+            key="4"
+            id="Clock4"
+          >
             <div
               onClick={Setcyc}
               className="SetBtn"
@@ -511,22 +526,23 @@ const OtherMotion = () => {
               transition={{ type: "tween", duration: 0.2 }}
               variants={SetVariants}
               animate={SetAnimation}
-            />{" "}
+            />
             <img
-              src={CounterG}
+              src={CounterVar}
               style={{
+                //    backgroundImage: `url(${CounterVar})`,
                 position: "absolute",
-                bottom: 20,
+                bottom: 26,
                 width: 40,
-                left: 308,
+                left: 293,
               }}
               alt=""
             />
             <Time />
             <div
               style={{
-                width: 375,
-                height: 812,
+                width: 360,
+                height: 800,
                 backgroundImage: `url(${ClockBg4})`,
               }}
             ></div>
@@ -536,11 +552,11 @@ const OtherMotion = () => {
         <div
           className="ThisBackground"
           style={{
-            width: 375,
+            width: 360,
             display: "flex",
             justifyContent: "center",
             position: "absolute",
-            height: 812,
+            height: 800,
             overflow: "scroll",
             backgroundColor: "#E6ECF4",
             overflow: "hidden",

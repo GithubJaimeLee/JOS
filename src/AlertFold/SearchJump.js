@@ -1,15 +1,13 @@
 import { motion, useCycle } from "framer-motion";
 import * as React from "react";
-import { Slider, InputNumber, Input, Switch, Tabs } from "antd";
+import { Tabs } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
-import ContactBody from "../Img/ContactBody.png";
-import ContactFooter from "../Img/ContactFooter.png";
 import ContactHeader from "../Img/ContactHeader.png";
 import Bg from "../Component/Bg";
 import FingerClick from "../Img/OneFingerClick.png";
 import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
-import NewContact from "../Img/NewContact.png";
+
 import SearchBg from "../Img/SearchBg.png";
 import SearchBar from "../Img/SearchBar.png";
 import SetText from "../Img/SetText.png";
