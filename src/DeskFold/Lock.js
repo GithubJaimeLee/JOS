@@ -72,6 +72,7 @@ const WindowPull = () => {
   const [LockPlayScale, setLockPlayScale] = useState(0);
   const [RedO, setRedO] = useState(1);
   const [LockBgR, setLockBgR] = useState("#F7FCFF");
+  const [LockBgO, setLockBgO] = useState(1);
   const [LockBgB, setLockBgB] = useState("#F7FCFF");
   const [LockIconP, setLockIconP] = useState(LockPlay);
   const [LockIconL, setLockIconL] = useState(LockList);
@@ -188,6 +189,7 @@ const WindowPull = () => {
               setPointScale(1);
               setPhoneScale(1);
               setRedO(1);
+              setLockBgO(1);
             }}
             onDragStart={() => {
               setPhoneX(-12);
@@ -197,6 +199,7 @@ const WindowPull = () => {
               setRedO(0.5);
               setLockBgB();
               setLockBgR();
+              setLockBgO(0);
             }}
             onTapStart={() => {
               setPhoneX(-12);
@@ -216,6 +219,7 @@ const WindowPull = () => {
               setPointScale(1);
               setPhoneScale(1);
               setRedO(1);
+              setLockBgO(1);
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
@@ -276,6 +280,7 @@ const WindowPull = () => {
                 alignItems: "center",
                 overflow: "hidden",
                 zIndex: 1,
+                opacity: LockBgO,
               }}
               animate={{ backgroundColor: LockBgR }}
               transition={{ backgroundColor: { type: "tween", duration: 0.3 } }}
@@ -310,6 +315,7 @@ const WindowPull = () => {
                 alignItems: "center",
                 overflow: "hidden",
                 zIndex: 1,
+                opacity: LockBgO,
               }}
               animate={{ backgroundColor: LockBgB }}
               transition={{ backgroundColor: { type: "tween", duration: 0.3 } }}
@@ -348,6 +354,7 @@ const WindowPull = () => {
               setPointScale(1);
               setCameraScale(1);
               setRedO(1);
+              setLockBgO(1);
             }}
             onDragStart={() => {
               setCameraX(-10);
@@ -357,6 +364,7 @@ const WindowPull = () => {
               setRedO(0.5);
               setLockBgB();
               setLockBgR();
+              setLockBgO(0);
             }}
             onTapStart={() => {
               setCameraX(-10);
@@ -376,6 +384,7 @@ const WindowPull = () => {
               setPointScale(1);
               setCameraScale(1);
               setRedO(1);
+              setLockBgO(1);
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
