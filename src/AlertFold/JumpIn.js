@@ -95,7 +95,7 @@ const JumpIn = () => {
     "UPanimationOne",
     "UPanimationTwo"
   );
-  const [BR, setBR] = useState(12);
+  const [BR, setBR] = useState(0);
   const [Duration, setDuration] = useState(0.3);
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
@@ -363,11 +363,11 @@ const JumpIn = () => {
             onClick={() => cycleAnimation() & BgCycleAnimation()}
             style={ContactBodyStyle}
           >
-            <div
+            {/*          <div
               className="ContactBtn"
               //      onClick={() => cycleAnimation() & BgCycleAnimation()}
               style={ContactBtnStyle}
-            />
+            /> */}
             <motion.div
               className="boxChange"
               style={{

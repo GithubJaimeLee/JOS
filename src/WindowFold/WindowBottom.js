@@ -77,6 +77,8 @@ const BgAnimation = {
 };
 
 const WindowBottom = () => {
+  const [X, setX] = useState(0);
+  const [Y, setY] = useState(400);
   const [Damping, setDamping] = useState(30);
   const [Stiffness, setStiffness] = useState(300);
   const [animationBg, BgCycleAnimation] = useCycle(
@@ -192,13 +194,13 @@ const WindowBottom = () => {
             position: "absolute",
             top: 50,
             width: 350,
-            height: 350,
+            height: 260,
             borderRadius: 12,
             display: "grid",
             alignContent: "space-evenly",
             justifyContent: "center",
             // alignContent: "center",
-            backgroundColor: "rgba(255,255,255,0.7)",
+            backgroundColor: "rgba(255,255,255,0.9)",
             // filter: "blur(2px)",
             boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
             zIndex: 100,
@@ -315,19 +317,31 @@ const WindowBottom = () => {
         />
         <div className="ContactBody" style={ContactBodyStyle} />
 
-        <motion.div
+        {/*         <motion.div
           className="ContactBtn"
           //  onClick={() => cycleAnimation() & BgCycleAnimation()}
           style={ContactBtnStyle}
           variants={FingerVariants}
           animate={Fingeranimation}
-        />
+        /> */}
 
         <motion.div
           drag="y"
           onClick={() => cycleAnimation() & BgCycleAnimation()}
-          className="boxChange"
-          style={ChangeBoxStyle}
+          className="JumpWin"
+          style={{
+            width: 340,
+            height: 275,
+            boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+            opacity: 1,
+            y: Y,
+            x: X,
+            backgroundImage: `url(${WindowBottomWin})`,
+            borderRadius: 20,
+            position: "absolute",
+            bottom: 40,
+            zIndex: 20,
+          }}
           variants={BoxAnimation}
           animate={animationBox}
           transition={{
@@ -341,8 +355,21 @@ const WindowBottom = () => {
             top: 0,
             bottom: 0,
           }}
-          dragElastic={0.2}
+          dragElastic={0.08}
           //值越大越容易拖动
+
+          onDragCancel={() => {
+            setX(-1);
+            setY(-1);
+          }}
+          onDragStart={() => {
+            setX(-1);
+            setY(-1);
+          }}
+          onDragEnd={() => {
+            setX(-1);
+            setY(-1);
+          }}
         />
       </div>
       <Bg />

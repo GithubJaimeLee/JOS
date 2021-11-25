@@ -189,8 +189,8 @@ const Create = () => {
           animate={animationBox}
           transition={{
             type: "spring",
-            damping: 18,
-            stiffness: 105,
+            damping: 32,
+            stiffness: 300,
           }}
         />
         <motion.div

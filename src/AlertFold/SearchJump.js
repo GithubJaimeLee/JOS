@@ -466,9 +466,18 @@ const SearchJump = () => {
 
         <motion.div
           className="KeyBoard"
-          style={KeyboardStyle}
+          style={{
+            width: 375,
+            height: 290,
+            backgroundImage: `url(${WindowInputKeyboard})`,
+            position: "absolute",
+            bottom: 100,
+            zIndex: 20,
+            y: 400,
+          }}
           variants={KeyBoardVariants}
           animate={animationKeyBoard}
+          transition={{ type: "tween" }}
         />
         <div
           className="blackBg"

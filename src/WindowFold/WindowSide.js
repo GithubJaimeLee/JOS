@@ -15,7 +15,7 @@ const MaskStyle = {
   backgroundColor: "#000",
   textAlign: "center",
   zIndex: 1,
-
+  opacity: 0,
   display: "flex",
   justifyContent: "center",
   y: 0,
@@ -35,7 +35,7 @@ const SideStyle = {
 };
 const SideVariants = {
   animationOne: {
-    x: -320,
+    x: -340,
   },
   animationTwo: {
     x: -50,
@@ -53,9 +53,9 @@ const FingerVariants = {
   },
 };
 const BgVariants = {
-  BgAnimationOne: { opacity: 0.5 },
+  BgAnimationOne: { opacity: 0 },
   BgAnimationTwo: {
-    opacity: 0,
+    opacity: 0.5,
   },
 };
 
@@ -158,7 +158,19 @@ const WindowSide = () => {
 
           <motion.div
             className="boxChange"
-            style={SideStyle}
+            style={{
+              width: 286,
+              height: 812,
+              boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+              opacity: 1,
+              backgroundImage: `url(${WindowSideSide})`,
+              //background: "#eee",
+              position: "absolute",
+              bottom: 100,
+              zIndex: 20,
+              y: 101,
+              x: -350,
+            }}
             variants={SideVariants}
             animate={SideAnimate}
             transition={{ type: "tween" }}
@@ -166,7 +178,19 @@ const WindowSide = () => {
           <motion.div
             onClick={() => cycleAnimation() & BgCycleAnimation()}
             className="Mask"
-            style={MaskStyle}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              width: 375,
+              height: 812,
+              backgroundColor: "#000",
+              textAlign: "center",
+              zIndex: 1,
+              opacity: 0,
+              display: "flex",
+              justifyContent: "center",
+              y: 0,
+            }}
             variants={BgVariants}
             animate={BgAnimation}
           />

@@ -25,12 +25,12 @@ const SetWindowStyle = {
   position: "absolute",
   top: 50,
   width: 350,
-  height: 740,
+  height: 440,
   borderRadius: 12,
   display: "flex",
   justifyContent: "center",
   alignContent: "center",
-  backgroundColor: "rgba(255,255,255,0.7)",
+  backgroundColor: "rgba(255,255,255,0.9)",
   // filter: "blur(2px)",
   boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
   zIndex: 10,
@@ -42,7 +42,7 @@ const SetWindowVariants = {
     y: 780,
   },
   UPanimationTwo: {
-    y: 0,
+    y: 280,
   },
 };
 
@@ -216,7 +216,21 @@ const JumpMotion = () => {
           />
           <motion.div
             className="SetWindow"
-            style={SetWindowStyle}
+            style={{
+              position: "absolute",
+              top: 50,
+              width: 350,
+              height: 440,
+              borderRadius: 12,
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              backgroundColor: "rgba(255,255,255,0.9)",
+              // filter: "blur(2px)",
+              boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
+              zIndex: 10,
+              y: 780,
+            }}
             variants={SetWindowVariants}
             animate={SetWindowAnimation}
           >

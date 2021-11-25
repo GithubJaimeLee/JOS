@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.e30ede87.chunk.css",
-    "main.js": "/static/js/main.306ecfeb.chunk.js",
-    "main.js.map": "/static/js/main.306ecfeb.chunk.js.map",
+    "main.js": "/static/js/main.77074688.chunk.js",
+    "main.js.map": "/static/js/main.77074688.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e6e7375a.js",
     "runtime-main.js.map": "/static/js/runtime-main.e6e7375a.js.map",
     "static/css/2.03b1ebbb.chunk.css": "/static/css/2.03b1ebbb.chunk.css",
@@ -58,9 +58,9 @@
     "static/media/Loading.b861fd63.gif": "/static/media/Loading.b861fd63.gif",
     "static/media/LockBg.973ab2fa.png": "/static/media/LockBg.973ab2fa.png",
     "static/media/MaskDeskOOS.ebecd82b.png": "/static/media/MaskDeskOOS.ebecd82b.png",
-    "static/media/MessageA.f4f34418.png": "/static/media/MessageA.f4f34418.png",
-    "static/media/MessageB.3b58b161.png": "/static/media/MessageB.3b58b161.png",
-    "static/media/MessageC.9fee5898.png": "/static/media/MessageC.9fee5898.png",
+    "static/media/MessageA.35bd8934.png": "/static/media/MessageA.35bd8934.png",
+    "static/media/MessageB.048a61c6.png": "/static/media/MessageB.048a61c6.png",
+    "static/media/MessageC.33e6325a.png": "/static/media/MessageC.33e6325a.png",
     "static/media/MusicBodyRecommend.705471b1.png": "/static/media/MusicBodyRecommend.705471b1.png",
     "static/media/NewContact.c60502a7.png": "/static/media/NewContact.c60502a7.png",
     "static/media/NewMessage.1b59bb06.png": "/static/media/NewMessage.1b59bb06.png",
@@ -100,6 +100,6 @@
     "static/css/2.03b1ebbb.chunk.css",
     "static/js/2.7c286039.chunk.js",
     "static/css/main.e30ede87.chunk.css",
-    "static/js/main.306ecfeb.chunk.js"
+    "static/js/main.77074688.chunk.js"
   ]
 }

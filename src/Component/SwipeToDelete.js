@@ -216,6 +216,8 @@ const SwipeToDelete = () => {
                   //     resetItem(message.id);
                   //   }
                 }}
+                // dragConstraints={{ left: 360, right: 0 }}
+                //值越大越容易拖动
                 style={{
                   position: "relative",
                   zIndex: "999",

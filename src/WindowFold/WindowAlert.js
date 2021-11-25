@@ -107,11 +107,11 @@ const WindowAlert = () => {
           style={ContactBodyStyle}
         />
 
-        <div
+        {/*        <div
           className="ContactBtn"
           onClick={() => cycleAnimation()}
           style={ContactBtnStyle}
-        />
+        /> */}
         <motion.div
           className="boxChange"
           style={ContactBubbleStyle}

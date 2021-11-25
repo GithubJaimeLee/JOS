@@ -206,7 +206,7 @@ const OtherMotion = () => {
     },
     CardAnimationTwo: {
       color: "#000",
-      boxShadow: "0px 0px 10px 10px rgba(0,0,0,0.03)",
+      boxShadow: "0px 0px 18px 6px rgba(0,0,0,0.05)",
     },
   };
   const PVariants = {
@@ -303,7 +303,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 13 },
+                scale: { type: "spring", damping: 23, stiffness: 300 },
               }}
               variants={SetVariants}
               animate={SetAnimation1}
@@ -415,7 +415,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 13 },
+                scale: { type: "spring", damping: 23, stiffness: 300 },
               }}
               variants={SetVariants}
               animate={SetAnimation2}
@@ -502,7 +502,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 13 },
+                scale: { type: "spring", damping: 23, stiffness: 300 },
               }}
               variants={SetVariants}
               animate={SetAnimation3}
@@ -556,7 +556,7 @@ const OtherMotion = () => {
               transition={{
                 left: { type: "tween" },
                 top: { type: "tween" },
-                scale: { type: "spring", damping: 13 },
+                scale: { type: "spring", damping: 23, stiffness: 300 },
               }}
               variants={SetVariants}
               animate={SetAnimation4}

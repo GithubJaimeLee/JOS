@@ -138,7 +138,7 @@ const WindowCenter = () => {
       >
         <div className="ContactBody" style={ContactBodyStyle} />
 
-        <div className="ContactBtn" style={ContactBtnStyle} />
+        {/*     <div className="ContactBtn" style={ContactBtnStyle} /> */}
 
         <motion.div
           className="CenterWin"

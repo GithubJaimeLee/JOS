@@ -16,6 +16,7 @@ const SwitchBtn = () => {
     },
     animationTwo: {
       //justifyContent: "flex-end",
+      border: "3px solid #fff",
       backgroundColor: "#FFE9C4",
       height: 18,
     },
@@ -33,6 +34,7 @@ const SwitchBtn = () => {
       height: 26,
       width: 26,
       borderRadius: "16px",
+
       backgroundColor: "#fff",
       border: "4px solid #FAB953",
       /*       transition: {
