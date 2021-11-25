@@ -7,20 +7,6 @@ import OneFingerClick from "../Img/OneFingerClick.png";
 import WindowSideSide from "../Img/WindowSideSide.png";
 import Bg from "../Component/Bg";
 
-const ContactBtnStyle = {
-  position: "relative",
-  bottom: -50,
-  left: -160,
-  width: 32,
-  height: 60,
-  backgroundImage: `url(${OneFingerClick})`,
-  // backgroundColor: "#666",
-
-  textAlign: "center",
-  zIndex: 21,
-  display: "flex",
-  justifyContent: "center",
-};
 const MaskStyle = {
   position: "absolute",
   bottom: 0,
@@ -106,7 +92,7 @@ const WindowSide = () => {
       <br />
       time：300ms
       <br />
-      bezier curve:（0.25, 0.1, 0.25,1)
+      bezier curve:(0.25, 0.1, 0.25,1)
       <br />
       <br />
       蒙版：
@@ -115,7 +101,7 @@ const WindowSide = () => {
       <br />
       time：300ms
       <br />
-      bezier curve:（0.25, 0.1, 0.25,1)
+      bezier curve:(0.25, 0.1, 0.25,1)
       <br /> <br />
       <h6>收起</h6>
       弹窗：
@@ -124,7 +110,7 @@ const WindowSide = () => {
       <br />
       time：300ms
       <br />
-      bezier curve:（0.25, 0.1, 0.25,1)
+      bezier curve:(0.25, 0.1, 0.25,1)
       <br />
       <br />
       蒙版：
@@ -133,7 +119,7 @@ const WindowSide = () => {
       <br />
       time：300ms
       <br />
-      bezier curve:（0.25, 0.1, 0.25,1)
+      bezier curve:(0.25, 0.1, 0.25,1)
     </p>
   );
   return (
@@ -152,14 +138,29 @@ const WindowSide = () => {
           top: 0,
         }}
       >
-        <div className="ContactBody" style={ContactBodyStyle}>
+        <div
+          className="ContactBody"
+          onClick={() => cycleAnimation() & BgCycleAnimation()}
+          style={ContactBodyStyle}
+        >
           <motion.div
             className="FingerBtn"
             variants={FingerVariants}
             animate={animationBox}
             transition={{ type: "tween" }}
             onClick={() => cycleAnimation() & BgCycleAnimation()}
-            style={ContactBtnStyle}
+            style={{
+              position: "relative",
+              bottom: -50,
+              left: -160,
+              width: 32,
+              height: 60,
+              backgroundImage: `url(${OneFingerClick})`,
+              textAlign: "center",
+              zIndex: 21,
+              display: "flex",
+              justifyContent: "center",
+            }}
           />
 
           <motion.div

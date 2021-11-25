@@ -32,25 +32,15 @@ const BgStyle = {
   display: "flex",
   justifyContent: "center",
 };
-const ContactBubbleStyle = {
-  width: 232,
-  height: 72,
-  opacity: 1,
-  backgroundImage: `url(${CenterWin})`,
-  // background: "#aaa",
-  borderRadius: 17,
-  position: "absolute",
-  bottom: 100,
-  zIndex: 20,
-  y: -300,
-  scale: 0,
-};
-const BoxAnimation = {
+
+const CenterWinVariants = {
   animationOne: {
     scale: 0,
+    opacity: 0,
   },
   animationTwo: {
     scale: 1,
+    opacity: 1,
   },
 };
 const BgAnimation = {
@@ -72,7 +62,7 @@ const ContactBodyStyle = {
 };
 
 const WindowCenter = () => {
-  const [animationBox, cycleAnimation] = useCycle(
+  const [CenterWinAnimate, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
   );
@@ -151,10 +141,21 @@ const WindowCenter = () => {
         <div className="ContactBtn" style={ContactBtnStyle} />
 
         <motion.div
-          className="boxChange"
-          style={ContactBubbleStyle}
-          variants={BoxAnimation}
-          animate={animationBox}
+          className="CenterWin"
+          style={{
+            width: 232,
+            height: 72,
+            opacity: 1,
+            backgroundImage: `url(${CenterWin})`,
+            borderRadius: 17,
+            position: "absolute",
+            bottom: 100,
+            zIndex: 20,
+            y: -300,
+            scale: 0,
+          }}
+          variants={CenterWinVariants}
+          animate={CenterWinAnimate}
         />
         <motion.div
           className="MaskChange"
