@@ -2,9 +2,9 @@ import { motion, useCycle } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Calendar from "../Img/Calendar.png";
+
 import CalendarWindow from "../Img/CalendarWindow.png";
-import OneFingerClick from "../Img/OneFingerClick.png";
+
 import Bg from "../Component/Bg";
 
 import LockBg from "../Img/LockBg.png";
@@ -71,30 +71,10 @@ const WindowPull = () => {
   const [LockBgBg, setLockBgBg] = useState();
   const [LockPlayScale, setLockPlayScale] = useState(0);
   const [RedO, setRedO] = useState(1);
-  const [LockBgR, setLockBgR] = useState();
-  const [LockBgB, setLockBgB] = useState();
+  const [LockBgR, setLockBgR] = useState("#F7FCFF");
+  const [LockBgB, setLockBgB] = useState("#F7FCFF");
   const [LockIconP, setLockIconP] = useState(LockPlay);
   const [LockIconL, setLockIconL] = useState(LockList);
-  const [animationBox, cycleAnimation] = useCycle(
-    "animationOne",
-
-    "animationTwo"
-  );
-  const boxAnimation = {
-    animationOne: {
-      scale: 0,
-      height: 0,
-      opacity: 0,
-      right: 0,
-    },
-    animationTwo: {
-      scale: 1,
-      height: 163,
-      opacity: 1,
-      width: 131,
-      right: 0,
-    },
-  };
 
   const [WinWidth, setWidth] = useState(window.innerWidth);
   useEffect(() => {
@@ -144,8 +124,6 @@ const WindowPull = () => {
                 left: 6,
                 zIndex: 10,
                 borderRadius: 12,
-                // backgroundColor: `rgba(255,255,255,${HealthO})`,
-
                 backgroundImage: `url(${HealthBg})`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "50% 50%",
@@ -156,9 +134,7 @@ const WindowPull = () => {
                 x: HealthX,
                 y: HealthY,
                 backgroundColor: `rgba(255,255,255,${HealthO})`,
-                // opacity: HealthOO,
                 scale: HealthScale,
-                scale: 1.2,
               }}
               onDragCancel={() => {
                 setPointScale(1);
@@ -166,6 +142,7 @@ const WindowPull = () => {
                 setRedO(1);
                 setHealthO(0);
                 setHealthOO(1);
+                setHealthScale(1);
               }}
               onDragStart={() => {
                 setPointScale(3);
@@ -183,59 +160,11 @@ const WindowPull = () => {
                 setRedO(1);
                 setHealthO(0);
                 setHealthOO(1);
+                setHealthScale(1);
               }}
               dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              // transition={{ type: "tween", duration: 0.5 }}
               transition={{ type: "spring" }}
             />
-            {/*       <motion.div
-              className="HealthImg"
-              drag
-              style={{
-                width: 68,
-                height: 81,
-                position: "absolute",
-                top: 564,
-                left: 6,
-                zIndex: 10,
-
-                backgroundImage: `url(${HealthBg})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "50% 50%",
-                transformOrigin: "100px 100px",
-              }}
-              dragElastic={1}
-              animate={{
-                x: HealthX,
-                y: HealthY,
-                opacity: HealthOO,
-                scale: HealthScale,
-                scale: 1.2,
-              }}
-              onDragCancel={() => {
-                setPointScale(1);
-                setHealthBg(Health2000);
-                setRedO(1);
-                setHealthO(0);
-              }}
-              onDragStart={() => {
-                setPointScale(3);
-                setHealthBg(BHealth2000);
-                setHealthScale(1.2);
-                setHealthO(1);
-
-                setRedO(0.5);
-                setLockBgB();
-                setLockBgR();
-              }}
-              onDragEnd={() => {
-                setPointScale(1);
-                setHealthBg(Health2000);
-                setRedO(1);
-                setHealthO(0);
-              }}
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-            /> */}
           </div>
           <motion.div
             className="Phone"
@@ -310,7 +239,7 @@ const WindowPull = () => {
             }}
           >
             <motion.div
-              className="Btn"
+              className="RedO"
               style={{
                 width: 96,
                 height: 96,
@@ -321,7 +250,6 @@ const WindowPull = () => {
                 zIndex: 3,
                 //  left: 140,
                 borderRadius: 48,
-
                 border: "26px solid #E55C5C",
               }}
               animate={{ scale: PointScale, opacity: RedO }}
@@ -333,8 +261,10 @@ const WindowPull = () => {
               style={{
                 // backgroundImage: `url(${LockBgBg})`,
                 position: "absolute",
-                //   backgroundColor: "#F7FCFF",
-                backgroundColor: LockBgR,
+                backgroundColor: "#F7FCFF",
+                // backgroundColor: LockBgR,
+                //   opacity: LockBgRO,
+
                 top: 526,
                 width: 214,
                 height: 77.5,
@@ -347,6 +277,8 @@ const WindowPull = () => {
                 overflow: "hidden",
                 zIndex: 1,
               }}
+              animate={{ backgroundColor: LockBgR }}
+              transition={{ backgroundColor: { type: "tween", duration: 0.3 } }}
             >
               <motion.div
                 className="LockPlay"
@@ -365,10 +297,8 @@ const WindowPull = () => {
             <motion.div
               className="LockListBgB"
               style={{
-                // backgroundImage: `url(${LockBgBg})`,
                 position: "absolute",
-                //   backgroundColor: "#F7FCFF",
-                backgroundColor: LockBgB,
+                backgroundColor: "#F7FCFF",
                 top: 526,
                 width: 214,
                 height: 77.5,
@@ -381,6 +311,8 @@ const WindowPull = () => {
                 overflow: "hidden",
                 zIndex: 1,
               }}
+              animate={{ backgroundColor: LockBgB }}
+              transition={{ backgroundColor: { type: "tween", duration: 0.3 } }}
             >
               <motion.div
                 className="LockList"
@@ -449,7 +381,7 @@ const WindowPull = () => {
           />
 
           <motion.div
-            className="Point"
+            className="DragPoint"
             drag={true}
             style={{
               width: 32,
@@ -467,32 +399,29 @@ const WindowPull = () => {
               setGreyBtnY(0);
               setPointScale(1);
               setGreyBtnScale(1);
-              setLockBgBg();
               setLockPlayScale(0);
-
-              const PDX = info.point.x;
-              const PDY = info.point.y;
               setLockBgB("#F7FCFF");
               setLockBgR("#F7FCFF");
-
-              console.log(info.point.x, info.point.y);
+              setRedO(1);
+              //   const PDX = info.point.x;
+              //      const PDY = info.point.y;
+              //   console.log(info.point.x, info.point.y);
             }}
             onDragStart={() => {
               setGreyBtnX(10);
               setGreyBtnY(-10);
               setPointScale(0);
               setGreyBtnScale(1.2);
-              setLockBgBg(LockRedBlue);
               setLockPlayScale(1);
+              setRedO(0);
             }}
             onDrag={(event, info) => {
               const PDX = info.point.x;
               const PDY = info.point.y;
-              //          && WinWidth * 2 - 214 < PDX < WinWidth / 2 + 107
-              // &&      WinWidth / 2 - 107< PDX< WinWidth / 2 + 107
-
+              setRedO(0);
               if (
-                PDY <= 615 &&
+                PDY >= 526 &&
+                PDY <= 605 &&
                 WinWidth / 2 - 107 < PDX &&
                 PDX < WinWidth / 2 + 107
               ) {
@@ -501,6 +430,7 @@ const WindowPull = () => {
                 setLockBgR("#E65B5C");
                 setLockBgB("#F7FCFF");
               } else if (
+                PDY > 605 &&
                 PDY <= 680 &&
                 WinWidth / 2 - 107 < PDX &&
                 PDX < WinWidth / 2 + 107
@@ -510,9 +440,10 @@ const WindowPull = () => {
                 setLockBgB("#4595E3");
                 setLockBgR("#F7FCFF");
               } else if (
-                PDY > 680 &&
-                WinWidth / 2 - 107 < PDX &&
-                PDX < WinWidth / 2 + 107
+                PDY < 526 ||
+                (PDY > 680 &&
+                  WinWidth / 2 - 107 < PDX &&
+                  PDX < WinWidth / 2 + 107)
               ) {
                 setLockIconP(LockPlay);
                 setLockIconL(LockList);
@@ -525,12 +456,7 @@ const WindowPull = () => {
                 setLockBgR("#F7FCFF");
               }
 
-              //else if (PDX < WinWidth * 2 - 214 || PDX > WinWidth / 2 + 107) {
-              //    setLockBgB("#F7FCFF");
-              //   setLockBgR("#F7FCFF");
-              //      }
               console.log(WinWidth / 2 - 107, WinWidth / 2 + 107);
-              // console.log(info.point.x, info.point.y);
             }}
             onTapStart={() => {
               setGreyBtnX(10);
@@ -549,15 +475,10 @@ const WindowPull = () => {
               setGreyBtnY(0);
               setPointScale(1);
               setGreyBtnScale(1);
-              setLockBgBg();
               setLockPlayScale(0);
-
-              const PDX = info.point.x;
-              const PDY = info.point.y;
               setLockBgB("#F7FCFF");
               setLockBgR("#F7FCFF");
-
-              console.log(info.point.x, info.point.y);
+              setRedO(1);
             }}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           />
