@@ -73,7 +73,7 @@ div.ListCard {
     display: none;
   }
 }
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 375px) {
   .ScreenCenter {
     height: 800px !important;
   }

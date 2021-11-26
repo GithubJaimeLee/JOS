@@ -287,7 +287,7 @@ const WindowJump = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 1,
-                position: "-webkit-sticky",
+
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -302,7 +302,7 @@ const WindowJump = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 1,
-                position: "-webkit-sticky",
+
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -317,7 +317,7 @@ const WindowJump = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 1,
-                position: "-webkit-sticky",
+
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -331,7 +331,7 @@ const WindowJump = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 0,
-                position: "-webkit-sticky",
+
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -345,7 +345,7 @@ const WindowJump = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 0,
-                position: "-webkit-sticky",
+
                 position: "sticky",
                 top: 159,
                 left: 0,
@@ -359,7 +359,7 @@ const WindowJump = () => {
                 height: 50,
                 backgroundColor: "#ddd",
                 opacity: 0,
-                position: "-webkit-sticky",
+
                 position: "sticky",
                 top: 159,
                 left: 0,
