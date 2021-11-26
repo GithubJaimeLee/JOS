@@ -52,6 +52,7 @@ class StopWatch extends Component {
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
     // let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
+    let hours = 0;
 
     return (
       <div
@@ -179,6 +180,7 @@ class StopWatch extends Component {
         {this.state.timerOn === false && this.state.timerTime === 0 && (
           <motion.button
             whileTap={{ scale: 0.9 }}
+            //    onClick={this.state.hour === 0}
             onClick={this.startTimer}
             style={{
               position: "absolute",
@@ -210,6 +212,7 @@ class StopWatch extends Component {
               backgroundImage: `url(${Pause})`,
               backgroundColor: "#F95F6D",
             }}
+            animate={{ left: 140 }}
           ></motion.button>
         )}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
@@ -220,6 +223,7 @@ class StopWatch extends Component {
               position: "absolute",
               top: 366,
               left: 150,
+
               // left: 230,
               width: 86,
               height: 86,
@@ -227,6 +231,7 @@ class StopWatch extends Component {
               border: "none",
               opacity: 1,
               zIndex: 2,
+
               backgroundImage: `url(${Play})`,
               backgroundColor: "#F95F6D",
             }}
