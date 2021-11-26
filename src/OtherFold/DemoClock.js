@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { motion, useMotionValue, useTransform, useCycle } from "framer-motion";
-import { Slider, InputNumber, Input, Switch, Tabs } from "antd";
+import React, { useState } from "react";
+import { motion, useCycle } from "framer-motion";
+import { Tabs } from "antd";
+import Lottie from "react-lottie-player";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import Set from "../Icon/Set.png";
@@ -25,7 +26,16 @@ import TimerP from "../Icon/timer.png";
 import ClockP from "../Icon/clock.png";
 import WorldP from "../Icon/world.png";
 import CounterP from "../Icon/counter.png";
-
+import test from "../Icon/svg/jishiqi-off.json";
+import test1 from "../Icon/svg/jishiqi.json";
+import test2 from "../Icon/svg/miaobiao-off.json";
+import test3 from "../Icon/svg/miaobiao.json";
+import test4 from "../Icon/svg/naozhogn .json";
+import test5 from "../Icon/svg/naozhogn .json";
+import test6 from "../Icon/svg/naozhogn-off .json";
+import test7 from "../Icon/svg/shijieshizhong-off.json";
+import test8 from "../Icon/svg/shijieshizhong.json";
+import test9 from "../Icon/svg/jishiqi-off.json";
 const SetBtnStyle = {
   position: "absolute",
   backgroundImage: `url(${Set})`,
@@ -232,6 +242,55 @@ const OtherMotion = () => {
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
+      {/*  <Lottie loop animationData={test} style={{ width: 150, height: 150 }} />
+      <Lottie
+        loop
+        animationData={test1}
+        style={{ width: 150, height: 150 }}
+      />{" "}
+      <Lottie loop animationData={test2} style={{ width: 150, height: 150 }} />{" "}
+      <Lottie
+        loop
+        animationData={test3}
+        play
+        style={{ width: 150, height: 150 }}
+      />{" "}
+      <Lottie
+        loop
+        animationData={test4}
+        play
+        style={{ width: 150, height: 150 }}
+      />{" "}
+      <Lottie
+        loop
+        animationData={test5}
+        play
+        style={{ width: 150, height: 150 }}
+      />{" "}
+      <Lottie
+        loop
+        animationData={test6}
+        play
+        style={{ width: 150, height: 150 }}
+      />{" "}
+      <Lottie
+        loop
+        animationData={test7}
+        play
+        style={{ width: 150, height: 150 }}
+      />
+      <Lottie
+        loop
+        animationData={test8}
+        play
+        style={{ width: 150, height: 150 }}
+      />
+      <Lottie
+        loop
+        animationData={test9}
+        play
+        style={{ width: 150, height: 150 }}
+      /> */}
       <div
         className="ScreenCenter"
         style={{
@@ -370,6 +429,7 @@ const OtherMotion = () => {
                 width: 360,
                 height: 800,
                 backgroundImage: `url(${ClockBg1})`,
+                backgroundSize: "360px 800px",
               }}
             ></div>
           </TabPane>
@@ -455,6 +515,7 @@ const OtherMotion = () => {
                 width: 360,
                 height: 800,
                 backgroundImage: `url(${ClockBg2})`,
+                backgroundSize: "360px 800px",
               }}
             ></div>
           </TabPane>
@@ -515,6 +576,7 @@ const OtherMotion = () => {
                 width: 360,
                 height: 800,
                 backgroundImage: `url(${ClockBg3})`,
+                backgroundSize: "360px 800px",
               }}
             ></div>
           </TabPane>
@@ -580,6 +642,7 @@ const OtherMotion = () => {
                 width: 360,
                 height: 800,
                 backgroundImage: `url(${ClockBg4})`,
+                backgroundSize: "360px 800px",
               }}
             ></div>
           </TabPane>

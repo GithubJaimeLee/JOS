@@ -9,7 +9,7 @@ export default function Clock(props) {
   const [hh, setHh] = React.useState(0);
   const [mm, setMm] = React.useState(0);
   const [ss, setSs] = React.useState(0);
-
+  const deg = 6;
   const units = {
     hour: {
       name: "hour",
@@ -34,7 +34,7 @@ export default function Clock(props) {
       setHh(now.getHours() * 30);
       setMm(now.getMinutes() * units.second.divider);
       setSs((now.getTime() / 1000) * units.second.divider);
-      // setSs(now.getSeconds() * deg);
+      setSs(now.getSeconds() * deg);
     }, 10);
   }, []);
 

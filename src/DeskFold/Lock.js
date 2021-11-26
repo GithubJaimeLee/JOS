@@ -17,6 +17,7 @@ import BHealth2000 from "../Img/BHealth2000.png";
 
 const Background = {
   backgroundImage: `url(${LockBg})`,
+  backgroundSize: "375px 812px",
   position: "absolute",
   width: 375,
   height: 812,
