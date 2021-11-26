@@ -26,16 +26,16 @@ import TimerP from "../Icon/timer.png";
 import ClockP from "../Icon/clock.png";
 import WorldP from "../Icon/world.png";
 import CounterP from "../Icon/counter.png";
-import test from "../Icon/svg/jishiqi-off.json";
-import test1 from "../Icon/svg/jishiqi.json";
-import test2 from "../Icon/svg/miaobiao-off.json";
+
+import test1 from "../Icon/svg/naozhogn.json";
+import test2 from "../Icon/svg/shijieshizhong.json";
 import test3 from "../Icon/svg/miaobiao.json";
-import test4 from "../Icon/svg/naozhogn .json";
-import test5 from "../Icon/svg/naozhogn .json";
-import test6 from "../Icon/svg/naozhogn-off .json";
-import test7 from "../Icon/svg/shijieshizhong-off.json";
-import test8 from "../Icon/svg/shijieshizhong.json";
-import test9 from "../Icon/svg/jishiqi-off.json";
+import test4 from "../Icon/svg/jishiqi.json";
+import test5 from "../Icon/svg/naozhogn-off.json";
+import test6 from "../Icon/svg/shijieshizhong-off.json";
+import test7 from "../Icon/svg/miaobiao-off.json";
+import test8 from "../Icon/svg/jishiqi-off.json";
+
 const SetBtnStyle = {
   position: "absolute",
   backgroundImage: `url(${Set})`,
@@ -95,11 +95,12 @@ const OtherMotion = () => {
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
 
-  const [TimerVar, setTimer] = useState(TimerG);
-  const [ClockVar, setClock] = useState(ClockG);
-  const [WorldVar, setWorld] = useState(WorldG);
-  const [CounterVar, setCounter] = useState(CounterG);
+  const [TimerVar, setTimer] = useState(TimerP);
+  const [ClockVar, setClock] = useState(ClockP);
+  const [WorldVar, setWorld] = useState(WorldP);
+  const [CounterVar, setCounter] = useState(CounterP);
 
+  const [Stop, setStop] = useState(true);
   const Info = (
     <p>
       scale(缩放)
@@ -239,57 +240,95 @@ const OtherMotion = () => {
     console.log(newValue);
   }
   const date = new Date().toLocaleDateString();
+  /* 
+  const defaultOptions = {
+    // animationData: { test2 },
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  }; */
+
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
-      {/*  <Lottie loop animationData={test} style={{ width: 150, height: 150 }} />
+      <button
+        style={{
+          position: "absolute",
+
+          width: 100,
+          height: 100,
+          top: 300,
+          zIndex: 1000000,
+          pointerEvents: "auto",
+        }}
+        onClick={() => setStop(!Stop)}
+      >
+        button
+      </button>
       <Lottie
-        loop
+        play={Stop}
+        loop={1}
+        segments={[0, 70]}
+        // autoplay={true}
+        animationData={test2}
+        //   stop={true}
+        style={{
+          position: "absolute",
+          preserveAspectRatio: "xMidYMid slice",
+          width: 100,
+          height: 100,
+          top: 0,
+          left: 25,
+          zIndex: 10000,
+        }}
+      />
+      {/*  <Lottie
+        loop={1}
+        play
         animationData={test1}
-        style={{ width: 150, height: 150 }}
+        style={{ width: 36, height: 36 }}
       />{" "}
-      <Lottie loop animationData={test2} style={{ width: 150, height: 150 }} />{" "}
       <Lottie
-        loop
+        play
+        loop={1}
+        animationData={test2}
+        style={{ width: 36, height: 36 }}
+      />{" "}
+      <Lottie
+        loop={1}
         animationData={test3}
         play
-        style={{ width: 150, height: 150 }}
+        style={{ width: 36, height: 36 }}
       />{" "}
       <Lottie
-        loop
+        loop={1}
         animationData={test4}
-        play
-        style={{ width: 150, height: 150 }}
+        play={true}
+        style={{ width: 36, height: 36 }}
       />{" "}
       <Lottie
-        loop
+        loop={1}
         animationData={test5}
         play
-        style={{ width: 150, height: 150 }}
+        style={{ width: 36, height: 36 }}
       />{" "}
       <Lottie
-        loop
+        loop={1}
         animationData={test6}
         play
-        style={{ width: 150, height: 150 }}
+        style={{ width: 36, height: 36 }}
       />{" "}
       <Lottie
-        loop
+        loop={1}
         animationData={test7}
         play
-        style={{ width: 150, height: 150 }}
+        style={{ width: 36, height: 36 }}
       />
       <Lottie
-        loop
+        loop={1}
         animationData={test8}
         play
-        style={{ width: 150, height: 150 }}
-      />
-      <Lottie
-        loop
-        animationData={test9}
-        play
-        style={{ width: 150, height: 150 }}
+        style={{ width: 36, height: 36 }}
       /> */}
       <div
         className="ScreenCenter"
@@ -316,7 +355,7 @@ const OtherMotion = () => {
             width: 360,
             position: "absolute",
           }}
-          onClick={() => setClock(ClockG)}
+          //    onClick={() => setClock(ClockG)}
           onChange={callback}
         >
           <TabPane tab="闹钟" key="1" id="Clock1">
@@ -332,7 +371,7 @@ const OtherMotion = () => {
               alt=""
             />
             <div
-              onClick={Setcyc1}
+              //    onClick={Setcyc1}
               className="SetBtn"
               style={{
                 width: 60,
@@ -445,7 +484,7 @@ const OtherMotion = () => {
               alt=""
             />
             <div
-              onClick={Setcyc2}
+              //         onClick={Setcyc2}
               className="SetBtn"
               style={{
                 width: 60,
@@ -533,7 +572,7 @@ const OtherMotion = () => {
             />
             <div
               //    whileTap={setTimer(TimerG)}
-              onClick={Setcyc3}
+              //     onClick={Setcyc3}
               className="SetBtn"
               style={{
                 width: 60,
@@ -582,13 +621,13 @@ const OtherMotion = () => {
           </TabPane>
 
           <TabPane
-            onClick={() => setCounter(CounterG)}
+            //    onClick={() => setCounter(CounterG)}
             tab="计时器"
             key="4"
             id="Clock4"
           >
             <div
-              onClick={Setcyc4}
+              // onClick={Setcyc4}
               className="SetBtn"
               style={{
                 width: 60,
