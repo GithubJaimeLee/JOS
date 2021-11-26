@@ -89,7 +89,7 @@ const ChooseLoadingSwitch = () => {
             variants={BtnVariants}
             animate={BtnAnimation}
             whileTap={{ type: "spring" }}
-            onClick={(toggleSwitch, cycleAnimation)}
+            onPan={(toggleSwitch, cycleAnimation)}
           >
             <motion.div
               className="Handle"
@@ -98,6 +98,7 @@ const ChooseLoadingSwitch = () => {
                 backgroundColor: "#b2b2b2",
                 height: 16,
                 width: 16,
+                pointerEvents: "none",
                 borderRadius: "16px",
               }}
               variants={PointVariants}
