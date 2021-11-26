@@ -21,6 +21,7 @@
     "framer-motion": "^4.1.17",
     "jquery": "^3.6.0",
     "keen-slider": "^5.5.1",
+    "lottie-web": "^5.8.1",
     "react": "^17.0.2",
     "react-animated-number": "^0.4.4",
     "react-beautiful-dnd": "^13.1.0",
