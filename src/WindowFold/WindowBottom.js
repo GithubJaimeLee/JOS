@@ -46,7 +46,7 @@ const BoxAnimation = {
 };
 
 const ContactBodyStyle = {
-  backgroundImage: `url(${WindowBottomBg})`,
+  //backgroundImage: `url(${WindowBottomBg})`,
   backgroundColor: "#EEEEEE",
   position: "absolute",
   width: 375,
@@ -350,7 +350,8 @@ const WindowBottom = () => {
               opacity: 1,
               y: Y,
               x: X,
-              backgroundImage: `url(${WindowBottomWin})`,
+              //   backgroundImage: `url(${WindowBottomWin})`,
+              backgroundColor: "#FFFFFF",
               borderRadius: 20,
               position: "absolute",
               bottom: 40,

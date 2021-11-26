@@ -54,8 +54,8 @@ const BgAnimation = {
 };
 
 const ContactBodyStyle = {
-  backgroundImage: `url(${WindowCenterBg})`,
-  // backgroundColor: "#EEEEEE",
+  // backgroundImage: `url(${WindowCenterBg})`,
+  backgroundColor: "#EEEEEE",
   position: "absolute",
   width: 375,
   height: 812,
@@ -156,7 +156,8 @@ const WindowCenter = () => {
               width: 232,
               height: 72,
               opacity: 1,
-              backgroundImage: `url(${CenterWin})`,
+              //    backgroundImage: `url(${CenterWin})`,
+              backgroundColor: "#FFFFFF",
               borderRadius: 17,
               position: "absolute",
               bottom: 100,

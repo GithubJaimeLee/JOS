@@ -138,14 +138,14 @@ const Window = () => {
                     <p style={{ paddingTop: 40 }}>翻页</p>{" "}
                   </motion.div>{" "}
                 </Link>
-                <Link
+                {/*                <Link
                   to="/Window/WindowVoice"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>侧边音量</p>{" "}
                   </motion.div>{" "}
-                </Link>
+                </Link> */}
                 {/*   <Link
                   to="/Window/WindowBubble"
                   style={{ textDecoration: "none" }}
