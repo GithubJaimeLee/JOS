@@ -368,6 +368,7 @@ const Create = () => {
             type: "spring",
             damping: 32,
             stiffness: 300,
+            backgroundColor: { type: "tween", duration: 0.1 },
           }}
         />
       </div>
