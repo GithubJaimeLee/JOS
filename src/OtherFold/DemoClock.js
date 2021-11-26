@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useTransform, useCycle } from "framer-motion";
 import { Slider, InputNumber, Input, Switch, Tabs } from "antd";
 import NavBarPage from "../Component/NavBarPage";
@@ -257,10 +257,12 @@ const OtherMotion = () => {
             width: 360,
             position: "absolute",
           }}
+          onClick={() => setClock(ClockG)}
           onChange={callback}
         >
           <TabPane tab="闹钟" key="1" id="Clock1">
             <img
+              id="ClockIcon"
               src={ClockVar}
               style={{
                 position: "absolute",
@@ -371,7 +373,7 @@ const OtherMotion = () => {
               }}
             ></div>
           </TabPane>
-          <TabPane tab="世界时钟" key="2" id="Clock2">
+          <TabPane tab={"世界时钟"} key="2" id="Clock2">
             <img
               src={WorldVar}
               style={{

@@ -27,10 +27,11 @@ const BgStyle = {
   height: 812,
   backgroundColor: "#000",
   textAlign: "center",
-  zIndex: 1,
+  zIndex: 10,
   opacity: 0,
   display: "flex",
   justifyContent: "center",
+  pointerEvents: "auto",
 };
 
 const CenterWinVariants = {
@@ -136,34 +137,45 @@ const WindowCenter = () => {
           top: 0,
         }}
       >
-        <div className="ContactBody" style={ContactBodyStyle} />
-
         {/*     <div className="ContactBtn" style={ContactBtnStyle} /> */}
-
-        <motion.div
-          className="CenterWin"
+        <div
+          className="mask"
           style={{
-            width: 232,
-            height: 72,
-            opacity: 1,
-            backgroundImage: `url(${CenterWin})`,
-            borderRadius: 17,
+            width: 360,
+            display: "flex",
+            justifyContent: "center",
+            height: 800,
+            overflow: "hidden",
             position: "absolute",
-            bottom: 100,
-            zIndex: 20,
-            y: -300,
-            scale: 0,
+            top: 0,
           }}
-          variants={CenterWinVariants}
-          animate={CenterWinAnimate}
-        />
-        <motion.div
-          className="MaskChange"
-          onClick={() => cycleAnimation() & BgCycleAnimation()}
-          style={BgStyle}
-          variants={BgAnimation}
-          animate={animationBg}
-        />
+        >
+          <motion.div
+            className="CenterWin"
+            style={{
+              width: 232,
+              height: 72,
+              opacity: 1,
+              backgroundImage: `url(${CenterWin})`,
+              borderRadius: 17,
+              position: "absolute",
+              bottom: 100,
+              zIndex: 20,
+              y: -300,
+              scale: 0,
+            }}
+            variants={CenterWinVariants}
+            animate={CenterWinAnimate}
+          />
+          <motion.div
+            className="MaskChange"
+            onClick={() => cycleAnimation() & BgCycleAnimation()}
+            style={BgStyle}
+            variants={BgAnimation}
+            animate={animationBg}
+          />
+          <div className="BG" style={ContactBodyStyle} />
+        </div>
       </div>
       <Bg />
     </div>

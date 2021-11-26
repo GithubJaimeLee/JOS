@@ -23,7 +23,7 @@ const SetWindowVariants = {
     y: 780,
   },
   UPanimationTwo: {
-    y: 400,
+    y: 470,
   },
 };
 
@@ -42,8 +42,8 @@ const ContactBtnStyle = {
 const MaskStyle = {
   position: "absolute",
   bottom: 0,
-  width: 375,
-  height: 812,
+  width: 360,
+  height: 800,
   backgroundColor: "#999",
   textAlign: "center",
   zIndex: 1,
@@ -56,7 +56,7 @@ const MaskStyle = {
 
 const BoxAnimation = {
   animationOne: {
-    x: 375,
+    x: 360,
   },
   animationTwo: {
     x: 0,
@@ -82,8 +82,8 @@ const SetBgAnimation = {
 const ContactBodyStyle = {
   //backgroundColor: "#ddd",
   position: "absolute",
-  width: 375,
-  height: 812,
+  width: 360,
+  height: 800,
   zIndex: 1,
   display: "flex",
   justifyContent: "center",
@@ -152,7 +152,7 @@ const JumpIn = () => {
           className="allImportant"
           ref={ref}
           style={{
-            height: 812,
+            height: 800,
             overflow: "scroll",
           }}
         >
@@ -168,7 +168,7 @@ const JumpIn = () => {
                 backgroundImage: `url(${SetHeader})`,
                 top: 0,
 
-                width: 375,
+                width: 360,
                 height: 148,
                 position: "fixed",
                 opacity: 1,
@@ -200,7 +200,7 @@ const JumpIn = () => {
                 y,
                 backgroundImage: `url(${SetBody})`,
                 top: 148,
-                width: 375,
+                width: 360,
                 height: 1590,
                 position: "relative",
                 opacity: 1,
@@ -212,8 +212,8 @@ const JumpIn = () => {
               className="Background"
               style={{
                 backgroundColor: "#f7f7f7",
-                width: 375,
-                height: 812,
+                width: 360,
+                height: 800,
                 position: "absolute",
                 top: 0,
 
@@ -229,8 +229,8 @@ const JumpIn = () => {
             display: "flex",
             justifyContent: "center",
             position: "absolute",
-            width: 375,
-            height: 812,
+            width: 360,
+            height: 800,
             overflow: "hidden",
           }}
         >
@@ -240,7 +240,7 @@ const JumpIn = () => {
               position: "absolute",
               top: 50,
               width: 350,
-              height: 340,
+              height: 240,
               borderRadius: 12,
               display: "flex",
               justifyContent: "center",
@@ -371,8 +371,8 @@ const JumpIn = () => {
             <motion.div
               className="boxChange"
               style={{
-                width: 375,
-                height: 812,
+                width: 360,
+                height: 800,
                 boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
                 opacity: 1,
                 backgroundImage: `url(${JumpAppWin})`,
@@ -382,7 +382,7 @@ const JumpIn = () => {
                 borderTopLeftRadius: BR,
                 borderBottomLeftRadius: BR,
                 y: 101,
-                x: 375,
+                x: 360,
               }}
               variants={BoxAnimation}
               animate={animationBox}

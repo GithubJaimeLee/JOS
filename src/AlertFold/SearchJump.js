@@ -151,7 +151,7 @@ const SearchJump = () => {
           设置界面：
           <br /> positionY：-52dp
           <br /> time：500ms
-          <br /> bezier curve:（0.2, 0.15, 0, 1)
+          <br /> bezier curve:(0.2, 0.15, 0, 1)
           <br /> alpha:  1 ~ 0
           <br /> time:  200ms bezier curve:  (0.33, 0 ,0.67, 1)
           <br /> 搜索框：
@@ -229,7 +229,7 @@ const SearchJump = () => {
           <br />
           time：500ms
           <br />
-          bezier curve:（0.2, 0.15, 0, 1 ）
+          bezier curve:(0.2, 0.15, 0, 1 )
           <br />
           alpha：0 ～ 1
           <br />
@@ -237,7 +237,7 @@ const SearchJump = () => {
           <br />
           delaty:   150ms             
           <br />
-          bezier curve:（0.33, 0, 0.67, 1 ）
+          bezier curve:(0.33, 0, 0.67, 1 )
           <br />
           文件管理：
           <br />
@@ -260,13 +260,13 @@ const SearchJump = () => {
           <br />
           positionY：-74dp
           <br />
-          bezier curve:（0.2, 0.15, 0, 1 ）
+          bezier curve:(0.2, 0.15, 0, 1 )
           <br />
           alpha：1 ～ 0
           <br />
           time： 200ms                                             
           <br />
-          bezier curve:（0.33, 0, 0.67, 1 ）
+          bezier curve:(0.33, 0, 0.67, 1 )
           <br />
           文件管理：
           <br />
@@ -297,198 +297,211 @@ const SearchJump = () => {
           top: 0,
         }}
       >
-        <motion.div
-          className="Finger"
-          variants={FingerVariants}
-          animate={animationBox}
-          transition={{ type: "tween" }}
-          className="ContactBtn"
-          onClick={() =>
-            cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
-          }
+        <div
+          className="Mask"
           style={{
-            width: 100,
-            height: 100,
-            backgroundImage: `url(${FingerClick})`,
-            position: "relative",
-            top: 88,
-            y: 30,
-            backgroundPosition: "25px 25px",
-            zIndex: 100,
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-        <motion.div
-          onClick={() =>
-            cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
-          }
-          className="BG"
-          transition={{
-            type: "tween",
-          }}
-          style={{
-            width: 375,
-            height: 812,
+            width: 360,
+            height: 800,
             position: "absolute",
+            top: 0,
             overflow: "hidden",
             display: "flex",
+            justifyContent: "center",
           }}
         >
           <motion.div
-            className="SetText"
-            style={{
-              height: 21,
-              position: "absolute",
-              width: 42,
-              backgroundImage: `url(${SetText})`,
-              left: 33,
-              top: 63,
-              zIndex: 3,
-              transformOrigin: "0px,0px",
-            }}
-            variants={VSetText}
+            className="Finger"
+            variants={FingerVariants}
             animate={animationBox}
-            transition={{
-              type: "tween",
+            transition={{ type: "tween" }}
+            className="ContactBtn"
+            onClick={() =>
+              cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
+            }
+            style={{
+              width: 100,
+              height: 100,
+              backgroundImage: `url(${FingerClick})`,
+              position: "relative",
+              top: 88,
+              y: 30,
+              backgroundPosition: "25px 25px",
+              zIndex: 100,
+              backgroundRepeat: "no-repeat",
             }}
           />
           <motion.div
-            className="CancelText"
-            style={{
-              height: 16,
-              position: "absolute",
-              width: 34,
-              backgroundImage: `url(${CancelText})`,
-              right: 28,
-              zIndex: 30,
-              top: 126,
-              opacity: 0,
-            }}
-            variants={VCancelText}
-            animate={animationBox}
+            onClick={() =>
+              cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
+            }
+            className="BG"
             transition={{
               type: "tween",
             }}
-          />
-          <motion.div
-            className="blackLine"
             style={{
-              height: 6,
-              width: 0,
-              top: 162,
-              backgroundColor: "#000000",
-              zIndex: 3,
-              position: "absolute",
-              right: 28,
-            }}
-            variants={blackLine}
-            animate={animationBox}
-            transition={{
-              type: "tween",
-            }}
-          />
-          <motion.div
-            className="greyLine"
-            style={{
-              height: 6,
-              width: 320,
-              backgroundColor: "#eee",
-              zIndex: 2,
-              position: "absolute",
-              top: 162,
-              left: 28,
-              transformOrigin: "0px,0px",
-            }}
-            variants={greyLine}
-            animate={animationBox}
-            transition={{
-              type: "tween",
-            }}
-          />
-          <motion.div
-            className="blueLine"
-            style={{
-              height: 20,
-              width: 5,
-              backgroundColor: "#58AEEC",
-              zIndex: 2,
-              position: "absolute",
-              top: 64,
-              left: 24,
-              transformOrigin: "0px,0px",
-            }}
-            variants={blueLine}
-            animate={animationBox}
-            transition={{
-              type: "tween",
-            }}
-          />
-          <div
-            className="ScrollBody"
-            style={{
-              height: 812,
-
               width: 375,
+              height: 812,
               position: "absolute",
-              top: 0,
-              overflow: "scroll",
+              overflow: "hidden",
+              display: "flex",
             }}
           >
             <motion.div
-              className="ContactBody"
-              style={ContactBodyStyle}
-              variants={BGVariants}
-              animate={animationBG}
+              className="SetText"
+              style={{
+                height: 21,
+                position: "absolute",
+                width: 42,
+                backgroundImage: `url(${SetText})`,
+                left: 33,
+                top: 63,
+                zIndex: 3,
+                transformOrigin: "0px,0px",
+              }}
+              variants={VSetText}
+              animate={animationBox}
               transition={{
                 type: "tween",
               }}
             />
-          </div>
-        </motion.div>
-        <motion.div
-          className="SearchBar"
-          style={{
-            width: 375,
-            height: 34,
-            opacity: 1,
-            y: 116,
-            backgroundImage: `url(${SearchBar})`,
-            position: "absolute",
-            //bottom: -420,
-            zIndex: 20,
-          }}
-          variants={SearchBarVariants}
-          animate={animationBox}
-          transition={{
-            type: "tween",
-          }}
-        />
+            <motion.div
+              className="CancelText"
+              style={{
+                height: 16,
+                position: "absolute",
+                width: 34,
+                backgroundImage: `url(${CancelText})`,
+                right: 28,
+                zIndex: 30,
+                top: 126,
+                opacity: 0,
+              }}
+              variants={VCancelText}
+              animate={animationBox}
+              transition={{
+                type: "tween",
+              }}
+            />
+            <motion.div
+              className="blackLine"
+              style={{
+                height: 6,
+                width: 0,
+                top: 162,
+                backgroundColor: "#000000",
+                zIndex: 3,
+                position: "absolute",
+                right: 28,
+              }}
+              variants={blackLine}
+              animate={animationBox}
+              transition={{
+                type: "tween",
+              }}
+            />
+            <motion.div
+              className="greyLine"
+              style={{
+                height: 6,
+                width: 320,
+                backgroundColor: "#eee",
+                zIndex: 2,
+                position: "absolute",
+                top: 162,
+                left: 28,
+                transformOrigin: "0px,0px",
+              }}
+              variants={greyLine}
+              animate={animationBox}
+              transition={{
+                type: "tween",
+              }}
+            />
+            <motion.div
+              className="blueLine"
+              style={{
+                height: 20,
+                width: 5,
+                backgroundColor: "#58AEEC",
+                zIndex: 2,
+                position: "absolute",
+                top: 64,
+                left: 24,
+                transformOrigin: "0px,0px",
+              }}
+              variants={blueLine}
+              animate={animationBox}
+              transition={{
+                type: "tween",
+              }}
+            />
+            <div
+              className="ScrollBody"
+              style={{
+                height: 812,
 
-        <motion.div
-          className="KeyBoard"
-          style={{
-            width: 375,
-            height: 290,
-            backgroundImage: `url(${WindowInputKeyboard})`,
-            position: "absolute",
-            bottom: 100,
-            zIndex: 20,
-            y: 400,
-          }}
-          variants={KeyBoardVariants}
-          animate={animationKeyBoard}
-          transition={{ type: "tween" }}
-        />
-        <div
-          className="blackBg"
-          style={{
-            position: "absolute",
-            width: 375,
-            height: 812,
-            zIndex: -10,
-            backgroundColor: "#fff",
-          }}
-        />
+                width: 375,
+                position: "absolute",
+                top: 0,
+                overflow: "scroll",
+              }}
+            >
+              <motion.div
+                className="ContactBody"
+                style={ContactBodyStyle}
+                variants={BGVariants}
+                animate={animationBG}
+                transition={{
+                  type: "tween",
+                }}
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            className="SearchBar"
+            style={{
+              width: 375,
+              height: 34,
+              opacity: 1,
+              y: 116,
+              backgroundImage: `url(${SearchBar})`,
+              position: "absolute",
+              //bottom: -420,
+              zIndex: 20,
+            }}
+            variants={SearchBarVariants}
+            animate={animationBox}
+            transition={{
+              type: "tween",
+            }}
+          />
+
+          <motion.div
+            className="KeyBoard"
+            style={{
+              width: 375,
+              height: 290,
+              backgroundImage: `url(${WindowInputKeyboard})`,
+              position: "absolute",
+              bottom: 100,
+              zIndex: 20,
+              y: 400,
+            }}
+            variants={KeyBoardVariants}
+            animate={animationKeyBoard}
+            transition={{ type: "tween" }}
+          />
+          <div
+            className="blackBg"
+            style={{
+              position: "absolute",
+              width: 375,
+              height: 812,
+              zIndex: -10,
+              backgroundColor: "#fff",
+            }}
+          />
+        </div>
       </div>
       <Bg />
     </div>

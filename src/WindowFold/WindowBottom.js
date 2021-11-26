@@ -188,136 +188,150 @@ const WindowBottom = () => {
           top: 0,
         }}
       >
-        <motion.div
-          className="SetWindow"
+        <div
+          className="mask"
           style={{
+            width: 360,
+            height: 800,
             position: "absolute",
-            top: 50,
-            width: 350,
-            height: 260,
-            borderRadius: 12,
-            display: "grid",
-            alignContent: "space-evenly",
+            top: 0,
+            overflow: "hidden",
+            display: "flex",
             justifyContent: "center",
-            // alignContent: "center",
-            backgroundColor: "rgba(255,255,255,0.9)",
-            // filter: "blur(2px)",
-            boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
-            zIndex: 100,
-            y: 780,
           }}
-          variants={SetVariants}
-          animate={SetAnimation}
         >
-          <motion.img
-            className="CloseBtn"
-            onClick={() => SetCycle()}
-            src={Close}
-            alt=""
+          <motion.div
+            className="SetWindow"
             style={{
-              width: 16,
-              height: 16,
-              right: 20,
-              top: 16,
-              zIndex: 1000,
               position: "absolute",
+              top: 50,
+              width: 350,
+              height: 260,
+              borderRadius: 12,
+              display: "grid",
+              alignContent: "space-evenly",
+              justifyContent: "center",
+              // alignContent: "center",
+              backgroundColor: "rgba(255,255,255,0.9)",
+              // filter: "blur(2px)",
+              boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
+              zIndex: 100,
+              y: 780,
             }}
+            variants={SetVariants}
+            animate={SetAnimation}
+          >
+            <motion.img
+              className="CloseBtn"
+              onClick={() => SetCycle()}
+              src={Close}
+              alt=""
+              style={{
+                width: 16,
+                height: 16,
+                right: 20,
+                top: 16,
+                zIndex: 1000,
+                position: "absolute",
+              }}
+            />
+
+            <div
+              className="DefaultDamping"
+              style={{
+                width: 300,
+                height: "auto",
+                fontSize: 14,
+                marginTop: 12,
+              }}
+            >
+              <h6>Damping 阻尼</h6>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                }}
+              >
+                <Slider
+                  min={0}
+                  max={100}
+                  onChange={setDamping}
+                  value={Damping}
+                  step={1}
+                  style={{
+                    width: 220,
+                  }}
+                />
+                <InputNumber
+                  min={0}
+                  max={100}
+                  style={{
+                    margin: 0,
+                    height: 30,
+                    width: 70,
+                    borderRadius: 6,
+                  }}
+                  step={1}
+                  onChange={setDamping}
+                  value={Damping}
+                />
+              </div>
+            </div>
+            <div
+              className="DefaultStiffness"
+              style={{
+                width: 300,
+                height: "auto",
+                fontSize: 14,
+                marginTop: 12,
+              }}
+            >
+              {/* <br /> */}
+              <h6>Stiffness 刚度</h6>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                }}
+              >
+                <Slider
+                  min={1}
+                  max={1000}
+                  onChange={setStiffness}
+                  value={Stiffness}
+                  step={1}
+                  style={{
+                    width: 220,
+                  }}
+                />
+                <InputNumber
+                  min={1}
+                  max={1000}
+                  style={{
+                    margin: 0,
+                    height: 30,
+                    width: 70,
+                    borderRadius: 6,
+                  }}
+                  step={1}
+                  onChange={setStiffness}
+                  value={Stiffness}
+                />
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            onClick={() =>
+              cycleAnimation() & BgCycleAnimation() & FingerCycle()
+            }
+            className="MaskChange"
+            style={MaskStyle}
+            variants={BgAnimation}
+            animate={animationBg}
           />
+          <div className="ContactBody" style={ContactBodyStyle} />
 
-          <div
-            className="DefaultDamping"
-            style={{
-              width: 300,
-              height: "auto",
-              fontSize: 14,
-              marginTop: 12,
-            }}
-          >
-            <h6>Damping 阻尼</h6>
-            <div
-              style={{
-                display: "flex",
-                gap: 10,
-              }}
-            >
-              <Slider
-                min={0}
-                max={100}
-                onChange={setDamping}
-                value={Damping}
-                step={1}
-                style={{
-                  width: 220,
-                }}
-              />
-              <InputNumber
-                min={0}
-                max={100}
-                style={{
-                  margin: 0,
-                  height: 30,
-                  width: 70,
-                  borderRadius: 6,
-                }}
-                step={1}
-                onChange={setDamping}
-                value={Damping}
-              />
-            </div>
-          </div>
-          <div
-            className="DefaultStiffness"
-            style={{
-              width: 300,
-              height: "auto",
-              fontSize: 14,
-              marginTop: 12,
-            }}
-          >
-            {/* <br /> */}
-            <h6>Stiffness 刚度</h6>
-            <div
-              style={{
-                display: "flex",
-                gap: 10,
-              }}
-            >
-              <Slider
-                min={1}
-                max={1000}
-                onChange={setStiffness}
-                value={Stiffness}
-                step={1}
-                style={{
-                  width: 220,
-                }}
-              />
-              <InputNumber
-                min={1}
-                max={1000}
-                style={{
-                  margin: 0,
-                  height: 30,
-                  width: 70,
-                  borderRadius: 6,
-                }}
-                step={1}
-                onChange={setStiffness}
-                value={Stiffness}
-              />
-            </div>
-          </div>
-        </motion.div>
-        <motion.div
-          onClick={() => cycleAnimation() & BgCycleAnimation() & FingerCycle()}
-          className="MaskChange"
-          style={MaskStyle}
-          variants={BgAnimation}
-          animate={animationBg}
-        />
-        <div className="ContactBody" style={ContactBodyStyle} />
-
-        {/*         <motion.div
+          {/*         <motion.div
           className="ContactBtn"
           //  onClick={() => cycleAnimation() & BgCycleAnimation()}
           style={ContactBtnStyle}
@@ -325,52 +339,53 @@ const WindowBottom = () => {
           animate={Fingeranimation}
         /> */}
 
-        <motion.div
-          drag="y"
-          onClick={() => cycleAnimation() & BgCycleAnimation()}
-          className="JumpWin"
-          style={{
-            width: 340,
-            height: 275,
-            boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-            opacity: 1,
-            y: Y,
-            x: X,
-            backgroundImage: `url(${WindowBottomWin})`,
-            borderRadius: 20,
-            position: "absolute",
-            bottom: 40,
-            zIndex: 20,
-          }}
-          variants={BoxAnimation}
-          animate={animationBox}
-          transition={{
-            type: "spring",
-            damping: Damping,
-            stiffness: Stiffness,
-            //  x: { type: "spring", stiffness: 100 },
-            //default: { duration: 2 },
-          }}
-          dragConstraints={{
-            top: 0,
-            bottom: 0,
-          }}
-          dragElastic={0.08}
-          //值越大越容易拖动
+          <motion.div
+            drag="y"
+            onClick={() => cycleAnimation() & BgCycleAnimation()}
+            className="JumpWin"
+            style={{
+              width: 340,
+              height: 275,
+              boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+              opacity: 1,
+              y: Y,
+              x: X,
+              backgroundImage: `url(${WindowBottomWin})`,
+              borderRadius: 20,
+              position: "absolute",
+              bottom: 40,
+              zIndex: 20,
+            }}
+            variants={BoxAnimation}
+            animate={animationBox}
+            transition={{
+              type: "spring",
+              damping: Damping,
+              stiffness: Stiffness,
+              //  x: { type: "spring", stiffness: 100 },
+              //default: { duration: 2 },
+            }}
+            dragConstraints={{
+              top: 0,
+              bottom: 0,
+            }}
+            dragElastic={0.08}
+            //值越大越容易拖动
 
-          onDragCancel={() => {
-            setX(-1);
-            setY(-1);
-          }}
-          onDragStart={() => {
-            setX(-1);
-            setY(-1);
-          }}
-          onDragEnd={() => {
-            setX(-1);
-            setY(-1);
-          }}
-        />
+            onDragCancel={() => {
+              setX(-1);
+              setY(-1);
+            }}
+            onDragStart={() => {
+              setX(-1);
+              setY(-1);
+            }}
+            onDragEnd={() => {
+              setX(-1);
+              setY(-1);
+            }}
+          />
+        </div>
       </div>
       <Bg />
     </div>

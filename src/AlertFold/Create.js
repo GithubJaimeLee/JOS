@@ -142,35 +142,47 @@ const Create = () => {
           top: 0,
         }}
       >
-        <motion.div
-          variants={FingerVariants}
-          animate={animationBox}
-          transition={{ type: "tween" }}
-          className="ContactBtn"
-          onClick={() =>
-            cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
-          }
-          style={FingerStyle}
-        />
-        <motion.div
-          onClick={() =>
-            cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
-          }
-          className="BG"
-          variants={BGVariants}
-          animate={animationBG}
-          transition={{
-            type: "tween",
-          }}
+        <div
+          className="mask"
           style={{
             width: 360,
-            height: 812,
+            height: 800,
             position: "absolute",
+            top: 0,
             overflow: "hidden",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
-          <div className="ContactHeader" style={ContactHeaderStyle} />
-          {/*           <div
+          <motion.div
+            variants={FingerVariants}
+            animate={animationBox}
+            transition={{ type: "tween" }}
+            className="ContactBtn"
+            onClick={() =>
+              cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
+            }
+            style={FingerStyle}
+          />
+          <motion.div
+            onClick={() =>
+              cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
+            }
+            className="BG"
+            variants={BGVariants}
+            animate={animationBG}
+            transition={{
+              type: "tween",
+            }}
+            style={{
+              width: 360,
+              height: 812,
+              position: "absolute",
+              overflow: "hidden",
+            }}
+          >
+            <div className="ContactHeader" style={ContactHeaderStyle} />
+            {/*           <div
             className="ScrollBody"
             style={{
               height: 812,
@@ -181,196 +193,197 @@ const Create = () => {
               overflow: "scroll",
             }}
           ></div> */}
-          <div
-            className="Fix"
-            style={{
-              width: 360,
-              position: "absolute",
-              height: 800,
-              display: "grid",
-              justifyItems: "end",
-
-              top: 0,
-            }}
-          >
             <div
-              className="ContactFooter"
+              className="Fix"
               style={{
-                backgroundImage: `url(${ContactFooter})`,
                 width: 360,
-                height: 65,
-                position: "fixed",
-                top: 735,
-                opacity: 1,
-                zIndex: 1000,
-              }}
-            />
-            <div
-              className="ContactSetBar"
-              style={{
-                width: 20,
-                height: 456,
-                backgroundImage: `url(${ContactSetBar})`,
-                top: 210,
-                zIndex: 1,
-                display: "grid",
-                justifyContent: "end",
-                position: "fixed",
-              }}
-            />
-          </div>
-          <div
-            className="mask"
-            style={{
-              position: "absolute",
-              top: 0,
-              width: 360,
-              height: 800,
-              overflow: "scroll",
-            }}
-          >
-            <motion.div
-              className="ContactBody"
-              drag="y"
-              dragConstraints={{ top: -580, bottom: 0 }}
-              dragElastic={1}
-              style={{
-                backgroundImage: `url(${ContactBody})`,
-                top: 159,
-                width: 360,
-                height: 1169,
                 position: "absolute",
-                opacity: 1,
-                zIndex: 0,
+                height: 800,
+                display: "grid",
+                justifyItems: "end",
+
+                top: 0,
               }}
             >
               <div
-                className="MaskA"
+                className="ContactFooter"
                 style={{
-                  backgroundImage: `url(${A})`,
+                  backgroundImage: `url(${ContactFooter})`,
                   width: 360,
-                  height: 50,
-                  backgroundColor: "#ddd",
+                  height: 65,
+                  position: "fixed",
+                  top: 735,
                   opacity: 1,
-
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 55,
+                  zIndex: 1000,
                 }}
               />
               <div
-                className="MaskF"
+                className="ContactSetBar"
                 style={{
-                  backgroundImage: `url(${F})`,
+                  width: 20,
+                  height: 456,
+                  backgroundImage: `url(${ContactSetBar})`,
+                  top: 210,
+                  zIndex: 1,
+                  display: "grid",
+                  justifyContent: "end",
+                  position: "fixed",
+                }}
+              />
+            </div>
+            <div
+              className="mask"
+              style={{
+                position: "absolute",
+                top: 0,
+                width: 360,
+                height: 800,
+                overflow: "scroll",
+              }}
+            >
+              <motion.div
+                className="ContactBody"
+                drag="y"
+                dragConstraints={{ top: -580, bottom: 0 }}
+                dragElastic={1}
+                style={{
+                  backgroundImage: `url(${ContactBody})`,
+                  top: 159,
                   width: 360,
-                  height: 50,
-                  backgroundColor: "#ddd",
+                  height: 1169,
+                  position: "absolute",
                   opacity: 1,
-
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 260,
+                  zIndex: 0,
                 }}
-              />
-              <div
-                className="MaskL"
-                style={{
-                  backgroundImage: `url(${L})`,
-                  width: 360,
-                  height: 50,
-                  backgroundColor: "#ddd",
-                  opacity: 1,
+              >
+                <div
+                  className="MaskA"
+                  style={{
+                    backgroundImage: `url(${A})`,
+                    width: 360,
+                    height: 50,
+                    backgroundColor: "#ddd",
+                    opacity: 1,
 
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 45,
-                }}
-              />
-              <div
-                className="MaskW"
-                style={{
-                  width: 360,
-                  height: 50,
-                  backgroundColor: "#ddd",
-                  opacity: 0,
+                    position: "sticky",
+                    top: 159,
+                    left: 0,
+                    marginTop: 55,
+                  }}
+                />
+                <div
+                  className="MaskF"
+                  style={{
+                    backgroundImage: `url(${F})`,
+                    width: 360,
+                    height: 50,
+                    backgroundColor: "#ddd",
+                    opacity: 1,
 
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 95,
-                }}
-              />
-              <div
-                className="MaskX"
-                style={{
-                  width: 360,
-                  height: 50,
-                  backgroundColor: "#ddd",
-                  opacity: 0,
+                    position: "sticky",
+                    top: 159,
+                    left: 0,
+                    marginTop: 260,
+                  }}
+                />
+                <div
+                  className="MaskL"
+                  style={{
+                    backgroundImage: `url(${L})`,
+                    width: 360,
+                    height: 50,
+                    backgroundColor: "#ddd",
+                    opacity: 1,
 
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 95,
-                }}
-              />
-              <div
-                className="MaskZ"
-                style={{
-                  width: 360,
-                  height: 50,
-                  backgroundColor: "#ddd",
-                  opacity: 0,
+                    position: "sticky",
+                    top: 159,
+                    left: 0,
+                    marginTop: 45,
+                  }}
+                />
+                <div
+                  className="MaskW"
+                  style={{
+                    width: 360,
+                    height: 50,
+                    backgroundColor: "#ddd",
+                    opacity: 0,
 
-                  position: "sticky",
-                  top: 159,
-                  left: 0,
-                  marginTop: 215,
-                }}
-              />
-            </motion.div>
-          </div>
-        </motion.div>
-        <motion.div
-          className="boxChange"
-          style={ContactBubbleStyle}
-          variants={BoxVariants}
-          animate={animationBox}
-          transition={{
-            type: "spring",
-            damping: 32,
-            stiffness: 300,
-          }}
-        />
-        <motion.div
-          className="KeyBoard"
-          style={KeyboardStyle}
-          variants={KeyBoardVariants}
-          animate={animationKeyBoard}
-          transition={{ type: "tween" }}
-        />
+                    position: "sticky",
+                    top: 159,
+                    left: 0,
+                    marginTop: 95,
+                  }}
+                />
+                <div
+                  className="MaskX"
+                  style={{
+                    width: 360,
+                    height: 50,
+                    backgroundColor: "#ddd",
+                    opacity: 0,
 
-        <motion.div
-          className="blackBg"
-          style={{
-            position: "absolute",
-            width: 360,
-            height: 800,
-            zIndex: -10,
-            backgroundColor: "#000",
-          }}
-          variants={BgVariants}
-          animate={animationBox}
-          transition={{
-            type: "spring",
-            damping: 32,
-            stiffness: 300,
-            backgroundColor: { type: "tween", duration: 0.1 },
-          }}
-        />
+                    position: "sticky",
+                    top: 159,
+                    left: 0,
+                    marginTop: 95,
+                  }}
+                />
+                <div
+                  className="MaskZ"
+                  style={{
+                    width: 360,
+                    height: 50,
+                    backgroundColor: "#ddd",
+                    opacity: 0,
+
+                    position: "sticky",
+                    top: 159,
+                    left: 0,
+                    marginTop: 215,
+                  }}
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+          <motion.div
+            className="boxChange"
+            style={ContactBubbleStyle}
+            variants={BoxVariants}
+            animate={animationBox}
+            transition={{
+              type: "spring",
+              damping: 32,
+              stiffness: 300,
+            }}
+          />
+          <motion.div
+            className="KeyBoard"
+            style={KeyboardStyle}
+            variants={KeyBoardVariants}
+            animate={animationKeyBoard}
+            transition={{ type: "tween" }}
+          />
+
+          <motion.div
+            className="blackBg"
+            style={{
+              position: "absolute",
+              width: 360,
+              height: 800,
+              zIndex: -10,
+              backgroundColor: "#000",
+            }}
+            variants={BgVariants}
+            animate={animationBox}
+            transition={{
+              type: "spring",
+              damping: 32,
+              stiffness: 300,
+              backgroundColor: { type: "tween", duration: 0.1 },
+            }}
+          />
+        </div>
       </div>
       <Bg />
     </div>

@@ -102,23 +102,36 @@ const WindowAlert = () => {
         }}
       >
         <div
-          onClick={() => cycleAnimation()}
-          className="ContactBody"
-          style={ContactBodyStyle}
-        />
+          className="mask"
+          style={{
+            width: 360,
+            display: "flex",
+            justifyContent: "center",
+            height: 800,
+            overflow: "hidden",
+            position: "absolute",
+            top: 0,
+          }}
+        >
+          <div
+            onClick={() => cycleAnimation()}
+            className="ContactBody"
+            style={ContactBodyStyle}
+          />
 
-        {/*        <div
+          {/*        <div
           className="ContactBtn"
           onClick={() => cycleAnimation()}
           style={ContactBtnStyle}
         /> */}
-        <motion.div
-          className="boxChange"
-          style={ContactBubbleStyle}
-          variants={BoxAnimation}
-          animate={animationBox}
-          transition={{ type: "tween" }}
-        />
+          <motion.div
+            className="boxChange"
+            style={ContactBubbleStyle}
+            variants={BoxAnimation}
+            animate={animationBox}
+            transition={{ type: "tween" }}
+          />
+        </div>
       </div>
       <Bg />
     </div>
