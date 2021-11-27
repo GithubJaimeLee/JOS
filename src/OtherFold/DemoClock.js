@@ -1085,7 +1085,6 @@ const OtherMotion = () => {
                 boxShadow: "0px 0px 18px 6px rgba(0,0,0,0.05)",
                 position: "absolute",
                 zIndex: 100,
-
                 borderRadius: 16,
                 top: 80,
                 scale: 0,
