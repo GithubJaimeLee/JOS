@@ -50,6 +50,7 @@ export default function Clock(props) {
         backgroundSize: "cover",
         //  border: "4px solid #091921",
         borderRadius: "50%",
+        zIndex: 10,
       }}
     >
       {props.digital && <Digital time={{ hh, mm }} />}
