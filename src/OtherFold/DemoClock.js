@@ -31,6 +31,7 @@ import test1 from "../Icon/svg/naozhogn.json";
 import test2 from "../Icon/svg/shijieshizhong.json";
 import test3 from "../Icon/svg/miaobiao.json";
 import test4 from "../Icon/svg/jishiqi.json";
+import Rclock from "../Icon/Rclock.png";
 import test5 from "../Icon/svg/naozhogn-off.json";
 import test6 from "../Icon/svg/shijieshizhong-off.json";
 import test7 from "../Icon/svg/miaobiao-off.json";
@@ -110,13 +111,37 @@ const OtherMotion = () => {
 
   const [Play4, setPlay4] = useState(false);
 
-  const [O1, setO1] = useState(0);
+  const [O1, setO1] = useState(1);
 
   const [O2, setO2] = useState(0);
 
   const [O3, setO3] = useState(0);
 
   const [O4, setO4] = useState(0);
+
+  const [D1, setD1] = useState("block");
+
+  const [D2, setD2] = useState("none");
+
+  const [D3, setD3] = useState("none");
+
+  const [D4, setD4] = useState("none");
+
+  const [Z1, setZ1] = useState(1000);
+
+  const [Z2, setZ2] = useState(100);
+
+  const [Z3, setZ3] = useState(100);
+
+  const [Z4, setZ4] = useState(100);
+
+  const [C1, setC1] = useState("#FA5F6E");
+
+  const [C2, setC2] = useState("#B8B8B8");
+
+  const [C3, setC3] = useState("#B8B8B8");
+
+  const [C4, setC4] = useState("#B8B8B8");
 
   const Info = (
     <p>
@@ -271,54 +296,6 @@ const OtherMotion = () => {
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
 
-      {/*  <Lottie
-        loop={1}
-        play
-        animationData={test1}
-        style={{ width: 36, height: 36 }}
-      />{" "}
-      <Lottie
-        play
-        loop={1}
-        animationData={test2}
-        style={{ width: 36, height: 36 }}
-      />{" "}
-      <Lottie
-        loop={1}
-        animationData={test3}
-        play
-        style={{ width: 36, height: 36 }}
-      />{" "}
-      <Lottie
-        loop={1}
-        animationData={test4}
-        play={true}
-        style={{ width: 36, height: 36 }}
-      />{" "}
-      <Lottie
-        loop={1}
-        animationData={test5}
-        play
-        style={{ width: 36, height: 36 }}
-      />{" "}
-      <Lottie
-        loop={1}
-        animationData={test6}
-        play
-        style={{ width: 36, height: 36 }}
-      />{" "}
-      <Lottie
-        loop={1}
-        animationData={test7}
-        play
-        style={{ width: 36, height: 36 }}
-      />
-      <Lottie
-        loop={1}
-        animationData={test8}
-        play
-        style={{ width: 36, height: 36 }}
-      /> */}
       <div
         className="ScreenCenter"
         style={{
@@ -332,139 +309,358 @@ const OtherMotion = () => {
         }}
       >
         <div
-          className="Btns"
+          className="PhoneScreen"
           style={{
+            width: 360,
+            height: 800,
+            overflow: "hidden",
+            display: "flex",
+            justifyContent: "center",
             position: "absolute",
-            width: 375,
-            height: 80,
-            top: 734,
+            top: 0,
           }}
         >
-          <Lottie
-            play={Play1}
-            loop={1}
-            segments={[0, 50]}
-            //  autoplay
-            animationData={test1}
-            //   stop={true}
+          <div
+            className="Footer"
             style={{
               position: "absolute",
-              preserveAspectRatio: "xMidYMid slice",
-              width: 40,
-              height: 40,
-              opacity: O1,
-              top: 0,
-              left: 34,
-              zIndex: 10000,
-            }}
-          />
-          <Lottie
-            play={Play2}
-            loop={1}
-            segments={[0, 35]}
-            // autoplay={true}
-            animationData={test2}
-            //   stop={true}
-            style={{
-              position: "absolute",
-              preserveAspectRatio: "xMidYMid slice",
-              width: 40,
-              height: 40,
-              top: 0,
-              opacity: O2,
-              left: 124,
-              zIndex: 10000,
-            }}
-          />
-          <Lottie
-            play={Play3}
-            autoplay
-            loop={1}
-            segments={[0, 35]}
-            // autoplay={true}
-            animationData={test3}
-            //   stop={true}
-            style={{
-              position: "absolute",
-              preserveAspectRatio: "xMidYMid slice",
-              width: 40,
-              height: 40,
-              top: 0,
-              opacity: O3,
-              left: 213,
-              zIndex: 10000,
-            }}
-          />{" "}
-          <Lottie
-            play={Play4}
-            autoplay
-            loop={1}
-            segments={[0, 50]}
-            // autoplay={true}
-            animationData={test4}
-            //   stop={true}
-            style={{
-              position: "absolute",
-              preserveAspectRatio: "xMidYMid slice",
-              width: 40,
-              opacity: O4,
-              height: 40,
-              top: 0,
-              left: 301,
-              zIndex: 10000,
+              width: 360,
+              height: 65,
+              bottom: 0,
+              zIndex: 100,
+              display: "flex",
+              justifyContent: "space-around",
             }}
           >
-            {/*             <div
+            <div
+              onClick={() => {
+                setD1("block");
+                setD2("none");
+                setD3("none");
+                setD4("none");
+                setPlay1(test1);
+                setPlay2(false);
+                setPlay3(false);
+                setPlay4(false);
+                setO1(1);
+                setO2(0);
+                setO3(0);
+                setO4(0);
+                setC1("#FA5F6E");
+                setC2("#B8B8B8");
+                setC3("#B8B8B8");
+                setC4("#B8B8B8");
+                setZ1(1000);
+                setZ2(100);
+                setZ3(100);
+                setZ4(100);
+              }}
+              className="Tab1"
+              style={{
+                position: "relative",
+                display: "grid",
+                justifyContent: "center",
+                justifyItems: "center",
+              }}
+            >
+              <Lottie
+                play
+                loop={1}
+                segments={[0, 50]}
+                //  autoplay
+                animationData={Play1}
+                //   stop={true}
+                style={{
+                  position: "absolute",
+                  // position: "relative",
+                  preserveAspectRatio: "xMidYMid slice",
+                  width: 40,
+                  height: 40,
+                  opacity: 1,
+
+                  zIndex: 100,
+                }}
+              />
+              <img
+                id="ClockIcon"
+                src={ClockVar}
+                style={{
+                  position: "absolute",
+                  pointerEvents: "auto",
+                  zIndex: 99,
+                  width: 40,
+                }}
+                alt=""
+              />{" "}
+              <img
+                id="ClockIcon"
+                src={Rclock}
+                style={{
+                  position: "relative",
+                  pointerEvents: "auto",
+                  zIndex: 99,
+                  width: 40,
+                  opacity: O1,
+                }}
+                alt=""
+              />
+              <div
+                style={{
+                  position: "relative",
+                  fontSize: 9,
+                  fontWeight: "bold",
+                  color: C1,
+                }}
+              >
+                闹钟
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                setD1("none");
+                setD2("block");
+                setD3("none");
+                setD4("none");
+                setPlay1(false);
+                setPlay2(test2);
+                setPlay3(false);
+                setPlay4(false);
+                setO1(0);
+                setO2(1);
+                setO3(0);
+                setO4(0);
+                setC1("#B8B8B8");
+                setC2("#FA5F6E");
+                setC3("#B8B8B8");
+                setC4("#B8B8B8");
+                setZ1(100);
+                setZ2(1000);
+                setZ3(100);
+                setZ4(100);
+              }}
+              className="Tab2"
+              style={{
+                position: "relative",
+                display: "grid",
+                justifyContent: "center",
+                justifyItems: "center",
+              }}
+            >
+              <Lottie
+                play
+                loop={1}
+                segments={[0, 35]}
+                // autoplay={true}
+                animationData={Play2}
+                //   stop={true}
+                style={{
+                  position: "absolute",
+                  // position: "relative",,
+                  preserveAspectRatio: "xMidYMid slice",
+                  width: 40,
+                  height: 40,
+                  zIndex: 100,
+                  opacity: 1,
+
+                  zIndex: 100,
+                }}
+              />
+              <img
+                src={WorldVar}
+                style={{
+                  position: "relative",
+                  zIndex: 90,
+                  width: 40,
+                }}
+                alt=""
+              />
+              <div
+                style={{
+                  color: C2,
+                  fontSize: 9,
+                  fontWeight: "bold",
+                }}
+              >
+                世界时钟
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                setD1("none");
+                setD2("none");
+                setD3("block");
+                setD4("none");
+                setPlay1(false);
+                setPlay2(false);
+                setPlay3(test3);
+                setPlay4(false);
+                setO1(0);
+                setO2(0);
+                setO3(1);
+                setO4(0);
+                setC1("#B8B8B8");
+                setC2("#B8B8B8");
+                setC3("#FA5F6E");
+                setC4("#B8B8B8");
+                setZ1(100);
+                setZ2(100);
+                setZ3(1000);
+                setZ4(100);
+              }}
+              className="Tab3"
+              style={{
+                position: "relative",
+                display: "grid",
+                justifyContent: "center",
+                justifyItems: "center",
+              }}
+            >
+              <Lottie
+                play
+                autoplay
+                loop={1}
+                segments={[0, 35]}
+                // autoplay={true}
+                animationData={Play3}
+                //   stop={true}
+                style={{
+                  position: "absolute",
+                  // position: "relative",
+                  preserveAspectRatio: "xMidYMid slice",
+                  width: 40,
+                  height: 40,
+
+                  opacity: 1,
+
+                  zIndex: 100,
+                }}
+              />{" "}
+              <img
+                src={TimerVar}
+                style={{
+                  position: "relative",
+                  zIndex: 99,
+                  width: 40,
+                }}
+                alt=""
+              />
+              <div
+                style={{
+                  color: C3,
+                  fontSize: 9,
+                  fontWeight: "bold",
+                }}
+              >
+                秒表
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                setD1("none");
+                setD2("none");
+                setD3("none");
+                setD4("block");
+                setPlay1(false);
+                setPlay2(false);
+                setPlay3(false);
+                setPlay4(test4);
+                setO1(0);
+                setO2(0);
+                setO3(0);
+                setO4(1);
+                setC1("#B8B8B8");
+                setC2("#B8B8B8");
+                setC3("#B8B8B8");
+                setC4("#FA5F6E");
+                setZ1(100);
+                setZ2(100);
+                setZ3(100);
+                setZ4(1000);
+              }}
+              className="Tab4"
+              style={{
+                position: "relative",
+                display: "grid",
+                justifyContent: "center",
+                justifyItems: "center",
+              }}
+            >
+              <Lottie
+                play
+                autoplay
+                loop={1}
+                segments={[5, 50]}
+                // autoplay={true}
+                animationData={Play4}
+                //   stop={true}
+                style={{
+                  position: "absolute",
+                  // position: "relative",
+                  preserveAspectRatio: "xMidYMid slice",
+                  width: 40,
+                  opacity: 1,
+                  height: 40,
+
+                  zIndex: 100,
+                }}
+              >
+                {/*             <div
               style={{
                 width: 40,
                 backgroundColor: "#FFFFFF",
                 height: 40,
               }}
             ></div> */}
-          </Lottie>
+              </Lottie>{" "}
+              <img
+                //   onClick={() => setTimer(TimerG)}
+                src={CounterVar}
+                style={{
+                  position: "relative",
+                  zIndex: 99,
+                  width: 40,
+                }}
+                alt=""
+              />
+              <div
+                style={{
+                  fontSize: 9,
+                  fontWeight: "bold",
+                  color: C4,
+                }}
+              >
+                计时器
+              </div>
+            </div>
+          </div>
         </div>
-        {/*        <div
-          className="SetBtn"
-          onClick={() => UPcycleAnimation()}
-          style={SetBtnStyle}
-        /> */}
-        <Tabs
+        <div
           id="Clock"
-          defaultActiveKey="1"
           style={{
             zIndex: 1,
             width: 360,
-            position: "absolute",
+            height: 800,
+            position: "relative",
+            top: 0,
+            left: 0,
           }}
           //    onClick={() => setClock(ClockG)}
-          onChange={callback}
         >
-          <TabPane
-            tab={
-              <div
-                onClick={() =>
-                  setPlay1(!Play1) & setO1(1) & setO2(0) & setO3(0) & setO4(0)
-                }
-              >
-                闹钟
-              </div>
-            }
-            key="1"
-            id="Clock1"
+          <div
+            className="ClockPageOne"
+            style={{
+              position: "absolute",
+              //    display: Display1,
+              opacity: O1,
+              display: D1,
+              top: 0,
+              left: 0,
+              zIndex: 10,
+              width: 360,
+              height: 800,
+            }}
             // onClick={() => setPlay1(!Play1)}
           >
-            <img
-              id="ClockIcon"
-              src={ClockVar}
-              style={{
-                pointerEvents: "auto",
-                position: "absolute",
-                bottom: 26,
-                width: 40,
-                left: 26,
-              }}
-              alt=""
-            />
             <div
               onClick={Setcyc1}
               className="SetBtn"
@@ -566,39 +762,30 @@ const OtherMotion = () => {
                 backgroundSize: "360px 800px",
               }}
             ></div>
-          </TabPane>
-          <TabPane
-            tab={
-              <div
-                onClick={() =>
-                  setPlay2(!Play2) & setO1(0) & setO2(1) & setO3(0) & setO4(0)
-                }
-              >
-                {" "}
-                世界时钟
-              </div>
-            }
-            key="2"
-            id="Clock2"
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: 7,
+              width: 360,
+              height: 800,
+              opacity: O2,
+
+              //  display: Display2,
+            }}
+            className="ClockPageTwo"
           >
-            <img
-              src={WorldVar}
-              style={{
-                position: "absolute",
-                bottom: 26,
-                width: 40,
-                left: 116,
-              }}
-              alt=""
-            />
             <div
               onClick={Setcyc2}
               className="SetBtn"
               style={{
                 width: 60,
+                display: D2,
                 height: 60,
                 position: "absolute",
-                zIndex: 20000,
+                zIndex: 200,
                 backgroundColor: "red",
                 borderRadius: 16,
                 top: 25,
@@ -664,32 +851,21 @@ const OtherMotion = () => {
                 backgroundSize: "360px 800px",
               }}
             ></div>
-          </TabPane>
-          <TabPane
-            tab={
-              <div
-                onClick={() =>
-                  setPlay3(!Play3) & setO1(0) & setO2(0) & setO3(1) & setO4(0)
-                }
-              >
-                {" "}
-                秒表
-              </div>
-            }
-            key="3"
-            id="Clock3"
+          </div>
+          <div
+            className="ClockPageThree"
+            style={{
+              position: "relative",
+              //display: Display3,
+              display: D3,
+              opacity: O3,
+              top: 0,
+              left: 0,
+              zIndex: 8,
+              width: 360,
+              height: 800,
+            }}
           >
-            <img
-              //   onClick={() => setTimer(TimerG)}
-              src={TimerVar}
-              style={{
-                position: "absolute",
-                bottom: 26,
-                width: 40,
-                left: 206,
-              }}
-              alt=""
-            />
             <div
               //    whileTap={setTimer(TimerG)}
               onClick={Setcyc3}
@@ -738,21 +914,21 @@ const OtherMotion = () => {
                 backgroundSize: "360px 800px",
               }}
             ></div>
-          </TabPane>
+          </div>
 
-          <TabPane
-            //    onClick={() => setCounter(CounterG)}
-            tab={
-              <motion.div
-                onClick={() =>
-                  setPlay4(!Play4) & setO1(0) & setO2(0) & setO3(0) & setO4(1)
-                }
-              >
-                计时器
-              </motion.div>
-            }
-            key="4"
-            id="Clock4"
+          <div
+            className="ClockPageFour"
+            style={{
+              position: "absolute",
+              //   display: Display4,
+              display: D4,
+              opacity: O4,
+              top: 0,
+              left: 0,
+              zIndex: 7,
+              width: 360,
+              height: 800,
+            }}
           >
             <div
               onClick={Setcyc4}
@@ -792,17 +968,7 @@ const OtherMotion = () => {
               variants={SetVariants}
               animate={SetAnimation4}
             />
-            <img
-              src={CounterVar}
-              style={{
-                //    backgroundImage: `url(${CounterVar})`,
-                position: "absolute",
-                bottom: 26,
-                width: 40,
-                left: 293,
-              }}
-              alt=""
-            />
+
             <Time />
             <div
               style={{
@@ -812,8 +978,8 @@ const OtherMotion = () => {
                 backgroundSize: "360px 800px",
               }}
             ></div>
-          </TabPane>
-        </Tabs>
+          </div>
+        </div>
 
         <div
           className="ThisBackground"
@@ -824,8 +990,9 @@ const OtherMotion = () => {
             position: "absolute",
             height: 800,
             overflow: "scroll",
-            backgroundColor: "#E6ECF4",
+            //   backgroundColor: "#fff",
             overflow: "hidden",
+            zIndex: 0,
             top: 0,
           }}
         >
@@ -845,7 +1012,7 @@ const OtherMotion = () => {
                 height: 16,
                 right: 20,
                 top: 16,
-                zIndex: 10,
+                zIndex: 11,
                 position: "absolute",
               }}
             />

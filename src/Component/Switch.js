@@ -18,14 +18,14 @@ const SwitchBtn = () => {
       //justifyContent: "flex-end",
       border: "3px solid #fff",
       backgroundColor: "#FFE9C4",
-      height: 18,
+      height: 20,
     },
   };
   const PointVariants = {
     animationOne: {
       backgroundColor: "#FFF",
       height: 22,
-      width: 22,
+      width: 24,
       borderRadius: "16px",
       border: "4px solid #ccc",
       left: -5,

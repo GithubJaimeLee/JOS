@@ -179,7 +179,7 @@ class StopWatch extends Component {
         </div>
         {this.state.timerOn === false && this.state.timerTime === 0 && (
           <motion.button
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.85 }}
             //    onClick={this.state.hour === 0}
             onClick={this.startTimer}
             style={{
@@ -199,7 +199,7 @@ class StopWatch extends Component {
 
         {this.state.timerOn === true && (
           <motion.button
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.85 }}
             onClick={this.stopTimer}
             style={{
               position: "absolute",
@@ -218,7 +218,7 @@ class StopWatch extends Component {
         )}
         {this.state.timerOn === true && (
           <motion.button
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.85 }}
             onClick={this.stopTimer}
             style={{
               position: "absolute",
@@ -239,7 +239,7 @@ class StopWatch extends Component {
         {/* 
         {this.state.timerOn === true && (
           <motion.button
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.85 }}
             onClick={this.resetTimer}
             style={{
               position: "absolute",
@@ -260,7 +260,7 @@ class StopWatch extends Component {
         )} */}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
           <motion.button
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.85 }}
             onClick={this.startTimer}
             style={{
               position: "absolute",
@@ -283,7 +283,7 @@ class StopWatch extends Component {
         )}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
           <motion.button
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.85 }}
             onClick={this.resetTimer}
             style={{
               position: "absolute",
