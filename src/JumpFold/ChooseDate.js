@@ -3,8 +3,8 @@ import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import ChooseDateBg from "../Img/ChooseDateBg.png";
 import React from "react";
-import Wheel from "../Component/Wheel";
-
+import Wheel from "../Component/JumpWheel";
+import { motion, useCycle } from "framer-motion";
 const ChooseDate = () => {
   const Info = <p>日期滑动选择器</p>;
   /* const ClockItemStyle = {
@@ -39,26 +39,32 @@ const ChooseDate = () => {
         <div
           className="TimePicker"
           style={{
-            width: 375,
+            width: 360,
             position: "absolute",
-            height: 812,
+            height: 800,
+            top: 0,
             // padding: "50px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             //background: "#666",
-
             zIndex: 3,
           }}
         >
           <div style={{ width: 120, height: 200 }}>
-            <Wheel initIdx={8} length={24} width={23} />
+            <Wheel
+              initIdx={8}
+              length={24}
+              width={23}
+              dragSpeed={-10}
+              //     transition={{ type: "spring", damping: 30 }}
+            />
           </div>
           <h6
             style={{
               position: "absolute",
-              top: 398,
-              left: 150,
+              top: 392,
+              left: 140,
             }}
           >
             时
@@ -69,7 +75,7 @@ const ChooseDate = () => {
           <h6
             style={{
               position: "absolute",
-              top: 398,
+              top: 392,
               right: 98,
             }}
           >

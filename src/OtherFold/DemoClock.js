@@ -16,12 +16,10 @@ import StopWatch from "../Component/StopWatch";
 import SwitchBtn from "../Component/Switch";
 import Clock from "../Component/Clock/Clock";
 import Time from "../Component/Time";
+import WheelWin from "../Component/WheelWin";
 import ClockSet from "../Img/ClockSet.png";
 import ClockSet2 from "../Img/ClockSet2.png";
-import TimerG from "../Icon/timer.gif";
-import ClockG from "../Icon/clock.gif";
-import WorldG from "../Icon/world.gif";
-import CounterG from "../Icon/counter.gif";
+
 import TimerP from "../Icon/timer.png";
 import ClockP from "../Icon/clock.png";
 import WorldP from "../Icon/world.png";
@@ -32,10 +30,6 @@ import test2 from "../Icon/svg/shijieshizhong.json";
 import test3 from "../Icon/svg/miaobiao.json";
 import test4 from "../Icon/svg/jishiqi.json";
 import Rclock from "../Icon/Rclock.png";
-import test5 from "../Icon/svg/naozhogn-off.json";
-import test6 from "../Icon/svg/shijieshizhong-off.json";
-import test7 from "../Icon/svg/miaobiao-off.json";
-import test8 from "../Icon/svg/jishiqi-off.json";
 
 const SetBtnStyle = {
   position: "absolute",
@@ -377,8 +371,9 @@ const OtherMotion = () => {
           }}
         >
           <motion.div
+            className="ClockWin"
             drag="y"
-            onClick={cycMaskO}
+            //   onClick={cycMaskO}
             style={{
               position: "absolute",
               backgroundImage: `url(${ClockBottomAlert})`,
@@ -416,7 +411,9 @@ const OtherMotion = () => {
             variants={BCardVariants}
             animate={MaskOAnimate}
             transition={{ type: "tween" }}
-          />
+          >
+            {/*     <WheelWin /> */}
+          </motion.div>
 
           <motion.div
             onClick={cycMaskO}
@@ -795,9 +792,9 @@ const OtherMotion = () => {
               className="ClockSet"
               style={{
                 backgroundImage: `url(${ClockSet2})`,
-                backgroundSize: "148px 178px",
+                backgroundSize: "148px 130px",
                 width: 148,
-                height: 178,
+                height: 130,
                 boxShadow: "0px 0px 18px 6px rgba(0,0,0,0.05)",
                 position: "absolute",
                 zIndex: 20,
@@ -930,9 +927,9 @@ const OtherMotion = () => {
               className="ClockSet"
               style={{
                 backgroundImage: `url(${ClockSet2})`,
-                backgroundSize: "148px 178px",
+                backgroundSize: "148px 130px",
                 width: 148,
-                height: 178,
+                height: 130,
                 boxShadow: "0px 0px 18px 6px rgba(0,0,0,0.05)",
                 position: "absolute",
                 zIndex: 20,
@@ -1055,8 +1052,6 @@ const OtherMotion = () => {
             className="ClockPageFour"
             style={{
               position: "absolute",
-              //   display: Display4,
-              //  display: D4,
               opacity: O4,
               top: 0,
               left: 0,
@@ -1084,9 +1079,9 @@ const OtherMotion = () => {
               className="ClockSet"
               style={{
                 backgroundImage: `url(${ClockSet2})`,
-                backgroundSize: "148px 178px",
+                backgroundSize: "148px 130px",
                 width: 148,
-                height: 178,
+                height: 130,
                 boxShadow: "0px 0px 18px 6px rgba(0,0,0,0.05)",
                 position: "absolute",
                 zIndex: 100,
@@ -1105,6 +1100,7 @@ const OtherMotion = () => {
               variants={SetVariants4}
               animate={SetAnimation4}
             />{" "}
+            {/*      计时器 */}
             <Time />
             <div
               style={{
@@ -1126,7 +1122,7 @@ const OtherMotion = () => {
             position: "absolute",
             height: 800,
             overflow: "scroll",
-            //   backgroundColor: "#fff",
+            backgroundColor: "#fff",
             overflow: "hidden",
             zIndex: 0,
             top: 0,

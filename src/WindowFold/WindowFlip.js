@@ -97,13 +97,57 @@ const WindowFlip = () => {
           style={{ top: 100 }}
           noShadow="false"
         >
-          <img className="NS" src={Flip1} />
-          <img className="NS" src={Flip2} />
-          <img className="NS" src={Flip3} />
-          <img className="NS" src={Flip4} />
-          <img className="NS" src={Flip5} />
-          <img className="NS" src={Flip6} />
-          <img className="NS" src={Flip7} />
+          <img
+            className="NS"
+            style={{
+              width: 360,
+            }}
+            src={Flip1}
+          />
+          <img
+            className="NS"
+            style={{
+              width: 360,
+            }}
+            src={Flip2}
+          />
+          <img
+            className="NS"
+            style={{
+              width: 360,
+            }}
+            src={Flip3}
+          />
+          <img
+            className="NS"
+            style={{
+              width: 360,
+            }}
+            src={Flip4}
+          />
+          <img
+            className="NS"
+            style={{
+              width: 360,
+            }}
+            src={Flip5}
+          />
+          <img
+            className="NS"
+            style={{
+              width: 360,
+            }}
+            src={Flip6}
+          />
+          <img
+            className="NS"
+            style={{
+              display: "block",
+              width: 360,
+              backgroundSize: "360px 462px",
+            }}
+            src={Flip7}
+          />
         </FlipPage>
         <div
           className="BGBG"

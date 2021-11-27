@@ -25,7 +25,7 @@ const SwitchBtn = () => {
     animationOne: {
       backgroundColor: "#FFF",
       height: 22,
-      width: 24,
+      width: 22,
       borderRadius: "16px",
       border: "4px solid #ccc",
       left: -5,

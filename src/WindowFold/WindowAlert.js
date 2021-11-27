@@ -1,12 +1,14 @@
 import { motion, useCycle } from "framer-motion";
-import * as React from "react";
+import React, { useState } from "react";
+import { Slider, InputNumber } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import WindowBg from "../Img/DeskOOS.png";
 import WindowAlertWin from "../Img/WindowAlertWin.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import Bg from "../Component/Bg";
-
+import Set from "../Icon/Set.png";
+import Close from "../Icon/Close.png";
 const ContactBtnStyle = {
   position: "absolute",
   bottom: 550,
@@ -24,8 +26,6 @@ const ContactBubbleStyle = {
   width: 340,
   height: 102,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-  //opacity: 1,
-  // backgroundImage: `url(${WindowAlertWin})`,
   border: "1px solid #ccc",
   background: "#fff",
   borderRadius: 12,
@@ -33,14 +33,6 @@ const ContactBubbleStyle = {
   y: -720,
   bottom: 100,
   zIndex: 20,
-};
-const BoxAnimation = {
-  animationOne: {
-    y: -720,
-  },
-  animationTwo: {
-    y: -548,
-  },
 };
 
 const ContactBodyStyle = {
@@ -53,6 +45,21 @@ const ContactBodyStyle = {
 };
 
 const WindowAlert = () => {
+  const [X, setX] = useState(0);
+  const [Y, setY] = useState(60);
+  const [O, setO] = useState(0);
+  const BoxAnimation = {
+    animationOne: {
+      y: Y,
+    },
+    animationTwo: {
+      y: -Y - 102,
+      opacity: O,
+    },
+  };
+  const [Damping, setDamping] = useState(40);
+  const [Stiffness, setStiffness] = useState(370);
+
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
@@ -85,8 +92,38 @@ const WindowAlert = () => {
     </p>
   );
 
+  const [SetAnimation, SetCycle] = useCycle(
+    "SetanimationOne",
+    "SetanimationTwo"
+  );
+  const SetVariants = {
+    SetanimationOne: {
+      y: 780,
+    },
+    SetanimationTwo: {
+      y: 320,
+    },
+  };
+
   return (
     <div className="All">
+      <div
+        className="SetMenu"
+        onClick={() => SetCycle()}
+        style={{
+          position: "absolute",
+          backgroundImage: `url(${Set})`,
+          top: 25,
+          right: 80,
+          width: 30,
+          height: 30,
+          borderRadius: 20,
+          textAlign: "center",
+          zIndex: 1001,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      />
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
       <div
         className="ScreenCenter"
@@ -113,6 +150,213 @@ const WindowAlert = () => {
             top: 0,
           }}
         >
+          <motion.div
+            className="SetWindow"
+            style={{
+              position: "absolute",
+              top: 50,
+              width: 350,
+              height: 400,
+              borderRadius: 12,
+              display: "grid",
+              alignContent: "space-evenly",
+              justifyContent: "center",
+              // alignContent: "center",
+              backgroundColor: "rgba(255,255,255,0.9)",
+              // filter: "blur(2px)",
+              boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
+              zIndex: 100,
+              y: 780,
+            }}
+            variants={SetVariants}
+            animate={SetAnimation}
+          >
+            <motion.img
+              className="CloseBtn"
+              onClick={() => SetCycle()}
+              src={Close}
+              alt=""
+              style={{
+                width: 16,
+                height: 16,
+                right: 20,
+                top: 16,
+                zIndex: 1000,
+                position: "absolute",
+              }}
+            />
+
+            <div
+              className="DefaultDamping"
+              style={{
+                width: 300,
+                height: "auto",
+                fontSize: 14,
+                marginTop: 12,
+              }}
+            >
+              {" "}
+              <h6>动画使用Spring(弹簧)曲线完成</h6>
+              <br />
+              <h6>Damping 阻尼(阻尼越小回弹力度越大,阻尼越大速度越慢)</h6>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                }}
+              >
+                <Slider
+                  min={0}
+                  max={100}
+                  onChange={setDamping}
+                  value={Damping}
+                  step={1}
+                  style={{
+                    width: 220,
+                  }}
+                />
+                <InputNumber
+                  min={0}
+                  max={100}
+                  style={{
+                    margin: 0,
+                    height: 30,
+                    width: 70,
+                    borderRadius: 6,
+                  }}
+                  step={1}
+                  onChange={setDamping}
+                  value={Damping}
+                />
+              </div>
+            </div>
+            <div
+              className="DefaultStiffness"
+              style={{
+                width: 300,
+                height: "auto",
+                fontSize: 14,
+                marginTop: 12,
+              }}
+            >
+              {/* <br /> */}
+              <h6>Stiffness 刚度(刚度越大速度也会加快,动画越生硬同时)</h6>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                }}
+              >
+                <Slider
+                  min={1}
+                  max={1000}
+                  onChange={setStiffness}
+                  value={Stiffness}
+                  step={1}
+                  style={{
+                    width: 220,
+                  }}
+                />
+                <InputNumber
+                  min={1}
+                  max={1000}
+                  style={{
+                    margin: 0,
+                    height: 30,
+                    width: 70,
+                    borderRadius: 6,
+                  }}
+                  step={1}
+                  onChange={setStiffness}
+                  value={Stiffness}
+                />
+              </div>
+            </div>
+            <div
+              className="DefaultY"
+              style={{
+                width: 300,
+                height: "auto",
+                fontSize: 14,
+                marginTop: 12,
+              }}
+            >
+              {/* <br /> */}
+              <h6>弹窗到顶部边框初始距离(默认为60px)</h6>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                }}
+              >
+                <Slider
+                  min={10}
+                  max={1000}
+                  onChange={setY}
+                  value={Y}
+                  step={1}
+                  style={{
+                    width: 220,
+                  }}
+                />
+                <InputNumber
+                  min={10}
+                  max={1000}
+                  style={{
+                    margin: 0,
+                    height: 30,
+                    width: 70,
+                    borderRadius: 6,
+                  }}
+                  step={1}
+                  onChange={setY}
+                  value={Y}
+                />
+              </div>
+            </div>
+            <div
+              className="DefaultO"
+              style={{
+                width: 300,
+                height: "auto",
+                fontSize: 14,
+                marginTop: 12,
+              }}
+            >
+              {/* <br /> */}
+              <h6>弹窗结束时透明度(默认为0%)</h6>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                }}
+              >
+                <Slider
+                  min={0}
+                  max={1}
+                  onChange={setO}
+                  value={O}
+                  step={0.01}
+                  style={{
+                    width: 220,
+                  }}
+                />
+                <InputNumber
+                  min={0}
+                  max={1}
+                  style={{
+                    margin: 0,
+                    height: 30,
+                    width: 70,
+                    borderRadius: 6,
+                  }}
+                  step={0.01}
+                  onChange={setO}
+                  value={O}
+                />
+              </div>
+            </div>
+          </motion.div>
           <div
             onClick={() => cycleAnimation()}
             className="ContactBody"
@@ -126,10 +370,25 @@ const WindowAlert = () => {
         /> */}
           <motion.div
             className="boxChange"
-            style={ContactBubbleStyle}
+            style={{
+              width: 340,
+              height: 102,
+              boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
+              border: "1px solid #ccc",
+              background: "#fff",
+              borderRadius: 12,
+              position: "absolute",
+              y: 60,
+              top: 0,
+              zIndex: 20,
+            }}
             variants={BoxAnimation}
             animate={animationBox}
-            transition={{ type: "tween" }}
+            transition={{
+              type: "spring",
+              damping: Damping,
+              stiffness: Stiffness,
+            }}
           />
         </div>
       </div>

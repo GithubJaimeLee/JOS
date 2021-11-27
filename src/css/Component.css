@@ -157,3 +157,42 @@ div#Clock .ant-tabs-tab .ant-tabs-tab-btn div {
   pointer-events: auto !important;
   padding-top: 82px !important;
 }
+/* time wheel */
+
+/* div.DemoWinList .wheel__slide {
+  font-size: 22px !important;
+} */
+div.DemoWinList .wheel__shadow-bottom,
+div.DemoWinList .wheel__shadow-top {
+  border-top: none !important;
+  border-bottom: none !important;
+  height: 40px !important;
+}
+div#Clock .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #f95f6d !important;
+  position: absolute !important;
+  font-size: 12px;
+}
+div#Clock .ant-tabs-tab .ant-tabs-tab-btn {
+  color: #aaa !important;
+  font-size: 12px !important;
+  font-weight: bold;
+}
+#Clock-tab-4 {
+  margin-left: 3px !important;
+}
+div#Clock div.ant-tabs-tab {
+  padding-top: 40px !important;
+}
+div.DemoWinList div.wheel.keen-slider div.wheel__inner {
+  height: 26px !important;
+}
+/* #ClockIcon:active {
+  src: url(https://y.qichejiashi.com/tupian/upload/161088749.jpg) !important;
+}
+ */
+div#Clock .ant-tabs-tab .ant-tabs-tab-btn div {
+  height: 100px !important;
+  pointer-events: auto !important;
+  padding-top: 82px !important;
+}

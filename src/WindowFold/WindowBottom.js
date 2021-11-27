@@ -79,8 +79,8 @@ const BgAnimation = {
 const WindowBottom = () => {
   const [X, setX] = useState(0);
   const [Y, setY] = useState(400);
-  const [Damping, setDamping] = useState(30);
-  const [Stiffness, setStiffness] = useState(300);
+  const [Damping, setDamping] = useState(27);
+  const [Stiffness, setStiffness] = useState(320);
   const [animationBg, BgCycleAnimation] = useCycle(
     "BgAnimationOne",
     "BgAnimationTwo"
@@ -94,18 +94,6 @@ const WindowBottom = () => {
     "SetanimationOne",
     "SetanimationTwo"
   );
-  const [Fingeranimation, FingerCycle] = useCycle(
-    "FingerAnimationOne",
-    "FingerAnimationTwo"
-  );
-  const FingerVariants = {
-    FingerAnimationOne: {
-      opacity: 1,
-    },
-    FingerAnimationTwo: {
-      opacity: 0,
-    },
-  };
   const SetVariants = {
     SetanimationOne: {
       y: 780,
@@ -157,7 +145,7 @@ const WindowBottom = () => {
   return (
     <div className="All">
       <div
-        className="SetBtn"
+        className="SetMenu"
         onClick={() => SetCycle()}
         style={{
           position: "absolute",
@@ -321,9 +309,7 @@ const WindowBottom = () => {
             </div>
           </motion.div>
           <motion.div
-            onClick={() =>
-              cycleAnimation() & BgCycleAnimation() & FingerCycle()
-            }
+            onClick={() => cycleAnimation() & BgCycleAnimation()}
             className="MaskChange"
             style={MaskStyle}
             variants={BgAnimation}
@@ -350,7 +336,6 @@ const WindowBottom = () => {
               opacity: 1,
               y: Y,
               x: X,
-
               backgroundColor: "#FFFFFF",
               borderRadius: 20,
               position: "absolute",

@@ -50,13 +50,14 @@ const Time = () => {
           length={24}
           width={23}
           loop={true}
+          perspective="left"
         />
       </div>
       <h6
         style={{
           position: "absolute",
           top: 215,
-          left: 82,
+          left: 72,
         }}
       >
         时

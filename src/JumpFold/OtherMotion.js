@@ -21,22 +21,6 @@ const SetBtnStyle = {
   justifyContent: "center",
 };
 
-const SetWindowStyle = {
-  position: "absolute",
-  top: 50,
-  width: 350,
-  height: 440,
-  borderRadius: 12,
-  display: "flex",
-  justifyContent: "center",
-  alignContent: "center",
-  backgroundColor: "rgba(255,255,255,0.9)",
-  // filter: "blur(2px)",
-  boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
-  zIndex: 10,
-  y: 780,
-};
-
 const SetWindowVariants = {
   UPanimationOne: {
     y: 780,
@@ -50,13 +34,15 @@ const JumpMotion = () => {
   /*  const y = useMotionValue(0);
   const rotate = useTransform(y, [0, 100], [180, 0]);
   const top = useTransform(y, [0, 100], [70, 170]); */
-  const [Damping, setDamping] = useState(20);
-  const [Stiffness, setStiffness] = useState(100);
+  const [Damping, setDamping] = useState(27);
+  const [Stiffness, setStiffness] = useState(320);
+  const [Mass, setMass] = useState(1);
+  const [DragElastic, setDragElastic] = useState(1);
   const [BounceDamping, setBounceDamping] = useState(20);
   const [BounceStiffness, setBounceStiffness] = useState(100);
   const [Velocity, setVelocity] = useState(1);
   const [TimeConstant, setTimeConstant] = useState(700);
-  const [Mass, setMass] = useState(1);
+
   const [Drag, setDrag] = useState(false);
   const [Opacity, setOpacity] = useState(1);
   const [Scale, setScale] = useState(1);
@@ -192,11 +178,11 @@ const JumpMotion = () => {
           <motion.div
             className="Box"
             drag={true}
-            dragElastic={0.1}
+            dragElastic={DragElastic}
             dragConstraints={{ left: -160, right: 160, top: 100, bottom: 720 }}
             animate={{
-              y: Yaxis,
-              x: Xaxis,
+              //  y: Yaxis,
+              //  x: Xaxis,
               //  scale: Scale,
               borderRadius: BorderRadius,
             }}
@@ -211,8 +197,15 @@ const JumpMotion = () => {
               zIndex: 2,
               position: "absolute",
             }}
-            transition={TransitionStyle}
-            //whileTap={{ scale: Scale * 0.6 }}
+            transition={{
+              type: "spring",
+              // restSpeed: 2,
+              stiffness: Stiffness,
+              damping: Damping,
+              //  bounceDamping: BounceDamping,
+              //   bounceStiffness: BounceStiffness,
+              //   mass: Mass,
+            }}
           />
           <motion.div
             className="SetWindow"
@@ -220,7 +213,7 @@ const JumpMotion = () => {
               position: "absolute",
               top: 50,
               width: 350,
-              height: 440,
+              height: 400,
               borderRadius: 12,
               display: "flex",
               justifyContent: "center",
@@ -257,7 +250,304 @@ const JumpMotion = () => {
                 }}
                 onChange={callback}
               >
-                <TabPane tab="基本参数" key="1">
+                <TabPane tab="动效参数" key="1">
+                  <div className="SwitchInput" style={{}}>
+                    {/*       dragElastic*/}
+
+                    <div
+                      className="DefaultSetDamping"
+                      style={{
+                        width: 300,
+                        height: "auto",
+                        fontSize: 14,
+                        marginTop: 12,
+                      }}
+                    >
+                      <h6>Damping(阻尼系数)</h6>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 10,
+                        }}
+                      >
+                        <Slider
+                          min={0}
+                          max={50}
+                          onChange={setDamping}
+                          value={Damping}
+                          step={0.1}
+                          style={{
+                            width: 220,
+                          }}
+                        />
+                        <InputNumber
+                          min={0}
+                          max={50}
+                          style={{
+                            margin: 0,
+                            height: 30,
+                            width: 70,
+                            top: 0,
+                            borderRadius: 6,
+                          }}
+                          step={0.1}
+                          onChange={setDamping}
+                          value={Damping}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="DefaultSetStiffness"
+                      style={{
+                        width: 300,
+                        height: "auto",
+                        fontSize: 14,
+                        marginTop: 12,
+                      }}
+                    >
+                      <h6>Stiffness(刚度)</h6>
+
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 10,
+                        }}
+                      >
+                        <Slider
+                          min={0}
+                          max={1000}
+                          onChange={setStiffness}
+                          value={Stiffness}
+                          step={1}
+                          style={{
+                            width: 220,
+                          }}
+                        />
+                        <InputNumber
+                          min={0}
+                          max={1000}
+                          style={{
+                            margin: 0,
+                            height: 30,
+                            width: 70,
+                            borderRadius: 6,
+                          }}
+                          step={1}
+                          onChange={setStiffness}
+                          value={Stiffness}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="DefaultSetMass"
+                      style={{
+                        width: 300,
+                        height: "auto",
+                        fontSize: 14,
+                        marginTop: 12,
+                      }}
+                    >
+                      <h6>Mass(质量)</h6>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 10,
+                        }}
+                      >
+                        <Slider
+                          min={1}
+                          max={50}
+                          onChange={setMass}
+                          value={Mass}
+                          step={0.1}
+                          style={{
+                            width: 220,
+                          }}
+                        />
+                        <InputNumber
+                          min={1}
+                          max={50}
+                          style={{
+                            margin: 0,
+                            height: 30,
+                            width: 70,
+                            borderRadius: 6,
+                          }}
+                          step={0.1}
+                          onChange={setMass}
+                          value={Mass}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  {/* 
+                  <div
+                    className="DefaultSetOpacity"
+                    style={{
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
+                    }}
+                  >
+                    <h6>Opacity 透明度</h6>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={0}
+                        max={1}
+                        onChange={setOpacity}
+                        value={Opacity}
+                        step={0.1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={1}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setOpacity}
+                        value={Opacity}
+                      />
+                    </div>
+                  </div>
+                  {/*  <div
+                    className="DefaultSetScale"
+                    style={{
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
+                    }}
+                  >
+                    <h6>Scale 缩放</h6>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={0}
+                        max={2.5}
+                        onChange={setScale}
+                        value={Scale}
+                        step={0.1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={2.5}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setScale}
+                        value={Scale}
+                      />
+                    </div>
+                  </div> */}
+                  <div
+                    className="DefaultSetRotate"
+                    style={{
+                      width: 300,
+                      height: "auto",
+                      fontSize: 14,
+                      marginTop: 12,
+                    }}
+                  >
+                    <h6>
+                      跟手程度DragElastic(等于1时为100%完全跟手,值越大越容易拖动)
+                    </h6>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                      }}
+                    >
+                      <Slider
+                        min={0}
+                        max={5}
+                        onChange={setDragElastic}
+                        value={DragElastic}
+                        step={0.1}
+                        style={{
+                          width: 220,
+                        }}
+                      />
+                      <InputNumber
+                        min={0}
+                        max={5}
+                        style={{
+                          margin: 0,
+                          height: 30,
+                          width: 80,
+                          borderRadius: 6,
+                        }}
+                        step={0.1}
+                        onChange={setDragElastic}
+                        value={DragElastic}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="Btns"
+                    style={{
+                      display: "flex",
+                      position: "relative",
+                    }}
+                  >
+                    {/*            <div
+                      className="DefaultSetDrag"
+                      style={{
+                        width: 80,
+                        height: "auto",
+
+                        marginTop: 12,
+                      }}
+                    >
+                      <h6
+                        style={{
+                          fontSize: 15,
+                        }}
+                      >
+                        拖拽 Drag
+                      </h6>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 10,
+                          fontSize: 18,
+                        }}
+                      >
+                        <Switch
+                          style={{
+                            marginTop: 5,
+                          }}
+                          //   defaultChecked
+                          onChange={onChange}
+                        />
+                      </div>
+                    </div> */}
+                  </div>
+                </TabPane>
+                <TabPane tab="样式参数" key="2">
                   <div
                     className="SwitchInput"
                     style={
@@ -592,7 +882,7 @@ const JumpMotion = () => {
                       </div>
                     </div> */}
                   </div>
-                  <div
+                  {/*    <div
                     className="DefaultSetXaxis"
                     style={{
                       width: 300,
@@ -673,7 +963,7 @@ const JumpMotion = () => {
                         value={Yaxis}
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </TabPane>
                 {/*    <TabPane tab="更多参数" key="2">
                   <div

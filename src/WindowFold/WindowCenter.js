@@ -1,12 +1,15 @@
 import { motion, useCycle } from "framer-motion";
-import * as React from "react";
+import React, { useState } from "react";
+import { Slider, InputNumber } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import WindowCenterBg from "../Img/WindowCenterBg.png";
 import OneFingerClick from "../Img/OneFingerClick.png";
+import Set from "../Icon/Set.png";
 import CenterWin from "../Img/WindowCenterWin.png";
 import Bg from "../Component/Bg";
 
+import Close from "../Icon/Close.png";
 const ContactBtnStyle = {
   position: "relative",
   backgroundImage: `url(${OneFingerClick})`,
@@ -63,6 +66,8 @@ const ContactBodyStyle = {
 };
 
 const WindowCenter = () => {
+  const [Damping, setDamping] = useState(30);
+  const [Stiffness, setStiffness] = useState(300);
   const [CenterWinAnimate, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
@@ -71,6 +76,20 @@ const WindowCenter = () => {
     "BgAnimationOne",
     "BgAnimationTwo"
   );
+
+  const [SetAnimation, SetCycle] = useCycle(
+    "SetanimationOne",
+    "SetanimationTwo"
+  );
+  const SetVariants = {
+    SetanimationOne: {
+      y: 780,
+    },
+    SetanimationTwo: {
+      y: 400,
+    },
+  };
+
   const Info = (
     <p>
       <h6>弹出</h6>
@@ -124,6 +143,24 @@ const WindowCenter = () => {
   );
   return (
     <div className="All">
+      <div
+        className="SetMenu"
+        onClick={() => SetCycle()}
+        style={{
+          position: "absolute",
+          backgroundImage: `url(${Set})`,
+          top: 25,
+          right: 80,
+          width: 30,
+          height: 30,
+          borderRadius: 20,
+          textAlign: "center",
+          zIndex: 1001,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      />
+
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
       <div
         className="ScreenCenter"
@@ -150,6 +187,127 @@ const WindowCenter = () => {
             top: 0,
           }}
         >
+          {" "}
+          <motion.div
+            className="SetWindow"
+            style={{
+              position: "absolute",
+              top: 50,
+              width: 350,
+              height: 260,
+              borderRadius: 12,
+              display: "grid",
+              alignContent: "space-evenly",
+              justifyContent: "center",
+              // alignContent: "center",
+              backgroundColor: "rgba(255,255,255,0.9)",
+              // filter: "blur(2px)",
+              boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
+              zIndex: 100,
+              y: 780,
+            }}
+            variants={SetVariants}
+            animate={SetAnimation}
+          >
+            <motion.img
+              className="CloseBtn"
+              onClick={() => SetCycle()}
+              src={Close}
+              alt=""
+              style={{
+                width: 16,
+                height: 16,
+                right: 20,
+                top: 16,
+                zIndex: 1000,
+                position: "absolute",
+              }}
+            />
+
+            <div
+              className="DefaultDamping"
+              style={{
+                width: 300,
+                height: "auto",
+                fontSize: 14,
+                marginTop: 12,
+              }}
+            >
+              <h6>弹窗(Damping阻尼)</h6>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                }}
+              >
+                <Slider
+                  min={0}
+                  max={100}
+                  onChange={setDamping}
+                  value={Damping}
+                  step={1}
+                  style={{
+                    width: 220,
+                  }}
+                />
+                <InputNumber
+                  min={0}
+                  max={100}
+                  style={{
+                    margin: 0,
+                    height: 30,
+                    width: 70,
+                    borderRadius: 6,
+                  }}
+                  step={1}
+                  onChange={setDamping}
+                  value={Damping}
+                />
+              </div>
+            </div>
+            <div
+              className="DefaultStiffness"
+              style={{
+                width: 300,
+                height: "auto",
+                fontSize: 14,
+                marginTop: 12,
+              }}
+            >
+              {/* <br /> */}
+              <h6>弹窗(Stiffness刚度)</h6>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                }}
+              >
+                <Slider
+                  min={1}
+                  max={1000}
+                  onChange={setStiffness}
+                  value={Stiffness}
+                  step={1}
+                  style={{
+                    width: 220,
+                  }}
+                />
+                <InputNumber
+                  min={1}
+                  max={1000}
+                  style={{
+                    margin: 0,
+                    height: 30,
+                    width: 70,
+                    borderRadius: 6,
+                  }}
+                  step={1}
+                  onChange={setStiffness}
+                  value={Stiffness}
+                />
+              </div>
+            </div>
+          </motion.div>
           <motion.div
             className="CenterWin"
             style={{
@@ -167,6 +325,11 @@ const WindowCenter = () => {
             }}
             variants={CenterWinVariants}
             animate={CenterWinAnimate}
+            transition={{
+              type: "spring",
+              damping: Damping,
+              stiffness: Stiffness,
+            }}
           />
           <motion.div
             className="MaskChange"

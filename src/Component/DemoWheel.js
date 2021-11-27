@@ -19,6 +19,7 @@ export default function Wheel(props) {
     dragSpeed: (val, instance) => {
       const height = instance.details().widthOrHeight;
       return (
+        //滑动速度阻尼 height
         val *
         (height /
           ((height / 2) * Math.tan(slideDegree * (Math.PI / 180))) /
