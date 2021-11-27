@@ -251,7 +251,7 @@ const OtherMotion = () => {
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
-      <button
+      {/*    <button
         style={{
           position: "absolute",
 
@@ -281,7 +281,7 @@ const OtherMotion = () => {
           left: 25,
           zIndex: 10000,
         }}
-      />
+      /> */}
       {/*  <Lottie
         loop={1}
         play
