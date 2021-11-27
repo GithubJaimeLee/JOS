@@ -44,7 +44,13 @@ const Time = () => {
           position: "relative",
         }}
       >
-        <Wheel className="DemoClock1" initIdx={8} length={24} width={23} />
+        <Wheel
+          className="DemoClock1"
+          initIdx={8}
+          length={24}
+          width={23}
+          loop={true}
+        />
       </div>
       <h6
         style={{
@@ -70,6 +76,7 @@ const Time = () => {
           initIdx={30}
           length={60}
           width={23}
+          loop={true}
           perspective="left"
         />
       </div>
@@ -97,6 +104,7 @@ const Time = () => {
           initIdx={30}
           length={60}
           width={23}
+          loop={true}
           perspective="left"
         />
       </div>

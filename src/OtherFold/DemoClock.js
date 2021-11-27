@@ -26,7 +26,7 @@ import TimerP from "../Icon/timer.png";
 import ClockP from "../Icon/clock.png";
 import WorldP from "../Icon/world.png";
 import CounterP from "../Icon/counter.png";
-
+import ClockBottomAlert from "../Img/ClockBottomAlert.png";
 import test1 from "../Icon/svg/naozhogn.json";
 import test2 from "../Icon/svg/shijieshizhong.json";
 import test3 from "../Icon/svg/miaobiao.json";
@@ -232,8 +232,58 @@ const OtherMotion = () => {
     "SetAnimationOne",
     "SetAnimationTwo"
   );
+  const [MaskOAnimate, cycMaskO] = useCycle("C1", "C2");
 
-  const SetVariants = {
+  const MaskOVariants = {
+    C1: {
+      display: "block",
+      opacity: 0.4,
+      backgroundColor: "#000000",
+    },
+    C2: {
+      display: "none",
+      opacity: 0,
+    },
+  };
+
+  const BCardVariants = {
+    C1: { top: 800 },
+    C2: { top: 314 },
+  };
+  const SetVariants1 = {
+    SetAnimationOne: {
+      scale: 0,
+      opacity: 0,
+    },
+    SetAnimationTwo: {
+      scale: 1,
+      opacity: 1,
+    },
+  };
+
+  const SetVariants2 = {
+    SetAnimationOne: {
+      scale: 0,
+      opacity: 0,
+    },
+    SetAnimationTwo: {
+      scale: 1,
+      opacity: 1,
+    },
+  };
+
+  const SetVariants3 = {
+    SetAnimationOne: {
+      scale: 0,
+      opacity: 0,
+    },
+    SetAnimationTwo: {
+      scale: 1,
+      opacity: 1,
+    },
+  };
+
+  const SetVariants4 = {
     SetAnimationOne: {
       scale: 0,
       opacity: 0,
@@ -250,6 +300,11 @@ const OtherMotion = () => {
   );
 
   const [CardAnimation, Cardcycle] = useCycle(
+    "CardAnimationOne",
+    "CardAnimationTwo"
+  );
+
+  const [WindowBottomAnimation, WindowBottomcycle] = useCycle(
     "CardAnimationOne",
     "CardAnimationTwo"
   );
@@ -320,6 +375,40 @@ const OtherMotion = () => {
             top: 0,
           }}
         >
+          <motion.div
+            onClick={cycMaskO}
+            style={{
+              position: "absolute",
+              backgroundImage: `url(${ClockBottomAlert})`,
+              backgroundSize: "360px 486px",
+              width: 360,
+              height: 486,
+              zIndex: 111,
+              top: 800,
+              opacity: 1,
+            }}
+            variants={BCardVariants}
+            animate={MaskOAnimate}
+            transition={{ type: "tween" }}
+          />
+
+          <motion.div
+            onClick={cycMaskO}
+            className="ClockPageOneMask"
+            style={{
+              position: "absolute",
+              //    display: Display1,
+              zIndex: 100,
+              top: 0,
+              left: 0,
+              zIndex: 101,
+              width: 360,
+              height: 800,
+              //  pointerEvents: "none",
+            }}
+            variants={MaskOVariants}
+            animate={MaskOAnimate}
+          />
           <div
             className="Footer"
             style={{
@@ -327,7 +416,7 @@ const OtherMotion = () => {
               width: 360,
               height: 65,
               bottom: 0,
-              zIndex: 100,
+              zIndex: 20,
               display: "flex",
               justifyContent: "space-around",
             }}
@@ -663,7 +752,7 @@ const OtherMotion = () => {
           >
             <div
               onClick={Setcyc1}
-              className="SetBtn"
+              className="SetBtn1"
               style={{
                 width: 60,
                 height: 60,
@@ -680,11 +769,13 @@ const OtherMotion = () => {
               className="ClockSet"
               style={{
                 backgroundImage: `url(${ClockSet2})`,
-                width: 131,
-                height: 115,
+                backgroundSize: "148px 178px",
+                width: 148,
+                height: 178,
+                boxShadow: "0px 0px 18px 6px rgba(0,0,0,0.05)",
                 position: "absolute",
-                zIndex: 1,
-                boxShadow: "0px 0px 6px 6px rgba(0,0,0,0.04)",
+                zIndex: 20,
+
                 borderRadius: 16,
                 top: 80,
                 scale: 0,
@@ -696,7 +787,7 @@ const OtherMotion = () => {
                 top: { type: "tween" },
                 scale: { type: "spring", damping: 24, stiffness: 300 },
               }}
-              variants={SetVariants}
+              variants={SetVariants1}
               animate={SetAnimation1}
             />
             <div
@@ -711,6 +802,8 @@ const OtherMotion = () => {
               }}
             >
               <motion.div
+                //   whileTap={cycMaskO}
+                // onClick={WindowBottomcycle}
                 className="ClockCard"
                 style={{
                   position: "absolute",
@@ -725,6 +818,20 @@ const OtherMotion = () => {
                 variants={CardVariants}
                 animate={CardAnimation}
               >
+                <div
+                  onClick={cycMaskO}
+                  className="ClockCardMask"
+                  style={{
+                    position: "absolute",
+                    width: 280,
+                    height: 110,
+                    borderRadius: 16,
+                    zIndex: 100,
+
+                    color: "#CDCDCD",
+                    boxShadow: "none",
+                  }}
+                />
                 <div onClick={Cardcycle}>
                   <SwitchBtn />
                 </div>
@@ -768,21 +875,21 @@ const OtherMotion = () => {
               position: "absolute",
               top: 0,
               left: 0,
-              zIndex: 7,
+              zIndex: 70,
               width: 360,
               height: 800,
               opacity: O2,
-
+              display: D2,
               //  display: Display2,
             }}
             className="ClockPageTwo"
           >
             <div
               onClick={Setcyc2}
-              className="SetBtn"
+              className="SetBtn2"
               style={{
                 width: 60,
-                display: D2,
+                pointerEvents: "auto",
                 height: 60,
                 position: "absolute",
                 zIndex: 200,
@@ -796,12 +903,14 @@ const OtherMotion = () => {
             <motion.div
               className="ClockSet"
               style={{
-                backgroundImage: `url(${ClockSet})`,
-                width: 131,
-                height: 66,
+                backgroundImage: `url(${ClockSet2})`,
+                backgroundSize: "148px 178px",
+                width: 148,
+                height: 178,
+                boxShadow: "0px 0px 18px 6px rgba(0,0,0,0.05)",
                 position: "absolute",
-                zIndex: 1,
-                boxShadow: "0px 0px 6px 6px rgba(0,0,0,0.04)",
+                zIndex: 20,
+                pointerEvents: "auto",
                 borderRadius: 16,
                 top: 80,
                 scale: 0,
@@ -813,7 +922,7 @@ const OtherMotion = () => {
                 top: { type: "tween" },
                 scale: { type: "spring", damping: 24, stiffness: 300 },
               }}
-              variants={SetVariants}
+              variants={SetVariants2}
               animate={SetAnimation2}
             />
             <div
@@ -869,7 +978,7 @@ const OtherMotion = () => {
             <div
               //    whileTap={setTimer(TimerG)}
               onClick={Setcyc3}
-              className="SetBtn"
+              className="SetBtn3"
               style={{
                 width: 60,
                 height: 60,
@@ -889,7 +998,7 @@ const OtherMotion = () => {
                 width: 131,
                 height: 66,
                 position: "absolute",
-                zIndex: 1,
+                zIndex: 20,
                 boxShadow: "0px 0px 6px 6px rgba(0,0,0,0.04)",
                 borderRadius: 16,
                 top: 80,
@@ -902,7 +1011,7 @@ const OtherMotion = () => {
                 top: { type: "tween" },
                 scale: { type: "spring", damping: 24, stiffness: 300 },
               }}
-              variants={SetVariants}
+              variants={SetVariants3}
               animate={SetAnimation3}
             />
             <StopWatch />
@@ -921,7 +1030,7 @@ const OtherMotion = () => {
             style={{
               position: "absolute",
               //   display: Display4,
-              display: D4,
+              //  display: D4,
               opacity: O4,
               top: 0,
               left: 0,
@@ -932,7 +1041,7 @@ const OtherMotion = () => {
           >
             <div
               onClick={Setcyc4}
-              className="SetBtn"
+              className="SetBtn4"
               style={{
                 width: 60,
                 height: 60,
@@ -944,16 +1053,18 @@ const OtherMotion = () => {
                 right: 10,
                 opacity: 0,
               }}
-            />
+            />{" "}
             <motion.div
               className="ClockSet"
               style={{
                 backgroundImage: `url(${ClockSet2})`,
-                width: 131,
-                height: 115,
+                backgroundSize: "148px 178px",
+                width: 148,
+                height: 178,
+                boxShadow: "0px 0px 18px 6px rgba(0,0,0,0.05)",
                 position: "absolute",
-                zIndex: 10,
-                boxShadow: "0px 0px 6px 6px rgba(0,0,0,0.04)",
+                zIndex: 200,
+
                 borderRadius: 16,
                 top: 80,
                 scale: 0,
@@ -965,10 +1076,9 @@ const OtherMotion = () => {
                 top: { type: "tween" },
                 scale: { type: "spring", damping: 24, stiffness: 300 },
               }}
-              variants={SetVariants}
+              variants={SetVariants4}
               animate={SetAnimation4}
-            />
-
+            />{" "}
             <Time />
             <div
               style={{
