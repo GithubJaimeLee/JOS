@@ -100,7 +100,24 @@ const OtherMotion = () => {
   const [WorldVar, setWorld] = useState(WorldP);
   const [CounterVar, setCounter] = useState(CounterP);
 
-  const [Stop, setStop] = useState(true);
+  //const [Play1, setPlay1] = useCycle(true, false, false, false, false,);
+
+  const [Play1, setPlay1] = useState(false);
+
+  const [Play2, setPlay2] = useState(false);
+
+  const [Play3, setPlay3] = useState(false);
+
+  const [Play4, setPlay4] = useState(false);
+
+  const [O1, setO1] = useState(0);
+
+  const [O2, setO2] = useState(0);
+
+  const [O3, setO3] = useState(0);
+
+  const [O4, setO4] = useState(0);
+
   const Info = (
     <p>
       scale(缩放)
@@ -194,9 +211,11 @@ const OtherMotion = () => {
   const SetVariants = {
     SetAnimationOne: {
       scale: 0,
+      opacity: 0,
     },
     SetAnimationTwo: {
       scale: 1,
+      opacity: 1,
     },
   };
 
@@ -251,37 +270,7 @@ const OtherMotion = () => {
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
-      {/*    <button
-        style={{
-          position: "absolute",
 
-          width: 100,
-          height: 100,
-          top: 300,
-          zIndex: 1000000,
-          pointerEvents: "auto",
-        }}
-        onClick={() => setStop(!Stop)}
-      >
-        button
-      </button>
-      <Lottie
-        play={Stop}
-        loop={1}
-        segments={[0, 70]}
-        // autoplay={true}
-        animationData={test2}
-        //   stop={true}
-        style={{
-          position: "absolute",
-          preserveAspectRatio: "xMidYMid slice",
-          width: 100,
-          height: 100,
-          top: 0,
-          left: 25,
-          zIndex: 10000,
-        }}
-      /> */}
       {/*  <Lottie
         loop={1}
         play
@@ -342,6 +331,98 @@ const OtherMotion = () => {
           top: 0,
         }}
       >
+        <div
+          className="Btns"
+          style={{
+            position: "absolute",
+            width: 375,
+            height: 80,
+            top: 734,
+          }}
+        >
+          <Lottie
+            play={Play1}
+            loop={1}
+            segments={[0, 50]}
+            //  autoplay
+            animationData={test1}
+            //   stop={true}
+            style={{
+              position: "absolute",
+              preserveAspectRatio: "xMidYMid slice",
+              width: 40,
+              height: 40,
+              opacity: O1,
+              top: 0,
+              left: 34,
+              zIndex: 10000,
+            }}
+          />
+          <Lottie
+            play={Play2}
+            loop={1}
+            segments={[0, 35]}
+            // autoplay={true}
+            animationData={test2}
+            //   stop={true}
+            style={{
+              position: "absolute",
+              preserveAspectRatio: "xMidYMid slice",
+              width: 40,
+              height: 40,
+              top: 0,
+              opacity: O2,
+              left: 124,
+              zIndex: 10000,
+            }}
+          />
+          <Lottie
+            play={Play3}
+            autoplay
+            loop={1}
+            segments={[0, 35]}
+            // autoplay={true}
+            animationData={test3}
+            //   stop={true}
+            style={{
+              position: "absolute",
+              preserveAspectRatio: "xMidYMid slice",
+              width: 40,
+              height: 40,
+              top: 0,
+              opacity: O3,
+              left: 213,
+              zIndex: 10000,
+            }}
+          />{" "}
+          <Lottie
+            play={Play4}
+            autoplay
+            loop={1}
+            segments={[0, 50]}
+            // autoplay={true}
+            animationData={test4}
+            //   stop={true}
+            style={{
+              position: "absolute",
+              preserveAspectRatio: "xMidYMid slice",
+              width: 40,
+              opacity: O4,
+              height: 40,
+              top: 0,
+              left: 301,
+              zIndex: 10000,
+            }}
+          >
+            {/*             <div
+              style={{
+                width: 40,
+                backgroundColor: "#FFFFFF",
+                height: 40,
+              }}
+            ></div> */}
+          </Lottie>
+        </div>
         {/*        <div
           className="SetBtn"
           onClick={() => UPcycleAnimation()}
@@ -358,11 +439,25 @@ const OtherMotion = () => {
           //    onClick={() => setClock(ClockG)}
           onChange={callback}
         >
-          <TabPane tab="闹钟" key="1" id="Clock1">
+          <TabPane
+            tab={
+              <div
+                onClick={() =>
+                  setPlay1(!Play1) & setO1(1) & setO2(0) & setO3(0) & setO4(0)
+                }
+              >
+                闹钟
+              </div>
+            }
+            key="1"
+            id="Clock1"
+            // onClick={() => setPlay1(!Play1)}
+          >
             <img
               id="ClockIcon"
               src={ClockVar}
               style={{
+                pointerEvents: "auto",
                 position: "absolute",
                 bottom: 26,
                 width: 40,
@@ -371,7 +466,7 @@ const OtherMotion = () => {
               alt=""
             />
             <div
-              //    onClick={Setcyc1}
+              onClick={Setcyc1}
               className="SetBtn"
               style={{
                 width: 60,
@@ -472,7 +567,20 @@ const OtherMotion = () => {
               }}
             ></div>
           </TabPane>
-          <TabPane tab={"世界时钟"} key="2" id="Clock2">
+          <TabPane
+            tab={
+              <div
+                onClick={() =>
+                  setPlay2(!Play2) & setO1(0) & setO2(1) & setO3(0) & setO4(0)
+                }
+              >
+                {" "}
+                世界时钟
+              </div>
+            }
+            key="2"
+            id="Clock2"
+          >
             <img
               src={WorldVar}
               style={{
@@ -484,7 +592,7 @@ const OtherMotion = () => {
               alt=""
             />
             <div
-              //         onClick={Setcyc2}
+              onClick={Setcyc2}
               className="SetBtn"
               style={{
                 width: 60,
@@ -521,7 +629,6 @@ const OtherMotion = () => {
               variants={SetVariants}
               animate={SetAnimation2}
             />
-
             <div
               style={{
                 position: "absolute",
@@ -558,7 +665,20 @@ const OtherMotion = () => {
               }}
             ></div>
           </TabPane>
-          <TabPane tab="秒表" key="3" id="Clock3">
+          <TabPane
+            tab={
+              <div
+                onClick={() =>
+                  setPlay3(!Play3) & setO1(0) & setO2(0) & setO3(1) & setO4(0)
+                }
+              >
+                {" "}
+                秒表
+              </div>
+            }
+            key="3"
+            id="Clock3"
+          >
             <img
               //   onClick={() => setTimer(TimerG)}
               src={TimerVar}
@@ -572,7 +692,7 @@ const OtherMotion = () => {
             />
             <div
               //    whileTap={setTimer(TimerG)}
-              //     onClick={Setcyc3}
+              onClick={Setcyc3}
               className="SetBtn"
               style={{
                 width: 60,
@@ -622,12 +742,20 @@ const OtherMotion = () => {
 
           <TabPane
             //    onClick={() => setCounter(CounterG)}
-            tab="计时器"
+            tab={
+              <motion.div
+                onClick={() =>
+                  setPlay4(!Play4) & setO1(0) & setO2(0) & setO3(0) & setO4(1)
+                }
+              >
+                计时器
+              </motion.div>
+            }
             key="4"
             id="Clock4"
           >
             <div
-              // onClick={Setcyc4}
+              onClick={Setcyc4}
               className="SetBtn"
               style={{
                 width: 60,

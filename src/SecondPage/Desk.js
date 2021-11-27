@@ -69,9 +69,7 @@ const Desk = () => {
                 type: "spring",
                 velocity: 120,
               }}
-            >
-              长按
-            </motion.h1>
+            ></motion.h1>
             <Link to="/">
               <img
                 src={backIcon}
@@ -79,7 +77,7 @@ const Desk = () => {
                 style={{
                   width: 30,
                   position: "absolute",
-                  top: 16,
+                  top: 25,
                   left: 20,
                   opacity: 1,
                   zIndex: "100",
@@ -91,6 +89,8 @@ const Desk = () => {
               style={{
                 display: "flex",
                 justifyContent: "center",
+                position: "relative",
+                top: 40,
               }}
             >
               <div className="Row1">
@@ -115,7 +115,7 @@ const Desk = () => {
                     <p style={{ paddingTop: 40 }}>打开/退出应用</p>{" "}
                   </motion.div>
                 </Link> */}{" "}
-                {/*         <Link to="/Desk/Lock" style={{ textDecoration: "none" }}>
+                {/*        <Link to="/Desk/Lock" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>锁屏</p>
                   </motion.div>

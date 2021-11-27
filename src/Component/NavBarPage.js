@@ -34,7 +34,7 @@ function DeskOpenNavBarPage({ name, context, contextTitle, ...props }) {
                 position: "absolute",
                 filter:
                   "drop-shadow(0px 0px 2px #fff) drop-shadow(0px 0px 8px #fff)",
-                top: 16,
+                top: 25,
                 left: 20,
                 opacity: 1,
                 zIndex: 10,

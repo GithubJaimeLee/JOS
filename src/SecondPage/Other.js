@@ -10,7 +10,6 @@ import DemoClock from "../OtherFold/DemoClock";
 import DemoWeather from "../OtherFold/DemoWeather";
 import WindowPull from "../DeskFold/Lock";
 import Test from "../OtherFold/Test";
-import WindowPull from "../DeskFold/Lock";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
 
@@ -43,15 +42,13 @@ const Other = () => {
             <motion.h1
               className="text-center"
               style={{
-                padding: 18,
+                padding: 25,
                 color: "#333",
                 fontSize: 22,
                 y: 0,
               }}
               transition={{ type: "spring", velocity: 120 }}
-            >
-              模块demo
-            </motion.h1>
+            ></motion.h1>
             <Link to="/">
               <img
                 src={backIcon}
@@ -71,6 +68,8 @@ const Other = () => {
               style={{
                 display: "flex",
                 justifyContent: "center",
+                position: "relative",
+                top: 40,
               }}
             >
               <div className="Row1">
@@ -91,11 +90,7 @@ const Other = () => {
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={card}>
-<<<<<<< HEAD
                     <p style={{ paddingTop: 40 }}>锁屏界面</p>
-=======
-                    <p style={{ paddingTop: 40 }}>锁屏demo</p>
->>>>>>> aa963091126bcddf1621925271f0dc8086c1c77c
                   </motion.div>
                 </Link>
               </div>

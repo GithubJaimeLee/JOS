@@ -61,7 +61,7 @@ const ClickShadow = () => {
           style={{
             position: "absolute",
             backgroundImage: `url(${Set})`,
-            top: 13,
+            top: 25,
             right: 80,
             width: 30,
             height: 30,

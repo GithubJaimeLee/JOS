@@ -236,7 +236,7 @@ class StopWatch extends Component {
             animate={{ left: 140 }}
           ></motion.button>
         )}
-
+        {/* 
         {this.state.timerOn === true && (
           <motion.button
             whileTap={{ scale: 0.9 }}
@@ -255,9 +255,9 @@ class StopWatch extends Component {
               backgroundImage: `url(${Replay})`,
               backgroundColor: "#fff",
             }}
-            animate={{ left: 150 }}
+            animate={{ left: 140 }}
           />
-        )}
+        )} */}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
           <motion.button
             whileTap={{ scale: 0.9 }}

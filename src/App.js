@@ -127,7 +127,11 @@ function App() {
             >
               <div className="Row1">
                 <Link to="/Click" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
+                  <motion.div
+                    whileTap={{ scale: 0.91 }}
+                    whileHover={cardHover}
+                    style={cardActive}
+                  >
                     <p style={{ paddingTop: 40 }}>
                       <img
                         src={ClickIcon}
@@ -144,7 +148,11 @@ function App() {
                   </motion.div>
                 </Link>
                 <Link to="/Window" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
+                  <motion.div
+                    whileTap={{ scale: 0.91 }}
+                    whileHover={cardHover}
+                    style={cardActive}
+                  >
                     <p style={{ paddingTop: 40 }}>
                       <img
                         src={WindowIcon}
@@ -161,7 +169,11 @@ function App() {
                   </motion.div>
                 </Link>
                 <Link to="/Jump" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
+                  <motion.div
+                    whileTap={{ scale: 0.91 }}
+                    whileHover={cardHover}
+                    style={cardActive}
+                  >
                     <p style={{ paddingTop: 40 }}>
                       <img
                         src={JumpIcon}
@@ -247,7 +259,11 @@ function App() {
               </div>
               <div className="Row2">
                 <Link to="/Desk" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
+                  <motion.div
+                    whileTap={{ scale: 0.91 }}
+                    whileHover={cardHover}
+                    style={cardActive}
+                  >
                     <p style={{ paddingTop: 40 }}>
                       <img
                         src={DeskIcon}
@@ -300,7 +316,11 @@ function App() {
                   </motion.div>
                 </Link> */}
                 <Link to="/Alert" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
+                  <motion.div
+                    whileTap={{ scale: 0.91 }}
+                    whileHover={cardHover}
+                    style={cardActive}
+                  >
                     <p style={{ paddingTop: 40 }}>
                       <img
                         src={AlertIcon}
@@ -317,7 +337,11 @@ function App() {
                   </motion.div>
                 </Link>
                 <Link to="/other" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
+                  <motion.div
+                    whileTap={{ scale: 0.91 }}
+                    whileHover={cardHover}
+                    style={cardActive}
+                  >
                     <p style={{ paddingTop: 40 }}>
                       <img
                         src={DemoIcon}

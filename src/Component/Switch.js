@@ -51,7 +51,7 @@ const SwitchBtn = () => {
 
   const spring = {
     type: "tween",
-    duration: 0.2,
+    duration: 0.3,
     //type: "spring",
     // stiffness: 700,
     //  damping: 30,

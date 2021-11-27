@@ -83,3 +83,6 @@ div.ListCard {
     display: none !important;
   }
 }
+.navbar {
+  padding-top: 20px !important;
+}

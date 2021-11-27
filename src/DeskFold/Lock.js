@@ -239,7 +239,11 @@ const WindowPull = () => {
                 border: "26px solid #E55C5C",
               }}
               animate={{ scale: PointScale, opacity: RedO }}
-              transition={{ duration: 0.1 }}
+              transition={{
+                type: "spring",
+                damping: 34,
+                stiffness: 600,
+              }}
             />
 
             <motion.div

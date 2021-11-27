@@ -32,6 +32,7 @@ const ChooseDate = () => {
           height: "100%",
           overflow: "hidden",
           position: "absolute",
+          alignItems: "center",
           top: 0,
         }}
       >
@@ -43,9 +44,10 @@ const ChooseDate = () => {
             height: 812,
             // padding: "50px",
             display: "flex",
+            alignItems: "center",
             justifyContent: "center",
             //background: "#666",
-            top: 110,
+
             zIndex: 3,
           }}
         >
@@ -55,8 +57,8 @@ const ChooseDate = () => {
           <h6
             style={{
               position: "absolute",
-              top: 92,
-              left: 148,
+              top: 398,
+              left: 150,
             }}
           >
             时
@@ -67,7 +69,7 @@ const ChooseDate = () => {
           <h6
             style={{
               position: "absolute",
-              top: 92,
+              top: 398,
               right: 98,
             }}
           >

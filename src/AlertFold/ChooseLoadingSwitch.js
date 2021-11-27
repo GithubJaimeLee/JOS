@@ -38,6 +38,11 @@ const ChooseLoadingSwitch = () => {
     "animationTwo"
   );
 
+  const [TBtnAnimation, TcycleAnimation] = useCycle(
+    "animationOne",
+    "animationTwo"
+  );
+
   /*   const spring = {
     type: "tweem",
     // stiffness: 700,
@@ -73,39 +78,90 @@ const ChooseLoadingSwitch = () => {
             zIndex: "2",
           }}
         >
-          <motion.div
+          <div
             style={{
-              width: 60,
-              height: 30,
-              backgroundColor: "#ddd",
               display: "flex",
               alignItems: "center",
-              borderRadius: 50,
-              padding: 10,
-              // cursor: "pointer",
+              gap: 10,
             }}
-            className="Switch"
-            data-isOn={isOn}
-            variants={BtnVariants}
-            animate={BtnAnimation}
-            whileTap={{ type: "spring" }}
-            onPan={(toggleSwitch, cycleAnimation)}
           >
             <motion.div
-              className="Handle"
               style={{
-                position: "relative",
-                backgroundColor: "#b2b2b2",
-                height: 16,
-                width: 16,
-                pointerEvents: "none",
-                borderRadius: "16px",
+                width: 60,
+                height: 30,
+                backgroundColor: "#ddd",
+                display: "flex",
+                alignItems: "center",
+                borderRadius: 50,
+                padding: 10,
+                // cursor: "pointer",
               }}
-              variants={PointVariants}
+              className="Switch"
+              data-isOn={isOn}
+              variants={BtnVariants}
               animate={BtnAnimation}
-              whileTap={{ type: "spring" }}
-            />
-          </motion.div>
+              transform={{ type: "spring" }}
+              onPan={(toggleSwitch, cycleAnimation)}
+            >
+              <motion.div
+                className="Handle"
+                style={{
+                  position: "relative",
+                  backgroundColor: "#b2b2b2",
+                  height: 16,
+                  width: 16,
+                  pointerEvents: "none",
+                  borderRadius: "16px",
+                }}
+                variants={PointVariants}
+                animate={BtnAnimation}
+                transform={{ type: "spring" }}
+              />
+            </motion.div>{" "}
+            <div>拖动开关，有回弹动效</div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+            }}
+          >
+            <motion.div
+              style={{
+                width: 60,
+                height: 30,
+                backgroundColor: "#ddd",
+                display: "flex",
+                alignItems: "center",
+                borderRadius: 50,
+                padding: 10,
+                // cursor: "pointer",
+              }}
+              className="Switch"
+              data-isOn={isOn}
+              variants={BtnVariants}
+              animate={TBtnAnimation}
+              transform={{ type: "tween" }}
+              whileTap={TcycleAnimation}
+            >
+              <motion.div
+                className="Handle"
+                style={{
+                  position: "relative",
+                  backgroundColor: "#b2b2b2",
+                  height: 16,
+                  width: 16,
+                  pointerEvents: "none",
+                  borderRadius: "16px",
+                }}
+                variants={PointVariants}
+                animate={TBtnAnimation}
+                transform={{ type: "tween" }}
+              />
+            </motion.div>
+            <div>点击开关，无回弹动效</div>
+          </div>
         </div>
       </div>
       <Bg />

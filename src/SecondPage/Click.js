@@ -51,9 +51,7 @@ const Click = () => {
                 type: "spring",
                 velocity: 120,
               }}
-            >
-              点击反馈
-            </motion.h1>
+            ></motion.h1>
             <Link to="/">
               <img
                 src={Bback}
@@ -61,7 +59,7 @@ const Click = () => {
                 style={{
                   width: 30,
                   position: "absolute",
-                  top: 16,
+                  top: 25,
                   left: 20,
                   opacity: 1,
                   zIndex: "100",
@@ -73,6 +71,8 @@ const Click = () => {
               style={{
                 display: "flex",
                 justifyContent: "center",
+                position: "relative",
+                top: 40,
               }}
             >
               <div className="Row1">

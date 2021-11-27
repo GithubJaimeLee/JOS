@@ -63,9 +63,7 @@ const Window = () => {
                 y: 0,
               }}
               transition={{ type: "spring", velocity: 120 }}
-            >
-              弹窗
-            </motion.h1>
+            ></motion.h1>
             <Link to="/">
               <img
                 src={backIcon}
@@ -73,7 +71,7 @@ const Window = () => {
                 style={{
                   width: 30,
                   position: "absolute",
-                  top: 16,
+                  top: 25,
                   left: 20,
                   opacity: 1,
                   zIndex: "100",
@@ -85,6 +83,8 @@ const Window = () => {
               style={{
                 display: "flex",
                 justifyContent: "center",
+                position: "relative",
+                top: 40,
               }}
             >
               <div className="Row1">

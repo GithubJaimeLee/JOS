@@ -112,8 +112,8 @@ div#Clock div.ant-tabs-nav div.ant-tabs-nav-wrap {
   margin: 0 !important;
 }
 div#Clock div.ant-tabs-tab {
-  margin-left: 34px !important;
-  margin-right: 20px !important;
+  margin-left: 35px !important;
+  margin-right: 19px !important;
 }
 
 /* window flip */
@@ -152,3 +152,8 @@ div.DemoList div.wheel.keen-slider div.wheel__inner {
   src: url(https://y.qichejiashi.com/tupian/upload/161088749.jpg) !important;
 }
  */
+div#Clock .ant-tabs-tab .ant-tabs-tab-btn div {
+  height: 100px !important;
+  pointer-events: auto !important;
+  padding-top: 82px !important;
+}

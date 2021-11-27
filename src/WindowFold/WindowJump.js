@@ -33,13 +33,13 @@ const boxAnimation = {
     height: 118,
     opacity: 0,
     left: -72,
-    top: -1,
+    top: 20,
   },
   animationTwo: {
     opacity: 1,
     scale: 1,
     left: -72,
-    top: 40,
+    top: 60,
   },
 };
 
@@ -65,7 +65,7 @@ const P2V = {
   },
 };
 const ContactHeaderStyle = {
-  backgroundImage: `url(${ContactHeader})`,
+  // backgroundImage: `url(${ContactHeader})`,
   width: 360,
   height: 159,
   backgroundSize: "360px 159px",
@@ -146,11 +146,23 @@ const WindowJump = () => {
             top: 0,
           }}
         >
-          <div className="ContactHeader" style={ContactHeaderStyle}>
+          <div
+            className="ContactHeader"
+            style={{
+              // backgroundImage: `url(${ContactHeader})`,
+              width: 360,
+              height: 159,
+              backgroundSize: "360px 159px",
+              position: "fixed",
+              zIndex: 1,
+              top: 100,
+              left: -100,
+            }}
+          >
             <div
               className="FingerClick"
               style={{
-                backgroundImage: `url(${OneFingerClick})`,
+                //  backgroundImage: `url(${OneFingerClick})`,
                 position: "absolute",
                 top: 78,
                 left: 326,
@@ -199,7 +211,18 @@ const WindowJump = () => {
             <div
               className="boxPress"
               onClick={() => cycleAnimation()}
-              style={boxPress}
+              style={{
+                position: "relative",
+                right: -290,
+                top: 30,
+                width: 80,
+                opacity: 1,
+                height: 80,
+                textAlign: "center",
+                zIndex: 100,
+                pointerEvents: "auto",
+                //    backgroundColor: "#000000",
+              }}
             >
               <motion.div
                 className="boxChange"
@@ -214,7 +237,7 @@ const WindowJump = () => {
                   height: 118,
                   opacity: 1,
                   left: -72,
-                  top: -1,
+                  top: 20,
                 }}
                 variants={boxAnimation}
                 animate={animationBox}
@@ -254,7 +277,7 @@ const WindowJump = () => {
               style={{
                 width: 20,
                 height: 456,
-                backgroundImage: `url(${ContactSetBar})`,
+                //  backgroundImage: `url(${ContactSetBar})`,
                 top: 210,
                 zIndex: 1,
                 display: "grid",
@@ -264,7 +287,7 @@ const WindowJump = () => {
             />
           </div>
 
-          <motion.div
+          {/*           <motion.div
             className="ContactBody"
             drag="y"
             dragConstraints={{ top: -580, bottom: 0 }}
@@ -366,7 +389,7 @@ const WindowJump = () => {
                 marginTop: 215,
               }}
             />
-          </motion.div>
+          </motion.div> */}
           <div
             className="Background"
             style={{
