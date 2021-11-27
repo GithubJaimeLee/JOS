@@ -16,18 +16,17 @@ export default class NavBar extends Component {
         >
           <Container>
             <Navbar.Brand href="/">
-              {" "}
-              <img
+              {/*        <img
                 alt=""
                 src={Logo}
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
-              />{" "}
+              />  */}
               OOS动效平台
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+            {/*    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+           <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <NavDropdown
                   className="Desk"
@@ -201,9 +200,9 @@ export default class NavBar extends Component {
                     曲线动画
                   </NavDropdown.Item>
                 </NavDropdown>
-                {/* <Nav.Link href="#404">待上线</Nav.Link> */}
+                {/* <Nav.Link href="#404">待上线</Nav.Link>  
               </Nav>
-            </Navbar.Collapse>
+            </Navbar.Collapse>*/}
           </Container>
         </Navbar>
       </div>

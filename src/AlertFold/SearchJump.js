@@ -321,7 +321,7 @@ const SearchJump = () => {
             style={{
               width: 100,
               height: 100,
-              backgroundImage: `url(${FingerClick})`,
+              // backgroundImage: `url(${FingerClick})`,
               position: "relative",
               top: 88,
               y: 30,

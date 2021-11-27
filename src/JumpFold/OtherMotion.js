@@ -62,7 +62,7 @@ const JumpMotion = () => {
   const [Scale, setScale] = useState(1);
   const [Rotate, setRotate] = useState("0");
   const [BorderRadius, setBorderRadius] = useState("12");
-  const [Color, setColor] = useState("415FFF");
+  const [Color, setColor] = useState("ddd");
   const [Yaxis, setYaxis] = useState(0);
   const [Xaxis, setXaxis] = useState(0);
 
@@ -230,7 +230,6 @@ const JumpMotion = () => {
               boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
               zIndex: 10,
               y: 780,
-              
             }}
             variants={SetWindowVariants}
             animate={SetWindowAnimation}

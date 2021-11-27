@@ -112,14 +112,14 @@ const JumpSearch = () => {
         }}
       >
         <div className="ContactBody" style={ContactBodyStyle}>
-          <motion.div
+          {/*        <motion.div
             className="FingerClick"
             onClick={() => cycleAnimation() & KcycleAnimation()}
             variants={FingerVariants}
             animate={animationBox}
             style={ContactBtnStyle}
             transition={{ type: "tween" }}
-          />
+          /> */}
           <motion.div
             className="boxChange"
             style={ContactBubbleStyle}

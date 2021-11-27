@@ -24,7 +24,8 @@ const ContactBubbleStyle = {
   width: 340,
   height: 205,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-  backgroundImage: `url(${WindowInputRename})`,
+  // backgroundImage: `url(${WindowInputRename})`,
+  backgroundColor: "#fff",
   borderRadius: 12,
   position: "absolute",
   bottom: 100,
@@ -70,7 +71,8 @@ const KeyBoardAnimation = {
 };
 
 const ContactBodyStyle = {
-  backgroundImage: `url(${WindowInputBg})`,
+  //  backgroundImage: `url(${WindowInputBg})`,
+  backgroundColor: "#eee",
   position: "absolute",
   display: "flex",
   justifyContent: "center",
@@ -142,7 +144,7 @@ const WindowInput = () => {
             onClick={() =>
               cycleAnimation() & KcycleAnimation() & BgCycleAnimation()
             }
-            style={ContactBtnStyle}
+            // style={ContactBtnStyle}
           />
 
           <motion.div

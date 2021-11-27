@@ -77,7 +77,8 @@ const ChooseDate = () => {
         <div
           className="bg"
           style={{
-            backgroundImage: `url(${ChooseDateBg})`,
+            //    backgroundImage: `url(${ChooseDateBg})`,
+            backgroundColor: "#FFFFFF",
             width: 375,
             height: 812,
             position: "absolute",

@@ -25,9 +25,9 @@ const ContactBubbleStyle = {
   height: 102,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   //opacity: 1,
-  backgroundImage: `url(${WindowAlertWin})`,
+  // backgroundImage: `url(${WindowAlertWin})`,
   border: "1px solid #ccc",
-  // background: "#666",
+  background: "#fff",
   borderRadius: 12,
   position: "absolute",
   y: -720,
@@ -44,8 +44,8 @@ const BoxAnimation = {
 };
 
 const ContactBodyStyle = {
-  backgroundImage: `url(${WindowBg})`,
-  //backgroundColor: "#EEEEEE",
+  // backgroundImage: `url(${WindowBg})`,
+  backgroundColor: "#EEEEEE",
   position: "absolute",
   width: 360,
   height: 800,

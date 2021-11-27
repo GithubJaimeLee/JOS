@@ -25,7 +25,7 @@ const SideStyle = {
   height: 812,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
   opacity: 1,
-  backgroundImage: `url(${WindowSideSide})`,
+  //backgroundImage: `url(${WindowSideSide})`,
   //background: "#eee",
   position: "absolute",
   bottom: 100,
@@ -60,8 +60,8 @@ const BgVariants = {
 };
 
 const ContactBodyStyle = {
-  backgroundImage: `url(${WindowSideBg})`,
-  //backgroundColor: "#ddd",
+  // backgroundImage: `url(${WindowSideBg})`,
+  backgroundColor: "#ddd",
   position: "absolute",
   width: 375,
   height: 812,
@@ -136,7 +136,7 @@ const WindowSide = () => {
         }}
       >
         <div className="ContactBody" style={ContactBodyStyle}>
-          <motion.div
+          {/*           <motion.div
             className="FingerBtn"
             variants={FingerVariants}
             animate={SideAnimate}
@@ -154,7 +154,7 @@ const WindowSide = () => {
               display: "flex",
               justifyContent: "center",
             }}
-          />
+          /> */}
 
           <motion.div
             className="boxChange"
@@ -163,8 +163,8 @@ const WindowSide = () => {
               height: 812,
               boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
               opacity: 1,
-              backgroundImage: `url(${WindowSideSide})`,
-              //background: "#eee",
+              // backgroundImage: `url(${WindowSideSide})`,
+              background: "#eee",
               position: "absolute",
               bottom: 100,
               zIndex: 20,

@@ -10,6 +10,7 @@ import DemoClock from "../OtherFold/DemoClock";
 import DemoWeather from "../OtherFold/DemoWeather";
 import WindowPull from "../DeskFold/Lock";
 import Test from "../OtherFold/Test";
+import WindowPull from "../DeskFold/Lock";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
 
@@ -90,14 +91,18 @@ const Other = () => {
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={card}>
+<<<<<<< HEAD
                     <p style={{ paddingTop: 40 }}>锁屏界面</p>
+=======
+                    <p style={{ paddingTop: 40 }}>锁屏demo</p>
+>>>>>>> aa963091126bcddf1621925271f0dc8086c1c77c
                   </motion.div>
                 </Link>
               </div>
               <div className="Row2">
                 <Link to="/Other/DemoClock" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
-                    <p style={{ paddingTop: 40 }}>时间组件</p>
+                    <p style={{ paddingTop: 40 }}>时间demo</p>
                   </motion.div>
                 </Link>
               </div>
