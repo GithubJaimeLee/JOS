@@ -22,7 +22,7 @@ const boxPress = {
   opacity: 1,
   height: 80,
   textAlign: "center",
-  zIndex: 10,
+  zIndex: 1,
   // backgroundColor: "blue",
 };
 
@@ -169,7 +169,7 @@ const WindowJump = () => {
                 width: 32,
                 height: 60,
                 backgroundRepeat: "no-repeat",
-                zIndex: 1,
+                zIndex: 100,
               }}
             />
             <motion.div
@@ -219,7 +219,7 @@ const WindowJump = () => {
                 opacity: 1,
                 height: 80,
                 textAlign: "center",
-                zIndex: 100,
+                zIndex: 10,
                 pointerEvents: "auto",
                 //    backgroundColor: "#000000",
               }}
@@ -233,6 +233,7 @@ const WindowJump = () => {
                   position: "absolute",
                   transformOrigin: "131px 0px",
                   scale: 0,
+                  zIndex: 1,
                   width: 131,
                   height: 118,
                   opacity: 1,
@@ -250,6 +251,7 @@ const WindowJump = () => {
             </div>
           </div>
           <div
+            onClick={() => cycleAnimation()}
             className="Fix"
             style={{
               width: 360,

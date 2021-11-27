@@ -236,13 +236,13 @@ const OtherMotion = () => {
 
   const MaskOVariants = {
     C1: {
+      display: "none",
+      opacity: 0,
+    },
+    C2: {
       display: "block",
       opacity: 0.4,
       backgroundColor: "#000000",
-    },
-    C2: {
-      display: "none",
-      opacity: 0,
     },
   };
 
@@ -346,7 +346,8 @@ const OtherMotion = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   }; */
-
+  const [X, setX] = useState(0);
+  const [Y, setY] = useState(0);
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
@@ -376,6 +377,7 @@ const OtherMotion = () => {
           }}
         >
           <motion.div
+            drag="y"
             onClick={cycMaskO}
             style={{
               position: "absolute",
@@ -386,6 +388,30 @@ const OtherMotion = () => {
               zIndex: 111,
               top: 800,
               opacity: 1,
+              y: Y,
+              x: X,
+            }}
+            transition={{
+              type: "spring",
+              damping: Damping,
+              stiffness: Stiffness,
+            }}
+            dragConstraints={{
+              top: 0,
+              bottom: 0,
+            }}
+            dragElastic={0.08}
+            onDragCancel={() => {
+              setX(-1);
+              setY(-1);
+            }}
+            onDragStart={() => {
+              setX(-1);
+              setY(-1);
+            }}
+            onDragEnd={() => {
+              setX(-1);
+              setY(-1);
             }}
             variants={BCardVariants}
             animate={MaskOAnimate}

@@ -350,7 +350,7 @@ const WindowBottom = () => {
               opacity: 1,
               y: Y,
               x: X,
-              //   backgroundImage: `url(${WindowBottomWin})`,
+
               backgroundColor: "#FFFFFF",
               borderRadius: 20,
               position: "absolute",
@@ -363,16 +363,12 @@ const WindowBottom = () => {
               type: "spring",
               damping: Damping,
               stiffness: Stiffness,
-              //  x: { type: "spring", stiffness: 100 },
-              //default: { duration: 2 },
             }}
             dragConstraints={{
               top: 0,
               bottom: 0,
             }}
             dragElastic={0.08}
-            //值越大越容易拖动
-
             onDragCancel={() => {
               setX(-1);
               setY(-1);

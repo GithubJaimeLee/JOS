@@ -43,12 +43,14 @@ const KeyboardStyle = {
 };
 const BoxAnimation = {
   animationOne: {
+    scale: 0,
     y: 400,
     // transitionDuration: "1s",
     //  y: -300,
   },
   animationTwo: {
     y: -300,
+    scale: 1,
   },
 };
 const FingerVariants = {
