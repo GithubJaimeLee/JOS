@@ -255,7 +255,7 @@ const WindowPull = () => {
                 // backgroundColor: LockBgR,
                 //   opacity: LockBgRO,
 
-                top: 526,
+                top: 525,
                 width: 214,
                 height: 77.5,
                 zIndex: 2,
