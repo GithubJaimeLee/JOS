@@ -102,7 +102,7 @@ const WindowPull = () => {
                 backgroundPosition: "50% 50%",
                 transformOrigin: "0% 0%",
               }}
-              transition={{ type: "spring", damping: 26, stiffness: 400 }}
+              transition={{ type: "spring", damping: 27, stiffness: 400 }}
               dragElastic={1}
               animate={{
                 x: HealthX,
@@ -162,7 +162,7 @@ const WindowPull = () => {
               backgroundImage: `url(${Phone})`,
               transformOrigin: "100px 100px",
             }}
-            transition={{ type: "spring", damping: 26, stiffness: 400 }}
+            transition={{ type: "spring", damping: 27, stiffness: 400 }}
             dragElastic={1}
             animate={{ x: PhoneX, y: PhoneY, scale: PhoneScale }}
             onDragCancel={() => {
@@ -332,7 +332,7 @@ const WindowPull = () => {
               zIndex: 10,
               backgroundImage: `url(${Camera})`,
             }}
-            transition={{ type: "spring", damping: 26, stiffness: 400 }}
+            transition={{ type: "spring", damping: 27, stiffness: 400 }}
             dragElastic={1}
             animate={{ x: CameraX, y: CameraY, scale: CameraScale }}
             onDragCancel={() => {
@@ -388,7 +388,7 @@ const WindowPull = () => {
               zIndex: 10,
               backgroundImage: `url(${Point})`,
             }}
-            transition={{ type: "spring", damping: 26, stiffness: 400 }}
+            transition={{ type: "spring", damping: 27, stiffness: 400 }}
             dragElastic={1}
             animate={{ x: GreyBtnX, y: GreyBtnY, scale: GreyBtnScale }}
             onDragCancel={(event, info) => {

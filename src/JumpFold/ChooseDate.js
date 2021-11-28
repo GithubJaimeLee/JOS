@@ -4,6 +4,7 @@ import Bg from "../Component/Bg";
 import ChooseDateBg from "../Img/ChooseDateBg.png";
 import React from "react";
 import Wheel from "../Component/JumpWheel";
+import Time from "../Component/Time";
 import { motion, useCycle } from "framer-motion";
 const ChooseDate = () => {
   const Info = <p>日期滑动选择器</p>;
@@ -37,50 +38,75 @@ const ChooseDate = () => {
         }}
       >
         <div
-          className="TimePicker"
+          className="ShowClocks"
           style={{
             width: 360,
-            position: "absolute",
             height: 800,
+            position: "absolute",
+            display: "grid",
             top: 0,
-            // padding: "50px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            //background: "#666",
-            zIndex: 3,
           }}
         >
-          <div style={{ width: 120, height: 200 }}>
-            <Wheel
-              initIdx={8}
-              length={24}
-              width={23}
-              dragSpeed={-10}
-              //     transition={{ type: "spring", damping: 30 }}
-            />
-          </div>
-          <h6
+          <div
+            className="TimeMask"
             style={{
-              position: "absolute",
-              top: 392,
-              left: 140,
+              position: "relative",
+              height: 400,
+              width: 360,
+              justifyContent: "center",
+              alignItems: "center",
+              overflow: "hidden",
             }}
           >
-            时
-          </h6>
-          <div style={{ width: 120, height: 200 }}>
-            <Wheel initIdx={30} length={60} width={23} perspective="left" />
+            <Time />
           </div>
-          <h6
+          <div
+            className="TimePicker"
             style={{
-              position: "absolute",
-              top: 392,
-              right: 98,
+              width: 360,
+              position: "relative",
+              height: 400,
+              top: 0,
+
+              display: "flex",
+              alignItems: "start",
+              justifyContent: "center",
+
+              zIndex: 3,
             }}
           >
-            分
-          </h6>
+            <div style={{ width: 120, height: 200 }}>
+              <Wheel
+                initIdx={8}
+                length={24}
+                width={23}
+                dragSpeed={-10}
+                //     transition={{ type: "spring", damping: 30 }}
+              />{" "}
+              <h6
+                style={{
+                  position: "absolute",
+                  top: 90,
+                  left: 140,
+                }}
+              >
+                时
+              </h6>
+            </div>
+
+            <div style={{ width: 120, height: 200 }}>
+              <Wheel initIdx={30} length={60} width={23} perspective="left" />
+              <h6
+                style={{
+                  position: "absolute",
+                  top: 90,
+                  right: 98,
+                }}
+              >
+                分
+              </h6>
+            </div>
+          </div>
         </div>
         <div
           className="bg"

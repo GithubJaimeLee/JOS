@@ -466,7 +466,8 @@ const OtherMotion = () => {
               backgroundSize: "360px 900px",
               top: 0,
               zIndex: 1000,
-              backgroundColor: "red",
+              y: 812,
+              backgroundColor: "#fff",
               position: "absolute",
             }}
             variants={BoxVariants}

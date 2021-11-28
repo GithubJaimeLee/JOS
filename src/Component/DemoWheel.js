@@ -22,7 +22,7 @@ export default function Wheel(props) {
         //滑动速度阻尼 height
         val *
         (height /
-          ((height / 2) * Math.tan(slideDegree * (Math.PI / 180))) /
+          ((height / 1.5) * Math.tan(slideDegree * (Math.PI / 180))) /
           slidesPerView)
       );
     },

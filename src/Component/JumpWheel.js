@@ -21,7 +21,7 @@ export default function Wheel(props) {
       return (
         val *
         (height /
-          ((height / 2) * Math.tan(slideDegree * (Math.PI / 180))) /
+          ((height / 1.5) * Math.tan(slideDegree * (Math.PI / 180))) /
           slidesPerView)
       );
     },
