@@ -13,6 +13,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
+import Feedback from "../SecondPage/Feedback";
+import Alert from "../SecondPage/Alert";
+import Window from "../SecondPage/Window";
+import ChooseLoadingSwitch from "../AlertFold/ChooseLoadingSwitch";
+import DeskChange from "../DeskFold/DeskChange";
 
 let cardActive = {
   width: 160,
@@ -76,7 +81,28 @@ const Click = () => {
               }}
             >
               <div className="Row1">
-                <Link
+                <Link to="/Click/Feedback" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>点击反馈</p>
+                  </motion.div>
+                </Link>
+
+                <Link to="/Click/Window" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>弹窗</p>
+                  </motion.div>
+                </Link>
+                <Link to="/Click/DeskChange" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>桌面图标</p>
+                  </motion.div>
+                </Link>
+                {/*    <Link to="/Click/ClickAlert" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>暗示</p>
+                  </motion.div>
+                </Link> */}
+                {/*           <Link
                   to="/Click/ClickShadow"
                   style={{ textDecoration: "none" }}
                 >
@@ -89,11 +115,6 @@ const Click = () => {
                     <p style={{ paddingTop: 40 }}>其他</p>
                   </motion.div>
                 </Link>
-                {/*    <Link to="/Click/ClickAlert" style={{ textDecoration: "none" }}>
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>暗示</p>
-                  </motion.div>
-                </Link> */}
 
                 {/*                 <Link to="/Click/ClickList" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
@@ -112,11 +133,17 @@ const Click = () => {
                 </Link> */}
               </div>
               <div className="Row2">
-                <Link to="/Click/ClickZoom" style={{ textDecoration: "none" }}>
+                <Link to="/Click/SecondPage" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>桌面图标</p>
+                    <p style={{ paddingTop: 40 }}>二级页面</p>
                   </motion.div>
                 </Link>
+                <Link to="/Click/Boolean" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>布尔开关(支持滑动)</p>
+                  </motion.div>
+                </Link>
+
                 {/*                <Link to="/Click/ClickOther" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>其他</p>
@@ -148,26 +175,23 @@ const Click = () => {
             ></div>
           </div>
         </Route>
-        <Route path="/Click/ClickShadow">
-          <ClickShadow />
+
+        <Route path="/Click/Feedback">
+          <Feedback />
         </Route>
-        <Route path="/Click/ClickAlert">
-          <ClickAlert />
+
+        <Route path="/Click/SecondPage">
+          <Alert />
         </Route>
-        <Route path="/Click/ClickZoom">
-          <ClickZoom />
+        <Route path="/Click/Window">
+          <Window />
         </Route>
-        <Route path="/Click/ClickOther">
-          <ClickOther />
+        <Route path="/Click/Boolean">
+          <ChooseLoadingSwitch />
         </Route>
-        <Route path="/Click/ClickList">
-          <ClickList />
-        </Route>
-        <Route path="/Click/ClickIcon">
-          <ClickIcon />
-        </Route>
-        <Route path="/Click/ClickBtn">
-          <ClickBtn />
+
+        <Route path="/Click/DeskChange">
+          <DeskChange />
         </Route>
 
         <Route path="/">

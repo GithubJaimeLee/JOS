@@ -143,11 +143,32 @@ function App() {
                           verticalAlign: "text-bottom",
                         }}
                       />
-                      点击反馈
+                      控件(点击)
                     </p>
                   </motion.div>
                 </Link>
-                <Link to="/Window" style={{ textDecoration: "none" }}>
+                <Link to="/other" style={{ textDecoration: "none" }}>
+                  <motion.div
+                    whileTap={{ scale: 0.91 }}
+                    whileHover={cardHover}
+                    style={cardActive}
+                  >
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={DemoIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      模块demo
+                    </p>
+                  </motion.div>
+                </Link>
+                {/*      <Link to="/Window" style={{ textDecoration: "none" }}>
                   <motion.div
                     whileTap={{ scale: 0.91 }}
                     whileHover={cardHover}
@@ -167,28 +188,8 @@ function App() {
                       弹窗
                     </p>
                   </motion.div>
-                </Link>
-                <Link to="/Jump" style={{ textDecoration: "none" }}>
-                  <motion.div
-                    whileTap={{ scale: 0.91 }}
-                    whileHover={cardHover}
-                    style={cardActive}
-                  >
-                    <p style={{ paddingTop: 40 }}>
-                      <img
-                        src={JumpIcon}
-                        alt=""
-                        style={{
-                          display: "inline-block",
-                          width: 18,
-                          marginRight: 8,
-                          verticalAlign: "text-bottom",
-                        }}
-                      />
-                      滑动
-                    </p>
-                  </motion.div>
-                </Link>
+                </Link> */}
+
                 {/*  <Link to="/Choose" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
@@ -258,7 +259,7 @@ function App() {
                 </Link> */}
               </div>
               <div className="Row2">
-                <Link to="/Desk" style={{ textDecoration: "none" }}>
+                {/*       <Link to="/Desk" style={{ textDecoration: "none" }}>
                   <motion.div
                     whileTap={{ scale: 0.91 }}
                     whileHover={cardHover}
@@ -280,7 +281,7 @@ function App() {
                     <div></div>
                   </motion.div>
                 </Link>
-                {/*   <Link to="/List" style={{ textDecoration: "none" }}>
+                <Link to="/List" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -315,7 +316,29 @@ function App() {
                     <div></div>
                   </motion.div>
                 </Link> */}
-                <Link to="/Alert" style={{ textDecoration: "none" }}>
+                <Link to="/Slide" style={{ textDecoration: "none" }}>
+                  <motion.div
+                    whileTap={{ scale: 0.91 }}
+                    whileHover={cardHover}
+                    style={cardActive}
+                  >
+                    <p style={{ paddingTop: 40 }}>
+                      <img
+                        src={JumpIcon}
+                        alt=""
+                        style={{
+                          display: "inline-block",
+                          width: 18,
+                          marginRight: 8,
+                          verticalAlign: "text-bottom",
+                        }}
+                      />
+                      滑动
+                    </p>
+                  </motion.div>
+                </Link>
+
+                {/*        <Link to="/Alert" style={{ textDecoration: "none" }}>
                   <motion.div
                     whileTap={{ scale: 0.91 }}
                     whileHover={cardHover}
@@ -335,28 +358,8 @@ function App() {
                       二级页面
                     </p>
                   </motion.div>
-                </Link>
-                <Link to="/other" style={{ textDecoration: "none" }}>
-                  <motion.div
-                    whileTap={{ scale: 0.91 }}
-                    whileHover={cardHover}
-                    style={cardActive}
-                  >
-                    <p style={{ paddingTop: 40 }}>
-                      <img
-                        src={DemoIcon}
-                        alt=""
-                        style={{
-                          display: "inline-block",
-                          width: 18,
-                          marginRight: 8,
-                          verticalAlign: "text-bottom",
-                        }}
-                      />
-                      模块demo
-                    </p>
-                  </motion.div>
-                </Link>
+                </Link>*/}
+
                 {/*      <Link to="/Other" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
@@ -542,7 +545,7 @@ function App() {
         <Route path="/Other">
           <Other />
         </Route>
-        <Route path="/Jump">
+        <Route path="/Slide">
           <Jump />
         </Route>
         <Route path="/Window">

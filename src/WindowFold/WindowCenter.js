@@ -39,7 +39,7 @@ const BgStyle = {
 
 const CenterWinVariants = {
   animationOne: {
-    scale: 0,
+    scale: 0.8,
     opacity: 0,
   },
   animationTwo: {
@@ -66,8 +66,8 @@ const ContactBodyStyle = {
 };
 
 const WindowCenter = () => {
-  const [Damping, setDamping] = useState(30);
-  const [Stiffness, setStiffness] = useState(300);
+  const [Damping, setDamping] = useState(20);
+  const [Stiffness, setStiffness] = useState(170);
   const [CenterWinAnimate, cycleAnimation] = useCycle(
     "animationOne",
     "animationTwo"
@@ -321,7 +321,7 @@ const WindowCenter = () => {
               bottom: 100,
               zIndex: 20,
               y: -300,
-              scale: 0,
+              scale: 0.8,
             }}
             variants={CenterWinVariants}
             animate={CenterWinAnimate}

@@ -162,34 +162,6 @@ const JumpIn = () => {
             animate={animationBg}
             transition={{ type: "spring", damping: 16 }}
           >
-            <div
-              className="HeadCard"
-              style={{
-                backgroundImage: `url(${SetHeader})`,
-                top: 0,
-
-                width: 360,
-                height: 148,
-                position: "fixed",
-                opacity: 1,
-                zIndex: 1,
-              }}
-            >
-              <motion.p
-                className="SetP"
-                style={{
-                  fontSize: scale,
-                  position: "relative",
-                  top: 52,
-                  left: 20,
-                  margin: 0,
-                  fontWeight: "bold",
-                  zIndex: 10,
-                }}
-              >
-                设置
-              </motion.p>
-            </div>
             <motion.div
               className="MoveBackground"
               drag="y"
@@ -199,9 +171,10 @@ const JumpIn = () => {
               style={{
                 y,
                 backgroundImage: `url(${SetBody})`,
-                top: 148,
+                backgroundSize: "360px 800px",
+                top: 0,
                 width: 360,
-                height: 1590,
+                height: 800,
                 position: "relative",
                 opacity: 1,
                 zIndex: 0,

@@ -13,6 +13,7 @@ import JumpSearch from "../JumpFold/JumpSearch";
 import JumpApp from "../JumpFold/JumpApp";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
+import WindowFlip from "../WindowFold/WindowFlip";
 
 let card = {
   width: 160,
@@ -38,7 +39,7 @@ const Jump = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/Jump">
+        <Route exact path="/Slide">
           <div>
             <motion.h1
               className="text-center"
@@ -74,7 +75,7 @@ const Jump = () => {
               }}
             >
               <div className="Row1">
-                <Link to="/Jump/ChooseDate" style={{ textDecoration: "none" }}>
+                <Link to="/Slide/ChooseDate" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>时间滚轮</p>{" "}
                   </motion.div>
@@ -89,11 +90,17 @@ const Jump = () => {
                     </p>
                   </motion.div>
                 </Link> */}
-                <Link to="/Jump/EditList" style={{ textDecoration: "none" }}>
+                <Link to="/Slide/EditList" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>列表滑动</p>
                   </motion.div>
                 </Link>
+                <Link to="/Slide/Flip" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>翻页效果</p>
+                  </motion.div>
+                </Link>
+
                 {/*      <Link to="/Jump/EditList" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>列表滑动</p>
@@ -107,16 +114,17 @@ const Jump = () => {
               </div>
 
               <div className="Row2">
-                <Link to="/Jump/DeleteList" style={{ textDecoration: "none" }}>
+                <Link to="/Slide/DeleteList" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>删除（横滑定位）</p>{" "}
                   </motion.div>
                 </Link>
-                <Link to="/Jump/JumpMotion" style={{ textDecoration: "none" }}>
+                <Link to="/Slide/JumpMotion" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>水面滑动(四角定位)</p>
                   </motion.div>
                 </Link>
+
                 {/*                 <Link to="/Jump/JumpSearch" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>搜索</p>{" "}
@@ -144,30 +152,31 @@ const Jump = () => {
             ></div>
           </div>
         </Route>
-        <Route path="/Jump/DeleteList">
-          <DeleteList />
+        <Route path="/Slide/Flip">
+          <WindowFlip />
         </Route>
-        <Route path="/Jump/EditList">
+        <Route path="/Slide/EditList">
           <EditList />
         </Route>
-        <Route path="/Jump/ChooseDate">
+        <Route path="/Slide/ChooseDate">
           <ChooseDate />
         </Route>
-        <Route path="/Jump/JumpMotion">
+        <Route path="/Slide/JumpMotion">
           <JumpMotion />
         </Route>
-        <Route path="/Jump/JumpNew">
+        <Route path="/Slide/JumpNew">
           <JumpNew />
         </Route>
-        <Route path="/Jump/JumpSecond">
+        <Route path="/Slide/JumpSecond">
           <JumpSecond />
         </Route>
-        <Route path="/Jump/JumpApp">
+        <Route path="/Slide/JumpApp">
           <JumpApp />
         </Route>
-        <Route path="/Jump/JumpSearch">
-          <JumpSearch />
+        <Route path="/Slide/DeleteList">
+          <DeleteList />
         </Route>
+
         <Route path="/">
           <App />
         </Route>

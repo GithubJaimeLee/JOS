@@ -14,6 +14,7 @@ import AlertToast from "../AlertFold/AlertToast";
 import Create from "../AlertFold/Create";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
+import Click from "../SecondPage/Click";
 
 let card = {
   width: 160,
@@ -39,7 +40,7 @@ const Alert = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/Alert">
+        <Route exact path="/Click/SecondPage">
           <div>
             <motion.h1
               className="text-center"
@@ -51,7 +52,7 @@ const Alert = () => {
               }}
               transition={{ type: "spring", velocity: 120 }}
             ></motion.h1>
-            <Link to="/">
+            <Link to="/Click">
               <img
                 src={backIcon}
                 alt=" "
@@ -75,12 +76,18 @@ const Alert = () => {
               }}
             >
               <div className="Row1">
-                <Link to="/Alert/Create" style={{ textDecoration: "none" }}>
+                <Link
+                  to="/Click/SecondPage/Create"
+                  style={{ textDecoration: "none" }}
+                >
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>新建</p>
                   </motion.div>
                 </Link>
-                <Link to="/Alert/SearchJump" style={{ textDecoration: "none" }}>
+                <Link
+                  to="/Click/SecondPage/SearchJump"
+                  style={{ textDecoration: "none" }}
+                >
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>搜索框</p>
                   </motion.div>
@@ -105,15 +112,18 @@ const Alert = () => {
                 </Link> */}
               </div>
               <div className="Row2">
-                <Link
-                  to="/Alert/ChooseLoadingSwitch"
+                {/*   <Link
+                  to="/Click/SecondPage/ChooseLoadingSwitch"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>布尔开关</p>
                   </motion.div>
-                </Link>
-                <Link to="/Alert/JumpIn" style={{ textDecoration: "none" }}>
+                </Link>*/}
+                <Link
+                  to="/Click/SecondPage/JumpIn"
+                  style={{ textDecoration: "none" }}
+                >
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>弹入</p>
                   </motion.div>
@@ -148,29 +158,29 @@ const Alert = () => {
           </div>
         </Route>
 
-        <Route path="/Alert/ChooseLoadingSwitch">
-          <ChooseLoadingSwitch />
-        </Route>
-        <Route path="/Alert/Create">
+        <Route path="/Click/SecondPage/Create">
           <Create />
         </Route>
-        <Route path="/Alert/SearchJump">
+        <Route path="/Click/SecondPage/SearchJump">
           <SearchJump />
         </Route>
-        <Route path="/Alert/JumpIn">
+        <Route path="/Click/SecondPage/JumpIn">
           <JumpIn />
         </Route>
-        <Route path="/Alert/AlertPage">
+        <Route path="/Click/SecondPage/AlertPage">
           <AlertPage />
         </Route>
-        <Route path="/Alert/AlertToast">
+        <Route path="/Click/SecondPage/AlertToast">
           <AlertToast />
         </Route>
-        <Route path="/Alert/AlertPercent">
+        <Route path="/Click/SecondPage/AlertPercent">
           <AlertPercent />
         </Route>
         <Route path="/">
           <App />
+        </Route>
+        <Route path="/Click">
+          <Click />
         </Route>
       </Switch>
     </Router>

@@ -50,14 +50,13 @@ const Time = () => {
           length={24}
           width={23}
           loop={true}
-          perspective="left"
         />
       </div>
       <h6
         style={{
           position: "absolute",
           top: 215,
-          left: 72,
+          left: 83,
         }}
       >
         时
@@ -78,14 +77,13 @@ const Time = () => {
           length={60}
           width={23}
           loop={true}
-          perspective="left"
         />
       </div>
       <h6
         style={{
           position: "absolute",
           top: 215,
-          right: 146,
+          right: 135,
         }}
       >
         分
@@ -106,14 +104,13 @@ const Time = () => {
           length={60}
           width={23}
           loop={true}
-          perspective="left"
         />
       </div>
       <h6
         style={{
           position: "absolute",
           top: 215,
-          right: 36,
+          right: 26,
         }}
       >
         秒

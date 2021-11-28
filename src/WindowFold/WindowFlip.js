@@ -57,8 +57,8 @@ const ContactBodyStyle = {
   backgroundImage: `url(${WindowBg})`,
   //backgroundColor: "#EEEEEE",
   position: "absolute",
-  width: 375,
-  height: 812,
+  width: 360,
+  height: 800,
   zIndex: 1,
 };
 
@@ -88,7 +88,7 @@ const WindowFlip = () => {
           id="NS"
           className="CNS"
           height={642}
-          width={375}
+          width={360}
           // showSwipeHint
           orientation={"vertical"}
           maskOpacity={0}
@@ -153,10 +153,11 @@ const WindowFlip = () => {
           className="BGBG"
           style={{
             position: "absolute",
-            width: 375,
-            height: 812,
+            width: 360,
+            height: 800,
             zIndex: -1,
             backgroundImage: `url(${FlipBg})`,
+            backgroundSize: "360px 800px",
           }}
         />
       </div>

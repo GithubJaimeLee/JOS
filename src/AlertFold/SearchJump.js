@@ -70,6 +70,7 @@ const ContactHeaderStyle = {
 };
 const ContactBodyStyle = {
   backgroundImage: `url(${SearchBg})`,
+  backgroundSize: "375px 812px",
   position: "absolute",
   top: 0,
   width: 375,

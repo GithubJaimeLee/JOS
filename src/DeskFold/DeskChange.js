@@ -182,9 +182,11 @@ const DChange = () => {
         <div
           className="Screen"
           style={{
-            width: 375,
+            width: 360,
             position: "absolute",
+            height: 800,
             top: 0,
+            overflow: "hidden",
           }}
         >
           <motion.div
@@ -294,8 +296,8 @@ const DChange = () => {
           onClick={OnClickClose}
           style={{
             background: "#fff",
-            width: 375,
-            height: 812,
+            width: 360,
+            height: 800,
             position: "absolute",
             top: 0,
             opacity: 1,

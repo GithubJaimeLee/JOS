@@ -55,7 +55,7 @@ const UploadGallery = () => {
           perspective: "1000px",
         }}
       >
-        <motion.div
+        {/*    <motion.div
           style={{
             position: "absolute",
 
@@ -79,7 +79,7 @@ const UploadGallery = () => {
             power: 0,
             modifyTarget: (target) => Math.round(target / 90) * 90,
           }}
-        />
+        /> */}
       </div>
       <DndContext
         modifiers={[restrictToVerticalAxis]}

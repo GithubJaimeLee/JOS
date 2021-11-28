@@ -192,6 +192,7 @@ class StopWatch extends Component {
               border: "none",
               opacity: 1,
               backgroundImage: `url(${Play})`,
+              backgroundSize: "86px 86px",
               backgroundColor: "#F95F6D",
             }}
           />
@@ -211,6 +212,7 @@ class StopWatch extends Component {
               border: "none",
               opacity: 1,
               backgroundImage: `url(${Pause})`,
+              backgroundSize: "86px 86px",
               backgroundColor: "#F95F6D",
             }}
             animate={{ left: 140 }}
@@ -231,6 +233,7 @@ class StopWatch extends Component {
               opacity: 1,
               zIndex: 1,
               backgroundImage: `url(${Pause})`,
+              backgroundSize: "86px 86px",
               backgroundColor: "#F95F6D",
             }}
             animate={{ left: 140 }}
@@ -276,6 +279,7 @@ class StopWatch extends Component {
               zIndex: 2,
 
               backgroundImage: `url(${Play})`,
+              backgroundSize: "86px 86px",
               backgroundColor: "#F95F6D",
             }}
             animate={{ left: 230 }}
@@ -296,6 +300,7 @@ class StopWatch extends Component {
               opacity: 1,
               x: 0,
               backgroundImage: `url(${Replay})`,
+              backgroundSize: "86px 86px",
               backgroundColor: "#fff",
             }}
             animate={{ left: 58 }}

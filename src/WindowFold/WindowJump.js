@@ -79,10 +79,12 @@ const ContactHeaderStyle = {
 const WindowJump = () => {
   const [X, setX] = useState(0);
   const [Y, setY] = useState(400);
-  const [Damping, setDamping] = useState(27);
-  const [Stiffness, setStiffness] = useState(320);
-  const [RStiffness, setRStiffness] = useState(100);
-  const [RDamping, setRDamping] = useState(13);
+  //这里是红点动画
+  const [Damping, setDamping] = useState(50);
+  const [Stiffness, setStiffness] = useState(575);
+  //这里是弹窗动画
+  const [RStiffness, setRStiffness] = useState(450);
+  const [RDamping, setRDamping] = useState(27);
   const [Scale, setScale] = useState(1);
   const [animationBg, BgCycleAnimation] = useCycle(
     "BgAnimationOne",
@@ -250,7 +252,7 @@ const WindowJump = () => {
                 marginTop: 12,
               }}
             >
-              <h6>弹窗动画(Damping阻尼)</h6>
+              <h6>红点动画(Damping阻尼)</h6>
               <div
                 style={{
                   display: "flex",
@@ -292,7 +294,7 @@ const WindowJump = () => {
               }}
             >
               {/* <br /> */}
-              <h6>弹窗动画(Stiffness刚度)</h6>
+              <h6>红点动画(Stiffness刚度)</h6>
               <div
                 style={{
                   display: "flex",
@@ -376,7 +378,7 @@ const WindowJump = () => {
                 }}
               >
                 {/* <br /> */}
-                <h6>红点位移刚度(Stiffness)</h6>
+                <h6>弹窗动画刚度(Stiffness)</h6>
                 <div
                   style={{
                     display: "flex",
@@ -418,7 +420,7 @@ const WindowJump = () => {
                 }}
               >
                 {/* <br /> */}
-                <h6>红点位移弹性(Damping)</h6>
+                <h6>弹窗动画弹性(Damping)</h6>
                 <div
                   style={{
                     display: "flex",

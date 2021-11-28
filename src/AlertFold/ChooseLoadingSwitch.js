@@ -142,8 +142,8 @@ const ChooseLoadingSwitch = () => {
               data-isOn={isOn}
               variants={BtnVariants}
               animate={TBtnAnimation}
-              transform={{ type: "tween" }}
-              whileTap={TcycleAnimation}
+              //    transform={{ type: "tween" }}
+              onTap={TcycleAnimation}
             >
               <motion.div
                 className="Handle"
@@ -157,7 +157,7 @@ const ChooseLoadingSwitch = () => {
                 }}
                 variants={PointVariants}
                 animate={TBtnAnimation}
-                transform={{ type: "tween" }}
+                //   transform={{ type: "tween" }}
               />
             </motion.div>
             <div>点击开关，无回弹动效</div>

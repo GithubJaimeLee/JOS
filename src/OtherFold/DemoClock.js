@@ -415,9 +415,10 @@ const OtherMotion = () => {
             style={{
               position: "absolute",
               backgroundImage: `url(${ClockBottomAlert})`,
-              backgroundSize: "360px 486px",
-              width: 360,
-              height: 486,
+              boxShadow: "0px 0px 18px 6px rgba(0,0,0,0.05)",
+              backgroundSize: "305px 438px",
+              width: 305,
+              height: 438,
               zIndex: 111,
               top: 800,
               opacity: 1,
@@ -474,11 +475,11 @@ const OtherMotion = () => {
             animate={animationBox}
             transition={{
               type: "spring",
-              damping: 27,
-              stiffness: 320,
+              damping: 32,
+              stiffness: 280,
             }}
           />
-          <motion.div
+          {/*       <motion.div
             className="NewPage"
             onClick={() =>
               cycleAnimation() & OcycleAnimation() & BGcycleAnimation()
@@ -490,8 +491,9 @@ const OtherMotion = () => {
               backgroundImage: `url(${CreateClock})`,
               backgroundSize: "360px 900px",
               top: 0,
+              y: 812,
               zIndex: 1000,
-              backgroundColor: "red",
+              // backgroundColor: "red",
               position: "absolute",
             }}
             variants={BoxVariants}
@@ -501,7 +503,7 @@ const OtherMotion = () => {
               damping: 27,
               stiffness: 320,
             }}
-          />
+          /> */}
           <motion.div
             onClick={cycMaskO}
             className="ClockPageOneMask"
@@ -862,8 +864,8 @@ const OtherMotion = () => {
             animate={animationBG}
             transition={{
               type: "spring",
-              damping: 27,
-              stiffness: 320,
+              damping: 32,
+              stiffness: 280,
             }}
           >
             <div

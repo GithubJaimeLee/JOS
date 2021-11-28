@@ -47,10 +47,10 @@ const KeyBoardVariants = {
 };
 const BGVariants = {
   BGanimationOne: {
-    y: 0,
+    scale: 1.1,
+    borderRadius: "0.1px",
   },
   BGAnimationTwo: {
-    y: -10,
     scale: 0.9,
     borderRadius: "30px",
     opacity: 0.5,
@@ -58,10 +58,10 @@ const BGVariants = {
 };
 
 const Create = () => {
-  const [Damping, setDamping] = useState(27);
-  const [Stiffness, setStiffness] = useState(320);
-  const [BDamping, setBDamping] = useState(27);
-  const [BStiffness, setBStiffness] = useState(320);
+  const [Damping, setDamping] = useState(32);
+  const [Stiffness, setStiffness] = useState(280);
+  const [BDamping, setBDamping] = useState(32);
+  const [BStiffness, setBStiffness] = useState(280);
   const [KDuration, setKDuration] = useState(300);
 
   const [animationBox, cycleAnimation] = useCycle(
@@ -333,7 +333,7 @@ const Create = () => {
                 />
               </div>
             </div>
-            <div
+            {/*     <div
               className="DefaultKSpeed"
               style={{
                 width: 300,
@@ -373,7 +373,7 @@ const Create = () => {
                   value={KDuration}
                 />
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
@@ -381,13 +381,6 @@ const Create = () => {
             onClick={() =>
               cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
             }
-            variants={BGVariants}
-            animate={animationBG}
-            transition={{
-              type: "spring",
-              damping: Damping,
-              stiffness: Stiffness,
-            }}
             style={{
               width: 360,
               height: 800,
@@ -395,28 +388,25 @@ const Create = () => {
               overflow: "hidden",
             }}
           >
-            <div
-              className="mask"
+            <motion.div
               style={{
-                position: "absolute",
-                top: 0,
+                backgroundColor: "#ddd",
+
                 width: 360,
                 height: 800,
-                overflow: "scroll",
+                // position: "absolute",
+                opacity: 1,
+                zIndex: 0,
+                position: "relative",
               }}
-            >
-              <motion.div
-                style={{
-                  backgroundColor: "#ddd",
-                  top: 0,
-                  width: 360,
-                  height: 800,
-                  position: "absolute",
-                  opacity: 1,
-                  zIndex: 0,
-                }}
-              />
-            </div>
+              variants={BGVariants}
+              animate={animationBG}
+              transition={{
+                type: "spring",
+                //      damping: Damping,
+                stiffness: Stiffness,
+              }}
+            />
           </motion.div>
           <motion.div
             className="FFFPage"
@@ -425,7 +415,7 @@ const Create = () => {
             }
             style={{
               width: 360,
-              height: 812,
+              height: 900,
               opacity: 1,
               y: 812,
               backgroundColor: "#fff",
@@ -440,13 +430,13 @@ const Create = () => {
               stiffness: BStiffness,
             }}
           />
-          <motion.div
+          {/*     <motion.div
             className="KeyBoard"
             style={KeyboardStyle}
             variants={KeyBoardVariants}
             animate={animationKeyBoard}
             transition={{ type: "tween", duration: KDuration / 1000 }}
-          />
+          /> */}
           <motion.div
             className="blackBg"
             style={{

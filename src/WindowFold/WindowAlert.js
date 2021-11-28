@@ -26,7 +26,7 @@ const ContactBubbleStyle = {
   width: 340,
   height: 102,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.05)",
-  border: "1px solid #ccc",
+  //border: "1px solid #ccc",
   background: "#fff",
   borderRadius: 12,
   position: "absolute",
@@ -37,7 +37,7 @@ const ContactBubbleStyle = {
 
 const ContactBodyStyle = {
   // backgroundImage: `url(${WindowBg})`,
-  backgroundColor: "#EEEEEE",
+  backgroundColor: "#ccc",
   position: "absolute",
   width: 360,
   height: 800,
@@ -388,6 +388,7 @@ const WindowAlert = () => {
               type: "spring",
               damping: Damping,
               stiffness: Stiffness,
+              opacity: { type: "spring" },
             }}
           />
         </div>

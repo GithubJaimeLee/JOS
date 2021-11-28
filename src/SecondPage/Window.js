@@ -15,6 +15,7 @@ import WindowSide from "../WindowFold/WindowSide";
 import WindowVoice from "../WindowFold/WindowVoice";
 import App from "../App";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Click from "../SecondPage/Click";
 
 let cardActive = {
   width: 160,
@@ -52,7 +53,7 @@ const Window = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/Window">
+        <Route exact path="/Click/Window">
           <div>
             <motion.h1
               className="text-center"
@@ -64,7 +65,7 @@ const Window = () => {
               }}
               transition={{ type: "spring", velocity: 120 }}
             ></motion.h1>
-            <Link to="/">
+            <Link to="/Click">
               <img
                 src={backIcon}
                 alt=" "
@@ -89,13 +90,14 @@ const Window = () => {
             >
               <div className="Row1">
                 <Link
-                  to="/Window/WindowBottom"
+                  to="/Click/Window/WindowCenter"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>底部弹窗</p>
+                    <p style={{ paddingTop: 40 }}>中心弹窗</p>
                   </motion.div>
                 </Link>
+
                 {/*         <Link
                   to="/Window/WindowPull"
                   style={{ textDecoration: "none" }}
@@ -105,33 +107,41 @@ const Window = () => {
                   </motion.div>
                 </Link> */}
                 <Link
-                  to="/Window/WindowAlert"
+                  to="/Click/Window/WindowAlert"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>悬浮通知</p>
                   </motion.div>
                 </Link>
-                <Link
-                  to="/Window/WindowInput"
+                {/*    <Link
+                  to="/Click/Window/WindowInput"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>输入式弹窗</p>
+                    <p style={{ paddingTop: 40 }}>列表键盘类？</p>
                   </motion.div>{" "}
                 </Link>
                 <Link
-                  to="/Window/WindowSide"
+                  to="/Click/Window/WindowSide"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>侧边菜单</p>
+                    <p style={{ paddingTop: 40 }}>侧边菜单?</p>
                   </motion.div>
-                </Link>
+                </Link> */}
               </div>
               <div className="Row2">
                 <Link
-                  to="/Window/WindowFlip"
+                  to="/Click/Window/WindowBottom"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>底部弹窗</p>
+                  </motion.div>
+                </Link>
+                {/*      <Link
+                  to="/Click/Window/WindowFlip"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
@@ -155,19 +165,11 @@ const Window = () => {
                   </motion.div>
                 </Link> */}
                 <Link
-                  to="/Window/WindowJump"
+                  to="/Click/Window/WindowJump"
                   style={{ textDecoration: "none" }}
                 >
                   <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>菜单弹窗</p>{" "}
-                  </motion.div>
-                </Link>
-                <Link
-                  to="/Window/WindowCenter"
-                  style={{ textDecoration: "none" }}
-                >
-                  <motion.div whileHover={cardHover} style={cardActive}>
-                    <p style={{ paddingTop: 40 }}>中心弹窗</p>
+                    <p style={{ paddingTop: 40 }}>菜单栏气泡</p>
                   </motion.div>
                 </Link>
               </div>
@@ -186,40 +188,43 @@ const Window = () => {
             ></div>
           </div>
         </Route>
-        <Route path="/Window/WindowFlip">
+        <Route path="/Click/Window/WindowFlip">
           <WindowFlip />
         </Route>
-        <Route path="/Window/WindowJump">
+        <Route path="/Click/Window/WindowJump">
           <WindowJump />
         </Route>
-        <Route path="/Window/WindowPull">
+        <Route path="/Click/Window/WindowPull">
           <WindowPull />
         </Route>
-        <Route path="/Window/WindowBubble">
+        <Route path="/Click/Window/WindowBubble">
           <WindowBubble />
         </Route>
 
-        <Route path="/Window/WindowAlert">
+        <Route path="/Click/Window/WindowAlert">
           <WindowAlert />
         </Route>
-        <Route path="/Window/WindowBottom">
+        <Route path="/Click/Window/WindowBottom">
           <WindowBottom />
         </Route>
-        <Route path="/Window/WindowCenter">
+        <Route path="/Click/Window/WindowCenter">
           <WindowCenter />
         </Route>
 
-        <Route path="/Window/WindowInput">
+        <Route path="/Click/Window/WindowInput">
           <WindowInput />
         </Route>
-        <Route path="/Window/WindowSide">
+        <Route path="/Click/Window/WindowSide">
           <WindowSide />
         </Route>
-        <Route path="/Window/WindowVoice">
+        <Route path="/Click/Window/WindowVoice">
           <WindowVoice />
         </Route>
-        <Route path="/">
+        <Route path="/Click/Window">
           <App />
+        </Route>
+        <Route path="/Click">
+          <Click />
         </Route>
       </Switch>
     </Router>
