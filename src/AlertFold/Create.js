@@ -3,43 +3,11 @@ import React, { useState } from "react";
 import { Slider, InputNumber } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
-import ContactBody from "../Img/ContactBody.png";
-import ContactFooter from "../Img/ContactFooter.png";
-import ContactHeader from "../Img/ContactHeader.png";
 import Bg from "../Component/Bg";
-import FingerClick from "../Img/OneFingerClick.png";
 import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
-import NewContact from "../Img/NewContact.png";
-import ContactSetBar from "../Img/ContactSetBar.png";
-import A from "../Img/A.png";
-import F from "../Img/F.png";
-import L from "../Img/L.png";
 import Set from "../Icon/Set.png";
 import Close from "../Icon/Close.png";
-const FingerStyle = {
-  y: -40,
-  x: 118,
-  width: 100,
-  height: 100,
-  backgroundImage: `url(${FingerClick})`,
-  position: "relative",
-  top: 88,
-  backgroundPosition: "25px 25px",
-  zIndex: 100,
-  backgroundRepeat: "no-repeat",
-};
-const ContactBubbleStyle = {
-  width: 360,
-  height: 812,
 
-  opacity: 1,
-  y: 812,
-
-  backgroundColor: "#fff",
-  position: "absolute",
-
-  zIndex: 20,
-};
 const KeyboardStyle = {
   width: 360,
   height: 290,
@@ -51,14 +19,6 @@ const KeyboardStyle = {
   y: 400,
 };
 
-const BgVariants = {
-  animationOne: {
-    backgroundColor: "#000",
-  },
-  animationTwo: {
-    backgroundColor: "#000",
-  },
-};
 const BoxVariants = {
   animationOne: {
     y: 812,
@@ -85,17 +45,6 @@ const KeyBoardVariants = {
     y: 100,
   },
 };
-
-const ContactHeaderStyle = {
-  // backgroundImage: `url(${ContactHeader})`,
-  backgroundColor: "#eee",
-  width: 360,
-  height: 159,
-  position: "fixed",
-  zIndex: 2,
-  top: 0,
-};
-
 const BGVariants = {
   BGanimationOne: {
     y: 0,
@@ -107,30 +56,13 @@ const BGVariants = {
     opacity: 0.5,
   },
 };
-const ContactFooterStyle = {
-  // backgroundImage: `url(${ContactFooter})`,
-  backgroundColor: "#FFFFFF",
-  position: "absolute",
-  bottom: 0,
-  width: 360,
-  height: 65,
-  zIndex: 1,
-};
 
 const Create = () => {
-  const [X, setX] = useState(0);
-  const [Y, setY] = useState(400);
   const [Damping, setDamping] = useState(27);
   const [Stiffness, setStiffness] = useState(320);
   const [BDamping, setBDamping] = useState(27);
   const [BStiffness, setBStiffness] = useState(320);
   const [KDuration, setKDuration] = useState(300);
-  const [KDamping, setKDamping] = useState(27);
-  const [KStiffness, setKStiffness] = useState(320);
-  const [animationBg, BgCycleAnimation] = useCycle(
-    "BgAnimationOne",
-    "BgAnimationTwo"
-  );
 
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
@@ -214,9 +146,7 @@ const Create = () => {
               display: "grid",
               alignContent: "space-evenly",
               justifyContent: "center",
-              // alignContent: "center",
               backgroundColor: "rgba(255,255,255,0.9)",
-              // filter: "blur(2px)",
               boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
               zIndex: 100,
               y: 780,
@@ -289,7 +219,6 @@ const Create = () => {
                 marginTop: 12,
               }}
             >
-              {/* <br /> */}
               <h6>灰色页面(Stiffness刚度)</h6>
               <div
                 style={{
@@ -322,7 +251,6 @@ const Create = () => {
                 />
               </div>
             </div>
-
             <div
               className="DefaultBDamping"
               style={{
@@ -373,7 +301,6 @@ const Create = () => {
                 marginTop: 12,
               }}
             >
-              {/* <br /> */}
               <h6>白色页面(Stiffness刚度)</h6>
               <div
                 style={{
@@ -407,7 +334,7 @@ const Create = () => {
               </div>
             </div>
             <div
-              className="DefaultBDamping"
+              className="DefaultKSpeed"
               style={{
                 width: 300,
                 height: "auto",
@@ -448,22 +375,12 @@ const Create = () => {
               </div>
             </div>
           </motion.div>
-          <motion.div
-            variants={FingerVariants}
-            animate={animationBox}
-            transition={{ type: "tween" }}
-            className="ContactBtn"
-            onClick={() =>
-              cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
-            }
-            //   style={FingerStyle}
-          />
+
           <motion.div
             className="DDDPage"
             onClick={() =>
               cycleAnimation() & KcycleAnimation() & BGcycleAnimation()
             }
-            className="BG"
             variants={BGVariants}
             animate={animationBG}
             transition={{
@@ -490,7 +407,6 @@ const Create = () => {
             >
               <motion.div
                 style={{
-                  //  backgroundImage: `url(${ContactBody})`,
                   backgroundColor: "#ddd",
                   top: 0,
                   width: 360,
@@ -531,7 +447,6 @@ const Create = () => {
             animate={animationKeyBoard}
             transition={{ type: "tween", duration: KDuration / 1000 }}
           />
-
           <motion.div
             className="blackBg"
             style={{

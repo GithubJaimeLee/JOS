@@ -30,6 +30,7 @@ import test2 from "../Icon/svg/shijieshizhong.json";
 import test3 from "../Icon/svg/miaobiao.json";
 import test4 from "../Icon/svg/jishiqi.json";
 import Rclock from "../Icon/Rclock.png";
+import CreateClock from "../Img/CreateClock.png";
 
 const SetBtnStyle = {
   position: "absolute",
@@ -67,6 +68,17 @@ const SetWindowVariants = {
   },
   UPanimationTwo: {
     y: 0,
+  },
+};
+const BGVariants = {
+  BGanimationOne: {
+    y: 0,
+  },
+  BGAnimationTwo: {
+    y: -10,
+    scale: 0.9,
+    borderRadius: "30px",
+    opacity: 0.5,
   },
 };
 
@@ -237,6 +249,7 @@ const OtherMotion = () => {
       display: "block",
       opacity: 0.4,
       backgroundColor: "#000000",
+      // borderRadius: 20,
     },
   };
 
@@ -287,6 +300,27 @@ const OtherMotion = () => {
       opacity: 1,
     },
   };
+  const OVariants = {
+    OAnimationOne: {
+      display: "none",
+    },
+    OAnimationTwo: {
+      display: "block",
+    },
+  };
+
+  const [animationBox, cycleAnimation] = useCycle(
+    "animationOne",
+    "animationTwo"
+  );
+  const [Oanimation, OcycleAnimation] = useCycle(
+    "OAnimationOne",
+    "OAnimationTwo"
+  );
+  const [animationBG, BGcycleAnimation] = useCycle(
+    "BGAnimationOne",
+    "BGAnimationTwo"
+  );
 
   const [SetWindowAnimation, UPcycleAnimation] = useCycle(
     "UPanimationOne",
@@ -313,6 +347,16 @@ const OtherMotion = () => {
       boxShadow: "0px 0px 18px 6px rgba(0,0,0,0.05)",
     },
   };
+  const BoxVariants = {
+    animationOne: {
+      y: 812,
+    },
+    animationTwo: {
+      y: 0,
+
+      //  borderRadius: 40,
+    },
+  };
   const PVariants = {
     CardAnimationOne: {
       color: "#CDCDCD",
@@ -333,13 +377,7 @@ const OtherMotion = () => {
     console.log(newValue);
   }
   const date = new Date().toLocaleDateString();
-  /* 
-  const defaultOptions = {
-    // animationData: { test2 },
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  }; */
+
   const [X, setX] = useState(0);
   const [Y, setY] = useState(0);
   return (
@@ -416,18 +454,42 @@ const OtherMotion = () => {
           </motion.div>
 
           <motion.div
+            className="NewPage"
+            onClick={() =>
+              cycleAnimation() & OcycleAnimation() & BGcycleAnimation()
+            }
+            style={{
+              width: 360,
+              height: 900,
+              opacity: 1,
+              backgroundImage: `url(${CreateClock})`,
+              backgroundSize: "360px 900px",
+              top: 0,
+              zIndex: 1000,
+              backgroundColor: "red",
+              position: "absolute",
+            }}
+            variants={BoxVariants}
+            animate={animationBox}
+            transition={{
+              type: "spring",
+              damping: 27,
+              stiffness: 320,
+            }}
+          />
+          <motion.div
             onClick={cycMaskO}
             className="ClockPageOneMask"
             style={{
               position: "absolute",
-              //    display: Display1,
               zIndex: 100,
               top: 0,
               left: 0,
+
               zIndex: 101,
               width: 360,
               height: 800,
-              //  pointerEvents: "none",
+              overflow: "hidden",
             }}
             variants={MaskOVariants}
             animate={MaskOAnimate}
@@ -756,22 +818,28 @@ const OtherMotion = () => {
             top: 0,
             left: 0,
           }}
-          //    onClick={() => setClock(ClockG)}
         >
-          <div
+          <motion.div
             className="ClockPageOne"
             style={{
               position: "absolute",
-              //    display: Display1,
+              // borderRadius: 100,
               opacity: O1,
               display: D1,
               top: 0,
               left: 0,
+
               zIndex: 10,
               width: 360,
               height: 800,
             }}
-            // onClick={() => setPlay1(!Play1)}
+            variants={BGVariants}
+            animate={animationBG}
+            transition={{
+              type: "spring",
+              damping: 27,
+              stiffness: 320,
+            }}
           >
             <div
               onClick={Setcyc1}
@@ -786,6 +854,22 @@ const OtherMotion = () => {
                 top: 25,
                 right: 10,
                 opacity: 0,
+              }}
+            />
+            <div
+              onClick={() =>
+                cycleAnimation() & OcycleAnimation() & BGcycleAnimation()
+              }
+              className="CreateClockBtn"
+              style
+              style={{
+                width: 100,
+                height: 80,
+                top: 40,
+                //  backgroundColor: "#000000",
+                position: "absolute",
+                opacity: 0.5,
+                left: 180,
               }}
             />
             <motion.div
@@ -892,7 +976,7 @@ const OtherMotion = () => {
                 backgroundSize: "360px 800px",
               }}
             ></div>
-          </div>
+          </motion.div>
           <div
             style={{
               position: "absolute",
@@ -1111,8 +1195,24 @@ const OtherMotion = () => {
             ></div>
           </div>
         </div>
-
-        <div
+        <motion.div
+          className="ThisBackgroundMask"
+          style={{
+            width: 360,
+            display: "flex",
+            justifyContent: "center",
+            position: "absolute",
+            height: 800,
+            overflow: "scroll",
+            backgroundColor: "#000",
+            overflow: "hidden",
+            zIndex: 0,
+            top: 0,
+          }}
+          variants={OVariants}
+          animate={Oanimation}
+        />
+        <motion.div
           className="ThisBackground"
           style={{
             width: 360,
@@ -1123,7 +1223,7 @@ const OtherMotion = () => {
             overflow: "scroll",
             backgroundColor: "#fff",
             overflow: "hidden",
-            zIndex: 0,
+            zIndex: -1,
             top: 0,
           }}
         >
@@ -1170,7 +1270,7 @@ const OtherMotion = () => {
               </Tabs>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
       <Bg />
     </div>
