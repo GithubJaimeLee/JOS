@@ -478,6 +478,30 @@ const OtherMotion = () => {
             }}
           />
           <motion.div
+            className="NewPage"
+            onClick={() =>
+              cycleAnimation() & OcycleAnimation() & BGcycleAnimation()
+            }
+            style={{
+              width: 360,
+              height: 900,
+              opacity: 1,
+              backgroundImage: `url(${CreateClock})`,
+              backgroundSize: "360px 900px",
+              top: 0,
+              zIndex: 1000,
+              backgroundColor: "red",
+              position: "absolute",
+            }}
+            variants={BoxVariants}
+            animate={animationBox}
+            transition={{
+              type: "spring",
+              damping: 27,
+              stiffness: 320,
+            }}
+          />
+          <motion.div
             onClick={cycMaskO}
             className="ClockPageOneMask"
             style={{
