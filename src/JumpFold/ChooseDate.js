@@ -80,13 +80,13 @@ const ChooseDate = () => {
                 initIdx={8}
                 length={24}
                 width={23}
-                dragSpeed={-10}
+                loop={true}
                 //     transition={{ type: "spring", damping: 30 }}
               />{" "}
               <h6
                 style={{
                   position: "absolute",
-                  top: 90,
+                  top: 91,
                   left: 140,
                 }}
               >
@@ -95,12 +95,12 @@ const ChooseDate = () => {
             </div>
 
             <div style={{ width: 120, height: 200 }}>
-              <Wheel initIdx={30} length={60} width={23} perspective="left" />
+              <Wheel initIdx={30} length={60} width={23} loop={true} />
               <h6
                 style={{
                   position: "absolute",
-                  top: 90,
-                  right: 98,
+                  top: 91,
+                  right: 88,
                 }}
               >
                 分

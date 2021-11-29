@@ -10,7 +10,7 @@ import Close from "../Icon/Close.png";
 import { useRef } from "react";
 import { useMotionValue, useTransform, useElementScroll } from "framer-motion";
 import SetHeader from "../Img/SetHeader.png";
-import SetBody from "../Img/SetBody.png";
+import SetBody from "../Img/SetBodyThis.png";
 import NavBarPage from "../Component/NavBarPage";
 import OneFingerClick from "../Img/OneFingerClick.png";
 import "../App.css";
@@ -86,6 +86,7 @@ const ClickShadow = () => {
               className="HeadCard"
               style={{
                 backgroundImage: `url(${SetHeader})`,
+                backgroundSize: "375px 148px",
                 top: 0,
                 width: 375,
                 height: 148,

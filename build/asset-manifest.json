@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.e8a8d45f.chunk.css",
-    "main.js": "/static/js/main.9f4a19b9.chunk.js",
-    "main.js.map": "/static/js/main.9f4a19b9.chunk.js.map",
+    "main.js": "/static/js/main.2cb489f3.chunk.js",
+    "main.js.map": "/static/js/main.2cb489f3.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.059584cc.js",
     "runtime-main.js.map": "/static/js/runtime-main.059584cc.js.map",
     "static/css/2.b6f30df1.chunk.css": "/static/css/2.b6f30df1.chunk.css",
@@ -36,7 +36,7 @@
     "static/media/ClockBg2.1f0b8fae.png": "/static/media/ClockBg2.1f0b8fae.png",
     "static/media/ClockBg3.39819196.png": "/static/media/ClockBg3.39819196.png",
     "static/media/ClockBg4.7390116b.png": "/static/media/ClockBg4.7390116b.png",
-    "static/media/ClockBottomAlert.07fb8cfc.png": "/static/media/ClockBottomAlert.07fb8cfc.png",
+    "static/media/ClockBottomAlert.d037c32e.png": "/static/media/ClockBottomAlert.d037c32e.png",
     "static/media/ClockSet2.0fc5e8e1.png": "/static/media/ClockSet2.0fc5e8e1.png",
     "static/media/ContactBody.f0934efc.png": "/static/media/ContactBody.f0934efc.png",
     "static/media/ContactSetBar.cfc21884.png": "/static/media/ContactSetBar.cfc21884.png",
@@ -52,7 +52,7 @@
     "static/media/Flip5.c5c5afa1.png": "/static/media/Flip5.c5c5afa1.png",
     "static/media/Flip6.4f358aae.png": "/static/media/Flip6.4f358aae.png",
     "static/media/Flip7.30d22640.png": "/static/media/Flip7.30d22640.png",
-    "static/media/FlipBg.b05a5609.png": "/static/media/FlipBg.b05a5609.png",
+    "static/media/FlipBg.4fac3a11.png": "/static/media/FlipBg.4fac3a11.png",
     "static/media/FoldInfo.fd7d3c2c.png": "/static/media/FoldInfo.fd7d3c2c.png",
     "static/media/FoldScreen.928d4560.png": "/static/media/FoldScreen.928d4560.png",
     "static/media/JumpAppWin.37f7dbfe.png": "/static/media/JumpAppWin.37f7dbfe.png",
@@ -72,10 +72,12 @@
     "static/media/NoteBg.69294e17.png": "/static/media/NoteBg.69294e17.png",
     "static/media/PhoneIcon.d5dfe6e1.svg": "/static/media/PhoneIcon.d5dfe6e1.svg",
     "static/media/PointBg.5c349361.png": "/static/media/PointBg.5c349361.png",
-    "static/media/SearchBg.777b109a.png": "/static/media/SearchBg.777b109a.png",
+    "static/media/SearchBg.5dcad6c0.png": "/static/media/SearchBg.5dcad6c0.png",
     "static/media/SetBg.e4a1df28.png": "/static/media/SetBg.e4a1df28.png",
-    "static/media/SetBody.8b50a04c.png": "/static/media/SetBody.8b50a04c.png",
+    "static/media/SetBody.f1c0d2c4.png": "/static/media/SetBody.f1c0d2c4.png",
+    "static/media/SetBodyThis.8b50a04c.png": "/static/media/SetBodyThis.8b50a04c.png",
     "static/media/SetCenter.0aaea1c9.png": "/static/media/SetCenter.0aaea1c9.png",
+    "static/media/SetHeader.4bbdc033.png": "/static/media/SetHeader.4bbdc033.png",
     "static/media/WeatherBg.639daddd.png": "/static/media/WeatherBg.639daddd.png",
     "static/media/WeatherLine.5a4d6c05.png": "/static/media/WeatherLine.5a4d6c05.png",
     "static/media/WeatherLine2.095d18d0.png": "/static/media/WeatherLine2.095d18d0.png",
@@ -99,6 +101,6 @@
     "static/css/2.b6f30df1.chunk.css",
     "static/js/2.ad8a135b.chunk.js",
     "static/css/main.e8a8d45f.chunk.css",
-    "static/js/main.9f4a19b9.chunk.js"
+    "static/js/main.2cb489f3.chunk.js"
   ]
 }
