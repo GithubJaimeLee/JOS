@@ -3,7 +3,6 @@ import { useState } from "react";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
 import { motion, useCycle } from "framer-motion";
-import Switch from "../Component/Switch";
 const ChooseLoadingSwitch = () => {
   const Info = <p>布尔开关</p>;
   const [isOn, setIsOn] = useState(false);
