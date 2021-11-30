@@ -7,11 +7,11 @@ import ContactHeader from "../Img/ContactHeader.png";
 import Bg from "../Component/Bg";
 import FingerClick from "../Img/OneFingerClick.png";
 import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
-
 import SearchBg from "../Img/SearchBg.png";
 import SearchBar from "../Img/SearchBar.png";
 import SetText from "../Img/SetText.png";
 import CancelText from "../Img/CancelText.png";
+
 const FingerStyle = {
   width: 100,
   height: 100,
