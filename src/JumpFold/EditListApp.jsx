@@ -36,7 +36,7 @@ const UploadGallery = () => {
   const y = useMotionValue(0);
   const ySmooth = useSpring(y, { damping: 16, stiffness: 200 });
   const yVelocity = useVelocity(ySmooth);
-  //const rotateX = useTransform(yVelocity, [-1000, 0, 1000], [-30, 0, 30]);
+  //const rotateX = useTransform(yVelocity, [-1000, 0, 1000], [-15, 0, 15]);
   const rotateX = useTransform(yVelocity, [-1000, 0, 1000], [-30, 0, 30]);
 
   const Photo = forwardRef(() => {
@@ -55,7 +55,7 @@ const UploadGallery = () => {
           perspective: "1000px",
         }}
       >
-        {/*    <motion.div
+        <motion.div
           style={{
             position: "absolute",
 
@@ -79,7 +79,7 @@ const UploadGallery = () => {
             power: 0,
             modifyTarget: (target) => Math.round(target / 90) * 90,
           }}
-        /> */}
+        />
       </div>
       <DndContext
         modifiers={[restrictToVerticalAxis]}
