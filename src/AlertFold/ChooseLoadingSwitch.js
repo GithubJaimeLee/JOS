@@ -27,7 +27,6 @@ const ChooseLoadingSwitch = () => {
     animationTwo: {
       height: 20,
       width: 8,
-
       x: 30,
     },
   };
