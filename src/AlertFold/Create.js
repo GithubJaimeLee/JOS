@@ -4,20 +4,9 @@ import { Slider, InputNumber } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
-import WindowInputKeyboard from "../Img/WindowInputKeyboard.png";
+
 import Set from "../Icon/Set.png";
 import Close from "../Icon/Close.png";
-
-const KeyboardStyle = {
-  width: 360,
-  height: 290,
-
-  backgroundImage: `url(${WindowInputKeyboard})`,
-  position: "absolute",
-  bottom: 100,
-  zIndex: 20,
-  y: 400,
-};
 
 const BoxVariants = {
   animationOne: {
@@ -27,24 +16,7 @@ const BoxVariants = {
     y: 0,
   },
 };
-const FingerVariants = {
-  animationOne: {
-    y: -40,
-    x: 118,
-  },
-  animationTwo: {
-    y: -30,
-    x: -138,
-  },
-};
-const KeyBoardVariants = {
-  KAnimationOne: {
-    y: 400,
-  },
-  KAnimationTwo: {
-    y: 100,
-  },
-};
+
 const BGVariants = {
   BGanimationOne: {
     scale: 1.1,
@@ -62,7 +34,6 @@ const Create = () => {
   const [Stiffness, setStiffness] = useState(280);
   const [BDamping, setBDamping] = useState(32);
   const [BStiffness, setBStiffness] = useState(280);
-  const [KDuration, setKDuration] = useState(300);
 
   const [animationBox, cycleAnimation] = useCycle(
     "animationOne",
@@ -430,13 +401,7 @@ const Create = () => {
               stiffness: BStiffness,
             }}
           />
-          {/*     <motion.div
-            className="KeyBoard"
-            style={KeyboardStyle}
-            variants={KeyBoardVariants}
-            animate={animationKeyBoard}
-            transition={{ type: "tween", duration: KDuration / 1000 }}
-          /> */}
+
           <motion.div
             className="blackBg"
             style={{
