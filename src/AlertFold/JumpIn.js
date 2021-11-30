@@ -11,8 +11,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBarPage from "../Component/NavBarPage";
 import JumpAppWin from "../Img/JumpAppWin.png";
-import OneFingerClick from "../Img/OneFingerClick.png";
-import SetHeader from "../Img/WSetHeader.png";
+
 import SetBody from "../Img/SetBody.png";
 import Bg from "../Component/Bg";
 import Close from "../Icon/Close.png";
@@ -27,18 +26,6 @@ const SetWindowVariants = {
   },
 };
 
-const ContactBtnStyle = {
-  position: "relative",
-  bottom: -450,
-  width: 32,
-  height: 60,
-  backgroundImage: `url(${OneFingerClick})`,
-
-  textAlign: "center",
-  zIndex: 21,
-  display: "flex",
-  justifyContent: "center",
-};
 const MaskStyle = {
   position: "absolute",
   bottom: 0,
@@ -219,7 +206,6 @@ const JumpIn = () => {
               justifyContent: "center",
               alignContent: "center",
               backgroundColor: "rgba(255,255,255,0.9)",
-              // filter: "blur(2px)",
               boxShadow: "0px 0px 24px rgba(0, 0, 0, 0.1)",
               zIndex: 100,
               y: 780,
