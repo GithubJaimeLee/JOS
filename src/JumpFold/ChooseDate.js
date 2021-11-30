@@ -1,11 +1,11 @@
 //import React from "react";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
-import ChooseDateBg from "../Img/ChooseDateBg.png";
+
 import React from "react";
 import Wheel from "../Component/JumpWheel";
 import Time from "../Component/Time";
-import { motion, useCycle } from "framer-motion";
+
 const ChooseDate = () => {
   const Info = <p>日期滑动选择器</p>;
   /* const ClockItemStyle = {
