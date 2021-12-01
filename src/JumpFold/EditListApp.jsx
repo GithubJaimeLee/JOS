@@ -58,7 +58,6 @@ const UploadGallery = () => {
         <motion.div
           style={{
             position: "absolute",
-
             backgroundColor: "#fff",
             width: 330,
             height: 70,
