@@ -98,7 +98,6 @@ const UploadGallery = () => {
             ))}
           </Grid>
         </SortableContext>
-
         <DragOverlay
           modifiers={[restrictToWindowEdges]}
           //    adjustScale={false}
@@ -121,7 +120,6 @@ const UploadGallery = () => {
   function handleDragStart(event) {
     setActiveId(event.active.id);
   }
-
   function handleDragOver(event) {
     const { active, over } = event;
 
