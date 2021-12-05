@@ -38,7 +38,6 @@ const UploadGallery = () => {
   const yVelocity = useVelocity(ySmooth);
   //const rotateX = useTransform(yVelocity, [-1000, 0, 1000], [-15, 0, 15]);
   const rotateX = useTransform(yVelocity, [-1000, 0, 1000], [-30, 0, 30]);
-
   const Photo = forwardRef(() => {
     return <div />;
   });
@@ -58,7 +57,6 @@ const UploadGallery = () => {
         <motion.div
           style={{
             position: "absolute",
-
             backgroundColor: "#fff",
             width: 330,
             height: 70,
@@ -100,7 +98,6 @@ const UploadGallery = () => {
             ))}
           </Grid>
         </SortableContext>
-
         <DragOverlay
           modifiers={[restrictToWindowEdges]}
           //    adjustScale={false}
@@ -123,7 +120,6 @@ const UploadGallery = () => {
   function handleDragStart(event) {
     setActiveId(event.active.id);
   }
-
   function handleDragOver(event) {
     const { active, over } = event;
 
