@@ -14,6 +14,7 @@ import JumpApp from "../JumpFold/JumpApp";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
 import WindowFlip from "../WindowFold/WindowFlip";
+import WindowBottomWater from "../WindowFold/WindowBottomWater";
 
 let card = {
   width: 160,
@@ -124,7 +125,14 @@ const Jump = () => {
                     <p style={{ paddingTop: 40 }}>水面滑动(四角定位)</p>
                   </motion.div>
                 </Link>
-
+                <Link
+                  to="/Slide/WindowBottomWater"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>底部弹窗(水面滑动)</p>
+                  </motion.div>
+                </Link>
                 {/*                 <Link to="/Jump/JumpSearch" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>搜索</p>{" "}
@@ -176,7 +184,9 @@ const Jump = () => {
         <Route path="/Slide/DeleteList">
           <DeleteList />
         </Route>
-
+        <Route path="/Slide/WindowBottomWater">
+          <WindowBottomWater />
+        </Route>
         <Route path="/">
           <App />
         </Route>
