@@ -141,7 +141,7 @@ const Jump = () => {
                 </Link>
                 <Link to="/Slide/DeskQuit" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
-                    <p style={{ paddingTop: 40 }}>应用缩小</p>
+                    <p style={{ paddingTop: 40 }}>应用打开关闭</p>
                   </motion.div>
                 </Link>
 
