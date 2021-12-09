@@ -136,11 +136,11 @@ export default function SetWindow() {
   } */
 
   const TransitionStyle = {
-    type: "spring",
-    stiffness: Stiffness,
-    damping: Damping,
-    // duration: 5,
-    velocity: Velocity,
+    type: "tween",
+    //stiffness: Stiffness,
+    // damping: Damping,
+    duration: 0.35,
+    //  velocity: Velocity,
   };
 
   const ImgBgVariants = {
@@ -169,11 +169,11 @@ export default function SetWindow() {
 
   return (
     <div>
-      <div
+      {/*       <div
         className="SetBtn"
         onClick={() => UPcycleAnimation()}
         style={SetBtnStyle}
-      />
+      /> */}
       <div
         className="SetWindowAll"
         style={{
