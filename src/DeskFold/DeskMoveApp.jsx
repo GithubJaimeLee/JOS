@@ -54,6 +54,7 @@ const DeskMoveApp = () => {
               gridAutoColumns: "auto",
               gridAutoRows: "auto",
               height: "100%",
+              // scale: SC,
               // transform: "scale(1.2, 1.2)",
             }}
           >
@@ -77,6 +78,8 @@ const DeskMoveApp = () => {
         const newIndex = items.indexOf(over.id);
         return arrayMove(items, oldIndex, newIndex);
       });
+    } else if (active.id == over.id) {
+      const SC = 0.8;
     }
   }
 

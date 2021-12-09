@@ -15,7 +15,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
 import WindowFlip from "../WindowFold/WindowFlip";
 import WindowBottomWater from "../WindowFold/WindowBottomWater";
-
+import DApp from "../DeskFold/DeskMove";
+import DeskQuit from "../DeskFold/DeskQuit";
 let card = {
   width: 160,
   height: 100,
@@ -112,6 +113,11 @@ const Jump = () => {
                     <p style={{ paddingTop: 40 }}>新建</p>
                   </motion.div>
                 </Link> */}
+                <Link to="/Slide/DeskMove" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>图标移动</p>
+                  </motion.div>
+                </Link>
               </div>
 
               <div className="Row2">
@@ -133,6 +139,12 @@ const Jump = () => {
                     <p style={{ paddingTop: 40 }}>底部弹窗(水面滑动)</p>
                   </motion.div>
                 </Link>
+                <Link to="/Slide/DeskQuit" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>应用缩小</p>
+                  </motion.div>
+                </Link>
+
                 {/*                 <Link to="/Jump/JumpSearch" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>搜索</p>{" "}
@@ -186,6 +198,12 @@ const Jump = () => {
         </Route>
         <Route path="/Slide/WindowBottomWater">
           <WindowBottomWater />
+        </Route>
+        <Route path="/Slide/DeskQuit">
+          <DeskQuit />
+        </Route>
+        <Route path="/Slide/DeskMove">
+          <DApp />
         </Route>
         <Route path="/">
           <App />

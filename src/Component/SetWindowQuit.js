@@ -394,27 +394,35 @@ export default function SetWindow() {
               overflow: "hidden",
               backgroundRepeat: "no-repeat",
               //   backgroundImage: null,
+              transformOrigin: "50% 50%",
               y,
               scale,
             }}
             whileTap={TapApp}
-            drag={DragApp}
+            // drag
             variants={AppWindowVariants}
             animate={AppWindowAnimation}
-            transition={TransitionStyle}
-            dragConstraints={{ left: 0, right: 0, top: 0, bottom: -0 }}
-            dragElastic={0.25}
-            onClick={() =>
-              cycleAnimation() &
-              CycleNoteBgAnimation() &
-              CycleImgBgAnimation() &
-              CycleBackBgAnimation() &
-              cycleDrag() &
-              cycleTap()
+            transition={{
+              //   type: "spring",
+              //   stiffness: Stiffness,
+              damping: Damping,
+              velocity: Velocity,
+            }}
+            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+            dragElastic={1}
+            onClick={
+              () =>
+                cycleAnimation() &
+                CycleNoteBgAnimation() &
+                CycleImgBgAnimation() &
+                CycleBackBgAnimation() &
+                // cycleDrag() &
+                cycleTap()
+              //  ClickFunctionBundle()
             }
-            onClick={() => ClickFunctionBundle()}
+            //   onClick={() => ClickFunctionBundle()}
             onDragEnd={function (event, info) {
-              if (info.point.y <= 260) {
+              if (info.point.y <= 800) {
                 ClickFunctionBundle();
               } //else if (info.point.y >= 260) {
               //console.log(info.point.y);
