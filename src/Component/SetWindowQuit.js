@@ -111,11 +111,11 @@ export default function SetWindow() {
 
   const AppWindowVariants = {
     AppWindowAnimationOne: {
-      // backgroundImage: `url(${NoteAndroid})`,
+      backgroundImage: `url(${NoteAndroid})`,
       backgroundImage: null,
     },
     AppWindowAnimationTwo: {
-      //  backgroundImage: `url(${NoteAndroid})`,
+      backgroundImage: `url(${NoteAndroid})`,
       width: 375,
       height: 812,
       scale: 1.02,
