@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { BackTop } from "antd";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import Bg from "../Component/Bg";
