@@ -7,6 +7,9 @@ import OtherBackToTop from "../OtherFold/OtherBackToTop";
 import OtherMotion from "../OtherFold/OtherMotion";
 import OtherTween from "../OtherFold/OtherTween";
 import DemoClock from "../OtherFold/DemoClock";
+import Bg from "../OtherFold/Bg";
+import Meet from "../OtherFold/Meet";
+import Light from "../OtherFold/Light";
 import DemoWeather from "../OtherFold/DemoWeather";
 import WindowPull from "../DeskFold/Lock";
 import Test from "../OtherFold/Test";
@@ -85,6 +88,11 @@ const Other = () => {
                     </p>
                   </motion.div>
                 </Link> */}
+                <Link to="/Other/Light" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>光遇</p>
+                  </motion.div>
+                </Link>
                 <Link
                   to="/Other/DemoWeather"
                   style={{ textDecoration: "none" }}
@@ -93,8 +101,18 @@ const Other = () => {
                     <p style={{ paddingTop: 40 }}>锁屏界面</p>
                   </motion.div>
                 </Link>
+                <Link to="/Other/Bg" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>天气</p>
+                  </motion.div>
+                </Link>
               </div>
               <div className="Row2">
+                <Link to="/Other/Meet" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>调试器</p>
+                  </motion.div>
+                </Link>
                 <Link to="/Other/DemoClock" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>时间demo</p>
@@ -127,6 +145,15 @@ const Other = () => {
         </Route>
         <Route path="/Other/DemoClock">
           <DemoClock />
+        </Route>
+        <Route path="/Other/Meet">
+          <Meet />
+        </Route>
+        <Route path="/Other/Light">
+          <Light />
+        </Route>
+        <Route path="/Other/Bg">
+          <Bg />
         </Route>
         <Route path="/">
           <App />
