@@ -338,7 +338,7 @@ function App() {
                   </motion.div>
                 </Link>
 
-                {/*        <Link to="/Alert" style={{ textDecoration: "none" }}>
+                <Link to="/Alert" style={{ textDecoration: "none" }}>
                   <motion.div
                     whileTap={{ scale: 0.91 }}
                     whileHover={cardHover}
@@ -358,9 +358,8 @@ function App() {
                       二级页面
                     </p>
                   </motion.div>
-                </Link>*/}
-
-                {/*      <Link to="/Other" style={{ textDecoration: "none" }}>
+                </Link>
+                <Link to="/Other" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -376,8 +375,8 @@ function App() {
                       其他
                     </p>
                   </motion.div>
-                </Link> */}
-                {/*     <Link to="/Delete" style={{ textDecoration: "none" }}>
+                </Link>
+                <Link to="/Delete" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -408,8 +407,8 @@ function App() {
                       <ProgressBar />
                     </div>
                   </motion.div>
-                </Link> */}
-                {/*            <Link to="/Fold" style={{ textDecoration: "none" }}>
+                </Link>
+                <Link to="/Fold" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={cardActive}>
                     <p style={{ paddingTop: 40 }}>
                       <img
@@ -440,7 +439,7 @@ function App() {
                       <ProgressBar />
                     </div>
                   </motion.div>
-                </Link> */}
+                </Link>
               </div>
             </div>
             <div
