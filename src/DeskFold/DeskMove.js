@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import DeskMoveApp from "./DeskMoveApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
-
+import vbg1 from "../Img/vbg2.png";
 const DApp = () => {
   const Info = <p>图标移动自动补位</p>;
   return (
@@ -30,21 +30,24 @@ const DApp = () => {
             width: 375,
             height: 544,
             top: 56,
+
             position: "relative",
           }}
         >
           <DeskMoveApp />
         </div>
-
         <div
           style={{
-            background: "#E6ECF4",
+            backgroundImage: `url(${vbg1})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            background: "#E6ECF4", // 背景颜色
             width: 375,
             height: 812,
             position: "absolute",
             top: 0,
             opacity: 1,
-            zIndex: "-1",
+            zIndex: -1,
           }}
         />
       </div>

@@ -1,6 +1,7 @@
 import { motion, useCycle } from "framer-motion";
 import React, { useState } from "react";
 import { Slider, InputNumber } from "antd";
+import vbg1 from "../Img/vbg2.png";
 import NavBarPage from "../Component/NavBarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import WindowBottomBg from "../Img/WindowBottomBg.png";
@@ -55,6 +56,9 @@ const ContactBodyStyle = {
   //backgroundImage: `url(${WindowBottomBg})`,
   backgroundColor: "#EEEEEE",
   position: "absolute",
+  backgroundImage: `url(${vbg1})`, // Set the background image
+  backgroundSize: "cover", // Adjust background size as needed
+  backgroundRepeat: "no-repeat", // Adjust background repeat as needed
   width: 375,
   height: 812,
   zIndex: 0,

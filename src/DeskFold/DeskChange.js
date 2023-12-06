@@ -2,6 +2,7 @@ import { motion, useCycle } from "framer-motion";
 import * as React from "react";
 import zoomIcon from "../Icon/zoomIcon.png";
 import "bootstrap/dist/css/bootstrap.min.css";
+import vbg1 from "../Img/vbg1.png";
 import SetBg from "../Img/SetBg.png";
 import SetCenter from "../Img/SetCenter.png";
 import { useState } from "react";
@@ -295,7 +296,9 @@ const DChange = () => {
           className="Background"
           onClick={OnClickClose}
           style={{
-            background: "#fff",
+            backgroundImage: `url(${vbg1})`, // Set the background image
+            backgroundSize: "cover", // Adjust background size as needed
+            backgroundRepeat: "no-repeat", // Adjust background repeat as needed  background: "#fff",
             width: 360,
             height: 800,
             position: "absolute",

@@ -27,7 +27,17 @@ let card = {
   opacity: 1,
   color: "#666",
 };
-
+let cardActive = {
+  width: 160,
+  height: 100,
+  backgroundColor: "#fff",
+  margin: 8,
+  borderRadius: 12,
+  textAlign: "center",
+  boxShadow: "0px 4px 10px 0px rgba(65, 95, 255, 0.25)",
+  opacity: 1,
+  color: "#666",
+};
 const cardHover = {
   scale: 1.1,
   boxShadow: "0px 0px 12px 0px rgba(65, 95, 255, 0.6)",
@@ -106,6 +116,32 @@ const Other = () => {
                     <p style={{ paddingTop: 40 }}>天气</p>
                   </motion.div>
                 </Link>
+                <Link
+                  to="/Click/SecondPage/SearchJump"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>搜索框</p>
+                  </motion.div>
+                </Link>
+                <Link to="/Slide/DeskQuit" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>应用打开关闭</p>
+                  </motion.div>
+                </Link>
+                <Link to="/Slide/Flip" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>翻页效果</p>
+                  </motion.div>
+                </Link>
+                <Link
+                  to="/Slide/WindowBottomWater"
+                  style={{ textDecoration: "none" }}
+                >
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>底部弹窗(水面滑动)</p>
+                  </motion.div>
+                </Link>
               </div>
               <div className="Row2">
                 <Link to="/Other/Meet" style={{ textDecoration: "none" }}>
@@ -116,6 +152,26 @@ const Other = () => {
                 <Link to="/Other/DemoClock" style={{ textDecoration: "none" }}>
                   <motion.div whileHover={cardHover} style={card}>
                     <p style={{ paddingTop: 40 }}>时间demo</p>
+                  </motion.div>
+                </Link>
+                <Link to="/Click/DeskChange" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={cardActive}>
+                    <p style={{ paddingTop: 40 }}>桌面图标</p>
+                  </motion.div>
+                </Link>
+                <Link to="/Slide/DeleteList" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>删除（横滑定位）</p>{" "}
+                  </motion.div>
+                </Link>
+                <Link to="/Slide/DeskMove" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>图标移动</p>
+                  </motion.div>
+                </Link>
+                <Link to="/Slide/EditList" style={{ textDecoration: "none" }}>
+                  <motion.div whileHover={cardHover} style={card}>
+                    <p style={{ paddingTop: 40 }}>水面滑动-列表</p>
                   </motion.div>
                 </Link>
               </div>

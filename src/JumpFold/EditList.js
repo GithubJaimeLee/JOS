@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "../JumpFold/EditListApp.jsx";
 import NavBarPage from "../Component/NavBarPage";
 import Bg from "../Component/Bg";
+import vbg1 from "../Img/vbg1.png";
 
 const EditList = () => {
   const Info = <p>列表滑动</p>;
@@ -47,6 +48,9 @@ const EditList = () => {
         <div
           className="bg"
           style={{
+            backgroundImage: `url(${vbg1})`, // Set the background image
+            backgroundSize: "cover", // Adjust background size as needed
+            backgroundRepeat: "no-repeat", // Adjust background repeat as needed  background: "#fff",
             backgroundColor: "#eee",
             width: 360,
             height: 800,
