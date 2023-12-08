@@ -464,7 +464,7 @@ function App() {
                     fontSize: 30,
                   }}
                 >
-                  多终端 动效 UI组件库
+                  多终端 动效 UI案例
                 </p>
               </div>
               <a

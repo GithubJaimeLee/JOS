@@ -23,7 +23,7 @@ export default class NavBar extends Component {
                 height="30"
                 className="d-inline-block align-top"
               />  */}
-              李佳奇代码作品 (高还原 可交互的设计组件库)
+              李佳奇代码作品 (高还原 可交互的设计案例)
             </Navbar.Brand>
             {/*    <Navbar.Toggle aria-controls="basic-navbar-nav" />
            <Navbar.Collapse id="basic-navbar-nav">
