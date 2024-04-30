@@ -383,7 +383,6 @@ const OtherMotion = () => {
   return (
     <div className="All">
       <NavBarPage placement={"end"} contextTitle={"说明"} context={Info} />
-
       <div
         className="ScreenCenter"
         style={{
